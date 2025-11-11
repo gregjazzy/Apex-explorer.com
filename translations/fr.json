@@ -1,0 +1,118 @@
+{
+  "global": {
+    "welcome": "Bienvenue, Explorateur",
+    "logout": "Déconnexion",
+    "loading": "Chargement...",
+    "continue": "Continuer l'Aventure",
+    "mentor_login": "Accès Mentor",
+    "close_guide": "Fermer le Guide",
+    "error": "Erreur",
+    "back": "Retour",
+    "cancel": "Annuler"
+  },
+  "modules": {
+    "xp_label": "Points d'Expérience (XP)",
+    "xp_per_defi": 100,
+    "m1": "La Boîte à Outils Mathématique",
+    "m1_desc": "Mathématiques fondamentales pour la prise de décision.",
+    "m2": "Les Enjeux du Temps",
+    "m2_desc": "Gérer le temps et les priorités avec une stratégie d'impact.",
+    "m3": "Le Cadre de l'Action (Physique)",
+    "m3_desc": "Comprendre les lois de la physique pour la construction et la logistique.",
+    "m4": "La Carte au Trésor (Logique)",
+    "m4_desc": "Développer le raisonnement logique et la résolution de problèmes complexes.",
+    "m5": "Le Moteur de l'Influence",
+    "m6": "L'Art de l'Échec Constructif",
+    "m7": "La Créativité Stratégique",
+    "m8": "L'Audit des Ressources",
+    "m9": "Économie et Échange de Valeur",
+    "m10": "Le Code du Leader (Éthique)",
+    "m11": "Le Projet Capital (Synthèse)"
+  },
+  "defi": {
+    "title": "Défi",
+    "completed": "Complété",
+    "unlocked": "Débloqué",
+    "locked": "Verrouillé",
+    "start_button": "Démarrer le Défi",
+    "briefing_button": "Fiche de Travail Guidée",
+    "list_count": "Liste des {{count}} défis",
+    "coming_soon": "À venir",
+    "write_here": "Écrire ici...",
+    "advice": "Conseil",
+    "completed_count": "{{completed}} / {{total}} défis terminés",
+    "submit_button": "Soumettre le Défi",
+    "submit_title": "Défi Soumis",
+    "submit_message": "Ta réponse a été envoyée au mentor pour validation!",
+    "scenario_title": "Scénario",
+    "instruction_title": "Instruction",
+    "lecon_title": "Leçon Stratégique",
+    "next": "Suivant"
+  },
+  "m1": {
+      "defi1": {
+        "titre": "Défi: La Logistique de l'Œuf",
+        "scenario": "Scénario du Défi 1 (M1).",
+        "instruction": "Instruction du Défi 1 (M1).",
+        "leconStrategique": "Leçon Stratégique M1.",
+        "briefing": {
+          "etape1": { "titre": "Analyse", "type_etape": "texte_guide", "instruction": "Guide étape 1" }
+        }
+      }
+  },
+  "mentor": {
+    "title": "Tableau de Bord du Mentor",
+    "progress_list": "Progression de l'Explorateur",
+    "completed_on": "Terminé le",
+    "no_progress": "Aucun progrès encore enregistré.",
+    "button_discussion": "Guide de Discussion",
+    "info_titre": "Information",
+    "info_no_guide": "Pas de guide de discussion disponible pour ce défi.",
+    "discussion_titre": "Guide de Discussion Parent/Enfant",
+    "discussion_intro": "Utilisez ces questions pour engager la conversation.",
+    "no_guide_text": "Pas de guide de discussion",
+    "signup_title": "Créer un Compte Mentor",
+    "name_placeholder": "Votre Nom",
+    "signup_button": "S'inscrire",
+    "already_have_account": "J'ai déjà un compte",
+    "need_account": "Je n'ai pas de compte",
+    "signup_success_title": "Vérifiez votre e-mail",
+    "signup_success_message": "Un lien de confirmation a été envoyé à {{email}}. Veuillez cliquer dessus pour activer votre compte.",
+    "explorers_management": "Gestion des Explorateurs",
+    "add_explorer_button": "Ajouter un Explorateur",
+    "no_explorers_yet": "Vous n'avez pas encore d'explorateurs liés.",
+    "create_explorer_title": "Créer un nouvel Explorateur",
+    "create_explorer_subtitle": "Ceci crée le profil de votre enfant. Le code UUID sera son identifiant de connexion.",
+    "explorer_name_placeholder": "Nom de l'Explorateur",
+    "create_button": "Créer le Profil",
+    "error_name_length": "Le nom doit contenir au moins 2 caractères.",
+    "creation_success_title": "Succès!",
+    "creation_success_message": "Le profil de {{name}} a été créé. Son code de connexion est :\n\nPIN: {{pin}}\n\nVeuillez noter ce PIN pour la connexion de l'Explorateur.",
+    "creation_error": "Échec de la création du profil.",
+    "explorer_login_id": "ID de connexion",
+    "recent_progress": "Progrès récents",
+    "pin_placeholder": "Code PIN (4 chiffres)",
+    "discussion": {
+      "m1_defi1": [
+        "Question 1: Comment peux-tu utiliser la division pour organiser tes devoirs ?",
+        "Question 2: Quelle est la solution la plus 'juste' pour gérer les restes ?",
+        "Question 3: Raconte-moi une leçon apprise cette semaine."
+      ]
+    },
+    "email_placeholder": "Email du Mentor",
+    "password_placeholder": "Mot de passe"
+  },
+  "dashboard": {
+    "title": "Tableau de Bord de l'Explorateur",
+    "status_unlocked": "Débloqué",
+    "status_locked": "Verrouillé",
+    "load_error": "Erreur de chargement des données."
+  },
+  "auth": {
+    "back_to_explorer": "Retour à l'Explorateur",
+    "choose_role": "Veuillez choisir votre profil pour commencer.",
+    "explorer_name_placeholder": "Nom de l'Explorateur",
+    "start_adventure": "Démarrer l'Aventure"
+  }
+}
+

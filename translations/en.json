@@ -1,0 +1,118 @@
+{
+  "global": {
+    "welcome": "Welcome, Explorer",
+    "logout": "Logout",
+    "loading": "Loading...",
+    "continue": "Continue the Adventure",
+    "mentor_login": "Mentor Access",
+    "close_guide": "Close Guide",
+    "error": "Error",
+    "back": "Back",
+    "cancel": "Cancel"
+  },
+  "modules": {
+    "xp_label": "Experience Points (XP)",
+    "xp_per_defi": 100,
+    "m1": "The Mathematical Toolkit",
+    "m1_desc": "Fundamental mathematics for decision-making.",
+    "m2": "The Stakes of Time",
+    "m2_desc": "Manage time and priorities with an impact strategy.",
+    "m3": "The Framework of Action (Physics)",
+    "m3_desc": "Understand the laws of physics for construction and logistics.",
+    "m4": "The Treasure Map (Logic)",
+    "m4_desc": "Develop logical reasoning and complex problem-solving skills.",
+    "m5": "The Engine of Influence",
+    "m6": "The Art of Constructive Failure",
+    "m7": "Strategic Creativity",
+    "m8": "Resource Audit",
+    "m9": "Economy and Value Exchange",
+    "m10": "The Leader's Code (Ethics)",
+    "m11": "The Capital Project (Synthesis)"
+  },
+  "defi": {
+    "title": "Challenge",
+    "completed": "Completed",
+    "unlocked": "Unlocked",
+    "locked": "Locked",
+    "start_button": "Start Challenge",
+    "briefing_button": "Guided Work Sheet",
+    "list_count": "List of {{count}} challenges",
+    "coming_soon": "Coming Soon",
+    "write_here": "Write here...",
+    "advice": "Advice",
+    "completed_count": "{{completed}} / {{total}} challenges completed",
+    "submit_button": "Submit Challenge",
+    "submit_title": "Challenge Submitted",
+    "submit_message": "Your answer has been sent to the mentor for validation!",
+    "scenario_title": "Scenario",
+    "instruction_title": "Instruction",
+    "lecon_title": "Strategic Lesson",
+    "next": "Next"
+  },
+  "m1": {
+      "defi1": {
+        "titre": "Challenge: The Egg Logistics",
+        "scenario": "Scenario for Challenge 1 (M1).",
+        "instruction": "Instruction for Challenge 1 (M1).",
+        "leconStrategique": "Strategic Lesson M1.",
+        "briefing": {
+          "etape1": { "titre": "Analysis", "type_etape": "texte_guide", "instruction": "Guide step 1" }
+        }
+      }
+  },
+  "mentor": {
+    "title": "Mentor Dashboard",
+    "progress_list": "Explorer's Progress",
+    "completed_on": "Completed on",
+    "no_progress": "No progress recorded yet.",
+    "button_discussion": "Discussion Guide",
+    "info_titre": "Information",
+    "info_no_guide": "No discussion guide available for this challenge.",
+    "discussion_titre": "Parent/Child Discussion Guide",
+    "discussion_intro": "Use these questions to start a conversation with your child about the challenge's core concepts.",
+    "no_guide_text": "No discussion guide",
+    "signup_title": "Create a Mentor Account",
+    "name_placeholder": "Your Name",
+    "signup_button": "Sign Up",
+    "already_have_account": "I already have an account",
+    "need_account": "I don't have an account",
+    "signup_success_title": "Check Your Email",
+    "signup_success_message": "A confirmation link has been sent to {{email}}. Please click it to activate your account.",
+    "explorers_management": "Explorer Management",
+    "add_explorer_button": "Add an Explorer",
+    "no_explorers_yet": "You don't have any linked explorers yet.",
+    "create_explorer_title": "Create a New Explorer",
+    "create_explorer_subtitle": "This creates your child's profile. The UUID code will be their login identifier.",
+    "explorer_name_placeholder": "Explorer's Name",
+    "create_button": "Create Profile",
+    "error_name_length": "Name must be at least 2 characters long.",
+    "creation_success_title": "Success!",
+    "creation_success_message": "The profile for {{name}} has been created. Their connection code is:\n\nPIN: {{pin}}\n\nPlease note this PIN for the Explorer login.",
+    "creation_error": "Failed to create profile.",
+    "explorer_login_id": "Login ID",
+    "recent_progress": "Recent Progress",
+    "pin_placeholder": "PIN Code (4 digits)",
+    "discussion": {
+      "m1_defi1": [
+        "Question 1: How can you use division to organize your homework?",
+        "Question 2: What is the 'fairest' solution for handling remainders?",
+        "Question 3: Tell me one lesson you learned this week."
+      ]
+    },
+    "email_placeholder": "Mentor Email",
+    "password_placeholder": "Password"
+  },
+  "dashboard": {
+    "title": "Explorer Dashboard",
+    "status_unlocked": "Unlocked",
+    "status_locked": "Locked",
+    "load_error": "Data loading error."
+  },
+  "auth": {
+    "back_to_explorer": "Back to Explorer",
+    "choose_role": "Please choose your profile to start.",
+    "explorer_name_placeholder": "Explorer's Name",
+    "start_adventure": "Start the Adventure"
+  }
+}
+
