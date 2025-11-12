@@ -141,31 +141,31 @@
       "evaluationCriteria": "Réponse correcte : Option 2. Bonus : L'enfant calcule le profit potentiel (100 cookies vendus à 2€ = 200€ - 60€ coût = 140€ profit vs 50 cookies = 100€ - 50€ = 50€ profit)."
     },
     "defi4": {
-      "titre": "Mission: Le Capitaine d'Équipe",
-      "scenario": "Tu es capitaine de ton équipe de foot. Match important demain ! Ton meilleur ami veut ABSOLUMENT jouer attaquant, mais franchement... il est bien meilleur en défense. Un autre joueur (que tu aimes moins) est excellent attaquant. Si tu mets ton ami attaquant, l'équipe risque de perdre. Si tu mets l'autre, ton ami sera triste et peut-être fâché contre toi.",
-      "instruction": "1. Quelle décision prends-tu et POURQUOI ?\n2. Comment vas-tu l'annoncer à ton ami pour qu'il comprenne (sans qu'il soit trop déçu) ?\n3. Y a-t-il une solution pour que tout le monde soit content ET que l'équipe ait les meilleures chances de gagner ?",
-      "leconStrategique": "Les vrais leaders font des choix difficiles. Parfois, tu dois choisir entre faire plaisir à quelqu'un ou faire ce qui est JUSTE pour le groupe. L'honnêteté et la communication sont essentielles.",
-      "referenceCroisee": "M10",
+      "titre": "Mission: La Recette de Gâteau",
+      "scenario": "Tu veux faire un gâteau pour 8 personnes. La recette originale est pour 4 personnes et demande : 200g de farine, 3 œufs, 100g de sucre, 50g de beurre. Tu dois adapter les quantités pour 8 personnes !",
+      "instruction": "1. Si la recette est pour 4 personnes et tu en veux pour 8, tu dois multiplier par combien ?\n2. Calcule les nouvelles quantités pour chaque ingrédient.\n3. Si tu as seulement 5 œufs à la maison, pour combien de personnes maximum peux-tu faire le gâteau ?",
+      "leconStrategique": "Les proportions et les ratios sont partout dans la vie : recettes, construction, business. Savoir adapter les quantités est une compétence mathématique essentielle. Dans les entreprises, on utilise les ratios pour tout mesurer : coûts, performances, croissance.",
+      "referenceCroisee": "M8",
         "briefing": {
         "etape1": {
-          "titre": "1. Le Dilemme Du Leader",
+          "titre": "1. Comprendre Le Ratio",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris : je dois choisir entre l'amitié (court terme) et la performance de l'équipe (meilleur pour tous)."
+          "instruction": "J'ai compris : 8 personnes ÷ 4 personnes = 2. Je dois donc MULTIPLIER toutes les quantités par 2."
         },
         "etape2": {
-          "titre": "2. La Communication Honnête",
+          "titre": "2. Appliquer La Multiplication",
           "type_etape": "texte_guide",
-          "instruction": "Un bon leader explique POURQUOI il prend une décision. Exemple : 'Tu es super en défense, et on a vraiment besoin de toi là-bas. L'autre joueur est meilleur attaquant, mais toi tu es LE MEILLEUR défenseur. Chacun à sa place !'"
+          "instruction": "Chaque ingrédient doit être multiplié par le même nombre. Farine : 200g × 2 = 400g. Œufs : 3 × 2 = 6. Sucre : 100g × 2 = 200g. Beurre : 50g × 2 = 100g."
         },
         "etape3": {
-          "titre": "3. Trouver Une Solution Créative",
+          "titre": "3. Gérer La Contrainte",
           "type_etape": "champ_texte",
-          "instruction": "Parfois, tu peux trouver une solution intelligente : ton ami pourrait jouer attaquant pendant l'échauffement ? Ou alterner les rôles à mi-temps ? Trouve une idée qui respecte tout le monde !",
-          "placeholder": "Ma solution créative..."
+          "instruction": "Si tu n'as que 5 œufs au lieu de 6, tu dois RÉDUIRE la recette. Avec 5 œufs, tu peux faire combien de personnes ? (Indice : 3 œufs = 4 personnes, donc 5 œufs = ?)",
+          "placeholder": "Mon calcul : 5 œufs permettent de faire pour..."
         }
       },
-      "mentorGoal": "Évalue la capacité à gérer un conflit émotionnel vs rationnel, et à communiquer une décision difficile avec empathie. L'enfant doit démontrer leadership ET intelligence émotionnelle.",
-      "evaluationCriteria": "1. Décision claire et justifiée (privilégier la performance collective). 2. Communication empathique proposée. 3. Solution créative (bonus). Attention : accepter que l'ami soit fâché est aussi une réponse valide si bien justifiée."
+      "mentorGoal": "Évalue la compréhension des proportions, ratios et multiplication. L'enfant doit démontrer qu'il sait adapter des quantités selon un ratio et gérer les contraintes réelles.",
+      "evaluationCriteria": "1. Ratio correct : ×2. 2. Calculs exacts : 400g farine, 6 œufs, 200g sucre, 100g beurre. 3. Contrainte œufs : environ 6-7 personnes (5÷3×4≈6,67). Bonus : L'enfant explique la logique des proportions ou mentionne que tous les ingrédients doivent garder le même ratio."
       }
   },
   "m2": {
