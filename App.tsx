@@ -91,7 +91,7 @@ const AppContent: React.FC = () => {
           />
           <Stack.Screen 
             name="DefiList" 
-            component={DefiListScreen}
+            component={DefiListScreen as any}
             options={{ 
               headerTitle: t('defi.title'),
               headerBackVisible: true,
@@ -100,7 +100,7 @@ const AppContent: React.FC = () => {
           /> 
           <Stack.Screen 
             name="Defi" 
-            component={DefiScreen}
+            component={DefiScreen as any}
             options={{ 
               headerTitle: t('defi.title'),
               headerBackVisible: true,

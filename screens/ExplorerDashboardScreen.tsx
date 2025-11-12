@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
-import { StackScreenProps } from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import { fetchModulesWithProgress, Module } from '../services/dataService'; 
@@ -58,7 +58,7 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any }> = ({ mod
     );
 };
 
-const ExplorerDashboardScreen: React.FC<StackScreenProps<any, 'Explorer'>> = ({ navigation }) => {
+const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>> = ({ navigation }) => {
     const { user } = useAuth();
     const { t, i18n } = useTranslation();
     const [modules, setModules] = useState<Module[]>([]);

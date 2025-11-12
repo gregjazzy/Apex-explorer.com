@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, TextInput, Alert, ActivityIndicator } from 'react-native';
-import { StackScreenProps } from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth'; 
 
@@ -10,7 +10,7 @@ const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 550; 
 
-const AuthScreen: React.FC<StackScreenProps<any, 'Auth'>> = () => {
+const AuthScreen: React.FC<NativeStackScreenProps<any, 'Auth'>> = () => {
   const { t } = useTranslation();
   const { login, signUpMentor, loading } = useAuth(); // AJOUT: signUpMentor
   

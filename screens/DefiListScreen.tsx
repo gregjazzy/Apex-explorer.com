@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, TouchableOpacity, FlatList } from 'react-native';
-import { StackScreenProps } from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { Defi } from '../services/dataService'; // Import de l'interface Defi
 
@@ -16,7 +16,7 @@ type DefiListRouteParams = {
     moduleTitle: string;
     defis: Defi[]; // Le tableau des défis est passé ici
 };
-type DefiListScreenProps = StackScreenProps<any, 'DefiList'> & {
+type DefiListScreenProps = NativeStackScreenProps<any, 'DefiList'> & {
     route: { params: DefiListRouteParams };
 };
 

@@ -25,18 +25,19 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // --- SIMULATION D'AUTH (pour la démo) ---
 const SIM_USER_BASE: Omit<UserProfile, 'id' | 'role'> = {
     aud: 'authenticated',
-    email: null,
+    email: undefined,
     email_confirmed_at: '2025-01-01',
-    phone: null,
+    phone: undefined,
     last_sign_in_at: '2025-01-01',
     created_at: '2025-01-01',
     updated_at: '2025-01-01',
+    app_metadata: {},
     user_metadata: {}
 };
 
 const SIM_SESSION_BASE: Omit<Session, 'user'> = {
     access_token: 'sim-token',
-    token_type: 'Bearer',
+    token_type: 'bearer',
     expires_in: 3600,
     expires_at: Date.now() / 1000 + 3600,
     refresh_token: 'sim-refresh'

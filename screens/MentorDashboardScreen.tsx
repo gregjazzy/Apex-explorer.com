@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, FlatList, ActivityIndicator, Alert } from 'react-native';
-import { StackScreenProps } from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import { DiscussionModal } from '../components/DiscussionModal';
@@ -19,7 +19,7 @@ interface ExplorerProfileWithProgress extends ExplorerProfile {
     loadingProgress: boolean;
 }
 
-const MentorDashboardScreen: React.FC<StackScreenProps<any, 'Mentor'>> = ({ navigation }) => {
+const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = ({ navigation }) => {
   const { t, i18n } = useTranslation();
   const { user, logout } = useAuth();
   const [explorersWithProgress, setExplorersWithProgress] = useState<ExplorerProfileWithProgress[]>([]);

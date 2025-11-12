@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, Alert, TextInput, TouchableOpacity } from 'react-native';
-import { StackScreenProps } from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { BriefingModal } from '../components/BriefingModal'; 
 import { saveDefiProgress } from '../services/dataService'; // NOUVEL IMPORT
@@ -18,7 +18,7 @@ type DefiRouteParams = {
     defiId: string;
     defiTitle: string;
 };
-type DefiScreenProps = StackScreenProps<any, 'Defi'> & {
+type DefiScreenProps = NativeStackScreenProps<any, 'Defi'> & {
     route: { params: DefiRouteParams };
 };
 
