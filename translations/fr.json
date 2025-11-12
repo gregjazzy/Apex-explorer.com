@@ -50,223 +50,575 @@
     "next": "Suivant"
   },
   "m1": {
-      "defi1": {
-        "titre": "Défi: La Logistique de l'Œuf",
-        "scenario": "Scénario du Défi 1 (M1).",
-        "instruction": "Instruction du Défi 1 (M1).",
-        "leconStrategique": "Leçon Stratégique M1.",
-        "briefing": {
-          "etape1": { "titre": "Analyse", "type_etape": "texte_guide", "instruction": "Guide étape 1" }
+    "defi1": {
+      "titre": "Défi: La Logistique de l'Œuf",
+      "scenario": "Tu dois transporter 100 œufs avec un seul camion qui ne peut prendre que des caisses de 12 œufs. Combien de caisses complètes et combien d'œufs restants dois-tu gérer ? (Division et Reste).",
+      "instruction": "Écris le nombre de caisses COMPLÈTES et le nombre d'œufs RESTANTS. (Le Reste est la partie à gérer par le leader !)",
+      "leconStrategique": "Chaque ressource doit être comptée. Les 'restes' sont souvent là où se cache l'inefficacité ou la valeur cachée.",
+      "referenceCroisee": "M8",
+      "briefing": { 
+        "etape1": {
+          "titre": "1. Analyser la Contrainte Fixe",
+          "type_etape": "validation_case",
+          "instruction": "J'ai lu le problème et identifié l'opération : 100 ÷ 12. Je sais que le Reste doit être géré en priorité pour éviter la casse.",
+          "placeholder": null
+        },
+        "etape2": {
+          "titre": "2. La Règle du 'Reste' Actif",
+          "type_etape": "texte_guide",
+          "instruction": "Le résultat (le quotient) te donne les caisses COMPLÈTES. Le reste t'indique le nombre d'œufs qui nécessiteront une attention spéciale. Le leader gère les exceptions.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. L'Ancrage Stratégique",
+          "type_etape": "champ_texte",
+          "instruction": "Si tu n'avais pas calculé le Reste, que risquerais-tu de perdre ?",
+          "placeholder": "Ex: Sécurité, Argent, Temps..."
         }
       }
+    },
+    "defi2": {
+      "titre": "Défi: Le Partage Juste",
+      "scenario": "Tu dois distribuer 1500 litres d'eau entre 5 camps. Chaque camp a le droit à une part égale. Combien de litres d'eau doit recevoir chaque camp ?",
+      "instruction": "Utilise la division pour trouver le partage le plus juste. (Réponse : Nombre de Litres).",
+      "leconStrategique": "La division est l'outil fondamental de la justice et de l'équité en gestion des ressources. Le partage est l'essence du leadership.",
+      "referenceCroisee": "M9",
+      "briefing": { 
+        "etape1": {
+          "titre": "1. Définir le Diviseur",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié le nombre total (1500) et le nombre de bénéficiaires (5). L'opération est : 1500 ÷ 5."
+        },
+        "etape2": {
+          "titre": "2. Simplifier la Tâche",
+          "type_etape": "texte_guide",
+          "instruction": "Ignore temporairement les zéros (15 ÷ 5). Trouve le résultat. Puis, remets les zéros à la fin. Simplifier les problèmes complexes est la marque d'un esprit stratégique."
+        }
+      }
+    },
+    "defi3": {
+      "titre": "Quiz: Les Enchaînements Rapides",
+      "question": "Un architecte doit acheter 50 briques pour 6 projets. Quel est le nombre total de briques nécessaires ?",
+      "options": ["50 x 6 = 300 briques", "50 + 6 = 56 briques", "50 ÷ 6 = 8.3 briques"],
+      "bonneReponseIndex": 0,
+      "feedbackCorrect": "Excellent. La multiplication permet de calculer rapidement l'ensemble des besoins.",
+      "feedbackIncorrect": "La multiplication permet d'éviter les longues additions successives.",
+      "leconStrategique": "La multiplication est l'outil pour passer à l'échelle. Quand tu dois gérer le même besoin pour plusieurs projets, tu multiplies.",
+      "referenceCroisee": "M8"
+    },
+    "defi4": {
+      "titre": "Défi: Le Partage de la Tarte (Fractions)",
+      "scenario": "Tu dois partager une tarte avec 8 amis, mais tu ne peux la couper qu'en 4 morceaux. Quelle est la plus petite fraction que tu peux donner à chaque personne pour que le partage soit juste ?",
+      "instruction": "Écris la fraction exacte que chaque personne recevra (Ex: 1/2).",
+      "leconStrategique": "La proportion est la clé de l'équité. Savoir comment une partie se rapporte au tout est essentiel pour la gestion des ressources.",
+      "referenceCroisee": "M9",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Le Tout et les Parties",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié le tout (1 tarte) et le nombre de parts requis (8 amis). La fraction est le nombre de parts sur le total."
+        },
+        "etape2": {
+          "titre": "2. Simplification des Ressources",
+          "type_etape": "texte_guide",
+          "instruction": "Si tu coupes en 4, chaque part représente 1/4. Pour 8 personnes, tu dois diviser chaque quart en deux (ce qui donne 1/8). Une fraction est une division simple."
+        }
+      }
+    }
   },
   "m2": {
     "defi1": {
-        "titre": "Défi: L'Urgence et l'Importance",
-        "scenario": "Tu as quatre tâches : 1. Nourrir le chien (Urgent/Important). 2. Jouer à un jeu (Ni Urgent/Ni Important). 3. Finir un devoir (Non Urgent/Important). 4. Aider ta sœur (Urgent/Non Important). Comment les priorises-tu (1 à 4) ?",
-        "instruction": "Écris la tâche que tu vas faire en PREMIER et la tâche que tu vas faire en DERNIER.",
-        "leconStrategique": "Les leaders s'occupent d'abord de l'IMPORTANT (même si ce n'est pas urgent) avant de l'Urgent mais non important.",
-        "referenceCroisee": "M8",
-        "briefing": {
-            "etape1": {
-                "titre": "1. La Matrice Eisenhower",
-                "type_etape": "texte_guide",
-                "instruction": "Dessine une boîte avec 4 cases (Urgent/Important, Urgent/Non Important, Non Urgent/Important, Non Urgent/Non Important). Place chaque tâche dans sa bonne case. Les cases non urgentes et importantes sont la vraie priorité."
-            }
+      "titre": "Défi: L'Urgence et l'Importance",
+      "scenario": "Tu as quatre tâches : 1. Nourrir le chien (Urgent/Important). 2. Jouer à un jeu (Ni Urgent/Ni Important). 3. Finir un devoir (Non Urgent/Important). 4. Aider ta sœur (Urgent/Non Important). Comment les priorises-tu (1 à 4) ?",
+      "instruction": "Écris la tâche que tu vas faire en PREMIER et la tâche que tu vas faire en DERNIER.",
+      "leconStrategique": "Les leaders s'occupent d'abord de l'IMPORTANT (même si ce n'est pas urgent) avant de l'Urgent mais non important.",
+      "referenceCroisee": "M8",
+      "briefing": {
+        "etape1": {
+          "titre": "1. La Matrice Eisenhower",
+          "type_etape": "texte_guide",
+          "instruction": "Dessine une boîte avec 4 cases (Urgent/Important, Urgent/Non Important, Non Urgent/Important, Non Urgent/Non Important). Place chaque tâche dans sa bonne case. Les cases non urgentes et importantes sont la vraie priorité."
         }
+      }
     },
     "defi2": {
-        "titre": "Quiz: Planification et Préparation",
-        "question": "Quel outil est le plus efficace pour planifier un projet de 3 jours ?",
-        "options": ["Une simple note mentale", "Un agenda visuel avec les tâches listées", "Demander de l'aide après avoir oublié"],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "Un agenda visuel transforme le temps en ressource gérable.",
-        "feedbackIncorrect": "La mémoire n'est pas un outil fiable pour la planification de projets longs.",
-        "leconStrategique": "La préparation est la preuve de la discipline. Un bon plan te donne la liberté de te concentrer sur l'exécution.",
-        "referenceCroisee": "M6"
+      "titre": "Quiz: Planification et Préparation",
+      "question": "Quel outil est le plus efficace pour planifier un projet de 3 jours ?",
+      "options": ["Une simple note mentale", "Un agenda visuel avec les tâches listées", "Demander de l'aide après avoir oublié"],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Un agenda visuel transforme le temps en ressource gérable.",
+      "feedbackIncorrect": "La mémoire n'est pas un outil fiable pour la planification de projets longs.",
+      "leconStrategique": "La préparation est la preuve de la discipline. Un bon plan te donne la liberté de te concentrer sur l'exécution.",
+      "referenceCroisee": "M6"
+    },
+    "defi3": {
+      "titre": "Défi: Le Temps Focalisé",
+      "scenario": "Tu as 3 heures pour faire 3 tâches (Devoir, Rangement, Sport). Tu as tendance à passer 1h sur chaque tâche sans les finir. Comment maximises-tu ta concentration ?",
+      "instruction": "Propose une durée de temps et une règle que tu appliqueras pour ne pas dévier de la tâche la plus importante.",
+      "leconStrategique": "Le temps focalisé est la richesse du leader. Éliminer les distractions est la clé pour obtenir des résultats.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Le Cadre Temporel",
+          "type_etape": "validation_case",
+          "instruction": "J'ai choisi une tâche principale et une durée de concentration (ex: 30 minutes) sans aucune interruption."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: Le Coût du Retard",
+      "question": "Tu promets de rendre un livre à un ami à 16h. Si tu le rends à 17h, quel est le coût principal ?",
+      "options": ["L'amende.", "La perte de confiance.", "Le temps passé à s'excuser."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Le coût d'un retard est la perte de confiance. La réputation est la ressource la plus précieuse d'un leader.",
+      "leconStrategique": "La fiabilité est la base de toute collaboration. Honore ton engagement, même si c'est inconfortable.",
+      "referenceCroisee": "M5"
     }
   },
   "m3": {
     "defi1": {
-        "titre": "Défi: L'Équilibre de la Tour",
-        "scenario": "Tu dois construire une tour la plus haute possible avec 10 blocs. Comment dois-tu placer les blocs pour garantir la STABILITÉ maximale ?",
-        "instruction": "Écris une phrase expliquant où doit se trouver le centre de gravité (CG) : Haut ou Bas, et pourquoi.",
-        "leconStrategique": "La stabilité est plus importante que la hauteur. Une fondation solide permet une croissance durable.",
-        "referenceCroisee": "M7",
-        "briefing": {
-            "etape1": {
-                "titre": "1. Le Centre de Gravité",
-                "type_etape": "validation_case",
-                "instruction": "J'ai compris que le centre de gravité doit être le plus bas possible. Les blocs lourds vont en bas, les plus légers en haut."
-            },
-            "etape2": {
-                "titre": "2. La Règle de la Base",
-                "type_etape": "texte_guide",
-                "instruction": "Pour être stable, la tour doit avoir une base large. La stabilité provient de la largeur et de la hauteur inversée (plus large que haute)."
-            }
+      "titre": "Défi: L'Équilibre de la Tour",
+      "scenario": "Tu dois construire une tour la plus haute possible avec 10 blocs. Comment dois-tu placer les blocs pour garantir la STABILITÉ maximale ?",
+      "instruction": "Écris une phrase expliquant où doit se trouver le centre de gravité (CG) : Haut ou Bas, et pourquoi.",
+      "leconStrategique": "La stabilité est plus importante que la hauteur. Une fondation solide permet une croissance durable.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Le Centre de Gravité",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris que le centre de gravité doit être le plus bas possible. Les blocs lourds vont en bas, les plus légers en haut."
+        },
+        "etape2": {
+          "titre": "2. La Règle de la Base",
+          "type_etape": "texte_guide",
+          "instruction": "Pour être stable, la tour doit avoir une base large. La stabilité provient de la largeur et de la hauteur inversée (plus large que haute)."
         }
+      }
     },
     "defi2": {
-        "titre": "Quiz: Le Levier Efficace",
-        "question": "Tu dois soulever une roche très lourde avec une barre. Où dois-tu placer le point d'appui (fulcrum) pour la soulever le plus facilement ?",
-        "options": ["Au milieu de la barre", "Le plus près possible de la roche", "Le plus loin possible de la roche"],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "Bravo! Plus le point d'appui est proche de la charge, plus le levier est puissant.",
-        "leconStrategique": "L'efficacité est l'art de faire plus avec moins d'effort. Trouve le bon point d'appui (la bonne relation, la bonne ressource).",
-        "referenceCroisee": "M5"
+      "titre": "Quiz: Le Levier Efficace",
+      "question": "Tu dois soulever une roche très lourde avec une barre. Où dois-tu placer le point d'appui (fulcrum) pour la soulever le plus facilement ?",
+      "options": ["Au milieu de la barre", "Le plus près possible de la roche", "Le plus loin possible de la roche"],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Bravo! Plus le point d'appui est proche de la charge, plus le levier est puissant.",
+      "leconStrategique": "L'efficacité est l'art de faire plus avec moins d'effort. Trouve le bon point d'appui (la bonne relation, la bonne ressource).",
+      "referenceCroisee": "M5"
+    },
+    "defi3": {
+      "titre": "Défi: Le Problème de la Friction",
+      "scenario": "Tu dois faire glisser une lourde caisse sur une surface rugueuse. Tu peux : 1. Pousser la caisse directement. 2. La mettre sur des rondins de bois. Quelle méthode réduit le mieux la friction, et pourquoi ?",
+      "instruction": "Écris la méthode (1 ou 2) et le concept de physique qui la justifie (Friction statique vs. roulante).",
+      "leconStrategique": "Les leaders cherchent toujours à réduire la résistance (la friction) dans un système pour atteindre leurs objectifs plus facilement.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Identifier la Résistance",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié que la friction est la force qui s'oppose au mouvement et qui gaspille de l'énergie (Effort)."
+        },
+        "etape2": {
+          "titre": "2. La Solution de Roulement",
+          "type_etape": "texte_guide",
+          "instruction": "Les rondins transforment la friction de glissement (statique) en friction de roulement, qui est beaucoup plus faible. Les leaders trouvent des systèmes qui roulent, au lieu de les pousser de force."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: Optimisation de Charge",
+      "question": "Tu dois transporter des objets de poids différent. Comment les charges lourdes et légères doivent-elles être empilées pour maximiser la sécurité et la stabilité du véhicule ?",
+      "options": ["Les objets lourds au-dessus des légers.", "Les objets lourds au fond, centrés.", "L'ordre n'a pas d'importance."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Les charges lourdes au fond et centrées minimisent le centre de gravité, augmentant la stabilité. C'est essentiel pour le transport.",
+      "feedbackIncorrect": "Empiler des objets lourds sur des objets légers crée de l'instabilité et un risque de basculement.",
+      "leconStrategique": "Chaque décision logistique doit servir la sécurité et la stabilité en premier. L'optimisation passe par la prudence.",
+      "referenceCroisee": "M8"
     }
   },
   "m4": {
     "defi1": {
-        "titre": "Quiz: Le Mystère des Voisins",
-        "question": "Alice, Ben et Claire ont des chats rouges, bleus et verts. Ben n'a pas le bleu. Alice n'a ni le rouge ni le bleu. Quelle est la couleur du chat de Claire ?",
-        "options": ["Bleu", "Rouge", "Vert"],
-        "bonneReponseIndex": 0,
-        "feedbackCorrect": "Par déduction : Alice (Vert), Ben (Rouge), donc Claire (Bleu).",
-        "leconStrategique": "Le leader élimine les possibilités avant de prendre une décision. La déduction est un chemin vers la vérité.",
-        "referenceCroisee": "M2"
+      "titre": "Quiz: Le Mystère des Voisins",
+      "question": "Alice, Ben et Claire ont des chats rouges, bleus et verts. Ben n'a pas le bleu. Alice n'a ni le rouge ni le bleu. Quelle est la couleur du chat de Claire ?",
+      "options": ["Bleu", "Rouge", "Vert"],
+      "bonneReponseIndex": 0,
+      "feedbackCorrect": "Par déduction : Alice (Vert), Ben (Rouge), donc Claire (Bleu).",
+      "leconStrategique": "Le leader élimine les possibilités avant de prendre une décision. La déduction est un chemin vers la vérité.",
+      "referenceCroisee": "M2"
     },
     "defi2": {
-        "titre": "Défi: La Séquence des Tâches",
-        "scenario": "La séquence de fabrication d'un jouet est : A=Coupe, B=Peinture, C=Assemblage, D=Séchage. Mais l'ordre est (C, D, A, B). Explique pourquoi cet ordre est inefficace et propose un meilleur ordre.",
-        "instruction": "Écris la séquence des tâches (lettres) que tu vas choisir pour une efficacité maximale (ex: A, B, C, D).",
-        "leconStrategique": "L'ordre fait partie de la logique. La logique s'assure que chaque étape prépare correctement la suivante.",
-        "referenceCroisee": "M3",
-        "briefing": {
-            "etape1": {
-                "titre": "1. Identifier les Dépendances",
-                "type_etape": "validation_case",
-                "instruction": "J'ai identifié que 'Peinture' doit précéder 'Séchage' et que 'Coupe' doit être fait en premier pour l'efficacité."
-            },
-            "etape2": {
-                "titre": "2. Construire la Chaîne Logique",
-                "type_etape": "texte_guide",
-                "instruction": "Une chaîne logique ne peut pas commencer par l'Assemblage (C) si la Coupe (A) n'est pas faite. Trouve l'ordre où chaque étape est un prérequis pour la suivante."
-            }
+      "titre": "Défi: La Séquence des Tâches",
+      "scenario": "La séquence de fabrication d'un jouet est : A=Coupe, B=Peinture, C=Assemblage, D=Séchage. Mais l'ordre est (C, D, A, B). Explique pourquoi cet ordre est inefficace et propose un meilleur ordre.",
+      "instruction": "Écris la séquence des tâches (lettres) que tu vas choisir pour une efficacité maximale (ex: A, B, C, D).",
+      "leconStrategique": "L'ordre fait partie de la logique. La logique s'assure que chaque étape prépare correctement la suivante.",
+      "referenceCroisee": "M3",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Identifier les Dépendances",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié que 'Peinture' doit précéder 'Séchage' et que 'Coupe' doit être fait en premier pour l'efficacité."
+        },
+        "etape2": {
+          "titre": "2. Construire la Chaîne Logique",
+          "type_etape": "texte_guide",
+          "instruction": "Une chaîne logique ne peut pas commencer par l'Assemblage (C) si la Coupe (A) n'est pas faite. Trouve l'ordre où chaque étape est un prérequis pour la suivante."
         }
+      }
+    },
+    "defi3": {
+      "titre": "Quiz: Le Schéma Manquant",
+      "question": "Quel est le prochain symbole dans cette séquence: Cercle, Carré, Triangle, Cercle, Carré, ... ?",
+      "options": ["Cercle", "Carré", "Triangle"],
+      "bonneReponseIndex": 2,
+      "feedbackCorrect": "C'est une séquence de 3. Vous avez trouvé le patron!",
+      "leconStrategique": "Identifier des patrons vous permet de prévoir l'avenir et de gagner du temps. La prévision est la première qualité du leader.",
+      "referenceCroisee": "M10"
+    },
+    "defi4": {
+      "titre": "Défi: La Règle des Variables",
+      "scenario": "Une machine de tri doit attribuer un code (X ou Y) à un objet. Règle 1: Si l'objet est rouge OU lourd, il reçoit X. Règle 2: S'il est vert ET léger, il reçoit Y. Un objet est rouge et léger. Quel code reçoit-il et pourquoi?",
+      "instruction": "Écris le code (X ou Y) et la règle qui a primé.",
+      "leconStrategique": "Le leader prend des décisions sous des règles multiples. Savoir quelle règle prime (OU vs ET) est essentiel pour éviter les erreurs logiques.",
+      "referenceCroisee": "M5",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Priorité des Opérateurs Logiques",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris que la Règle 1 (OU) autorise une seule condition (rouge ou lourd) pour X, tandis que la Règle 2 (ET) exige deux conditions simultanément (vert et léger)."
+        }
+      }
     }
   },
   "m5": {
     "defi1": {
-        "titre": "Défi: Le Pitch de l'Inventeur",
-        "scenario": "Tu as inventé un objet révolutionnaire (ex: des chaussures volantes). Comment convaincrais-tu un investisseur de te donner de l'argent en 3 phrases ? (Focus : Problème, Solution, Valeur).",
-        "instruction": "Écris ton pitch. La clarté et l'impact sont évalués.",
-        "leconStrategique": "La clarté est la force d'un leader. Si tu ne peux pas expliquer ton idée simplement, elle sera ignorée.",
-        "referenceCroisee": "M7",
-        "briefing": {
-            "etape1": {
-                "titre": "1. Analyser l'Auditoire (Leur Besoin)",
-                "type_etape": "validation_case",
-                "instruction": "J'ai identifié que l'investisseur veut savoir s'il va gagner de l'argent. Mon pitch doit être rapide et excitant, et non technique."
-            },
-            "etape2": {
-                "titre": "2. La Méthode A-S-V (Appel - Solution - Valeur)",
-                "type_etape": "texte_guide",
-                "instruction": "Un bon pitch suit trois étapes : 1. L'Appel (le problème urgent). 2. La Solution (ton invention). 3. La Valeur (pourquoi c'est génial pour eux). Concentre-toi sur ces 3 idées."
-            }
+      "titre": "Défi: Le Pitch de l'Inventeur",
+      "scenario": "Tu as inventé un objet révolutionnaire (ex: des chaussures volantes). Comment convaincrais-tu un investisseur de te donner de l'argent en 3 phrases ? (Focus : Problème, Solution, Valeur).",
+      "instruction": "Écris ton pitch. La clarté et l'impact sont évalués.",
+      "leconStrategique": "La clarté est la force d'un leader. Si tu ne peux pas expliquer ton idée simplement, elle sera ignorée.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Analyser l'Auditoire (Leur Besoin)",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié que l'investisseur veut savoir s'il va gagner de l'argent. Mon pitch doit être rapide et excitant, et non technique."
+        },
+        "etape2": {
+          "titre": "2. La Méthode A-S-V (Appel - Solution - Valeur)",
+          "type_etape": "texte_guide",
+          "instruction": "Un bon pitch suit trois étapes : 1. L'Appel (le problème urgent). 2. La Solution (ton invention). 3. La Valeur (pourquoi c'est génial pour eux). Concentre-toi sur ces 3 idées."
         }
+      }
     },
     "defi2": {
-        "titre": "Quiz: Négociation Gagnant-Gagnant",
-        "question": "Tu négocies l'achat de matériel. Ton fournisseur veut 100€, tu veux payer 80€. Quelle est la meilleure approche pour réussir la négociation et maintenir la relation ?",
-        "options": ["Refuser poliment et trouver un autre fournisseur.", "Proposer 90€ et demander un petit service en échange.", "Dire '80€ ou rien' pour être ferme."],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "Parfait. Proposer un compromis et demander un échange crée une solution 'gagnant-gagnant'.",
-        "feedbackIncorrect": "Refuser ou être trop ferme met fin à la négociation. Le but est de trouver un point d'entente.",
-        "leconStrategique": "Une bonne négociation n'est pas de battre l'autre, mais de s'assurer que les deux parties obtiennent plus de valeur. Cela crée de futures collaborations.",
-        "referenceCroisee": "M9"
+      "titre": "Quiz: Négociation Gagnant-Gagnant",
+      "question": "Tu négocies l'achat de matériel. Ton fournisseur veut 100€, tu veux payer 80€. Quelle est la meilleure approche pour réussir la négociation et maintenir la relation ?",
+      "options": ["Refuser poliment et trouver un autre fournisseur.", "Proposer 90€ et demander un petit service en échange.", "Dire '80€ ou rien' pour être ferme."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Parfait. Proposer un compromis et demander un échange crée une solution 'gagnant-gagnant'.",
+      "feedbackIncorrect": "Refuser ou être trop ferme met fin à la négociation. Le but est de trouver un point d'entente.",
+      "leconStrategique": "Une bonne négociation n'est pas de battre l'autre, mais de s'assurer que les deux parties obtiennent plus de valeur. Cela crée de futures collaborations.",
+      "referenceCroisee": "M9"
+    },
+    "defi3": {
+      "titre": "Défi: Écoute Active",
+      "scenario": "Ton ami est fâché parce que tu as cassé son jouet. Il crie 'Je te déteste !'. Au lieu de te défendre, que réponds-tu pour montrer que tu as compris son émotion ?",
+      "instruction": "Écris une phrase qui reconnaît l'émotion de l'ami sans te justifier (Ex: 'Je comprends que tu sois en colère...').",
+      "leconStrategique": "L'écoute active désamorce les conflits. Le leader écoute pour comprendre, pas pour répondre.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Le Miroir de l'Émotion",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié l'émotion primaire (colère, tristesse, peur). Je ne réponds pas aux mots, mais à l'émotion."
+        },
+        "etape2": {
+          "titre": "2. La Formule : Je vois que...",
+          "type_etape": "texte_guide",
+          "instruction": "Utilise la formule : 'Je vois que tu es X (très en colère/déçu) à cause de Y (ce que j'ai fait)'. Cela montre que tu prends la responsabilité et que tu écoutes."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: Le Langage Positif",
+      "question": "Tu veux que ton équipe range ses outils. Quelle phrase est la plus efficace pour obtenir un résultat positif ?",
+      "options": ["Arrêtez de laisser traîner vos outils !", "Si vous rangez vos outils, je serai content.", "Ranger les outils permet de travailler plus vite demain."],
+      "bonneReponseIndex": 2,
+      "feedbackCorrect": "La réponse 3 donne un bénéfice direct et futur à l'équipe. C'est du leadership positif.",
+      "leconStrategique": "Le langage positif motive. Le leader ne dit pas 'Ne faites pas', mais 'Faites cela pour obtenir ceci'.",
+      "referenceCroisee": "M10"
     }
   },
   "m6": {
     "defi1": {
-        "titre": "Défi: L'Échec du Pont",
-        "scenario": "Tu as construit un pont pour un modèle réduit, mais il s'effondre. Tu peux recommencer ou abandonner et passer au module suivant. Que fais-tu ?",
-        "instruction": "Écris en une phrase la LEÇON que tu tires de l'effondrement et l'UNIQUE modification que tu ferais pour améliorer la prochaine tentative.",
-        "leconStrategique": "L'échec est une source d'information précieuse. Le leader n'abandonne jamais; il analyse et s'améliore.",
-        "referenceCroisee": "M3",
-        "briefing": {
-            "etape1": {
-                "titre": "1. Analyser l'Erreur, pas l'Émotion",
-                "type_etape": "validation_case",
-                "instruction": "J'ai mis de côté ma frustration. Je me concentre sur la cause : instabilité, poids ou support."
-            },
-            "etape2": {
-                "titre": "2. Isoler la Variable Critique",
-                "type_etape": "champ_texte",
-                "instruction": "Sur les trois causes possibles (stabilité, poids, support), quelle est la SEULE que je vais changer pour le prochain essai ?"
-            }
+      "titre": "Défi: L'Échec du Pont",
+      "scenario": "Tu as construit un pont pour un modèle réduit, mais il s'effondre. Tu peux recommencer ou abandonner et passer au module suivant. Que fais-tu ?",
+      "instruction": "Écris en une phrase la LEÇON que tu tires de l'effondrement et l'UNIQUE modification que tu ferais pour améliorer la prochaine tentative.",
+      "leconStrategique": "L'échec est une source d'information précieuse. Le leader n'abandonne jamais; il analyse et s'améliore.",
+      "referenceCroisee": "M3",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Analyser l'Erreur, pas l'Émotion",
+          "type_etape": "validation_case",
+          "instruction": "J'ai mis de côté ma frustration. Je me concentre sur la cause : instabilité, poids ou support."
+        },
+        "etape2": {
+          "titre": "2. Isoler la Variable Critique",
+          "type_etape": "champ_texte",
+          "instruction": "Sur les causes possibles (stabilité, poids, support), quelle est la SEULE que je vais changer pour le prochain essai ?"
         }
+      }
     },
     "defi2": {
-        "titre": "Quiz: La Procrastination",
-        "question": "Tu dois commencer un grand projet qui te fait peur. Quelle est la meilleure approche pour surmonter l'inertie ?",
-        "options": ["Attendre l'inspiration de dernière minute.", "Commencer par la plus petite tâche pour démarrer le mouvement.", "Demander à quelqu'un d'autre de faire le début."],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "L'action crée l'élan. Un petit pas facile brise le mur de la peur.",
-        "feedbackIncorrect": "La procrastination augmente la peur. Le leader passe à l'action.",
-        "leconStrategique": "Le courage n'est pas l'absence de peur, mais la décision de passer à l'action malgré elle. La résilience commence par le premier pas.",
-        "referenceCroisee": "M2"
+      "titre": "Quiz: La Procrastination",
+      "question": "Tu dois commencer un grand projet qui te fait peur. Quelle est la meilleure approche pour surmonter l'inertie ?",
+      "options": ["Attendre l'inspiration de dernière minute.", "Commencer par la plus petite tâche pour démarrer le mouvement.", "Demander à quelqu'un d'autre de faire le début."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "L'action crée l'élan. Un petit pas facile brise le mur de la peur.",
+      "leconStrategique": "Le courage n'est pas l'absence de peur, mais la décision de passer à l'action malgré elle. La résilience commence par le premier pas.",
+      "referenceCroisee": "M2"
+    },
+    "defi3": {
+      "titre": "Défi: Le Bouclier Mental",
+      "scenario": "Tu as fait de ton mieux dans une tâche, mais un ami te critique fortement devant d'autres personnes. Comment réagis-tu ?",
+      "instruction": "Écris la phrase la plus calme et factuelle que tu peux utiliser pour te défendre sans attaquer l'autre.",
+      "leconStrategique": "Le leader garde le contrôle de ses émotions. Répondre avec calme est la vraie preuve de force.",
+      "referenceCroisee": "M5",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Identifier l'Attaque",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié que l'attaque est verbale et non physique. Je n'ai pas besoin de riposter avec le même niveau d'agressivité."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: La Leçon de l'Erreur",
+      "question": "Après un échec, la chose la plus importante à faire est :",
+      "options": ["Blâmer la situation ou les autres.", "Demander de l'aide et analyser les données.", "Passer rapidement à autre chose sans y penser."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "L'erreur est une donnée. L'analyse des données avec l'aide d'un mentor est la seule voie vers l'amélioration.",
+      "leconStrategique": "Les données sont plus importantes que l'opinion. Le leader est humble face aux faits.",
+      "referenceCroisee": "M4"
     }
   },
   "m7": {
     "defi1": {
-        "titre": "Défi: L'Idée en Chaîne",
-        "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver une seule idée parfaite, génère 3 idées, même farfelues, en 3 minutes.",
-        "instruction": "Écris tes trois idées (1-2-3) en les laissant simples et sans jugement.",
-        "leconStrategique": "La quantité d'idées précède la qualité. Un leader explore beaucoup d'options avant de choisir la meilleure.",
-        "referenceCroisee": "M1",
-        "briefing": {
-            "etape1": {
-                "titre": "1. Pas de Critique (La Règle d'Or)",
-                "type_etape": "validation_case",
-                "instruction": "J'ai compris que je ne dois juger aucune idée. Le but est la quantité brute et la rapidité."
-            },
-            "etape2": {
-                "titre": "2. La Contrainte Stimulante",
-                "type_etape": "texte_guide",
-                "instruction": "Ajouter une contrainte aide : 'Comment ferais-tu si tu n'avais que 10 briques ?' ou 'Si tu étais un chat ?'. Les contraintes forcent le cerveau à devenir créatif."
-            }
+      "titre": "Défi: L'Idée en Chaîne",
+      "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver une seule idée parfaite, génère 3 idées, même farfelues, en 3 minutes.",
+      "instruction": "Écris tes trois idées (1-2-3) en les laissant simples et sans jugement.",
+      "leconStrategique": "La quantité d'idées précède la qualité. Un leader explore beaucoup d'options avant de choisir la meilleure.",
+      "referenceCroisee": "M1",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pas de Critique (La Règle d'Or)",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris que je ne dois juger aucune idée. Le but est la quantité brute et la rapidité."
         }
+      }
     },
     "defi2": {
-        "titre": "Quiz: Pensée Latérale",
-        "question": "Un homme trouve une pièce d'or dans un récipient de café plein. Comment la sort-il sans renverser le café ni briser le récipient ?",
-        "options": ["Il vide d'abord le café.", "Il utilise une pince à épiler.", "Il fait fondre le récipient."],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "Il faut trouver une solution non évidente, en contournant le problème. Une pince à épiler est une 'pensée latérale'.",
-        "feedbackIncorrect": "Vider ou briser le récipient va à l'encontre des règles du défi. La pensée latérale résout le problème sans casser les règles.",
-        "leconStrategique": "La pensée latérale cherche des solutions qui ne sont pas sur le chemin évident. Le leader trouve des solutions là où les autres ne regardent pas.",
-        "referenceCroisee": "M4"
+      "titre": "Quiz: Pensée Latérale",
+      "question": "Un homme trouve une pièce d'or dans un récipient de café plein. Comment la sort-il sans renverser le café ni briser le récipient ?",
+      "options": ["Il vide d'abord le café.", "Il utilise une pince à épiler.", "Il fait fondre le récipient."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Il faut trouver une solution non évidente, en contournant le problème. Une pince à épiler est une 'pensée latérale'.",
+      "leconStrategique": "La pensée latérale cherche des solutions qui ne sont pas sur le chemin évident. Le leader trouve des solutions là où les autres ne regardent pas.",
+      "referenceCroisee": "M4"
+    },
+    "defi3": {
+      "titre": "Défi: La Contrainte Créative",
+      "scenario": "Tu dois construire une maison qui flotte, mais tu n'as le droit d'utiliser que des objets recyclés et du papier. Quels deux matériaux choisis-tu ?",
+      "instruction": "Écris les deux matériaux choisis et la raison de leur utilisation.",
+      "leconStrategique": "Les contraintes (rareté des ressources) sont le moteur de l'innovation. La créativité est la réponse à la rareté.",
+      "referenceCroisee": "M8",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Analyser les Limites",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris que la contrainte est 'flottabilité' et 'recyclé/papier'. Je dois choisir des matériaux qui répondent aux deux."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: La Diversité des Idées",
+      "question": "Pour résoudre un problème complexe, quelle est la meilleure source d'idées ?",
+      "options": ["Demander l'avis d'une seule personne experte.", "Demander l'avis de plusieurs personnes avec des expériences différentes.", "Chercher une solution dans un livre sans parler à personne."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "La diversité crée l'innovation. Différents points de vue apportent des solutions auxquelles vous n'auriez pas pensé seul.",
+      "leconStrategique": "Le leader cherche activement des perspectives différentes. L'intelligence collective est toujours supérieure à l'intelligence individuelle.",
+      "referenceCroisee": "M5"
     }
   },
   "m8": {
     "defi1": {
-        "titre": "Défi: L'Audit du Sac à Dos",
-        "scenario": "Tu dois partir en excursion d'une semaine et tu n'as le droit qu'à 5 objets essentiels dans ton sac. Fais l'audit des ressources : quels 5 objets maximisent tes chances de succès ?",
-        "instruction": "Écris la liste de tes 5 objets. Justifie ton choix n°1.",
-        "leconStrategique": "La rareté force l'excellence. Quand les ressources sont limitées, l'analyse de leur valeur est vitale.",
-        "referenceCroisee": "M1",
-        "briefing": {
-            "etape1": {
-                "titre": "1. La Règle 'Survie d'abord'",
-                "type_etape": "validation_case",
-                "instruction": "J'ai identifié les besoins de base (Eau, Nourriture, Lumière/Chaleur, Sécurité). Mes 5 objets doivent couvrir ces besoins."
-            },
-            "etape2": {
-                "titre": "2. Évaluer la Polyvalence",
-                "type_etape": "texte_guide",
-                "instruction": "Chaque objet doit avoir au moins deux usages. Un couteau sert à couper et à se défendre. Une bâche sert de toit et de sac. La polyvalence est la clé d'un audit de ressource réussi."
-            }
+      "titre": "Défi: L'Audit du Sac à Dos",
+      "scenario": "Tu dois partir en excursion d'une semaine et tu n'as le droit qu'à 5 objets essentiels dans ton sac. Fais l'audit des ressources : quels 5 objets maximisent tes chances de succès ?",
+      "instruction": "Écris la liste de tes 5 objets. Justifie ton choix n°1.",
+      "leconStrategique": "La rareté force l'excellence. Quand les ressources sont limitées, l'analyse de leur valeur est vitale.",
+      "referenceCroisee": "M1",
+      "briefing": {
+        "etape1": {
+          "titre": "1. La Règle 'Survie d'abord'",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié les besoins de base (Eau, Nourriture, Lumière/Chaleur, Sécurité). Mes 5 objets doivent couvrir ces besoins."
         }
+      }
     },
     "defi2": {
-        "titre": "Quiz: Coût d'Opportunité",
-        "question": "Tu as 10€ et tu peux acheter un livre pour apprendre ou un jeu vidéo pour jouer. Si tu achètes le jeu, quel est le coût d'opportunité ?",
-        "options": ["Le prix du jeu vidéo.", "La connaissance que tu aurais pu acquérir avec le livre.", "Le temps que tu vas passer à jouer."],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
-        "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
-        "referenceCroisee": "M9"
+      "titre": "Quiz: Coût d'Opportunité",
+      "question": "Tu as 10€ et tu peux acheter un livre pour apprendre ou un jeu vidéo pour jouer. Si tu achètes le jeu, quel est le coût d'opportunité ?",
+      "options": ["Le prix du jeu vidéo.", "La connaissance que tu aurais pu acquérir avec le livre.", "Le temps que tu vas passer à jouer."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
+      "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
+      "referenceCroisee": "M9"
+    },
+    "defi3": {
+      "titre": "Défi: Le Budget du Festival",
+      "scenario": "Tu organises un festival de 3 jours qui attend 15 000 personnes. Le coût total par personne est estimé à 5€ par jour. Quel est le budget total minimum à prévoir pour les 3 jours ?",
+      "instruction": "Écris le montant total en chiffres.",
+      "leconStrategique": "La maîtrise des grands nombres permet la vision à long terme. Estimer un budget total évite les surprises et assure la réussite du projet.",
+      "referenceCroisee": "M10",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Décomposer l'Échelle",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié le calcul par personne (5€ x 3 jours) et le nombre total de personnes (15 000). J'ai un plan d'action: Coût x Nombre de Jours x Nombre de Personnes."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: Le Principe de Polyvalence",
+      "question": "Tu peux prendre un outil qui fait une seule chose parfaitement, ou un outil qui fait 3 choses bien. Quand tes ressources sont limitées (ton sac à dos est petit), quel outil choisis-tu ?",
+      "options": ["L'outil qui fait une seule chose parfaitement.", "L'outil qui fait 3 choses bien.", "L'ordre n'a pas d'importance."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "La polyvalence maximise l'efficacité dans les environnements à ressources limitées. C'est le principe de l'audit.",
+      "leconStrategique": "Le leader maximise la polyvalence de ses ressources et de ses équipes. Savoir faire plusieurs choses est une sécurité.",
+      "referenceCroisee": "M7"
+    }
+  },
+  "m9": {
+    "defi1": {
+      "titre": "Défi: Le Test d'Intégrité",
+      "scenario": "Tu trouves un porte-monnaie avec de l'argent et la carte d'identité du propriétaire. Que fais-tu, même si tu sais que personne ne te regarde ?",
+      "instruction": "Décris ton action en une phrase et explique pourquoi c'est la meilleure chose à faire pour ton propre code éthique.",
+      "leconStrategique": "L'intégrité est ce que tu fais quand personne ne regarde. Un leader est digne de confiance, même si c'est difficile.",
+      "referenceCroisee": "M5",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Le Coût Personnel vs. La Valeur Éthique",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié que l'argent est une récompense à court terme, mais la confiance et l'honnêteté sont des valeurs à long terme."
+        },
+        "etape2": {
+          "titre": "2. Rendre ce qui est Dû",
+          "type_etape": "texte_guide",
+          "instruction": "Décris les étapes simples pour rendre le porte-monnaie. L'action doit être pratique et honnête."
+        }
+      }
+    },
+    "defi2": {
+      "titre": "Quiz: Impact Positif",
+      "question": "Tu peux passer ton après-midi à nettoyer ta chambre (Impact personnel) ou aider un voisin âgé à porter ses courses (Impact communautaire). Quel choix a un impact positif plus grand ?",
+      "options": ["Nettoyer ma chambre.", "Aider le voisin.", "Faire les deux rapidement."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Aider le voisin a un impact positif sur une autre personne et sur la communauté. Le leader crée une valeur au-delà de soi.",
+      "leconStrategique": "L'impact durable se mesure par la façon dont tu as touché la vie des autres. Le leader utilise son temps pour servir une mission plus grande.",
+      "referenceCroisee": "M11"
+    },
+    "defi3": {
+      "titre": "Défi: La Règle des Échanges",
+      "scenario": "Tu dois donner 10 de tes jouets à un ami qui t'en donne 12. Vous échangez, mais tu as l'impression d'avoir 'perdu' le meilleur jouet. Comment équilibres-tu l'échange dans ta tête ?",
+      "instruction": "Écris en une phrase l'élément que tu as 'gagné' (autre que les deux jouets supplémentaires) pour équilibrer l'échange.",
+      "leconStrategique": "La vraie valeur d'un échange n'est pas seulement le produit, mais la relation. Le leader cherche toujours la valeur ajoutée invisible.",
+      "referenceCroisee": "M5",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Valeur Matérielle vs. Valeur Relationnelle",
+          "type_etape": "validation_case",
+          "instruction": "J'ai identifié que les jouets sont la valeur matérielle. La confiance et l'amitié sont la valeur relationnelle. Je me concentre sur la relation."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: Le Budget de l'Équipe",
+      "question": "Ton équipe a 20€ pour acheter de la peinture et des pinceaux. Les pinceaux sont urgents. La peinture est importante. Que dois-tu acheter en premier si tu ne peux pas tout acheter ?",
+      "options": ["La peinture (important).", "Les pinceaux (urgent).", "Rien, économiser."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Les pinceaux (urgent) sont nécessaires pour commencer. Le leader priorise l'action immédiate qui permet d'avancer.",
+      "leconStrategique": "L'allocation des ressources est une hiérarchie. L'urgent permet de débloquer le processus.",
+      "referenceCroisee": "M2"
+    }
+  },
+  "m10": {
+    "defi1": {
+      "titre": "Défi: La Boussole du Futur",
+      "scenario": "Définis un objectif que tu veux atteindre d'ici la fin de l'année scolaire (ex: lire 10 livres, apprendre 5 mots de chinois).",
+      "instruction": "Écris ton objectif et pourquoi il est important pour TA croissance personnelle.",
+      "leconStrategique": "Un objectif sans plan n'est qu'un souhait. Un leader a une vision claire du futur qu'il veut créer.",
+      "referenceCroisee": "M2",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Objectif SMART (Spécifique, Mesurable...)",
+          "type_etape": "validation_case",
+          "instruction": "J'ai vérifié que mon objectif est spécifique et que je peux mesurer mes progrès (ex: 10/10 livres lus)."
+        }
+      }
+    },
+    "defi2": {
+      "titre": "Quiz: Le Premier Petit Pas",
+      "question": "Ton grand objectif est d'apprendre à coder un jeu. Quel est le premier petit pas le plus efficace à faire AUJOURD'HUI ?",
+      "options": ["Acheter un livre de codage avancé de 500 pages.", "Regarder une vidéo d'introduction de 5 minutes sur 'Qu'est-ce que le codage'.", "Attendre d'avoir 5 heures libres pour commencer."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Le plus petit pas crée l'élan. Un petit succès lance le voyage.",
+      "leconStrategique": "Les leaders décomposent les problèmes complexes en actions simples. La plus grande vision commence par la plus petite exécution.",
+      "referenceCroisee": "M6"
+    },
+    "defi3": {
+      "titre": "Défi: La Règle des Conséquences",
+      "scenario": "Tu dois choisir entre tricher pour gagner un jeu (victoire immédiate) ou perdre avec honnêteté (intégrité). Quel choix a les meilleures conséquences à long terme ?",
+      "instruction": "Écris ton choix et la conséquence principale sur ta réputation (ton leadership).",
+      "leconStrategique": "La réputation d'un leader est son plus grand atout. Une victoire rapide ne vaut jamais la perte de la confiance.",
+      "referenceCroisee": "M9",
+      "briefing": {
+        "etape1": {
+          "titre": "1. L'Échelle de Temps",
+          "type_etape": "validation_case",
+          "instruction": "J'ai cessé de penser à la minute suivante. Je pense à la conséquence sur un an. L'intégrité est une stratégie à long terme."
+        }
+      }
+    },
+    "defi4": {
+      "titre": "Quiz: L'Exemple Personnel",
+      "question": "Le meilleur moyen d'enseigner une valeur à ton équipe (ex: la patience) est :",
+      "options": ["De leur dire d'être patients.", "De leur lire une histoire sur la patience.", "D'être toi-même patient en faisant une tâche difficile."],
+      "bonneReponseIndex": 2,
+      "feedbackCorrect": "L'exemple est le langage universel du leadership. Les actions inspirent plus que les mots.",
+      "leconStrategique": "Le leader est un miroir. Les autres imitent ce qu'ils voient, pas ce qu'ils entendent.",
+      "referenceCroisee": "M5"
+    }
+  },
+  "m11": {
+    "defi1": {
+      "titre": "Défi: Le Conseil du Maître",
+      "scenario": "Un nouvel Explorateur commence le programme. Il a peur d'échouer. Quel conseil de leadership le plus important lui donnes-tu en une phrase ?",
+      "instruction": "Écris ton conseil. Il doit être inspirant et basé sur ton expérience.",
+      "leconStrategique": "Le vrai leadership est la transmission. Ton expérience a de la valeur seulement si elle sert à aider les autres sur leur propre chemin.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Identifier la Peur",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris que la peur est le principal obstacle. Mon conseil doit parler de courage, d'action et d'apprentissage (et non de perfection)."
+        }
+      }
+    },
+    "defi2": {
+      "titre": "Quiz: L'Exemple du Leader",
+      "question": "Ton équipe est démotivée par une tâche difficile. Quelle action a le plus grand pouvoir d'inspiration ?",
+      "options": ["Dire 'Vous devez le faire, c'est important'.", "Faire la tâche la plus difficile toi-même en premier pour montrer l'exemple.", "Offrir une récompense si la tâche est finie."],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Le leader montre l'exemple. L'action inspire plus que les mots ou les récompenses.",
+      "leconStrategique": "Le leadership est un miroir. Les autres te suivront quand ils verront ton engagement inébranlable dans la difficulté.",
+      "referenceCroisee": "M9"
     }
   },
   "mentor": {
@@ -279,6 +631,48 @@
     "info_no_guide": "Pas de guide de discussion disponible pour ce défi.",
     "discussion_titre": "Guide de Discussion Parent/Enfant",
     "discussion_intro": "Utilisez ces questions pour engager la conversation.",
+    "discussion": {
+      "m1_defi1": [
+        "Question 1: Comment peux-tu utiliser la division pour organiser tes devoirs ?",
+        "Question 2: Quelle est la solution la plus 'juste' pour gérer les restes ?",
+        "Question 3: Raconte-moi une leçon apprise cette semaine."
+      ],
+      "m6_defi1": [
+        "Question 1: Quelle émotion as-tu ressentie quand le pont s'est écroulé dans le scénario ? (Nomme l'émotion).",
+        "Question 2: Quelle est la différence entre abandonner et analyser une erreur ? Laquelle est la solution du leader ?",
+        "Question 3: Peux-tu me raconter une petite erreur que tu as faite cette semaine et me dire la 'Leçon Apprise' que tu en as tirée ?"
+      ],
+      "m9_defi1": [
+        "Question 1: Si tu avais gardé l'argent dans le défi du porte-monnaie (M9/D1), comment cela aurait-il affecté ta confiance en toi à long terme ?",
+        "Question 2: Qu'est-ce qui est le plus précieux : l'argent ou la réputation d'être honnête ? Pourquoi ?",
+        "Question 3: Peux-tu me donner un exemple de 'Règle d'Or' (traiter les autres comme tu voudrais être traité) que tu as appliquée cette semaine ?"
+      ],
+      "m2_defi1": [
+        "Question 1: Comment priorises-tu naturellement tes tâches (par plaisir, par urgence, ou par importance) ? Y a-t-il une différence ?",
+        "Question 2: Peux-tu me donner un exemple d'une tâche 'Non Urgent / Important' que tu dois faire cette semaine, et comment tu peux la planifier ?",
+        "Question 3: À long terme, pourquoi est-ce que faire les tâches importantes avant les urgentes t'aidera à devenir un meilleur leader ?"
+      ],
+      "m3_defi1": [
+        "Question 1: Quelle partie d'un projet te semble être la 'fondation' ou la 'base' ? Qu'est-ce qui doit être solide en premier ?",
+        "Question 2: Dans ta vie (école, sport, amitié), où as-tu besoin d'un meilleur 'Centre de Gravité' (plus de stabilité, moins de précipitation) ?",
+        "Question 3: Discutons d'un moment où tu t'es senti instable ou déséquilibré. Qu'est-ce qui aurait pu le rendre plus solide ?"
+      ],
+      "m5_defi1": [
+        "Question 1: Si tu devais 'pitcher' (vendre) une idée folle à l'école, comment la rendrais-tu simple et passionnante en 3 phrases ?",
+        "Question 2: Qu'est-ce qui te rend le plus fier dans ton idée ? Les investisseurs achètent la passion, pas seulement le plan.",
+        "Question 3: Quel est le 'problème' que ton idée résout ? (Le leader se concentre toujours sur le problème avant la solution)."
+      ],
+      "m10_defi1": [
+        "Question 1: Quel est l'objectif que tu as choisi pour la fin de l'année scolaire ? Est-il amusant ou difficile ?",
+        "Question 2: Si nous devions décomposer cet objectif en 4 étapes faciles, quelles seraient-elles ? (Concentrons-nous sur les étapes, pas le résultat final).",
+        "Question 3: Pourquoi cet objectif est-il important pour toi, et non seulement pour moi ou l'école ? (Trouver la motivation intrinsèque)."
+      ],
+      "m11_defi1": [
+        "Question 1: Qu'est-ce qui a été le plus difficile pour toi en tant qu'Explorateur ? Ton conseil doit aider à surmonter cet obstacle.",
+        "Question 2: Penses-tu qu'il est plus important d'être un bon leader ou d'aider les autres à devenir de bons leaders ? Explique ton choix.",
+        "Question 3: Qu'est-ce que l''Héritage' signifie pour toi ? Qu'aimerais-tu laisser derrière toi pour les autres ?"
+      ]
+    },
     "no_guide_text": "Pas de guide de discussion",
     "signup_title": "Créer un Compte Mentor",
     "name_placeholder": "Votre Nom",
@@ -301,13 +695,6 @@
     "explorer_login_id": "ID de connexion",
     "recent_progress": "Progrès récents",
     "pin_placeholder": "Code PIN (4 chiffres)",
-    "discussion": {
-      "m1_defi1": [
-        "Question 1: Comment peux-tu utiliser la division pour organiser tes devoirs ?",
-        "Question 2: Quelle est la solution la plus 'juste' pour gérer les restes ?",
-        "Question 3: Raconte-moi une leçon apprise cette semaine."
-      ]
-    },
     "email_placeholder": "Email du Mentor",
     "password_placeholder": "Mot de passe"
   },
