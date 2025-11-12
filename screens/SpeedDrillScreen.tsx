@@ -3,9 +3,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, TextInput, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { StackScreenProps } from '@react-navigation/native-stack';
+import { LinearGradient } from 'expo-linear-gradient';
+import * as Animatable from 'react-native-animatable';
+import * as Haptics from 'expo-haptics';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import { saveSpeedDrillSession } from '../services/dataService';
+import PremiumTheme from '../config/premiumTheme';
+import CircularTimer from '../components/CircularTimer';
+import ConfettiAnimation from '../components/ConfettiAnimation';
+import Mascot from '../components/Mascot';
+import { getMascotMessageForContext, getMascotMessageForPerformance } from '../utils/mascotMessages';
 
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
@@ -49,7 +57,8 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
     const [startTime, setStartTime] = useState<number | null>(null);
     const [endTime, setEndTime] = useState<number | null>(null);
     const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
-    const [mistakes, setMistakes] = useState<MistakeRecord[]>([]); // NOUVEAU : Enregistrer les erreurs
+    const [mistakes, setMistakes] = useState<MistakeRecord[]>([]); // Enregistrer les erreurs
+    const [showConfetti, setShowConfetti] = useState(false); // NOUVEAU : Confettis
 
     // Générateur de nombres selon la difficulté
     const generateNumber = useCallback((difficulty: DifficultyLevel, operation: OperationType): { min: number; max: number } => {
@@ -200,7 +209,14 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
         setGameState('results');
         setEndTime(endTime);
         
-        // NOUVEAU : Sauvegarder la session dans Supabase
+        // NOUVEAU : Confettis si bon score (80%+)
+        const finalAccuracy = questions.length > 0 ? (correctAnswers / questions.length) * 100 : 0;
+        if (finalAccuracy >= 80) {
+            setShowConfetti(true);
+            setTimeout(() => setShowConfetti(false), 3000);
+        }
+        
+        // Sauvegarder la session dans Supabase
         if (user?.id && startTime) {
             try {
                 const accuracy = questions.length > 0 ? (correctAnswers / questions.length) * 100 : 0;
@@ -238,9 +254,16 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
         if (isCorrect) {
             setCorrectAnswers(correctAnswers + 1);
             setFeedback('correct');
+            // Haptic feedback sur mobile
+            if (Platform.OS !== 'web') {
+                Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+            }
         } else {
             setFeedback('incorrect');
-            // NOUVEAU : Enregistrer l'erreur
+            if (Platform.OS !== 'web') {
+                Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+            }
+            // Enregistrer l'erreur
             setMistakes(prev => [...prev, {
                 question: currentQuestion,
                 userAnswer: userAnswerNum,
@@ -280,10 +303,21 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
 
     // Écran de configuration
     if (gameState === 'setup') {
+        const setupMessage = getMascotMessageForContext('speedDrillStart');
+        
         return (
             <SafeAreaView style={styles.safeArea}>
                 <ScrollView contentContainerStyle={styles.scrollContent}>
                     <View style={styles.container}>
+                        {/* Mascotte pour le Speed Drill */}
+                        <Mascot 
+                            mood={setupMessage.mood}
+                            message={setupMessage.message}
+                            size="medium"
+                            showBubble={true}
+                            animated={true}
+                        />
+                        
                         <Text style={styles.header}>{t('speed_drills.title')}</Text>
                         <Text style={styles.description}>{t('speed_drills.description')}</Text>
 
@@ -328,32 +362,56 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
         );
     }
 
-    // Écran de jeu
+    // Écran de jeu avec timer circulaire et gradients premium
     if (gameState === 'playing') {
         const currentQuestion = questions[currentQuestionIndex];
+        const progress = timeLeft / 60;
         
         return (
             <SafeAreaView style={styles.safeArea}>
+                <ConfettiAnimation active={showConfetti} count={60} duration={2500} />
                 <View style={styles.container}>
-                    <View style={styles.gameHeader}>
-                        <Text style={styles.questionCount}>
-                            {t('speed_drills.question_count', { current: currentQuestionIndex + 1, total: 10 })}
-                        </Text>
-                        <Text style={[styles.timer, timeLeft <= 10 && styles.timerWarning]}>
-                            {t('speed_drills.time_left', { seconds: timeLeft })}
-                        </Text>
-                    </View>
+                    {/* Header avec compteur de questions */}
+                    <Animatable.View animation="fadeInDown" style={styles.gameHeader}>
+                        <View style={styles.questionBadge}>
+                            <Text style={styles.questionBadgeText}>
+                                {currentQuestionIndex + 1} / {questions.length}
+                            </Text>
+                        </View>
+                    </Animatable.View>
 
-                    <View style={styles.questionContainer}>
+                    {/* Timer circulaire au centre */}
+                    <Animatable.View animation="zoomIn" delay={200}>
+                        <CircularTimer
+                            size={140}
+                            progress={progress}
+                            timeLeft={timeLeft}
+                            strokeWidth={10}
+                            showTime
+                        />
+                    </Animatable.View>
+
+                    {/* Question avec animation */}
+                    <Animatable.View 
+                        key={currentQuestionIndex} 
+                        animation="fadeInUp" 
+                        duration={400}
+                        style={styles.questionContainer}
+                    >
                         <Text style={styles.questionText}>
                             {currentQuestion.num1} {getOperationSymbol(currentQuestion.operation)} {currentQuestion.num2} = ?
                         </Text>
-                    </View>
+                    </Animatable.View>
 
+                    {/* Input avec feedback visuel */}
                     <View style={styles.answerContainer}>
                         <Text style={styles.answerLabel}>{t('speed_drills.your_answer')}</Text>
                         <TextInput
-                            style={[styles.answerInput, feedback === 'correct' && styles.answerInputCorrect, feedback === 'incorrect' && styles.answerInputIncorrect]}
+                            style={[
+                                styles.answerInput, 
+                                feedback === 'correct' && styles.answerInputCorrect, 
+                                feedback === 'incorrect' && styles.answerInputIncorrect
+                            ]}
                             value={userAnswer}
                             onChangeText={setUserAnswer}
                             keyboardType="numeric"
@@ -363,22 +421,37 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
                             onSubmitEditing={submitAnswer}
                         />
                         {feedback && (
-                            <Text style={[styles.feedbackText, feedback === 'correct' ? styles.feedbackCorrect : styles.feedbackIncorrect]}>
-                                {t(`speed_drills.${feedback}`)}
-                            </Text>
+                            <Animatable.Text 
+                                animation={feedback === 'correct' ? 'bounceIn' : 'shake'}
+                                style={[styles.feedbackText, feedback === 'correct' ? styles.feedbackCorrect : styles.feedbackIncorrect]}
+                            >
+                                {feedback === 'correct' ? '✅ ' : '❌ '}{t(`speed_drills.${feedback}`)}
+                            </Animatable.Text>
                         )}
                     </View>
 
+                    {/* Bouton de soumission avec gradient */}
                     <TouchableOpacity
                         style={[styles.submitButton, feedback && styles.submitButtonDisabled]}
                         onPress={submitAnswer}
                         disabled={!!feedback}
+                        activeOpacity={0.8}
                     >
-                        <Text style={styles.submitButtonText}>{t('speed_drills.submit_answer')}</Text>
+                        <LinearGradient
+                            colors={feedback ? ['#9CA3AF', '#6B7280'] : PremiumTheme.gradients.primary.colors}
+                            start={PremiumTheme.gradients.primary.start}
+                            end={PremiumTheme.gradients.primary.end}
+                            style={styles.submitButtonGradient}
+                        >
+                            <Text style={styles.submitButtonText}>
+                                {feedback ? t('speed_drills.wait') || 'Patientez...' : t('speed_drills.submit_answer')}
+                            </Text>
+                        </LinearGradient>
                     </TouchableOpacity>
 
+                    {/* Barre de score */}
                     <View style={styles.scoreBar}>
-                        <Text style={styles.scoreText}>✅ {correctAnswers} / {currentQuestionIndex + 1}</Text>
+                        <Text style={styles.scoreText}>✅ {correctAnswers} bonnes réponses</Text>
                     </View>
                 </View>
             </SafeAreaView>
@@ -435,11 +508,23 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
     // Écran de résultats
     const accuracy = questions.length > 0 ? Math.round((correctAnswers / questions.length) * 100) : 0;
     const timeTaken = startTime && endTime ? Math.round((endTime - startTime) / 1000) : 60;
+    
+    // Message de la mascotte basé sur les performances
+    const performanceMessage = getMascotMessageForPerformance(accuracy, timeTaken);
 
     return (
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollContent}>
                 <View style={styles.container}>
+                    {/* Mascotte pour feedback des résultats */}
+                    <Mascot 
+                        mood={performanceMessage.mood}
+                        message={performanceMessage.message}
+                        size="medium"
+                        showBubble={true}
+                        animated={true}
+                    />
+                    
                     <Text style={styles.resultsTitle}>{t('speed_drills.game_over')}</Text>
                     <Text style={styles.resultsSubtitle}>{t('speed_drills.results_title')}</Text>
 
@@ -476,7 +561,7 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    safeArea: { flex: 1, backgroundColor: '#F3F4F6' },
+    safeArea: { flex: 1, backgroundColor: PremiumTheme.colors.lightGray },
     scrollContent: {
         padding: isWeb ? 40 : 20,
         alignItems: 'center',
@@ -484,307 +569,323 @@ const styles = StyleSheet.create({
     },
     container: {
         width: isWeb ? Math.min(width * 0.9, MAX_WIDTH) : '100%',
-        backgroundColor: 'white',
-        borderRadius: isWeb ? 10 : 8,
+        backgroundColor: PremiumTheme.colors.white,
+        borderRadius: isWeb ? PremiumTheme.borderRadius.xlarge : PremiumTheme.borderRadius.large,
         padding: isWeb ? 40 : 20,
-        shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowRadius: 10,
-        elevation: 5,
+        // Ombres cross-platform
+        ...(isWeb 
+            ? { boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)' }
+            : {
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.12,
+                shadowRadius: 12,
+                elevation: 6,
+            }
+        ),
     },
     header: {
-        fontSize: isWeb ? 34 : 26,
-        fontWeight: 'bold',
-        color: '#1F2937',
-        marginBottom: 10,
+        fontSize: PremiumTheme.typography.fontSize.display,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.darkGray,
+        marginBottom: PremiumTheme.spacing.sm,
         textAlign: 'center',
     },
     description: {
-        fontSize: isWeb ? 18 : 16,
-        color: '#6B7280',
-        marginBottom: 30,
+        fontSize: PremiumTheme.typography.fontSize.lg,
+        color: PremiumTheme.colors.gray,
+        marginBottom: PremiumTheme.spacing.xl,
         textAlign: 'center',
+        paddingBottom: PremiumTheme.spacing.md,
         borderBottomWidth: 1,
-        borderBottomColor: '#E5E7EB',
-        paddingBottom: 15,
+        borderBottomColor: 'rgba(0, 0, 0, 0.06)',
     },
     sectionTitle: {
-        fontSize: isWeb ? 20 : 18,
-        fontWeight: '700',
-        color: '#1F2937',
-        marginTop: 20,
-        marginBottom: 10,
+        fontSize: PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.darkGray,
+        marginTop: PremiumTheme.spacing.lg,
+        marginBottom: PremiumTheme.spacing.md,
     },
     buttonGroup: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        gap: 10,
-        marginBottom: 10,
+        gap: PremiumTheme.spacing.sm,
+        marginBottom: PremiumTheme.spacing.md,
     },
     optionButton: {
-        paddingVertical: 12,
-        paddingHorizontal: 20,
-        borderRadius: 8,
+        paddingVertical: PremiumTheme.spacing.md,
+        paddingHorizontal: PremiumTheme.spacing.lg,
+        borderRadius: PremiumTheme.borderRadius.large,
         borderWidth: 2,
-        borderColor: '#D1D5DB',
-        backgroundColor: 'white',
+        borderColor: PremiumTheme.colors.gray,
+        backgroundColor: PremiumTheme.colors.white,
     },
     optionButtonSelected: {
-        borderColor: '#F59E0B',
+        borderColor: PremiumTheme.colors.orange,
         backgroundColor: '#FEF3C7',
     },
     optionButtonText: {
-        fontSize: isWeb ? 16 : 14,
-        color: '#6B7280',
-        fontWeight: '600',
+        fontSize: PremiumTheme.typography.fontSize.base,
+        color: PremiumTheme.colors.gray,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
     },
     optionButtonTextSelected: {
-        color: '#F59E0B',
+        color: PremiumTheme.colors.orange,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
     },
     startButton: {
-        marginTop: 30,
-        backgroundColor: '#F59E0B',
-        paddingVertical: 16,
-        borderRadius: 8,
+        marginTop: PremiumTheme.spacing.xxxl,
+        backgroundColor: PremiumTheme.colors.orange,
+        paddingVertical: PremiumTheme.spacing.lg,
+        borderRadius: PremiumTheme.borderRadius.large,
         alignItems: 'center',
+        // Ombres cross-platform
+        ...(isWeb 
+            ? { boxShadow: '0 4px 12px rgba(245, 158, 11, 0.3)' }
+            : {
+                shadowColor: PremiumTheme.colors.orange,
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.3,
+                shadowRadius: 12,
+                elevation: 6,
+            }
+        ),
     },
     startButtonText: {
-        fontSize: isWeb ? 20 : 18,
-        fontWeight: '700',
-        color: 'white',
+        fontSize: PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
     },
     gameHeader: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 30,
-        paddingBottom: 15,
-        borderBottomWidth: 2,
-        borderBottomColor: '#E5E7EB',
+        marginBottom: PremiumTheme.spacing.xl,
     },
-    questionCount: {
-        fontSize: isWeb ? 18 : 16,
-        fontWeight: '600',
-        color: '#3B82F6',
+    questionBadge: {
+        backgroundColor: PremiumTheme.colors.primary,
+        paddingHorizontal: PremiumTheme.spacing.lg,
+        paddingVertical: PremiumTheme.spacing.sm,
+        borderRadius: PremiumTheme.borderRadius.full,
     },
-    timer: {
-        fontSize: isWeb ? 20 : 18,
-        fontWeight: '700',
-        color: '#10B981',
-    },
-    timerWarning: {
-        color: '#EF4444',
+    questionBadgeText: {
+        fontSize: PremiumTheme.typography.fontSize.base,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
     },
     questionContainer: {
         alignItems: 'center',
-        marginVertical: 40,
+        marginVertical: PremiumTheme.spacing.xxxl,
     },
     questionText: {
         fontSize: isWeb ? 48 : 36,
-        fontWeight: 'bold',
-        color: '#1F2937',
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.darkGray,
     },
     answerContainer: {
         alignItems: 'center',
-        marginBottom: 30,
+        marginBottom: PremiumTheme.spacing.xl,
     },
     answerLabel: {
-        fontSize: isWeb ? 18 : 16,
-        fontWeight: '600',
-        color: '#6B7280',
-        marginBottom: 10,
+        fontSize: PremiumTheme.typography.fontSize.lg,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.gray,
+        marginBottom: PremiumTheme.spacing.sm,
     },
     answerInput: {
         width: '80%',
         height: 60,
         borderWidth: 2,
-        borderColor: '#D1D5DB',
-        borderRadius: 8,
+        borderColor: PremiumTheme.colors.gray,
+        borderRadius: PremiumTheme.borderRadius.large,
         fontSize: isWeb ? 32 : 24,
         textAlign: 'center',
-        backgroundColor: 'white',
-        fontWeight: '600',
+        backgroundColor: PremiumTheme.colors.white,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
     },
     answerInputCorrect: {
-        borderColor: '#10B981',
+        borderColor: PremiumTheme.colors.green,
         backgroundColor: '#ECFDF5',
     },
     answerInputIncorrect: {
-        borderColor: '#EF4444',
+        borderColor: PremiumTheme.colors.red,
         backgroundColor: '#FEF2F2',
     },
     feedbackText: {
-        marginTop: 10,
-        fontSize: isWeb ? 18 : 16,
-        fontWeight: '700',
+        marginTop: PremiumTheme.spacing.sm,
+        fontSize: PremiumTheme.typography.fontSize.lg,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
     },
     feedbackCorrect: {
-        color: '#10B981',
+        color: PremiumTheme.colors.green,
     },
     feedbackIncorrect: {
-        color: '#EF4444',
+        color: PremiumTheme.colors.red,
     },
     submitButton: {
-        backgroundColor: '#3B82F6',
-        paddingVertical: 16,
-        borderRadius: 8,
+        borderRadius: PremiumTheme.borderRadius.large,
+        overflow: 'hidden',
+        marginBottom: PremiumTheme.spacing.lg,
+    },
+    submitButtonGradient: {
+        paddingVertical: PremiumTheme.spacing.lg,
         alignItems: 'center',
-        marginBottom: 20,
     },
     submitButtonDisabled: {
-        backgroundColor: '#9CA3AF',
         opacity: 0.6,
     },
     submitButtonText: {
-        fontSize: isWeb ? 20 : 18,
-        fontWeight: '700',
-        color: 'white',
+        fontSize: PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
     },
     scoreBar: {
         alignItems: 'center',
-        paddingTop: 20,
+        paddingTop: PremiumTheme.spacing.lg,
         borderTopWidth: 1,
-        borderTopColor: '#E5E7EB',
+        borderTopColor: 'rgba(0, 0, 0, 0.06)',
     },
     scoreText: {
-        fontSize: isWeb ? 18 : 16,
-        fontWeight: '600',
-        color: '#10B981',
+        fontSize: PremiumTheme.typography.fontSize.lg,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.green,
     },
     resultsTitle: {
-        fontSize: isWeb ? 40 : 32,
-        fontWeight: 'bold',
-        color: '#1F2937',
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.display : PremiumTheme.typography.fontSize.xxxl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.darkGray,
         textAlign: 'center',
-        marginBottom: 10,
+        marginBottom: PremiumTheme.spacing.sm,
     },
     resultsSubtitle: {
-        fontSize: isWeb ? 24 : 20,
-        fontWeight: '600',
-        color: '#6B7280',
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.xxl : PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.gray,
         textAlign: 'center',
-        marginBottom: 30,
+        marginBottom: PremiumTheme.spacing.xxxl,
     },
     resultsContainer: {
-        backgroundColor: '#F9FAFB',
-        borderRadius: 8,
-        padding: 20,
-        marginBottom: 30,
+        backgroundColor: PremiumTheme.colors.lightGray,
+        borderRadius: PremiumTheme.borderRadius.large,
+        padding: PremiumTheme.spacing.xl,
+        marginBottom: PremiumTheme.spacing.xxxl,
     },
     resultItem: {
-        paddingVertical: 15,
+        paddingVertical: PremiumTheme.spacing.md,
         borderBottomWidth: 1,
-        borderBottomColor: '#E5E7EB',
+        borderBottomColor: 'rgba(0, 0, 0, 0.06)',
     },
     resultLabel: {
-        fontSize: isWeb ? 20 : 18,
-        fontWeight: '600',
-        color: '#1F2937',
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.xl : PremiumTheme.typography.fontSize.lg,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.darkGray,
         textAlign: 'center',
     },
     resultsButtons: {
-        gap: 15,
+        gap: PremiumTheme.spacing.md,
     },
     playAgainButton: {
-        backgroundColor: '#F59E0B',
-        paddingVertical: 16,
-        borderRadius: 8,
+        backgroundColor: PremiumTheme.colors.orange,
+        paddingVertical: PremiumTheme.spacing.lg,
+        borderRadius: PremiumTheme.borderRadius.large,
         alignItems: 'center',
     },
     playAgainButtonText: {
-        fontSize: isWeb ? 20 : 18,
-        fontWeight: '700',
-        color: 'white',
+        fontSize: PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
     },
     backButton: {
-        backgroundColor: '#6B7280',
-        paddingVertical: 16,
-        borderRadius: 8,
+        backgroundColor: PremiumTheme.colors.gray,
+        paddingVertical: PremiumTheme.spacing.lg,
+        borderRadius: PremiumTheme.borderRadius.large,
         alignItems: 'center',
     },
     backButtonText: {
-        fontSize: isWeb ? 18 : 16,
-        fontWeight: '600',
-        color: 'white',
+        fontSize: PremiumTheme.typography.fontSize.lg,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.white,
     },
     reviewButton: {
-        backgroundColor: '#3B82F6',
-        paddingVertical: 16,
-        borderRadius: 8,
+        backgroundColor: PremiumTheme.colors.primary,
+        paddingVertical: PremiumTheme.spacing.lg,
+        borderRadius: PremiumTheme.borderRadius.large,
         alignItems: 'center',
-        marginBottom: 10,
+        marginBottom: PremiumTheme.spacing.sm,
     },
     reviewButtonText: {
-        fontSize: isWeb ? 20 : 18,
-        fontWeight: '700',
-        color: 'white',
+        fontSize: PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
     },
     reviewButtonSubtext: {
-        fontSize: isWeb ? 14 : 12,
-        fontWeight: '400',
-        color: 'white',
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        fontWeight: PremiumTheme.typography.fontWeight.normal,
+        color: PremiumTheme.colors.white,
         marginTop: 5,
+        opacity: 0.9,
     },
     mistakesContainer: {
-        marginBottom: 30,
+        marginBottom: PremiumTheme.spacing.xxxl,
     },
     mistakeCard: {
         backgroundColor: '#FEF2F2',
-        borderRadius: 8,
-        padding: 20,
-        marginBottom: 15,
+        borderRadius: PremiumTheme.borderRadius.large,
+        padding: PremiumTheme.spacing.xl,
+        marginBottom: PremiumTheme.spacing.md,
         borderLeftWidth: 4,
-        borderLeftColor: '#EF4444',
+        borderLeftColor: PremiumTheme.colors.red,
     },
     mistakeHeader: {
-        fontSize: isWeb ? 16 : 14,
-        fontWeight: '700',
+        fontSize: PremiumTheme.typography.fontSize.base,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
         color: '#991B1B',
-        marginBottom: 10,
+        marginBottom: PremiumTheme.spacing.sm,
     },
     mistakeQuestion: {
-        fontSize: isWeb ? 24 : 20,
-        fontWeight: 'bold',
-        color: '#1F2937',
-        marginBottom: 15,
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.xxl : PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.darkGray,
+        marginBottom: PremiumTheme.spacing.md,
         textAlign: 'center',
     },
     mistakeAnswers: {
-        marginBottom: 15,
+        marginBottom: PremiumTheme.spacing.md,
     },
     mistakeUserAnswer: {
-        fontSize: isWeb ? 16 : 14,
+        fontSize: PremiumTheme.typography.fontSize.base,
         color: '#991B1B',
         marginBottom: 5,
     },
     mistakeCorrectAnswer: {
-        fontSize: isWeb ? 16 : 14,
-        color: '#059669',
-        fontWeight: '600',
+        fontSize: PremiumTheme.typography.fontSize.base,
+        color: PremiumTheme.colors.green,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
     },
     hintBox: {
         backgroundColor: '#DBEAFE',
-        borderRadius: 8,
-        padding: 15,
+        borderRadius: PremiumTheme.borderRadius.medium,
+        padding: PremiumTheme.spacing.md,
         borderLeftWidth: 3,
-        borderLeftColor: '#3B82F6',
+        borderLeftColor: PremiumTheme.colors.primary,
     },
     hintTitle: {
-        fontSize: isWeb ? 16 : 14,
-        fontWeight: '700',
+        fontSize: PremiumTheme.typography.fontSize.base,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
         color: '#1E40AF',
-        marginBottom: 10,
+        marginBottom: PremiumTheme.spacing.sm,
     },
     hintText: {
-        fontSize: isWeb ? 14 : 12,
-        color: '#1F2937',
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        color: PremiumTheme.colors.darkGray,
         fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
         lineHeight: 20,
     },
     noMistakesText: {
-        fontSize: isWeb ? 24 : 20,
-        fontWeight: '600',
-        color: '#10B981',
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.xxl : PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.green,
         textAlign: 'center',
         marginVertical: 40,
     },

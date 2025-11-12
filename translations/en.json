@@ -22,12 +22,19 @@
     "m4": "The Treasure Map (Logic)",
     "m4_desc": "Develop logical reasoning and complex problem-solving skills.",
     "m5": "The Engine of Influence",
+    "m5_desc": "Understand persuasion and influence mechanisms to mobilize teams.",
     "m6": "The Art of Constructive Failure",
+    "m6_desc": "Transform failures into learning and growth opportunities.",
     "m7": "Strategic Creativity",
+    "m7_desc": "Develop innovation and creative thinking to solve challenges.",
     "m8": "Resource Audit",
+    "m8_desc": "Evaluate and optimize the use of available resources.",
     "m9": "Economy and Value Exchange",
+    "m9_desc": "Understand economic principles and value creation.",
     "m10": "The Leader's Code (Ethics)",
-    "m11": "The Capital Project (Synthesis)"
+    "m10_desc": "Develop integrity and ethical leadership values.",
+    "m11": "The Capital Project (Synthesis)",
+    "m11_desc": "Final synthesis: apply all acquired skills in a complete project."
   },
   "defi": {
     "title": "Challenge",

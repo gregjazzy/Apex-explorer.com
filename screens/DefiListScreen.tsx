@@ -3,8 +3,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, TouchableOpacity, FlatList } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { LinearGradient } from 'expo-linear-gradient';
+import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
-import { Defi } from '../services/dataService'; // Import de l'interface Defi
+import { Defi } from '../services/dataService';
+import PremiumTheme from '../config/premiumTheme';
 
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
@@ -37,46 +40,89 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
         navigation.navigate('Defi', { moduleId: moduleId, defiId: defiId, defiTitle: defiTitle });
     };
 
-    const renderDefiItem = ({ item }: { item: Defi }) => {
+    const renderDefiItem = ({ item, index }: { item: Defi; index: number }) => {
         const isCompleted = item.status === 'completed';
         const isLocked = item.status === 'locked';
         
         const statusText = t(`defi.${item.status}`); 
-        const statusColor = isCompleted ? '#10B981' : isLocked ? '#F59E0B' : '#3B82F6';
+        
+        // Gradients selon le statut
+        const badgeGradient = isCompleted 
+            ? ['#10B981', '#059669']
+            : isLocked
+            ? ['#9CA3AF', '#6B7280']
+            : ['#4F46E5', '#7C3AED'];
+        
+        const statusColor = isCompleted ? '#10B981' : isLocked ? '#6B7280' : '#4F46E5';
         
         return (
-            <TouchableOpacity 
-                style={[styles.defiItem, isCompleted && styles.completedItem, isLocked && styles.lockedItem]}
-                onPress={() => handleDefiPress(item.id, item.title)}
-                disabled={isLocked}
+            <Animatable.View
+                animation="fadeInUp"
+                delay={index * 50}
+                duration={400}
             >
-                <View style={styles.titleGroup}>
-                    {/* Affiche D1, D2, etc. en format court */}
-                    <Text style={styles.defiID}>{item.id.toUpperCase().replace('DEFI', 'D')}</Text> 
-                    <Text style={styles.defiTitle}>{item.title}</Text>
-                </View>
-                <View style={styles.statusGroup}>
-                    <Text style={[styles.statusText, { color: statusColor }]}>{statusText}</Text>
+                <TouchableOpacity 
+                    style={[styles.defiItem, isLocked && styles.lockedItem]}
+                    onPress={() => handleDefiPress(item.id, item.title)}
+                    disabled={isLocked}
+                    activeOpacity={0.8}
+                >
+                    {/* Badge avec gradient */}
+                    <LinearGradient
+                        colors={badgeGradient}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={styles.defiBadge}
+                    >
+                        <Text style={styles.defiID}>{item.id.toUpperCase().replace('DEFI', 'D')}</Text>
+                    </LinearGradient>
+                    
+                    <View style={styles.defiContent}>
+                        <Text style={styles.defiTitle}>{item.title}</Text>
+                        <View style={styles.metaRow}>
+                            <View style={[styles.statusBadge, { backgroundColor: `${statusColor}15` }]}>
+                                <Text style={[styles.statusText, { color: statusColor }]}>
+                                    {isCompleted ? '✅ ' : isLocked ? '🔒 ' : '🚀 '}{statusText}
+                                </Text>
+                            </View>
+                            {!isLocked && (
+                                <Text style={styles.xpText}>{item.xpValue} XP</Text>
+                            )}
+                        </View>
+                    </View>
+                    
                     {!isLocked && (
-                         <Text style={styles.xpText}>{item.xpValue} XP</Text>
+                        <Text style={styles.arrowIcon}>→</Text>
                     )}
-                </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </Animatable.View>
         );
     };
 
     return (
         <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
-                {/* Header adapté pour le Web */}
-                {isWeb && <Text style={styles.webHeader}>{moduleTitle}</Text>} 
+                {/* Header premium */}
+                {isWeb && (
+                    <Animatable.View animation="fadeInDown" duration={600}>
+                        <Text style={styles.webHeader}>{moduleTitle}</Text>
+                    </Animatable.View>
+                )}
                 
-                <Text style={styles.webSubtitle}>
-                    {t('defi.list_count', { count: defis.length })}
-                </Text>
+                <View style={styles.statsRow}>
+                    <Text style={styles.webSubtitle}>
+                        {defis.filter(d => d.status === 'completed').length} / {defis.length} complétés
+                    </Text>
+                    <View style={styles.xpTotal}>
+                        <Text style={styles.xpTotalValue}>
+                            {defis.filter(d => d.status === 'completed').length * 100} XP
+                        </Text>
+                        <Text style={styles.xpTotalLabel}>gagnés</Text>
+                    </View>
+                </View>
 
                 <FlatList
-                    data={defis} // UTILISE LES DONNÉES PASSÉES
+                    data={defis}
                     keyExtractor={(item) => item.id}
                     renderItem={renderDefiItem}
                     contentContainerStyle={styles.listContent}
@@ -86,82 +132,126 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
     );
 };
 
-// Styles (Réutilisation du style Desktop-First)
+// Styles premium
 const styles = StyleSheet.create({
-    safeArea: { flex: 1, backgroundColor: '#E5E7EB' },
+    safeArea: { 
+        flex: 1, 
+        backgroundColor: '#F9FAFB',
+    },
     container: {
         flex: 1,
         width: isWeb ? Math.min(width * 0.9, MAX_WIDTH) : '100%',
         alignSelf: 'center',
-        backgroundColor: 'white',
-        borderRadius: isWeb ? 10 : 0,
+        backgroundColor: 'transparent',
         padding: isWeb ? 40 : 20,
     },
     webHeader: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        marginBottom: 5,
-        color: '#1F2937',
+        fontSize: PremiumTheme.typography.fontSize.display,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        marginBottom: PremiumTheme.spacing.sm,
+        color: PremiumTheme.colors.darkGray,
     },
-    webSubtitle: {
-        fontSize: 18,
-        color: '#6B7280',
-        marginBottom: 20,
-    },
-    listContent: {
-        paddingVertical: 10,
-    },
-    defiItem: {
+    statsRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: isWeb ? 20 : 15,
-        borderWidth: 1,
-        borderColor: '#E5E7EB',
-        borderRadius: 8,
-        marginBottom: 10,
-        backgroundColor: '#FFFFFF',
+        marginBottom: PremiumTheme.spacing.xl,
     },
-    completedItem: {
-        backgroundColor: '#E6FFEE', // Léger vert
-        borderColor: '#10B981',
+    webSubtitle: {
+        fontSize: PremiumTheme.typography.fontSize.base,
+        color: PremiumTheme.colors.gray,
     },
-    lockedItem: {
-        opacity: 0.6,
-        backgroundColor: '#FEF3C7', // Léger jaune
-        borderColor: '#F59E0B',
+    xpTotal: {
+        flexDirection: 'row',
+        alignItems: 'baseline',
+        backgroundColor: PremiumTheme.colors.lightGray,
+        paddingHorizontal: PremiumTheme.spacing.md,
+        paddingVertical: PremiumTheme.spacing.xs,
+        borderRadius: PremiumTheme.borderRadius.large,
     },
-    titleGroup: {
+    xpTotalValue: {
+        fontSize: PremiumTheme.typography.fontSize.lg,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.orange,
+        marginRight: 4,
+    },
+    xpTotalLabel: {
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        color: PremiumTheme.colors.gray,
+    },
+    listContent: {
+        paddingBottom: PremiumTheme.spacing.xxxl,
+    },
+    defiItem: {
         flexDirection: 'row',
         alignItems: 'center',
-        flex: 1,
+        padding: PremiumTheme.spacing.lg,
+        backgroundColor: PremiumTheme.colors.white,
+        borderRadius: PremiumTheme.borderRadius.xlarge,
+        marginBottom: PremiumTheme.spacing.md,
+        borderWidth: 1,
+        borderColor: 'rgba(0, 0, 0, 0.08)',
+        // Ombres cross-platform
+        ...(isWeb 
+            ? { boxShadow: '0 6px 16px rgba(0, 0, 0, 0.15)' }
+            : {
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 6 },
+                shadowOpacity: 0.15,
+                shadowRadius: 16,
+                elevation: 8,
+            }
+        ),
+    },
+    lockedItem: {
+        opacity: 0.5,
+    },
+    defiBadge: {
+        width: 56,
+        height: 56,
+        borderRadius: 28,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginRight: PremiumTheme.spacing.md,
     },
     defiID: {
-        fontSize: isWeb ? 20 : 16,
-        fontWeight: '900',
-        color: '#3B82F6',
-        marginRight: 15,
+        fontSize: PremiumTheme.typography.fontSize.xl,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
+    },
+    defiContent: {
+        flex: 1,
     },
     defiTitle: {
-        fontSize: isWeb ? 18 : 16,
-        fontWeight: '600',
-        color: '#1F2937',
-        flexShrink: 1,
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.lg : PremiumTheme.typography.fontSize.base,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.darkGray,
+        marginBottom: PremiumTheme.spacing.xs,
     },
-    statusGroup: {
-        alignItems: 'flex-end',
-        marginLeft: 10,
+    metaRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: PremiumTheme.spacing.sm,
+    },
+    statusBadge: {
+        paddingHorizontal: PremiumTheme.spacing.sm,
+        paddingVertical: 4,
+        borderRadius: PremiumTheme.borderRadius.small,
     },
     statusText: {
-        fontSize: isWeb ? 14 : 12,
-        fontWeight: 'bold',
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
     },
     xpText: {
-        fontSize: isWeb ? 12 : 10,
-        color: '#F59E0B',
-        fontWeight: 'bold',
-        marginTop: 3,
-    }
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        color: PremiumTheme.colors.orange,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+    },
+    arrowIcon: {
+        fontSize: PremiumTheme.typography.fontSize.xxl,
+        color: PremiumTheme.colors.gray,
+        marginLeft: PremiumTheme.spacing.sm,
+    },
 });
 
 export default DefiListScreen;

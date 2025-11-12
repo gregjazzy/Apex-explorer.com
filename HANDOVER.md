@@ -2,7 +2,7 @@
 
 **Date de mise à jour** : 12 Novembre 2025  
 **Statut** : ✅ Production Ready  
-**Version** : 2.0 - Speed Drills & Stats Avancées
+**Version** : 3.0 - Premium Experience & Gamification Avancée
 
 ---
 
@@ -11,10 +11,12 @@
 **Apex Junior Explorer** est une application mobile éducative React Native pour développer l'esprit stratégique et entrepreneurial des enfants (8-12 ans) via un système de **défis** et **jeux rapides**.
 
 ### Architecture
-- **Frontend** : React Native (Expo)
+- **Frontend** : React Native (Expo) - Cross-platform (iOS, Android, Web)
 - **Backend** : Supabase (PostgreSQL + Auth)
 - **i18n** : React-i18next (FR/EN)
 - **État** : React Hooks (pas de Redux)
+- **Design System** : Theme premium unifié (`premiumTheme.ts`)
+- **Animations** : `react-native-animatable`, `lottie-react-native`, haptic feedback
 
 ---
 
@@ -79,6 +81,25 @@
 - created_at (TIMESTAMP)
 ```
 
+#### `earned_badges` ⭐ **NOUVEAU**
+```sql
+- id (SERIAL, PK)
+- user_id (TEXT) -- explorer_uuid
+- badge_id (TEXT) -- 'completion_explorer', 'speed_demon', etc.
+- earned_at (TIMESTAMP)
+- UNIQUE (user_id, badge_id)
+```
+
+#### `user_streaks` 🔥 **NOUVEAU**
+```sql
+- id (SERIAL, PK)
+- user_id (TEXT) -- explorer_uuid
+- current_streak (INTEGER) -- Jours consécutifs actuels
+- longest_streak (INTEGER) -- Record de jours consécutifs
+- last_activity_date (DATE)
+- updated_at (TIMESTAMP)
+```
+
 ### Row Level Security (RLS)
 
 **Explorateurs** :
@@ -88,7 +109,7 @@
 - Lecture des données de **leurs explorateurs uniquement**
 - Mise à jour de `explorer_progress` pour évaluation
 
-**Speed Drills** :
+**Speed Drills / Badges / Streaks** :
 - RLS permissive (`USING (true)`) avec **validation côté application**
 - Justification : Usage familial, données peu sensibles, filtrage dans `dataService.ts`
 
@@ -221,23 +242,142 @@ Statistiques par Catégorie
 
 ---
 
-## 🎖️ Système de Badges (Gamification)
+## 🎖️ Système de Badges & Gamification (Version 3.0)
 
-### Badges Disponibles
-- **Premier Pas** : Complétion M1/D1
-- **Maître Maths** : Complétion module M1
-- **Leader Résilient** : Complétion module M6
-- **Champion Éthique** : Complétion module M9
-- **Explorateur Complet** : 1 défi dans chacun des 11 modules
+### 🆕 Système Sophistiqué de Badges
 
-### Affichage
-- Dashboard Explorateur (en haut, après XP)
-- Badges gagnés : couleur + icône
-- Badges verrouillés : opacité réduite + 🔒
+#### Architecture
+Le nouveau système de badges utilise :
+- **Tiers** : Bronze → Silver → Gold → Platinum → Diamond
+- **Catégories** : Completion, Speed, Accuracy, Regularity, Special
+- **Rareté** : Common, Rare, Epic, Legendary
+- **Niveaux** : Certains badges évolutifs (niveau 1-3)
+
+#### Badges Disponibles (15+)
+
+**🏆 Completion**
+- **Premier Pas** (Bronze) : Compléter 1er défi
+- **Explorateur** (Silver) : 10 défis complétés
+- **Aventurier** (Gold) : 20 défis complétés
+- **Maître** (Platinum) : 30 défis complétés
+- **Légende** (Diamond) : Tous les 42 défis complétés
+
+**⚡ Speed (Speed Drills)**
+- **Speed Demon** (Silver) : 10/10 en moins de 45s
+- **Flash** (Gold) : 10/10 en moins de 30s
+- **Éclair Parfait** (Diamond) : 10/10 en moins de 20s
+
+**🎯 Accuracy**
+- **Tireur d'Élite** (Silver) : 100% de précision (10/10)
+- **Perfection** (Gold) : 3 sessions parfaites consécutives
+
+**🔥 Regularity (Streaks)**
+- **Étincelle** (Bronze) : 3 jours consécutifs
+- **Flamme** (Silver) : 7 jours consécutifs
+- **Brasier** (Gold) : 14 jours consécutifs
+- **Inferno** (Platinum) : 30 jours consécutifs
+- **Éternel** (Diamond) : 100 jours consécutifs
+
+**⭐ Special**
+- **Maître Speed Drill** (Epic) : 50 sessions Speed Drill
+- **Champion Mathématiques** (Legendary) : 10/10 dans toutes catégories
+
+### 🏅 Système de Streaks (Jours Consécutifs)
+
+**Principe** :
+- Chaque activité (défi complété, Speed Drill) incrémente le streak
+- Affichage ultra-compact dans header Dashboard
+- Format : "🔥 X jours • Record: Y"
+- Fonction PostgreSQL `update_user_streak` pour gestion automatique
+
+**Récompenses** :
+- Badges de régularité débloqués selon progression
+- Motivation pour activité quotidienne
+
+### 🎨 Affichage Premium
+
+**Badge 3D Component** :
+- Effets visuels avancés (gradients, glows, reflets)
+- Animations au tap
+- Différenciation visuelle par tier (couleurs, intensité)
+- Indicateurs de niveau pour badges évolutifs
+
+**Modal de Déblocage** :
+- Animation full-screen spectaculaire
+- Confettis (`lottie-react-native`)
+- Haptic feedback (iOS/Android)
+- Affichage XP gagnés
+- Progression vers prochain badge
+
+**Dashboard Integration** :
+- Badges récents affichés en compact
+- Tap pour ouvrir liste complète
+- Badges verrouillés affichés avec progression
+
+### 🦊 Mascotte Interactive **NOUVEAU**
+
+**Principe** :
+- Renard emoji (🦊) avec bulles de message contextuelles
+- Apparition dynamique lors de moments clés
+- Layout horizontal (mascotte gauche, texte droite)
+
+**Déclencheurs** :
+- Dashboard load (message selon XP/heure/streak) - 6 secondes
+- Speed Drill : Start (encouragement), Results (performance)
+- Badge unlock (célébration)
+
+**Messages Contextuels** :
+- Basés sur heure de journée (matin, après-midi, soir)
+- Basés sur performance (excellent, bon, encouragement)
+- Basés sur milestones XP (100, 500, 1000+)
+- Spécifiques aux événements (nouveau badge, streak cassé)
+
+**Fichier** : `/utils/mascotMessages.ts`
+
+### 🎬 Animations & Transitions
+
+**Transitions Écrans** :
+- `slide_from_right` : Navigation standard
+- `slide_from_bottom` : Dashboards, Speed Drill (modal)
+- `fade` : Auth screen
+- Durée : 300ms, gestures activés
+
+**Composants Animés** :
+- `react-native-animatable` : Fade, bounce, zoom
+- `lottie-react-native` : Confettis, célébrations
+- `expo-haptics` : Feedback tactile mobile
 
 **Fichiers clés** :
-- `/components/BadgeList.tsx`
-- `/services/dataService.ts` (`calculateBadges`)
+- `/components/Badge3D.tsx`
+- `/components/BadgeUnlockModal.tsx`
+- `/components/Mascot.tsx`
+- `/components/ConfettiAnimation.tsx`
+- `/components/CircularTimer.tsx`
+- `/components/StreakDisplay.tsx`
+- `/hooks/useBadgeUnlock.tsx`
+
+### 📊 Calcul Automatique
+
+**Fichier** : `/services/dataService.ts`
+- `calculateAdvancedBadges()` : Analyse progression + sessions
+- Exécuté à chaque chargement Dashboard
+- Compare avec badges déjà gagnés
+- Trigger modal si nouveaux badges débloqués
+- Sauvegarde dans `earned_badges` table
+
+**Fonctions Clés** :
+- `saveEarnedBadge(userId, badgeId)`
+- `getEarnedBadgeIds(userId)`
+- `calculateStreakBadges(streak)`
+- `updateUserStreak(userId)`
+- `getUserStreak(userId)`
+
+**Configuration** : `/config/badgeSystem.ts`
+- `BADGE_CATALOG` : Définitions de tous les badges
+- `BADGE_GRADIENTS` : Couleurs et glows par tier
+- `BADGE_BORDERS` : Bordures par tier
+- `getNextBadgeToUnlock()` : Suggestions progression
+- `getBadgeCompletionPercentage()` : Calcul % progression
 
 ---
 
@@ -272,39 +412,52 @@ Statistiques par Catégorie
 
 ```
 /Users/gregorymittelette/Documents/Apex/
-├── App.tsx                          # Navigation principale
+├── App.tsx                          # Navigation principale + Transitions
 ├── app.json                         # Config Expo
 ├── package.json                     # Dépendances
 ├── tsconfig.json                    # Config TypeScript
 │
 ├── config/
 │   ├── supabase.ts                  # Client Supabase (clé anon)
-│   └── i18n.ts                      # Config i18next
+│   ├── i18n.ts                      # Config i18next
+│   ├── premiumTheme.ts              # 🆕 Design System Premium
+│   └── badgeSystem.ts               # 🆕 Système Badges Sophistiqués
 │
 ├── hooks/
-│   └── useAuth.tsx                  # Auth context (Mentor + Explorateur)
+│   ├── useAuth.tsx                  # Auth context (Mentor + Explorateur)
+│   └── useBadgeUnlock.tsx           # 🆕 Gestion modal badge unlock
 │
 ├── services/
-│   ├── dataService.ts               # CRUD principal (modules, défis, stats)
+│   ├── dataService.ts               # CRUD principal (modules, défis, stats, badges, streaks)
 │   └── subscriptionService.ts       # Abonnement (non activé)
 │
 ├── screens/
 │   ├── AuthScreen.tsx               # Login Mentor/Explorateur
-│   ├── ExplorerDashboardScreen.tsx  # Dashboard Explorateur
-│   ├── DefiListScreen.tsx           # Liste défis d'un module
-│   ├── DefiScreen.tsx               # Écran de défi (quiz/texte)
-│   ├── MentorDashboardScreen.tsx    # Dashboard Mentor (3 onglets)
-│   ├── SpeedDrillScreen.tsx         # Jeu Speed Drill
+│   ├── ExplorerDashboardScreen.tsx  # 🎨 Dashboard Explorateur Premium
+│   ├── DefiListScreen.tsx           # 🎨 Liste défis Premium
+│   ├── DefiScreen.tsx               # 🎨 Écran de défi Premium
+│   ├── MentorDashboardScreen.tsx    # 🎨 Dashboard Mentor Premium (3 onglets)
+│   ├── SpeedDrillScreen.tsx         # 🎨 Jeu Speed Drill Premium + Timer
 │   └── PaywallScreen.tsx            # Abonnement (non activé)
 │
 ├── components/
 │   ├── ProgressBar.tsx              # Barre de progression module
-│   ├── BadgeList.tsx                # Affichage badges
+│   ├── BadgeList.tsx                # 🎨 Affichage badges premium
+│   ├── Badge3D.tsx                  # 🆕 Badge 3D avec effets visuels
+│   ├── BadgeUnlockModal.tsx         # 🆕 Modal spectaculaire déblocage
+│   ├── Mascot.tsx                   # 🆕 Mascotte interactive (renard)
+│   ├── StreakDisplay.tsx            # 🆕 Affichage streaks compact
+│   ├── CircularTimer.tsx            # 🆕 Timer circulaire Speed Drill
+│   ├── ConfettiAnimation.tsx        # 🆕 Animation confettis
+│   ├── XPCounter.tsx                # 🆕 Compteur XP animé
 │   ├── BriefingModal.tsx            # FTG (Fiche Travail Guidée)
 │   ├── DiscussionModal.tsx          # Guide discussion mentor
 │   ├── MentorEvaluationModal.tsx    # Évaluation réponse explorateur
 │   ├── ExplorerCreationModal.tsx    # Créer un explorateur
 │   └── LanguageSwitcher.tsx         # FR/EN
+│
+├── utils/
+│   └── mascotMessages.ts            # 🆕 Messages contextuels mascotte
 │
 ├── translations/
 │   ├── fr.json                      # 42 défis FR + UI
@@ -315,6 +468,8 @@ Statistiques par Catégorie
 │   ├── migration_add_feedback_columns.sql
 │   ├── speed_drill_stats_migration.sql
 │   ├── speed_drill_fix_rls.sql
+│   ├── badges_and_streaks_migration.sql  # 🆕 Tables badges + streaks
+│   ├── fix_badges_rls.sql           # 🆕 RLS permissive badges/streaks
 │   └── subscription_migration.sql   # (non exécuté)
 │
 └── HANDOVER.md                      # Ce document
@@ -375,28 +530,76 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
 2. ✅ `migration_add_feedback_columns.sql` : Cycle feedback
 3. ✅ `speed_drill_stats_migration.sql` : Speed Drills
 4. ✅ `speed_drill_fix_rls.sql` : RLS Speed Drills
-5. ⏳ `subscription_migration.sql` : Abonnement (à activer plus tard)
+5. ✅ `badges_and_streaks_migration.sql` : Tables badges + streaks (v3.0)
+6. ✅ `fix_badges_rls.sql` : RLS permissive pour badges/streaks
+7. ⏳ `subscription_migration.sql` : Abonnement (à activer plus tard)
 
 ---
 
 ## 🎨 Design & UX
 
+### 🎯 Public Cible Ultra Premium
+
+**Design Principles** :
+- **Pour les parents milliardaires** : Minimalisme, efficacité, métriques claires
+- **Pour les enfants (8-12 ans)** : Engagement, gamification subtile, feedback positif
+- **Cross-platform** : iOS, Android, Desktop - Expérience identique
+
+### 🎨 Premium Theme System
+
+**Fichier** : `/config/premiumTheme.ts`
+
+**Composants** :
+- **Colors** : Palette sophistiquée (primaire, succès, warning, neutral)
+- **Gradients** : 10+ gradients premium (success, info, premium, sunset, ocean, etc.)
+- **Shadows** : Adaptatifs web (`boxShadow`) + mobile (`shadowColor`)
+- **Typography** : Hiérarchie claire (xxs → xxxl)
+- **Spacing** : Système cohérent (xxs → xxxl)
+- **Border Radius** : 4 niveaux (sm → xl)
+
+**Caractéristiques** :
+- Gradients subtils mais sophistiqués
+- Ombres adaptées par plateforme
+- Pas de surcharge visuelle
+- Focus sur lisibilité et données
+
 ### Palette de Couleurs
-- **Primaire** : `#3B82F6` (Bleu)
-- **Succès** : `#10B981` (Vert)
-- **Attention** : `#F59E0B` (Orange) - Speed Drills, XP
-- **Erreur** : `#EF4444` (Rouge)
-- **Neutre** : `#6B7280` (Gris)
+
+**Primaire** :
+- `#3B82F6` (Bleu) : Actions principales
+- `#10B981` (Vert) : Succès, validation
+- `#F59E0B` (Orange) : Speed Drills, XP, attention
+- `#EF4444` (Rouge) : Erreur, révision
+
+**Gradients Signature** :
+- `success` : Turquoise → Vert
+- `premium` : Violet → Indigo
+- `sunset` : Orange → Rose
+- `ocean` : Bleu → Cyan
 
 ### Composants Réutilisables
-- `TouchableOpacity` avec styles custom (pas de `<Button>` natif)
-- `ScrollView` avec `contentContainerStyle={{ flexGrow: 1 }}`
-- Desktop-First : `isWeb` pour styles adaptatifs
-- `MAX_WIDTH = 600-900px` pour limiter largeur web
+
+**Animations** :
+- `fadeIn`, `bounceIn`, `zoomIn` via `react-native-animatable`
+- Confettis via `lottie-react-native`
+- Haptic feedback via `expo-haptics`
+- Transitions écrans via React Navigation animations
+
+**UI Elements** :
+- `TouchableOpacity` avec effets hover (web)
+- `LinearGradient` pour tous les headers/cards
+- `ScrollView` optimisé pour chaque plateforme
+- Desktop-First : `MAX_WIDTH = 900px` pour web
 
 ### Navigation
+
 - **React Navigation v6** (Stack Navigator)
-- `useFocusEffect` pour refresh automatique (feedback temps réel)
+- **Animations configurées** :
+  - `slide_from_right` : Standard
+  - `slide_from_bottom` : Dashboards, modales
+  - `fade` : Transitions douces
+- **Gestures activés** : Swipe back iOS/Android
+- `useFocusEffect` pour refresh automatique
 
 ---
 
@@ -429,6 +632,26 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
 ### 7. Dashboard Stats Caching
 **Problème** : Stats pas à jour après nouvelle session  
 **Solution** : `useFocusEffect` pour reload data
+
+### 8. Badge System TypeScript Errors
+**Problème** : Type mismatch entre array `progress` et variable `progress`  
+**Solution** : Renommage `progress` → `progressItems` et variable locale → `badgeProgress`
+
+### 9. SQL Type Mismatch (UUID vs TEXT)
+**Problème** : `ERROR: 42883: operator does not exist: uuid = text` dans RLS policies  
+**Solution** : Cast explicite `::TEXT` sur colonnes UUID dans requêtes RLS
+
+### 10. RLS Too Strict for Explorer PIN Auth
+**Problème** : Explorateurs (PIN custom) ne peuvent pas insérer dans `earned_badges`/`user_streaks`  
+**Solution** : RLS permissive (`USING (true)`) avec validation côté application (`dataService.ts`)
+
+### 11. Mascotte Trop Grande
+**Problème** : Mascotte statique prend trop d'espace, bloque scroll  
+**Solution** : Mascotte dynamique (6 secondes), layout horizontal, apparition temporaire
+
+### 12. Platform-Specific Shadows
+**Problème** : Ombres non visibles sur web (shadow props iOS/Android uniquement)  
+**Solution** : `Platform.OS === 'web'` avec `boxShadow` pour web, `shadowColor` pour mobile
 
 ---
 
@@ -480,7 +703,10 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
 - [x] Cycle feedback Mentor-Explorateur validé
 - [x] Speed Drills fonctionnels
 - [x] Stats par catégorie opérationnelles
-- [x] Badges calculés correctement
+- [x] Système badges sophistiqués (15+ badges, 5 tiers)
+- [x] Système streaks (jours consécutifs)
+- [x] Mascotte interactive avec messages contextuels
+- [x] Animations premium (confettis, transitions, 3D)
 - [x] i18n FR/EN complet
 - [x] Gestion erreurs (try/catch + Alerts)
 - [ ] Tests E2E (Detox/Appium) - Recommandé
@@ -493,10 +719,15 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
 - [ ] Monitoring performances (Supabase Dashboard)
 
 #### UX/UI
-- [x] Design responsive (mobile + web)
+- [x] Design Premium responsive (mobile + web)
+- [x] Système de badges sophistiqués avec animations
+- [x] Mascotte interactive avec messages contextuels
+- [x] Streaks (jours consécutifs) avec affichage compact
+- [x] Transitions écrans fluides (300ms)
 - [x] Gestion offline (partiellement - Supabase cache)
-- [x] Feedback utilisateur (Alerts, status colors)
-- [ ] Animations polish (optionnel)
+- [x] Feedback utilisateur (Alerts, status colors, haptics)
+- [x] Confettis et célébrations (Lottie)
+- [ ] Sons subtils feedback (optionnel)
 - [ ] Dark mode (optionnel)
 
 #### Legal/Commercial
@@ -545,18 +776,21 @@ UPDATE explorers SET subscription_status = 'premium' WHERE name = 'NomExplorateu
 - [ ] Implémenter Google Play IAP
 - [ ] Ajouter analytics (tracking progression)
 - [ ] Mode offline amélioré (React Query cache)
+- [ ] Sons subtils pour feedback (badges, XP, confettis)
 
 ### Moyen Terme (3-6 mois)
 - [ ] Nouveaux modules (M12-M15)
 - [ ] Leaderboard Speed Drills (entre explorateurs d'un mentor)
-- [ ] Notifications push (rappels mentor)
+- [ ] Notifications push (rappels mentor + streaks)
 - [ ] Export PDF des progressions
+- [ ] Badges avec niveaux avancés (évolution)
 
 ### Long Terme (6-12 mois)
 - [ ] Version Web Progressive (PWA)
 - [ ] Multi-mentor (partage explorateur)
 - [ ] IA - Génération défis adaptatifs
 - [ ] Mode compétition (entre écoles)
+- [ ] Mascotte animée avancée (animations Lottie)
 
 ---
 

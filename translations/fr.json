@@ -22,12 +22,19 @@
     "m4": "La Carte au Trésor (Logique)",
     "m4_desc": "Développer le raisonnement logique et la résolution de problèmes complexes.",
     "m5": "Le Moteur de l'Influence",
+    "m5_desc": "Comprendre les mécanismes de persuasion et d'influence pour mobiliser les équipes.",
     "m6": "L'Art de l'Échec Constructif",
+    "m6_desc": "Transformer les échecs en opportunités d'apprentissage et de croissance.",
     "m7": "La Créativité Stratégique",
+    "m7_desc": "Développer l'innovation et la pensée créative pour résoudre les défis.",
     "m8": "L'Audit des Ressources",
+    "m8_desc": "Évaluer et optimiser l'utilisation des ressources disponibles.",
     "m9": "Économie et Échange de Valeur",
+    "m9_desc": "Comprendre les principes économiques et la création de valeur.",
     "m10": "Le Code du Leader (Éthique)",
-    "m11": "Le Projet Capital (Synthèse)"
+    "m10_desc": "Développer l'intégrité et les valeurs éthiques du leadership.",
+    "m11": "Le Projet Capital (Synthèse)",
+    "m11_desc": "Synthèse finale : appliquer toutes les compétences acquises dans un projet complet."
   },
   "defi": {
     "title": "Défi",

@@ -1,8 +1,10 @@
 // /screens/MentorDashboardScreen.tsx
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, FlatList, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, FlatList, ActivityIndicator, Alert, TouchableOpacity, ScrollView } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { LinearGradient } from 'expo-linear-gradient';
+import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
 import { useFocusEffect } from '@react-navigation/native';
 import { useAuth } from '../hooks/useAuth';
@@ -10,6 +12,7 @@ import { DiscussionModal } from '../components/DiscussionModal';
 import { ExplorerCreationModal } from '../components/ExplorerCreationModal';
 import { MentorEvaluationModal } from '../components/MentorEvaluationModal';
 import { fetchMentorExplorers, ExplorerProfile, fetchExplorerProgress, ExplorerProgressItem, fetchAllExplorerSpeedDrillStats, SpeedDrillStats } from '../services/dataService';
+import PremiumTheme from '../config/premiumTheme';
 
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
@@ -136,6 +139,26 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
     return explorersWithProgress.reduce((total, explorer) => {
       const pending = explorer.progress.filter(p => p.evaluationStatus === 'SOUMIS').length;
       return total + pending;
+    }, 0);
+  }, [explorersWithProgress]);
+  
+  // NOUVEAU : Calcul des KPIs globaux (AVANT le if loading pour respecter les règles des hooks)
+  const totalXP = useMemo(() => {
+    return explorersWithProgress.reduce((sum, exp) => sum + (exp.xp_total || 0), 0);
+  }, [explorersWithProgress]);
+  
+  const totalExplorers = explorersWithProgress.length;
+  
+  const avgAccuracy = useMemo(() => {
+    const allStats = Object.values(speedDrillStats);
+    if (allStats.length === 0) return 0;
+    const totalAcc = allStats.reduce((sum, stat) => sum + (stat.bestAccuracy || 0), 0);
+    return Math.round(totalAcc / allStats.length);
+  }, [speedDrillStats]);
+  
+  const completedChallenges = useMemo(() => {
+    return explorersWithProgress.reduce((sum, exp) => {
+      return sum + exp.progress.filter(p => p.evaluationStatus === 'VALIDE').length;
     }, 0);
   }, [explorersWithProgress]);
 
@@ -274,68 +297,151 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
   if (loading) { 
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color={PremiumTheme.colors.primary} />
         <Text style={styles.loadingText}>{t('global.loading')}</Text>
       </View>
     );
   }
 
-  const mentorName = user?.user_metadata?.name || 'Mentor Apex'; 
+  const mentorName = user?.user_metadata?.name || 'Mentor Apex';
+  
+  // Composant Header pour le FlatList (KPIs + Tabs)
+  const renderListHeader = () => (
+    <>
+      {/* NOUVEAU : Section KPIs Premium pour parents */}
+      <Animatable.View animation="fadeInDown" duration={600} style={styles.kpiSection}>
+        <Text style={styles.welcomeText}>👋 Bonjour, {mentorName}</Text>
+        
+        <View style={styles.kpiGrid}>
+          {/* KPI 1 : Explorateurs */}
+          <View style={styles.kpiCard}>
+            <LinearGradient
+              colors={['#4F46E5', '#7C3AED']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.kpiGradient}
+            >
+              <Text style={styles.kpiValue}>{totalExplorers}</Text>
+              <Text style={styles.kpiLabel}>Explorateurs</Text>
+            </LinearGradient>
+          </View>
+          
+          {/* KPI 2 : XP Total */}
+          <View style={styles.kpiCard}>
+            <LinearGradient
+              colors={['#F59E0B', '#F97316']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.kpiGradient}
+            >
+              <Text style={styles.kpiValue}>{totalXP}</Text>
+              <Text style={styles.kpiLabel}>XP Total</Text>
+            </LinearGradient>
+          </View>
+          
+          {/* KPI 3 : Défis validés */}
+          <View style={styles.kpiCard}>
+            <LinearGradient
+              colors={['#10B981', '#059669']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.kpiGradient}
+            >
+              <Text style={styles.kpiValue}>{completedChallenges}</Text>
+              <Text style={styles.kpiLabel}>Défis validés</Text>
+            </LinearGradient>
+          </View>
+          
+          {/* KPI 4 : Performance Speed Drills */}
+          <View style={styles.kpiCard}>
+            <LinearGradient
+              colors={['#3B82F6', '#2563EB']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.kpiGradient}
+            >
+              <Text style={styles.kpiValue}>{avgAccuracy}%</Text>
+              <Text style={styles.kpiLabel}>Moy. Speed Drills</Text>
+            </LinearGradient>
+          </View>
+        </View>
+        
+        {/* Badge "À évaluer" si nécessaire */}
+        {totalPendingCount > 0 && (
+          <Animatable.View animation="pulse" iterationCount="infinite" duration={2000}>
+            <TouchableOpacity 
+              style={styles.pendingBadge}
+              onPress={() => setFilterStatus('PENDING')}
+            >
+              <Text style={styles.pendingBadgeText}>
+                ⚠️ {totalPendingCount} réponse{totalPendingCount > 1 ? 's' : ''} à évaluer
+              </Text>
+            </TouchableOpacity>
+          </Animatable.View>
+        )}
+      </Animatable.View>
+
+      {/* Section Gestion des Explorateurs */}
+      <View style={styles.explorerManagement}>
+        <View style={styles.managementHeader}>
+          <Text style={styles.subtitle}>
+            Explorateurs
+          </Text>
+          <TouchableOpacity 
+            style={styles.addButton} 
+            onPress={() => setIsCreationModalVisible(true)}
+          >
+            <LinearGradient
+              colors={PremiumTheme.gradients.primary.colors}
+              start={PremiumTheme.gradients.primary.start}
+              end={PremiumTheme.gradients.primary.end}
+              style={styles.addButtonGradient}
+            >
+              <Text style={styles.addButtonText}>+ Ajouter</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Onglets de filtrage premium */}
+      <View style={styles.tabsContainer}>
+        <TouchableOpacity
+          style={[styles.tab, filterStatus === 'ALL' && styles.activeTab]}
+          onPress={() => setFilterStatus('ALL')}
+        >
+          <Text style={[styles.tabText, filterStatus === 'ALL' && styles.activeTabText]}>
+            Tous
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.tab, filterStatus === 'PENDING' && styles.activeTab]}
+          onPress={() => setFilterStatus('PENDING')}
+        >
+          <Text style={[styles.tabText, filterStatus === 'PENDING' && styles.activeTabText]}>
+            À Évaluer
+            {totalPendingCount > 0 && (
+              <Text style={styles.badge}> ({totalPendingCount})</Text>
+            )}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.tab, filterStatus === 'TRAINING' && styles.activeTab]}
+          onPress={() => setFilterStatus('TRAINING')}
+        >
+          <Text style={[styles.tabText, filterStatus === 'TRAINING' && styles.activeTabText]}>
+            📊 Stats
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </>
+  );
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <View style={styles.headerRow}>
-          <Text style={styles.header}>{t('mentor.title')}</Text>
-          <Button title={t('global.logout')} onPress={logout} color="#EF4444" />
-        </View>
-
-        <View style={styles.explorerManagement}>
-          <Text style={styles.subtitle}>
-            {t('mentor.explorers_management') || "Gestion des Explorateurs"}
-          </Text>
-          <View style={styles.createButtonWrapper}>
-            <Button 
-              title={t('mentor.add_explorer_button') || "Ajouter un Explorateur"} 
-              onPress={() => setIsCreationModalVisible(true)} 
-              color="#3B82F6" 
-            />
-          </View>
-        </View>
-
-        {/* Onglets de filtrage */}
-        <View style={styles.tabsContainer}>
-          <TouchableOpacity
-            style={[styles.tab, filterStatus === 'ALL' && styles.activeTab]}
-            onPress={() => setFilterStatus('ALL')}
-          >
-            <Text style={[styles.tabText, filterStatus === 'ALL' && styles.activeTabText]}>
-              {t('mentor.filter_all') || "Tous les Explorateurs"}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.tab, filterStatus === 'PENDING' && styles.activeTab]}
-            onPress={() => setFilterStatus('PENDING')}
-          >
-            <Text style={[styles.tabText, filterStatus === 'PENDING' && styles.activeTabText]}>
-              {t('mentor.filter_pending') || "À Évaluer"}
-              {totalPendingCount > 0 && (
-                <Text style={styles.badge}> ({totalPendingCount})</Text>
-              )}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.tab, filterStatus === 'TRAINING' && styles.activeTab]}
-            onPress={() => setFilterStatus('TRAINING')}
-          >
-            <Text style={[styles.tabText, filterStatus === 'TRAINING' && styles.activeTabText]}>
-              📊 Drill Stats
-            </Text>
-          </TouchableOpacity>
-        </View>
-
         {filterStatus === 'TRAINING' ? (
           <FlatList
+            ListHeaderComponent={renderListHeader}
             data={explorersWithProgress}
             keyExtractor={(item) => item.explorer_uuid}
             renderItem={({ item }) => {
@@ -389,6 +495,7 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
           />
         ) : (
           <FlatList
+            ListHeaderComponent={renderListHeader}
             data={filteredExplorers}
             keyExtractor={(item) => item.explorer_uuid}
             renderItem={renderExplorerItem}
@@ -424,76 +531,170 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
   );
 };
 
-// Styles (Desktop-First)
+// Styles Premium Data-Driven
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#E5E7EB' },
-  loadingContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#E5E7EB' },
-  loadingText: { marginTop: 10, fontSize: 16, color: '#6B7280' },
+  safeArea: { 
+    flex: 1, 
+    backgroundColor: PremiumTheme.colors.lightGray,
+  },
+  loadingContainer: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    backgroundColor: PremiumTheme.colors.lightGray,
+  },
+  loadingText: { 
+    marginTop: PremiumTheme.spacing.sm, 
+    fontSize: PremiumTheme.typography.fontSize.lg, 
+    color: PremiumTheme.colors.gray,
+  },
   container: {
     flex: 1,
     width: isWeb ? Math.min(width * 0.9, MAX_WIDTH) : '100%',
     alignSelf: 'center',
-    backgroundColor: 'white',
-    borderRadius: isWeb ? 10 : 0,
     padding: isWeb ? 40 : 20,
   },
-  headerRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
+  // NOUVEAU : Section KPIs
+  kpiSection: {
+    marginBottom: PremiumTheme.spacing.xxxl,
   },
-  header: { fontSize: isWeb ? 34 : 26, fontWeight: 'bold', color: '#1F2937' },
-  subtitle: { fontSize: isWeb ? 18 : 16, color: '#4B5563' },
-  
+  welcomeText: {
+    fontSize: PremiumTheme.typography.fontSize.xxl,
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.darkGray,
+    marginBottom: PremiumTheme.spacing.lg,
+  },
+  kpiGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: PremiumTheme.spacing.md,
+    marginBottom: PremiumTheme.spacing.lg,
+  },
+  kpiCard: {
+    flex: isWeb ? 0 : 1,
+    minWidth: isWeb ? 200 : '48%',
+    borderRadius: PremiumTheme.borderRadius.large,
+    overflow: 'hidden',
+    // Ombres cross-platform
+    ...(isWeb 
+      ? { boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)' }
+      : {
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 4 },
+          shadowOpacity: 0.12,
+          shadowRadius: 12,
+          elevation: 6,
+        }
+    ),
+  },
+  kpiGradient: {
+    padding: PremiumTheme.spacing.xl,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 120,
+  },
+  kpiValue: {
+    fontSize: PremiumTheme.typography.fontSize.display,
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.white,
+    marginBottom: PremiumTheme.spacing.xs,
+  },
+  kpiLabel: {
+    fontSize: PremiumTheme.typography.fontSize.sm,
+    color: PremiumTheme.colors.white,
+    opacity: 0.9,
+    textAlign: 'center',
+  },
+  pendingBadge: {
+    backgroundColor: '#FEF3C7',
+    borderWidth: 2,
+    borderColor: PremiumTheme.colors.orange,
+    borderRadius: PremiumTheme.borderRadius.large,
+    padding: PremiumTheme.spacing.md,
+    alignItems: 'center',
+  },
+  pendingBadgeText: {
+    fontSize: PremiumTheme.typography.fontSize.lg,
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.orange,
+  },
+  // Section Explorateurs
   explorerManagement: {
+    marginBottom: PremiumTheme.spacing.xl,
+  },
+  managementHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 30,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E5E7EB',
-    paddingBottom: 15,
+    marginBottom: PremiumTheme.spacing.lg,
   },
-  createButtonWrapper: {
-    minWidth: 150,
+  subtitle: { 
+    fontSize: PremiumTheme.typography.fontSize.xl, 
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.darkGray,
+  },
+  addButton: {
+    borderRadius: PremiumTheme.borderRadius.large,
+    overflow: 'hidden',
+  },
+  addButtonGradient: {
+    paddingVertical: PremiumTheme.spacing.sm,
+    paddingHorizontal: PremiumTheme.spacing.lg,
+    alignItems: 'center',
+  },
+  addButtonText: {
+    fontSize: PremiumTheme.typography.fontSize.base,
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.white,
   },
 
-  listContent: { paddingBottom: 20 },
-  emptyText: { textAlign: 'center', marginTop: 50, fontSize: 16, color: '#9CA3AF' },
+  listContent: { paddingBottom: PremiumTheme.spacing.xxxl },
+  emptyText: { 
+    textAlign: 'center', 
+    marginTop: 50, 
+    fontSize: PremiumTheme.typography.fontSize.lg, 
+    color: PremiumTheme.colors.gray,
+  },
   
   explorerCard: {
     padding: isWeb ? 25 : 20,
-    backgroundColor: '#F9FAFB',
-    borderRadius: 10,
-    marginBottom: 20,
-    borderLeftWidth: 5,
-    borderLeftColor: '#3B82F6',
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 5,
-    elevation: 1,
+    backgroundColor: PremiumTheme.colors.white,
+    borderRadius: PremiumTheme.borderRadius.xlarge,
+    marginBottom: PremiumTheme.spacing.lg,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.08)',
+    // Ombres cross-platform
+    ...(isWeb 
+      ? { boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)' }
+      : {
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 4 },
+          shadowOpacity: 0.12,
+          shadowRadius: 12,
+          elevation: 6,
+        }
+    ),
   },
   explorerHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: PremiumTheme.spacing.sm,
   },
   explorerName: {
-    fontSize: isWeb ? 22 : 18,
-    fontWeight: '700',
-    color: '#1F2937',
+    fontSize: isWeb ? PremiumTheme.typography.fontSize.xxl : PremiumTheme.typography.fontSize.xl,
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.darkGray,
   },
   xpTotal: {
-    fontSize: isWeb ? 16 : 14,
-    fontWeight: '600',
-    color: '#F59E0B',
+    fontSize: isWeb ? PremiumTheme.typography.fontSize.lg : PremiumTheme.typography.fontSize.base,
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.orange,
   },
   explorerID: {
-    fontSize: 12,
-    color: '#6B7280',
-    marginBottom: 20,
+    fontSize: PremiumTheme.typography.fontSize.xs,
+    color: PremiumTheme.colors.gray,
+    marginBottom: PremiumTheme.spacing.md,
     fontFamily: Platform.select({ web: 'monospace', default: 'System' }),
   },
   
@@ -533,37 +734,40 @@ const styles = StyleSheet.create({
     minWidth: 100,
   },
 
-  // Nouveaux styles pour les onglets
+  // Onglets de filtrage premium
   tabsContainer: {
     flexDirection: 'row',
-    backgroundColor: '#F3F4F6',
-    borderRadius: 8,
+    backgroundColor: PremiumTheme.colors.lightGray,
+    borderRadius: PremiumTheme.borderRadius.large,
     padding: 4,
-    marginBottom: 16,
+    marginBottom: PremiumTheme.spacing.lg,
+    gap: 4,
   },
   tab: {
     flex: 1,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
+    paddingVertical: PremiumTheme.spacing.md,
+    paddingHorizontal: PremiumTheme.spacing.sm,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 6,
+    borderRadius: PremiumTheme.borderRadius.medium,
+    minHeight: 44,
   },
   activeTab: {
-    backgroundColor: '#3B82F6',
+    backgroundColor: PremiumTheme.colors.primary,
   },
   tabText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#6B7280',
+    fontSize: PremiumTheme.typography.fontSize.sm,
+    fontWeight: PremiumTheme.typography.fontWeight.semibold,
+    color: PremiumTheme.colors.gray,
+    textAlign: 'center',
   },
   activeTabText: {
-    color: '#fff',
+    color: PremiumTheme.colors.white,
   },
   badge: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#EF4444',
+    fontSize: PremiumTheme.typography.fontSize.sm,
+    fontWeight: PremiumTheme.typography.fontWeight.bold,
+    color: PremiumTheme.colors.red,
   },
 
   // Nouveaux styles pour les badges et statuts

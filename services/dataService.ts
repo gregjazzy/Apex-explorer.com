@@ -508,58 +508,352 @@ export const requestRevision = async (
     }
 };
 
-// --- Logique de Badges (Gamification) ---
+// --- Logique de Badges Sophistiqués (Gamification) ---
 
-// Définition des badges (Conditions de base)
-const ALL_BADGES: Omit<Badge, 'earned'>[] = [
-    { id: 'first_step', title: 'Premier Pas', icon: '🌟' }, // Complétion de M1/D1
-    { id: 'math_master', title: 'Maître Maths', icon: '📐' }, // Complétion du Module M1
-    { id: 'resilience_leader', title: 'Leader Résilient', icon: '🛡️' }, // Complétion du Module M6
-    { id: 'ethics_champion', title: 'Champion Éthique', icon: '⚖️' }, // Complétion du Module M9
-    { id: 'full_explorer', title: 'Explorateur Complet', icon: '🌍' }, // Complétion de tous les modules
-];
+import { BADGE_CATALOG, BadgeConfig } from '../config/badgeSystem';
+
+export interface EarnedBadge extends BadgeConfig {
+    earned: boolean;
+    earnedAt?: string;
+    progress?: number; // Pour les badges à progression (0-100)
+    currentLevel?: number; // Pour les badges à niveaux
+}
 
 /**
- * Calcule les badges gagnés par l'Explorateur.
+ * Calcule tous les badges avec leur statut (gagné/non gagné)
+ * et détecte les nouveaux badges débloqués
  */
-export const calculateBadges = (progress: ExplorerProgressItem[]): Badge[] => {
+export const calculateAdvancedBadges = async (
+    userId: string,
+    progressItems: ExplorerProgressItem[],
+    speedDrillSessions?: SpeedDrillSession[]
+): Promise<{
+    badges: EarnedBadge[];
+    newlyUnlocked: EarnedBadge[];
+}> => {
+    const earnedBadgeIds: string[] = [];
+    const newlyUnlocked: EarnedBadge[] = [];
     
-    // Fonction utilitaire pour vérifier si un défi spécifique est complété
-    const isCompleted = (moduleId: string, defiId: string) => 
-        progress.some(item => item.moduleId === moduleId && item.defiId === defiId && item.status === 'completed');
-
-    // Fonction utilitaire pour vérifier si un module entier est complété
-    const isModuleComplete = (moduleId: string, totalDefis: number) => {
-        const completedCount = progress.filter(item => item.moduleId === moduleId && item.status === 'completed').length;
-        // On vérifie si au moins la moitié des défis du module sont complétés pour débloquer le badge
-        return completedCount >= totalDefis / 2; 
-    }
-
-    // Nombre de modules avec au moins 1 défi complété (pour le badge final)
-    const completedModulesCount = new Set(progress.filter(item => item.status === 'completed').map(item => item.moduleId)).size;
+    // Récupérer les badges déjà débloqués depuis la base
+    const previouslyEarned = await getEarnedBadgeIds(userId);
     
-    return ALL_BADGES.map(badge => {
+    // Calculer les modules complétés
+    const completedModules = new Set(
+        progressItems
+            .filter(item => item.status === 'completed')
+            .map(item => item.moduleId)
+    ).size;
+    
+    // Calculer les défis complétés avec timestamps
+    const completedDefis = progressItems.filter(item => item.status === 'completed');
+    
+    // Vérifier chaque badge du catalogue
+    const badges: EarnedBadge[] = BADGE_CATALOG.map(badge => {
         let earned = false;
+        let badgeProgress = 0;
 
         switch (badge.id) {
-            case 'first_step':
-                earned = isCompleted('m1', 'defi1');
+            // BADGES DE COMPLÉTION
+            case 'first_module':
+                earned = completedModules >= 1;
+                badgeProgress = completedModules >= 1 ? 100 : (completedModules * 100);
                 break;
-            case 'math_master':
-                earned = isModuleComplete('m1', 4); // M1 a 4 défis
+                
+            case 'five_modules':
+                earned = completedModules >= 5;
+                badgeProgress = Math.min(100, (completedModules / 5) * 100);
                 break;
-            case 'resilience_leader':
-                earned = isModuleComplete('m6', 4); // M6 a 4 défis
+                
+            case 'all_modules':
+                earned = completedModules >= 11;
+                badgeProgress = Math.min(100, (completedModules / 11) * 100);
                 break;
-            case 'ethics_champion':
-                earned = isModuleComplete('m9', 4); // M9 a 4 défis
+            
+            // BADGES DE VITESSE (calculés avec speedDrillSessions)
+            case 'speed_drill_10':
+                if (speedDrillSessions) {
+                    earned = speedDrillSessions.some(s => s.score === 10 && s.time_seconds <= 30);
+                }
                 break;
-            case 'full_explorer':
-                earned = completedModulesCount >= 11; // 1 défi dans chacun des 11 modules
+                
+            case 'speed_drill_20':
+                if (speedDrillSessions) {
+                    earned = speedDrillSessions.some(s => s.score === 10 && s.time_seconds <= 20);
+                }
+                break;
+                
+            case 'speed_drill_15':
+                if (speedDrillSessions) {
+                    earned = speedDrillSessions.some(s => s.score === 10 && s.time_seconds <= 15);
+                }
+                break;
+                
+            case 'speed_drill_master':
+                if (speedDrillSessions) {
+                    const operations = ['Multiplication', 'Division', 'Addition', 'Subtraction'];
+                    const perfectInAll = operations.every(op => 
+                        speedDrillSessions.some(s => 
+                            s.operation_type === op && s.score === 10 && s.time_seconds <= 20
+                        )
+                    );
+                    earned = perfectInAll;
+                    const count = operations.filter(op => 
+                        speedDrillSessions.some(s => 
+                            s.operation_type === op && s.score === 10 && s.time_seconds <= 20
+                        )
+                    ).length;
+                    badgeProgress = (count / 4) * 100;
+                }
+                break;
+            
+            // BADGES DE PRÉCISION
+            case 'accuracy_95':
+                if (speedDrillSessions && speedDrillSessions.length >= 10) {
+                    const last10 = speedDrillSessions.slice(-10);
+                    const avgAccuracy = last10.reduce((sum, s) => sum + s.accuracy, 0) / 10;
+                    earned = avgAccuracy >= 95;
+                    badgeProgress = Math.min(100, avgAccuracy);
+                }
+                break;
+                
+            case 'accuracy_100':
+                if (speedDrillSessions) {
+                    let consecutivePerfect = 0;
+                    for (let i = speedDrillSessions.length - 1; i >= 0; i--) {
+                        if (speedDrillSessions[i].accuracy === 100) {
+                            consecutivePerfect++;
+                            if (consecutivePerfect >= 5) break;
+                        } else {
+                            break;
+                        }
+                    }
+                    earned = consecutivePerfect >= 5;
+                    badgeProgress = Math.min(100, (consecutivePerfect / 5) * 100);
+                }
+                break;
+            
+            // BADGES SPÉCIAUX
+            case 'early_bird':
+                const earlyDefis = completedDefis.filter(d => {
+                    const hour = new Date(d.completedAt).getHours();
+                    return hour < 8;
+                });
+                earned = earlyDefis.length >= 10;
+                badgeProgress = Math.min(100, (earlyDefis.length / 10) * 100);
+                break;
+                
+            case 'night_owl':
+                const lateDefis = completedDefis.filter(d => {
+                    const hour = new Date(d.completedAt).getHours();
+                    return hour >= 22;
+                });
+                earned = lateDefis.length >= 10;
+                badgeProgress = Math.min(100, (lateDefis.length / 10) * 100);
+                break;
+                
+            case 'perfectionist':
+                // Tous les modules avec 100% (tous les défis complétés)
+                const allModuleIds = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10', 'm11'];
+                const perfectModules = allModuleIds.filter(mid => {
+                    const defisInModule = progressItems.filter((p: ExplorerProgressItem) => p.moduleId === mid);
+                    return defisInModule.length >= 4 && defisInModule.every((d: ExplorerProgressItem) => d.status === 'completed');
+                });
+                earned = perfectModules.length === 11;
+                badgeProgress = Math.min(100, (perfectModules.length / 11) * 100);
                 break;
         }
+        
+        // Détecter les nouveaux badges
+        if (earned && !previouslyEarned.includes(badge.id)) {
+            const newBadge: EarnedBadge = { ...badge, earned, earnedAt: new Date().toISOString(), progress: badgeProgress };
+            newlyUnlocked.push(newBadge);
+            earnedBadgeIds.push(badge.id);
+            
+            // Sauvegarder dans la base
+            saveEarnedBadge(userId, badge.id);
+        } else if (earned) {
+            earnedBadgeIds.push(badge.id);
+        }
+        
+        return { ...badge, earned, progress: badgeProgress };
+    });
+    
+    return { badges, newlyUnlocked };
+};
 
-        return { ...badge, earned };
+// Sauvegarder un badge débloqué dans la base
+async function saveEarnedBadge(userId: string, badgeId: string) {
+    try {
+        const { error } = await supabase
+            .from('earned_badges')
+            .insert({
+                user_id: userId,
+                badge_id: badgeId,
+                earned_at: new Date().toISOString(),
+            });
+        
+        if (error) console.error('Erreur sauvegarde badge:', error);
+    } catch (err) {
+        console.error('Erreur sauvegarde badge:', err);
+    }
+}
+
+// Récupérer les IDs des badges déjà gagnés
+async function getEarnedBadgeIds(userId: string): Promise<string[]> {
+    try {
+        const { data, error } = await supabase
+            .from('earned_badges')
+            .select('badge_id')
+            .eq('user_id', userId);
+        
+        if (error) {
+            console.error('Erreur récupération badges:', error);
+            return [];
+        }
+        
+        return data?.map(row => row.badge_id) || [];
+    } catch (err) {
+        console.error('Erreur récupération badges:', err);
+        return [];
+    }
+}
+
+// ANCIEN SYSTÈME (Rétro-compatibilité)
+export const calculateBadges = (progress: ExplorerProgressItem[]): Badge[] => {
+    const completedModules = new Set(
+        progress
+            .filter(item => item.status === 'completed')
+            .map(item => item.moduleId)
+    ).size;
+    
+    // Mapper vers l'ancien format
+    const legacyBadges: Badge[] = [
+        { id: 'first_step', title: 'Premier Pas', icon: '🌟', earned: completedModules >= 1 },
+        { id: 'five_modules', title: 'Explorateur', icon: '🏆', earned: completedModules >= 5 },
+        { id: 'all_modules', title: 'Maître', icon: '👑', earned: completedModules >= 11 },
+    ];
+    
+    return legacyBadges;
+};
+
+// --- Système de Streaks (Jours Consécutifs) ---
+
+export interface UserStreak {
+    userId: string;
+    currentStreak: number;
+    longestStreak: number;
+    lastActivityDate: string;
+}
+
+/**
+ * Met à jour le streak de l'utilisateur (à appeler à chaque activité)
+ */
+export const updateUserStreak = async (userId: string): Promise<UserStreak | null> => {
+    try {
+        const { data, error } = await supabase.rpc('update_user_streak', {
+            p_user_id: userId
+        });
+        
+        if (error) {
+            // Erreur silencieuse, retour par défaut
+            return {
+                userId,
+                currentStreak: 1,
+                longestStreak: 1,
+                lastActivityDate: new Date().toISOString().split('T')[0],
+            };
+        }
+        
+        const { data: streakData, error: streakError } = await supabase
+            .from('user_streaks')
+            .select('*')
+            .eq('user_id', userId)
+            .single();
+        
+        if (streakError || !streakData) {
+            return {
+                userId,
+                currentStreak: 1,
+                longestStreak: 1,
+                lastActivityDate: new Date().toISOString().split('T')[0],
+            };
+        }
+        
+        return {
+            userId: streakData.user_id,
+            currentStreak: streakData.current_streak,
+            longestStreak: streakData.longest_streak,
+            lastActivityDate: streakData.last_activity_date,
+        };
+    } catch (err) {
+        // Erreur silencieuse
+        return {
+            userId,
+            currentStreak: 1,
+            longestStreak: 1,
+            lastActivityDate: new Date().toISOString().split('T')[0],
+        };
+    }
+};
+
+/**
+ * Récupère le streak actuel de l'utilisateur
+ */
+export const getUserStreak = async (userId: string): Promise<UserStreak | null> => {
+    try {
+        const { data, error } = await supabase
+            .from('user_streaks')
+            .select('*')
+            .eq('user_id', userId)
+            .single();
+        
+        if (error) {
+            return {
+                userId,
+                currentStreak: 0,
+                longestStreak: 0,
+                lastActivityDate: new Date().toISOString().split('T')[0],
+            };
+        }
+        
+        return {
+            userId: data.user_id,
+            currentStreak: data.current_streak,
+            longestStreak: data.longest_streak,
+            lastActivityDate: data.last_activity_date,
+        };
+    } catch (err) {
+        console.error('Erreur récupération streak:', err);
+        return null;
+    }
+};
+
+/**
+ * Calcule les badges de streak basés sur le streak actuel
+ */
+export const calculateStreakBadges = (currentStreak: number): EarnedBadge[] => {
+    const streakBadges = BADGE_CATALOG.filter(b => b.category === 'streak');
+    
+    return streakBadges.map(badge => {
+        let earned = false;
+        let progress = 0;
+        
+        switch (badge.id) {
+            case 'streak_3':
+                earned = currentStreak >= 3;
+                progress = Math.min(100, (currentStreak / 3) * 100);
+                break;
+            case 'streak_7':
+                earned = currentStreak >= 7;
+                progress = Math.min(100, (currentStreak / 7) * 100);
+                break;
+            case 'streak_30':
+                earned = currentStreak >= 30;
+                progress = Math.min(100, (currentStreak / 30) * 100);
+                break;
+        }
+        
+        return { ...badge, earned, progress };
     });
 };
 

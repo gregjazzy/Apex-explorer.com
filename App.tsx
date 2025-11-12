@@ -22,10 +22,67 @@ import SpeedDrillScreen from './screens/SpeedDrillScreen';
 
 const Stack = createNativeStackNavigator();
 
+// Header DISCRET pour les explorateurs (enfants)
+const HeaderRightExplorer: React.FC<{ logout: () => void; i18n: any }> = ({ logout, i18n }) => (
+  <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10, gap: 8 }}>
+    <TouchableOpacity 
+      onPress={() => {
+        const currentLang = i18n.language.substring(0, 2);
+        const nextLang = currentLang === 'fr' ? 'en' : 'fr';
+        i18n.changeLanguage(nextLang);
+      }}
+      style={{ 
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Text style={{ fontSize: 16 }}>🌐</Text>
+    </TouchableOpacity>
+    <TouchableOpacity 
+      onPress={logout} 
+      style={{ 
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Text style={{ fontSize: 16 }}>🚪</Text>
+    </TouchableOpacity>
+  </View>
+);
+
+// Header VISIBLE pour les mentors (adultes)
+const HeaderRightMentor: React.FC<{ logout: () => void; t: any }> = ({ logout, t }) => (
+  <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
+    <LanguageSwitcher />
+    <TouchableOpacity 
+      onPress={logout} 
+      style={{ 
+        marginLeft: 10, 
+        paddingHorizontal: 12, 
+        paddingVertical: 6, 
+        borderRadius: 5, 
+        backgroundColor: '#EF4444' 
+      }}
+    >
+      <Text style={{ color: 'white', fontWeight: 'bold' }}>
+        {t('global.logout')}
+      </Text>
+    </TouchableOpacity>
+  </View>
+);
+
 // --- Composant qui gère la navigation conditionnelle ---
 const AppContent: React.FC = () => {
   const { user, loading, logout } = useAuth();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const userRole = user?.role; 
 
   if (loading) {
@@ -37,38 +94,20 @@ const AppContent: React.FC = () => {
     );
   }
 
-  // Composant pour le header avec langue ET logout
-  const HeaderRight = () => (
-    <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
-      <LanguageSwitcher />
-      {user && (
-        <TouchableOpacity 
-          onPress={logout} 
-          style={{ 
-            marginLeft: 10, 
-            paddingHorizontal: 12, 
-            paddingVertical: 6, 
-            borderRadius: 5, 
-            backgroundColor: '#EF4444' 
-          }}
-        >
-          <Text style={{ color: 'white', fontWeight: 'bold' }}>
-            {t('global.logout')}
-          </Text>
-        </TouchableOpacity>
-      )}
-    </View>
-  );
-
   return (
     <Stack.Navigator 
       screenOptions={{ 
         headerShown: true,
         headerBackVisible: true,
         headerBackTitle: t('global.back') || 'Retour',
-        headerRight: () => <HeaderRight />, 
         headerTitle: "Apex Junior Explorer", 
-        headerTitleStyle: { fontWeight: 'bold' }
+        headerTitleStyle: { fontWeight: 'bold' },
+        // NOUVEAU: Animations de transition premium
+        animation: 'slide_from_right',
+        animationDuration: 300,
+        presentation: 'card',
+        gestureEnabled: true,
+        gestureDirection: 'horizontal',
       }}
     >
       {!user ? (
@@ -77,7 +116,8 @@ const AppContent: React.FC = () => {
           component={AuthScreen} 
           options={{ 
             headerTitle: t('global.welcome'),
-            headerBackVisible: false
+            headerBackVisible: false,
+            animation: 'fade',
           }}
         />
       ) : userRole === 'explorer' ? (
@@ -87,7 +127,9 @@ const AppContent: React.FC = () => {
             component={ExplorerDashboardScreen} 
             options={{ 
               headerTitle: t('dashboard.title'),
-              headerBackVisible: false
+              headerBackVisible: false,
+              headerRight: () => <HeaderRightExplorer logout={logout} i18n={i18n} />,
+              animation: 'slide_from_bottom',
             }}
           />
           <Stack.Screen 
@@ -96,7 +138,7 @@ const AppContent: React.FC = () => {
             options={{ 
               headerTitle: t('defi.title'),
               headerBackVisible: true,
-              headerRight: undefined // Pas de bouton de langue
+              headerRight: () => <HeaderRightExplorer logout={logout} i18n={i18n} />
             }}
           /> 
           <Stack.Screen 
@@ -105,7 +147,7 @@ const AppContent: React.FC = () => {
             options={{ 
               headerTitle: t('defi.title'),
               headerBackVisible: true,
-              headerRight: undefined // Pas de bouton de langue
+              headerRight: () => <HeaderRightExplorer logout={logout} i18n={i18n} />
             }}
           />
           <Stack.Screen 
@@ -114,7 +156,9 @@ const AppContent: React.FC = () => {
             options={{ 
               headerTitle: t('speed_drills.title'),
               headerBackVisible: true,
-              headerRight: undefined // Pas de bouton de langue
+              headerRight: () => <HeaderRightExplorer logout={logout} i18n={i18n} />,
+              animation: 'slide_from_bottom',
+              presentation: 'modal',
             }}
           />
         </>
@@ -124,7 +168,9 @@ const AppContent: React.FC = () => {
           component={MentorDashboardScreen} 
           options={{ 
             headerTitle: t('mentor.title'),
-            headerBackVisible: false
+            headerBackVisible: false,
+            headerRight: () => <HeaderRightMentor logout={logout} t={t} />,
+            animation: 'slide_from_bottom',
           }}
         />
       )}
