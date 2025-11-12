@@ -427,6 +427,54 @@ export const getExplorerProfile = async (explorerUuid: string): Promise<Explorer
 };
 
 /**
+ * NOUVEAU: Lie un explorateur solo existant à un mentor.
+ * Permet de passer de mode autonome à mode supervisé sans perdre la progression.
+ */
+export const linkExistingExplorer = async (
+    explorerName: string, 
+    explorerPin: string, 
+    mentorId: string
+): Promise<ExplorerProfile | null> => {
+    // 1. Vérifier que l'explorateur existe et que le PIN est correct
+    const { data: explorer, error: findError } = await supabase
+        .from('explorers')
+        .select('*')
+        .eq('name', explorerName)
+        .eq('pin_code', explorerPin)
+        .eq('is_active', true)
+        .maybeSingle();
+    
+    if (findError || !explorer) {
+        console.error("Explorateur non trouvé ou PIN incorrect:", findError);
+        return null;
+    }
+    
+    // 2. Vérifier que l'explorateur n'a pas déjà un mentor
+    if (explorer.mentor_id && !explorer.is_solo) {
+        console.error("Cet explorateur a déjà un mentor");
+        return null;
+    }
+    
+    // 3. Lier l'explorateur au mentor
+    const { data: updated, error: updateError } = await supabase
+        .from('explorers')
+        .update({
+            mentor_id: mentorId,
+            is_solo: false,
+        })
+        .eq('explorer_uuid', explorer.explorer_uuid)
+        .select()
+        .single();
+    
+    if (updateError) {
+        console.error("Échec de la liaison explorateur-mentor:", updateError);
+        return null;
+    }
+
+    return updated as ExplorerProfile;
+};
+
+/**
  * Récupère la progression complète pour un Explorateur donné (par son UUID).
  */
 export const fetchExplorerProgress = async (explorerUuid: string): Promise<ExplorerProgressItem[]> => {
