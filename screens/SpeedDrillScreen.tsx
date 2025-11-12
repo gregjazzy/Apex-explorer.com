@@ -21,7 +21,13 @@ interface Question {
     answer: number;
 }
 
-type GameState = 'setup' | 'playing' | 'results';
+interface MistakeRecord {
+    question: Question;
+    userAnswer: number;
+    questionNumber: number;
+}
+
+type GameState = 'setup' | 'playing' | 'results' | 'review';
 
 const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
     const { t } = useTranslation();
@@ -40,6 +46,7 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
     const [startTime, setStartTime] = useState<number | null>(null);
     const [endTime, setEndTime] = useState<number | null>(null);
     const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
+    const [mistakes, setMistakes] = useState<MistakeRecord[]>([]); // NOUVEAU : Enregistrer les erreurs
 
     // Générateur de nombres selon la difficulté
     const generateNumber = useCallback((difficulty: DifficultyLevel, operation: OperationType): { min: number; max: number } => {
@@ -66,6 +73,54 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
                 case 'easy': return { min: 1, max: 50 };
                 case 'medium': return { min: 20, max: 100 };
                 case 'hard': return { min: 50, max: 500 };
+            }
+        }
+    }, []);
+
+    // NOUVEAU : Générer une astuce pédagogique pour une question
+    const generateHint = useCallback((question: Question): string => {
+        const { num1, num2, operation, answer } = question;
+        
+        if (operation === 'multiplication') {
+            // Décomposition en dizaines et unités
+            if (num1 >= 10 || num2 >= 10) {
+                const larger = num1 > num2 ? num1 : num2;
+                const smaller = num1 > num2 ? num2 : num1;
+                const tens = Math.floor(larger / 10) * 10;
+                const ones = larger % 10;
+                
+                if (ones === 0) {
+                    return `${larger} × ${smaller} = (${tens} × ${smaller}) = ${answer}`;
+                } else {
+                    const step1 = tens * smaller;
+                    const step2 = ones * smaller;
+                    return `${larger} × ${smaller} = (${tens} × ${smaller}) + (${ones} × ${smaller})\n        = ${step1} + ${step2}\n        = ${answer}`;
+                }
+            } else {
+                return `${num1} × ${num2} = ${answer}\n(Table de multiplication)`;
+            }
+        } else if (operation === 'division') {
+            return `${num1} ÷ ${num2} = ${answer}\nVérification: ${answer} × ${num2} = ${num1}`;
+        } else if (operation === 'addition') {
+            if (num1 >= 10 && num2 >= 10) {
+                // Décomposition en dizaines et unités
+                const tens1 = Math.floor(num1 / 10) * 10;
+                const ones1 = num1 % 10;
+                const tens2 = Math.floor(num2 / 10) * 10;
+                const ones2 = num2 % 10;
+                return `${num1} + ${num2} = (${tens1} + ${tens2}) + (${ones1} + ${ones2})\n        = ${tens1 + tens2} + ${ones1 + ones2}\n        = ${answer}`;
+            } else {
+                return `${num1} + ${num2} = ${answer}`;
+            }
+        } else { // subtraction
+            if (num1 >= 10 && num2 >= 10) {
+                const tens1 = Math.floor(num1 / 10) * 10;
+                const ones1 = num1 % 10;
+                const tens2 = Math.floor(num2 / 10) * 10;
+                const ones2 = num2 % 10;
+                return `${num1} − ${num2} = (${tens1} − ${tens2}) + (${ones1} − ${ones2})\n        = ${tens1 - tens2} + ${ones1 - ones2}\n        = ${answer}`;
+            } else {
+                return `${num1} − ${num2} = ${answer}`;
             }
         }
     }, []);
@@ -133,6 +188,7 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
         setStartTime(Date.now());
         setEndTime(null);
         setFeedback(null);
+        setMistakes([]); // NOUVEAU : Réinitialiser les erreurs
     };
 
     // Terminer le jeu
@@ -149,13 +205,20 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
         }
 
         const currentQuestion = questions[currentQuestionIndex];
-        const isCorrect = parseInt(userAnswer) === currentQuestion.answer;
+        const userAnswerNum = parseInt(userAnswer);
+        const isCorrect = userAnswerNum === currentQuestion.answer;
 
         if (isCorrect) {
             setCorrectAnswers(correctAnswers + 1);
             setFeedback('correct');
         } else {
             setFeedback('incorrect');
+            // NOUVEAU : Enregistrer l'erreur
+            setMistakes(prev => [...prev, {
+                question: currentQuestion,
+                userAnswer: userAnswerNum,
+                questionNumber: currentQuestionIndex + 1
+            }]);
         }
 
         // Attendre 500ms pour montrer le feedback, puis passer à la question suivante
@@ -295,6 +358,53 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
         );
     }
 
+    // Écran de revue pédagogique
+    if (gameState === 'review') {
+        return (
+            <SafeAreaView style={styles.safeArea}>
+                <ScrollView contentContainerStyle={styles.scrollContent}>
+                    <View style={styles.container}>
+                        <Text style={styles.resultsTitle}>{t('speed_drills.review_title')}</Text>
+                        <Text style={styles.resultsSubtitle}>{t('speed_drills.review_subtitle')}</Text>
+
+                        {mistakes.length === 0 ? (
+                            <Text style={styles.noMistakesText}>{t('speed_drills.no_mistakes')}</Text>
+                        ) : (
+                            <View style={styles.mistakesContainer}>
+                                {mistakes.map((mistake, index) => (
+                                    <View key={index} style={styles.mistakeCard}>
+                                        <Text style={styles.mistakeHeader}>
+                                            Question {mistake.questionNumber}
+                                        </Text>
+                                        <Text style={styles.mistakeQuestion}>
+                                            {mistake.question.num1} {getOperationSymbol(mistake.question.operation)} {mistake.question.num2} = ?
+                                        </Text>
+                                        <View style={styles.mistakeAnswers}>
+                                            <Text style={styles.mistakeUserAnswer}>
+                                                {t('speed_drills.your_answer_was')}: {mistake.userAnswer} ❌
+                                            </Text>
+                                            <Text style={styles.mistakeCorrectAnswer}>
+                                                {t('speed_drills.correct_answer_is')}: {mistake.question.answer} ✅
+                                            </Text>
+                                        </View>
+                                        <View style={styles.hintBox}>
+                                            <Text style={styles.hintTitle}>{t('speed_drills.calculation_hint')}</Text>
+                                            <Text style={styles.hintText}>{generateHint(mistake.question)}</Text>
+                                        </View>
+                                    </View>
+                                ))}
+                            </View>
+                        )}
+
+                        <TouchableOpacity style={styles.backButton} onPress={() => setGameState('results')}>
+                            <Text style={styles.backButtonText}>{t('speed_drills.back_to_results')}</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
+        );
+    }
+
     // Écran de résultats
     const accuracy = questions.length > 0 ? Math.round((correctAnswers / questions.length) * 100) : 0;
     const timeTaken = startTime && endTime ? Math.round((endTime - startTime) / 1000) : 60;
@@ -319,6 +429,12 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
                     </View>
 
                     <View style={styles.resultsButtons}>
+                        {mistakes.length > 0 && (
+                            <TouchableOpacity style={styles.reviewButton} onPress={() => setGameState('review')}>
+                                <Text style={styles.reviewButtonText}>{t('speed_drills.review_button')}</Text>
+                                <Text style={styles.reviewButtonSubtext}>{t('speed_drills.mistakes_count', { count: mistakes.length })}</Text>
+                            </TouchableOpacity>
+                        )}
                         <TouchableOpacity style={styles.playAgainButton} onPress={startGame}>
                             <Text style={styles.playAgainButtonText}>{t('speed_drills.play_again')}</Text>
                         </TouchableOpacity>
@@ -563,6 +679,87 @@ const styles = StyleSheet.create({
         fontSize: isWeb ? 18 : 16,
         fontWeight: '600',
         color: 'white',
+    },
+    reviewButton: {
+        backgroundColor: '#3B82F6',
+        paddingVertical: 16,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    reviewButtonText: {
+        fontSize: isWeb ? 20 : 18,
+        fontWeight: '700',
+        color: 'white',
+    },
+    reviewButtonSubtext: {
+        fontSize: isWeb ? 14 : 12,
+        fontWeight: '400',
+        color: 'white',
+        marginTop: 5,
+    },
+    mistakesContainer: {
+        marginBottom: 30,
+    },
+    mistakeCard: {
+        backgroundColor: '#FEF2F2',
+        borderRadius: 8,
+        padding: 20,
+        marginBottom: 15,
+        borderLeftWidth: 4,
+        borderLeftColor: '#EF4444',
+    },
+    mistakeHeader: {
+        fontSize: isWeb ? 16 : 14,
+        fontWeight: '700',
+        color: '#991B1B',
+        marginBottom: 10,
+    },
+    mistakeQuestion: {
+        fontSize: isWeb ? 24 : 20,
+        fontWeight: 'bold',
+        color: '#1F2937',
+        marginBottom: 15,
+        textAlign: 'center',
+    },
+    mistakeAnswers: {
+        marginBottom: 15,
+    },
+    mistakeUserAnswer: {
+        fontSize: isWeb ? 16 : 14,
+        color: '#991B1B',
+        marginBottom: 5,
+    },
+    mistakeCorrectAnswer: {
+        fontSize: isWeb ? 16 : 14,
+        color: '#059669',
+        fontWeight: '600',
+    },
+    hintBox: {
+        backgroundColor: '#DBEAFE',
+        borderRadius: 8,
+        padding: 15,
+        borderLeftWidth: 3,
+        borderLeftColor: '#3B82F6',
+    },
+    hintTitle: {
+        fontSize: isWeb ? 16 : 14,
+        fontWeight: '700',
+        color: '#1E40AF',
+        marginBottom: 10,
+    },
+    hintText: {
+        fontSize: isWeb ? 14 : 12,
+        color: '#1F2937',
+        fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
+        lineHeight: 20,
+    },
+    noMistakesText: {
+        fontSize: isWeb ? 24 : 20,
+        fontWeight: '600',
+        color: '#10B981',
+        textAlign: 'center',
+        marginVertical: 40,
     },
 });
 

@@ -943,6 +943,15 @@
     "back_to_dashboard": "Retour au Dashboard",
     "correct": "Correct ! ✅",
     "incorrect": "Incorrect ❌",
-    "game_over": "Session Terminée !"
+    "game_over": "Session Terminée !",
+    "review_button": "📖 Voir mes erreurs et astuces",
+    "review_title": "Revue Pédagogique",
+    "review_subtitle": "Apprends de tes erreurs !",
+    "no_mistakes": "Parfait ! Aucune erreur ! 🎉",
+    "mistakes_count": "{{count}} question(s) à revoir",
+    "your_answer_was": "Ta réponse",
+    "correct_answer_is": "Bonne réponse",
+    "calculation_hint": "💡 Astuce de Calcul",
+    "back_to_results": "Retour aux Résultats"
   }
 }

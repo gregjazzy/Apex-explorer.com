@@ -938,6 +938,15 @@
     "back_to_dashboard": "Back to Dashboard",
     "correct": "Correct! ✅",
     "incorrect": "Incorrect ❌",
-    "game_over": "Session Complete!"
+    "game_over": "Session Complete!",
+    "review_button": "📖 Review mistakes & tips",
+    "review_title": "Pedagogical Review",
+    "review_subtitle": "Learn from your mistakes!",
+    "no_mistakes": "Perfect! No mistakes! 🎉",
+    "mistakes_count": "{{count}} question(s) to review",
+    "your_answer_was": "Your answer",
+    "correct_answer_is": "Correct answer",
+    "calculation_hint": "💡 Calculation Tip",
+    "back_to_results": "Back to Results"
   }
 }
