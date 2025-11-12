@@ -63,7 +63,7 @@
       "instruction": "Écris le nombre de caisses COMPLÈTES et le nombre d'œufs RESTANTS. (Le Reste est la partie à gérer par le leader !)",
       "leconStrategique": "Chaque ressource doit être comptée. Les 'restes' sont souvent là où se cache l'inefficacité ou la valeur cachée.",
       "referenceCroisee": "M8",
-      "briefing": {
+      "briefing": { 
         "etape1": {
           "titre": "1. Analyser la Contrainte Fixe",
           "type_etape": "validation_case",
@@ -82,9 +82,7 @@
           "instruction": "Si tu n'avais pas calculé le Reste, que risquerais-tu de perdre ?",
           "placeholder": "Ex: Sécurité, Argent, Temps..."
         }
-      },
-      "mentorGoal": "Ce défi évalue la capacité de l'enfant à gérer l'allocation des ressources avec un reste (division avec reste). Le but est de se concentrer sur l'exception (les œufs restants) car c'est là que réside le risque logistique.",
-      "evaluationCriteria": "La réponse doit contenir DEUX nombres (quotient et reste). 1. Le quotient doit être exact (8 caisses). 2. Le reste doit être exact (4 œufs). Bonus: L'enfant justifie l'importance de gérer le reste."
+      }
     },
     "defi2": {
       "titre": "Défi: Le Partage Juste",
@@ -92,7 +90,7 @@
       "instruction": "Utilise la division pour trouver le partage le plus juste. (Réponse : Nombre de Litres).",
       "leconStrategique": "La division est l'outil fondamental de la justice et de l'équité en gestion des ressources. Le partage est l'essence du leadership.",
       "referenceCroisee": "M9",
-      "briefing": {
+      "briefing": { 
         "etape1": {
           "titre": "1. Définir le Diviseur",
           "type_etape": "validation_case",
@@ -103,25 +101,17 @@
           "type_etape": "texte_guide",
           "instruction": "Ignore temporairement les zéros (15 ÷ 5). Trouve le résultat. Puis, remets les zéros à la fin. Simplifier les problèmes complexes est la marque d'un esprit stratégique."
         }
-      },
-      "mentorGoal": "Évalue la compréhension de l'équité et de la division à grande échelle. Le but est de simplifier les grands nombres pour trouver rapidement la solution.",
-      "evaluationCriteria": "La réponse doit être 300. Bonus: L'enfant mentionne la simplification (15/5=3, puis ajout des zéros) dans sa réflexion (si la réponse est ouverte)."
+      }
     },
     "defi3": {
       "titre": "Quiz: Les Enchaînements Rapides",
       "question": "Un architecte doit acheter 50 briques pour 6 projets. Quel est le nombre total de briques nécessaires ?",
-      "options": [
-        "50 x 6 = 300 briques",
-        "50 + 6 = 56 briques",
-        "50 ÷ 6 = 8.3 briques"
-      ],
+      "options": ["50 x 6 = 300 briques", "50 + 6 = 56 briques", "50 ÷ 6 = 8.3 briques"],
       "bonneReponseIndex": 0,
       "feedbackCorrect": "Excellent. La multiplication permet de calculer rapidement l'ensemble des besoins.",
       "feedbackIncorrect": "La multiplication permet d'éviter les longues additions successives.",
       "leconStrategique": "La multiplication est l'outil pour passer à l'échelle. Quand tu dois gérer le même besoin pour plusieurs projets, tu multiplies.",
-      "referenceCroisee": "M8",
-      "mentorGoal": "Introduire la proportionnalité et l'effet de levier dans la gestion des ressources (multiplier un petit nombre par un grand multiplicateur).",
-      "evaluationCriteria": "La réponse doit être 6000. Bonus: L'enfant explique le raisonnement (30 × 200) ou mentionne le principe d'effet de levier dans sa justification."
+      "referenceCroisee": "M8"
     },
     "defi4": {
       "titre": "Défi: Le Partage de la Tarte (Fractions)",
@@ -140,9 +130,7 @@
           "type_etape": "texte_guide",
           "instruction": "Si tu coupes en 4, chaque part représente 1/4. Pour 8 personnes, tu dois diviser chaque quart en deux (ce qui donne 1/8). Une fraction est une division simple."
         }
-      },
-      "mentorGoal": "Tester la capacité à identifier le facteur limitant (goulot d'étranglement) et à analyser les ressources en parallèle.",
-      "evaluationCriteria": "La réponse doit identifier l'ouvrier 2 comme le goulot d'étranglement. Bonus: L'enfant suggère une solution de réorganisation ou d'aide pour équilibrer les temps."
+      }
     }
   },
   "m2": {
@@ -158,25 +146,17 @@
           "type_etape": "texte_guide",
           "instruction": "Dessine une boîte avec 4 cases (Urgent/Important, Urgent/Non Important, Non Urgent/Important, Non Urgent/Non Important). Place chaque tâche dans sa bonne case. Les cases non urgentes et importantes sont la vraie priorité."
         }
-      },
-      "mentorGoal": "Évaluer la compréhension de la Matrice d'Eisenhower (Important vs Urgent). L'enfant doit démontrer qu'il sait différencier Urgent/Important et prioriser correctement.",
-      "evaluationCriteria": "La réponse doit inclure la PRIORISATION CORRECTE des tâches selon la matrice (Important/Non Urgent en premier). Bonus: L'enfant justifie pourquoi les tâches importantes doivent précéder les urgentes."
+      }
     },
     "defi2": {
       "titre": "Quiz: Planification et Préparation",
       "question": "Quel outil est le plus efficace pour planifier un projet de 3 jours ?",
-      "options": [
-        "Une simple note mentale",
-        "Un agenda visuel avec les tâches listées",
-        "Demander de l'aide après avoir oublié"
-      ],
+      "options": ["Une simple note mentale", "Un agenda visuel avec les tâches listées", "Demander de l'aide après avoir oublié"],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Un agenda visuel transforme le temps en ressource gérable.",
       "feedbackIncorrect": "La mémoire n'est pas un outil fiable pour la planification de projets longs.",
       "leconStrategique": "La préparation est la preuve de la discipline. Un bon plan te donne la liberté de te concentrer sur l'exécution.",
-      "referenceCroisee": "M6",
-      "mentorGoal": "Tester la compréhension de la planification à rebours (rétro-planification) pour respecter une échéance. L'enfant doit démontrer sa capacité à décomposer un projet en étapes chronologiques.",
-      "evaluationCriteria": "La réponse doit contenir un plan avec des étapes ordonnées et des délais réalistes. Bonus: L'enfant anticipe des imprévus ou des marges de sécurité."
+      "referenceCroisee": "M6"
     },
     "defi3": {
       "titre": "Défi: Le Temps Focalisé",
@@ -190,24 +170,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai choisi une tâche principale et une durée de concentration (ex: 30 minutes) sans aucune interruption."
         }
-      },
-      "mentorGoal": "Évaluer la capacité à identifier et éliminer les distractions et les tâches non essentielles (Principe de Pareto: 80/20).",
-      "evaluationCriteria": "La réponse doit identifier correctement les activités qui génèrent le plus de valeur et proposer d'éliminer ou déléguer les autres. Bonus: L'enfant cite le principe 80/20."
+      }
     },
     "defi4": {
       "titre": "Quiz: Le Coût du Retard",
       "question": "Tu promets de rendre un livre à un ami à 16h. Si tu le rends à 17h, quel est le coût principal ?",
-      "options": [
-        "L'amende.",
-        "La perte de confiance.",
-        "Le temps passé à s'excuser."
-      ],
+      "options": ["L'amende.", "La perte de confiance.", "Le temps passé à s'excuser."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Le coût d'un retard est la perte de confiance. La réputation est la ressource la plus précieuse d'un leader.",
       "leconStrategique": "La fiabilité est la base de toute collaboration. Honore ton engagement, même si c'est inconfortable.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension du coût d'opportunité (ce que l'on sacrifie en choisissant une option plutôt qu'une autre).",
-      "evaluationCriteria": "La réponse doit identifier clairement ce qui est sacrifié et pourquoi le choix final est optimal. Bonus: L'enfant quantifie le coût d'opportunité (temps, argent, valeur)."
+      "referenceCroisee": "M5"
     }
   },
   "m3": {
@@ -228,24 +200,16 @@
           "type_etape": "texte_guide",
           "instruction": "Pour être stable, la tour doit avoir une base large. La stabilité provient de la largeur et de la hauteur inversée (plus large que haute)."
         }
-      },
-      "mentorGoal": "Évaluer la compréhension du centre de gravité et de la stabilité structurelle. L'enfant doit démontrer qu'il sait où placer le poids pour maximiser la stabilité.",
-      "evaluationCriteria": "La réponse doit identifier la position la plus basse et centrale pour le centre de gravité. Bonus: L'enfant explique pourquoi un centre de gravité bas rend la structure plus stable."
+      }
     },
     "defi2": {
       "titre": "Quiz: Le Levier Efficace",
       "question": "Tu dois soulever une roche très lourde avec une barre. Où dois-tu placer le point d'appui (fulcrum) pour la soulever le plus facilement ?",
-      "options": [
-        "Au milieu de la barre",
-        "Le plus près possible de la roche",
-        "Le plus loin possible de la roche"
-      ],
+      "options": ["Au milieu de la barre", "Le plus près possible de la roche", "Le plus loin possible de la roche"],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Bravo! Plus le point d'appui est proche de la charge, plus le levier est puissant.",
       "leconStrategique": "L'efficacité est l'art de faire plus avec moins d'effort. Trouve le bon point d'appui (la bonne relation, la bonne ressource).",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension de l'effet de levier et du bras de levier (Force × Distance = Moment). L'enfant doit démontrer comment optimiser l'utilisation d'une force limitée.",
-      "evaluationCriteria": "La réponse doit identifier que l'augmentation de la distance (bras de levier) permet de soulever un poids plus lourd avec moins de force. Bonus: L'enfant mentionne la formule ou le principe physique."
+      "referenceCroisee": "M5"
     },
     "defi3": {
       "titre": "Défi: Le Problème de la Friction",
@@ -264,42 +228,28 @@
           "type_etape": "texte_guide",
           "instruction": "Les rondins transforment la friction de glissement (statique) en friction de roulement, qui est beaucoup plus faible. Les leaders trouvent des systèmes qui roulent, au lieu de les pousser de force."
         }
-      },
-      "mentorGoal": "Évaluer la compréhension de la résistance des matériaux et du design optimal pour supporter une charge.",
-      "evaluationCriteria": "La réponse doit choisir la forme triangulaire ou en arc comme la plus résistante. Bonus: L'enfant justifie par la distribution des forces ou la compression uniforme."
+      }
     },
     "defi4": {
       "titre": "Quiz: Optimisation de Charge",
       "question": "Tu dois transporter des objets de poids différent. Comment les charges lourdes et légères doivent-elles être empilées pour maximiser la sécurité et la stabilité du véhicule ?",
-      "options": [
-        "Les objets lourds au-dessus des légers.",
-        "Les objets lourds au fond, centrés.",
-        "L'ordre n'a pas d'importance."
-      ],
+      "options": ["Les objets lourds au-dessus des légers.", "Les objets lourds au fond, centrés.", "L'ordre n'a pas d'importance."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Les charges lourdes au fond et centrées minimisent le centre de gravité, augmentant la stabilité. C'est essentiel pour le transport.",
       "feedbackIncorrect": "Empiler des objets lourds sur des objets légers crée de l'instabilité et un risque de basculement.",
       "leconStrategique": "Chaque décision logistique doit servir la sécurité et la stabilité en premier. L'optimisation passe par la prudence.",
-      "referenceCroisee": "M8",
-      "mentorGoal": "Tester la compréhension de la friction et de l'efficacité mécanique. L'enfant doit identifier comment réduire la friction pour optimiser le mouvement.",
-      "evaluationCriteria": "La réponse doit suggérer des solutions pour réduire la friction (huile, roues, surface lisse). Bonus: L'enfant quantifie l'amélioration ou cite le coefficient de friction."
+      "referenceCroisee": "M8"
     }
   },
   "m4": {
     "defi1": {
       "titre": "Quiz: Le Mystère des Voisins",
       "question": "Alice, Ben et Claire ont des chats rouges, bleus et verts. Ben n'a pas le bleu. Alice n'a ni le rouge ni le bleu. Quelle est la couleur du chat de Claire ?",
-      "options": [
-        "Bleu",
-        "Rouge",
-        "Vert"
-      ],
+      "options": ["Bleu", "Rouge", "Vert"],
       "bonneReponseIndex": 0,
       "feedbackCorrect": "Par déduction : Alice (Vert), Ben (Rouge), donc Claire (Bleu).",
       "leconStrategique": "Le leader élimine les possibilités avant de prendre une décision. La déduction est un chemin vers la vérité.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Évaluer la capacité de raisonnement logique par élimination et déduction. L'enfant doit démontrer qu'il sait utiliser les indices pour éliminer les possibilités.",
-      "evaluationCriteria": "La réponse doit identifier correctement la solution en utilisant un processus d'élimination structuré. Bonus: L'enfant documente son raisonnement étape par étape."
+      "referenceCroisee": "M2"
     },
     "defi2": {
       "titre": "Défi: La Séquence des Tâches",
@@ -318,24 +268,16 @@
           "type_etape": "texte_guide",
           "instruction": "Une chaîne logique ne peut pas commencer par l'Assemblage (C) si la Coupe (A) n'est pas faite. Trouve l'ordre où chaque étape est un prérequis pour la suivante."
         }
-      },
-      "mentorGoal": "Tester la compréhension des séquences logiques et des patterns (motifs répétitifs). L'enfant doit démontrer sa capacité à identifier la règle sous-jacente.",
-      "evaluationCriteria": "La réponse doit identifier correctement le pattern et prédire le prochain élément. Bonus: L'enfant explique la règle ou la formule du pattern."
+      }
     },
     "defi3": {
       "titre": "Quiz: Le Schéma Manquant",
       "question": "Quel est le prochain symbole dans cette séquence: Cercle, Carré, Triangle, Cercle, Carré, ... ?",
-      "options": [
-        "Cercle",
-        "Carré",
-        "Triangle"
-      ],
+      "options": ["Cercle", "Carré", "Triangle"],
       "bonneReponseIndex": 2,
       "feedbackCorrect": "C'est une séquence de 3. Vous avez trouvé le patron!",
       "leconStrategique": "Identifier des patrons vous permet de prévoir l'avenir et de gagner du temps. La prévision est la première qualité du leader.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Évaluer la capacité à utiliser la logique conditionnelle (Si...Alors...Sinon) pour résoudre des problèmes complexes.",
-      "evaluationCriteria": "La réponse doit utiliser correctement les structures conditionnelles pour arriver à la solution. Bonus: L'enfant crée un arbre de décision ou un organigramme."
+      "referenceCroisee": "M10"
     },
     "defi4": {
       "titre": "Défi: La Règle des Variables",
@@ -349,9 +291,7 @@
           "type_etape": "validation_case",
           "instruction": "J'ai compris que la Règle 1 (OU) autorise une seule condition (rouge ou lourd) pour X, tandis que la Règle 2 (ET) exige deux conditions simultanément (vert et léger)."
         }
-      },
-      "mentorGoal": "Tester la capacité à identifier les contradictions et les paradoxes logiques. L'enfant doit démontrer son esprit critique.",
-      "evaluationCriteria": "La réponse doit identifier clairement la contradiction et proposer une résolution ou une reformulation du problème. Bonus: L'enfant cite un paradoxe connu (Achille et la tortue, Paradoxe du menteur)."
+      }
     }
   },
   "m5": {
@@ -372,25 +312,17 @@
           "type_etape": "texte_guide",
           "instruction": "Un bon pitch suit trois étapes : 1. L'Appel (le problème urgent). 2. La Solution (ton invention). 3. La Valeur (pourquoi c'est génial pour eux). Concentre-toi sur ces 3 idées."
         }
-      },
-      "mentorGoal": "Évaluer la capacité de l'enfant à structurer un message persuasif en utilisant la méthode AIDA (Attention, Intérêt, Désir, Action).",
-      "evaluationCriteria": "La réponse doit contenir les 4 éléments de l'AIDA dans un ordre logique. Bonus: L'enfant utilise un storytelling captivant ou des données convaincantes."
+      }
     },
     "defi2": {
       "titre": "Quiz: Négociation Gagnant-Gagnant",
       "question": "Tu négocies l'achat de matériel. Ton fournisseur veut 100€, tu veux payer 80€. Quelle est la meilleure approche pour réussir la négociation et maintenir la relation ?",
-      "options": [
-        "Refuser poliment et trouver un autre fournisseur.",
-        "Proposer 90€ et demander un petit service en échange.",
-        "Dire '80€ ou rien' pour être ferme."
-      ],
+      "options": ["Refuser poliment et trouver un autre fournisseur.", "Proposer 90€ et demander un petit service en échange.", "Dire '80€ ou rien' pour être ferme."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Parfait. Proposer un compromis et demander un échange crée une solution 'gagnant-gagnant'.",
       "feedbackIncorrect": "Refuser ou être trop ferme met fin à la négociation. Le but est de trouver un point d'entente.",
       "leconStrategique": "Une bonne négociation n'est pas de battre l'autre, mais de s'assurer que les deux parties obtiennent plus de valeur. Cela crée de futures collaborations.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Tester la compréhension de l'importance de la confiance et de la crédibilité dans l'influence. L'enfant doit démontrer comment construire la confiance.",
-      "evaluationCriteria": "La réponse doit identifier des stratégies concrètes pour bâtir la confiance (preuves, témoignages, expertise). Bonus: L'enfant cite le principe d'autorité ou de preuve sociale."
+      "referenceCroisee": "M9"
     },
     "defi3": {
       "titre": "Défi: Écoute Active",
@@ -409,24 +341,16 @@
           "type_etape": "texte_guide",
           "instruction": "Utilise la formule : 'Je vois que tu es X (très en colère/déçu) à cause de Y (ce que j'ai fait)'. Cela montre que tu prends la responsabilité et que tu écoutes."
         }
-      },
-      "mentorGoal": "Évaluer la capacité à adapter son message en fonction de l'audience (personnalisation et empathie).",
-      "evaluationCriteria": "La réponse doit montrer que l'enfant a adapté son message aux besoins, motivations et langage de l'audience cible. Bonus: L'enfant segmente plusieurs types d'audiences."
+      }
     },
     "defi4": {
       "titre": "Quiz: Le Langage Positif",
       "question": "Tu veux que ton équipe range ses outils. Quelle phrase est la plus efficace pour obtenir un résultat positif ?",
-      "options": [
-        "Arrêtez de laisser traîner vos outils !",
-        "Si vous rangez vos outils, je serai content.",
-        "Ranger les outils permet de travailler plus vite demain."
-      ],
+      "options": ["Arrêtez de laisser traîner vos outils !", "Si vous rangez vos outils, je serai content.", "Ranger les outils permet de travailler plus vite demain."],
       "bonneReponseIndex": 2,
       "feedbackCorrect": "La réponse 3 donne un bénéfice direct et futur à l'équipe. C'est du leadership positif.",
       "leconStrategique": "Le langage positif motive. Le leader ne dit pas 'Ne faites pas', mais 'Faites cela pour obtenir ceci'.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Tester la compréhension du pouvoir de l'émotion dans la persuasion. L'enfant doit démontrer comment utiliser l'émotion de manière éthique.",
-      "evaluationCriteria": "La réponse doit intégrer un appel émotionnel authentique sans manipulation. Bonus: L'enfant équilibre émotion et logique (Pathos + Logos)."
+      "referenceCroisee": "M10"
     }
   },
   "m6": {
@@ -447,24 +371,16 @@
           "type_etape": "champ_texte",
           "instruction": "Sur les causes possibles (stabilité, poids, support), quelle est la SEULE que je vais changer pour le prochain essai ?"
         }
-      },
-      "mentorGoal": "Évaluer la capacité de l'enfant à transformer un échec en opportunité d'apprentissage (Growth Mindset). L'enfant doit démontrer sa résilience.",
-      "evaluationCriteria": "La réponse doit identifier clairement les leçons apprises de l'échec et les actions correctrices. Bonus: L'enfant cite le concept de Growth Mindset ou d'itération."
+      }
     },
     "defi2": {
       "titre": "Quiz: La Procrastination",
       "question": "Tu dois commencer un grand projet qui te fait peur. Quelle est la meilleure approche pour surmonter l'inertie ?",
-      "options": [
-        "Attendre l'inspiration de dernière minute.",
-        "Commencer par la plus petite tâche pour démarrer le mouvement.",
-        "Demander à quelqu'un d'autre de faire le début."
-      ],
+      "options": ["Attendre l'inspiration de dernière minute.", "Commencer par la plus petite tâche pour démarrer le mouvement.", "Demander à quelqu'un d'autre de faire le début."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "L'action crée l'élan. Un petit pas facile brise le mur de la peur.",
       "leconStrategique": "Le courage n'est pas l'absence de peur, mais la décision de passer à l'action malgré elle. La résilience commence par le premier pas.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Tester la compréhension du cycle PDCA (Plan-Do-Check-Act) pour l'amélioration continue. L'enfant doit démontrer une approche systématique de résolution de problème.",
-      "evaluationCriteria": "La réponse doit suivre les 4 étapes du PDCA avec des actions concrètes. Bonus: L'enfant mentionne l'itération ou le Kaizen."
+      "referenceCroisee": "M2"
     },
     "defi3": {
       "titre": "Défi: Le Bouclier Mental",
@@ -478,24 +394,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai identifié que l'attaque est verbale et non physique. Je n'ai pas besoin de riposter avec le même niveau d'agressivité."
         }
-      },
-      "mentorGoal": "Évaluer la capacité à accepter la critique constructive et à l'intégrer positivement. L'enfant doit démontrer son ouverture au feedback.",
-      "evaluationCriteria": "La réponse doit montrer que l'enfant accepte la critique sans se justifier et propose des actions d'amélioration. Bonus: L'enfant demande des précisions ou des exemples pour mieux comprendre."
+      }
     },
     "defi4": {
       "titre": "Quiz: La Leçon de l'Erreur",
       "question": "Après un échec, la chose la plus importante à faire est:",
-      "options": [
-        "Blâmer la situation ou les autres.",
-        "Demander de l'aide et analyser les données.",
-        "Passer rapidement à autre chose sans y penser."
-      ],
+      "options": ["Blâmer la situation ou les autres.", "Demander de l'aide et analyser les données.", "Passer rapidement à autre chose sans y penser."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "L'erreur est une donnée. L'analyse des données avec l'aide d'un mentor est la seule voie vers l'amélioration.",
       "leconStrategique": "Les données sont plus importantes que l'opinion. Le leader est humble face aux faits.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Tester la compréhension de la persévérance face à l'adversité. L'enfant doit démontrer sa capacité à persister malgré les obstacles.",
-      "evaluationCriteria": "La réponse doit montrer une stratégie de persévérance avec des étapes concrètes. Bonus: L'enfant cite des exemples de figures inspirantes qui ont persévéré (Edison, Lincoln)."
+      "referenceCroisee": "M4"
     }
   },
   "m7": {
@@ -511,24 +419,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai compris que je ne dois juger aucune idée. Le but est la quantité brute et la rapidité."
         }
-      },
-      "mentorGoal": "Évaluer la capacité de pensée divergente et de brainstorming créatif. L'enfant doit démontrer qu'il peut générer de nombreuses idées sans auto-censure.",
-      "evaluationCriteria": "La réponse doit contenir au moins 10 idées variées et originales. Bonus: L'enfant utilise des techniques de créativité (SCAMPER, Mind Mapping)."
+      }
     },
     "defi2": {
       "titre": "Quiz: Pensée Latérale",
       "question": "Un homme trouve une pièce d'or dans un récipient de café plein. Comment la sort-il sans renverser le café ni briser le récipient ?",
-      "options": [
-        "Il vide d'abord le café.",
-        "Il utilise une pince à épiler.",
-        "Il fait fondre le récipient."
-      ],
+      "options": ["Il vide d'abord le café.", "Il utilise une pince à épiler.", "Il fait fondre le récipient."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Il faut trouver une solution non évidente, en contournant le problème. Une pince à épiler est une 'pensée latérale'.",
       "leconStrategique": "La pensée latérale cherche des solutions qui ne sont pas sur le chemin évident. Le leader trouve des solutions là où les autres ne regardent pas.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Tester la compréhension de la combinaison d'idées existantes pour créer de l'innovation (Innovation = Combinaison). L'enfant doit démontrer sa capacité à relier des concepts.",
-      "evaluationCriteria": "La réponse doit combiner au moins 2 concepts existants pour créer une nouvelle solution. Bonus: L'enfant explique le processus de fusion ou cite des exemples d'innovations combinatoires (iPhone = téléphone + ordinateur + musique)."
+      "referenceCroisee": "M4"
     },
     "defi3": {
       "titre": "Défi: La Contrainte Créative",
@@ -542,24 +442,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai compris que la contrainte est 'flottabilité' et 'recyclé/papier'. Je dois choisir des matériaux qui répondent aux deux."
         }
-      },
-      "mentorGoal": "Évaluer la capacité à penser en dehors des cadres établis (Thinking Outside the Box). L'enfant doit démontrer qu'il peut challenger les hypothèses.",
-      "evaluationCriteria": "La réponse doit remettre en question une hypothèse implicite du problème et proposer une solution non conventionnelle. Bonus: L'enfant identifie clairement l'hypothèse challengée."
+      }
     },
     "defi4": {
       "titre": "Quiz: La Diversité des Idées",
       "question": "Pour résoudre un problème complexe, quelle est la meilleure source d'idées ?",
-      "options": [
-        "Demander l'avis d'une seule personne experte.",
-        "Demander l'avis de plusieurs personnes avec des expériences différentes.",
-        "Chercher une solution dans un livre sans parler à personne."
-      ],
+      "options": ["Demander l'avis d'une seule personne experte.", "Demander l'avis de plusieurs personnes avec des expériences différentes.", "Chercher une solution dans un livre sans parler à personne."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "La diversité crée l'innovation. Différents points de vue apportent des solutions auxquelles vous n'auriez pas pensé seul.",
       "leconStrategique": "Le leader cherche activement des perspectives différentes. L'intelligence collective est toujours supérieure à l'intelligence individuelle.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension du prototypage rapide et de l'expérimentation. L'enfant doit démontrer qu'il sait tester rapidement ses idées.",
-      "evaluationCriteria": "La réponse doit inclure un plan de test rapide (MVP - Minimum Viable Product) avec des critères de succès. Bonus: L'enfant anticipe les hypothèses à valider."
+      "referenceCroisee": "M5"
     }
   },
   "m8": {
@@ -575,24 +467,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai identifié les besoins de base (Eau, Nourriture, Lumière/Chaleur, Sécurité). Mes 5 objets doivent couvrir ces besoins."
         }
-      },
-      "mentorGoal": "Évaluer la capacité d'audit des ressources disponibles (inventaire). L'enfant doit démontrer qu'il sait identifier et classifier ses ressources.",
-      "evaluationCriteria": "La réponse doit contenir une liste structurée des ressources avec une classification (humaines, financières, matérielles, temporelles). Bonus: L'enfant identifie les ressources sous-utilisées."
+      }
     },
     "defi2": {
       "titre": "Quiz: Coût d'Opportunité",
       "question": "Tu as 10€ et tu peux acheter un livre pour apprendre ou un jeu vidéo pour jouer. Si tu achètes le jeu, quel est le coût d'opportunité ?",
-      "options": [
-        "Le prix du jeu vidéo.",
-        "La connaissance que tu aurais pu acquérir avec le livre.",
-        "Le temps que tu vas passer à jouer."
-      ],
+      "options": ["Le prix du jeu vidéo.", "La connaissance que tu aurais pu acquérir avec le livre.", "Le temps que tu vas passer à jouer."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
       "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Tester la compréhension de l'optimisation des ressources existantes (faire plus avec moins). L'enfant doit démontrer qu'il sait maximiser l'utilisation.",
-      "evaluationCriteria": "La réponse doit proposer des stratégies concrètes pour utiliser les ressources plus efficacement. Bonus: L'enfant quantifie les gains d'efficacité."
+      "referenceCroisee": "M9"
     },
     "defi3": {
       "titre": "Défi: Le Budget du Festival",
@@ -606,24 +490,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai identifié le calcul par personne (5€ x 3 jours) et le nombre total de personnes (15 000). J'ai un plan d'action: Coût x Nombre de Jours x Nombre de Personnes."
         }
-      },
-      "mentorGoal": "Évaluer la capacité à identifier les gaspillages et les inefficacités (Lean Thinking). L'enfant doit démontrer son œil critique pour détecter les pertes.",
-      "evaluationCriteria": "La réponse doit identifier au moins 3 types de gaspillages (surproduction, attente, transport, sur-traitement). Bonus: L'enfant cite les 7 gaspillages du Lean ou propose des solutions."
+      }
     },
     "defi4": {
       "titre": "Quiz: Le Principe de Polyvalence",
       "question": "Tu peux prendre un outil qui fait une seule chose parfaitement, ou un outil qui fait 3 choses bien. Quand tes ressources sont limitées (ton sac à dos est petit), quel outil choisis-tu ?",
-      "options": [
-        "L'outil qui fait une seule chose parfaitement.",
-        "L'outil qui fait 3 choses bien.",
-        "L'ordre n'a pas d'importance."
-      ],
+      "options": ["L'outil qui fait une seule chose parfaitement.", "L'outil qui fait 3 choses bien.", "L'ordre n'a pas d'importance."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "La polyvalence maximise l'efficacité dans les environnements à ressources limitées. C'est le principe de l'audit.",
       "leconStrategique": "Le leader maximise la polyvalence de ses ressources et de ses équipes. Savoir faire plusieurs choses est une sécurité.",
-      "referenceCroisee": "M7",
-      "mentorGoal": "Tester la compréhension de l'allocation optimale des ressources limitées (arbitrage). L'enfant doit démontrer qu'il sait faire des choix stratégiques.",
-      "evaluationCriteria": "La réponse doit justifier l'allocation en fonction du ROI (Retour sur Investissement) ou de la priorité stratégique. Bonus: L'enfant crée une matrice de décision ou un scoring."
+      "referenceCroisee": "M7"
     }
   },
   "m9": {
@@ -644,24 +520,16 @@
           "type_etape": "texte_guide",
           "instruction": "Décris les étapes simples pour rendre le porte-monnaie. L'action doit être pratique et honnête."
         }
-      },
-      "mentorGoal": "Évaluer la compréhension de l'intégrité et de la confiance dans les échanges économiques. L'enfant doit démontrer qu'il comprend que la réputation est un actif à long terme.",
-      "evaluationCriteria": "La réponse doit choisir l'honnêteté et justifier par la valeur de la réputation et de la confiance. Bonus: L'enfant mentionne le concept de 'capital réputationnel' ou de 'Règle d'Or'."
+      }
     },
     "defi2": {
       "titre": "Quiz: Impact Positif",
       "question": "Tu peux passer ton après-midi à nettoyer ta chambre (Impact personnel) ou aider un voisin âgé à porter ses courses (Impact communautaire). Quel choix a un impact positif plus grand ?",
-      "options": [
-        "Nettoyer ma chambre.",
-        "Aider le voisin.",
-        "Faire les deux rapidement."
-      ],
+      "options": ["Nettoyer ma chambre.", "Aider le voisin.", "Faire les deux rapidement."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Aider le voisin a un impact positif sur une autre personne et sur la communauté. Le leader crée une valeur au-delà de soi.",
       "leconStrategique": "L'impact durable se mesure par la façon dont tu as touché la vie des autres. Le leader utilise son temps pour servir une mission plus grande.",
-      "referenceCroisee": "M11",
-      "mentorGoal": "Tester la compréhension de la loi de l'offre et de la demande. L'enfant doit démontrer qu'il sait comment les prix s'ajustent en fonction du marché.",
-      "evaluationCriteria": "La réponse doit expliquer correctement comment l'offre et la demande affectent les prix. Bonus: L'enfant donne des exemples concrets ou dessine une courbe d'offre/demande."
+      "referenceCroisee": "M11"
     },
     "defi3": {
       "titre": "Défi: La Règle des Échanges",
@@ -675,24 +543,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai identifié que les jouets sont la valeur matérielle. La confiance et l'amitié sont la valeur relationnelle. Je me concentre sur la relation."
         }
-      },
-      "mentorGoal": "Évaluer la capacité à identifier la valeur perçue vs la valeur réelle. L'enfant doit démontrer qu'il comprend que la valeur est subjective.",
-      "evaluationCriteria": "La réponse doit expliquer pourquoi des objets identiques peuvent avoir des valeurs différentes selon le contexte. Bonus: L'enfant cite des exemples de marketing ou de branding."
+      }
     },
     "defi4": {
       "titre": "Quiz: Le Budget de l'Équipe",
       "question": "Ton équipe a 20€ pour acheter de la peinture et des pinceaux. Les pinceaux sont urgents. La peinture est importante. Que dois-tu acheter en premier si tu ne peux pas tout acheter ?",
-      "options": [
-        "La peinture (important).",
-        "Les pinceaux (urgent).",
-        "Rien, économiser."
-      ],
+      "options": ["La peinture (important).", "Les pinceaux (urgent).", "Rien, économiser."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Les pinceaux (urgent) sont nécessaires pour commencer. Le leader priorise l'action immédiate qui permet d'avancer.",
       "leconStrategique": "L'allocation des ressources est une hiérarchie. L'urgent permet de débloquer le processus.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Tester la compréhension des coûts cachés et du coût total de possession (TCO). L'enfant doit démontrer qu'il sait regarder au-delà du prix d'achat.",
-      "evaluationCriteria": "La réponse doit identifier des coûts cachés (maintenance, énergie, obsolescence). Bonus: L'enfant calcule le TCO ou compare deux options sur le long terme."
+      "referenceCroisee": "M2"
     }
   },
   "m10": {
@@ -713,24 +573,16 @@
           "type_etape": "texte_guide",
           "instruction": "Décris brièvement le sentiment que tu auras quand tu auras atteint cet objectif. La visualisation est un moteur puissant."
         }
-      },
-      "mentorGoal": "Évaluer la capacité de l'enfant à définir un objectif SMART (Spécifique, Mesurable, Atteignable, Réaliste, Temporel). L'enfant doit démontrer qu'il sait transformer un vœu en objectif actionnable.",
-      "evaluationCriteria": "La réponse doit contenir un objectif qui respecte les 5 critères SMART. Bonus: L'enfant explique pourquoi chaque critère est important."
+      }
     },
     "defi2": {
       "titre": "Quiz: Le Premier Petit Pas",
       "question": "Ton grand objectif est d'apprendre à coder un jeu. Quel est le premier petit pas le plus efficace à faire AUJOURD'HUI ?",
-      "options": [
-        "Acheter un livre de codage avancé de 500 pages.",
-        "Regarder une vidéo d'introduction de 5 minutes sur 'Qu'est-ce que le codage'.",
-        "Attendre d'avoir 5 heures libres pour commencer."
-      ],
+      "options": ["Acheter un livre de codage avancé de 500 pages.", "Regarder une vidéo d'introduction de 5 minutes sur 'Qu'est-ce que le codage'.", "Attendre d'avoir 5 heures libres pour commencer."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Le plus petit pas crée l'élan. Un petit succès lance le voyage.",
       "leconStrategique": "Les leaders décomposent les problèmes complexes en actions simples. La plus grande vision commence par la plus petite exécution.",
-      "referenceCroisee": "M6",
-      "mentorGoal": "Tester la compréhension de la décomposition d'objectifs en sous-objectifs (Work Breakdown Structure). L'enfant doit démontrer qu'il sait diviser un grand projet en étapes gérables.",
-      "evaluationCriteria": "La réponse doit contenir au moins 4 sous-objectifs logiques et séquentiels. Bonus: L'enfant crée un diagramme de Gantt ou une timeline."
+      "referenceCroisee": "M6"
     },
     "defi3": {
       "titre": "Défi: La Règle des Conséquences",
@@ -744,24 +596,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai cessé de penser à la minute suivante. Je pense à la conséquence sur un an. L'intégrité est une stratégie à long terme."
         }
-      },
-      "mentorGoal": "Évaluer la capacité à identifier et gérer les risques et les obstacles potentiels. L'enfant doit démontrer qu'il sait anticiper les problèmes.",
-      "evaluationCriteria": "La réponse doit identifier au moins 3 risques avec des plans de mitigation. Bonus: L'enfant classe les risques par probabilité et impact (Matrice de risques)."
+      }
     },
     "defi4": {
       "titre": "Quiz: L'Exemple Personnel",
       "question": "Le meilleur moyen d'enseigner une valeur à ton équipe (ex: la patience) est :",
-      "options": [
-        "De leur dire d'être patients.",
-        "De leur lire une histoire sur la patience.",
-        "D'être toi-même patient en faisant une tâche difficile."
-      ],
+      "options": ["De leur dire d'être patients.", "De leur lire une histoire sur la patience.", "D'être toi-même patient en faisant une tâche difficile."],
       "bonneReponseIndex": 2,
       "feedbackCorrect": "L'exemple est le langage universel du leadership. Les actions inspirent plus que les mots.",
       "leconStrategique": "Le leader est un miroir. Les autres imitent ce qu'ils voient, pas ce qu'ils entendent.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension du principe de responsabilité personnelle (Ownership). L'enfant doit démontrer qu'il comprend que le leader assume la responsabilité des résultats.",
-      "evaluationCriteria": "La réponse doit montrer que l'enfant accepte la responsabilité sans chercher d'excuses externes. Bonus: L'enfant cite le principe 'Extreme Ownership' ou donne des exemples."
+      "referenceCroisee": "M5"
     }
   },
   "m11": {
@@ -777,24 +621,16 @@
           "type_etape": "validation_case",
           "instruction": "J'ai compris que la peur est le principal obstacle. Mon conseil doit parler de courage, d'action et d'apprentissage (et non de perfection)."
         }
-      },
-      "mentorGoal": "Évaluer la capacité de l'enfant à synthétiser et transmettre son apprentissage. Ce défi teste la maîtrise globale du programme et la capacité à guider les autres.",
-      "evaluationCriteria": "La réponse doit contenir au moins 5 conseils concrets basés sur les modules précédents, structurés de manière logique. Bonus: L'enfant cite des exemples personnels ou des échecs constructifs."
+      }
     },
     "defi2": {
       "titre": "Quiz: L'Exemple du Leader",
       "question": "Ton équipe est démotivée par une tâche difficile. Quelle action a le plus grand pouvoir d'inspiration ?",
-      "options": [
-        "Dire 'Vous devez le faire, c'est important'.",
-        "Faire la tâche la plus difficile toi-même en premier pour montrer l'exemple.",
-        "Offrir une récompense si la tâche est finie."
-      ],
+      "options": ["Dire 'Vous devez le faire, c'est important'.", "Faire la tâche la plus difficile toi-même en premier pour montrer l'exemple.", "Offrir une récompense si la tâche est finie."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Le leader montre l'exemple. L'action inspire plus que les mots ou les récompenses.",
       "leconStrategique": "Le leadership est un miroir. Les autres te suivront quand ils verront ton engagement inébranlable dans la difficulté.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Tester la compréhension de la vision à long terme et de l'héritage. L'enfant doit démontrer qu'il pense au-delà de lui-même et de l'instant présent.",
-      "evaluationCriteria": "La réponse doit définir clairement l'impact souhaité sur les autres et la trace à laisser. Bonus: L'enfant mentionne des valeurs ou des principes qui guideront ses actions futures."
+      "referenceCroisee": "M9"
     }
   },
   "mentor": {
@@ -807,10 +643,6 @@
     "info_titre": "Information",
     "info_no_guide": "Pas de guide de discussion disponible pour ce défi.",
     "no_guide_text": "Pas de guide",
-    "pedagogical_goal": "🎯 But Pédagogique de ce Défi",
-    "evaluation_criteria": "📋 Critères d'Évaluation (Attendu)",
-    "no_goal_provided": "Aucun but pédagogique fourni pour ce défi.",
-    "no_criteria_provided": "Aucun critère d'évaluation fourni pour ce défi.",
     "discussion_titre": "Guide de Discussion Parent/Enfant",
     "discussion_intro": "Utilisez ces questions pour engager la conversation.",
     "explorers_management": "Gestion des Explorateurs",
@@ -909,3 +741,4 @@
     "start_adventure": "Démarrer l'Aventure"
   }
 }
+

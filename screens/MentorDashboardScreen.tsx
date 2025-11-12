@@ -40,6 +40,7 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
   const [isEvaluationModalVisible, setIsEvaluationModalVisible] = useState(false);
   const [currentProgressItem, setCurrentProgressItem] = useState<ExplorerProgressItem | null>(null);
   const [currentDefiTitle, setCurrentDefiTitle] = useState('');
+  const [currentDefiContent, setCurrentDefiContent] = useState<any>(null);
 
   // Fonction pour charger la progression pour TOUS les explorateurs
   const loadAllExplorerProgress = useCallback(async (initialExplorers: ExplorerProfile[]) => {
@@ -150,6 +151,11 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
 
   // Ouvre le Modal d'Évaluation
   const handleOpenEvaluation = (item: ExplorerProgressItem) => {
+    // Charger le contenu pédagogique du défi depuis i18n
+    const defiKey = `${item.moduleId.toLowerCase()}.${item.defiId}`;
+    const content = t(defiKey, { returnObjects: true }) as any;
+    
+    setCurrentDefiContent(content);
     setCurrentProgressItem(item);
     const defiTitle = `${item.moduleId.toUpperCase()}/${item.defiId.toUpperCase().replace('DEFI', 'D')}`;
     setCurrentDefiTitle(defiTitle);
@@ -343,6 +349,7 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
           onClose={handleCloseEvaluation}
           progressItem={currentProgressItem}
           defiTitle={currentDefiTitle}
+          defiContent={currentDefiContent}
         />
       )}
     </SafeAreaView>

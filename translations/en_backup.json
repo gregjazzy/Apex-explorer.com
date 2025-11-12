@@ -63,7 +63,7 @@
       "instruction": "Write the number of COMPLETE crates and the number of REMAINING eggs. (The Remainder is the part the leader must manage!)",
       "leconStrategique": "Every resource must be counted. The 'remainders' are often where inefficiency hides or where hidden value lies.",
       "referenceCroisee": "M8",
-      "briefing": {
+      "briefing": { 
         "etape1": {
           "titre": "1. Analyze the Fixed Constraint",
           "type_etape": "validation_case",
@@ -82,9 +82,7 @@
           "instruction": "If you hadn't calculated the Remainder, what would you risk losing?",
           "placeholder": "e.g., Safety, Money, Time..."
         }
-      },
-      "mentorGoal": "This challenge assesses the child's ability to manage resource allocation with a remainder (division with remainder). The goal is to focus on the exception (remaining eggs) as this is where the logistical risk lies.",
-      "evaluationCriteria": "The answer must contain TWO numbers (quotient and remainder). 1. The quotient must be exact (8 crates). 2. The remainder must be exact (4 eggs). Bonus: The child justifies the importance of managing the remainder."
+      }
     },
     "defi2": {
       "titre": "Challenge: Fair Share",
@@ -92,7 +90,7 @@
       "instruction": "Use division to find the fairest share. (Answer: Number of Liters).",
       "leconStrategique": "Division is the fundamental tool for justice and equity in resource management. Sharing is the essence of leadership.",
       "referenceCroisee": "M9",
-      "briefing": {
+      "briefing": { 
         "etape1": {
           "titre": "1. Define the Divisor",
           "type_etape": "validation_case",
@@ -103,25 +101,17 @@
           "type_etape": "texte_guide",
           "instruction": "Temporarily ignore the zeros (15 ÷ 5). Find the result. Then put the zeros back at the end. Simplifying complex problems is the mark of a strategic mind."
         }
-      },
-      "mentorGoal": "Evaluates understanding of equity and large-scale division. The goal is to simplify large numbers to find the solution quickly.",
-      "evaluationCriteria": "The answer must be 300. Bonus: The child mentions simplification (15/5=3, then adding zeros) in their reasoning (if open-ended response)."
+      }
     },
     "defi3": {
       "titre": "Quiz: Quick Chains",
       "question": "An architect needs to buy 50 bricks for 6 projects. What is the total number of bricks required?",
-      "options": [
-        "50 x 6 = 300 bricks",
-        "50 + 6 = 56 bricks",
-        "50 ÷ 6 = 8.3 bricks"
-      ],
+      "options": ["50 x 6 = 300 bricks", "50 + 6 = 56 bricks", "50 ÷ 6 = 8.3 bricks"],
       "bonneReponseIndex": 0,
       "feedbackCorrect": "Excellent. Multiplication allows you to quickly calculate all needs.",
       "feedbackIncorrect": "Multiplication helps avoid long successive additions.",
       "leconStrategique": "Multiplication is the tool for scaling up. When you need to manage the same need for multiple projects, you multiply.",
-      "referenceCroisee": "M8",
-      "mentorGoal": "Introduce proportionality and leverage effect in resource management (multiplying a small number by a large multiplier).",
-      "evaluationCriteria": "The answer must be 6000. Bonus: The child explains the reasoning (30 × 200) or mentions the leverage principle in their justification."
+      "referenceCroisee": "M8"
     },
     "defi4": {
       "titre": "Challenge: The Pie Share (Fractions)",
@@ -140,9 +130,7 @@
           "type_etape": "texte_guide",
           "instruction": "If you cut into 4, each piece is 1/4. For 8 people, you must divide each quarter into two (which results in 1/8). A fraction is a simple division."
         }
-      },
-      "mentorGoal": "Test the ability to identify the limiting factor (bottleneck) and analyze parallel resources.",
-      "evaluationCriteria": "The answer must identify worker 2 as the bottleneck. Bonus: The child suggests a reorganization or support solution to balance the times."
+      }
     }
   },
   "m2": {
@@ -158,25 +146,17 @@
           "type_etape": "texte_guide",
           "instruction": "Draw a box with 4 squares (Urgent/Important, Urgent/Not Important, Not Urgent/Important, Not Urgent/Not Important). Place each task in its correct square. The non-urgent and important squares are the true priority."
         }
-      },
-      "mentorGoal": "Assess understanding of the Eisenhower Matrix (Important vs Urgent). The child must demonstrate they can differentiate Urgent/Important and prioritize correctly.",
-      "evaluationCriteria": "The answer must include CORRECT PRIORITIZATION of tasks according to the matrix (Important/Not Urgent first). Bonus: The child justifies why important tasks should precede urgent ones."
+      }
     },
     "defi2": {
       "titre": "Quiz: Planning and Preparation",
       "question": "Which tool is most effective for planning a 3-day project?",
-      "options": [
-        "A simple mental note",
-        "A visual calendar with tasks listed",
-        "Asking for help after forgetting"
-      ],
+      "options": ["A simple mental note", "A visual calendar with tasks listed", "Asking for help after forgetting"],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "A visual calendar transforms time into a manageable resource.",
       "feedbackIncorrect": "Memory is not a reliable tool for long-project planning.",
       "leconStrategique": "Preparation is the proof of discipline. A good plan gives you the freedom to focus on execution.",
-      "referenceCroisee": "M6",
-      "mentorGoal": "Test understanding of backward planning (retro-planning) to meet a deadline. The child must demonstrate their ability to break down a project into chronological steps.",
-      "evaluationCriteria": "The answer must contain a plan with ordered steps and realistic timelines. Bonus: The child anticipates contingencies or safety margins."
+      "referenceCroisee": "M6"
     },
     "defi3": {
       "titre": "Challenge: Focused Time",
@@ -190,24 +170,16 @@
           "type_etape": "validation_case",
           "instruction": "I have chosen a main task and a concentration duration (e.g., 30 minutes) without any interruption."
         }
-      },
-      "mentorGoal": "Assess the ability to identify and eliminate distractions and non-essential tasks (Pareto Principle: 80/20).",
-      "evaluationCriteria": "The answer must correctly identify activities that generate the most value and propose eliminating or delegating others. Bonus: The child cites the 80/20 principle."
+      }
     },
     "defi4": {
       "titre": "Quiz: The Cost of Delay",
       "question": "You promise to return a book to a friend at 4 PM. If you return it at 5 PM, what is the main cost?",
-      "options": [
-        "The fine.",
-        "The loss of trust.",
-        "The time spent apologizing."
-      ],
+      "options": ["The fine.", "The loss of trust.", "The time spent apologizing."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "The cost of a delay is the loss of trust. Reputation is a leader's most valuable resource.",
       "leconStrategique": "Reliability is the foundation of any collaboration. Honor your commitment, even if it's uncomfortable.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of opportunity cost (what is sacrificed by choosing one option over another).",
-      "evaluationCriteria": "The answer must clearly identify what is sacrificed and why the final choice is optimal. Bonus: The child quantifies the opportunity cost (time, money, value)."
+      "referenceCroisee": "M5"
     }
   },
   "m3": {
@@ -228,24 +200,16 @@
           "type_etape": "texte_guide",
           "instruction": "To be stable, the tower must have a wide base. Stability comes from width and inverse height (wider than tall)."
         }
-      },
-      "mentorGoal": "Assess understanding of center of gravity and structural stability. The child must demonstrate they know where to place weight to maximize stability.",
-      "evaluationCriteria": "The answer must identify the lowest and most central position for the center of gravity. Bonus: The child explains why a low center of gravity makes the structure more stable."
+      }
     },
     "defi2": {
       "titre": "Quiz: The Efficient Lever",
       "question": "You must lift a very heavy rock with a bar. Where should you place the fulcrum (support point) to lift it most easily?",
-      "options": [
-        "In the middle of the bar",
-        "As close to the rock as possible",
-        "As far from the rock as possible"
-      ],
+      "options": ["In the middle of the bar", "As close to the rock as possible", "As far from the rock as possible"],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Great! The closer the fulcrum is to the load, the more powerful the lever.",
       "leconStrategique": "Efficiency is the art of doing more with less effort. Find the right fulcrum (the right relationship, the right resource).",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of leverage and lever arm (Force × Distance = Moment). The child must demonstrate how to optimize the use of limited force.",
-      "evaluationCriteria": "The answer must identify that increasing distance (lever arm) allows lifting heavier weight with less force. Bonus: The child mentions the formula or physical principle."
+      "referenceCroisee": "M5"
     },
     "defi3": {
       "titre": "Challenge: The Friction Problem",
@@ -264,42 +228,28 @@
           "type_etape": "texte_guide",
           "instruction": "Logs convert sliding friction (static) into rolling friction, which is much weaker. Leaders find systems that roll, rather than pushing them by force."
         }
-      },
-      "mentorGoal": "Assess understanding of material resistance and optimal design to support a load.",
-      "evaluationCriteria": "The answer must choose triangular or arch shape as the strongest. Bonus: The child justifies by force distribution or uniform compression."
+      }
     },
     "defi4": {
       "titre": "Quiz: Load Optimization",
       "question": "You need to transport objects of different weights. How should heavy and light loads be stacked to maximize vehicle safety and stability?",
-      "options": [
-        "Heavy objects on top of light ones.",
-        "Heavy objects at the bottom, centered.",
-        "The order doesn't matter."
-      ],
+      "options": ["Heavy objects on top of light ones.", "Heavy objects at the bottom, centered.", "The order doesn't matter."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Heavy loads at the bottom and centered minimize the center of gravity, increasing stability. This is essential for transport.",
       "feedbackIncorrect": "Stacking heavy objects on light ones creates instability and a risk of tipping.",
       "leconStrategique": "Every logistical decision must serve safety and stability first. Optimization comes through prudence.",
-      "referenceCroisee": "M8",
-      "mentorGoal": "Test understanding of friction and mechanical efficiency. The child must identify how to reduce friction to optimize movement.",
-      "evaluationCriteria": "The answer must suggest solutions to reduce friction (oil, wheels, smooth surface). Bonus: The child quantifies the improvement or cites the friction coefficient."
+      "referenceCroisee": "M8"
     }
   },
   "m4": {
     "defi1": {
       "titre": "Quiz: The Neighbors' Mystery",
       "question": "Alice, Ben, and Claire have red, blue, and green cats. Ben does not have the blue one. Alice has neither the red nor the blue one. What color is Claire's cat?",
-      "options": [
-        "Blue",
-        "Red",
-        "Green"
-      ],
+      "options": ["Blue", "Red", "Green"],
       "bonneReponseIndex": 0,
       "feedbackCorrect": "By deduction: Alice (Green), Ben (Red), therefore Claire (Blue).",
       "leconStrategique": "The leader eliminates possibilities before making a decision. Deduction is a path to truth.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Assess logical reasoning ability through elimination and deduction. The child must demonstrate they can use clues to eliminate possibilities.",
-      "evaluationCriteria": "The answer must correctly identify the solution using a structured elimination process. Bonus: The child documents their reasoning step by step."
+      "referenceCroisee": "M2"
     },
     "defi2": {
       "titre": "Challenge: The Task Sequence",
@@ -318,24 +268,16 @@
           "type_etape": "texte_guide",
           "instruction": "A logical chain cannot start with Assembly (C) if Cutting (A) is not done. Find the order where each step is a prerequisite for the next."
         }
-      },
-      "mentorGoal": "Test understanding of logical sequences and patterns (repetitive motifs). The child must demonstrate their ability to identify the underlying rule.",
-      "evaluationCriteria": "The answer must correctly identify the pattern and predict the next element. Bonus: The child explains the rule or formula of the pattern."
+      }
     },
     "defi3": {
       "titre": "Quiz: The Missing Pattern",
       "question": "What is the next symbol in this sequence: Circle, Square, Triangle, Circle, Square, ... ?",
-      "options": [
-        "Circle",
-        "Square",
-        "Triangle"
-      ],
+      "options": ["Circle", "Square", "Triangle"],
       "bonneReponseIndex": 2,
       "feedbackCorrect": "It's a sequence of 3. You found the pattern!",
       "leconStrategique": "Identifying patterns allows you to predict the future and save time. Forecasting is the first quality of a leader.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Assess ability to use conditional logic (If...Then...Else) to solve complex problems.",
-      "evaluationCriteria": "The answer must correctly use conditional structures to arrive at the solution. Bonus: The child creates a decision tree or flowchart."
+      "referenceCroisee": "M10"
     },
     "defi4": {
       "titre": "Challenge: The Variable Rule",
@@ -349,9 +291,7 @@
           "type_etape": "validation_case",
           "instruction": "I understood that Rule 1 (OR) allows a single condition (red or heavy) for X, while Rule 2 (AND) requires two simultaneous conditions (green and light)."
         }
-      },
-      "mentorGoal": "Test ability to identify contradictions and logical paradoxes. The child must demonstrate critical thinking.",
-      "evaluationCriteria": "The answer must clearly identify the contradiction and propose a resolution or problem reformulation. Bonus: The child cites a known paradox (Achilles and the tortoise, Liar's paradox)."
+      }
     }
   },
   "m5": {
@@ -372,25 +312,17 @@
           "type_etape": "texte_guide",
           "instruction": "A good pitch follows three steps: 1. The Call (the urgent problem). 2. The Solution (your invention). 3. The Value (why it's great for them). Focus on these 3 ideas."
         }
-      },
-      "mentorGoal": "Assess the child's ability to structure a persuasive message using the AIDA method (Attention, Interest, Desire, Action).",
-      "evaluationCriteria": "The answer must contain all 4 AIDA elements in logical order. Bonus: The child uses captivating storytelling or convincing data."
+      }
     },
     "defi2": {
       "titre": "Quiz: Win-Win Negotiation",
       "question": "You are negotiating equipment purchase. Your supplier wants 100€, you want to pay 80€. What is the best approach for a successful negotiation and maintaining the relationship?",
-      "options": [
-        "Politely refuse and find another supplier.",
-        "Offer 90€ and ask for a small favour in return.",
-        "Say '80€ or nothing' to be firm."
-      ],
+      "options": ["Politely refuse and find another supplier.", "Offer 90€ and ask for a small favour in return.", "Say '80€ or nothing' to be firm."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Perfect. Offering a compromise and asking for an exchange creates a 'win-win' solution.",
       "feedbackIncorrect": "Refusing or being too firm ends the negotiation. The goal is to find common ground.",
       "leconStrategique": "A good negotiation is not about beating the other person, but about ensuring both parties get more value. This builds future collaborations.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Test understanding of the importance of trust and credibility in influence. The child must demonstrate how to build trust.",
-      "evaluationCriteria": "The answer must identify concrete strategies to build trust (evidence, testimonials, expertise). Bonus: The child cites the principle of authority or social proof."
+      "referenceCroisee": "M9"
     },
     "defi3": {
       "titre": "Challenge: Active Listening",
@@ -409,24 +341,16 @@
           "type_etape": "texte_guide",
           "instruction": "Use the formula: 'I see that you are X (very angry/disappointed) because of Y (what I did)'. This shows you take responsibility and listen."
         }
-      },
-      "mentorGoal": "Assess ability to adapt message according to audience (personalization and empathy).",
-      "evaluationCriteria": "The answer must show the child has adapted their message to the needs, motivations, and language of the target audience. Bonus: The child segments multiple audience types."
+      }
     },
     "defi4": {
       "titre": "Quiz: Positive Language",
       "question": "You want your team to tidy up their tools. Which phrase is most effective for achieving a positive result?",
-      "options": [
-        "Stop leaving your tools lying around!",
-        "If you put away your tools, I will be happy.",
-        "Putting away the tools allows us to work faster tomorrow."
-      ],
+      "options": ["Stop leaving your tools lying around!", "If you put away your tools, I will be happy.", "Putting away the tools allows us to work faster tomorrow."],
       "bonneReponseIndex": 2,
       "feedbackCorrect": "Answer 3 gives a direct and future benefit to the team. This is positive leadership.",
       "leconStrategique": "Positive language motivates. The leader doesn't say 'Don't do X', but 'Do this to achieve Y'.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Test understanding of the power of emotion in persuasion. The child must demonstrate how to use emotion ethically.",
-      "evaluationCriteria": "The answer must integrate an authentic emotional appeal without manipulation. Bonus: The child balances emotion and logic (Pathos + Logos)."
+      "referenceCroisee": "M10"
     }
   },
   "m6": {
@@ -447,24 +371,16 @@
           "type_etape": "champ_texte",
           "instruction": "Of the possible causes (stability, weight, support), which SINGLE one will I change for the next try?"
         }
-      },
-      "mentorGoal": "Assess the child's ability to transform failure into a learning opportunity (Growth Mindset). The child must demonstrate resilience.",
-      "evaluationCriteria": "The answer must clearly identify lessons learned from failure and corrective actions. Bonus: The child cites the Growth Mindset concept or iteration."
+      }
     },
     "defi2": {
       "titre": "Quiz: Procrastination",
       "question": "You need to start a large project that scares you. What is the best approach to overcome inertia?",
-      "options": [
-        "Wait for last-minute inspiration.",
-        "Start with the smallest task to get momentum going.",
-        "Ask someone else to do the beginning."
-      ],
+      "options": ["Wait for last-minute inspiration.", "Start with the smallest task to get momentum going.", "Ask someone else to do the beginning."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Action creates momentum. An easy small step breaks the wall of fear.",
       "leconStrategique": "Courage is not the absence of fear, but the decision to take action despite it. Resilience starts with the first step.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Test understanding of the PDCA cycle (Plan-Do-Check-Act) for continuous improvement. The child must demonstrate a systematic problem-solving approach.",
-      "evaluationCriteria": "The answer must follow the 4 PDCA steps with concrete actions. Bonus: The child mentions iteration or Kaizen."
+      "referenceCroisee": "M2"
     },
     "defi3": {
       "titre": "Challenge: The Mental Shield",
@@ -478,24 +394,16 @@
           "type_etape": "validation_case",
           "instruction": "I identified that the attack is verbal and not physical. I don't need to retaliate with the same level of aggression."
         }
-      },
-      "mentorGoal": "Assess ability to accept constructive criticism and integrate it positively. The child must demonstrate openness to feedback.",
-      "evaluationCriteria": "The answer must show the child accepts criticism without justifying and proposes improvement actions. Bonus: The child asks for clarification or examples to better understand."
+      }
     },
     "defi4": {
       "titre": "Quiz: The Lesson of Error",
       "question": "After a failure, the most important thing to do is:",
-      "options": [
-        "Blame the situation or others.",
-        "Ask for help and analyze the data.",
-        "Quickly move on without thinking about it."
-      ],
+      "options": ["Blame the situation or others.", "Ask for help and analyze the data.", "Quickly move on without thinking about it."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Error is data. Analyzing data with the help of a mentor is the only path to improvement.",
       "leconStrategique": "Data is more important than opinion. The leader is humble in the face of facts.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Test understanding of perseverance in the face of adversity. The child must demonstrate their ability to persist despite obstacles.",
-      "evaluationCriteria": "The answer must show a perseverance strategy with concrete steps. Bonus: The child cites examples of inspiring figures who persevered (Edison, Lincoln)."
+      "referenceCroisee": "M4"
     }
   },
   "m7": {
@@ -511,24 +419,16 @@
           "type_etape": "validation_case",
           "instruction": "I understand that I must not judge any idea. The goal is raw quantity and speed."
         }
-      },
-      "mentorGoal": "Assess divergent thinking ability and creative brainstorming. The child must demonstrate they can generate many ideas without self-censorship.",
-      "evaluationCriteria": "The answer must contain at least 10 varied and original ideas. Bonus: The child uses creativity techniques (SCAMPER, Mind Mapping)."
+      }
     },
     "defi2": {
       "titre": "Quiz: Lateral Thinking",
       "question": "A man finds a gold coin in a full coffee container. How does he get it out without spilling the coffee or breaking the container?",
-      "options": [
-        "He empties the coffee first.",
-        "He uses tweezers.",
-        "He melts the container."
-      ],
+      "options": ["He empties the coffee first.", "He uses tweezers.", "He melts the container."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "You must find a non-obvious solution, bypassing the problem. Tweezers is 'lateral thinking.'",
       "leconStrategique": "Lateral thinking seeks solutions that are not on the obvious path. The leader finds solutions where others do not look.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Test understanding of combining existing ideas to create innovation (Innovation = Combination). The child must demonstrate ability to connect concepts.",
-      "evaluationCriteria": "The answer must combine at least 2 existing concepts to create a new solution. Bonus: The child explains the fusion process or cites examples of combinatorial innovations (iPhone = phone + computer + music)."
+      "referenceCroisee": "M4"
     },
     "defi3": {
       "titre": "Challenge: Creative Constraint",
@@ -542,24 +442,16 @@
           "type_etape": "validation_case",
           "instruction": "I understood that the constraint is 'flotation' and 'recycled/paper'. I must choose materials that meet both."
         }
-      },
-      "mentorGoal": "Assess ability to think outside established frameworks (Thinking Outside the Box). The child must demonstrate they can challenge assumptions.",
-      "evaluationCriteria": "The answer must question an implicit assumption of the problem and propose an unconventional solution. Bonus: The child clearly identifies the challenged assumption."
+      }
     },
     "defi4": {
       "titre": "Quiz: Diversity of Ideas",
       "question": "To solve a complex problem, what is the best source of ideas?",
-      "options": [
-        "Ask the opinion of a single expert person.",
-        "Ask the opinion of several people with different experiences.",
-        "Search for a solution in a book without talking to anyone."
-      ],
+      "options": ["Ask the opinion of a single expert person.", "Ask the opinion of several people with different experiences.", "Search for a solution in a book without talking to anyone."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Diversity creates innovation. Different points of view bring solutions you wouldn't have thought of alone.",
       "leconStrategique": "The leader actively seeks different perspectives. Collective intelligence is always superior to individual intelligence.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of rapid prototyping and experimentation. The child must demonstrate they know how to test their ideas quickly.",
-      "evaluationCriteria": "The answer must include a rapid test plan (MVP - Minimum Viable Product) with success criteria. Bonus: The child anticipates assumptions to validate."
+      "referenceCroisee": "M5"
     }
   },
   "m8": {
@@ -575,24 +467,16 @@
           "type_etape": "validation_case",
           "instruction": "I have identified the basic needs (Water, Food, Light/Heat, Safety). My 5 items must cover these needs."
         }
-      },
-      "mentorGoal": "Assess ability to audit available resources (inventory). The child must demonstrate they can identify and classify their resources.",
-      "evaluationCriteria": "The answer must contain a structured resource list with classification (human, financial, material, temporal). Bonus: The child identifies underutilized resources."
+      }
     },
     "defi2": {
       "titre": "Quiz: Opportunity Cost",
       "question": "You have 10€ and can buy a book to learn or a video game to play. If you buy the game, what is the opportunity cost?",
-      "options": [
-        "The price of the video game.",
-        "The knowledge you could have gained from the book.",
-        "The time you will spend playing."
-      ],
+      "options": ["The price of the video game.", "The knowledge you could have gained from the book.", "The time you will spend playing."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Opportunity cost is what you give up (knowledge). Leaders choose based on the missed gain, not just the expense.",
       "leconStrategique": "Every decision is a choice. Opportunity cost is the true value of leadership: choosing the best path, knowing what you give up.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Test understanding of optimizing existing resources (do more with less). The child must demonstrate they can maximize utilization.",
-      "evaluationCriteria": "The answer must propose concrete strategies to use resources more efficiently. Bonus: The child quantifies efficiency gains."
+      "referenceCroisee": "M9"
     },
     "defi3": {
       "titre": "Challenge: The Festival Budget",
@@ -606,24 +490,16 @@
           "type_etape": "validation_case",
           "instruction": "I have identified the cost per person (5€ x 3 days) and the total number of people (15,000). My action plan is: Cost x Number of Days x Number of People."
         }
-      },
-      "mentorGoal": "Assess ability to identify waste and inefficiencies (Lean Thinking). The child must demonstrate critical eye for detecting losses.",
-      "evaluationCriteria": "The answer must identify at least 3 types of waste (overproduction, waiting, transport, overprocessing). Bonus: The child cites the 7 Lean wastes or proposes solutions."
+      }
     },
     "defi4": {
       "titre": "Quiz: The Versatility Principle",
       "question": "You can take a tool that does one thing perfectly, or a tool that does 3 things well. When your resources are limited (your backpack is small), which tool do you choose?",
-      "options": [
-        "The tool that does one thing perfectly.",
-        "The tool that does 3 things well.",
-        "The order doesn't matter."
-      ],
+      "options": ["The tool that does one thing perfectly.", "The tool that does 3 things well.", "The order doesn't matter."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Versatility maximizes efficiency in resource-constrained environments. This is the audit principle.",
       "leconStrategique": "The leader maximizes the versatility of their resources and teams. Being able to do several things is security.",
-      "referenceCroisee": "M7",
-      "mentorGoal": "Test understanding of optimal allocation of limited resources (arbitrage). The child must demonstrate they can make strategic choices.",
-      "evaluationCriteria": "The answer must justify allocation based on ROI (Return on Investment) or strategic priority. Bonus: The child creates a decision matrix or scoring system."
+      "referenceCroisee": "M7"
     }
   },
   "m9": {
@@ -644,24 +520,16 @@
           "type_etape": "texte_guide",
           "instruction": "Describe the simple steps to return the wallet. The action must be practical and honest."
         }
-      },
-      "mentorGoal": "Assess understanding of integrity and trust in economic exchanges. The child must demonstrate they understand reputation is a long-term asset.",
-      "evaluationCriteria": "The answer must choose honesty and justify by the value of reputation and trust. Bonus: The child mentions the concept of 'reputational capital' or 'Golden Rule'."
+      }
     },
     "defi2": {
       "titre": "Quiz: Positive Impact",
       "question": "You can spend your afternoon cleaning your room (Personal impact) or helping an elderly neighbour carry their groceries (Community impact). Which choice has a greater positive impact?",
-      "options": [
-        "Cleaning my room.",
-        "Helping the neighbour.",
-        "Doing both quickly."
-      ],
+      "options": ["Cleaning my room.", "Helping the neighbour.", "Doing both quickly."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Helping the neighbour has a positive impact on another person and the community. The leader creates value beyond oneself.",
       "leconStrategique": "Lasting impact is measured by how you have touched the lives of others. The leader uses their time to serve a greater mission.",
-      "referenceCroisee": "M11",
-      "mentorGoal": "Test understanding of the law of supply and demand. The child must demonstrate they know how prices adjust according to the market.",
-      "evaluationCriteria": "The answer must correctly explain how supply and demand affect prices. Bonus: The child gives concrete examples or draws a supply/demand curve."
+      "referenceCroisee": "M11"
     },
     "defi3": {
       "titre": "Challenge: The Exchange Rule",
@@ -675,24 +543,16 @@
           "type_etape": "validation_case",
           "instruction": "I have identified that toys are the material value. Trust and friendship are the relational value. I focus on the relationship."
         }
-      },
-      "mentorGoal": "Assess ability to identify perceived value vs actual value. The child must demonstrate they understand value is subjective.",
-      "evaluationCriteria": "The answer must explain why identical objects can have different values depending on context. Bonus: The child cites marketing or branding examples."
+      }
     },
     "defi4": {
       "titre": "Quiz: The Team Budget",
       "question": "Your team has 20€ to buy paint and brushes. The brushes are urgent. The paint is important. What should you buy first if you can't buy everything?",
-      "options": [
-        "The paint (important).",
-        "The brushes (urgent).",
-        "Nothing, save the money."
-      ],
+      "options": ["The paint (important).", "The brushes (urgent).", "Nothing, save the money."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "The brushes (urgent) are necessary to start. The leader prioritizes the immediate action that allows progress.",
       "leconStrategique": "Resource allocation is a hierarchy. Urgency allows the process to be unlocked.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Test understanding of hidden costs and Total Cost of Ownership (TCO). The child must demonstrate they can look beyond purchase price.",
-      "evaluationCriteria": "The answer must identify hidden costs (maintenance, energy, obsolescence). Bonus: The child calculates TCO or compares two options long-term."
+      "referenceCroisee": "M2"
     }
   },
   "m10": {
@@ -708,24 +568,16 @@
           "type_etape": "validation_case",
           "instruction": "I have verified that my goal is specific and that I can measure my progress (e.g., 10/10 books read)."
         }
-      },
-      "mentorGoal": "Assess the child's ability to define a SMART goal (Specific, Measurable, Achievable, Realistic, Time-bound). The child must demonstrate they can transform a wish into an actionable goal.",
-      "evaluationCriteria": "The answer must contain a goal that meets all 5 SMART criteria. Bonus: The child explains why each criterion is important."
+      }
     },
     "defi2": {
       "titre": "Quiz: The First Small Step",
       "question": "Your big goal is to learn to code a game. What is the most effective first small step to take TODAY?",
-      "options": [
-        "Buy an advanced 500-page coding book.",
-        "Watch a 5-minute introductory video on 'What is coding'.",
-        "Wait until you have 5 free hours to start."
-      ],
+      "options": ["Buy an advanced 500-page coding book.", "Watch a 5-minute introductory video on 'What is coding'.", "Wait until you have 5 free hours to start."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "The smallest step creates momentum. A small success launches the journey.",
       "leconStrategique": "Leaders break down complex problems into simple actions. The biggest vision starts with the smallest execution.",
-      "referenceCroisee": "M6",
-      "mentorGoal": "Test understanding of breaking down goals into sub-goals (Work Breakdown Structure). The child must demonstrate they can divide a large project into manageable steps.",
-      "evaluationCriteria": "The answer must contain at least 4 logical and sequential sub-goals. Bonus: The child creates a Gantt chart or timeline."
+      "referenceCroisee": "M6"
     },
     "defi3": {
       "titre": "Challenge: The Consequences Rule",
@@ -739,24 +591,16 @@
           "type_etape": "validation_case",
           "instruction": "I stopped thinking about the next minute. I'm thinking about the consequence over a year. Integrity is a long-term strategy."
         }
-      },
-      "mentorGoal": "Assess ability to identify and manage potential risks and obstacles. The child must demonstrate they can anticipate problems.",
-      "evaluationCriteria": "The answer must identify at least 3 risks with mitigation plans. Bonus: The child ranks risks by probability and impact (Risk matrix)."
+      }
     },
     "defi4": {
       "titre": "Quiz: Personal Example",
       "question": "The best way to teach a value to your team (e.g., patience) is:",
-      "options": [
-        "To tell them to be patient.",
-        "To read them a story about patience.",
-        "To be patient yourself while doing a difficult task."
-      ],
+      "options": ["To tell them to be patient.", "To read them a story about patience.", "To be patient yourself while doing a difficult task."],
       "bonneReponseIndex": 2,
       "feedbackCorrect": "Example is the universal language of leadership. Actions inspire more than words.",
       "leconStrategique": "The leader is a mirror. Others imitate what they see, not what they hear.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of personal accountability principle (Ownership). The child must demonstrate they understand the leader assumes responsibility for results.",
-      "evaluationCriteria": "The answer must show the child accepts responsibility without seeking external excuses. Bonus: The child cites the 'Extreme Ownership' principle or gives examples."
+      "referenceCroisee": "M5"
     }
   },
   "m11": {
@@ -772,24 +616,16 @@
           "type_etape": "validation_case",
           "instruction": "I understand that fear is the main obstacle. My advice must speak about courage, action, and learning (not perfection)."
         }
-      },
-      "mentorGoal": "Assess the child's ability to synthesize and transmit their learning. This challenge tests overall program mastery and ability to guide others.",
-      "evaluationCriteria": "The answer must contain at least 5 concrete pieces of advice based on previous modules, structured logically. Bonus: The child cites personal examples or constructive failures."
+      }
     },
     "defi2": {
       "titre": "Quiz: The Leader's Example",
       "question": "Your team is demotivated by a difficult task. Which action has the greatest power of inspiration?",
-      "options": [
-        "Saying 'You have to do it, it's important'.",
-        "Doing the hardest part of the task yourself first to lead by example.",
-        "Offering a reward if the task is finished."
-      ],
+      "options": ["Saying 'You have to do it, it's important'.", "Doing the hardest part of the task yourself first to lead by example.", "Offering a reward if the task is finished."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "The leader leads by example. Action inspires more than words or rewards.",
       "leconStrategique": "Leadership is a mirror. Others will follow you when they see your unwavering commitment in the face of difficulty.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Test understanding of long-term vision and legacy. The child must demonstrate they think beyond themselves and the present moment.",
-      "evaluationCriteria": "The answer must clearly define the desired impact on others and the trace to leave. Bonus: The child mentions values or principles that will guide their future actions."
+      "referenceCroisee": "M9"
     }
   },
   "mentor": {
@@ -801,12 +637,12 @@
     "button_response": "📝 Response",
     "info_titre": "Information",
     "info_no_guide": "No discussion guide available for this challenge.",
-    "no_guide_text": "No discussion guide",
+    "no_guide_text": "No guide",
     "discussion_titre": "Parent/Child Discussion Guide",
     "discussion_intro": "Use these questions to start a conversation.",
     "explorers_management": "Explorer Management",
-    "add_explorer_button": "Add an Explorer",
-    "explorer_login_id": "Login ID",
+    "add_explorer_button": "➕ Add Explorer",
+    "explorer_login_id": "PIN Code",
     "no_explorers_yet": "You don't have any linked explorers yet.",
     "recent_progress": "Recent Progress",
     "filter_all": "All Explorers",
@@ -868,6 +704,7 @@
         "Question 3: What would you like to leave behind for others?"
       ]
     },
+    "no_guide_text": "No discussion guide",
     "signup_title": "Create a Mentor Account",
     "name_placeholder": "Your Name",
     "signup_button": "Sign Up",
@@ -875,6 +712,9 @@
     "need_account": "I don't have an account",
     "signup_success_title": "Check Your Email",
     "signup_success_message": "A confirmation link has been sent to {{email}}. Please click it to activate your account.",
+    "explorers_management": "Explorer Management",
+    "add_explorer_button": "Add an Explorer",
+    "no_explorers_yet": "You don't have any linked explorers yet.",
     "create_explorer_title": "Create a New Explorer",
     "create_explorer_subtitle": "This creates your child's profile. The UUID code will be their login identifier.",
     "explorer_name_placeholder": "Explorer's Name",
@@ -883,13 +723,11 @@
     "creation_success_title": "Success!",
     "creation_success_message": "The profile for {{name}} has been created. Their connection code is:\n\nPIN: {{pin}}\n\nPlease note this PIN for the Explorer login.",
     "creation_error": "Failed to create profile.",
+    "explorer_login_id": "Login ID",
+    "recent_progress": "Recent Progress",
     "pin_placeholder": "PIN Code (4 digits)",
     "email_placeholder": "Mentor Email",
-    "password_placeholder": "Password",
-    "pedagogical_goal": "🎯 Pedagogical Goal of this Challenge",
-    "evaluation_criteria": "📋 Evaluation Criteria (Expected)",
-    "no_goal_provided": "No pedagogical goal provided for this challenge.",
-    "no_criteria_provided": "No evaluation criteria provided for this challenge."
+    "password_placeholder": "Password"
   },
   "dashboard": {
     "title": "Explorer Dashboard",
@@ -904,3 +742,4 @@
     "start_adventure": "Start the Adventure"
   }
 }
+

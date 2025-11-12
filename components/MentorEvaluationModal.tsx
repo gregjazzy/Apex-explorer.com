@@ -10,14 +10,20 @@ const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 650;
 
+interface DefiContentForMentor {
+  mentorGoal?: string;
+  evaluationCriteria?: string;
+}
+
 interface EvaluationModalProps {
   isVisible: boolean;
   onClose: (refresh?: boolean) => void;
   progressItem: ExplorerProgressItem;
   defiTitle: string;
+  defiContent?: DefiContentForMentor;
 }
 
-export const MentorEvaluationModal: React.FC<EvaluationModalProps> = ({ isVisible, onClose, progressItem, defiTitle }) => {
+export const MentorEvaluationModal: React.FC<EvaluationModalProps> = ({ isVisible, onClose, progressItem, defiTitle, defiContent }) => {
   const { t } = useTranslation();
   const [comment, setComment] = useState(progressItem.mentorComment || '');
   const [loading, setLoading] = useState(false);
@@ -82,6 +88,29 @@ export const MentorEvaluationModal: React.FC<EvaluationModalProps> = ({ isVisibl
           </Text>
 
           <ScrollView style={styles.scrollView}>
+            {/* GUIDE PÉDAGOGIQUE ET CRITÈRES D'ÉVALUATION (POUR LE MENTOR) */}
+            {defiContent && (defiContent.mentorGoal || defiContent.evaluationCriteria) && (
+              <View style={styles.guideBox}>
+                {defiContent.mentorGoal && (
+                  <>
+                    <Text style={styles.guideHeader}>
+                      {t('mentor.pedagogical_goal') || "🎯 But Pédagogique de ce Défi"}
+                    </Text>
+                    <Text style={styles.guideText}>{defiContent.mentorGoal}</Text>
+                  </>
+                )}
+                
+                {defiContent.evaluationCriteria && (
+                  <>
+                    <Text style={styles.guideHeader}>
+                      {t('mentor.evaluation_criteria') || "📋 Critères d'Évaluation (Attendu)"}
+                    </Text>
+                    <Text style={styles.guideText}>{defiContent.evaluationCriteria}</Text>
+                  </>
+                )}
+              </View>
+            )}
+
             <Text style={styles.sectionTitle}>
               {t('mentor.explorer_response') || "Réponse de l'Explorateur"}
             </Text>
@@ -257,6 +286,27 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#10B981',
     textAlign: 'center',
+  },
+  guideBox: {
+    padding: 15,
+    backgroundColor: '#EFF6FF',
+    borderRadius: 8,
+    borderLeftWidth: 4,
+    borderLeftColor: '#3B82F6',
+    marginBottom: 20,
+  },
+  guideHeader: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#1E40AF',
+    marginTop: 10,
+    marginBottom: 8,
+  },
+  guideText: {
+    fontSize: 14,
+    color: '#1F2937',
+    lineHeight: 20,
+    marginBottom: 5,
   }
 });
 
