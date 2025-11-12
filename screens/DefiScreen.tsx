@@ -42,21 +42,51 @@ interface DefiContentRendererProps {
     content: DefiContent;
     responseText: string;
     setResponseText: (text: string) => void;
-    selectedOption: number | null;
-    setSelectedOption: (index: number | null) => void;
+    onQuizValidation: (isCorrect: boolean, selectedIndex: number) => void;
 }
 
 const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({ 
     content, 
     responseText, 
     setResponseText,
-    selectedOption,
-    setSelectedOption
+    onQuizValidation
 }) => {
     const { t } = useTranslation();
     
-    // Détermination du type de défi (basée sur la présence de 'options')
+    // États internes pour les Quiz
+    const [selectedOption, setSelectedOption] = useState<number | null>(null);
+    const [validated, setValidated] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(false);
+    
+    // Détermination du type de défi
     const isQuiz = !!content.options && content.options.length > 0;
+    
+    // Fonction de validation interne au Quiz
+    const handleValidate = () => {
+        if (selectedOption === null) {
+            return;
+        }
+        
+        const correct = selectedOption === content.bonneReponseIndex;
+        setIsCorrect(correct);
+        setValidated(true);
+        onQuizValidation(correct, selectedOption);
+        
+        if (!correct) {
+            Alert.alert(
+                t('defi.feedback_incorrect') || "Incorrect",
+                content.feedbackIncorrect || t('defi.incorrect_answer'),
+                [{
+                    text: "OK",
+                    onPress: () => {
+                        // Réinitialiser pour permettre une nouvelle tentative
+                        setValidated(false);
+                        setSelectedOption(null);
+                    }
+                }]
+            );
+        }
+    };
     
     if (isQuiz) {
         return (
@@ -68,12 +98,36 @@ const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({
                         style={[
                             rendererStyles.optionButton,
                             selectedOption === index && rendererStyles.selectedOption,
+                            // Feedback visuel après validation (seulement si validé ET correct)
+                            validated && isCorrect && index === content.bonneReponseIndex && rendererStyles.correctOption,
+                            validated && isCorrect && index === selectedOption && !isCorrect && rendererStyles.incorrectOption,
                         ]}
-                        onPress={() => setSelectedOption(index)}
+                        onPress={() => {
+                            if (!validated || !isCorrect) setSelectedOption(index);
+                        }}
+                        disabled={validated && isCorrect}
                     >
                         <Text style={rendererStyles.optionText}>{option}</Text>
                     </TouchableOpacity>
                 ))}
+                
+                {/* Bouton de validation intégré */}
+                {!validated && (
+                    <View style={rendererStyles.validationArea}>
+                        <TouchableOpacity
+                            style={[
+                                rendererStyles.validateButtonInternal,
+                                selectedOption === null && rendererStyles.disabledValidateButton
+                            ]}
+                            onPress={handleValidate}
+                            disabled={selectedOption === null}
+                        >
+                            <Text style={rendererStyles.validateButtonText}>
+                                {t('defi.validate_button') || "Valider ma Réponse"}
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                )}
             </View>
         );
     }
@@ -106,10 +160,45 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
     
-    // États pour les Quiz (QCM)
-    const [selectedOption, setSelectedOption] = useState<number | null>(null);
+    // États pour les Quiz (QCM) - simplifiés
     const [quizValidated, setQuizValidated] = useState(false);
     const [quizFeedback, setQuizFeedback] = useState<'correct' | 'incorrect' | null>(null);
+    
+    // Callback pour la validation du Quiz
+    const handleQuizValidation = async (isCorrect: boolean, selectedIndex: number) => {
+        setQuizValidated(isCorrect);
+        setQuizFeedback(isCorrect ? 'correct' : 'incorrect');
+        
+        // Si correct, soumettre automatiquement
+        if (isCorrect && user?.id) {
+            setSubmitting(true);
+            try {
+                await saveDefiProgress(
+                    user.id, 
+                    moduleId, 
+                    defiId,
+                    responseText,
+                    'COMPLETION_IMMEDIATE',
+                    100
+                );
+                
+                // Afficher le feedback correct du quiz
+                Alert.alert(
+                    t('defi.submit_title') || "Défi complété !",
+                    defiContent.feedbackCorrect || t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
+                    [{ text: "OK", onPress: () => navigation.pop(2) }]
+                );
+            } catch (error: any) {
+                console.error("Erreur lors de la soumission automatique du Quiz:", error);
+                Alert.alert(
+                    t('global.error'),
+                    "Échec de l'enregistrement de la progression: " + (error.message || error)
+                );
+            } finally {
+                setSubmitting(false);
+            }
+        }
+    };
 
     // Chargement du contenu réel depuis i18n
     const defiKey = `${moduleId}.${defiId}`; 
@@ -196,29 +285,6 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
 
     const statusInfo = getStatusInfo();
     const canSubmit = existingProgress?.evaluationStatus !== 'SOUMIS' && existingProgress?.evaluationStatus !== 'VALIDE';
-    
-    // Fonction de validation pour les Quiz
-    const handleValidateQuiz = () => {
-        if (selectedOption === null) {
-            Alert.alert(
-                t('global.error'),
-                "Veuillez sélectionner une réponse avant de valider."
-            );
-            return;
-        }
-        
-        const isCorrect = selectedOption === defiContent.bonneReponseIndex;
-        setQuizFeedback(isCorrect ? 'correct' : 'incorrect');
-        setQuizValidated(isCorrect);
-        
-        if (!isCorrect) {
-            // Afficher le feedback incorrect du quiz
-            Alert.alert(
-                t('defi.feedback_incorrect') || "Incorrect",
-                defiContent.feedbackIncorrect || t('defi.incorrect_answer')
-            );
-        }
-    };
     
     // DEBUG
     console.log('🔍 DEBUG DefiScreen:', {
@@ -363,8 +429,7 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                             content={defiContent} 
                             responseText={responseText}
                             setResponseText={setResponseText}
-                            selectedOption={selectedOption}
-                            setSelectedOption={setSelectedOption}
+                            onQuizValidation={handleQuizValidation}
                         /> 
                     </View>
                     
@@ -397,21 +462,8 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                             </TouchableOpacity>
                         )}
                         
-                        {/* Bouton Valider pour les Quiz */}
-                        {!isTextDefi && !quizValidated && (
-                            <TouchableOpacity
-                                style={[styles.actionButton, styles.validateButton]}
-                                onPress={handleValidateQuiz}
-                                disabled={selectedOption === null}
-                            >
-                                <Text style={styles.actionButtonText}>
-                                    {t('defi.validate_button') || "Valider ma Réponse"}
-                                </Text>
-                            </TouchableOpacity>
-                        )}
-                        
-                        {/* Bouton Soumettre */}
-                        {(isTextDefi || quizValidated) && (
+                        {/* Bouton Soumettre (uniquement pour les défis texte) */}
+                        {isTextDefi && (
                             <TouchableOpacity
                                 style={[
                                     styles.actionButton, 
@@ -481,6 +533,37 @@ const rendererStyles = StyleSheet.create({
         borderColor: '#3B82F6',
         borderWidth: 2,
         backgroundColor: '#EBF5FF',
+    },
+    correctOption: {
+        backgroundColor: '#D1FAE5',
+        borderColor: '#10B981',
+        borderWidth: 3,
+    },
+    incorrectOption: {
+        backgroundColor: '#FEE2E2',
+        borderColor: '#EF4444',
+        borderWidth: 3,
+    },
+    validationArea: {
+        marginTop: 15,
+        alignItems: 'center',
+    },
+    validateButtonInternal: {
+        backgroundColor: '#F59E0B',
+        paddingVertical: 12,
+        paddingHorizontal: 30,
+        borderRadius: 8,
+        minWidth: 200,
+        alignItems: 'center',
+    },
+    disabledValidateButton: {
+        backgroundColor: '#9CA3AF',
+        opacity: 0.5,
+    },
+    validateButtonText: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: '600',
     },
     optionText: {
         fontSize: isWeb ? 16 : 14,
