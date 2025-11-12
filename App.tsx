@@ -17,7 +17,8 @@ import AuthScreen from './screens/AuthScreen';
 import ExplorerDashboardScreen from './screens/ExplorerDashboardScreen';
 import MentorDashboardScreen from './screens/MentorDashboardScreen';
 import DefiListScreen from './screens/DefiListScreen'; 
-import DefiScreen from './screens/DefiScreen'; 
+import DefiScreen from './screens/DefiScreen';
+import SpeedDrillScreen from './screens/SpeedDrillScreen'; 
 
 const Stack = createNativeStackNavigator();
 
@@ -106,7 +107,16 @@ const AppContent: React.FC = () => {
               headerBackVisible: true,
               headerRight: undefined // Pas de bouton de langue
             }}
-          /> 
+          />
+          <Stack.Screen 
+            name="SpeedDrill" 
+            component={SpeedDrillScreen as any}
+            options={{ 
+              headerTitle: t('speed_drills.title'),
+              headerBackVisible: true,
+              headerRight: undefined // Pas de bouton de langue
+            }}
+          />
         </>
       ) : (
         <Stack.Screen 

@@ -911,5 +911,33 @@
   "badges": {
     "title": "Your Badges of Honor",
     "no_badges": "Start a module to earn your first badge!"
+  },
+  "speed_drills": {
+    "title": "Speed Drill Training Zone",
+    "button": "⚡ Speed Challenges",
+    "description": "Improve your calculation speed! 10 questions in 60 seconds.",
+    "start_button": "Start Session",
+    "level": "Difficulty Level",
+    "type_math": "Operation Type",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "multiplication": "Multiplication",
+    "division": "Division",
+    "addition": "Addition",
+    "subtraction": "Subtraction",
+    "question_count": "Question {{current}} / {{total}}",
+    "time_left": "Time left: {{seconds}}s",
+    "your_answer": "Your answer",
+    "submit_answer": "Submit",
+    "results_title": "Session Results",
+    "score": "Score: {{correct}} / {{total}}",
+    "accuracy": "Accuracy: {{percent}}%",
+    "time_taken": "Time: {{seconds}}s",
+    "play_again": "Play Again",
+    "back_to_dashboard": "Back to Dashboard",
+    "correct": "Correct! ✅",
+    "incorrect": "Incorrect ❌",
+    "game_over": "Session Complete!"
   }
 }

@@ -1,0 +1,570 @@
+// /screens/SpeedDrillScreen.tsx
+
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, TextInput, ScrollView, TouchableOpacity, Alert } from 'react-native';
+import { StackScreenProps } from '@react-navigation/native-stack';
+import { useTranslation } from 'react-i18next';
+
+const { width } = Dimensions.get('window');
+const isWeb = Platform.OS === 'web';
+const MAX_WIDTH = 600;
+
+type SpeedDrillScreenProps = StackScreenProps<any, 'SpeedDrill'>;
+
+type DifficultyLevel = 'easy' | 'medium' | 'hard';
+type OperationType = 'multiplication' | 'division' | 'addition' | 'subtraction';
+
+interface Question {
+    num1: number;
+    num2: number;
+    operation: OperationType;
+    answer: number;
+}
+
+type GameState = 'setup' | 'playing' | 'results';
+
+const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
+    const { t } = useTranslation();
+    
+    // Configuration
+    const [difficulty, setDifficulty] = useState<DifficultyLevel>('easy');
+    const [operationType, setOperationType] = useState<OperationType>('multiplication');
+    
+    // État du jeu
+    const [gameState, setGameState] = useState<GameState>('setup');
+    const [questions, setQuestions] = useState<Question[]>([]);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [userAnswer, setUserAnswer] = useState('');
+    const [correctAnswers, setCorrectAnswers] = useState(0);
+    const [timeLeft, setTimeLeft] = useState(60);
+    const [startTime, setStartTime] = useState<number | null>(null);
+    const [endTime, setEndTime] = useState<number | null>(null);
+    const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
+
+    // Générateur de nombres selon la difficulté
+    const generateNumber = useCallback((difficulty: DifficultyLevel, operation: OperationType): { min: number; max: number } => {
+        if (operation === 'multiplication') {
+            switch (difficulty) {
+                case 'easy': return { min: 2, max: 10 };
+                case 'medium': return { min: 5, max: 15 };
+                case 'hard': return { min: 10, max: 25 };
+            }
+        } else if (operation === 'division') {
+            switch (difficulty) {
+                case 'easy': return { min: 2, max: 10 };
+                case 'medium': return { min: 5, max: 12 };
+                case 'hard': return { min: 5, max: 20 };
+            }
+        } else if (operation === 'addition') {
+            switch (difficulty) {
+                case 'easy': return { min: 1, max: 50 };
+                case 'medium': return { min: 20, max: 100 };
+                case 'hard': return { min: 50, max: 500 };
+            }
+        } else { // subtraction
+            switch (difficulty) {
+                case 'easy': return { min: 1, max: 50 };
+                case 'medium': return { min: 20, max: 100 };
+                case 'hard': return { min: 50, max: 500 };
+            }
+        }
+    }, []);
+
+    // Génération d'une question
+    const generateQuestion = useCallback((operation: OperationType, difficulty: DifficultyLevel): Question => {
+        const range = generateNumber(difficulty, operation);
+        
+        if (operation === 'division') {
+            // Pour la division, on génère d'abord le résultat et le diviseur
+            const answer = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+            const num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+            const num1 = answer * num2; // Assure une division exacte
+            return { num1, num2, operation, answer };
+        } else if (operation === 'subtraction') {
+            // Pour la soustraction, on assure un résultat positif
+            const num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+            const num2 = Math.floor(Math.random() * num1) + 1;
+            const answer = num1 - num2;
+            return { num1, num2, operation, answer };
+        } else {
+            const num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+            const num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+            let answer: number;
+            
+            if (operation === 'multiplication') {
+                answer = num1 * num2;
+            } else { // addition
+                answer = num1 + num2;
+            }
+            
+            return { num1, num2, operation, answer };
+        }
+    }, [generateNumber]);
+
+    // Générer 10 questions
+    const generateQuestions = useCallback(() => {
+        const newQuestions: Question[] = [];
+        for (let i = 0; i < 10; i++) {
+            newQuestions.push(generateQuestion(operationType, difficulty));
+        }
+        setQuestions(newQuestions);
+    }, [operationType, difficulty, generateQuestion]);
+
+    // Timer
+    useEffect(() => {
+        if (gameState === 'playing' && timeLeft > 0) {
+            const timer = setTimeout(() => {
+                setTimeLeft(timeLeft - 1);
+            }, 1000);
+            return () => clearTimeout(timer);
+        } else if (gameState === 'playing' && timeLeft === 0) {
+            endGame();
+        }
+    }, [gameState, timeLeft]);
+
+    // Démarrer le jeu
+    const startGame = () => {
+        generateQuestions();
+        setGameState('playing');
+        setCurrentQuestionIndex(0);
+        setCorrectAnswers(0);
+        setTimeLeft(60);
+        setUserAnswer('');
+        setStartTime(Date.now());
+        setEndTime(null);
+        setFeedback(null);
+    };
+
+    // Terminer le jeu
+    const endGame = () => {
+        setGameState('results');
+        setEndTime(Date.now());
+    };
+
+    // Soumettre une réponse
+    const submitAnswer = () => {
+        if (!userAnswer.trim()) {
+            Alert.alert(t('global.error'), 'Veuillez entrer une réponse');
+            return;
+        }
+
+        const currentQuestion = questions[currentQuestionIndex];
+        const isCorrect = parseInt(userAnswer) === currentQuestion.answer;
+
+        if (isCorrect) {
+            setCorrectAnswers(correctAnswers + 1);
+            setFeedback('correct');
+        } else {
+            setFeedback('incorrect');
+        }
+
+        // Attendre 500ms pour montrer le feedback, puis passer à la question suivante
+        setTimeout(() => {
+            if (currentQuestionIndex < questions.length - 1) {
+                setCurrentQuestionIndex(currentQuestionIndex + 1);
+                setUserAnswer('');
+                setFeedback(null);
+            } else {
+                endGame();
+            }
+        }, 500);
+    };
+
+    // Symbole de l'opération
+    const getOperationSymbol = (operation: OperationType): string => {
+        switch (operation) {
+            case 'multiplication': return '×';
+            case 'division': return '÷';
+            case 'addition': return '+';
+            case 'subtraction': return '−';
+        }
+    };
+
+    // Configuration du header
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            headerTitle: t('speed_drills.title'),
+            headerShown: true,
+        });
+    }, [navigation, t]);
+
+    // Écran de configuration
+    if (gameState === 'setup') {
+        return (
+            <SafeAreaView style={styles.safeArea}>
+                <ScrollView contentContainerStyle={styles.scrollContent}>
+                    <View style={styles.container}>
+                        <Text style={styles.header}>{t('speed_drills.title')}</Text>
+                        <Text style={styles.description}>{t('speed_drills.description')}</Text>
+
+                        {/* Sélection du niveau */}
+                        <Text style={styles.sectionTitle}>{t('speed_drills.level')}</Text>
+                        <View style={styles.buttonGroup}>
+                            {(['easy', 'medium', 'hard'] as DifficultyLevel[]).map((level) => (
+                                <TouchableOpacity
+                                    key={level}
+                                    style={[styles.optionButton, difficulty === level && styles.optionButtonSelected]}
+                                    onPress={() => setDifficulty(level)}
+                                >
+                                    <Text style={[styles.optionButtonText, difficulty === level && styles.optionButtonTextSelected]}>
+                                        {t(`speed_drills.${level}`)}
+                                    </Text>
+                                </TouchableOpacity>
+                            ))}
+                        </View>
+
+                        {/* Sélection de l'opération */}
+                        <Text style={styles.sectionTitle}>{t('speed_drills.type_math')}</Text>
+                        <View style={styles.buttonGroup}>
+                            {(['multiplication', 'division', 'addition', 'subtraction'] as OperationType[]).map((type) => (
+                                <TouchableOpacity
+                                    key={type}
+                                    style={[styles.optionButton, operationType === type && styles.optionButtonSelected]}
+                                    onPress={() => setOperationType(type)}
+                                >
+                                    <Text style={[styles.optionButtonText, operationType === type && styles.optionButtonTextSelected]}>
+                                        {t(`speed_drills.${type}`)}
+                                    </Text>
+                                </TouchableOpacity>
+                            ))}
+                        </View>
+
+                        <TouchableOpacity style={styles.startButton} onPress={startGame}>
+                            <Text style={styles.startButtonText}>{t('speed_drills.start_button')}</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
+        );
+    }
+
+    // Écran de jeu
+    if (gameState === 'playing') {
+        const currentQuestion = questions[currentQuestionIndex];
+        
+        return (
+            <SafeAreaView style={styles.safeArea}>
+                <View style={styles.container}>
+                    <View style={styles.gameHeader}>
+                        <Text style={styles.questionCount}>
+                            {t('speed_drills.question_count', { current: currentQuestionIndex + 1, total: 10 })}
+                        </Text>
+                        <Text style={[styles.timer, timeLeft <= 10 && styles.timerWarning]}>
+                            {t('speed_drills.time_left', { seconds: timeLeft })}
+                        </Text>
+                    </View>
+
+                    <View style={styles.questionContainer}>
+                        <Text style={styles.questionText}>
+                            {currentQuestion.num1} {getOperationSymbol(currentQuestion.operation)} {currentQuestion.num2} = ?
+                        </Text>
+                    </View>
+
+                    <View style={styles.answerContainer}>
+                        <Text style={styles.answerLabel}>{t('speed_drills.your_answer')}</Text>
+                        <TextInput
+                            style={[styles.answerInput, feedback === 'correct' && styles.answerInputCorrect, feedback === 'incorrect' && styles.answerInputIncorrect]}
+                            value={userAnswer}
+                            onChangeText={setUserAnswer}
+                            keyboardType="numeric"
+                            placeholder="..."
+                            autoFocus
+                            editable={!feedback}
+                            onSubmitEditing={submitAnswer}
+                        />
+                        {feedback && (
+                            <Text style={[styles.feedbackText, feedback === 'correct' ? styles.feedbackCorrect : styles.feedbackIncorrect]}>
+                                {t(`speed_drills.${feedback}`)}
+                            </Text>
+                        )}
+                    </View>
+
+                    <TouchableOpacity
+                        style={[styles.submitButton, feedback && styles.submitButtonDisabled]}
+                        onPress={submitAnswer}
+                        disabled={!!feedback}
+                    >
+                        <Text style={styles.submitButtonText}>{t('speed_drills.submit_answer')}</Text>
+                    </TouchableOpacity>
+
+                    <View style={styles.scoreBar}>
+                        <Text style={styles.scoreText}>✅ {correctAnswers} / {currentQuestionIndex + 1}</Text>
+                    </View>
+                </View>
+            </SafeAreaView>
+        );
+    }
+
+    // Écran de résultats
+    const accuracy = questions.length > 0 ? Math.round((correctAnswers / questions.length) * 100) : 0;
+    const timeTaken = startTime && endTime ? Math.round((endTime - startTime) / 1000) : 60;
+
+    return (
+        <SafeAreaView style={styles.safeArea}>
+            <ScrollView contentContainerStyle={styles.scrollContent}>
+                <View style={styles.container}>
+                    <Text style={styles.resultsTitle}>{t('speed_drills.game_over')}</Text>
+                    <Text style={styles.resultsSubtitle}>{t('speed_drills.results_title')}</Text>
+
+                    <View style={styles.resultsContainer}>
+                        <View style={styles.resultItem}>
+                            <Text style={styles.resultLabel}>{t('speed_drills.score', { correct: correctAnswers, total: questions.length })}</Text>
+                        </View>
+                        <View style={styles.resultItem}>
+                            <Text style={styles.resultLabel}>{t('speed_drills.accuracy', { percent: accuracy })}</Text>
+                        </View>
+                        <View style={styles.resultItem}>
+                            <Text style={styles.resultLabel}>{t('speed_drills.time_taken', { seconds: timeTaken })}</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.resultsButtons}>
+                        <TouchableOpacity style={styles.playAgainButton} onPress={startGame}>
+                            <Text style={styles.playAgainButtonText}>{t('speed_drills.play_again')}</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+                            <Text style={styles.backButtonText}>{t('speed_drills.back_to_dashboard')}</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
+    );
+};
+
+const styles = StyleSheet.create({
+    safeArea: { flex: 1, backgroundColor: '#F3F4F6' },
+    scrollContent: {
+        padding: isWeb ? 40 : 20,
+        alignItems: 'center',
+        flexGrow: 1,
+    },
+    container: {
+        width: isWeb ? Math.min(width * 0.9, MAX_WIDTH) : '100%',
+        backgroundColor: 'white',
+        borderRadius: isWeb ? 10 : 8,
+        padding: isWeb ? 40 : 20,
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
+        elevation: 5,
+    },
+    header: {
+        fontSize: isWeb ? 34 : 26,
+        fontWeight: 'bold',
+        color: '#1F2937',
+        marginBottom: 10,
+        textAlign: 'center',
+    },
+    description: {
+        fontSize: isWeb ? 18 : 16,
+        color: '#6B7280',
+        marginBottom: 30,
+        textAlign: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: '#E5E7EB',
+        paddingBottom: 15,
+    },
+    sectionTitle: {
+        fontSize: isWeb ? 20 : 18,
+        fontWeight: '700',
+        color: '#1F2937',
+        marginTop: 20,
+        marginBottom: 10,
+    },
+    buttonGroup: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 10,
+        marginBottom: 10,
+    },
+    optionButton: {
+        paddingVertical: 12,
+        paddingHorizontal: 20,
+        borderRadius: 8,
+        borderWidth: 2,
+        borderColor: '#D1D5DB',
+        backgroundColor: 'white',
+    },
+    optionButtonSelected: {
+        borderColor: '#F59E0B',
+        backgroundColor: '#FEF3C7',
+    },
+    optionButtonText: {
+        fontSize: isWeb ? 16 : 14,
+        color: '#6B7280',
+        fontWeight: '600',
+    },
+    optionButtonTextSelected: {
+        color: '#F59E0B',
+    },
+    startButton: {
+        marginTop: 30,
+        backgroundColor: '#F59E0B',
+        paddingVertical: 16,
+        borderRadius: 8,
+        alignItems: 'center',
+    },
+    startButtonText: {
+        fontSize: isWeb ? 20 : 18,
+        fontWeight: '700',
+        color: 'white',
+    },
+    gameHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 30,
+        paddingBottom: 15,
+        borderBottomWidth: 2,
+        borderBottomColor: '#E5E7EB',
+    },
+    questionCount: {
+        fontSize: isWeb ? 18 : 16,
+        fontWeight: '600',
+        color: '#3B82F6',
+    },
+    timer: {
+        fontSize: isWeb ? 20 : 18,
+        fontWeight: '700',
+        color: '#10B981',
+    },
+    timerWarning: {
+        color: '#EF4444',
+    },
+    questionContainer: {
+        alignItems: 'center',
+        marginVertical: 40,
+    },
+    questionText: {
+        fontSize: isWeb ? 48 : 36,
+        fontWeight: 'bold',
+        color: '#1F2937',
+    },
+    answerContainer: {
+        alignItems: 'center',
+        marginBottom: 30,
+    },
+    answerLabel: {
+        fontSize: isWeb ? 18 : 16,
+        fontWeight: '600',
+        color: '#6B7280',
+        marginBottom: 10,
+    },
+    answerInput: {
+        width: '80%',
+        height: 60,
+        borderWidth: 2,
+        borderColor: '#D1D5DB',
+        borderRadius: 8,
+        fontSize: isWeb ? 32 : 24,
+        textAlign: 'center',
+        backgroundColor: 'white',
+        fontWeight: '600',
+    },
+    answerInputCorrect: {
+        borderColor: '#10B981',
+        backgroundColor: '#ECFDF5',
+    },
+    answerInputIncorrect: {
+        borderColor: '#EF4444',
+        backgroundColor: '#FEF2F2',
+    },
+    feedbackText: {
+        marginTop: 10,
+        fontSize: isWeb ? 18 : 16,
+        fontWeight: '700',
+    },
+    feedbackCorrect: {
+        color: '#10B981',
+    },
+    feedbackIncorrect: {
+        color: '#EF4444',
+    },
+    submitButton: {
+        backgroundColor: '#3B82F6',
+        paddingVertical: 16,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginBottom: 20,
+    },
+    submitButtonDisabled: {
+        backgroundColor: '#9CA3AF',
+        opacity: 0.6,
+    },
+    submitButtonText: {
+        fontSize: isWeb ? 20 : 18,
+        fontWeight: '700',
+        color: 'white',
+    },
+    scoreBar: {
+        alignItems: 'center',
+        paddingTop: 20,
+        borderTopWidth: 1,
+        borderTopColor: '#E5E7EB',
+    },
+    scoreText: {
+        fontSize: isWeb ? 18 : 16,
+        fontWeight: '600',
+        color: '#10B981',
+    },
+    resultsTitle: {
+        fontSize: isWeb ? 40 : 32,
+        fontWeight: 'bold',
+        color: '#1F2937',
+        textAlign: 'center',
+        marginBottom: 10,
+    },
+    resultsSubtitle: {
+        fontSize: isWeb ? 24 : 20,
+        fontWeight: '600',
+        color: '#6B7280',
+        textAlign: 'center',
+        marginBottom: 30,
+    },
+    resultsContainer: {
+        backgroundColor: '#F9FAFB',
+        borderRadius: 8,
+        padding: 20,
+        marginBottom: 30,
+    },
+    resultItem: {
+        paddingVertical: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#E5E7EB',
+    },
+    resultLabel: {
+        fontSize: isWeb ? 20 : 18,
+        fontWeight: '600',
+        color: '#1F2937',
+        textAlign: 'center',
+    },
+    resultsButtons: {
+        gap: 15,
+    },
+    playAgainButton: {
+        backgroundColor: '#F59E0B',
+        paddingVertical: 16,
+        borderRadius: 8,
+        alignItems: 'center',
+    },
+    playAgainButtonText: {
+        fontSize: isWeb ? 20 : 18,
+        fontWeight: '700',
+        color: 'white',
+    },
+    backButton: {
+        backgroundColor: '#6B7280',
+        paddingVertical: 16,
+        borderRadius: 8,
+        alignItems: 'center',
+    },
+    backButtonText: {
+        fontSize: isWeb ? 18 : 16,
+        fontWeight: '600',
+        color: 'white',
+    },
+});
+
+export default SpeedDrillScreen;
+

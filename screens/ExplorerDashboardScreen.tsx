@@ -123,6 +123,11 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const userName = user?.user_metadata?.name || 'Explorateur'; 
     const totalXP = modules.reduce((acc, module) => acc + module.totalXP, 0);
 
+    // Navigation vers Speed Drills
+    const handleGoToSpeedDrills = () => {
+        navigation.navigate('SpeedDrill');
+    };
+
     return (
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -137,8 +142,10 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                         {t('modules.xp_label')} Total : {totalXP} XP
                     </Text>
 
-                    {/* INTÉGRATION DES BADGES */}
-                    <BadgeList badges={badges} />
+                    {/* BOUTON SPEED DRILLS */}
+                    <TouchableOpacity style={styles.speedDrillButton} onPress={handleGoToSpeedDrills}>
+                        <Text style={styles.speedDrillButtonText}>{t('speed_drills.button')}</Text>
+                    </TouchableOpacity>
 
                     <Text style={styles.sectionTitle}>{t('global.continue')}</Text>
                     
@@ -152,6 +159,9 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                             />
                         ))}
                     </View>
+
+                    {/* INTÉGRATION DES BADGES (EN BAS) */}
+                    <BadgeList badges={badges} />
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -269,6 +279,23 @@ const styles = StyleSheet.create({
     footerText: {
         fontSize: 12,
         color: '#6B7280',
+    },
+    speedDrillButton: {
+        backgroundColor: '#F59E0B',
+        paddingVertical: 15,
+        paddingHorizontal: 20,
+        borderRadius: 10,
+        marginBottom: 20,
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 3,
+    },
+    speedDrillButtonText: {
+        fontSize: isWeb ? 18 : 16,
+        fontWeight: '700',
+        color: 'white',
     }
 });
 

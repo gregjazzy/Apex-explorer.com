@@ -916,5 +916,33 @@
   "badges": {
     "title": "Vos Badges d'Honneur",
     "no_badges": "Commencez un module pour gagner votre premier badge!"
+  },
+  "speed_drills": {
+    "title": "Zone d'Entraînement Rapide",
+    "button": "⚡ Défis de Vitesse",
+    "description": "Améliore ta vitesse de calcul ! 10 questions en 60 secondes.",
+    "start_button": "Lancer la Session",
+    "level": "Niveau de Difficulté",
+    "type_math": "Type d'Opération",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile",
+    "multiplication": "Multiplication",
+    "division": "Division",
+    "addition": "Addition",
+    "subtraction": "Soustraction",
+    "question_count": "Question {{current}} / {{total}}",
+    "time_left": "Temps restant: {{seconds}}s",
+    "your_answer": "Ta réponse",
+    "submit_answer": "Valider",
+    "results_title": "Résultats de la Session",
+    "score": "Score: {{correct}} / {{total}}",
+    "accuracy": "Précision: {{percent}}%",
+    "time_taken": "Temps: {{seconds}}s",
+    "play_again": "Rejouer",
+    "back_to_dashboard": "Retour au Dashboard",
+    "correct": "Correct ! ✅",
+    "incorrect": "Incorrect ❌",
+    "game_over": "Session Terminée !"
   }
 }
