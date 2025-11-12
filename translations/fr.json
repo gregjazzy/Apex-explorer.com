@@ -70,91 +70,102 @@
   },
   "m1": {
       "defi1": {
-        "titre": "Défi: La Logistique de l'Œuf",
-      "scenario": "Tu dois transporter 100 œufs avec un seul camion qui ne peut prendre que des caisses de 12 œufs. Combien de caisses complètes et combien d'œufs restants dois-tu gérer ? (Division et Reste).",
-      "instruction": "Écris le nombre de caisses COMPLÈTES et le nombre d'œufs RESTANTS. (Le Reste est la partie à gérer par le leader !)",
-      "leconStrategique": "Chaque ressource doit être comptée. Les 'restes' sont souvent là où se cache l'inefficacité ou la valeur cachée.",
+        "titre": "Mission: La Fête d'Anniversaire de Grand-Mère",
+      "scenario": "Tu organises la fête surprise de ta grand-mère ! Tu as commandé 100 cupcakes délicieux pour les invités. Le pâtissier t'appelle : 'Je peux seulement les livrer dans des boîtes de 12 cupcakes.' Problème : Les cupcakes qui ne rentrent pas dans une boîte risquent d'être écrasés pendant le transport !",
+      "instruction": "1. Combien de boîtes complètes auras-tu ?\n2. Combien de cupcakes resteront en dehors des boîtes ?\n3. Que peux-tu faire avec ces cupcakes 'en trop' pour éviter qu'ils soient gâchés ?",
+      "leconStrategique": "Un bon leader compte toutes ses ressources et trouve toujours une solution pour les 'restes'. Rien ne doit être gaspillé ! Dans les entreprises, les meilleurs dirigeants savent gérer les exceptions et transformer les problèmes en opportunités.",
       "referenceCroisee": "M8",
       "briefing": {
         "etape1": {
-          "titre": "1. Analyser la Contrainte Fixe",
+          "titre": "1. Comprendre La Contrainte",
           "type_etape": "validation_case",
-          "instruction": "J'ai lu le problème et identifié l'opération : 100 ÷ 12. Je sais que le Reste doit être géré en priorité pour éviter la casse.",
+          "instruction": "J'ai compris : 100 cupcakes ÷ 12 par boîte. Le calcul me donne les boîtes complètes ET les cupcakes restants.",
           "placeholder": null
         },
         "etape2": {
-          "titre": "2. La Règle du 'Reste' Actif",
+          "titre": "2. Le Problème Des Restes",
           "type_etape": "texte_guide",
-          "instruction": "Le résultat (le quotient) te donne les caisses COMPLÈTES. Le reste t'indique le nombre d'œufs qui nécessiteront une attention spéciale. Le leader gère les exceptions.",
-          "placeholder": null
+          "instruction": "Les cupcakes qui ne rentrent pas dans une boîte complète sont fragiles. C'est TON travail de leader de trouver comment les protéger ou les utiliser autrement."
         },
         "etape3": {
-          "titre": "3. L'Ancrage Stratégique",
+          "titre": "3. Solutions Créatives",
           "type_etape": "champ_texte",
-          "instruction": "Si tu n'avais pas calculé le Reste, que risquerais-tu de perdre ?",
-          "placeholder": "Ex: Sécurité, Argent, Temps..."
+          "instruction": "Trouve 2 solutions pour gérer les cupcakes restants (Ex: les donner aux voisins ? Les mettre dans une boîte spéciale ? Les manger en famille ?)",
+          "placeholder": "Mes 2 idées..."
         }
       },
-      "mentorGoal": "Ce défi évalue la capacité de l'enfant à gérer l'allocation des ressources avec un reste (division avec reste). Le but est de se concentrer sur l'exception (les œufs restants) car c'est là que réside le risque logistique.",
-      "evaluationCriteria": "La réponse doit contenir DEUX nombres (quotient et reste). 1. Le quotient doit être exact (8 caisses). 2. Le reste doit être exact (4 œufs). Bonus: L'enfant justifie l'importance de gérer le reste."
+      "mentorGoal": "Évalue la capacité à gérer l'allocation de ressources avec un reste (division). L'enfant doit comprendre que les 'exceptions' nécessitent de la créativité et ne doivent pas être ignorées.",
+      "evaluationCriteria": "1. Calcul exact : 8 boîtes complètes, 4 cupcakes restants. 2. Au moins UNE solution créative pour gérer le reste. Bonus : L'enfant propose plusieurs solutions ou anticipe le problème du transport."
     },
     "defi2": {
-      "titre": "Défi: Le Partage Juste",
-      "scenario": "Tu dois distribuer 1500 litres d'eau entre 5 camps. Chaque camp a le droit à une part égale. Combien de litres d'eau doit recevoir chaque camp ?",
-      "instruction": "Utilise la division pour trouver le partage le plus juste. (Réponse : Nombre de Litres).",
-      "leconStrategique": "La division est l'outil fondamental de la justice et de l'équité en gestion des ressources. Le partage est l'essence du leadership.",
+      "titre": "Défi: Le Dilemme du Camp de Vacances",
+      "scenario": "Tu es responsable de l'eau dans un camp de vacances. Tu as 900 litres d'eau pour aujourd'hui. Il y a 5 groupes différents qui en ont besoin :\n\n• Groupe A : Cuisine (prépare les repas pour tout le monde)\n• Groupe B : Douches (hygiène)\n• Groupe C : Piscine (loisirs)\n• Groupe D : Jardin (arrosage des plantes)\n• Groupe E : Réserve d'urgence (au cas où)\n\nProblème : il n'y a PAS assez d'eau pour donner 200 litres à chacun !",
+      "instruction": "1. Si tu devais partager équitablement, combien chaque groupe recevrait-il ? (Calcul simple)\n2. Maintenant, utilise la PRIORISATION : classe les groupes du PLUS au MOINS important.\n3. Propose ta répartition finale en expliquant ton raisonnement.\n\n💡 **Nouveau mot** : PRIORISATION = Choisir ce qui est le plus important quand tu ne peux pas tout faire. C'est la compétence n°1 des PDG et dirigeants !\n\n🚀 **Concept clé** : IMPACT = L'effet de ta décision sur tout le groupe. Exemple : La cuisine a un IMPACT énorme car elle nourrit TOUT LE MONDE.",
+      "leconStrategique": "Dans le monde de demain, tu devras souvent choisir entre plusieurs bonnes options avec des ressources limitées. Savoir PRIORISER selon l'IMPACT (pas l'urgence !) est ce qui distingue un leader d'un exécutant.",
       "referenceCroisee": "M9",
       "briefing": {
         "etape1": {
-          "titre": "1. Définir le Diviseur",
+          "titre": "1. Le Calcul Équitable",
           "type_etape": "validation_case",
-          "instruction": "J'ai identifié le nombre total (1500) et le nombre de bénéficiaires (5). L'opération est : 1500 ÷ 5."
+          "instruction": "J'ai calculé : 900 litres ÷ 5 groupes = 180 litres par groupe. Mais l'ÉQUITÉ (donner pareil à tous) n'est pas toujours la meilleure stratégie."
         },
         "etape2": {
-          "titre": "2. Simplifier la Tâche",
+          "titre": "2. Analyser L'IMPACT",
           "type_etape": "texte_guide",
-          "instruction": "Ignore temporairement les zéros (15 ÷ 5). Trouve le résultat. Puis, remets les zéros à la fin. Simplifier les problèmes complexes est la marque d'un esprit stratégique."
+          "instruction": "Pose-toi cette question pour chaque groupe : 'Si je réduis l'eau ICI, quel est l'effet sur TOUT le camp ?' La cuisine nourrit 100% des gens = IMPACT maximum. La piscine = plaisir = IMPACT faible."
+        },
+        "etape3": {
+          "titre": "3. Le Système De PRIORISATION",
+          "type_etape": "champ_texte",
+          "instruction": "Un leader efficace utilise toujours cette méthode :\n1. Identifier les contraintes (ici : pas assez d'eau)\n2. Mesurer l'IMPACT de chaque choix\n3. PRIORISER selon l'impact\n4. Expliquer et justifier\n\nEssaie maintenant avec ce défi !",
+          "placeholder": "Ma stratégie : Cuisine (300L car...), Douches (250L car...), etc."
         }
       },
-      "mentorGoal": "Évalue la compréhension de l'équité et de la division à grande échelle. Le but est de simplifier les grands nombres pour trouver rapidement la solution.",
-      "evaluationCriteria": "La réponse doit être 300. Bonus: L'enfant mentionne la simplification (15/5=3, puis ajout des zéros) dans sa réflexion (si la réponse est ouverte)."
+      "mentorGoal": "Introduit les concepts de PRIORISATION et d'IMPACT. L'enfant doit comprendre que l'équité n'est pas toujours optimale et qu'un leader mesure l'effet systémique de ses décisions.",
+      "evaluationCriteria": "1. Calcul correct : 180L si équitable. 2. Classification cohérente basée sur l'IMPACT (Cuisine/Douches > Réserve > Jardin > Piscine). 3. Utilisation des termes 'priorisation' et 'impact' dans la justification. Bonus : L'enfant anticipe les conséquences système (ex: moins d'eau au jardin = légumes morts = moins de nourriture)."
     },
     "defi3": {
-      "titre": "Quiz: Les Enchaînements Rapides",
-      "question": "Un architecte doit acheter 50 briques pour 6 projets. Quel est le nombre total de briques nécessaires ?",
+      "titre": "Quiz: Le Business des Cookies",
+      "question": "Tu veux gagner de l'argent en vendant des cookies faits maison. Chaque cookie coûte 1€ à fabriquer. Tu veux en vendre 50. Mais tu découvres que tu peux avoir une RÉDUCTION : si tu achètes les ingrédients pour 100 cookies d'un coup, le coût par cookie descend à 0,60€. Que décides-tu ?",
       "options": [
-        "50 x 6 = 300 briques",
-        "50 + 6 = 56 briques",
-        "50 ÷ 6 = 8.3 briques"
+        "Fabriquer seulement 50 cookies à 1€ chacun (coût total : 50€, pas de risque)",
+        "Fabriquer 100 cookies à 0,60€ chacun (coût total : 60€, mais tu dois vendre le double)",
+        "Abandonner l'idée, c'est trop compliqué"
       ],
-      "bonneReponseIndex": 0,
-      "feedbackCorrect": "Excellent. La multiplication permet de calculer rapidement l'ensemble des besoins.",
-      "feedbackIncorrect": "La multiplication permet d'éviter les longues additions successives.",
-      "leconStrategique": "La multiplication est l'outil pour passer à l'échelle. Quand tu dois gérer le même besoin pour plusieurs projets, tu multiplies.",
-      "referenceCroisee": "M8",
-      "mentorGoal": "Introduire la proportionnalité et l'effet de levier dans la gestion des ressources (multiplier un petit nombre par un grand multiplicateur).",
-      "evaluationCriteria": "La réponse doit être 6000. Bonus: L'enfant explique le raisonnement (30 × 200) ou mentionne le principe d'effet de levier dans sa justification."
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Excellent ! Tu as compris : investir 10€ de plus (60€ au lieu de 50€) te permet d'économiser 40€ sur 100 cookies ET de gagner beaucoup plus. C'est exactement comme ça que pensent les grands entrepreneurs !",
+      "feedbackIncorrect": "Penser petit te limite. L'option 2 coûte 10€ de plus, mais te permet de gagner BEAUCOUP plus si tu vends tout. Un petit effort supplémentaire pour un grand résultat !",
+      "leconStrategique": "Les leaders pensent en SYSTÈMES et en ÉCHELLE. Acheter en gros, automatiser, déléguer : c'est le secret pour passer de petit à grand.",
+      "referenceCroisee": "M9",
+      "mentorGoal": "Introduit le concept d'économies d'échelle et d'investissement stratégique. L'enfant doit comprendre que prendre un risque calculé peut multiplier les gains.",
+      "evaluationCriteria": "Réponse correcte : Option 2. Bonus : L'enfant calcule le profit potentiel (100 cookies vendus à 2€ = 200€ - 60€ coût = 140€ profit vs 50 cookies = 100€ - 50€ = 50€ profit)."
     },
     "defi4": {
-      "titre": "Défi: Le Partage de la Tarte (Fractions)",
-      "scenario": "Tu dois partager une tarte avec 8 amis, mais tu ne peux la couper qu'en 4 morceaux. Quelle est la plus petite fraction que tu peux donner à chaque personne pour que le partage soit juste ?",
-      "instruction": "Écris la fraction exacte que chaque personne recevra (Ex: 1/2).",
-      "leconStrategique": "La proportion est la clé de l'équité. Savoir comment une partie se rapporte au tout est essentiel pour la gestion des ressources.",
-      "referenceCroisee": "M9",
+      "titre": "Mission: Le Capitaine d'Équipe",
+      "scenario": "Tu es capitaine de ton équipe de foot. Match important demain ! Ton meilleur ami veut ABSOLUMENT jouer attaquant, mais franchement... il est bien meilleur en défense. Un autre joueur (que tu aimes moins) est excellent attaquant. Si tu mets ton ami attaquant, l'équipe risque de perdre. Si tu mets l'autre, ton ami sera triste et peut-être fâché contre toi.",
+      "instruction": "1. Quelle décision prends-tu et POURQUOI ?\n2. Comment vas-tu l'annoncer à ton ami pour qu'il comprenne (sans qu'il soit trop déçu) ?\n3. Y a-t-il une solution pour que tout le monde soit content ET que l'équipe ait les meilleures chances de gagner ?",
+      "leconStrategique": "Les vrais leaders font des choix difficiles. Parfois, tu dois choisir entre faire plaisir à quelqu'un ou faire ce qui est JUSTE pour le groupe. L'honnêteté et la communication sont essentielles.",
+      "referenceCroisee": "M10",
         "briefing": {
         "etape1": {
-          "titre": "1. Le Tout et les Parties",
+          "titre": "1. Le Dilemme Du Leader",
           "type_etape": "validation_case",
-          "instruction": "J'ai identifié le tout (1 tarte) et le nombre de parts requis (8 amis). La fraction est le nombre de parts sur le total."
+          "instruction": "J'ai compris : je dois choisir entre l'amitié (court terme) et la performance de l'équipe (meilleur pour tous)."
         },
         "etape2": {
-          "titre": "2. Simplification des Ressources",
+          "titre": "2. La Communication Honnête",
           "type_etape": "texte_guide",
-          "instruction": "Si tu coupes en 4, chaque part représente 1/4. Pour 8 personnes, tu dois diviser chaque quart en deux (ce qui donne 1/8). Une fraction est une division simple."
+          "instruction": "Un bon leader explique POURQUOI il prend une décision. Exemple : 'Tu es super en défense, et on a vraiment besoin de toi là-bas. L'autre joueur est meilleur attaquant, mais toi tu es LE MEILLEUR défenseur. Chacun à sa place !'"
+        },
+        "etape3": {
+          "titre": "3. Trouver Une Solution Créative",
+          "type_etape": "champ_texte",
+          "instruction": "Parfois, tu peux trouver une solution intelligente : ton ami pourrait jouer attaquant pendant l'échauffement ? Ou alterner les rôles à mi-temps ? Trouve une idée qui respecte tout le monde !",
+          "placeholder": "Ma solution créative..."
         }
       },
-      "mentorGoal": "Tester la capacité à identifier le facteur limitant (goulot d'étranglement) et à analyser les ressources en parallèle.",
-      "evaluationCriteria": "La réponse doit identifier l'ouvrier 2 comme le goulot d'étranglement. Bonus: L'enfant suggère une solution de réorganisation ou d'aide pour équilibrer les temps."
+      "mentorGoal": "Évalue la capacité à gérer un conflit émotionnel vs rationnel, et à communiquer une décision difficile avec empathie. L'enfant doit démontrer leadership ET intelligence émotionnelle.",
+      "evaluationCriteria": "1. Décision claire et justifiée (privilégier la performance collective). 2. Communication empathique proposée. 3. Solution créative (bonus). Attention : accepter que l'ami soit fâché est aussi une réponse valide si bien justifiée."
       }
   },
   "m2": {
