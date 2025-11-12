@@ -9,42 +9,42 @@ export const PremiumTheme = {
   // Couleurs pour les gradients (utilisées avec LinearGradient)
   gradients: {
     primary: {
-      colors: ['#4F46E5', '#7C3AED'], // Indigo/Violet plus subtil et élégant
+      colors: ['#4F46E5', '#7C3AED'] as const, // Indigo/Violet plus subtil et élégant
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
     secondary: {
-      colors: ['#EC4899', '#8B5CF6'], // Rose/Violet sophistiqué
+      colors: ['#EC4899', '#8B5CF6'] as const, // Rose/Violet sophistiqué
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
     success: {
-      colors: ['#10B981', '#059669'], // Vert moderne et clair
+      colors: ['#10B981', '#059669'] as const, // Vert moderne et clair
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
     gold: {
-      colors: ['#F59E0B', '#D97706'], // Or mat (pas bling-bling)
+      colors: ['#F59E0B', '#D97706'] as const, // Or mat (pas bling-bling)
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
     silver: {
-      colors: ['#E5E7EB', '#D1D5DB'],
+      colors: ['#E5E7EB', '#D1D5DB'] as const,
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
     bronze: {
-      colors: ['#F59E0B', '#D97706'],
+      colors: ['#F59E0B', '#D97706'] as const,
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
     module: {
-      colors: ['#4F46E5', '#7C3AED'],
+      colors: ['#4F46E5', '#7C3AED'] as const,
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
     speedDrill: {
-      colors: ['#F59E0B', '#EF4444'], // Orange/Rouge pour urgence
+      colors: ['#F59E0B', '#EF4444'] as const, // Orange/Rouge pour urgence
       start: { x: 0, y: 0 },
       end: { x: 1, y: 1 },
     },
@@ -154,6 +154,7 @@ export const PremiumTheme = {
     xlarge: 20,
     xxlarge: 25,
     round: 9999,
+    full: 9999, // Alias pour `round`
   },
 
   // Spacing système (pour cohérence)
@@ -232,11 +233,11 @@ export const createPremiumCardStyle = (options: {
 
 // Helper pour créer des styles de bouton premium
 export const createPremiumButtonStyle = (variant: 'primary' | 'secondary' | 'success' | 'danger' = 'primary') => {
-  const colors: Record<string, string[]> = {
+  const colors: Record<string, readonly [string, string, ...string[]]> = {
     primary: PremiumTheme.gradients.primary.colors,
     secondary: PremiumTheme.gradients.secondary.colors,
-    success: [PremiumTheme.colors.green, '#059669'],
-    danger: [PremiumTheme.colors.red, '#DC2626'],
+    success: [PremiumTheme.colors.green, '#059669'] as const,
+    danger: [PremiumTheme.colors.red, '#DC2626'] as const,
   };
 
   return {

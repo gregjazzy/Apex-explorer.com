@@ -10,30 +10,38 @@ const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 interface CircularTimerProps {
   duration: number; // Durée totale en secondes
-  remainingTime: number; // Temps restant en secondes
+  remainingTime?: number; // Temps restant en secondes
+  timeLeft?: number; // Alias pour remainingTime
+  progress?: number; // Progress 0-1 (optionnel, calculé à partir du temps)
   size?: number;
   strokeWidth?: number;
+  showTime?: boolean;
 }
 
 const CircularTimer: React.FC<CircularTimerProps> = ({ 
   duration, 
   remainingTime, 
+  timeLeft,
+  progress,
   size = 120, 
-  strokeWidth = 8 
+  strokeWidth = 8,
+  showTime = true
 }) => {
+  // Utiliser timeLeft ou remainingTime
+  const actualTime = timeLeft !== undefined ? timeLeft : (remainingTime !== undefined ? remainingTime : duration);
   const animatedValue = useRef(new Animated.Value(0)).current;
   
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   
   useEffect(() => {
-    const progress = 1 - (remainingTime / duration);
+    const calcProgress = 1 - (actualTime / duration);
     Animated.timing(animatedValue, {
-      toValue: progress,
+      toValue: calcProgress,
       duration: 300,
       useNativeDriver: true,
     }).start();
-  }, [remainingTime, duration]);
+  }, [actualTime, duration]);
 
   const strokeDashoffset = animatedValue.interpolate({
     inputRange: [0, 1],
@@ -42,7 +50,7 @@ const CircularTimer: React.FC<CircularTimerProps> = ({
 
   // Couleur dynamique selon le temps restant
   const getColor = () => {
-    const percentage = (remainingTime / duration) * 100;
+    const percentage = (actualTime / duration) * 100;
     if (percentage > 50) return PremiumTheme.colors.green;
     if (percentage > 20) return PremiumTheme.colors.orange;
     return PremiumTheme.colors.red;
@@ -76,13 +84,14 @@ const CircularTimer: React.FC<CircularTimerProps> = ({
         />
       </Svg>
       
-      {/* Temps affiché au centre */}
-      <View style={styles.timeContainer}>
-        <Text style={[styles.timeText, { color: getColor() }]}>
-          {remainingTime}
-        </Text>
-        <Text style={styles.timeLabel}>sec</Text>
-      </View>
+      {showTime && (
+        <View style={styles.timeContainer}>
+          <Text style={[styles.timeText, { color: getColor() }]}>
+            {actualTime}
+          </Text>
+          <Text style={styles.timeLabel}>sec</Text>
+        </View>
+      )}
     </View>
   );
 };

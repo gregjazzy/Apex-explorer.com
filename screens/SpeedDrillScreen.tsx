@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, TextInput, ScrollView, TouchableOpacity, Alert } from 'react-native';
-import { StackScreenProps } from '@react-navigation/native-stack';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import * as Haptics from 'expo-haptics';
@@ -19,7 +19,7 @@ const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 600;
 
-type SpeedDrillScreenProps = StackScreenProps<any, 'SpeedDrill'>;
+type SpeedDrillScreenProps = NativeStackScreenProps<any, 'SpeedDrill'>;
 
 type DifficultyLevel = 'easy' | 'medium' | 'hard';
 type OperationType = 'multiplication' | 'division' | 'addition' | 'subtraction';

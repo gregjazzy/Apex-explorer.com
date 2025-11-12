@@ -24,23 +24,23 @@ export interface BadgeConfig {
 // Gradients selon le tier
 export const BADGE_GRADIENTS = {
   bronze: {
-    colors: ['#CD7F32', '#8B4513'],
+    colors: ['#CD7F32', '#8B4513'] as const,
     glow: 'rgba(205, 127, 50, 0.4)',
   },
   silver: {
-    colors: ['#C0C0C0', '#A8A8A8'],
+    colors: ['#C0C0C0', '#A8A8A8'] as const,
     glow: 'rgba(192, 192, 192, 0.4)',
   },
   gold: {
-    colors: ['#FFD700', '#FFA500'],
+    colors: ['#FFD700', '#FFA500'] as const,
     glow: 'rgba(255, 215, 0, 0.5)',
   },
   platinum: {
-    colors: ['#E5E4E2', '#BCC6CC'],
+    colors: ['#E5E4E2', '#BCC6CC'] as const,
     glow: 'rgba(229, 228, 226, 0.5)',
   },
   diamond: {
-    colors: ['#B9F2FF', '#00BFFF'],
+    colors: ['#B9F2FF', '#00BFFF'] as const,
     glow: 'rgba(185, 242, 255, 0.6)',
   },
 };

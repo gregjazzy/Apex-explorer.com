@@ -349,6 +349,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             {/* NOUVEAU: Modal de Badge Débloqué */}
             {unlockedBadge && (
                 <BadgeUnlockModal
+                    visible={!!unlockedBadge}
                     badge={unlockedBadge}
                     onClose={closeBadgeModal}
                 />

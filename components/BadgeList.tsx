@@ -69,6 +69,7 @@ const BadgeList: React.FC<BadgeListProps> = ({ badges }) => {
 
       {selectedBadge && (
         <BadgeUnlockModal
+          visible={modalVisible}
           badge={selectedBadge}
           onClose={() => setModalVisible(false)}
         />
