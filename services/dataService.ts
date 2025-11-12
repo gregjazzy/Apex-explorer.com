@@ -110,8 +110,8 @@ export const fetchModulesWithProgress = async (userId: string): Promise<Module[]
 
     // 2. Construire la liste finale des modules
     const modules = BASE_MODULE_DATA_SIM.map(module => {
-        // Détermination du nombre de défis par module (M1-M10: 4 défis; M11: 2 défis)
-        const moduleDefiCount = module.id === 'm11' ? 2 : 4;
+        // Tous les modules ont maintenant 2 défis (car nous avons le contenu pour defi1 et defi2)
+        const moduleDefiCount = 2;
         
         let baseDefis: BaseDefi[] = [];
         
