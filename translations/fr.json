@@ -952,6 +952,19 @@
     "your_answer_was": "Ta réponse",
     "correct_answer_is": "Bonne réponse",
     "calculation_hint": "💡 Astuce de Calcul",
-    "back_to_results": "Retour aux Résultats"
+    "back_to_results": "Retour aux Résultats",
+    "stats_sessions": "{{count}} sessions",
+    "training_tab": "📊 Entraînement",
+    "no_training_yet": "Aucune session d'entraînement encore",
+    "sessions_this_week": "Sessions cette semaine",
+    "best_score": "Meilleur score",
+    "avg_accuracy": "Précision moyenne",
+    "difficulty_zone": "Zones de difficulté",
+    "view_details": "📊 Voir Détails",
+    "stats_by_category": "Statistiques par Catégorie",
+    "operation_label": "Opération",
+    "difficulty_label": "Niveau",
+    "best_score_label": "Meilleur",
+    "sessions_count": "Sessions"
   }
 }

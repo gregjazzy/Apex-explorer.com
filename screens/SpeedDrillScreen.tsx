@@ -4,6 +4,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, TextInput, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { StackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from '../hooks/useAuth';
+import { saveSpeedDrillSession } from '../services/dataService';
 
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
@@ -31,6 +33,7 @@ type GameState = 'setup' | 'playing' | 'results' | 'review';
 
 const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
     const { t } = useTranslation();
+    const { user } = useAuth(); // NOUVEAU : Récupérer l'utilisateur pour sauvegarder
     
     // Configuration
     const [difficulty, setDifficulty] = useState<DifficultyLevel>('easy');
@@ -192,9 +195,33 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
     };
 
     // Terminer le jeu
-    const endGame = () => {
+    const endGame = async () => {
+        const endTime = Date.now();
         setGameState('results');
-        setEndTime(Date.now());
+        setEndTime(endTime);
+        
+        // NOUVEAU : Sauvegarder la session dans Supabase
+        if (user?.id && startTime) {
+            try {
+                const accuracy = questions.length > 0 ? (correctAnswers / questions.length) * 100 : 0;
+                const timeSeconds = Math.round((endTime - startTime) / 1000);
+                
+                await saveSpeedDrillSession({
+                    user_id: user.id,
+                    operation_type: operationType,
+                    difficulty: difficulty,
+                    score: correctAnswers,
+                    total_questions: questions.length,
+                    accuracy: accuracy,
+                    time_seconds: timeSeconds
+                });
+                
+                console.log("Session Speed Drill sauvegardée avec succès");
+            } catch (error) {
+                console.error("Erreur lors de la sauvegarde de la session:", error);
+                // Ne pas bloquer l'utilisateur si la sauvegarde échoue
+            }
+        }
     };
 
     // Soumettre une réponse

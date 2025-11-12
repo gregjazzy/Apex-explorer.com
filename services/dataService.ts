@@ -562,3 +562,218 @@ export const calculateBadges = (progress: ExplorerProgressItem[]): Badge[] => {
         return { ...badge, earned };
     });
 };
+
+// --- Fonctions Speed Drill Stats ---
+
+export interface SpeedDrillSession {
+    id?: number;
+    user_id: string;
+    operation_type: string;
+    difficulty: string;
+    score: number;
+    total_questions: number;
+    accuracy: number;
+    time_seconds: number;
+    created_at?: string;
+}
+
+export interface SpeedDrillStats {
+    totalSessions: number;
+    bestScore: number;
+    bestTime: number;
+    bestOperation: string; // Ex: "Addition"
+    bestDifficulty: string; // Ex: "Facile"
+    avgAccuracy: number;
+    lastPlayed: string | null;
+    byCategory: { // Détails par opération/difficulté
+        operation: string;
+        difficulty: string;
+        bestScore: number;
+        bestTime: number;
+        sessions: number;
+    }[];
+}
+
+/**
+ * Sauvegarder une session Speed Drill
+ */
+export const saveSpeedDrillSession = async (sessionData: Omit<SpeedDrillSession, 'id' | 'created_at'>): Promise<void> => {
+    const { error } = await supabase
+        .from('speed_drill_sessions')
+        .insert({
+            user_id: sessionData.user_id,
+            operation_type: sessionData.operation_type,
+            difficulty: sessionData.difficulty,
+            score: sessionData.score,
+            total_questions: sessionData.total_questions,
+            accuracy: sessionData.accuracy,
+            time_seconds: sessionData.time_seconds
+        });
+    
+    if (error) {
+        console.error("Erreur lors de la sauvegarde de la session Speed Drill:", error);
+        throw new Error("Impossible de sauvegarder la session.");
+    }
+};
+
+/**
+ * Récupérer les statistiques Speed Drill d'un explorateur
+ */
+export const fetchSpeedDrillStats = async (userId: string): Promise<SpeedDrillStats> => {
+    const { data, error } = await supabase
+        .from('speed_drill_sessions')
+        .select('*')
+        .eq('user_id', userId);
+    
+    if (error) {
+        console.error("Erreur lors de la récupération des stats Speed Drill:", error);
+        return { 
+            totalSessions: 0, 
+            bestScore: 0, 
+            bestTime: 0, 
+            bestOperation: '', 
+            bestDifficulty: '', 
+            avgAccuracy: 0, 
+            lastPlayed: null,
+            byCategory: []
+        };
+    }
+    
+    if (!data || data.length === 0) {
+        return { 
+            totalSessions: 0, 
+            bestScore: 0, 
+            bestTime: 0, 
+            bestOperation: '', 
+            bestDifficulty: '', 
+            avgAccuracy: 0, 
+            lastPlayed: null,
+            byCategory: []
+        };
+    }
+    
+    const totalSessions = data.length;
+    
+    // Trouver la meilleure session globale : score max, puis temps min en cas d'égalité
+    const bestSession = data.reduce((best, current) => {
+        if (current.score > best.score) {
+            return current;
+        } else if (current.score === best.score && current.time_seconds < best.time_seconds) {
+            return current;
+        }
+        return best;
+    });
+    
+    const bestScore = bestSession.score;
+    const bestTime = bestSession.time_seconds;
+    const bestOperation = bestSession.operation_type;
+    const bestDifficulty = bestSession.difficulty;
+    const avgAccuracy = data.reduce((acc, s) => acc + s.accuracy, 0) / totalSessions;
+    const lastPlayed = data.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())[0].created_at;
+    
+    // Grouper par opération + difficulté
+    const categoryMap: Record<string, SpeedDrillSession[]> = {};
+    data.forEach(session => {
+        const key = `${session.operation_type}|${session.difficulty}`;
+        if (!categoryMap[key]) {
+            categoryMap[key] = [];
+        }
+        categoryMap[key].push(session);
+    });
+    
+    // Calculer les stats par catégorie
+    const byCategory = Object.entries(categoryMap).map(([key, sessions]) => {
+        const [operation, difficulty] = key.split('|');
+        const best = sessions.reduce((best, current) => {
+            if (current.score > best.score) {
+                return current;
+            } else if (current.score === best.score && current.time_seconds < best.time_seconds) {
+                return current;
+            }
+            return best;
+        });
+        return {
+            operation,
+            difficulty,
+            bestScore: best.score,
+            bestTime: best.time_seconds,
+            sessions: sessions.length
+        };
+    });
+    
+    return {
+        totalSessions,
+        bestScore,
+        bestTime,
+        bestOperation,
+        bestDifficulty,
+        avgAccuracy: Math.round(avgAccuracy),
+        lastPlayed,
+        byCategory
+    };
+};
+
+/**
+ * Récupérer toutes les sessions d'un explorateur (pour détails)
+ */
+export const fetchSpeedDrillSessions = async (userId: string): Promise<SpeedDrillSession[]> => {
+    const { data, error } = await supabase
+        .from('speed_drill_sessions')
+        .select('*')
+        .eq('user_id', userId)
+        .order('created_at', { ascending: false });
+    
+    if (error) {
+        console.error("Erreur lors de la récupération des sessions Speed Drill:", error);
+        return [];
+    }
+    
+    return data || [];
+};
+
+/**
+ * Récupérer le meilleur score pour une combinaison opération/difficulté
+ */
+export const fetchBestScore = async (userId: string, operationType: string, difficulty: string): Promise<SpeedDrillSession | null> => {
+    const { data, error } = await supabase
+        .from('speed_drill_sessions')
+        .select('*')
+        .eq('user_id', userId)
+        .eq('operation_type', operationType)
+        .eq('difficulty', difficulty)
+        .order('score', { ascending: false })
+        .order('time_seconds', { ascending: true })
+        .limit(1);
+    
+    if (error || !data || data.length === 0) {
+        return null;
+    }
+    
+    return data[0];
+};
+
+/**
+ * Récupérer les stats de tous les explorateurs d'un mentor
+ */
+export const fetchAllExplorerSpeedDrillStats = async (mentorId: string): Promise<Record<string, SpeedDrillStats>> => {
+    // 1. Récupérer tous les explorateurs du mentor
+    const { data: explorers, error: explorerError } = await supabase
+        .from('explorers')
+        .select('explorer_uuid, name')
+        .eq('mentor_id', mentorId)
+        .eq('is_active', true);
+    
+    if (explorerError || !explorers) {
+        console.error("Erreur lors de la récupération des explorateurs:", explorerError);
+        return {};
+    }
+    
+    // 2. Pour chaque explorateur, récupérer ses stats
+    const statsPromises = explorers.map(async (explorer) => {
+        const stats = await fetchSpeedDrillStats(explorer.explorer_uuid);
+        return { [explorer.explorer_uuid]: stats };
+    });
+    
+    const statsArray = await Promise.all(statsPromises);
+    return Object.assign({}, ...statsArray);
+};

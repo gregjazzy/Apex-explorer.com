@@ -5,7 +5,7 @@ import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView,
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem } from '../services/dataService'; 
+import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats } from '../services/dataService'; 
 import ProgressBar from '../components/ProgressBar';
 import BadgeList from '../components/BadgeList';
 
@@ -64,6 +64,8 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const { t, i18n } = useTranslation();
     const [modules, setModules] = useState<Module[]>([]);
     const [badges, setBadges] = useState<Badge[]>([]);
+    const [speedDrillStats, setSpeedDrillStats] = useState<SpeedDrillStats | null>(null);
+    const [showSpeedDrillDetails, setShowSpeedDrillDetails] = useState(false);
     const [loading, setLoading] = useState(true);
 
     const loadModules = useCallback(async () => {
@@ -89,6 +91,12 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             
             const calculatedBadges = calculateBadges(allProgress);
             setBadges(calculatedBadges);
+            
+            // NOUVEAU : Charger les stats Speed Drill
+            if (user?.id) {
+                const stats = await fetchSpeedDrillStats(user.id);
+                setSpeedDrillStats(stats);
+            }
             
         } catch (error) {
             console.error("Erreur de chargement des modules:", error);
@@ -142,10 +150,48 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                         {t('modules.xp_label')} Total : {totalXP} XP
                     </Text>
 
-                    {/* BOUTON SPEED DRILLS */}
-                    <TouchableOpacity style={styles.speedDrillButton} onPress={handleGoToSpeedDrills}>
-                        <Text style={styles.speedDrillButtonText}>{t('speed_drills.button')}</Text>
-                    </TouchableOpacity>
+                    {/* SECTION SPEED DRILLS AVEC ACCORDÉON */}
+                    <View style={styles.speedDrillContainer}>
+                        <TouchableOpacity style={styles.speedDrillButton} onPress={handleGoToSpeedDrills}>
+                            <Text style={styles.speedDrillButtonText}>{t('speed_drills.button')}</Text>
+                            {speedDrillStats && speedDrillStats.totalSessions > 0 && (
+                                <Text style={styles.speedDrillStats}>
+                                    🏆 Meilleur: {speedDrillStats.bestScore}/10 en {speedDrillStats.bestTime}s
+                                </Text>
+                            )}
+                        </TouchableOpacity>
+
+                        {/* BOUTON POUR DÉPLIER/REPLIER LES DÉTAILS */}
+                        {speedDrillStats && speedDrillStats.totalSessions > 0 && speedDrillStats.byCategory && speedDrillStats.byCategory.length > 0 && (
+                            <>
+                                <TouchableOpacity 
+                                    style={styles.toggleDetailsButton} 
+                                    onPress={() => setShowSpeedDrillDetails(!showSpeedDrillDetails)}
+                                >
+                                    <Text style={styles.toggleDetailsText}>
+                                        {showSpeedDrillDetails ? '▲ Masquer mes records' : '▼ Voir tous mes records'}
+                                    </Text>
+                                </TouchableOpacity>
+
+                                {/* DÉTAILS PAR CATÉGORIE (ACCORDÉON) */}
+                                {showSpeedDrillDetails && (
+                                    <View style={styles.speedDrillDetailsContainer}>
+                                        <Text style={styles.detailsHeader}>Mes records par type :</Text>
+                                        {speedDrillStats.byCategory.map((cat, idx) => (
+                                            <View key={idx} style={styles.detailRow}>
+                                                <Text style={styles.detailLabel}>
+                                                    {getOperationEmoji(cat.operation)} {t(`speed_drills.${cat.operation.toLowerCase()}`)} ({t(`speed_drills.${cat.difficulty.toLowerCase()}`)})
+                                                </Text>
+                                                <Text style={styles.detailValue}>
+                                                    {cat.bestScore}/10 en {cat.bestTime}s • {cat.sessions} session{cat.sessions > 1 ? 's' : ''}
+                                                </Text>
+                                            </View>
+                                        ))}
+                                    </View>
+                                )}
+                            </>
+                        )}
+                    </View>
 
                     <Text style={styles.sectionTitle}>{t('global.continue')}</Text>
                     
@@ -166,6 +212,17 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             </ScrollView>
         </SafeAreaView>
     );
+};
+
+// Fonction helper pour les emojis d'opération
+const getOperationEmoji = (operation: string): string => {
+    const emojiMap: Record<string, string> = {
+        'Multiplication': '✖️',
+        'Division': '➗',
+        'Addition': '➕',
+        'Subtraction': '➖',
+    };
+    return emojiMap[operation] || '🔢';
 };
 
 // Styles principaux (Desktop-First)
@@ -280,12 +337,15 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#6B7280',
     },
+    speedDrillContainer: {
+        marginBottom: 20,
+    },
     speedDrillButton: {
         backgroundColor: '#F59E0B',
         paddingVertical: 15,
         paddingHorizontal: 20,
         borderRadius: 10,
-        marginBottom: 20,
+        marginBottom: 10,
         alignItems: 'center',
         shadowColor: '#000',
         shadowOpacity: 0.1,
@@ -296,6 +356,55 @@ const styles = StyleSheet.create({
         fontSize: isWeb ? 18 : 16,
         fontWeight: '700',
         color: 'white',
+    },
+    speedDrillStats: {
+        fontSize: isWeb ? 14 : 12,
+        fontWeight: '500',
+        color: 'white',
+        marginTop: 5,
+        opacity: 0.9,
+    },
+    toggleDetailsButton: {
+        backgroundColor: '#FEF3C7',
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    toggleDetailsText: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: '#F59E0B',
+    },
+    speedDrillDetailsContainer: {
+        backgroundColor: '#FFFBEB',
+        padding: 15,
+        borderRadius: 8,
+        borderLeftWidth: 4,
+        borderLeftColor: '#F59E0B',
+    },
+    detailsHeader: {
+        fontSize: 14,
+        fontWeight: '700',
+        color: '#92400E',
+        marginBottom: 10,
+    },
+    detailRow: {
+        marginBottom: 8,
+        paddingLeft: 10,
+        borderLeftWidth: 2,
+        borderLeftColor: '#FCD34D',
+    },
+    detailLabel: {
+        fontSize: 13,
+        color: '#78350F',
+        fontWeight: '600',
+        marginBottom: 2,
+    },
+    detailValue: {
+        fontSize: 12,
+        color: '#92400E',
     }
 });
 

@@ -947,6 +947,19 @@
     "your_answer_was": "Your answer",
     "correct_answer_is": "Correct answer",
     "calculation_hint": "💡 Calculation Tip",
-    "back_to_results": "Back to Results"
+    "back_to_results": "Back to Results",
+    "stats_sessions": "{{count}} sessions",
+    "training_tab": "📊 Training",
+    "no_training_yet": "No training sessions yet",
+    "sessions_this_week": "Sessions this week",
+    "best_score": "Best score",
+    "avg_accuracy": "Average accuracy",
+    "difficulty_zone": "Difficulty zones",
+    "view_details": "📊 View Details",
+    "stats_by_category": "Statistics by Category",
+    "operation_label": "Operation",
+    "difficulty_label": "Level",
+    "best_score_label": "Best",
+    "sessions_count": "Sessions"
   }
 }

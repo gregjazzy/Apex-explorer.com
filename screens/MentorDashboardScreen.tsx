@@ -9,7 +9,7 @@ import { useAuth } from '../hooks/useAuth';
 import { DiscussionModal } from '../components/DiscussionModal';
 import { ExplorerCreationModal } from '../components/ExplorerCreationModal';
 import { MentorEvaluationModal } from '../components/MentorEvaluationModal';
-import { fetchMentorExplorers, ExplorerProfile, fetchExplorerProgress, ExplorerProgressItem } from '../services/dataService';
+import { fetchMentorExplorers, ExplorerProfile, fetchExplorerProgress, ExplorerProgressItem, fetchAllExplorerSpeedDrillStats, SpeedDrillStats } from '../services/dataService';
 
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
@@ -29,7 +29,8 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
   const [isCreationModalVisible, setIsCreationModalVisible] = useState(false);
   
   // États pour le filtrage
-  const [filterStatus, setFilterStatus] = useState<'ALL' | 'PENDING'>('ALL');
+  const [filterStatus, setFilterStatus] = useState<'ALL' | 'PENDING' | 'TRAINING'>('ALL');
+  const [speedDrillStats, setSpeedDrillStats] = useState<Record<string, SpeedDrillStats>>({});
   
   // États pour le Modal de Discussion
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -78,6 +79,10 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
       const fetchedExplorers = await fetchMentorExplorers(user.id);
       if (fetchedExplorers.length > 0) {
         await loadAllExplorerProgress(fetchedExplorers);
+        
+        // NOUVEAU : Charger les stats Speed Drill
+        const stats = await fetchAllExplorerSpeedDrillStats(user.id);
+        setSpeedDrillStats(stats);
       } else {
         setExplorersWithProgress([]);
       }
@@ -319,15 +324,78 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
               )}
             </Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.tab, filterStatus === 'TRAINING' && styles.activeTab]}
+            onPress={() => setFilterStatus('TRAINING')}
+          >
+            <Text style={[styles.tabText, filterStatus === 'TRAINING' && styles.activeTabText]}>
+              📊 Drill Stats
+            </Text>
+          </TouchableOpacity>
         </View>
 
-        <FlatList
-          data={filteredExplorers}
-          keyExtractor={(item) => item.explorer_uuid}
-          renderItem={renderExplorerItem}
-          contentContainerStyle={styles.listContent}
-          ListEmptyComponent={<Text style={styles.emptyText}>{t('mentor.no_explorers_yet') || "Vous n'avez pas encore d'explorateurs liés."}</Text>}
-        />
+        {filterStatus === 'TRAINING' ? (
+          <FlatList
+            data={explorersWithProgress}
+            keyExtractor={(item) => item.explorer_uuid}
+            renderItem={({ item }) => {
+              const stats = speedDrillStats[item.explorer_uuid];
+              return (
+                <View style={styles.explorerCard}>
+                  <Text style={styles.explorerName}>{item.name}</Text>
+                  {stats && stats.totalSessions > 0 ? (
+                    <>
+                      <View style={styles.trainingStatsContainer}>
+                        <View style={styles.statRow}>
+                          <Text style={styles.statLabel}>🏆 Meilleur Global:</Text>
+                          <Text style={styles.statValue}>
+                            {stats.bestScore}/10 en {stats.bestTime}s
+                          </Text>
+                        </View>
+                        <Text style={styles.categorySubtitle}>
+                          ({t(`speed_drills.${stats.bestOperation.toLowerCase()}`)} / {t(`speed_drills.${stats.bestDifficulty.toLowerCase()}`)})
+                        </Text>
+                        <View style={styles.statRow}>
+                          <Text style={styles.statLabel}>📊 Sessions Totales:</Text>
+                          <Text style={styles.statValue}>{stats.totalSessions}</Text>
+                        </View>
+                      </View>
+                      
+                      {stats.byCategory && stats.byCategory.length > 0 && (
+                        <View style={styles.categoryDetailsContainer}>
+                          <Text style={styles.categoryHeader}>{t('speed_drills.stats_by_category')}</Text>
+                          {stats.byCategory.map((cat, idx) => (
+                            <View key={idx} style={styles.categoryRow}>
+                              <Text style={styles.categoryLabel}>
+                                {t(`speed_drills.${cat.operation.toLowerCase()}`)} ({t(`speed_drills.${cat.difficulty.toLowerCase()}`)})
+                              </Text>
+                              <Text style={styles.categoryValue}>
+                                {cat.bestScore}/10 en {cat.bestTime}s • {cat.sessions} session{cat.sessions > 1 ? 's' : ''}
+                              </Text>
+                            </View>
+                          ))}
+                        </View>
+                      )}
+                    </>
+                  ) : (
+                    <Text style={styles.noTrainingText}>{t('speed_drills.no_training_yet')}</Text>
+                  )}
+                </View>
+              );
+            }}
+            ListEmptyComponent={
+              <Text style={styles.emptyText}>{t('mentor.no_explorers_yet') || "Aucun explorateur lié."}</Text>
+            }
+          />
+        ) : (
+          <FlatList
+            data={filteredExplorers}
+            keyExtractor={(item) => item.explorer_uuid}
+            renderItem={renderExplorerItem}
+            contentContainerStyle={styles.listContent}
+            ListEmptyComponent={<Text style={styles.emptyText}>{t('mentor.no_explorers_yet') || "Vous n'avez pas encore d'explorateurs liés."}</Text>}
+          />
+        )}
       </View>
       
       <ExplorerCreationModal
@@ -532,6 +600,84 @@ const styles = StyleSheet.create({
   buttonGroup: {
     flexDirection: 'column',
     gap: 8,
+  },
+  trainingStatsContainer: {
+    marginTop: 15,
+    backgroundColor: '#F9FAFB',
+    padding: 15,
+    borderRadius: 8,
+    borderLeftWidth: 4,
+    borderLeftColor: '#F59E0B',
+  },
+  statRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  statLabel: {
+    fontSize: 14,
+    color: '#6B7280',
+    fontWeight: '600',
+    flex: 1,
+  },
+  statValue: {
+    fontSize: 16,
+    color: '#1F2937',
+    fontWeight: '700',
+    flex: 1,
+    textAlign: 'right',
+  },
+  trainingStats: {
+    marginTop: 10,
+    gap: 5,
+  },
+  statText: {
+    fontSize: 14,
+    color: '#1F2937',
+  },
+  noTrainingText: {
+    fontSize: 14,
+    color: '#9CA3AF',
+    fontStyle: 'italic',
+    marginTop: 10,
+  },
+  categorySubtitle: {
+    fontSize: 12,
+    color: '#6B7280',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginTop: -5,
+    marginBottom: 10,
+  },
+  categoryDetailsContainer: {
+    marginTop: 15,
+    paddingTop: 15,
+    borderTopWidth: 1,
+    borderTopColor: '#E5E7EB',
+  },
+  categoryHeader: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#3B82F6',
+    marginBottom: 10,
+  },
+  categoryRow: {
+    flexDirection: 'column',
+    marginBottom: 8,
+    paddingLeft: 10,
+    borderLeftWidth: 2,
+    borderLeftColor: '#D1D5DB',
+  },
+  categoryLabel: {
+    fontSize: 13,
+    color: '#1F2937',
+    fontWeight: '600',
+    marginBottom: 2,
+  },
+  categoryValue: {
+    fontSize: 12,
+    color: '#6B7280',
   },
 });
 
