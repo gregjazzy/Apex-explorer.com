@@ -42,11 +42,18 @@ interface DefiContentRendererProps {
     content: DefiContent;
     responseText: string;
     setResponseText: (text: string) => void;
+    selectedOption: number | null;
+    setSelectedOption: (index: number | null) => void;
 }
 
-const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({ content, responseText, setResponseText }) => {
+const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({ 
+    content, 
+    responseText, 
+    setResponseText,
+    selectedOption,
+    setSelectedOption
+}) => {
     const { t } = useTranslation();
-    const [selectedOption, setSelectedOption] = useState<number | null>(null);
     
     // Détermination du type de défi (basée sur la présence de 'options')
     const isQuiz = !!content.options && content.options.length > 0;
@@ -98,6 +105,11 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const [existingProgress, setExistingProgress] = useState<ExplorerProgressItem | null>(null);
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
+    
+    // États pour les Quiz (QCM)
+    const [selectedOption, setSelectedOption] = useState<number | null>(null);
+    const [quizValidated, setQuizValidated] = useState(false);
+    const [quizFeedback, setQuizFeedback] = useState<'correct' | 'incorrect' | null>(null);
 
     // Chargement du contenu réel depuis i18n
     const defiKey = `${moduleId}.${defiId}`; 
@@ -185,6 +197,29 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const statusInfo = getStatusInfo();
     const canSubmit = existingProgress?.evaluationStatus !== 'SOUMIS' && existingProgress?.evaluationStatus !== 'VALIDE';
     
+    // Fonction de validation pour les Quiz
+    const handleValidateQuiz = () => {
+        if (selectedOption === null) {
+            Alert.alert(
+                t('global.error'),
+                "Veuillez sélectionner une réponse avant de valider."
+            );
+            return;
+        }
+        
+        const isCorrect = selectedOption === defiContent.bonneReponseIndex;
+        setQuizFeedback(isCorrect ? 'correct' : 'incorrect');
+        setQuizValidated(isCorrect);
+        
+        if (!isCorrect) {
+            // Afficher le feedback incorrect du quiz
+            Alert.alert(
+                t('defi.feedback_incorrect') || "Incorrect",
+                defiContent.feedbackIncorrect || t('defi.incorrect_answer')
+            );
+        }
+    };
+    
     // DEBUG
     console.log('🔍 DEBUG DefiScreen:', {
         hasExistingProgress: !!existingProgress,
@@ -207,6 +242,15 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
             Alert.alert(
                 t('global.error'),
                 t('defi.error_empty_response') || "Merci d'écrire une réponse avant de soumettre."
+            );
+            return;
+        }
+        
+        // Validation pour les Quiz : vérifier qu'une réponse correcte a été validée
+        if (!isTextDefi && !quizValidated) {
+            Alert.alert(
+                t('global.error'),
+                "Vous devez d'abord valider votre réponse et obtenir la bonne réponse avant de soumettre."
             );
             return;
         }
@@ -235,9 +279,10 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     [{ text: "OK", onPress: () => navigation.pop(2) }]
                 );
             } else {
+                // Afficher le feedback correct pour les Quiz
                 Alert.alert(
                     t('defi.submit_title') || "Défi complété !",
-                    t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
+                    defiContent.feedbackCorrect || t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
                     [{ text: "OK", onPress: () => navigation.pop(2) }]
                 );
             }
@@ -318,8 +363,28 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                             content={defiContent} 
                             responseText={responseText}
                             setResponseText={setResponseText}
+                            selectedOption={selectedOption}
+                            setSelectedOption={setSelectedOption}
                         /> 
                     </View>
+                    
+                    {/* Feedback pour les Quiz */}
+                    {!isTextDefi && quizFeedback && (
+                        <View style={[
+                            styles.feedbackBox,
+                            { backgroundColor: quizFeedback === 'correct' ? '#D1FAE5' : '#FEE2E2' }
+                        ]}>
+                            <Text style={[
+                                styles.feedbackText,
+                                { color: quizFeedback === 'correct' ? '#065F46' : '#991B1B' }
+                            ]}>
+                                {quizFeedback === 'correct' 
+                                    ? t('defi.correct_answer')
+                                    : t('defi.incorrect_answer')
+                                }
+                            </Text>
+                        </View>
+                    )}
 
                     {/* Boutons d'Action */}
                     <View style={styles.buttonRow}>
@@ -331,24 +396,41 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                                 <Text style={styles.actionButtonText}>{t('defi.briefing_button')}</Text>
                             </TouchableOpacity>
                         )}
-                        <TouchableOpacity
-                            style={[
-                                styles.actionButton, 
-                                styles.submitButton,
-                                (!canSubmit || submitting) && styles.disabledButton
-                            ]}
-                            onPress={handleSubmit}
-                            disabled={!canSubmit || submitting}
-                        >
-                            <Text style={[
-                                styles.actionButtonText,
-                                (!canSubmit || submitting) && styles.disabledButtonText
-                            ]}>
-                                {existingProgress?.evaluationStatus === 'REVISION_DEMANDEE'
-                                    ? t('defi.resubmit_button') || "📤 Soumettre à nouveau"
-                                    : t('defi.submit_button') || "Soumettre le Défi"}
-                            </Text>
-                        </TouchableOpacity>
+                        
+                        {/* Bouton Valider pour les Quiz */}
+                        {!isTextDefi && !quizValidated && (
+                            <TouchableOpacity
+                                style={[styles.actionButton, styles.validateButton]}
+                                onPress={handleValidateQuiz}
+                                disabled={selectedOption === null}
+                            >
+                                <Text style={styles.actionButtonText}>
+                                    {t('defi.validate_button') || "Valider ma Réponse"}
+                                </Text>
+                            </TouchableOpacity>
+                        )}
+                        
+                        {/* Bouton Soumettre */}
+                        {(isTextDefi || quizValidated) && (
+                            <TouchableOpacity
+                                style={[
+                                    styles.actionButton, 
+                                    styles.submitButton,
+                                    (!canSubmit || submitting) && styles.disabledButton
+                                ]}
+                                onPress={handleSubmit}
+                                disabled={!canSubmit || submitting}
+                            >
+                                <Text style={[
+                                    styles.actionButtonText,
+                                    (!canSubmit || submitting) && styles.disabledButtonText
+                                ]}>
+                                    {existingProgress?.evaluationStatus === 'REVISION_DEMANDEE'
+                                        ? t('defi.resubmit_button') || "📤 Soumettre à nouveau"
+                                        : t('defi.submit_button') || "Soumettre le Défi"}
+                                </Text>
+                            </TouchableOpacity>
+                        )}
                     </View>
 
                     {submitting && <ActivityIndicator size="large" color="#3B82F6" style={{ marginVertical: 20 }} />}
@@ -483,6 +565,9 @@ const styles = StyleSheet.create({
   submitButton: {
     backgroundColor: '#10B981',
   },
+  validateButton: {
+    backgroundColor: '#F59E0B',
+  },
   disabledButton: {
     backgroundColor: '#9CA3AF',
     opacity: 0.6,
@@ -494,6 +579,17 @@ const styles = StyleSheet.create({
   },
   disabledButtonText: {
     color: '#E5E7EB',
+  },
+  feedbackBox: {
+    padding: 15,
+    borderRadius: 8,
+    marginVertical: 15,
+    borderWidth: 2,
+  },
+  feedbackText: {
+    fontSize: 15,
+    fontWeight: '600',
+    textAlign: 'center',
   },
   lecon: { 
     fontSize: isWeb ? 16 : 14, 

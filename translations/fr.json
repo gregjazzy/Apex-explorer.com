@@ -43,6 +43,11 @@
     "completed_count": "{{completed}} / {{total}} défis terminés",
     "submit_button": "Soumettre le Défi",
     "resubmit_button": "📤 Soumettre à nouveau",
+    "validate_button": "Valider ma Réponse",
+    "correct_answer": "✅ Parfait! Réponse Correcte. Vous pouvez soumettre.",
+    "incorrect_answer": "❌ Ce n'est pas la bonne réponse. Analysez votre erreur ou utilisez la Fiche Guidée!",
+    "feedback_correct": "Correct",
+    "feedback_incorrect": "Incorrect",
     "submit_title": "Défi Soumis",
     "submit_message": "Ta réponse a été envoyée au mentor pour validation!",
     "submit_message_pending": "Ton mentor va évaluer ta réponse. Tu seras notifié quand il aura répondu.",
@@ -57,8 +62,8 @@
     "status_completed": "✅ Défi complété !"
   },
   "m1": {
-    "defi1": {
-      "titre": "Défi: La Logistique de l'Œuf",
+      "defi1": {
+        "titre": "Défi: La Logistique de l'Œuf",
       "scenario": "Tu dois transporter 100 œufs avec un seul camion qui ne peut prendre que des caisses de 12 œufs. Combien de caisses complètes et combien d'œufs restants dois-tu gérer ? (Division et Reste).",
       "instruction": "Écris le nombre de caisses COMPLÈTES et le nombre d'œufs RESTANTS. (Le Reste est la partie à gérer par le leader !)",
       "leconStrategique": "Chaque ressource doit être comptée. Les 'restes' sont souvent là où se cache l'inefficacité ou la valeur cachée.",
@@ -129,7 +134,7 @@
       "instruction": "Écris la fraction exacte que chaque personne recevra (Ex: 1/2).",
       "leconStrategique": "La proportion est la clé de l'équité. Savoir comment une partie se rapporte au tout est essentiel pour la gestion des ressources.",
       "referenceCroisee": "M9",
-      "briefing": {
+        "briefing": {
         "etape1": {
           "titre": "1. Le Tout et les Parties",
           "type_etape": "validation_case",
@@ -143,37 +148,37 @@
       },
       "mentorGoal": "Tester la capacité à identifier le facteur limitant (goulot d'étranglement) et à analyser les ressources en parallèle.",
       "evaluationCriteria": "La réponse doit identifier l'ouvrier 2 comme le goulot d'étranglement. Bonus: L'enfant suggère une solution de réorganisation ou d'aide pour équilibrer les temps."
-    }
+      }
   },
   "m2": {
     "defi1": {
-      "titre": "Défi: L'Urgence et l'Importance",
-      "scenario": "Tu as quatre tâches : 1. Nourrir le chien (Urgent/Important). 2. Jouer à un jeu (Ni Urgent/Ni Important). 3. Finir un devoir (Non Urgent/Important). 4. Aider ta sœur (Urgent/Non Important). Comment les priorises-tu (1 à 4) ?",
-      "instruction": "Écris la tâche que tu vas faire en PREMIER et la tâche que tu vas faire en DERNIER.",
-      "leconStrategique": "Les leaders s'occupent d'abord de l'IMPORTANT (même si ce n'est pas urgent) avant de l'Urgent mais non important.",
-      "referenceCroisee": "M8",
-      "briefing": {
-        "etape1": {
-          "titre": "1. La Matrice Eisenhower",
-          "type_etape": "texte_guide",
-          "instruction": "Dessine une boîte avec 4 cases (Urgent/Important, Urgent/Non Important, Non Urgent/Important, Non Urgent/Non Important). Place chaque tâche dans sa bonne case. Les cases non urgentes et importantes sont la vraie priorité."
-        }
+        "titre": "Défi: L'Urgence et l'Importance",
+        "scenario": "Tu as quatre tâches : 1. Nourrir le chien (Urgent/Important). 2. Jouer à un jeu (Ni Urgent/Ni Important). 3. Finir un devoir (Non Urgent/Important). 4. Aider ta sœur (Urgent/Non Important). Comment les priorises-tu (1 à 4) ?",
+        "instruction": "Écris la tâche que tu vas faire en PREMIER et la tâche que tu vas faire en DERNIER.",
+        "leconStrategique": "Les leaders s'occupent d'abord de l'IMPORTANT (même si ce n'est pas urgent) avant de l'Urgent mais non important.",
+        "referenceCroisee": "M8",
+        "briefing": {
+            "etape1": {
+                "titre": "1. La Matrice Eisenhower",
+                "type_etape": "texte_guide",
+                "instruction": "Dessine une boîte avec 4 cases (Urgent/Important, Urgent/Non Important, Non Urgent/Important, Non Urgent/Non Important). Place chaque tâche dans sa bonne case. Les cases non urgentes et importantes sont la vraie priorité."
+            }
       },
       "mentorGoal": "Évaluer la compréhension de la Matrice d'Eisenhower (Important vs Urgent). L'enfant doit démontrer qu'il sait différencier Urgent/Important et prioriser correctement.",
       "evaluationCriteria": "La réponse doit inclure la PRIORISATION CORRECTE des tâches selon la matrice (Important/Non Urgent en premier). Bonus: L'enfant justifie pourquoi les tâches importantes doivent précéder les urgentes."
     },
     "defi2": {
-      "titre": "Quiz: Planification et Préparation",
-      "question": "Quel outil est le plus efficace pour planifier un projet de 3 jours ?",
+        "titre": "Quiz: Planification et Préparation",
+        "question": "Quel outil est le plus efficace pour planifier un projet de 3 jours ?",
       "options": [
         "Une simple note mentale",
         "Un agenda visuel avec les tâches listées",
         "Demander de l'aide après avoir oublié"
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Un agenda visuel transforme le temps en ressource gérable.",
-      "feedbackIncorrect": "La mémoire n'est pas un outil fiable pour la planification de projets longs.",
-      "leconStrategique": "La préparation est la preuve de la discipline. Un bon plan te donne la liberté de te concentrer sur l'exécution.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Un agenda visuel transforme le temps en ressource gérable.",
+        "feedbackIncorrect": "La mémoire n'est pas un outil fiable pour la planification de projets longs.",
+        "leconStrategique": "La préparation est la preuve de la discipline. Un bon plan te donne la liberté de te concentrer sur l'exécution.",
       "referenceCroisee": "M6",
       "mentorGoal": "Tester la compréhension de la planification à rebours (rétro-planification) pour respecter une échéance. L'enfant doit démontrer sa capacité à décomposer un projet en étapes chronologiques.",
       "evaluationCriteria": "La réponse doit contenir un plan avec des étapes ordonnées et des délais réalistes. Bonus: L'enfant anticipe des imprévus ou des marges de sécurité."
@@ -212,37 +217,37 @@
   },
   "m3": {
     "defi1": {
-      "titre": "Défi: L'Équilibre de la Tour",
-      "scenario": "Tu dois construire une tour la plus haute possible avec 10 blocs. Comment dois-tu placer les blocs pour garantir la STABILITÉ maximale ?",
-      "instruction": "Écris une phrase expliquant où doit se trouver le centre de gravité (CG) : Haut ou Bas, et pourquoi.",
-      "leconStrategique": "La stabilité est plus importante que la hauteur. Une fondation solide permet une croissance durable.",
-      "referenceCroisee": "M7",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Le Centre de Gravité",
-          "type_etape": "validation_case",
-          "instruction": "J'ai compris que le centre de gravité doit être le plus bas possible. Les blocs lourds vont en bas, les plus légers en haut."
-        },
-        "etape2": {
-          "titre": "2. La Règle de la Base",
-          "type_etape": "texte_guide",
-          "instruction": "Pour être stable, la tour doit avoir une base large. La stabilité provient de la largeur et de la hauteur inversée (plus large que haute)."
-        }
+        "titre": "Défi: L'Équilibre de la Tour",
+        "scenario": "Tu dois construire une tour la plus haute possible avec 10 blocs. Comment dois-tu placer les blocs pour garantir la STABILITÉ maximale ?",
+        "instruction": "Écris une phrase expliquant où doit se trouver le centre de gravité (CG) : Haut ou Bas, et pourquoi.",
+        "leconStrategique": "La stabilité est plus importante que la hauteur. Une fondation solide permet une croissance durable.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Le Centre de Gravité",
+                "type_etape": "validation_case",
+                "instruction": "J'ai compris que le centre de gravité doit être le plus bas possible. Les blocs lourds vont en bas, les plus légers en haut."
+            },
+            "etape2": {
+                "titre": "2. La Règle de la Base",
+                "type_etape": "texte_guide",
+                "instruction": "Pour être stable, la tour doit avoir une base large. La stabilité provient de la largeur et de la hauteur inversée (plus large que haute)."
+            }
       },
       "mentorGoal": "Évaluer la compréhension du centre de gravité et de la stabilité structurelle. L'enfant doit démontrer qu'il sait où placer le poids pour maximiser la stabilité.",
       "evaluationCriteria": "La réponse doit identifier la position la plus basse et centrale pour le centre de gravité. Bonus: L'enfant explique pourquoi un centre de gravité bas rend la structure plus stable."
     },
     "defi2": {
-      "titre": "Quiz: Le Levier Efficace",
-      "question": "Tu dois soulever une roche très lourde avec une barre. Où dois-tu placer le point d'appui (fulcrum) pour la soulever le plus facilement ?",
+        "titre": "Quiz: Le Levier Efficace",
+        "question": "Tu dois soulever une roche très lourde avec une barre. Où dois-tu placer le point d'appui (fulcrum) pour la soulever le plus facilement ?",
       "options": [
         "Au milieu de la barre",
         "Le plus près possible de la roche",
         "Le plus loin possible de la roche"
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Bravo! Plus le point d'appui est proche de la charge, plus le levier est puissant.",
-      "leconStrategique": "L'efficacité est l'art de faire plus avec moins d'effort. Trouve le bon point d'appui (la bonne relation, la bonne ressource).",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Bravo! Plus le point d'appui est proche de la charge, plus le levier est puissant.",
+        "leconStrategique": "L'efficacité est l'art de faire plus avec moins d'effort. Trouve le bon point d'appui (la bonne relation, la bonne ressource).",
       "referenceCroisee": "M5",
       "mentorGoal": "Tester la compréhension de l'effet de levier et du bras de levier (Force × Distance = Moment). L'enfant doit démontrer comment optimiser l'utilisation d'une force limitée.",
       "evaluationCriteria": "La réponse doit identifier que l'augmentation de la distance (bras de levier) permet de soulever un poids plus lourd avec moins de force. Bonus: L'enfant mentionne la formule ou le principe physique."
@@ -287,37 +292,37 @@
   },
   "m4": {
     "defi1": {
-      "titre": "Quiz: Le Mystère des Voisins",
-      "question": "Alice, Ben et Claire ont des chats rouges, bleus et verts. Ben n'a pas le bleu. Alice n'a ni le rouge ni le bleu. Quelle est la couleur du chat de Claire ?",
+        "titre": "Quiz: Le Mystère des Voisins",
+        "question": "Alice, Ben et Claire ont des chats rouges, bleus et verts. Ben n'a pas le bleu. Alice n'a ni le rouge ni le bleu. Quelle est la couleur du chat de Claire ?",
       "options": [
         "Bleu",
         "Rouge",
         "Vert"
       ],
-      "bonneReponseIndex": 0,
-      "feedbackCorrect": "Par déduction : Alice (Vert), Ben (Rouge), donc Claire (Bleu).",
-      "leconStrategique": "Le leader élimine les possibilités avant de prendre une décision. La déduction est un chemin vers la vérité.",
+        "bonneReponseIndex": 0,
+        "feedbackCorrect": "Par déduction : Alice (Vert), Ben (Rouge), donc Claire (Bleu).",
+        "leconStrategique": "Le leader élimine les possibilités avant de prendre une décision. La déduction est un chemin vers la vérité.",
       "referenceCroisee": "M2",
       "mentorGoal": "Évaluer la capacité de raisonnement logique par élimination et déduction. L'enfant doit démontrer qu'il sait utiliser les indices pour éliminer les possibilités.",
       "evaluationCriteria": "La réponse doit identifier correctement la solution en utilisant un processus d'élimination structuré. Bonus: L'enfant documente son raisonnement étape par étape."
     },
     "defi2": {
-      "titre": "Défi: La Séquence des Tâches",
-      "scenario": "La séquence de fabrication d'un jouet est : A=Coupe, B=Peinture, C=Assemblage, D=Séchage. Mais l'ordre est (C, D, A, B). Explique pourquoi cet ordre est inefficace et propose un meilleur ordre.",
-      "instruction": "Écris la séquence des tâches (lettres) que tu vas choisir pour une efficacité maximale (ex: A, B, C, D).",
-      "leconStrategique": "L'ordre fait partie de la logique. La logique s'assure que chaque étape prépare correctement la suivante.",
-      "referenceCroisee": "M3",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Identifier les Dépendances",
-          "type_etape": "validation_case",
-          "instruction": "J'ai identifié que 'Peinture' doit précéder 'Séchage' et que 'Coupe' doit être fait en premier pour l'efficacité."
-        },
-        "etape2": {
-          "titre": "2. Construire la Chaîne Logique",
-          "type_etape": "texte_guide",
-          "instruction": "Une chaîne logique ne peut pas commencer par l'Assemblage (C) si la Coupe (A) n'est pas faite. Trouve l'ordre où chaque étape est un prérequis pour la suivante."
-        }
+        "titre": "Défi: La Séquence des Tâches",
+        "scenario": "La séquence de fabrication d'un jouet est : A=Coupe, B=Peinture, C=Assemblage, D=Séchage. Mais l'ordre est (C, D, A, B). Explique pourquoi cet ordre est inefficace et propose un meilleur ordre.",
+        "instruction": "Écris la séquence des tâches (lettres) que tu vas choisir pour une efficacité maximale (ex: A, B, C, D).",
+        "leconStrategique": "L'ordre fait partie de la logique. La logique s'assure que chaque étape prépare correctement la suivante.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Identifier les Dépendances",
+                "type_etape": "validation_case",
+                "instruction": "J'ai identifié que 'Peinture' doit précéder 'Séchage' et que 'Coupe' doit être fait en premier pour l'efficacité."
+            },
+            "etape2": {
+                "titre": "2. Construire la Chaîne Logique",
+                "type_etape": "texte_guide",
+                "instruction": "Une chaîne logique ne peut pas commencer par l'Assemblage (C) si la Coupe (A) n'est pas faite. Trouve l'ordre où chaque étape est un prérequis pour la suivante."
+            }
       },
       "mentorGoal": "Tester la compréhension des séquences logiques et des patterns (motifs répétitifs). L'enfant doit démontrer sa capacité à identifier la règle sous-jacente.",
       "evaluationCriteria": "La réponse doit identifier correctement le pattern et prédire le prochain élément. Bonus: L'enfant explique la règle ou la formule du pattern."
@@ -356,38 +361,38 @@
   },
   "m5": {
     "defi1": {
-      "titre": "Défi: Le Pitch de l'Inventeur",
-      "scenario": "Tu as inventé un objet révolutionnaire (ex: des chaussures volantes). Comment convaincrais-tu un investisseur de te donner de l'argent en 3 phrases ? (Focus : Problème, Solution, Valeur).",
-      "instruction": "Écris ton pitch. La clarté et l'impact sont évalués.",
-      "leconStrategique": "La clarté est la force d'un leader. Si tu ne peux pas expliquer ton idée simplement, elle sera ignorée.",
-      "referenceCroisee": "M7",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Analyser l'Auditoire (Leur Besoin)",
-          "type_etape": "validation_case",
-          "instruction": "J'ai identifié que l'investisseur veut savoir s'il va gagner de l'argent. Mon pitch doit être rapide et excitant, et non technique."
-        },
-        "etape2": {
-          "titre": "2. La Méthode A-S-V (Appel - Solution - Valeur)",
-          "type_etape": "texte_guide",
-          "instruction": "Un bon pitch suit trois étapes : 1. L'Appel (le problème urgent). 2. La Solution (ton invention). 3. La Valeur (pourquoi c'est génial pour eux). Concentre-toi sur ces 3 idées."
-        }
+        "titre": "Défi: Le Pitch de l'Inventeur",
+        "scenario": "Tu as inventé un objet révolutionnaire (ex: des chaussures volantes). Comment convaincrais-tu un investisseur de te donner de l'argent en 3 phrases ? (Focus : Problème, Solution, Valeur).",
+        "instruction": "Écris ton pitch. La clarté et l'impact sont évalués.",
+        "leconStrategique": "La clarté est la force d'un leader. Si tu ne peux pas expliquer ton idée simplement, elle sera ignorée.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyser l'Auditoire (Leur Besoin)",
+                "type_etape": "validation_case",
+                "instruction": "J'ai identifié que l'investisseur veut savoir s'il va gagner de l'argent. Mon pitch doit être rapide et excitant, et non technique."
+            },
+            "etape2": {
+                "titre": "2. La Méthode A-S-V (Appel - Solution - Valeur)",
+                "type_etape": "texte_guide",
+                "instruction": "Un bon pitch suit trois étapes : 1. L'Appel (le problème urgent). 2. La Solution (ton invention). 3. La Valeur (pourquoi c'est génial pour eux). Concentre-toi sur ces 3 idées."
+            }
       },
       "mentorGoal": "Évaluer la capacité de l'enfant à structurer un message persuasif en utilisant la méthode AIDA (Attention, Intérêt, Désir, Action).",
       "evaluationCriteria": "La réponse doit contenir les 4 éléments de l'AIDA dans un ordre logique. Bonus: L'enfant utilise un storytelling captivant ou des données convaincantes."
     },
     "defi2": {
-      "titre": "Quiz: Négociation Gagnant-Gagnant",
-      "question": "Tu négocies l'achat de matériel. Ton fournisseur veut 100€, tu veux payer 80€. Quelle est la meilleure approche pour réussir la négociation et maintenir la relation ?",
+        "titre": "Quiz: Négociation Gagnant-Gagnant",
+        "question": "Tu négocies l'achat de matériel. Ton fournisseur veut 100€, tu veux payer 80€. Quelle est la meilleure approche pour réussir la négociation et maintenir la relation ?",
       "options": [
         "Refuser poliment et trouver un autre fournisseur.",
         "Proposer 90€ et demander un petit service en échange.",
         "Dire '80€ ou rien' pour être ferme."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Parfait. Proposer un compromis et demander un échange crée une solution 'gagnant-gagnant'.",
-      "feedbackIncorrect": "Refuser ou être trop ferme met fin à la négociation. Le but est de trouver un point d'entente.",
-      "leconStrategique": "Une bonne négociation n'est pas de battre l'autre, mais de s'assurer que les deux parties obtiennent plus de valeur. Cela crée de futures collaborations.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Parfait. Proposer un compromis et demander un échange crée une solution 'gagnant-gagnant'.",
+        "feedbackIncorrect": "Refuser ou être trop ferme met fin à la négociation. Le but est de trouver un point d'entente.",
+        "leconStrategique": "Une bonne négociation n'est pas de battre l'autre, mais de s'assurer que les deux parties obtiennent plus de valeur. Cela crée de futures collaborations.",
       "referenceCroisee": "M9",
       "mentorGoal": "Tester la compréhension de l'importance de la confiance et de la crédibilité dans l'influence. L'enfant doit démontrer comment construire la confiance.",
       "evaluationCriteria": "La réponse doit identifier des stratégies concrètes pour bâtir la confiance (preuves, témoignages, expertise). Bonus: L'enfant cite le principe d'autorité ou de preuve sociale."
@@ -431,20 +436,20 @@
   },
   "m6": {
     "defi1": {
-      "titre": "Défi: L'Échec du Pont",
-      "scenario": "Tu as construit un pont pour un modèle réduit, mais il s'effondre. Tu peux recommencer ou abandonner et passer au module suivant. Que fais-tu ?",
-      "instruction": "Écris en une phrase la LEÇON que tu tires de l'effondrement et l'UNIQUE modification que tu ferais pour améliorer la prochaine tentative.",
-      "leconStrategique": "L'échec est une source d'information précieuse. Le leader n'abandonne jamais; il analyse et s'améliore.",
-      "referenceCroisee": "M3",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Analyser l'Erreur, pas l'Émotion",
-          "type_etape": "validation_case",
-          "instruction": "J'ai mis de côté ma frustration. Je me concentre sur la cause : instabilité, poids ou support."
-        },
-        "etape2": {
-          "titre": "2. Isoler la Variable Critique",
-          "type_etape": "champ_texte",
+        "titre": "Défi: L'Échec du Pont",
+        "scenario": "Tu as construit un pont pour un modèle réduit, mais il s'effondre. Tu peux recommencer ou abandonner et passer au module suivant. Que fais-tu ?",
+        "instruction": "Écris en une phrase la LEÇON que tu tires de l'effondrement et l'UNIQUE modification que tu ferais pour améliorer la prochaine tentative.",
+        "leconStrategique": "L'échec est une source d'information précieuse. Le leader n'abandonne jamais; il analyse et s'améliore.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyser l'Erreur, pas l'Émotion",
+                "type_etape": "validation_case",
+                "instruction": "J'ai mis de côté ma frustration. Je me concentre sur la cause : instabilité, poids ou support."
+            },
+            "etape2": {
+                "titre": "2. Isoler la Variable Critique",
+                "type_etape": "champ_texte",
           "instruction": "Sur les causes possibles (stabilité, poids, support), quelle est la SEULE que je vais changer pour le prochain essai ?"
         }
       },
@@ -452,16 +457,16 @@
       "evaluationCriteria": "La réponse doit identifier clairement les leçons apprises de l'échec et les actions correctrices. Bonus: L'enfant cite le concept de Growth Mindset ou d'itération."
     },
     "defi2": {
-      "titre": "Quiz: La Procrastination",
-      "question": "Tu dois commencer un grand projet qui te fait peur. Quelle est la meilleure approche pour surmonter l'inertie ?",
+        "titre": "Quiz: La Procrastination",
+        "question": "Tu dois commencer un grand projet qui te fait peur. Quelle est la meilleure approche pour surmonter l'inertie ?",
       "options": [
         "Attendre l'inspiration de dernière minute.",
         "Commencer par la plus petite tâche pour démarrer le mouvement.",
         "Demander à quelqu'un d'autre de faire le début."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "L'action crée l'élan. Un petit pas facile brise le mur de la peur.",
-      "leconStrategique": "Le courage n'est pas l'absence de peur, mais la décision de passer à l'action malgré elle. La résilience commence par le premier pas.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "L'action crée l'élan. Un petit pas facile brise le mur de la peur.",
+        "leconStrategique": "Le courage n'est pas l'absence de peur, mais la décision de passer à l'action malgré elle. La résilience commence par le premier pas.",
       "referenceCroisee": "M2",
       "mentorGoal": "Tester la compréhension du cycle PDCA (Plan-Do-Check-Act) pour l'amélioration continue. L'enfant doit démontrer une approche systématique de résolution de problème.",
       "evaluationCriteria": "La réponse doit suivre les 4 étapes du PDCA avec des actions concrètes. Bonus: L'enfant mentionne l'itération ou le Kaizen."
@@ -500,32 +505,32 @@
   },
   "m7": {
     "defi1": {
-      "titre": "Défi: L'Idée en Chaîne",
-      "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver une seule idée parfaite, génère 3 idées, même farfelues, en 3 minutes.",
-      "instruction": "Écris tes trois idées (1-2-3) en les laissant simples et sans jugement.",
-      "leconStrategique": "La quantité d'idées précède la qualité. Un leader explore beaucoup d'options avant de choisir la meilleure.",
-      "referenceCroisee": "M1",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Pas de Critique (La Règle d'Or)",
-          "type_etape": "validation_case",
-          "instruction": "J'ai compris que je ne dois juger aucune idée. Le but est la quantité brute et la rapidité."
+        "titre": "Défi: L'Idée en Chaîne",
+        "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver une seule idée parfaite, génère 3 idées, même farfelues, en 3 minutes.",
+        "instruction": "Écris tes trois idées (1-2-3) en les laissant simples et sans jugement.",
+        "leconStrategique": "La quantité d'idées précède la qualité. Un leader explore beaucoup d'options avant de choisir la meilleure.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Pas de Critique (La Règle d'Or)",
+                "type_etape": "validation_case",
+                "instruction": "J'ai compris que je ne dois juger aucune idée. Le but est la quantité brute et la rapidité."
         }
       },
       "mentorGoal": "Évaluer la capacité de pensée divergente et de brainstorming créatif. L'enfant doit démontrer qu'il peut générer de nombreuses idées sans auto-censure.",
       "evaluationCriteria": "La réponse doit contenir au moins 10 idées variées et originales. Bonus: L'enfant utilise des techniques de créativité (SCAMPER, Mind Mapping)."
     },
     "defi2": {
-      "titre": "Quiz: Pensée Latérale",
-      "question": "Un homme trouve une pièce d'or dans un récipient de café plein. Comment la sort-il sans renverser le café ni briser le récipient ?",
+        "titre": "Quiz: Pensée Latérale",
+        "question": "Un homme trouve une pièce d'or dans un récipient de café plein. Comment la sort-il sans renverser le café ni briser le récipient ?",
       "options": [
         "Il vide d'abord le café.",
         "Il utilise une pince à épiler.",
         "Il fait fondre le récipient."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Il faut trouver une solution non évidente, en contournant le problème. Une pince à épiler est une 'pensée latérale'.",
-      "leconStrategique": "La pensée latérale cherche des solutions qui ne sont pas sur le chemin évident. Le leader trouve des solutions là où les autres ne regardent pas.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Il faut trouver une solution non évidente, en contournant le problème. Une pince à épiler est une 'pensée latérale'.",
+        "leconStrategique": "La pensée latérale cherche des solutions qui ne sont pas sur le chemin évident. Le leader trouve des solutions là où les autres ne regardent pas.",
       "referenceCroisee": "M4",
       "mentorGoal": "Tester la compréhension de la combinaison d'idées existantes pour créer de l'innovation (Innovation = Combinaison). L'enfant doit démontrer sa capacité à relier des concepts.",
       "evaluationCriteria": "La réponse doit combiner au moins 2 concepts existants pour créer une nouvelle solution. Bonus: L'enfant explique le processus de fusion ou cite des exemples d'innovations combinatoires (iPhone = téléphone + ordinateur + musique)."
@@ -564,32 +569,32 @@
   },
   "m8": {
     "defi1": {
-      "titre": "Défi: L'Audit du Sac à Dos",
-      "scenario": "Tu dois partir en excursion d'une semaine et tu n'as le droit qu'à 5 objets essentiels dans ton sac. Fais l'audit des ressources : quels 5 objets maximisent tes chances de succès ?",
-      "instruction": "Écris la liste de tes 5 objets. Justifie ton choix n°1.",
-      "leconStrategique": "La rareté force l'excellence. Quand les ressources sont limitées, l'analyse de leur valeur est vitale.",
-      "referenceCroisee": "M1",
-      "briefing": {
-        "etape1": {
-          "titre": "1. La Règle 'Survie d'abord'",
-          "type_etape": "validation_case",
-          "instruction": "J'ai identifié les besoins de base (Eau, Nourriture, Lumière/Chaleur, Sécurité). Mes 5 objets doivent couvrir ces besoins."
+        "titre": "Défi: L'Audit du Sac à Dos",
+        "scenario": "Tu dois partir en excursion d'une semaine et tu n'as le droit qu'à 5 objets essentiels dans ton sac. Fais l'audit des ressources : quels 5 objets maximisent tes chances de succès ?",
+        "instruction": "Écris la liste de tes 5 objets. Justifie ton choix n°1.",
+        "leconStrategique": "La rareté force l'excellence. Quand les ressources sont limitées, l'analyse de leur valeur est vitale.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. La Règle 'Survie d'abord'",
+                "type_etape": "validation_case",
+                "instruction": "J'ai identifié les besoins de base (Eau, Nourriture, Lumière/Chaleur, Sécurité). Mes 5 objets doivent couvrir ces besoins."
         }
       },
       "mentorGoal": "Évaluer la capacité d'audit des ressources disponibles (inventaire). L'enfant doit démontrer qu'il sait identifier et classifier ses ressources.",
       "evaluationCriteria": "La réponse doit contenir une liste structurée des ressources avec une classification (humaines, financières, matérielles, temporelles). Bonus: L'enfant identifie les ressources sous-utilisées."
     },
     "defi2": {
-      "titre": "Quiz: Coût d'Opportunité",
-      "question": "Tu as 10€ et tu peux acheter un livre pour apprendre ou un jeu vidéo pour jouer. Si tu achètes le jeu, quel est le coût d'opportunité ?",
+        "titre": "Quiz: Coût d'Opportunité",
+        "question": "Tu as 10€ et tu peux acheter un livre pour apprendre ou un jeu vidéo pour jouer. Si tu achètes le jeu, quel est le coût d'opportunité ?",
       "options": [
         "Le prix du jeu vidéo.",
         "La connaissance que tu aurais pu acquérir avec le livre.",
         "Le temps que tu vas passer à jouer."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
-      "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
+        "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
       "referenceCroisee": "M9",
       "mentorGoal": "Tester la compréhension de l'optimisation des ressources existantes (faire plus avec moins). L'enfant doit démontrer qu'il sait maximiser l'utilisation.",
       "evaluationCriteria": "La réponse doit proposer des stratégies concrètes pour utiliser les ressources plus efficacement. Bonus: L'enfant quantifie les gains d'efficacité."

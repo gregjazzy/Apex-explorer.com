@@ -43,6 +43,11 @@
     "completed_count": "{{completed}} / {{total}} challenges completed",
     "submit_button": "Submit Challenge",
     "resubmit_button": "📤 Resubmit",
+    "validate_button": "Validate My Answer",
+    "correct_answer": "✅ Perfect! Correct Answer. You can submit now.",
+    "incorrect_answer": "❌ That's not the right answer. Analyze your mistake or use the Guided Sheet!",
+    "feedback_correct": "Correct",
+    "feedback_incorrect": "Incorrect",
     "submit_title": "Challenge Submitted",
     "submit_message": "Your answer has been sent to the mentor for validation!",
     "submit_message_pending": "Your mentor will evaluate your answer. You will be notified when they respond.",
@@ -57,8 +62,8 @@
     "status_completed": "✅ Challenge completed!"
   },
   "m1": {
-    "defi1": {
-      "titre": "Challenge: The Egg Logistics",
+      "defi1": {
+        "titre": "Challenge: The Egg Logistics",
       "scenario": "You must transport 100 eggs with a single truck that can only take crates of 12 eggs. How many complete crates and how many remaining eggs must you manage? (Division and Remainder).",
       "instruction": "Write the number of COMPLETE crates and the number of REMAINING eggs. (The Remainder is the part the leader must manage!)",
       "leconStrategique": "Every resource must be counted. The 'remainders' are often where inefficiency hides or where hidden value lies.",
@@ -129,7 +134,7 @@
       "instruction": "Write the exact fraction each person will receive (Ex: 1/2).",
       "leconStrategique": "Proportion is the key to equity. Knowing how a part relates to the whole is essential for resource management.",
       "referenceCroisee": "M9",
-      "briefing": {
+        "briefing": {
         "etape1": {
           "titre": "1. The Whole and the Parts",
           "type_etape": "validation_case",
@@ -143,37 +148,37 @@
       },
       "mentorGoal": "Test the ability to identify the limiting factor (bottleneck) and analyze parallel resources.",
       "evaluationCriteria": "The answer must identify worker 2 as the bottleneck. Bonus: The child suggests a reorganization or support solution to balance the times."
-    }
+      }
   },
   "m2": {
     "defi1": {
-      "titre": "Challenge: Urgency vs. Importance",
-      "scenario": "You have four tasks: 1. Feed the dog (Urgent/Important). 2. Play a game (Neither Urgent/Nor Important). 3. Finish homework (Not Urgent/Important). 4. Help your sister (Urgent/Not Important). How do you prioritize them (1 to 4)?",
-      "instruction": "Write the task you will do FIRST and the task you will do LAST.",
-      "leconStrategique": "Leaders deal with the IMPORTANT things first (even if not urgent) before the Urgent but non-important ones.",
-      "referenceCroisee": "M8",
-      "briefing": {
-        "etape1": {
-          "titre": "1. The Eisenhower Matrix",
-          "type_etape": "texte_guide",
-          "instruction": "Draw a box with 4 squares (Urgent/Important, Urgent/Not Important, Not Urgent/Important, Not Urgent/Not Important). Place each task in its correct square. The non-urgent and important squares are the true priority."
-        }
+        "titre": "Challenge: Urgency vs. Importance",
+        "scenario": "You have four tasks: 1. Feed the dog (Urgent/Important). 2. Play a game (Neither Urgent/Nor Important). 3. Finish homework (Not Urgent/Important). 4. Help your sister (Urgent/Not Important). How do you prioritize them (1 to 4)?",
+        "instruction": "Write the task you will do FIRST and the task you will do LAST.",
+        "leconStrategique": "Leaders deal with the IMPORTANT things first (even if not urgent) before the Urgent but non-important ones.",
+        "referenceCroisee": "M8",
+        "briefing": {
+            "etape1": {
+                "titre": "1. The Eisenhower Matrix",
+                "type_etape": "texte_guide",
+                "instruction": "Draw a box with 4 squares (Urgent/Important, Urgent/Not Important, Not Urgent/Important, Not Urgent/Not Important). Place each task in its correct square. The non-urgent and important squares are the true priority."
+            }
       },
       "mentorGoal": "Assess understanding of the Eisenhower Matrix (Important vs Urgent). The child must demonstrate they can differentiate Urgent/Important and prioritize correctly.",
       "evaluationCriteria": "The answer must include CORRECT PRIORITIZATION of tasks according to the matrix (Important/Not Urgent first). Bonus: The child justifies why important tasks should precede urgent ones."
     },
     "defi2": {
-      "titre": "Quiz: Planning and Preparation",
-      "question": "Which tool is most effective for planning a 3-day project?",
+        "titre": "Quiz: Planning and Preparation",
+        "question": "Which tool is most effective for planning a 3-day project?",
       "options": [
         "A simple mental note",
         "A visual calendar with tasks listed",
         "Asking for help after forgetting"
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "A visual calendar transforms time into a manageable resource.",
-      "feedbackIncorrect": "Memory is not a reliable tool for long-project planning.",
-      "leconStrategique": "Preparation is the proof of discipline. A good plan gives you the freedom to focus on execution.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "A visual calendar transforms time into a manageable resource.",
+        "feedbackIncorrect": "Memory is not a reliable tool for long-project planning.",
+        "leconStrategique": "Preparation is the proof of discipline. A good plan gives you the freedom to focus on execution.",
       "referenceCroisee": "M6",
       "mentorGoal": "Test understanding of backward planning (retro-planning) to meet a deadline. The child must demonstrate their ability to break down a project into chronological steps.",
       "evaluationCriteria": "The answer must contain a plan with ordered steps and realistic timelines. Bonus: The child anticipates contingencies or safety margins."
@@ -212,37 +217,37 @@
   },
   "m3": {
     "defi1": {
-      "titre": "Challenge: The Tower Balance",
-      "scenario": "You must build the tallest possible tower with 10 blocks. How should you place the blocks to ensure maximum STABILITY?",
-      "instruction": "Write a sentence explaining where the center of gravity (CG) should be: High or Low, and why.",
-      "leconStrategique": "Stability is more important than height. A solid foundation allows for sustainable growth.",
-      "referenceCroisee": "M7",
-      "briefing": {
-        "etape1": {
-          "titre": "1. The Center of Gravity",
-          "type_etape": "validation_case",
-          "instruction": "I understand that the center of gravity must be as low as possible. Heavy blocks go down, lighter ones go up."
-        },
-        "etape2": {
-          "titre": "2. The Base Rule",
-          "type_etape": "texte_guide",
-          "instruction": "To be stable, the tower must have a wide base. Stability comes from width and inverse height (wider than tall)."
-        }
+        "titre": "Challenge: The Tower Balance",
+        "scenario": "You must build the tallest possible tower with 10 blocks. How should you place the blocks to ensure maximum STABILITY?",
+        "instruction": "Write a sentence explaining where the center of gravity (CG) should be: High or Low, and why.",
+        "leconStrategique": "Stability is more important than height. A solid foundation allows for sustainable growth.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. The Center of Gravity",
+                "type_etape": "validation_case",
+                "instruction": "I understand that the center of gravity must be as low as possible. Heavy blocks go down, lighter ones go up."
+            },
+            "etape2": {
+                "titre": "2. The Base Rule",
+                "type_etape": "texte_guide",
+                "instruction": "To be stable, the tower must have a wide base. Stability comes from width and inverse height (wider than tall)."
+            }
       },
       "mentorGoal": "Assess understanding of center of gravity and structural stability. The child must demonstrate they know where to place weight to maximize stability.",
       "evaluationCriteria": "The answer must identify the lowest and most central position for the center of gravity. Bonus: The child explains why a low center of gravity makes the structure more stable."
     },
     "defi2": {
-      "titre": "Quiz: The Efficient Lever",
-      "question": "You must lift a very heavy rock with a bar. Where should you place the fulcrum (support point) to lift it most easily?",
+        "titre": "Quiz: The Efficient Lever",
+        "question": "You must lift a very heavy rock with a bar. Where should you place the fulcrum (support point) to lift it most easily?",
       "options": [
         "In the middle of the bar",
         "As close to the rock as possible",
         "As far from the rock as possible"
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Great! The closer the fulcrum is to the load, the more powerful the lever.",
-      "leconStrategique": "Efficiency is the art of doing more with less effort. Find the right fulcrum (the right relationship, the right resource).",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Great! The closer the fulcrum is to the load, the more powerful the lever.",
+        "leconStrategique": "Efficiency is the art of doing more with less effort. Find the right fulcrum (the right relationship, the right resource).",
       "referenceCroisee": "M5",
       "mentorGoal": "Test understanding of leverage and lever arm (Force × Distance = Moment). The child must demonstrate how to optimize the use of limited force.",
       "evaluationCriteria": "The answer must identify that increasing distance (lever arm) allows lifting heavier weight with less force. Bonus: The child mentions the formula or physical principle."
@@ -287,37 +292,37 @@
   },
   "m4": {
     "defi1": {
-      "titre": "Quiz: The Neighbors' Mystery",
-      "question": "Alice, Ben, and Claire have red, blue, and green cats. Ben does not have the blue one. Alice has neither the red nor the blue one. What color is Claire's cat?",
+        "titre": "Quiz: The Neighbors' Mystery",
+        "question": "Alice, Ben, and Claire have red, blue, and green cats. Ben does not have the blue one. Alice has neither the red nor the blue one. What color is Claire's cat?",
       "options": [
         "Blue",
         "Red",
         "Green"
       ],
-      "bonneReponseIndex": 0,
-      "feedbackCorrect": "By deduction: Alice (Green), Ben (Red), therefore Claire (Blue).",
-      "leconStrategique": "The leader eliminates possibilities before making a decision. Deduction is a path to truth.",
+        "bonneReponseIndex": 0,
+        "feedbackCorrect": "By deduction: Alice (Green), Ben (Red), therefore Claire (Blue).",
+        "leconStrategique": "The leader eliminates possibilities before making a decision. Deduction is a path to truth.",
       "referenceCroisee": "M2",
       "mentorGoal": "Assess logical reasoning ability through elimination and deduction. The child must demonstrate they can use clues to eliminate possibilities.",
       "evaluationCriteria": "The answer must correctly identify the solution using a structured elimination process. Bonus: The child documents their reasoning step by step."
     },
     "defi2": {
-      "titre": "Challenge: The Task Sequence",
-      "scenario": "The sequence for manufacturing a toy is: A=Cut, B=Paint, C=Assembly, D=Drying. But the current order is (C, D, A, B). Explain why this order is inefficient and propose a better one.",
-      "instruction": "Write the sequence of tasks (letters) you will choose for maximum efficiency (e.g., A, B, C, D).",
-      "leconStrategique": "Order is part of logic. Logic ensures that each step properly prepares the next one.",
-      "referenceCroisee": "M3",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Identify Dependencies",
-          "type_etape": "validation_case",
-          "instruction": "I have identified that 'Paint' must precede 'Drying' and that 'Cut' must be done first for efficiency."
-        },
-        "etape2": {
-          "titre": "2. Build the Logical Chain",
-          "type_etape": "texte_guide",
-          "instruction": "A logical chain cannot start with Assembly (C) if Cutting (A) is not done. Find the order where each step is a prerequisite for the next."
-        }
+        "titre": "Challenge: The Task Sequence",
+        "scenario": "The sequence for manufacturing a toy is: A=Cut, B=Paint, C=Assembly, D=Drying. But the current order is (C, D, A, B). Explain why this order is inefficient and propose a better one.",
+        "instruction": "Write the sequence of tasks (letters) you will choose for maximum efficiency (e.g., A, B, C, D).",
+        "leconStrategique": "Order is part of logic. Logic ensures that each step properly prepares the next one.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Identify Dependencies",
+                "type_etape": "validation_case",
+                "instruction": "I have identified that 'Paint' must precede 'Drying' and that 'Cut' must be done first for efficiency."
+            },
+            "etape2": {
+                "titre": "2. Build the Logical Chain",
+                "type_etape": "texte_guide",
+                "instruction": "A logical chain cannot start with Assembly (C) if Cutting (A) is not done. Find the order where each step is a prerequisite for the next."
+            }
       },
       "mentorGoal": "Test understanding of logical sequences and patterns (repetitive motifs). The child must demonstrate their ability to identify the underlying rule.",
       "evaluationCriteria": "The answer must correctly identify the pattern and predict the next element. Bonus: The child explains the rule or formula of the pattern."
@@ -356,38 +361,38 @@
   },
   "m5": {
     "defi1": {
-      "titre": "Challenge: The Inventor's Pitch",
-      "scenario": "You invented a revolutionary object (e.g., flying shoes). How would you convince an investor to give you money in 3 sentences? (Focus: Problem, Solution, Value).",
-      "instruction": "Write your pitch. Clarity and impact are evaluated.",
-      "leconStrategique": "Clarity is a leader's strength. If you can't explain your idea simply, it will be ignored.",
-      "referenceCroisee": "M7",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Analyze the Audience (Their Need)",
-          "type_etape": "validation_case",
-          "instruction": "I have identified that the investor wants to know if they will make money. My pitch must be fast and exciting, and not technical."
-        },
-        "etape2": {
-          "titre": "2. The P-S-V Method (Problem - Solution - Value)",
-          "type_etape": "texte_guide",
-          "instruction": "A good pitch follows three steps: 1. The Call (the urgent problem). 2. The Solution (your invention). 3. The Value (why it's great for them). Focus on these 3 ideas."
-        }
+        "titre": "Challenge: The Inventor's Pitch",
+        "scenario": "You invented a revolutionary object (e.g., flying shoes). How would you convince an investor to give you money in 3 sentences? (Focus: Problem, Solution, Value).",
+        "instruction": "Write your pitch. Clarity and impact are evaluated.",
+        "leconStrategique": "Clarity is a leader's strength. If you can't explain your idea simply, it will be ignored.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyze the Audience (Their Need)",
+                "type_etape": "validation_case",
+                "instruction": "I have identified that the investor wants to know if they will make money. My pitch must be fast and exciting, and not technical."
+            },
+            "etape2": {
+                "titre": "2. The P-S-V Method (Problem - Solution - Value)",
+                "type_etape": "texte_guide",
+                "instruction": "A good pitch follows three steps: 1. The Call (the urgent problem). 2. The Solution (your invention). 3. The Value (why it's great for them). Focus on these 3 ideas."
+            }
       },
       "mentorGoal": "Assess the child's ability to structure a persuasive message using the AIDA method (Attention, Interest, Desire, Action).",
       "evaluationCriteria": "The answer must contain all 4 AIDA elements in logical order. Bonus: The child uses captivating storytelling or convincing data."
     },
     "defi2": {
-      "titre": "Quiz: Win-Win Negotiation",
-      "question": "You are negotiating equipment purchase. Your supplier wants 100€, you want to pay 80€. What is the best approach for a successful negotiation and maintaining the relationship?",
+        "titre": "Quiz: Win-Win Negotiation",
+        "question": "You are negotiating equipment purchase. Your supplier wants 100€, you want to pay 80€. What is the best approach for a successful negotiation and maintaining the relationship?",
       "options": [
         "Politely refuse and find another supplier.",
         "Offer 90€ and ask for a small favour in return.",
         "Say '80€ or nothing' to be firm."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Perfect. Offering a compromise and asking for an exchange creates a 'win-win' solution.",
-      "feedbackIncorrect": "Refusing or being too firm ends the negotiation. The goal is to find common ground.",
-      "leconStrategique": "A good negotiation is not about beating the other person, but about ensuring both parties get more value. This builds future collaborations.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Perfect. Offering a compromise and asking for an exchange creates a 'win-win' solution.",
+        "feedbackIncorrect": "Refusing or being too firm ends the negotiation. The goal is to find common ground.",
+        "leconStrategique": "A good negotiation is not about beating the other person, but about ensuring both parties get more value. This builds future collaborations.",
       "referenceCroisee": "M9",
       "mentorGoal": "Test understanding of the importance of trust and credibility in influence. The child must demonstrate how to build trust.",
       "evaluationCriteria": "The answer must identify concrete strategies to build trust (evidence, testimonials, expertise). Bonus: The child cites the principle of authority or social proof."
@@ -431,20 +436,20 @@
   },
   "m6": {
     "defi1": {
-      "titre": "Challenge: The Bridge Failure",
-      "scenario": "You built a model bridge, but it collapsed. You can start over or give up and move to the next module. What do you do?",
-      "instruction": "Write one sentence about the LESSON you learned from the collapse and the SINGLE modification you would make to improve the next attempt.",
-      "leconStrategique": "Failure is a valuable source of information. The leader never gives up; they analyze and improve.",
-      "referenceCroisee": "M3",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Analyze the Error, not the Emotion",
-          "type_etape": "validation_case",
-          "instruction": "I put my frustration aside. I focus on the cause: instability, weight, or support."
-        },
-        "etape2": {
-          "titre": "2. Isolate the Critical Variable",
-          "type_etape": "champ_texte",
+        "titre": "Challenge: The Bridge Failure",
+        "scenario": "You built a model bridge, but it collapsed. You can start over or give up and move to the next module. What do you do?",
+        "instruction": "Write one sentence about the LESSON you learned from the collapse and the SINGLE modification you would make to improve the next attempt.",
+        "leconStrategique": "Failure is a valuable source of information. The leader never gives up; they analyze and improve.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyze the Error, not the Emotion",
+                "type_etape": "validation_case",
+                "instruction": "I put my frustration aside. I focus on the cause: instability, weight, or support."
+            },
+            "etape2": {
+                "titre": "2. Isolate the Critical Variable",
+                "type_etape": "champ_texte",
           "instruction": "Of the possible causes (stability, weight, support), which SINGLE one will I change for the next try?"
         }
       },
@@ -452,16 +457,16 @@
       "evaluationCriteria": "The answer must clearly identify lessons learned from failure and corrective actions. Bonus: The child cites the Growth Mindset concept or iteration."
     },
     "defi2": {
-      "titre": "Quiz: Procrastination",
-      "question": "You need to start a large project that scares you. What is the best approach to overcome inertia?",
+        "titre": "Quiz: Procrastination",
+        "question": "You need to start a large project that scares you. What is the best approach to overcome inertia?",
       "options": [
         "Wait for last-minute inspiration.",
         "Start with the smallest task to get momentum going.",
         "Ask someone else to do the beginning."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Action creates momentum. An easy small step breaks the wall of fear.",
-      "leconStrategique": "Courage is not the absence of fear, but the decision to take action despite it. Resilience starts with the first step.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Action creates momentum. An easy small step breaks the wall of fear.",
+        "leconStrategique": "Courage is not the absence of fear, but the decision to take action despite it. Resilience starts with the first step.",
       "referenceCroisee": "M2",
       "mentorGoal": "Test understanding of the PDCA cycle (Plan-Do-Check-Act) for continuous improvement. The child must demonstrate a systematic problem-solving approach.",
       "evaluationCriteria": "The answer must follow the 4 PDCA steps with concrete actions. Bonus: The child mentions iteration or Kaizen."
@@ -500,32 +505,32 @@
   },
   "m7": {
     "defi1": {
-      "titre": "Challenge: The Idea Chain",
-      "scenario": "You need to invent a solution to reduce plastic waste. Instead of finding one perfect idea, generate 3 ideas, even crazy ones, in 3 minutes.",
-      "instruction": "Write your three ideas (1-2-3), keeping them simple and without judgment.",
-      "leconStrategique": "Quantity of ideas precedes quality. A leader explores many options before choosing the best one.",
-      "referenceCroisee": "M1",
-      "briefing": {
-        "etape1": {
-          "titre": "1. No Criticism (The Golden Rule)",
-          "type_etape": "validation_case",
-          "instruction": "I understand that I must not judge any idea. The goal is raw quantity and speed."
+        "titre": "Challenge: The Idea Chain",
+        "scenario": "You need to invent a solution to reduce plastic waste. Instead of finding one perfect idea, generate 3 ideas, even crazy ones, in 3 minutes.",
+        "instruction": "Write your three ideas (1-2-3), keeping them simple and without judgment.",
+        "leconStrategique": "Quantity of ideas precedes quality. A leader explores many options before choosing the best one.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. No Criticism (The Golden Rule)",
+                "type_etape": "validation_case",
+                "instruction": "I understand that I must not judge any idea. The goal is raw quantity and speed."
         }
       },
       "mentorGoal": "Assess divergent thinking ability and creative brainstorming. The child must demonstrate they can generate many ideas without self-censorship.",
       "evaluationCriteria": "The answer must contain at least 10 varied and original ideas. Bonus: The child uses creativity techniques (SCAMPER, Mind Mapping)."
     },
     "defi2": {
-      "titre": "Quiz: Lateral Thinking",
-      "question": "A man finds a gold coin in a full coffee container. How does he get it out without spilling the coffee or breaking the container?",
+        "titre": "Quiz: Lateral Thinking",
+        "question": "A man finds a gold coin in a full coffee container. How does he get it out without spilling the coffee or breaking the container?",
       "options": [
         "He empties the coffee first.",
         "He uses tweezers.",
         "He melts the container."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "You must find a non-obvious solution, bypassing the problem. Tweezers is 'lateral thinking.'",
-      "leconStrategique": "Lateral thinking seeks solutions that are not on the obvious path. The leader finds solutions where others do not look.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "You must find a non-obvious solution, bypassing the problem. Tweezers is 'lateral thinking.'",
+        "leconStrategique": "Lateral thinking seeks solutions that are not on the obvious path. The leader finds solutions where others do not look.",
       "referenceCroisee": "M4",
       "mentorGoal": "Test understanding of combining existing ideas to create innovation (Innovation = Combination). The child must demonstrate ability to connect concepts.",
       "evaluationCriteria": "The answer must combine at least 2 existing concepts to create a new solution. Bonus: The child explains the fusion process or cites examples of combinatorial innovations (iPhone = phone + computer + music)."
@@ -564,32 +569,32 @@
   },
   "m8": {
     "defi1": {
-      "titre": "Challenge: The Backpack Audit",
-      "scenario": "You have to go on a week-long excursion and are only allowed 5 essential items in your bag. Perform a resource audit: which 5 items maximize your chances of success?",
-      "instruction": "Write your list of 5 items. Justify your number 1 choice.",
-      "leconStrategique": "Scarcity forces excellence. When resources are limited, analyzing their value is vital.",
-      "referenceCroisee": "M1",
-      "briefing": {
-        "etape1": {
-          "titre": "1. The 'Survival First' Rule",
-          "type_etape": "validation_case",
-          "instruction": "I have identified the basic needs (Water, Food, Light/Heat, Safety). My 5 items must cover these needs."
+        "titre": "Challenge: The Backpack Audit",
+        "scenario": "You have to go on a week-long excursion and are only allowed 5 essential items in your bag. Perform a resource audit: which 5 items maximize your chances of success?",
+        "instruction": "Write your list of 5 items. Justify your number 1 choice.",
+        "leconStrategique": "Scarcity forces excellence. When resources are limited, analyzing their value is vital.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. The 'Survival First' Rule",
+                "type_etape": "validation_case",
+                "instruction": "I have identified the basic needs (Water, Food, Light/Heat, Safety). My 5 items must cover these needs."
         }
       },
       "mentorGoal": "Assess ability to audit available resources (inventory). The child must demonstrate they can identify and classify their resources.",
       "evaluationCriteria": "The answer must contain a structured resource list with classification (human, financial, material, temporal). Bonus: The child identifies underutilized resources."
     },
     "defi2": {
-      "titre": "Quiz: Opportunity Cost",
-      "question": "You have 10€ and can buy a book to learn or a video game to play. If you buy the game, what is the opportunity cost?",
+        "titre": "Quiz: Opportunity Cost",
+        "question": "You have 10€ and can buy a book to learn or a video game to play. If you buy the game, what is the opportunity cost?",
       "options": [
         "The price of the video game.",
         "The knowledge you could have gained from the book.",
         "The time you will spend playing."
       ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Opportunity cost is what you give up (knowledge). Leaders choose based on the missed gain, not just the expense.",
-      "leconStrategique": "Every decision is a choice. Opportunity cost is the true value of leadership: choosing the best path, knowing what you give up.",
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Opportunity cost is what you give up (knowledge). Leaders choose based on the missed gain, not just the expense.",
+        "leconStrategique": "Every decision is a choice. Opportunity cost is the true value of leadership: choosing the best path, knowing what you give up.",
       "referenceCroisee": "M9",
       "mentorGoal": "Test understanding of optimizing existing resources (do more with less). The child must demonstrate they can maximize utilization.",
       "evaluationCriteria": "The answer must propose concrete strategies to use resources more efficiently. Bonus: The child quantifies efficiency gains."
