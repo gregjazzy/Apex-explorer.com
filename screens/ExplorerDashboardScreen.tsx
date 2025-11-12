@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak } from '../services/dataService'; 
+import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile } from '../services/dataService'; 
 import ProgressBar from '../components/ProgressBar';
 import BadgeList from '../components/BadgeList';
 import XPCounter from '../components/XPCounter';
@@ -115,6 +115,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const [badges, setBadges] = useState<EarnedBadge[]>([]); // NOUVEAU: EarnedBadge au lieu de Badge
     const [speedDrillStats, setSpeedDrillStats] = useState<SpeedDrillStats | null>(null);
     const [streak, setStreak] = useState<UserStreak | null>(null); // NOUVEAU: Streak
+    const [isSoloExplorer, setIsSoloExplorer] = useState(false); // NOUVEAU: Mode solo
     const [showSpeedDrillDetails, setShowSpeedDrillDetails] = useState(false);
     const [loading, setLoading] = useState(true);
     const [showMascot, setShowMascot] = useState(false); // NOUVEAU: Affichage temporaire mascotte
@@ -126,6 +127,15 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
         setLoading(true);
         try {
             const userId = user?.id || 'sim_explorer'; 
+            
+            // NOUVEAU : Charger le profil pour vérifier si solo
+            if (user?.id) {
+                const profile = await getExplorerProfile(user.id);
+                if (profile) {
+                    setIsSoloExplorer(profile.is_solo === true);
+                }
+            }
+            
             const fetchedModules = await fetchModulesWithProgress(userId);
             setModules(fetchedModules);
             
@@ -258,6 +268,35 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                 showBubble={true}
                                 animated={false}
                             />
+                        </Animatable.View>
+                    )}
+                    
+                    {/* Banner "Inviter un mentor" pour explorateurs solo */}
+                    {isSoloExplorer && (
+                        <Animatable.View 
+                            animation="fadeInDown" 
+                            delay={300}
+                            style={styles.inviteMentorBanner}
+                        >
+                            <View style={styles.inviteBannerContent}>
+                                <View style={styles.inviteBannerLeft}>
+                                    <Text style={styles.inviteBannerEmoji}>🤝</Text>
+                                    <View>
+                                        <Text style={styles.inviteBannerTitle}>Mode Autonome actif</Text>
+                                        <Text style={styles.inviteBannerSubtitle}>Invite un mentor pour des feedbacks personnalisés</Text>
+                                    </View>
+                                </View>
+                                <TouchableOpacity 
+                                    style={styles.inviteButton}
+                                    onPress={() => Alert.alert(
+                                        "Inviter un Mentor",
+                                        "Partage ton nom d'utilisateur avec un parent ou mentor pour qu'il te rejoigne :\n\n👤 " + userName + "\n\nIl pourra créer un compte mentor et te lier à son profil.",
+                                        [{ text: "OK" }]
+                                    )}
+                                >
+                                    <Text style={styles.inviteButtonText}>En savoir +</Text>
+                                </TouchableOpacity>
+                            </View>
                         </Animatable.View>
                     )}
 
@@ -428,6 +467,61 @@ const styles = StyleSheet.create({
     mascotTemporary: {
         marginTop: PremiumTheme.spacing.xs,
         marginBottom: PremiumTheme.spacing.sm,
+    },
+    // Banner Inviter un Mentor (Mode Solo)
+    inviteMentorBanner: {
+        marginTop: PremiumTheme.spacing.sm,
+        marginBottom: PremiumTheme.spacing.lg,
+    },
+    inviteBannerContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: '#EBF5FF',
+        borderLeftWidth: 4,
+        borderLeftColor: '#3B82F6',
+        borderRadius: PremiumTheme.borderRadius.medium,
+        padding: PremiumTheme.spacing.md,
+        ...(isWeb 
+            ? { boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)' }
+            : {
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.05,
+                shadowRadius: 4,
+                elevation: 2,
+            }
+        ),
+    },
+    inviteBannerLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: PremiumTheme.spacing.sm,
+        flex: 1,
+    },
+    inviteBannerEmoji: {
+        fontSize: 28,
+    },
+    inviteBannerTitle: {
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: '#1E40AF',
+        marginBottom: 2,
+    },
+    inviteBannerSubtitle: {
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        color: '#3B82F6',
+    },
+    inviteButton: {
+        backgroundColor: '#3B82F6',
+        paddingHorizontal: PremiumTheme.spacing.md,
+        paddingVertical: PremiumTheme.spacing.sm,
+        borderRadius: PremiumTheme.borderRadius.medium,
+    },
+    inviteButtonText: {
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
     },
     greetingText: {
         fontSize: PremiumTheme.typography.fontSize.sm,

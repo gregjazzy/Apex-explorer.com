@@ -6,7 +6,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useFocusEffect } from '@react-navigation/native';
 import { BriefingModal } from '../components/BriefingModal'; 
-import { saveDefiProgress, fetchExplorerProgressForDefi, ExplorerProgressItem } from '../services/dataService';
+import { saveDefiProgress, fetchExplorerProgressForDefi, ExplorerProgressItem, getExplorerProfile } from '../services/dataService';
 import { useAuth } from '../hooks/useAuth'; 
 
 const { width } = Dimensions.get('window');
@@ -154,6 +154,9 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const { moduleId, defiId, defiTitle } = route.params;
     const [isBriefingVisible, setIsBriefingVisible] = useState(false);
     
+    // État pour vérifier si l'explorateur est en mode solo
+    const [isSoloExplorer, setIsSoloExplorer] = useState(false);
+    
     // États pour le cycle de feedback
     const [responseText, setResponseText] = useState('');
     const [existingProgress, setExistingProgress] = useState<ExplorerProgressItem | null>(null);
@@ -213,6 +216,13 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
         }
 
         try {
+            // Charger le profil de l'explorateur pour vérifier s'il est solo
+            const profile = await getExplorerProfile(user.id);
+            if (profile) {
+                setIsSoloExplorer(profile.is_solo === true);
+            }
+            
+            // Charger la progression du défi
             const progress = await fetchExplorerProgressForDefi(user.id, moduleId, defiId);
             setExistingProgress(progress);
             
@@ -325,8 +335,12 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
 
         try {
             // Déterminer le statut d'évaluation
-            // Les défis QCM sont validés immédiatement, les défis texte vont en révision
-            const evaluationStatus = isTextDefi ? 'SOUMIS' : 'COMPLETION_IMMEDIATE';
+            // - Quiz (QCM) : validés immédiatement
+            // - Défis texte en mode solo : auto-validés (pas besoin de mentor)
+            // - Défis texte avec mentor : vont en révision
+            const evaluationStatus = isTextDefi 
+                ? (isSoloExplorer ? 'COMPLETION_IMMEDIATE' : 'SOUMIS')
+                : 'COMPLETION_IMMEDIATE';
             
             await saveDefiProgress(
                 userId, 
@@ -337,7 +351,7 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                 100
             );
             
-            // Message de succès
+            // Message de succès adapté au mode
             if (evaluationStatus === 'SOUMIS') {
                 Alert.alert(
                     t('defi.submit_title') || "Défi soumis !",
@@ -345,10 +359,14 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     [{ text: "OK", onPress: () => navigation.pop(2) }]
                 );
             } else {
-                // Afficher le feedback correct pour les Quiz
+                // Afficher le feedback correct pour les Quiz ET les défis solo
+                const successMessage = isSoloExplorer && isTextDefi
+                    ? "🎉 Défi complété ! Tu as gagné 100 XP.\n💡 Astuce : Tu peux inviter un mentor depuis ton tableau de bord pour obtenir des feedbacks personnalisés."
+                    : "Bravo ! Tu as gagné 100 XP.";
+                    
                 Alert.alert(
                     t('defi.submit_title') || "Défi complété !",
-                    t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
+                    successMessage,
                     [{ text: "OK", onPress: () => navigation.pop(2) }]
                 );
             }
@@ -399,6 +417,13 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     {/* En-tête */}
                     <Text style={styles.moduleTag}>{moduleId.toUpperCase()} / {defiId.toUpperCase().replace('DEFI', 'D')}</Text>
                     <Text style={styles.header}>{defiContent.titre || defiTitle}</Text>
+                    
+                    {/* Badge Mode Autonome */}
+                    {isSoloExplorer && isTextDefi && (
+                        <View style={styles.soloBadge}>
+                            <Text style={styles.soloBadgeText}>🚀 Mode Autonome - Auto-validation activée</Text>
+                        </View>
+                    )}
                     
                     {/* Alerte de statut si elle existe */}
                     {statusInfo.message && (
@@ -604,6 +629,22 @@ const styles = StyleSheet.create({
   moduleTag: { fontSize: 16, color: '#6B7280', fontWeight: '500', marginBottom: 5 },
   header: { fontSize: isWeb ? 34 : 26, fontWeight: 'bold', color: '#1F2937', marginBottom: 20 },
   subtitle: { fontSize: isWeb ? 18 : 16, color: '#6B7280', marginBottom: 20 },
+  
+  // Badge Mode Autonome
+  soloBadge: {
+    backgroundColor: '#D1FAE5',
+    borderLeftWidth: 4,
+    borderLeftColor: '#10B981',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 15,
+  },
+  soloBadgeText: {
+    fontSize: 14,
+    color: '#065F46',
+    fontWeight: '600',
+    textAlign: 'center',
+  },
   
   // Alerte de statut
   statusAlert: {

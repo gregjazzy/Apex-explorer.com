@@ -409,6 +409,24 @@ export const createSoloExplorer = async (name: string, pin: string): Promise<Exp
 };
 
 /**
+ * NOUVEAU: Récupère le profil complet d'un explorateur par son UUID.
+ */
+export const getExplorerProfile = async (explorerUuid: string): Promise<ExplorerProfile | null> => {
+    const { data, error } = await supabase
+        .from('explorers')
+        .select('*')
+        .eq('explorer_uuid', explorerUuid)
+        .single();
+    
+    if (error) {
+        console.error("Échec de la récupération du profil explorateur:", error);
+        return null;
+    }
+
+    return data as ExplorerProfile;
+};
+
+/**
  * Récupère la progression complète pour un Explorateur donné (par son UUID).
  */
 export const fetchExplorerProgress = async (explorerUuid: string): Promise<ExplorerProgressItem[]> => {
