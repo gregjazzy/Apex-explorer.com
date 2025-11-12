@@ -67,10 +67,16 @@ export interface ExplorerProgressItem {
 
 const BASE_MODULE_DATA_SIM = [
   { id: 'm1', isUnlocked: true },
-  { id: 'm2', isUnlocked: false },
-  { id: 'm3', isUnlocked: false },
-  { id: 'm4', isUnlocked: false },
-  // Simplifié à M1-M4 pour le test initial
+  { id: 'm2', isUnlocked: true },
+  { id: 'm3', isUnlocked: true },
+  { id: 'm4', isUnlocked: true },
+  { id: 'm5', isUnlocked: true },
+  { id: 'm6', isUnlocked: true },
+  { id: 'm7', isUnlocked: true },
+  { id: 'm8', isUnlocked: true },
+  { id: 'm9', isUnlocked: true },
+  { id: 'm10', isUnlocked: true },
+  { id: 'm11', isUnlocked: true },
 ];
 
 interface BaseDefi {
@@ -82,17 +88,67 @@ interface BaseDefi {
 const BASE_DEFIS_SIM: Record<string, BaseDefi[]> = {
     m1: [
         { id: 'defi1', xpValue: 100, requires: [] },
-        { id: 'defi2', xpValue: 100, requires: ['defi1'] }, // Débloqué après defi1
-        { id: 'defi3', xpValue: 100, requires: ['defi2'] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
     ],
     m2: [
         { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
     ],
     m3: [
         { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
     ],
     m4: [
         { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m5: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m6: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m7: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m8: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m9: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m10: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m11: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
     ]
 };
 
@@ -133,13 +189,15 @@ export const fetchModulesWithProgress = async (userId: string): Promise<Module[]
             const key = `${module.id}-${baseDefi.id}`;
             const progress = progressMap.get(key);
             
-            // Obtenir le titre traduit
-            let title = i18n.t('defi.title');
-            if (module.id === 'm1' && baseDefi.id === 'defi1') {
-                title = i18n.t('m1.defi1.titre');
-            } else {
-                title = `${i18n.t('defi.title')} ${baseDefi.id.replace('defi', '')}`;
-            }
+            // Obtenir le titre traduit depuis i18n
+            const defiKey = `${module.id}.${baseDefi.id}.titre`;
+            const translatedTitle = i18n.t(defiKey);
+            
+            // Si la traduction existe, utiliser le titre traduit, sinon fallback
+            let title = translatedTitle !== defiKey 
+                ? translatedTitle 
+                : `${i18n.t('defi.title')} ${baseDefi.id.replace('defi', '')}`;
+
             
             let status: DefiStatus = 'locked';
             

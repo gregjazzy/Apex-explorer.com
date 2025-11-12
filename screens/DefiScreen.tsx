@@ -145,6 +145,13 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const getStatusInfo = () => {
         if (!existingProgress) return { color: '#3B82F6', message: null };
         
+        // DEBUG
+        console.log('🔍 Status Info:', {
+            evaluationStatus: existingProgress.evaluationStatus,
+            mentorComment: existingProgress.mentorComment,
+            hasComment: !!existingProgress.mentorComment
+        });
+        
         switch (existingProgress.evaluationStatus) {
             case 'SOUMIS':
                 return {
@@ -154,12 +161,16 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
             case 'REVISION_DEMANDEE':
                 return {
                     color: '#EF4444',
-                    message: t('defi.status_revision') || `✏️ Ton mentor demande une révision : "${existingProgress.mentorComment}"`,
+                    message: existingProgress.mentorComment 
+                        ? `✏️ Ton mentor demande une révision : "${existingProgress.mentorComment}"`
+                        : t('defi.status_revision') || "✏️ Ton mentor demande une révision",
                 };
             case 'VALIDE':
                 return {
                     color: '#10B981',
-                    message: t('defi.status_validated') || `✅ Défi validé ! ${existingProgress.mentorComment ? `Commentaire : "${existingProgress.mentorComment}"` : ''}`,
+                    message: existingProgress.mentorComment 
+                        ? `✅ Défi validé ! Commentaire : "${existingProgress.mentorComment}"`
+                        : t('defi.status_validated') || "✅ Défi validé !",
                 };
             case 'COMPLETION_IMMEDIATE':
                 return {
@@ -173,6 +184,14 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
 
     const statusInfo = getStatusInfo();
     const canSubmit = existingProgress?.evaluationStatus !== 'SOUMIS' && existingProgress?.evaluationStatus !== 'VALIDE';
+    
+    // DEBUG
+    console.log('🔍 DEBUG DefiScreen:', {
+        hasExistingProgress: !!existingProgress,
+        evaluationStatus: existingProgress?.evaluationStatus,
+        canSubmit,
+        isTextDefi
+    });
 
     // Fonction de soumission
     const handleSubmit = async () => {
@@ -259,7 +278,12 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            <ScrollView contentContainerStyle={styles.scrollContent}>
+            <ScrollView 
+                style={{ flex: 1 }} 
+                contentContainerStyle={styles.scrollContent}
+                showsVerticalScrollIndicator={true}
+                bounces={true}
+            >
                 <View style={styles.container}>
                     {/* En-tête */}
                     <Text style={styles.moduleTag}>{moduleId.toUpperCase()} / {defiId.toUpperCase().replace('DEFI', 'D')}</Text>
@@ -300,22 +324,31 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     {/* Boutons d'Action */}
                     <View style={styles.buttonRow}>
                         {defiContent.briefing && (
-                            <Button
-                                title={t('defi.briefing_button')}
+                            <TouchableOpacity
+                                style={styles.actionButton}
                                 onPress={() => setIsBriefingVisible(true)}
-                                color="#3B82F6"
-                            />
+                            >
+                                <Text style={styles.actionButtonText}>{t('defi.briefing_button')}</Text>
+                            </TouchableOpacity>
                         )}
-                        <Button
-                            title={
-                                existingProgress?.evaluationStatus === 'REVISION_DEMANDEE'
-                                    ? t('defi.resubmit_button') || "📤 Soumettre à nouveau"
-                                    : t('defi.submit_button') || "Soumettre le Défi"
-                            }
+                        <TouchableOpacity
+                            style={[
+                                styles.actionButton, 
+                                styles.submitButton,
+                                (!canSubmit || submitting) && styles.disabledButton
+                            ]}
                             onPress={handleSubmit}
-                            color={canSubmit ? "#10B981" : "#9CA3AF"}
                             disabled={!canSubmit || submitting}
-                        />
+                        >
+                            <Text style={[
+                                styles.actionButtonText,
+                                (!canSubmit || submitting) && styles.disabledButtonText
+                            ]}>
+                                {existingProgress?.evaluationStatus === 'REVISION_DEMANDEE'
+                                    ? t('defi.resubmit_button') || "📤 Soumettre à nouveau"
+                                    : t('defi.submit_button') || "Soumettre le Défi"}
+                            </Text>
+                        </TouchableOpacity>
                     </View>
 
                     {submitting && <ActivityIndicator size="large" color="#3B82F6" style={{ marginVertical: 20 }} />}
@@ -391,7 +424,7 @@ const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#E5E7EB' },
   scrollContent: {
     padding: isWeb ? 40 : 20,
-    alignItems: 'center',
+    paddingBottom: 100,
   },
   container: {
     width: isWeb ? Math.min(width * 0.9, MAX_WIDTH) : '100%',
@@ -437,6 +470,31 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   buttonRow: { flexDirection: isWeb ? 'row' : 'column', justifyContent: 'space-around', marginTop: 10, marginBottom: 30, paddingHorizontal: isWeb ? '15%' : 0, gap: 10 },
+  actionButton: {
+    backgroundColor: '#3B82F6',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 5,
+    minHeight: 48,
+  },
+  submitButton: {
+    backgroundColor: '#10B981',
+  },
+  disabledButton: {
+    backgroundColor: '#9CA3AF',
+    opacity: 0.6,
+  },
+  actionButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  disabledButtonText: {
+    color: '#E5E7EB',
+  },
   lecon: { 
     fontSize: isWeb ? 16 : 14, 
     fontWeight: '500', 
