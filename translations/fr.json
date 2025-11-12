@@ -146,6 +146,129 @@
         }
     }
   },
+  "m5": {
+    "defi1": {
+        "titre": "Défi: Le Pitch de l'Inventeur",
+        "scenario": "Tu as inventé un objet révolutionnaire (ex: des chaussures volantes). Comment convaincrais-tu un investisseur de te donner de l'argent en 3 phrases ? (Focus : Problème, Solution, Valeur).",
+        "instruction": "Écris ton pitch. La clarté et l'impact sont évalués.",
+        "leconStrategique": "La clarté est la force d'un leader. Si tu ne peux pas expliquer ton idée simplement, elle sera ignorée.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyser l'Auditoire (Leur Besoin)",
+                "type_etape": "validation_case",
+                "instruction": "J'ai identifié que l'investisseur veut savoir s'il va gagner de l'argent. Mon pitch doit être rapide et excitant, et non technique."
+            },
+            "etape2": {
+                "titre": "2. La Méthode A-S-V (Appel - Solution - Valeur)",
+                "type_etape": "texte_guide",
+                "instruction": "Un bon pitch suit trois étapes : 1. L'Appel (le problème urgent). 2. La Solution (ton invention). 3. La Valeur (pourquoi c'est génial pour eux). Concentre-toi sur ces 3 idées."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Négociation Gagnant-Gagnant",
+        "question": "Tu négocies l'achat de matériel. Ton fournisseur veut 100€, tu veux payer 80€. Quelle est la meilleure approche pour réussir la négociation et maintenir la relation ?",
+        "options": ["Refuser poliment et trouver un autre fournisseur.", "Proposer 90€ et demander un petit service en échange.", "Dire '80€ ou rien' pour être ferme."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Parfait. Proposer un compromis et demander un échange crée une solution 'gagnant-gagnant'.",
+        "feedbackIncorrect": "Refuser ou être trop ferme met fin à la négociation. Le but est de trouver un point d'entente.",
+        "leconStrategique": "Une bonne négociation n'est pas de battre l'autre, mais de s'assurer que les deux parties obtiennent plus de valeur. Cela crée de futures collaborations.",
+        "referenceCroisee": "M9"
+    }
+  },
+  "m6": {
+    "defi1": {
+        "titre": "Défi: L'Échec du Pont",
+        "scenario": "Tu as construit un pont pour un modèle réduit, mais il s'effondre. Tu peux recommencer ou abandonner et passer au module suivant. Que fais-tu ?",
+        "instruction": "Écris en une phrase la LEÇON que tu tires de l'effondrement et l'UNIQUE modification que tu ferais pour améliorer la prochaine tentative.",
+        "leconStrategique": "L'échec est une source d'information précieuse. Le leader n'abandonne jamais; il analyse et s'améliore.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyser l'Erreur, pas l'Émotion",
+                "type_etape": "validation_case",
+                "instruction": "J'ai mis de côté ma frustration. Je me concentre sur la cause : instabilité, poids ou support."
+            },
+            "etape2": {
+                "titre": "2. Isoler la Variable Critique",
+                "type_etape": "champ_texte",
+                "instruction": "Sur les trois causes possibles (stabilité, poids, support), quelle est la SEULE que je vais changer pour le prochain essai ?"
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: La Procrastination",
+        "question": "Tu dois commencer un grand projet qui te fait peur. Quelle est la meilleure approche pour surmonter l'inertie ?",
+        "options": ["Attendre l'inspiration de dernière minute.", "Commencer par la plus petite tâche pour démarrer le mouvement.", "Demander à quelqu'un d'autre de faire le début."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "L'action crée l'élan. Un petit pas facile brise le mur de la peur.",
+        "feedbackIncorrect": "La procrastination augmente la peur. Le leader passe à l'action.",
+        "leconStrategique": "Le courage n'est pas l'absence de peur, mais la décision de passer à l'action malgré elle. La résilience commence par le premier pas.",
+        "referenceCroisee": "M2"
+    }
+  },
+  "m7": {
+    "defi1": {
+        "titre": "Défi: L'Idée en Chaîne",
+        "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver une seule idée parfaite, génère 3 idées, même farfelues, en 3 minutes.",
+        "instruction": "Écris tes trois idées (1-2-3) en les laissant simples et sans jugement.",
+        "leconStrategique": "La quantité d'idées précède la qualité. Un leader explore beaucoup d'options avant de choisir la meilleure.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Pas de Critique (La Règle d'Or)",
+                "type_etape": "validation_case",
+                "instruction": "J'ai compris que je ne dois juger aucune idée. Le but est la quantité brute et la rapidité."
+            },
+            "etape2": {
+                "titre": "2. La Contrainte Stimulante",
+                "type_etape": "texte_guide",
+                "instruction": "Ajouter une contrainte aide : 'Comment ferais-tu si tu n'avais que 10 briques ?' ou 'Si tu étais un chat ?'. Les contraintes forcent le cerveau à devenir créatif."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Pensée Latérale",
+        "question": "Un homme trouve une pièce d'or dans un récipient de café plein. Comment la sort-il sans renverser le café ni briser le récipient ?",
+        "options": ["Il vide d'abord le café.", "Il utilise une pince à épiler.", "Il fait fondre le récipient."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Il faut trouver une solution non évidente, en contournant le problème. Une pince à épiler est une 'pensée latérale'.",
+        "feedbackIncorrect": "Vider ou briser le récipient va à l'encontre des règles du défi. La pensée latérale résout le problème sans casser les règles.",
+        "leconStrategique": "La pensée latérale cherche des solutions qui ne sont pas sur le chemin évident. Le leader trouve des solutions là où les autres ne regardent pas.",
+        "referenceCroisee": "M4"
+    }
+  },
+  "m8": {
+    "defi1": {
+        "titre": "Défi: L'Audit du Sac à Dos",
+        "scenario": "Tu dois partir en excursion d'une semaine et tu n'as le droit qu'à 5 objets essentiels dans ton sac. Fais l'audit des ressources : quels 5 objets maximisent tes chances de succès ?",
+        "instruction": "Écris la liste de tes 5 objets. Justifie ton choix n°1.",
+        "leconStrategique": "La rareté force l'excellence. Quand les ressources sont limitées, l'analyse de leur valeur est vitale.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. La Règle 'Survie d'abord'",
+                "type_etape": "validation_case",
+                "instruction": "J'ai identifié les besoins de base (Eau, Nourriture, Lumière/Chaleur, Sécurité). Mes 5 objets doivent couvrir ces besoins."
+            },
+            "etape2": {
+                "titre": "2. Évaluer la Polyvalence",
+                "type_etape": "texte_guide",
+                "instruction": "Chaque objet doit avoir au moins deux usages. Un couteau sert à couper et à se défendre. Une bâche sert de toit et de sac. La polyvalence est la clé d'un audit de ressource réussi."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Coût d'Opportunité",
+        "question": "Tu as 10€ et tu peux acheter un livre pour apprendre ou un jeu vidéo pour jouer. Si tu achètes le jeu, quel est le coût d'opportunité ?",
+        "options": ["Le prix du jeu vidéo.", "La connaissance que tu aurais pu acquérir avec le livre.", "Le temps que tu vas passer à jouer."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
+        "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
+        "referenceCroisee": "M9"
+    }
+  },
   "mentor": {
     "title": "Tableau de Bord du Mentor",
     "progress_list": "Progression de l'Explorateur",

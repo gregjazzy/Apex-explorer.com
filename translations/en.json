@@ -146,6 +146,129 @@
         }
     }
   },
+  "m5": {
+    "defi1": {
+        "titre": "Challenge: The Inventor's Pitch",
+        "scenario": "You invented a revolutionary object (e.g., flying shoes). How would you convince an investor to give you money in 3 sentences? (Focus: Problem, Solution, Value).",
+        "instruction": "Write your pitch. Clarity and impact are evaluated.",
+        "leconStrategique": "Clarity is a leader's strength. If you can't explain your idea simply, it will be ignored.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyze the Audience (Their Need)",
+                "type_etape": "validation_case",
+                "instruction": "I have identified that the investor wants to know if they will make money. My pitch must be fast and exciting, and not technical."
+            },
+            "etape2": {
+                "titre": "2. The P-S-V Method (Problem - Solution - Value)",
+                "type_etape": "texte_guide",
+                "instruction": "A good pitch follows three steps: 1. The Call (the urgent problem). 2. The Solution (your invention). 3. The Value (why it's great for them). Focus on these 3 ideas."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Win-Win Negotiation",
+        "question": "You are negotiating equipment purchase. Your supplier wants 100€, you want to pay 80€. What is the best approach for a successful negotiation and maintaining the relationship?",
+        "options": ["Politely refuse and find another supplier.", "Offer 90€ and ask for a small favour in return.", "Say '80€ or nothing' to be firm."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Perfect. Offering a compromise and asking for an exchange creates a 'win-win' solution.",
+        "feedbackIncorrect": "Refusing or being too firm ends the negotiation. The goal is to find common ground.",
+        "leconStrategique": "A good negotiation is not about beating the other person, but about ensuring both parties get more value. This builds future collaborations.",
+        "referenceCroisee": "M9"
+    }
+  },
+  "m6": {
+    "defi1": {
+        "titre": "Challenge: The Bridge Failure",
+        "scenario": "You built a model bridge, but it collapsed. You can start over or give up and move to the next module. What do you do?",
+        "instruction": "Write one sentence about the LESSON you learned from the collapse and the SINGLE modification you would make to improve the next attempt.",
+        "leconStrategique": "Failure is a valuable source of information. The leader never gives up; they analyze and improve.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Analyze the Error, not the Emotion",
+                "type_etape": "validation_case",
+                "instruction": "I put my frustration aside. I focus on the cause: instability, weight, or support."
+            },
+            "etape2": {
+                "titre": "2. Isolate the Critical Variable",
+                "type_etape": "champ_texte",
+                "instruction": "Of the three possible causes (stability, weight, support), which SINGLE one will I change for the next try?"
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Procrastination",
+        "question": "You need to start a large project that scares you. What is the best approach to overcome inertia?",
+        "options": ["Wait for last-minute inspiration.", "Start with the smallest task to get momentum going.", "Ask someone else to do the beginning."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Action creates momentum. An easy small step breaks the wall of fear.",
+        "feedbackIncorrect": "Procrastination increases fear. The leader takes action.",
+        "leconStrategique": "Courage is not the absence of fear, but the decision to take action despite it. Resilience starts with the first step.",
+        "referenceCroisee": "M2"
+    }
+  },
+  "m7": {
+    "defi1": {
+        "titre": "Challenge: The Idea Chain",
+        "scenario": "You need to invent a solution to reduce plastic waste. Instead of finding one perfect idea, generate 3 ideas, even crazy ones, in 3 minutes.",
+        "instruction": "Write your three ideas (1-2-3), keeping them simple and without judgment.",
+        "leconStrategique": "Quantity of ideas precedes quality. A leader explores many options before choosing the best one.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. No Criticism (The Golden Rule)",
+                "type_etape": "validation_case",
+                "instruction": "I understand that I must not judge any idea. The goal is raw quantity and speed."
+            },
+            "etape2": {
+                "titre": "2. The Stimulating Constraint",
+                "type_etape": "texte_guide",
+                "instruction": "Adding a constraint helps: 'How would you do it if you only had 10 bricks?' or 'If you were a cat?'. Constraints force the brain to be creative."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Lateral Thinking",
+        "question": "A man finds a gold coin in a full coffee container. How does he get it out without spilling the coffee or breaking the container?",
+        "options": ["He empties the coffee first.", "He uses tweezers.", "He melts the container."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "You must find a non-obvious solution, bypassing the problem. Tweezers is 'lateral thinking.'",
+        "feedbackIncorrect": "Emptying or breaking the container goes against the challenge rules. Lateral thinking solves the problem without breaking the rules.",
+        "leconStrategique": "Lateral thinking seeks solutions that are not on the obvious path. The leader finds solutions where others do not look.",
+        "referenceCroisee": "M4"
+    }
+  },
+  "m8": {
+    "defi1": {
+        "titre": "Challenge: The Backpack Audit",
+        "scenario": "You have to go on a week-long excursion and are only allowed 5 essential items in your bag. Perform a resource audit: which 5 items maximize your chances of success?",
+        "instruction": "Write your list of 5 items. Justify your number 1 choice.",
+        "leconStrategique": "Scarcity forces excellence. When resources are limited, analyzing their value is vital.",
+        "referenceCroisee": "M1",
+        "briefing": {
+            "etape1": {
+                "titre": "1. The 'Survival First' Rule",
+                "type_etape": "validation_case",
+                "instruction": "I have identified the basic needs (Water, Food, Light/Heat, Safety). My 5 items must cover these needs."
+            },
+            "etape2": {
+                "titre": "2. Evaluate Versatility",
+                "type_etape": "texte_guide",
+                "instruction": "Each item must have at least two uses. A knife is used for cutting and defense. A tarp is used for shelter and a bag. Versatility is the key to a successful resource audit."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Opportunity Cost",
+        "question": "You have 10€ and can buy a book to learn or a video game to play. If you buy the game, what is the opportunity cost?",
+        "options": ["The price of the video game.", "The knowledge you could have gained from the book.", "The time you will spend playing."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Opportunity cost is what you give up (knowledge). Leaders choose based on the missed gain, not just the expense.",
+        "leconStrategique": "Every decision is a choice. Opportunity cost is the true value of leadership: choosing the best path, knowing what you give up.",
+        "referenceCroisee": "M9"
+    }
+  },
   "mentor": {
     "title": "Mentor Dashboard",
     "progress_list": "Explorer's Progress",
