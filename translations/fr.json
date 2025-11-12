@@ -912,5 +912,9 @@
     "choose_role": "Veuillez choisir votre profil pour commencer.",
     "explorer_name_placeholder": "Nom de l'Explorateur",
     "start_adventure": "Démarrer l'Aventure"
+  },
+  "badges": {
+    "title": "Vos Badges d'Honneur",
+    "no_badges": "Commencez un module pour gagner votre premier badge!"
   }
 }

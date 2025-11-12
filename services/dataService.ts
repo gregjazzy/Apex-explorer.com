@@ -63,6 +63,14 @@ export interface ExplorerProgressItem {
     attemptCount?: number;
 }
 
+// --- Interface Badge ---
+export interface Badge {
+  id: string;
+  title: string;
+  icon: string;
+  earned: boolean;
+}
+
 // --- Données de Simulation de Base (M1-M4) ---
 
 const BASE_MODULE_DATA_SIM = [
@@ -498,4 +506,59 @@ export const requestRevision = async (
         console.error("Erreur lors de la demande de révision:", error);
         throw new Error("Impossible de demander une révision.");
     }
+};
+
+// --- Logique de Badges (Gamification) ---
+
+// Définition des badges (Conditions de base)
+const ALL_BADGES: Omit<Badge, 'earned'>[] = [
+    { id: 'first_step', title: 'Premier Pas', icon: '🌟' }, // Complétion de M1/D1
+    { id: 'math_master', title: 'Maître Maths', icon: '📐' }, // Complétion du Module M1
+    { id: 'resilience_leader', title: 'Leader Résilient', icon: '🛡️' }, // Complétion du Module M6
+    { id: 'ethics_champion', title: 'Champion Éthique', icon: '⚖️' }, // Complétion du Module M9
+    { id: 'full_explorer', title: 'Explorateur Complet', icon: '🌍' }, // Complétion de tous les modules
+];
+
+/**
+ * Calcule les badges gagnés par l'Explorateur.
+ */
+export const calculateBadges = (progress: ExplorerProgressItem[]): Badge[] => {
+    
+    // Fonction utilitaire pour vérifier si un défi spécifique est complété
+    const isCompleted = (moduleId: string, defiId: string) => 
+        progress.some(item => item.moduleId === moduleId && item.defiId === defiId && item.status === 'completed');
+
+    // Fonction utilitaire pour vérifier si un module entier est complété
+    const isModuleComplete = (moduleId: string, totalDefis: number) => {
+        const completedCount = progress.filter(item => item.moduleId === moduleId && item.status === 'completed').length;
+        // On vérifie si au moins la moitié des défis du module sont complétés pour débloquer le badge
+        return completedCount >= totalDefis / 2; 
+    }
+
+    // Nombre de modules avec au moins 1 défi complété (pour le badge final)
+    const completedModulesCount = new Set(progress.filter(item => item.status === 'completed').map(item => item.moduleId)).size;
+    
+    return ALL_BADGES.map(badge => {
+        let earned = false;
+
+        switch (badge.id) {
+            case 'first_step':
+                earned = isCompleted('m1', 'defi1');
+                break;
+            case 'math_master':
+                earned = isModuleComplete('m1', 4); // M1 a 4 défis
+                break;
+            case 'resilience_leader':
+                earned = isModuleComplete('m6', 4); // M6 a 4 défis
+                break;
+            case 'ethics_champion':
+                earned = isModuleComplete('m9', 4); // M9 a 4 défis
+                break;
+            case 'full_explorer':
+                earned = completedModulesCount >= 11; // 1 défi dans chacun des 11 modules
+                break;
+        }
+
+        return { ...badge, earned };
+    });
 };

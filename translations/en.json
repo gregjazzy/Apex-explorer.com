@@ -907,5 +907,9 @@
     "choose_role": "Please choose your profile to start.",
     "explorer_name_placeholder": "Explorer's Name",
     "start_adventure": "Start the Adventure"
+  },
+  "badges": {
+    "title": "Your Badges of Honor",
+    "no_badges": "Start a module to earn your first badge!"
   }
 }

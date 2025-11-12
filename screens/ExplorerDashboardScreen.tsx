@@ -5,8 +5,9 @@ import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView,
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { fetchModulesWithProgress, Module } from '../services/dataService'; 
-import ProgressBar from '../components/ProgressBar'; // Import du composant
+import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem } from '../services/dataService'; 
+import ProgressBar from '../components/ProgressBar';
+import BadgeList from '../components/BadgeList';
 
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
@@ -62,6 +63,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const { user } = useAuth();
     const { t, i18n } = useTranslation();
     const [modules, setModules] = useState<Module[]>([]);
+    const [badges, setBadges] = useState<Badge[]>([]);
     const [loading, setLoading] = useState(true);
 
     const loadModules = useCallback(async () => {
@@ -70,6 +72,24 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             const userId = user?.id || 'sim_explorer'; 
             const fetchedModules = await fetchModulesWithProgress(userId);
             setModules(fetchedModules);
+            
+            // Calculer les badges à partir de la progression des modules
+            const allProgress: ExplorerProgressItem[] = fetchedModules.flatMap(module => 
+                module.defis
+                    .filter(defi => defi.status === 'completed')
+                    .map(defi => ({
+                        id: Math.random(), // ID temporaire
+                        moduleId: module.id,
+                        defiId: defi.id,
+                        status: 'completed' as 'completed' | 'submitted',
+                        xpEarned: defi.xpValue,
+                        completedAt: new Date().toISOString(),
+                    } as ExplorerProgressItem))
+            );
+            
+            const calculatedBadges = calculateBadges(allProgress);
+            setBadges(calculatedBadges);
+            
         } catch (error) {
             console.error("Erreur de chargement des modules:", error);
             Alert.alert(t('dashboard.load_error') || "Erreur", "Problème de chargement des données.");
@@ -116,6 +136,9 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                     <Text style={styles.xpText}>
                         {t('modules.xp_label')} Total : {totalXP} XP
                     </Text>
+
+                    {/* INTÉGRATION DES BADGES */}
+                    <BadgeList badges={badges} />
 
                     <Text style={styles.sectionTitle}>{t('global.continue')}</Text>
                     
