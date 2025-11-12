@@ -52,11 +52,27 @@
   "m1": {
       "defi1": {
         "titre": "Challenge: The Egg Logistics",
-        "scenario": "Scenario for Challenge 1 (M1).",
-        "instruction": "Instruction for Challenge 1 (M1).",
-        "leconStrategique": "Strategic Lesson M1.",
+        "scenario": "You must transport 100 eggs with a single truck that can only take crates of 12 eggs. How many complete crates and how many remaining eggs must you manage? (Division and Remainder).",
+        "instruction": "Write the number of COMPLETE crates and the number of REMAINING eggs. (The Remainder is the part the leader must manage!)",
+        "leconStrategique": "Every resource must be counted. The 'remainders' are often where inefficiency hides or, conversely, where hidden value lies.",
+        "referenceCroisee": "M8",
         "briefing": {
-          "etape1": { "titre": "Analysis", "type_etape": "texte_guide", "instruction": "Guide step 1" }
+          "etape1": {
+            "titre": "1. Analyze the Fixed Constraint",
+            "type_etape": "validation_case",
+            "instruction": "I have read the problem and identified the operation: 100 ÷ 12. I know the Remainder must be managed first to prevent breakage."
+          },
+          "etape2": {
+            "titre": "2. The 'Remainder' Rule of Action",
+            "type_etape": "texte_guide",
+            "instruction": "The result (the quotient) gives you the COMPLETE crates. The remainder tells you the number of eggs that will require special attention. The leader manages the exceptions and small quantities."
+          },
+          "etape3": {
+            "titre": "3. Strategic Anchoring",
+            "type_etape": "champ_texte",
+            "instruction": "If you hadn't calculated the Remainder, what would you risk losing? Write the keyword that symbolizes this risk.",
+            "placeholder": "e.g., Safety, Money, Time..."
+          }
         }
       }
   },
@@ -266,6 +282,94 @@
         "bonneReponseIndex": 1,
         "feedbackCorrect": "Opportunity cost is what you give up (knowledge). Leaders choose based on the missed gain, not just the expense.",
         "leconStrategique": "Every decision is a choice. Opportunity cost is the true value of leadership: choosing the best path, knowing what you give up.",
+        "referenceCroisee": "M9"
+    }
+  },
+  "m9": {
+    "defi1": {
+        "titre": "Challenge: The Integrity Test",
+        "scenario": "You find a wallet with money and the owner's ID. What do you do, even if you know no one is looking at you?",
+        "instruction": "Describe your action in one sentence and explain why this is the best thing to do for your own ethical code.",
+        "leconStrategique": "Integrity is what you do when no one is watching. A leader is trustworthy, even when it's difficult.",
+        "referenceCroisee": "M5",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Personal Cost vs. Ethical Value",
+                "type_etape": "validation_case",
+                "instruction": "I have identified that money is a short-term reward, but trust and honesty are long-term values."
+            },
+            "etape2": {
+                "titre": "2. Returning What is Due",
+                "type_etape": "texte_guide",
+                "instruction": "Describe the simple steps to return the wallet (e.g., police, store, ID). The action must be practical and honest."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Positive Impact",
+        "question": "You can spend your afternoon cleaning your room (Personal impact) or helping an elderly neighbour carry their groceries (Community impact). Which choice has a greater positive impact?",
+        "options": ["Cleaning my room.", "Helping the neighbour.", "Doing both quickly."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Helping the neighbour has a positive impact on another person and the community. The leader creates value beyond oneself.",
+        "feedbackIncorrect": "The leader understands that service to others is often more valuable than personal self-maintenance.",
+        "leconStrategique": "Lasting impact is measured by how you have touched the lives of others. The leader uses their time to serve a greater mission.",
+        "referenceCroisee": "M11"
+    }
+  },
+  "m10": {
+    "defi1": {
+        "titre": "Challenge: The Future Compass",
+        "scenario": "Define a goal you want to achieve by the end of the school year (e.g., read 10 books, learn 5 Chinese words).",
+        "instruction": "Write your goal and why it is important for YOUR personal growth.",
+        "leconStrategique": "A goal without a plan is just a wish. A leader has a clear vision of the future they want to create.",
+        "referenceCroisee": "M2",
+        "briefing": {
+            "etape1": {
+                "titre": "1. SMART Goal (Specific, Measurable...)",
+                "type_etape": "validation_case",
+                "instruction": "I have verified that my goal is specific and that I can measure my progress (e.g., 10/10 books read)."
+            },
+            "etape2": {
+                "titre": "2. Visualization of Success",
+                "type_etape": "texte_guide",
+                "instruction": "Briefly describe the feeling you will have when you achieve this goal. Visualization is a powerful driver."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: The First Small Step",
+        "question": "Your big goal is to learn to code a game. What is the most effective first small step to take TODAY?",
+        "options": ["Buy an advanced 500-page coding book.", "Watch a 5-minute introductory video on 'What is coding'.", "Wait until you have 5 free hours to start."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "The smallest step creates momentum. A small success launches the journey.",
+        "feedbackIncorrect": "Waiting for the perfect opportunity delays action. A large book is intimidating.",
+        "leconStrategique": "Leaders break down complex problems into simple actions. The biggest vision starts with the smallest execution.",
+        "referenceCroisee": "M6"
+    }
+  },
+  "m11": {
+    "defi1": {
+        "titre": "Challenge: The Master's Advice",
+        "scenario": "A new Explorer is starting the program. They are afraid of failing. What is the most important leadership advice you would give them in one sentence?",
+        "instruction": "Write your advice. It must be inspiring and based on your experience.",
+        "leconStrategique": "True leadership is transmission. Your experience is valuable only if it helps others on their own path.",
+        "referenceCroisee": "M6",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Identify the Fear",
+                "type_etape": "validation_case",
+                "instruction": "I understand that fear is the main obstacle. My advice must speak about courage, action, and learning (not perfection)."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: The Leader's Example",
+        "question": "Your team is demotivated by a difficult task. Which action has the greatest power of inspiration?",
+        "options": ["Saying 'You have to do it, it's important'.", "Doing the hardest part of the task yourself first to lead by example.", "Offering a reward if the task is finished."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "The leader leads by example. Action inspires more than words or rewards.",
+        "feedbackIncorrect": "Reward is extrinsic motivation. The leader inspires intrinsic motivation through example.",
+        "leconStrategique": "Leadership is a mirror. Others will follow you when they see your unwavering commitment in the face of difficulty.",
         "referenceCroisee": "M9"
     }
   },

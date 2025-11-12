@@ -52,11 +52,27 @@
   "m1": {
       "defi1": {
         "titre": "Défi: La Logistique de l'Œuf",
-        "scenario": "Scénario du Défi 1 (M1).",
-        "instruction": "Instruction du Défi 1 (M1).",
-        "leconStrategique": "Leçon Stratégique M1.",
+        "scenario": "Tu dois transporter 100 œufs avec un seul camion qui ne peut prendre que des caisses de 12 œufs. Combien de caisses complètes et combien d'œufs restants dois-tu gérer ? (Division et Reste).",
+        "instruction": "Écris le nombre de caisses COMPLÈTES et le nombre d'œufs RESTANTS. (Le Reste est la partie à gérer par le leader !)",
+        "leconStrategique": "Chaque ressource doit être comptée. Les 'restes' sont souvent là où se cache l'inefficacité ou, au contraire, la valeur cachée.",
+        "referenceCroisee": "M8",
         "briefing": {
-          "etape1": { "titre": "Analyse", "type_etape": "texte_guide", "instruction": "Guide étape 1" }
+          "etape1": {
+            "titre": "1. Analyser la Contrainte Fixe",
+            "type_etape": "validation_case",
+            "instruction": "J'ai lu le problème et j'ai identifié l'opération : 100 ÷ 12. Je sais que le Reste doit être géré en priorité pour éviter la casse."
+          },
+          "etape2": {
+            "titre": "2. La Règle du 'Reste' Actif",
+            "type_etape": "texte_guide",
+            "instruction": "Le résultat (le quotient) te donne les caisses COMPLÈTES. Le reste t'indique le nombre d'œufs qui nécessiteront une attention spéciale. Le leader gère les exceptions et les petites quantités."
+          },
+          "etape3": {
+            "titre": "3. L'Ancrage Stratégique",
+            "type_etape": "champ_texte",
+            "instruction": "Si tu n'avais pas calculé le Reste, que risquerais-tu de perdre ? Écris le mot clé qui symbolise ce risque.",
+            "placeholder": "Ex: Sécurité, Argent, Temps..."
+          }
         }
       }
   },
@@ -266,6 +282,94 @@
         "bonneReponseIndex": 1,
         "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
         "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
+        "referenceCroisee": "M9"
+    }
+  },
+  "m9": {
+    "defi1": {
+        "titre": "Défi: Le Test d'Intégrité",
+        "scenario": "Tu trouves un porte-monnaie avec de l'argent et la carte d'identité du propriétaire. Que fais-tu, même si tu sais que personne ne te regarde ?",
+        "instruction": "Décris ton action en une phrase et explique pourquoi c'est la meilleure chose à faire pour ton propre code éthique.",
+        "leconStrategique": "L'intégrité est ce que tu fais quand personne ne regarde. Un leader est digne de confiance, même si c'est difficile.",
+        "referenceCroisee": "M5",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Le Coût Personnel vs. La Valeur Éthique",
+                "type_etape": "validation_case",
+                "instruction": "J'ai identifié que l'argent est une récompense à court terme, mais la confiance et l'honnêteté sont des valeurs à long terme."
+            },
+            "etape2": {
+                "titre": "2. Rendre ce qui est Dû",
+                "type_etape": "texte_guide",
+                "instruction": "Décris les étapes simples pour rendre le porte-monnaie (ex: police, magasin, carte d'identité). L'action doit être pratique et honnête."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Impact Positif",
+        "question": "Tu peux passer ton après-midi à nettoyer ta chambre (Impact personnel) ou aider un voisin âgé à porter ses courses (Impact communautaire). Quel choix a un impact positif plus grand ?",
+        "options": ["Nettoyer ma chambre.", "Aider le voisin.", "Faire les deux rapidement."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Aider le voisin a un impact positif sur une autre personne et sur la communauté. Le leader crée une valeur au-delà de soi.",
+        "feedbackIncorrect": "Le leader comprend que le service aux autres est souvent plus précieux que l'auto-entretien personnel.",
+        "leconStrategique": "L'impact durable se mesure par la façon dont tu as touché la vie des autres. Le leader utilise son temps pour servir une mission plus grande.",
+        "referenceCroisee": "M11"
+    }
+  },
+  "m10": {
+    "defi1": {
+        "titre": "Défi: La Boussole du Futur",
+        "scenario": "Définis un objectif que tu veux atteindre d'ici la fin de l'année scolaire (ex: lire 10 livres, apprendre 5 mots de chinois).",
+        "instruction": "Écris ton objectif et pourquoi il est important pour TA croissance personnelle.",
+        "leconStrategique": "Un objectif sans plan n'est qu'un souhait. Un leader a une vision claire du futur qu'il veut créer.",
+        "referenceCroisee": "M2",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Objectif SMART (Spécifique, Mesurable...)",
+                "type_etape": "validation_case",
+                "instruction": "J'ai vérifié que mon objectif est spécifique et que je peux mesurer mes progrès (ex: 10/10 livres lus)."
+            },
+            "etape2": {
+                "titre": "2. Visualisation du Succès",
+                "type_etape": "texte_guide",
+                "instruction": "Décris brièvement le sentiment que tu auras quand tu auras atteint cet objectif. La visualisation est un moteur puissant."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Le Premier Petit Pas",
+        "question": "Ton grand objectif est d'apprendre à coder un jeu. Quel est le premier petit pas le plus efficace à faire AUJOURD'HUI ?",
+        "options": ["Acheter un livre de codage avancé de 500 pages.", "Regarder une vidéo d'introduction de 5 minutes sur 'Qu'est-ce que le codage'.", "Attendre d'avoir 5 heures libres pour commencer."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Le plus petit pas crée l'élan. Un petit succès lance le voyage.",
+        "feedbackIncorrect": "Attendre l'occasion parfaite retarde l'action. Un grand livre est intimidant.",
+        "leconStrategique": "Les leaders décomposent les problèmes complexes en actions simples. La plus grande vision commence par la plus petite exécution.",
+        "referenceCroisee": "M6"
+    }
+  },
+  "m11": {
+    "defi1": {
+        "titre": "Défi: Le Conseil du Maître",
+        "scenario": "Un nouvel Explorateur commence le programme. Il a peur d'échouer. Quel conseil de leadership le plus important lui donnes-tu en une phrase ?",
+        "instruction": "Écris ton conseil. Il doit être inspirant et basé sur ton expérience.",
+        "leconStrategique": "Le vrai leadership est la transmission. Ton expérience a de la valeur seulement si elle sert à aider les autres sur leur propre chemin.",
+        "referenceCroisee": "M6",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Identifier la Peur",
+                "type_etape": "validation_case",
+                "instruction": "J'ai compris que la peur est le principal obstacle. Mon conseil doit parler de courage, d'action et d'apprentissage (et non de perfection)."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: L'Exemple du Leader",
+        "question": "Ton équipe est démotivée par une tâche difficile. Quelle action a le plus grand pouvoir d'inspiration ?",
+        "options": ["Dire 'Vous devez le faire, c'est important'.", "Faire la tâche la plus difficile toi-même en premier pour montrer l'exemple.", "Offrir une récompense si la tâche est finie."],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Le leader montre l'exemple. L'action inspire plus que les mots ou les récompenses.",
+        "feedbackIncorrect": "La récompense est de la motivation extrinsèque. Le leader inspire une motivation intrinsèque par l'exemple.",
+        "leconStrategique": "Le leadership est un miroir. Les autres te suivront quand ils verront ton engagement inébranlable dans la difficulté.",
         "referenceCroisee": "M9"
     }
   },

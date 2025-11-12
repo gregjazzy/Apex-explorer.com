@@ -59,14 +59,20 @@ export interface ExplorerProgressItem {
     completedAt: string;
 }
 
-// --- Données de Simulation de Base (M1-M4) ---
+// --- Données de Simulation de Base (M1-M11 avec tous les modules) ---
 
 const BASE_MODULE_DATA_SIM = [
   { id: 'm1', isUnlocked: true },
   { id: 'm2', isUnlocked: false },
   { id: 'm3', isUnlocked: false },
   { id: 'm4', isUnlocked: false },
-  // Simplifié à M1-M4 pour le test initial
+  { id: 'm5', isUnlocked: false },
+  { id: 'm6', isUnlocked: false },
+  { id: 'm7', isUnlocked: false },
+  { id: 'm8', isUnlocked: false },
+  { id: 'm9', isUnlocked: false },
+  { id: 'm10', isUnlocked: false },
+  { id: 'm11', isUnlocked: false },
 ];
 
 interface BaseDefi {
@@ -74,23 +80,6 @@ interface BaseDefi {
     xpValue: number;
     requires: string[];
 }
-
-const BASE_DEFIS_SIM: Record<string, BaseDefi[]> = {
-    m1: [
-        { id: 'defi1', xpValue: 100, requires: [] },
-        { id: 'defi2', xpValue: 100, requires: ['defi1'] }, // Débloqué après defi1
-        { id: 'defi3', xpValue: 100, requires: ['defi2'] },
-    ],
-    m2: [
-        { id: 'defi1', xpValue: 100, requires: [] },
-    ],
-    m3: [
-        { id: 'defi1', xpValue: 100, requires: [] },
-    ],
-    m4: [
-        { id: 'defi1', xpValue: 100, requires: [] },
-    ]
-};
 
 // --- Logique de Transformation des Données ---
 
@@ -121,7 +110,20 @@ export const fetchModulesWithProgress = async (userId: string): Promise<Module[]
 
     // 2. Construire la liste finale des modules
     const modules = BASE_MODULE_DATA_SIM.map(module => {
-        const baseDefis = BASE_DEFIS_SIM[module.id] || [];
+        // Détermination du nombre de défis par module (M1-M10: 4 défis; M11: 2 défis)
+        const moduleDefiCount = module.id === 'm11' ? 2 : 4;
+        
+        let baseDefis: BaseDefi[] = [];
+        
+        // Créer les défis avec chaînage automatique
+        for (let i = 1; i <= moduleDefiCount; i++) {
+            baseDefis.push({ 
+                id: `defi${i}`, 
+                xpValue: 100, 
+                requires: i === 1 ? [] : [`defi${i - 1}`], // Chaînage: defi2 après defi1, etc.
+            });
+        }
+        
         let completedDefis = 0;
         let totalXP = 0;
 
@@ -130,12 +132,9 @@ export const fetchModulesWithProgress = async (userId: string): Promise<Module[]
             const progress = progressMap.get(key);
             
             // Obtenir le titre traduit
-            let title = i18n.t('defi.title');
-            if (module.id === 'm1' && baseDefi.id === 'defi1') {
-                title = i18n.t('m1.defi1.titre');
-            } else {
-                title = `${i18n.t('defi.title')} ${baseDefi.id.replace('defi', '')}`;
-            }
+            // Tenter de charger le titre spécifique (ex: m2.defi1.titre), sinon utiliser le titre générique
+            const specificTitle = i18n.t(`${module.id}.${baseDefi.id}.titre`, { defaultValue: '' });
+            const title = specificTitle || `${i18n.t('defi.title')} ${baseDefi.id.replace('defi', '')}`;
             
             let status: DefiStatus = 'locked';
             
