@@ -152,7 +152,7 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
   const avgAccuracy = useMemo(() => {
     const allStats = Object.values(speedDrillStats);
     if (allStats.length === 0) return 0;
-    const totalAcc = allStats.reduce((sum, stat) => sum + (stat.bestAccuracy || 0), 0);
+    const totalAcc = allStats.reduce((sum, stat) => sum + (stat.avgAccuracy || 0), 0);
     return Math.round(totalAcc / allStats.length);
   }, [speedDrillStats]);
   

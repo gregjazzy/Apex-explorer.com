@@ -2,7 +2,7 @@
 // Badge ultra sophistiqué avec effets 3D et animations
 
 import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, Platform } from 'react-native';
+import { View, Text, StyleSheet, Animated, Platform, ViewStyle } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import { BadgeTier, BADGE_GRADIENTS, BADGE_BORDERS } from '../config/badgeSystem';
@@ -251,9 +251,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    background: 'linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 60%)',
     zIndex: 1,
-  },
+  } as ViewStyle,
   icon: {
     zIndex: 2,
   },

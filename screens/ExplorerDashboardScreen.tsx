@@ -45,10 +45,10 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
 
     // Gradients selon le statut (plus subtils et sophistiqués)
     const gradientColors = isCompleted 
-        ? ['#10B981', '#059669'] // Vert succès
+        ? ['#10B981', '#059669'] as const // Vert succès
         : module.isUnlocked 
-        ? ['#4F46E5', '#7C3AED'] // Indigo/Violet élégant
-        : ['#F3F4F6', '#E5E7EB']; // Gris neutre
+        ? ['#4F46E5', '#7C3AED'] as const // Indigo/Violet élégant
+        : ['#F3F4F6', '#E5E7EB'] as const; // Gris neutre
 
     return (
         <Animatable.View 
@@ -65,8 +65,6 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
                 onPress={handlePress} 
                 disabled={!module.isUnlocked}
                 activeOpacity={0.9}
-                onMouseEnter={() => isWeb && setHovered(true)}
-                onMouseLeave={() => isWeb && setHovered(false)}
             >
                 <LinearGradient
                     colors={gradientColors}
@@ -150,7 +148,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             if (user?.id) {
                 const stats = await fetchSpeedDrillStats(user.id);
                 setSpeedDrillStats(stats);
-                speedSessions = stats?.byCategory.map(c => c.sessions).flat();
+                // Passer undefined car calculateAdvancedBadges gèrera sans sessions
             }
             
             // NOUVEAU : Calculer les badges sophistiqués avec détection auto

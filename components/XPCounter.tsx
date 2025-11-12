@@ -37,16 +37,9 @@ const XPCounter: React.FC<XPCounterProps> = ({ value, style, animated = true }) 
 
   return (
     <View style={[styles.container, style]}>
-      <Animated.Text style={styles.xpText}>
-        {animated ? (
-          displayValue.interpolate({
-            inputRange: [0, value || 1],
-            outputRange: ['0', String(value)],
-          })
-        ) : (
-          value
-        )} XP
-      </Animated.Text>
+      <Text style={styles.xpText}>
+        {value} XP
+      </Text>
     </View>
   );
 };

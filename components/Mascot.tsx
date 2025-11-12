@@ -2,7 +2,7 @@
 // Mascotte interactive pour gamification
 
 import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, Platform } from 'react-native';
+import { View, Text, StyleSheet, Animated, Platform, ViewStyle } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { LinearGradient } from 'expo-linear-gradient';
 import PremiumTheme from '../config/premiumTheme';
@@ -243,12 +243,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    background: isWeb 
-      ? 'linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 50%)'
-      : undefined,
-    backgroundColor: !isWeb ? 'rgba(255,255,255,0.2)' : undefined,
+    backgroundColor: 'rgba(255,255,255,0.2)',
     zIndex: 1,
-  },
+  } as ViewStyle,
   shadow: {
     position: 'absolute',
     bottom: -8,

@@ -2,7 +2,7 @@
 // Liste de badges avec design premium et animations
 
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Platform, ViewStyle } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
@@ -88,7 +88,7 @@ const BadgeItem: React.FC<{ badge: EarnedBadge; index: number; onPress: () => vo
   // Déterminer le gradient selon le statut
   const gradientColors = badge.earned
     ? PremiumTheme.gradients.gold.colors
-    : ['#E5E7EB', '#9CA3AF'];
+    : (['#E5E7EB', '#9CA3AF'] as const);
 
   return (
     <Animatable.View
@@ -101,8 +101,6 @@ const BadgeItem: React.FC<{ badge: EarnedBadge; index: number; onPress: () => vo
         onPress={onPress}
         disabled={!badge.earned}
         activeOpacity={0.8}
-        onMouseEnter={() => isWeb && setHovered(true)}
-        onMouseLeave={() => isWeb && setHovered(false)}
         style={[
           styles.badgeTouchable,
           hovered && badge.earned && styles.badgeHovered,
@@ -214,11 +212,10 @@ const styles = StyleSheet.create({
   badgeTouchable: {
     alignItems: 'center',
     width: 100,
-    transition: 'transform 0.2s ease',
-  },
+  } as ViewStyle,
   badgeHovered: {
     transform: [{ scale: 1.05 }],
-  },
+  } as ViewStyle,
   badgeContainer: {
     width: 80,
     height: 80,

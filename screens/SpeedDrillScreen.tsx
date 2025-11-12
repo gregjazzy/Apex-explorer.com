@@ -383,6 +383,7 @@ const SpeedDrillScreen: React.FC<SpeedDrillScreenProps> = ({ navigation }) => {
                     {/* Timer circulaire au centre */}
                     <Animatable.View animation="zoomIn" delay={200}>
                         <CircularTimer
+                            duration={60}
                             size={140}
                             progress={progress}
                             timeLeft={timeLeft}

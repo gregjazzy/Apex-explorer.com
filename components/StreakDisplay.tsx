@@ -19,11 +19,11 @@ const StreakDisplay: React.FC<StreakDisplayProps> = ({
   compact = false,
 }) => {
   // Déterminer la couleur du feu selon le streak
-  const getStreakColor = () => {
-    if (currentStreak >= 30) return ['#FF6B00', '#FF0000']; // Rouge/Orange intense
-    if (currentStreak >= 7) return ['#FFA500', '#FF4500']; // Orange vif
-    if (currentStreak >= 3) return ['#FFD700', '#FFA500']; // Or
-    return ['#FFA500', '#FF8C00']; // Orange basique
+  const getStreakColor = (): readonly [string, string] => {
+    if (currentStreak >= 30) return ['#FF6B00', '#FF0000'] as const; // Rouge/Orange intense
+    if (currentStreak >= 7) return ['#FFA500', '#FF4500'] as const; // Orange vif
+    if (currentStreak >= 3) return ['#FFD700', '#FFA500'] as const; // Or
+    return ['#FFA500', '#FF8C00'] as const; // Orange basique
   };
 
   const getStreakEmoji = () => {

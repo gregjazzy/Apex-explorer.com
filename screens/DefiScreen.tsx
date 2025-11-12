@@ -75,7 +75,7 @@ const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({
         if (!correct) {
             Alert.alert(
                 t('defi.feedback_incorrect') || "Incorrect",
-                content.feedbackIncorrect || t('defi.incorrect_answer'),
+                t('defi.incorrect_answer') || "Réessaie !",
                 [{
                     text: "OK",
                     onPress: () => {
@@ -185,7 +185,7 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                 // Afficher le feedback correct du quiz
                 Alert.alert(
                     t('defi.submit_title') || "Défi complété !",
-                    defiContent.feedbackCorrect || t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
+                    t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
                     [{ text: "OK", onPress: () => navigation.pop(2) }]
                 );
             } catch (error: any) {
@@ -348,7 +348,7 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                 // Afficher le feedback correct pour les Quiz
                 Alert.alert(
                     t('defi.submit_title') || "Défi complété !",
-                    defiContent.feedbackCorrect || t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
+                    t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
                     [{ text: "OK", onPress: () => navigation.pop(2) }]
                 );
             }

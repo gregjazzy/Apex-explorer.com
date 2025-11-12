@@ -48,10 +48,10 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
         
         // Gradients selon le statut
         const badgeGradient = isCompleted 
-            ? ['#10B981', '#059669']
+            ? ['#10B981', '#059669'] as const
             : isLocked
-            ? ['#9CA3AF', '#6B7280']
-            : ['#4F46E5', '#7C3AED'];
+            ? ['#9CA3AF', '#6B7280'] as const
+            : ['#4F46E5', '#7C3AED'] as const;
         
         const statusColor = isCompleted ? '#10B981' : isLocked ? '#6B7280' : '#4F46E5';
         
