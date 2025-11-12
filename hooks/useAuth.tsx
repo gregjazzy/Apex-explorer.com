@@ -5,7 +5,7 @@ import { supabase } from '../config/supabase';
 import { Session, User } from '@supabase/supabase-js';
 import { Alert } from 'react-native';
 import i18n from '../config/i18n';
-import { loginExplorerByPin } from '../services/dataService';
+import { loginExplorerByPin, createSoloExplorer } from '../services/dataService';
 
 interface UserProfile extends User {
     role: 'explorer' | 'mentor';
@@ -82,11 +82,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const login = useCallback(async (nameOrEmail: string, password?: string, role?: 'explorer' | 'mentor') => {
+  const login = useCallback(async (nameOrEmail: string, password?: string, role?: 'explorer' | 'explorer_solo' | 'mentor') => {
       setLoading(true);
       await new Promise(resolve => setTimeout(resolve, 500)); 
       
       const isMentor = role === 'mentor' && password;
+      const isExplorerSolo = role === 'explorer_solo';
 
       if (isMentor) {
           // Utilisation de la connexion Supabase réelle
@@ -101,8 +102,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
              setUser(loggedInUser);
              Alert.alert(i18n.t('global.welcome'), `Connexion Mentor réussie.`);
           }
+      } else if (isExplorerSolo && password) {
+          // NOUVEAU: Créer un explorateur solo (sans mentor)
+          const newExplorer = await createSoloExplorer(nameOrEmail, password);
+          
+          if (newExplorer) {
+              const loggedInUser: UserProfile = { 
+                  ...SIM_USER_BASE, 
+                  id: newExplorer.explorer_uuid,
+                  role: 'explorer', 
+                  user_metadata: { name: newExplorer.name } 
+              } as UserProfile;
+              setSession({ ...SIM_SESSION_BASE, user: loggedInUser });
+              setUser(loggedInUser);
+              Alert.alert('🎉 Compte créé !', `Bienvenue, ${newExplorer.name}! Ton aventure commence maintenant.`);
+          } else {
+              Alert.alert(i18n.t('global.error'), "Impossible de créer le compte. Ce nom est peut-être déjà pris.");
+          }
       } else if (role === 'explorer' && password) {
-          // NOUVEAU: Vérification de l'Explorateur par Nom et PIN
+          // Vérification de l'Explorateur par Nom et PIN
           const explorerProfile = await loginExplorerByPin(nameOrEmail, password);
 
           if (explorerProfile) {

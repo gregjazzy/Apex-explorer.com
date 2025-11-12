@@ -21,7 +21,7 @@ const AuthScreen: React.FC<NativeStackScreenProps<any, 'Auth'>> = () => {
   const [mentorPassword, setMentorPassword] = useState('');
   const [mentorName, setMentorName] = useState(''); // NOUVEAU: Nom pour l'inscription
   
-  const [authMode, setAuthMode] = useState<'explorer' | 'mentor_login' | 'mentor_signup'>('explorer');
+  const [authMode, setAuthMode] = useState<'explorer' | 'explorer_solo' | 'mentor_login' | 'mentor_signup'>('explorer');
 
   const handleExplorerLogin = () => {
     if (explorerName.length < 3 || explorerPin.length !== 4) {
@@ -46,6 +46,16 @@ const AuthScreen: React.FC<NativeStackScreenProps<any, 'Auth'>> = () => {
       return;
     }
     signUpMentor(mentorName, mentorEmail, mentorPassword);
+  };
+
+  // NOUVELLE FONCTION: Créer un explorateur solo (sans mentor)
+  const handleSoloExplorerCreation = () => {
+    if (explorerName.length < 3 || explorerPin.length !== 4) {
+      Alert.alert(t('global.error'), "Veuillez entrer un Nom et un PIN (4 chiffres) valides.");
+      return;
+    }
+    // Appeler la fonction de création d'explorateur solo
+    login(explorerName, explorerPin, 'explorer_solo');
   };
 
   const renderMentorForm = () => {
@@ -145,7 +155,7 @@ const AuthScreen: React.FC<NativeStackScreenProps<any, 'Auth'>> = () => {
         <Text style={styles.subtitle}>{t('global.welcome')}</Text>
 
         {authMode === 'explorer' ? (
-          // --- Connexion Explorateur ---
+          // --- Connexion Explorateur (avec mentor) ---
           <View style={styles.formGroup}>
              <Text style={styles.formTitle}>{t('global.continue')}</Text>
             <TextInput
@@ -174,10 +184,55 @@ const AuthScreen: React.FC<NativeStackScreenProps<any, 'Auth'>> = () => {
                 disabled={loading}
               />
             </View>
+            <View style={styles.buttonWrapper}>
+              <Button
+                title="🚀 Commencer seul (sans mentor)"
+                onPress={() => setAuthMode('explorer_solo')}
+                color="#10B981"
+              />
+            </View>
             <Button
               title={t('global.mentor_login')}
               onPress={() => setAuthMode('mentor_login')}
-              color="#10B981"
+              color="#6B7280"
+            />
+          </View>
+        ) : authMode === 'explorer_solo' ? (
+          // --- Création Explorateur Solo (sans mentor) ---
+          <View style={styles.formGroup}>
+             <Text style={styles.formTitle}>🚀 Mode Autonome</Text>
+             <Text style={styles.subtitle}>Crée ton compte et commence l'aventure seul !</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Ton prénom"
+              value={explorerName}
+              onChangeText={setExplorerName}
+              placeholderTextColor="#9CA3AF"
+              editable={!loading}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Crée un PIN (4 chiffres)"
+              value={explorerPin}
+              onChangeText={setExplorerPin}
+              keyboardType="numeric"
+              maxLength={4}
+              placeholderTextColor="#9CA3AF"
+              editable={!loading}
+            />
+            <Text style={styles.hint}>💡 Tu pourras inviter un parent/mentor plus tard</Text>
+            <View style={styles.buttonWrapper}>
+              <Button
+                title={loading ? t('global.loading') : "Créer mon compte"}
+                onPress={handleSoloExplorerCreation}
+                color="#10B981"
+                disabled={loading}
+              />
+            </View>
+            <Button
+              title="← Retour"
+              onPress={() => setAuthMode('explorer')}
+              color="#6B7280"
             />
           </View>
         ) : (
@@ -229,6 +284,14 @@ const styles = StyleSheet.create({
     color: '#6B7280',
     marginBottom: 40,
     textAlign: 'center',
+  },
+  hint: {
+    fontSize: 14,
+    color: '#10B981',
+    marginBottom: 15,
+    marginTop: 5,
+    textAlign: 'center',
+    fontStyle: 'italic',
   },
   footer: {
     marginTop: 60,

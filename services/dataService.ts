@@ -42,10 +42,11 @@ export interface ExplorerProfile {
     id: number;
     explorer_uuid: string;
     name: string;
-    mentor_id: string;
+    mentor_id: string | null; // NULL si explorateur solo
     xp_total: number;
     created_at: string;
     is_active: boolean;
+    is_solo?: boolean; // true si explorateur autonome
     pin_code: string;
 }
 
@@ -363,6 +364,44 @@ export const loginExplorerByPin = async (name: string, pin: string): Promise<Exp
         
     if (error) {
         console.error("Échec de la connexion Explorateur:", error);
+        return null;
+    }
+
+    return data as ExplorerProfile;
+};
+
+/**
+ * NOUVEAU: Crée un explorateur solo (sans mentor).
+ */
+export const createSoloExplorer = async (name: string, pin: string): Promise<ExplorerProfile | null> => {
+    // Vérifier si le nom existe déjà
+    const { data: existing } = await supabase
+        .from('explorers')
+        .select('name')
+        .eq('name', name)
+        .maybeSingle();
+    
+    if (existing) {
+        console.error("Ce nom d'explorateur existe déjà");
+        return null;
+    }
+    
+    // Créer le nouvel explorateur solo
+    const { data, error } = await supabase
+        .from('explorers')
+        .insert({
+            name,
+            pin_code: pin,
+            mentor_id: null, // Pas de mentor
+            is_solo: true,
+            is_active: true,
+            xp_total: 0,
+        })
+        .select()
+        .single();
+    
+    if (error) {
+        console.error("Échec de la création d'explorateur solo:", error);
         return null;
     }
 
