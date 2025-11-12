@@ -1,11 +1,12 @@
 // /screens/DefiScreen.tsx
 
-import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, Alert, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, Alert, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
+import { useFocusEffect } from '@react-navigation/native';
 import { BriefingModal } from '../components/BriefingModal'; 
-import { saveDefiProgress } from '../services/dataService'; // NOUVEL IMPORT
+import { saveDefiProgress, fetchExplorerProgressForDefi, ExplorerProgressItem } from '../services/dataService';
 import { useAuth } from '../hooks/useAuth'; 
 
 const { width } = Dimensions.get('window');
@@ -37,7 +38,13 @@ interface DefiContent {
 }
 
 // --- NOUVEAU COMPOSANT : Rendu du Contenu du Défi (QCM / Champ de Texte) ---
-const DefiContentRenderer: React.FC<{ content: DefiContent }> = ({ content }) => {
+interface DefiContentRendererProps {
+    content: DefiContent;
+    responseText: string;
+    setResponseText: (text: string) => void;
+}
+
+const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({ content, responseText, setResponseText }) => {
     const { t } = useTranslation();
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     
@@ -72,6 +79,8 @@ const DefiContentRenderer: React.FC<{ content: DefiContent }> = ({ content }) =>
                 placeholder={t('defi.write_here') || "Écris ta réponse ici..."}
                 multiline
                 numberOfLines={6}
+                value={responseText}
+                onChangeText={setResponseText}
             />
         </View>
     );
@@ -80,15 +89,161 @@ const DefiContentRenderer: React.FC<{ content: DefiContent }> = ({ content }) =>
 
 const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const { t } = useTranslation();
-    const { user } = useAuth(); // AJOUT : Récupérer l'utilisateur
+    const { user } = useAuth();
     const { moduleId, defiId, defiTitle } = route.params;
     const [isBriefingVisible, setIsBriefingVisible] = useState(false);
+    
+    // États pour le cycle de feedback
+    const [responseText, setResponseText] = useState('');
+    const [existingProgress, setExistingProgress] = useState<ExplorerProgressItem | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [submitting, setSubmitting] = useState(false);
 
     // Chargement du contenu réel depuis i18n
     const defiKey = `${moduleId}.${defiId}`; 
-    // Utilisation de la clé M1/D1 pour le test car elle est garantie d'exister dans Prompt 1
     const contentToLoad = moduleId === 'm1' && defiId === 'defi1' ? 'm1.defi1' : defiKey; 
     const defiContent = t(contentToLoad, { returnObjects: true }) as DefiContent;
+
+    // Charger la progression existante au montage ET à chaque focus
+    const loadProgress = useCallback(async () => {
+        if (!user?.id) {
+            setLoading(false);
+            return;
+        }
+
+        try {
+            const progress = await fetchExplorerProgressForDefi(user.id, moduleId, defiId);
+            setExistingProgress(progress);
+            
+            // Pré-remplir la réponse si elle existe
+            if (progress?.responseText) {
+                setResponseText(progress.responseText);
+            }
+        } catch (error) {
+            console.error("Erreur lors du chargement de la progression:", error);
+        } finally {
+            setLoading(false);
+        }
+    }, [user?.id, moduleId, defiId]);
+
+    // Charger au montage
+    useEffect(() => {
+        loadProgress();
+    }, [loadProgress]);
+
+    // Recharger à chaque fois que l'écran est focus
+    useFocusEffect(
+        useCallback(() => {
+            loadProgress();
+        }, [loadProgress])
+    );
+
+    // Déterminer le type de défi (texte ou QCM)
+    const isTextDefi = !defiContent.options || defiContent.options.length === 0;
+
+    // Déterminer les couleurs et messages selon le statut
+    const getStatusInfo = () => {
+        if (!existingProgress) return { color: '#3B82F6', message: null };
+        
+        switch (existingProgress.evaluationStatus) {
+            case 'SOUMIS':
+                return {
+                    color: '#F59E0B',
+                    message: t('defi.status_pending') || "⏳ Ton défi est en cours d'évaluation par ton mentor.",
+                };
+            case 'REVISION_DEMANDEE':
+                return {
+                    color: '#EF4444',
+                    message: t('defi.status_revision') || `✏️ Ton mentor demande une révision : "${existingProgress.mentorComment}"`,
+                };
+            case 'VALIDE':
+                return {
+                    color: '#10B981',
+                    message: t('defi.status_validated') || `✅ Défi validé ! ${existingProgress.mentorComment ? `Commentaire : "${existingProgress.mentorComment}"` : ''}`,
+                };
+            case 'COMPLETION_IMMEDIATE':
+                return {
+                    color: '#10B981',
+                    message: t('defi.status_completed') || "✅ Défi complété !",
+                };
+            default:
+                return { color: '#3B82F6', message: null };
+        }
+    };
+
+    const statusInfo = getStatusInfo();
+    const canSubmit = existingProgress?.evaluationStatus !== 'SOUMIS' && existingProgress?.evaluationStatus !== 'VALIDE';
+
+    // Fonction de soumission
+    const handleSubmit = async () => {
+        const userId = user?.id;
+        
+        if (!userId) {
+            Alert.alert(t('global.error'), "Utilisateur non connecté ou ID manquant.");
+            return;
+        }
+
+        // Validation pour les défis textuels
+        if (isTextDefi && !responseText.trim()) {
+            Alert.alert(
+                t('global.error'),
+                t('defi.error_empty_response') || "Merci d'écrire une réponse avant de soumettre."
+            );
+            return;
+        }
+
+        setSubmitting(true);
+
+        try {
+            // Déterminer le statut d'évaluation
+            // Les défis QCM sont validés immédiatement, les défis texte vont en révision
+            const evaluationStatus = isTextDefi ? 'SOUMIS' : 'COMPLETION_IMMEDIATE';
+            
+            await saveDefiProgress(
+                userId, 
+                moduleId, 
+                defiId,
+                responseText,
+                evaluationStatus,
+                100
+            );
+            
+            // Message de succès
+            if (evaluationStatus === 'SOUMIS') {
+                Alert.alert(
+                    t('defi.submit_title') || "Défi soumis !",
+                    t('defi.submit_message_pending') || "Ton mentor va évaluer ta réponse. Tu seras notifié quand il aura répondu.",
+                    [{ text: "OK", onPress: () => navigation.pop(2) }]
+                );
+            } else {
+                Alert.alert(
+                    t('defi.submit_title') || "Défi complété !",
+                    t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
+                    [{ text: "OK", onPress: () => navigation.pop(2) }]
+                );
+            }
+
+        } catch (error: any) {
+            console.error("Erreur complète:", error);
+            Alert.alert(
+                t('global.error'),
+                "Échec de l'enregistrement de la progression: " + (error.message || error)
+            );
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    if (loading) {
+        return (
+            <SafeAreaView style={styles.safeArea}>
+                <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+                    <ActivityIndicator size="large" color="#3B82F6" />
+                    <Text style={styles.subtitle}>{t('global.loading') || "Chargement..."}</Text>
+                </View>
+            </SafeAreaView>
+        );
+    }
 
     if (!defiContent || !defiContent.titre) {
         return (
@@ -101,49 +256,6 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
             </SafeAreaView>
         );
     }
-    
-    // AJOUT : La fonction de soumission utilise maintenant Supabase
-    const handleSubmit = async () => {
-        const userId = user?.id;
-        
-        if (!userId) {
-            Alert.alert(t('global.error'), "Utilisateur non connecté ou ID manquant.");
-            return;
-        }
-
-        try {
-            // Dans ce scénario simple, on assume que la soumission = complété.
-            await saveDefiProgress(
-                userId, 
-                moduleId, 
-                defiId, 
-                'completed', // Statut final
-                100 // XP accordé
-            );
-            
-            // Message de succès même en mode simulation
-            Alert.alert(
-                t('defi.submit_title'),
-                userId.startsWith('sim-') 
-                    ? "Mode simulation : Progression non sauvegardée (utilisateur de test)"
-                    : t('defi.submit_message'),
-                [{ text: "OK", onPress: () => navigation.pop(2) }]
-            );
-
-        } catch (error: any) {
-            console.error("Erreur complète:", error);
-            // Si c'est un utilisateur simulé, ne pas bloquer
-            if (userId.startsWith('sim-') || userId.startsWith('explorer-sim')) {
-                Alert.alert(
-                    t('defi.submit_title'),
-                    "Mode simulation : Défi soumis (progression non sauvegardée)",
-                    [{ text: "OK", onPress: () => navigation.pop(2) }]
-                );
-            } else {
-                Alert.alert(t('global.error'), "Échec de l'enregistrement de la progression: " + (error.message || error));
-            }
-        }
-    };
 
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -151,7 +263,19 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                 <View style={styles.container}>
                     {/* En-tête */}
                     <Text style={styles.moduleTag}>{moduleId.toUpperCase()} / {defiId.toUpperCase().replace('DEFI', 'D')}</Text>
-                    <Text style={styles.header}>{defiContent.titre || defiTitle}</Text> 
+                    <Text style={styles.header}>{defiContent.titre || defiTitle}</Text>
+                    
+                    {/* Alerte de statut si elle existe */}
+                    {statusInfo.message && (
+                        <View style={[styles.statusAlert, { borderLeftColor: statusInfo.color }]}>
+                            <Text style={styles.statusAlertText}>{statusInfo.message}</Text>
+                            {existingProgress?.attemptCount && existingProgress.attemptCount > 1 && (
+                                <Text style={styles.attemptText}>
+                                    Tentative #{existingProgress.attemptCount}
+                                </Text>
+                            )}
+                        </View>
+                    )}
                     
                     {/* Affiche le Scénario si présent */}
                     {defiContent.scenario && (
@@ -166,22 +290,35 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     
                     {/* Zone de travail (Rendu Dynamique) */}
                     <View style={styles.workArea}>
-                        <DefiContentRenderer content={defiContent} /> 
+                        <DefiContentRenderer 
+                            content={defiContent} 
+                            responseText={responseText}
+                            setResponseText={setResponseText}
+                        /> 
                     </View>
 
                     {/* Boutons d'Action */}
                     <View style={styles.buttonRow}>
+                        {defiContent.briefing && (
+                            <Button
+                                title={t('defi.briefing_button')}
+                                onPress={() => setIsBriefingVisible(true)}
+                                color="#3B82F6"
+                            />
+                        )}
                         <Button
-                            title={t('defi.briefing_button')}
-                            onPress={() => setIsBriefingVisible(true)}
-                            color="#3B82F6"
-                        />
-                        <Button
-                            title={t('defi.submit_button') || "Soumettre le Défi"}
+                            title={
+                                existingProgress?.evaluationStatus === 'REVISION_DEMANDEE'
+                                    ? t('defi.resubmit_button') || "📤 Soumettre à nouveau"
+                                    : t('defi.submit_button') || "Soumettre le Défi"
+                            }
                             onPress={handleSubmit}
-                            color="#10B981"
+                            color={canSubmit ? "#10B981" : "#9CA3AF"}
+                            disabled={!canSubmit || submitting}
                         />
                     </View>
+
+                    {submitting && <ActivityIndicator size="large" color="#3B82F6" style={{ marginVertical: 20 }} />}
 
                     <Text style={styles.lecon}>
                         {t('defi.lecon_title') || "Leçon Stratégique"}: {defiContent.leconStrategique}
@@ -191,12 +328,14 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
             </ScrollView>
             
             {/* Le Modal de la Fiche de Travail Guidée */}
-            <BriefingModal
-                isVisible={isBriefingVisible}
-                onClose={() => setIsBriefingVisible(false)}
-                defiTitle={defiContent.titre || defiTitle}
-                briefingContent={defiContent.briefing} 
-            />
+            {defiContent.briefing && (
+                <BriefingModal
+                    isVisible={isBriefingVisible}
+                    onClose={() => setIsBriefingVisible(false)}
+                    defiTitle={defiContent.titre || defiTitle}
+                    briefingContent={defiContent.briefing} 
+                />
+            )}
         </SafeAreaView>
     );
 };
@@ -267,6 +406,27 @@ const styles = StyleSheet.create({
   moduleTag: { fontSize: 16, color: '#6B7280', fontWeight: '500', marginBottom: 5 },
   header: { fontSize: isWeb ? 34 : 26, fontWeight: 'bold', color: '#1F2937', marginBottom: 20 },
   subtitle: { fontSize: isWeb ? 18 : 16, color: '#6B7280', marginBottom: 20 },
+  
+  // Alerte de statut
+  statusAlert: {
+    backgroundColor: '#FEF3C7',
+    borderLeftWidth: 4,
+    padding: 15,
+    borderRadius: 8,
+    marginBottom: 20,
+  },
+  statusAlertText: {
+    fontSize: isWeb ? 16 : 14,
+    color: '#1F2937',
+    lineHeight: isWeb ? 24 : 20,
+  },
+  attemptText: {
+    fontSize: 12,
+    color: '#6B7280',
+    marginTop: 8,
+    fontStyle: 'italic',
+  },
+  
   sectionTitle: { fontSize: isWeb ? 22 : 18, fontWeight: '600', color: '#3B82F6', marginTop: 15, marginBottom: 10 },
   scenarioText: { fontSize: isWeb ? 18 : 16, color: '#4B5563', marginBottom: 10, lineHeight: isWeb ? 28 : 24 },
   instructionText: { fontSize: isWeb ? 16 : 14, color: '#4B5563', marginBottom: 20 },

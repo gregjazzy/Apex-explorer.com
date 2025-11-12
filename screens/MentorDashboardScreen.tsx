@@ -1,12 +1,14 @@
 // /screens/MentorDashboardScreen.tsx
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, FlatList, ActivityIndicator, Alert } from 'react-native';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, FlatList, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
+import { useFocusEffect } from '@react-navigation/native';
 import { useAuth } from '../hooks/useAuth';
 import { DiscussionModal } from '../components/DiscussionModal';
 import { ExplorerCreationModal } from '../components/ExplorerCreationModal';
+import { MentorEvaluationModal } from '../components/MentorEvaluationModal';
 import { fetchMentorExplorers, ExplorerProfile, fetchExplorerProgress, ExplorerProgressItem } from '../services/dataService';
 
 const { width } = Dimensions.get('window');
@@ -26,10 +28,18 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
   const [loading, setLoading] = useState(true);
   const [isCreationModalVisible, setIsCreationModalVisible] = useState(false);
   
+  // États pour le filtrage
+  const [filterStatus, setFilterStatus] = useState<'ALL' | 'PENDING'>('ALL');
+  
   // États pour le Modal de Discussion
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [currentDiscussionQuestions, setCurrentDiscussionQuestions] = useState<string[]>([]);
   const [currentDefiId, setCurrentDefiId] = useState('');
+
+  // États pour le Modal d'Évaluation
+  const [isEvaluationModalVisible, setIsEvaluationModalVisible] = useState(false);
+  const [currentProgressItem, setCurrentProgressItem] = useState<ExplorerProgressItem | null>(null);
+  const [currentDefiTitle, setCurrentDefiTitle] = useState('');
 
   // Fonction pour charger la progression pour TOUS les explorateurs
   const loadAllExplorerProgress = useCallback(async (initialExplorers: ExplorerProfile[]) => {
@@ -84,9 +94,44 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
     }
   }, [user, loadExplorers]);
 
+  // Recharger les données à chaque fois que l'écran devient focus
+  useFocusEffect(
+    useCallback(() => {
+      if (user) {
+        loadExplorers();
+      }
+    }, [user, loadExplorers])
+  );
+
   // Forcer le re-render quand la langue change
   useEffect(() => {
   }, [i18n.language]);
+
+  // Filtrer les explorateurs selon le statut sélectionné
+  const filteredExplorers = useMemo(() => {
+    if (filterStatus === 'ALL') {
+      return explorersWithProgress;
+    }
+    
+    // Mode "À Évaluer" : Filtrer les explorateurs qui ont au moins un défi en statut SOUMIS
+    return explorersWithProgress
+      .map(explorer => {
+        const pendingProgress = explorer.progress.filter(p => p.evaluationStatus === 'SOUMIS');
+        return {
+          ...explorer,
+          progress: pendingProgress,
+        };
+      })
+      .filter(explorer => explorer.progress.length > 0);
+  }, [explorersWithProgress, filterStatus]);
+
+  // Calculer le nombre total de soumissions en attente
+  const totalPendingCount = useMemo(() => {
+    return explorersWithProgress.reduce((total, explorer) => {
+      const pending = explorer.progress.filter(p => p.evaluationStatus === 'SOUMIS').length;
+      return total + pending;
+    }, 0);
+  }, [explorersWithProgress]);
 
   // Ouvre le Modal de Discussion
   const handleOpenDiscussion = (item: ExplorerProgressItem) => {
@@ -102,14 +147,43 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
       Alert.alert(t('mentor.info_titre'), t('mentor.info_no_guide'));
     }
   };
+
+  // Ouvre le Modal d'Évaluation
+  const handleOpenEvaluation = (item: ExplorerProgressItem) => {
+    setCurrentProgressItem(item);
+    const defiTitle = `${item.moduleId.toUpperCase()}/${item.defiId.toUpperCase().replace('DEFI', 'D')}`;
+    setCurrentDefiTitle(defiTitle);
+    setIsEvaluationModalVisible(true);
+  };
+
+  // Ferme le Modal d'Évaluation et rafraîchit si nécessaire
+  const handleCloseEvaluation = (shouldRefresh?: boolean) => {
+    setIsEvaluationModalVisible(false);
+    setCurrentProgressItem(null);
+    if (shouldRefresh) {
+      loadExplorers();
+    }
+  };
     
   // Rendu d'un profil Explorateur
   const renderExplorerItem = ({ item }: { item: ExplorerProfileWithProgress }) => {
+    // Calculer le nombre de soumissions en attente pour cet explorateur
+    const pendingCount = item.progress.filter(p => p.evaluationStatus === 'SOUMIS').length;
+    const statusText = pendingCount > 0 
+      ? `${pendingCount} soumission${pendingCount > 1 ? 's' : ''} en attente`
+      : "Progression à jour";
+    const statusColor = pendingCount > 0 ? '#F59E0B' : '#6B7280';
+
     return (
       <View style={styles.explorerCard}>
         <View style={styles.explorerHeader}>
           <Text style={styles.explorerName}>{item.name}</Text>
-          <Text style={styles.xpTotal}>XP Total: {item.xp_total}</Text>
+          <View style={styles.headerRight}>
+            <Text style={styles.xpTotal}>XP Total: {item.xp_total}</Text>
+            <View style={[styles.statusBadge, { backgroundColor: pendingCount > 0 ? '#FEF3C7' : '#F3F4F6' }]}>
+              <Text style={[styles.statusText, { color: statusColor }]}>{statusText}</Text>
+            </View>
+          </View>
         </View>
         <Text style={styles.explorerID}>{t('mentor.explorer_login_id') || "PIN"}: {item.pin_code}</Text>
         
@@ -124,27 +198,58 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
             renderItem={({ item: progress }) => {
               const discussionKey = `${progress.moduleId.toLowerCase()}_${progress.defiId}`;
               const hasDiscussionGuide = t(`mentor.discussion.${discussionKey}`, { returnObjects: true }) instanceof Array;
+              
+              // Déterminer la couleur selon le statut
+              const statusColor = progress.evaluationStatus === 'SOUMIS' 
+                ? '#F59E0B' 
+                : progress.evaluationStatus === 'VALIDE' 
+                ? '#10B981' 
+                : '#3B82F6';
 
               return (
                 <View style={styles.progressItem}>
-                  <View>
-                    <Text style={styles.progressTitle}>
-                      {progress.moduleId.toUpperCase()}/{progress.defiId.toUpperCase().replace('DEFI', 'D')}
-                    </Text>
+                  <View style={{ flex: 1 }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 4 }}>
+                      <Text style={styles.progressTitle}>
+                        {progress.moduleId.toUpperCase()}/{progress.defiId.toUpperCase().replace('DEFI', 'D')}
+                      </Text>
+                      {progress.evaluationStatus && (
+                        <View style={[styles.statusPill, { backgroundColor: statusColor }]}>
+                          <Text style={styles.statusPillText}>
+                            {progress.evaluationStatus === 'SOUMIS' ? 'SOUMIS' : 
+                             progress.evaluationStatus === 'VALIDE' ? 'VALIDÉ' : 
+                             progress.evaluationStatus === 'REVISION_DEMANDEE' ? 'RÉVISION' : ''}
+                          </Text>
+                        </View>
+                      )}
+                    </View>
                     <Text style={styles.progressDate}>
                       {t('mentor.completed_on')} : {new Date(progress.completedAt).toLocaleDateString()}
                     </Text>
+                    {progress.attemptCount && progress.attemptCount > 1 && (
+                      <Text style={styles.attemptCount}>Tentative #{progress.attemptCount}</Text>
+                    )}
                   </View>
                   
-                  {hasDiscussionGuide ? (
-                    <Button
-                      title={t('mentor.button_discussion')}
-                      onPress={() => handleOpenDiscussion(progress)}
-                      color="#10B981"
-                    />
-                  ) : (
-                    <Text style={styles.noGuideText}>{t('mentor.no_guide_text')}</Text>
-                  )}
+                  <View style={styles.buttonGroup}>
+                    {progress.responseText && (
+                      <Button
+                        title="📝 Réponse"
+                        onPress={() => handleOpenEvaluation(progress)}
+                        color={progress.evaluationStatus === 'SOUMIS' ? "#F59E0B" : "#3B82F6"}
+                      />
+                    )}
+                    {hasDiscussionGuide && (
+                      <Button
+                        title={t('mentor.button_discussion')}
+                        onPress={() => handleOpenDiscussion(progress)}
+                        color="#10B981"
+                      />
+                    )}
+                    {!progress.responseText && !hasDiscussionGuide && (
+                      <Text style={styles.noGuideText}>{t('mentor.no_guide_text')}</Text>
+                    )}
+                  </View>
                 </View>
               );
             }}
@@ -187,8 +292,31 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
           </View>
         </View>
 
+        {/* Onglets de filtrage */}
+        <View style={styles.tabsContainer}>
+          <TouchableOpacity
+            style={[styles.tab, filterStatus === 'ALL' && styles.activeTab]}
+            onPress={() => setFilterStatus('ALL')}
+          >
+            <Text style={[styles.tabText, filterStatus === 'ALL' && styles.activeTabText]}>
+              {t('mentor.filter_all') || "Tous les Explorateurs"}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.tab, filterStatus === 'PENDING' && styles.activeTab]}
+            onPress={() => setFilterStatus('PENDING')}
+          >
+            <Text style={[styles.tabText, filterStatus === 'PENDING' && styles.activeTabText]}>
+              {t('mentor.filter_pending') || "À Évaluer"}
+              {totalPendingCount > 0 && (
+                <Text style={styles.badge}> ({totalPendingCount})</Text>
+              )}
+            </Text>
+          </TouchableOpacity>
+        </View>
+
         <FlatList
-          data={explorersWithProgress}
+          data={filteredExplorers}
           keyExtractor={(item) => item.explorer_uuid}
           renderItem={renderExplorerItem}
           contentContainerStyle={styles.listContent}
@@ -208,6 +336,15 @@ const MentorDashboardScreen: React.FC<NativeStackScreenProps<any, 'Mentor'>> = (
         questions={currentDiscussionQuestions}
         defiId={currentDefiId}
       />
+
+      {currentProgressItem && (
+        <MentorEvaluationModal
+          isVisible={isEvaluationModalVisible}
+          onClose={handleCloseEvaluation}
+          progressItem={currentProgressItem}
+          defiTitle={currentDefiTitle}
+        />
+      )}
     </SafeAreaView>
   );
 };
@@ -319,7 +456,76 @@ const styles = StyleSheet.create({
     color: '#9CA3AF',
     textAlign: 'right',
     minWidth: 100,
-  }
+  },
+
+  // Nouveaux styles pour les onglets
+  tabsContainer: {
+    flexDirection: 'row',
+    backgroundColor: '#F3F4F6',
+    borderRadius: 8,
+    padding: 4,
+    marginBottom: 16,
+  },
+  tab: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 6,
+  },
+  activeTab: {
+    backgroundColor: '#3B82F6',
+  },
+  tabText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#6B7280',
+  },
+  activeTabText: {
+    color: '#fff',
+  },
+  badge: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#EF4444',
+  },
+
+  // Nouveaux styles pour les badges et statuts
+  headerRight: {
+    alignItems: 'flex-end',
+  },
+  statusBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginTop: 4,
+  },
+  statusText: {
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  statusPill: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 10,
+    marginLeft: 8,
+  },
+  statusPillText: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  attemptCount: {
+    fontSize: 12,
+    color: '#F59E0B',
+    fontWeight: '600',
+    marginTop: 2,
+  },
+  buttonGroup: {
+    flexDirection: 'column',
+    gap: 8,
+  },
 });
 
 export default MentorDashboardScreen;

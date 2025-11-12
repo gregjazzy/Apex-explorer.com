@@ -57,6 +57,10 @@ export interface ExplorerProgressItem {
     status: 'completed' | 'submitted';
     xpEarned: number;
     completedAt: string;
+    responseText?: string;
+    mentorComment?: string;
+    evaluationStatus?: 'SOUMIS' | 'REVISION_DEMANDEE' | 'VALIDE' | 'COMPLETION_IMMEDIATE';
+    attemptCount?: number;
 }
 
 // --- Données de Simulation de Base (M1-M4) ---
@@ -194,7 +198,8 @@ export const saveDefiProgress = async (
     userId: string, 
     moduleId: string, 
     defiId: string, 
-    status: DefiStatus = 'completed',
+    responseText: string = '',
+    evaluationStatus: 'VALIDE' | 'SOUMIS' | 'COMPLETION_IMMEDIATE' = 'SOUMIS',
     xpValue: number = 100
 ) => {
     if (!userId || userId === 'sim_explorer' || userId.startsWith('sim-')) {
@@ -202,22 +207,44 @@ export const saveDefiProgress = async (
         return;
     }
     
+    // Déterminer si c'est une nouvelle soumission ou une re-soumission
+    const { data: existing } = await supabase
+        .from('explorer_progress')
+        .select('attempt_count')
+        .eq('user_id', userId)
+        .eq('module_id', moduleId)
+        .eq('defi_id', defiId)
+        .single();
+    
+    const attemptCount = existing ? (existing.attempt_count || 1) + 1 : 1;
+    
+    // Déterminer le statut et les XP
+    const status = (evaluationStatus === 'VALIDE' || evaluationStatus === 'COMPLETION_IMMEDIATE') 
+        ? 'completed' 
+        : 'submitted';
+    const xpEarned = (evaluationStatus === 'VALIDE' || evaluationStatus === 'COMPLETION_IMMEDIATE') 
+        ? xpValue 
+        : 0;
+    
     // 1. Déterminer les données à insérer ou mettre à jour
     const progressData = {
         user_id: userId,
         module_id: moduleId,
         defi_id: defiId,
         status: status,
-        xp_earned: xpValue,
+        xp_earned: xpEarned,
         completed_at: new Date().toISOString(),
+        response_text: responseText,
+        evaluation_status: evaluationStatus,
+        attempt_count: attemptCount,
+        mentor_comment: null, // Réinitialiser le commentaire mentor lors de la resoumission
     };
     
     // 2. Utiliser upsert pour insérer ou mettre à jour si l'entrée existe déjà
-    // La contrainte UNIQUE(user_id, module_id, defi_id) dans le SQL gère l'upsert
     const { data, error } = await supabase
         .from('explorer_progress')
         .upsert(progressData, { 
-            onConflict: 'user_id,module_id,defi_id', // Colonnes clés pour le conflit
+            onConflict: 'user_id,module_id,defi_id',
         });
 
     if (error) {
@@ -284,7 +311,6 @@ export const fetchExplorerProgress = async (explorerUuid: string): Promise<Explo
         .from('explorer_progress')
         .select('*')
         .eq('user_id', explorerUuid)
-        .eq('status', 'completed')
         .order('completed_at', { ascending: false });
 
     if (error) {
@@ -299,6 +325,10 @@ export const fetchExplorerProgress = async (explorerUuid: string): Promise<Explo
         status: item.status as 'completed' | 'submitted',
         xpEarned: item.xp_earned,
         completedAt: item.completed_at,
+        responseText: item.response_text,
+        mentorComment: item.mentor_comment,
+        evaluationStatus: item.evaluation_status,
+        attemptCount: item.attempt_count || 1,
     })) as ExplorerProgressItem[];
 };
 
@@ -326,4 +356,88 @@ export const createExplorerProfile = async (mentorId: string, name: string): Pro
     }
     
     return data as ExplorerProfile;
+};
+
+/**
+ * Récupère la progression d'un défi spécifique pour un explorateur.
+ */
+export const fetchExplorerProgressForDefi = async (
+    userId: string,
+    moduleId: string,
+    defiId: string
+): Promise<ExplorerProgressItem | null> => {
+    const { data, error } = await supabase
+        .from('explorer_progress')
+        .select('*')
+        .eq('user_id', userId)
+        .eq('module_id', moduleId)
+        .eq('defi_id', defiId)
+        .single();
+
+    if (error) {
+        if (error.code === 'PGRST116') { // No rows returned
+            return null;
+        }
+        console.error("Erreur Supabase lors du fetch du défi spécifique:", error);
+        return null;
+    }
+
+    return {
+        id: data.id,
+        moduleId: data.module_id,
+        defiId: data.defi_id,
+        status: data.status as 'completed' | 'submitted',
+        xpEarned: data.xp_earned,
+        completedAt: data.completed_at,
+        responseText: data.response_text,
+        mentorComment: data.mentor_comment,
+        evaluationStatus: data.evaluation_status,
+        attemptCount: data.attempt_count || 1,
+    };
+};
+
+/**
+ * Valide un défi soumis par un explorateur (mentor).
+ */
+export const validateDefi = async (
+    progressId: number,
+    mentorComment: string,
+    xpValue: number = 100
+): Promise<void> => {
+    const { error } = await supabase
+        .from('explorer_progress')
+        .update({
+            evaluation_status: 'VALIDE',
+            status: 'completed',
+            mentor_comment: mentorComment,
+            xp_earned: xpValue,
+        })
+        .eq('id', progressId);
+
+    if (error) {
+        console.error("Erreur lors de la validation du défi:", error);
+        throw new Error("Impossible de valider le défi.");
+    }
+};
+
+/**
+ * Demande une révision à l'explorateur (mentor).
+ */
+export const requestRevision = async (
+    progressId: number,
+    mentorComment: string
+): Promise<void> => {
+    const { error } = await supabase
+        .from('explorer_progress')
+        .update({
+            evaluation_status: 'REVISION_DEMANDEE',
+            status: 'submitted',
+            mentor_comment: mentorComment,
+        })
+        .eq('id', progressId);
+
+    if (error) {
+        console.error("Erreur lors de la demande de révision:", error);
+        throw new Error("Impossible de demander une révision.");
+    }
 };

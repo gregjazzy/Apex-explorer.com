@@ -42,12 +42,19 @@
     "advice": "Conseil",
     "completed_count": "{{completed}} / {{total}} défis terminés",
     "submit_button": "Soumettre le Défi",
+    "resubmit_button": "📤 Soumettre à nouveau",
     "submit_title": "Défi Soumis",
     "submit_message": "Ta réponse a été envoyée au mentor pour validation!",
+    "submit_message_pending": "Ton mentor va évaluer ta réponse. Tu seras notifié quand il aura répondu.",
     "scenario_title": "Scénario",
     "instruction_title": "Instruction",
     "lecon_title": "Leçon Stratégique",
-    "next": "Suivant"
+    "next": "Suivant",
+    "error_empty_response": "Merci d'écrire une réponse avant de soumettre.",
+    "status_pending": "⏳ Ton défi est en cours d'évaluation par ton mentor.",
+    "status_revision": "✏️ Ton mentor demande une révision",
+    "status_validated": "✅ Défi validé !",
+    "status_completed": "✅ Défi complété !"
   },
   "m1": {
     "defi1": {
@@ -391,7 +398,7 @@
     },
     "defi4": {
       "titre": "Quiz: La Leçon de l'Erreur",
-      "question": "Après un échec, la chose la plus importante à faire est :",
+      "question": "Après un échec, la chose la plus importante à faire est:",
       "options": ["Blâmer la situation ou les autres.", "Demander de l'aide et analyser les données.", "Passer rapidement à autre chose sans y penser."],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "L'erreur est une donnée. L'analyse des données avec l'aide d'un mentor est la seule voie vers l'amélioration.",
@@ -560,6 +567,11 @@
           "titre": "1. Objectif SMART (Spécifique, Mesurable...)",
           "type_etape": "validation_case",
           "instruction": "J'ai vérifié que mon objectif est spécifique et que je peux mesurer mes progrès (ex: 10/10 livres lus)."
+        },
+        "etape2": {
+          "titre": "2. Visualisation du Succès",
+          "type_etape": "texte_guide",
+          "instruction": "Décris brièvement le sentiment que tu auras quand tu auras atteint cet objectif. La visualisation est un moteur puissant."
         }
       }
     },
@@ -626,11 +638,35 @@
     "progress_list": "Progression de l'Explorateur",
     "completed_on": "Terminé le",
     "no_progress": "Aucun progrès encore enregistré.",
-    "button_discussion": "Guide de Discussion",
+    "button_discussion": "📖 Guide",
+    "button_response": "📝 Réponse",
     "info_titre": "Information",
     "info_no_guide": "Pas de guide de discussion disponible pour ce défi.",
+    "no_guide_text": "Pas de guide",
     "discussion_titre": "Guide de Discussion Parent/Enfant",
     "discussion_intro": "Utilisez ces questions pour engager la conversation.",
+    "explorers_management": "Gestion des Explorateurs",
+    "add_explorer_button": "➕ Ajouter un Explorateur",
+    "explorer_login_id": "Code PIN",
+    "no_explorers_yet": "Vous n'avez pas encore d'explorateurs liés.",
+    "recent_progress": "Progrès récents",
+    "filter_all": "Tous les Explorateurs",
+    "filter_pending": "À Évaluer",
+    "explorer_response": "Réponse de l'Explorateur",
+    "no_response_recorded": "Aucune réponse enregistrée",
+    "add_feedback": "Votre Feedback",
+    "comment_placeholder": "Votre retour pédagogique...",
+    "validate_button": "✓ VALIDER",
+    "revision_button": "↻ RÉVISION",
+    "validation_success": "Validé",
+    "validation_message": "Le défi a été validé et l'XP a été accordé !",
+    "revision_requested": "Révision Demandée",
+    "revision_message": "L'explorateur devra réviser sa réponse.",
+    "error_comment_required": "Le commentaire est obligatoire pour demander une révision.",
+    "error_action": "Action impossible. Vérifiez les droits RLS.",
+    "last_comment": "Dernier commentaire",
+    "finalized_message": "Défi validé. L'Explorateur a reçu son XP.",
+    "no_guide_available": "Aucun guide de discussion n'est disponible pour ce défi. Évaluez librement selon vos critères pédagogiques.",
     "discussion": {
       "m1_defi1": [
         "Question 1: Comment peux-tu utiliser la division pour organiser tes devoirs ?",
@@ -673,7 +709,6 @@
         "Question 3: Qu'est-ce que l''Héritage' signifie pour toi ? Qu'aimerais-tu laisser derrière toi pour les autres ?"
       ]
     },
-    "no_guide_text": "Pas de guide de discussion",
     "signup_title": "Créer un Compte Mentor",
     "name_placeholder": "Votre Nom",
     "signup_button": "S'inscrire",
@@ -681,9 +716,6 @@
     "need_account": "Je n'ai pas de compte",
     "signup_success_title": "Vérifiez votre e-mail",
     "signup_success_message": "Un lien de confirmation a été envoyé à {{email}}. Veuillez cliquer dessus pour activer votre compte.",
-    "explorers_management": "Gestion des Explorateurs",
-    "add_explorer_button": "Ajouter un Explorateur",
-    "no_explorers_yet": "Vous n'avez pas encore d'explorateurs liés.",
     "create_explorer_title": "Créer un nouvel Explorateur",
     "create_explorer_subtitle": "Ceci crée le profil de votre enfant. Le code UUID sera son identifiant de connexion.",
     "explorer_name_placeholder": "Nom de l'Explorateur",
@@ -692,8 +724,6 @@
     "creation_success_title": "Succès!",
     "creation_success_message": "Le profil de {{name}} a été créé. Son code de connexion est :\n\nPIN: {{pin}}\n\nVeuillez noter ce PIN pour la connexion de l'Explorateur.",
     "creation_error": "Échec de la création du profil.",
-    "explorer_login_id": "ID de connexion",
-    "recent_progress": "Progrès récents",
     "pin_placeholder": "Code PIN (4 chiffres)",
     "email_placeholder": "Email du Mentor",
     "password_placeholder": "Mot de passe"
