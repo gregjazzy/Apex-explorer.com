@@ -60,6 +60,92 @@
         }
       }
   },
+  "m2": {
+    "defi1": {
+        "titre": "Défi: L'Urgence et l'Importance",
+        "scenario": "Tu as quatre tâches : 1. Nourrir le chien (Urgent/Important). 2. Jouer à un jeu (Ni Urgent/Ni Important). 3. Finir un devoir (Non Urgent/Important). 4. Aider ta sœur (Urgent/Non Important). Comment les priorises-tu (1 à 4) ?",
+        "instruction": "Écris la tâche que tu vas faire en PREMIER et la tâche que tu vas faire en DERNIER.",
+        "leconStrategique": "Les leaders s'occupent d'abord de l'IMPORTANT (même si ce n'est pas urgent) avant de l'Urgent mais non important.",
+        "referenceCroisee": "M8",
+        "briefing": {
+            "etape1": {
+                "titre": "1. La Matrice Eisenhower",
+                "type_etape": "texte_guide",
+                "instruction": "Dessine une boîte avec 4 cases (Urgent/Important, Urgent/Non Important, Non Urgent/Important, Non Urgent/Non Important). Place chaque tâche dans sa bonne case. Les cases non urgentes et importantes sont la vraie priorité."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Planification et Préparation",
+        "question": "Quel outil est le plus efficace pour planifier un projet de 3 jours ?",
+        "options": ["Une simple note mentale", "Un agenda visuel avec les tâches listées", "Demander de l'aide après avoir oublié"],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Un agenda visuel transforme le temps en ressource gérable.",
+        "feedbackIncorrect": "La mémoire n'est pas un outil fiable pour la planification de projets longs.",
+        "leconStrategique": "La préparation est la preuve de la discipline. Un bon plan te donne la liberté de te concentrer sur l'exécution.",
+        "referenceCroisee": "M6"
+    }
+  },
+  "m3": {
+    "defi1": {
+        "titre": "Défi: L'Équilibre de la Tour",
+        "scenario": "Tu dois construire une tour la plus haute possible avec 10 blocs. Comment dois-tu placer les blocs pour garantir la STABILITÉ maximale ?",
+        "instruction": "Écris une phrase expliquant où doit se trouver le centre de gravité (CG) : Haut ou Bas, et pourquoi.",
+        "leconStrategique": "La stabilité est plus importante que la hauteur. Une fondation solide permet une croissance durable.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Le Centre de Gravité",
+                "type_etape": "validation_case",
+                "instruction": "J'ai compris que le centre de gravité doit être le plus bas possible. Les blocs lourds vont en bas, les plus légers en haut."
+            },
+            "etape2": {
+                "titre": "2. La Règle de la Base",
+                "type_etape": "texte_guide",
+                "instruction": "Pour être stable, la tour doit avoir une base large. La stabilité provient de la largeur et de la hauteur inversée (plus large que haute)."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Le Levier Efficace",
+        "question": "Tu dois soulever une roche très lourde avec une barre. Où dois-tu placer le point d'appui (fulcrum) pour la soulever le plus facilement ?",
+        "options": ["Au milieu de la barre", "Le plus près possible de la roche", "Le plus loin possible de la roche"],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Bravo! Plus le point d'appui est proche de la charge, plus le levier est puissant.",
+        "leconStrategique": "L'efficacité est l'art de faire plus avec moins d'effort. Trouve le bon point d'appui (la bonne relation, la bonne ressource).",
+        "referenceCroisee": "M5"
+    }
+  },
+  "m4": {
+    "defi1": {
+        "titre": "Quiz: Le Mystère des Voisins",
+        "question": "Alice, Ben et Claire ont des chats rouges, bleus et verts. Ben n'a pas le bleu. Alice n'a ni le rouge ni le bleu. Quelle est la couleur du chat de Claire ?",
+        "options": ["Bleu", "Rouge", "Vert"],
+        "bonneReponseIndex": 0,
+        "feedbackCorrect": "Par déduction : Alice (Vert), Ben (Rouge), donc Claire (Bleu).",
+        "leconStrategique": "Le leader élimine les possibilités avant de prendre une décision. La déduction est un chemin vers la vérité.",
+        "referenceCroisee": "M2"
+    },
+    "defi2": {
+        "titre": "Défi: La Séquence des Tâches",
+        "scenario": "La séquence de fabrication d'un jouet est : A=Coupe, B=Peinture, C=Assemblage, D=Séchage. Mais l'ordre est (C, D, A, B). Explique pourquoi cet ordre est inefficace et propose un meilleur ordre.",
+        "instruction": "Écris la séquence des tâches (lettres) que tu vas choisir pour une efficacité maximale (ex: A, B, C, D).",
+        "leconStrategique": "L'ordre fait partie de la logique. La logique s'assure que chaque étape prépare correctement la suivante.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Identifier les Dépendances",
+                "type_etape": "validation_case",
+                "instruction": "J'ai identifié que 'Peinture' doit précéder 'Séchage' et que 'Coupe' doit être fait en premier pour l'efficacité."
+            },
+            "etape2": {
+                "titre": "2. Construire la Chaîne Logique",
+                "type_etape": "texte_guide",
+                "instruction": "Une chaîne logique ne peut pas commencer par l'Assemblage (C) si la Coupe (A) n'est pas faite. Trouve l'ordre où chaque étape est un prérequis pour la suivante."
+            }
+        }
+    }
+  },
   "mentor": {
     "title": "Tableau de Bord du Mentor",
     "progress_list": "Progression de l'Explorateur",

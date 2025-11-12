@@ -60,6 +60,92 @@
         }
       }
   },
+  "m2": {
+    "defi1": {
+        "titre": "Challenge: Urgency vs. Importance",
+        "scenario": "You have four tasks: 1. Feed the dog (Urgent/Important). 2. Play a game (Neither Urgent/Nor Important). 3. Finish homework (Not Urgent/Important). 4. Help your sister (Urgent/Not Important). How do you prioritize them (1 to 4)?",
+        "instruction": "Write the task you will do FIRST and the task you will do LAST.",
+        "leconStrategique": "Leaders deal with the IMPORTANT things first (even if not urgent) before the Urgent but non-important ones.",
+        "referenceCroisee": "M8",
+        "briefing": {
+            "etape1": {
+                "titre": "1. The Eisenhower Matrix",
+                "type_etape": "texte_guide",
+                "instruction": "Draw a box with 4 squares (Urgent/Important, Urgent/Not Important, Not Urgent/Important, Not Urgent/Not Important). Place each task in its correct square. The non-urgent and important squares are the true priority."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: Planning and Preparation",
+        "question": "Which tool is most effective for planning a 3-day project?",
+        "options": ["A simple mental note", "A visual calendar with tasks listed", "Asking for help after forgetting"],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "A visual calendar transforms time into a manageable resource.",
+        "feedbackIncorrect": "Memory is not a reliable tool for long-project planning.",
+        "leconStrategique": "Preparation is the proof of discipline. A good plan gives you the freedom to focus on execution.",
+        "referenceCroisee": "M6"
+    }
+  },
+  "m3": {
+    "defi1": {
+        "titre": "Challenge: The Tower Balance",
+        "scenario": "You must build the tallest possible tower with 10 blocks. How should you place the blocks to ensure maximum STABILITY?",
+        "instruction": "Write a sentence explaining where the center of gravity (CG) should be: High or Low, and why.",
+        "leconStrategique": "Stability is more important than height. A solid foundation allows for sustainable growth.",
+        "referenceCroisee": "M7",
+        "briefing": {
+            "etape1": {
+                "titre": "1. The Center of Gravity",
+                "type_etape": "validation_case",
+                "instruction": "I understand that the center of gravity must be as low as possible. Heavy blocks go down, lighter ones go up."
+            },
+            "etape2": {
+                "titre": "2. The Base Rule",
+                "type_etape": "texte_guide",
+                "instruction": "To be stable, the tower must have a wide base. Stability comes from width and inverse height (wider than tall)."
+            }
+        }
+    },
+    "defi2": {
+        "titre": "Quiz: The Efficient Lever",
+        "question": "You must lift a very heavy rock with a bar. Where should you place the fulcrum (support point) to lift it most easily?",
+        "options": ["In the middle of the bar", "As close to the rock as possible", "As far from the rock as possible"],
+        "bonneReponseIndex": 1,
+        "feedbackCorrect": "Great! The closer the fulcrum is to the load, the more powerful the lever.",
+        "leconStrategique": "Efficiency is the art of doing more with less effort. Find the right fulcrum (the right relationship, the right resource).",
+        "referenceCroisee": "M5"
+    }
+  },
+  "m4": {
+    "defi1": {
+        "titre": "Quiz: The Neighbors' Mystery",
+        "question": "Alice, Ben, and Claire have red, blue, and green cats. Ben does not have the blue one. Alice has neither the red nor the blue one. What color is Claire's cat?",
+        "options": ["Blue", "Red", "Green"],
+        "bonneReponseIndex": 0,
+        "feedbackCorrect": "By deduction: Alice (Green), Ben (Red), therefore Claire (Blue).",
+        "leconStrategique": "The leader eliminates possibilities before making a decision. Deduction is a path to truth.",
+        "referenceCroisee": "M2"
+    },
+    "defi2": {
+        "titre": "Challenge: The Task Sequence",
+        "scenario": "The sequence for manufacturing a toy is: A=Cut, B=Paint, C=Assembly, D=Drying. But the current order is (C, D, A, B). Explain why this order is inefficient and propose a better one.",
+        "instruction": "Write the sequence of tasks (letters) you will choose for maximum efficiency (e.g., A, B, C, D).",
+        "leconStrategique": "Order is part of logic. Logic ensures that each step properly prepares the next one.",
+        "referenceCroisee": "M3",
+        "briefing": {
+            "etape1": {
+                "titre": "1. Identify Dependencies",
+                "type_etape": "validation_case",
+                "instruction": "I have identified that 'Paint' must precede 'Drying' and that 'Cut' must be done first for efficiency."
+            },
+            "etape2": {
+                "titre": "2. Build the Logical Chain",
+                "type_etape": "texte_guide",
+                "instruction": "A logical chain cannot start with Assembly (C) if Cutting (A) is not done. Find the order where each step is a prerequisite for the next."
+            }
+        }
+    }
+  },
   "mentor": {
     "title": "Mentor Dashboard",
     "progress_list": "Explorer's Progress",

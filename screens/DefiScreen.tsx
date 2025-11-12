@@ -236,7 +236,7 @@ const rendererStyles = StyleSheet.create({
         marginBottom: 30,
     },
     simpleInput: { 
-        minHeight: isWeb ? 150 : 120, 
+        minHeight: isWeb ? 200 : 180, 
         borderColor: '#D1D5DB', 
         borderWidth: 1, 
         padding: 15, 
