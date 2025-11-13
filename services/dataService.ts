@@ -74,17 +74,95 @@ export interface Badge {
   earned: boolean;
 }
 
-// --- Données de Simulation de Base (M1-M13) ---
+// --- Données de Simulation de Base (M1-M19) ---
 
-// Ordre d'affichage des modules (stratégie marketing)
-const MODULE_DISPLAY_ORDER = [
-  'm12', // MODULE GRATUIT - L'Art de Connecter (Communication)
-  'm13', 'm5', 'm10', 'm7', // BLOC 1: Leadership & Influence
-  'm1', 'm4', 'm2',          // BLOC 2: Stratégie & Analyse
-  'm3', 'm8', 'm6',          // BLOC 3: Exécution & Gestion
-  'm9', 'm11'                // BLOC 4: Excellence & Maîtrise
+// ⚠️ ARCHITECTURE CRITIQUE - LIRE AVANT MODIFICATION
+// 
+// Les IDs techniques (m1, m2, m3, etc.) NE DOIVENT JAMAIS ÊTRE MODIFIÉS !
+// Ils sont utilisés comme clés dans la base de données, les traductions, et les badges.
+// 
+// Pour changer l'ordre d'affichage des modules, modifiez uniquement MODULE_DISPLAY_ORDER ci-dessous.
+// L'utilisateur verra "MODULE 1", "MODULE 2", etc. dans cet ordre, mais les IDs restent fixes.
+// 
+// Documentation complète : /⚠️_ARCHITECTURE_MODULES_CRITIQUE_⚠️.md
+//
+// Exemple : MODULE_DISPLAY_ORDER = ['m12', 'm14', ...]
+//   → L'utilisateur voit : MODULE 1 (m12), MODULE 2 (m14), etc.
+//
+
+// Structure des blocs thématiques (pour affichage visuel)
+export interface ModuleBlock {
+  id: string;
+  titleKey: string;          // Clé de traduction pour le titre
+  descriptionKey: string;    // Clé de traduction pour la description
+  icon: string;              // Emoji du bloc
+  color: string;             // Couleur principale du bloc
+  isFree: boolean;           // Si le bloc est gratuit
+  moduleIds: string[];       // IDs des modules dans ce bloc
+}
+
+export const MODULE_BLOCKS: ModuleBlock[] = [
+  {
+    id: 'discovery',
+    titleKey: 'blocks.discovery.title',
+    descriptionKey: 'blocks.discovery.description',
+    icon: '🎁',
+    color: '#10B981', // Vert
+    isFree: true,
+    moduleIds: ['m12']
+  },
+  {
+    id: 'ai_future',
+    titleKey: 'blocks.ai_future.title',
+    descriptionKey: 'blocks.ai_future.description',
+    icon: '🤖',
+    color: '#6366F1', // Indigo
+    isFree: false,
+    moduleIds: ['m14', 'm15', 'm16', 'm17', 'm18', 'm19']
+  },
+  {
+    id: 'leadership',
+    titleKey: 'blocks.leadership.title',
+    descriptionKey: 'blocks.leadership.description',
+    icon: '💼',
+    color: '#F59E0B', // Amber
+    isFree: false,
+    moduleIds: ['m13', 'm5', 'm10', 'm7']
+  },
+  {
+    id: 'strategy',
+    titleKey: 'blocks.strategy.title',
+    descriptionKey: 'blocks.strategy.description',
+    icon: '🧠',
+    color: '#8B5CF6', // Violet
+    isFree: false,
+    moduleIds: ['m1', 'm4', 'm2']
+  },
+  {
+    id: 'execution',
+    titleKey: 'blocks.execution.title',
+    descriptionKey: 'blocks.execution.description',
+    icon: '⚙️',
+    color: '#06B6D4', // Cyan
+    isFree: false,
+    moduleIds: ['m3', 'm8', 'm6']
+  },
+  {
+    id: 'excellence',
+    titleKey: 'blocks.excellence.title',
+    descriptionKey: 'blocks.excellence.description',
+    icon: '🏆',
+    color: '#EF4444', // Red
+    isFree: false,
+    moduleIds: ['m9', 'm11']
+  }
 ];
 
+// Ordre d'affichage des modules (dérivé de MODULE_BLOCKS)
+const MODULE_DISPLAY_ORDER = MODULE_BLOCKS.flatMap(block => block.moduleIds);
+
+// IDs techniques des modules (IMMUABLES - NE JAMAIS RENOMMER)
+// Ces IDs sont des clés primaires utilisées dans la DB, traductions, et badges
 const BASE_MODULE_DATA_SIM = [
   { id: 'm1', isUnlocked: true },
   { id: 'm2', isUnlocked: true },
@@ -99,6 +177,12 @@ const BASE_MODULE_DATA_SIM = [
   { id: 'm11', isUnlocked: true },
   { id: 'm12', isUnlocked: true },
   { id: 'm13', isUnlocked: true },
+  { id: 'm14', isUnlocked: true },
+  { id: 'm15', isUnlocked: true },
+  { id: 'm16', isUnlocked: true },
+  { id: 'm17', isUnlocked: true },
+  { id: 'm18', isUnlocked: true },
+  { id: 'm19', isUnlocked: true },
 ];
 
 interface BaseDefi {
@@ -107,6 +191,8 @@ interface BaseDefi {
     requires: string[];
 }
 
+// Configuration des défis par module (utilise les IDs techniques)
+// Format : moduleId => [défis avec xpValue et dépendances]
 const BASE_DEFIS_SIM: Record<string, BaseDefi[]> = {
     m1: [
         { id: 'defi1', xpValue: 100, requires: [] },
@@ -179,6 +265,42 @@ const BASE_DEFIS_SIM: Record<string, BaseDefi[]> = {
         { id: 'defi4', xpValue: 100, requires: [] },
     ],
     m13: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m14: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m15: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m16: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m17: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m18: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m19: [
         { id: 'defi1', xpValue: 100, requires: [] },
         { id: 'defi2', xpValue: 100, requires: [] },
         { id: 'defi3', xpValue: 100, requires: [] },
@@ -706,8 +828,8 @@ export const calculateAdvancedBadges = async (
                 break;
                 
             case 'all_modules':
-                earned = completedModules >= 11;
-                badgeProgress = Math.min(100, (completedModules / 11) * 100);
+                earned = completedModules >= 19;
+                badgeProgress = Math.min(100, (completedModules / 19) * 100);
                 break;
             
             // BADGES DE VITESSE (calculés avec speedDrillSessions)
@@ -794,13 +916,73 @@ export const calculateAdvancedBadges = async (
                 
             case 'perfectionist':
                 // Tous les modules avec 100% (tous les défis complétés)
-                const allModuleIds = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10', 'm11'];
+                const allModuleIds = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15', 'm16', 'm17', 'm18', 'm19'];
                 const perfectModules = allModuleIds.filter(mid => {
                     const defisInModule = progressItems.filter((p: ExplorerProgressItem) => p.moduleId === mid);
                     return defisInModule.length >= 4 && defisInModule.every((d: ExplorerProgressItem) => d.status === 'completed');
                 });
-                earned = perfectModules.length === 11;
-                badgeProgress = Math.min(100, (perfectModules.length / 11) * 100);
+                earned = perfectModules.length === 19;
+                badgeProgress = Math.min(100, (perfectModules.length / 19) * 100);
+                break;
+            
+            // BADGES PAR MODULE (M12-M19)
+            case 'module_m12':
+                const m12Defis = progressItems.filter(p => p.moduleId === 'm12' && p.status === 'completed');
+                earned = m12Defis.length >= 4;
+                badgeProgress = Math.min(100, (m12Defis.length / 4) * 100);
+                break;
+                
+            case 'module_m13':
+                const m13Defis = progressItems.filter(p => p.moduleId === 'm13' && p.status === 'completed');
+                earned = m13Defis.length >= 4;
+                badgeProgress = Math.min(100, (m13Defis.length / 4) * 100);
+                break;
+                
+            case 'module_m14':
+                const m14Defis = progressItems.filter(p => p.moduleId === 'm14' && p.status === 'completed');
+                earned = m14Defis.length >= 4;
+                badgeProgress = Math.min(100, (m14Defis.length / 4) * 100);
+                break;
+                
+            case 'module_m15':
+                const m15Defis = progressItems.filter(p => p.moduleId === 'm15' && p.status === 'completed');
+                earned = m15Defis.length >= 4;
+                badgeProgress = Math.min(100, (m15Defis.length / 4) * 100);
+                break;
+                
+            case 'module_m16':
+                const m16Defis = progressItems.filter(p => p.moduleId === 'm16' && p.status === 'completed');
+                earned = m16Defis.length >= 4;
+                badgeProgress = Math.min(100, (m16Defis.length / 4) * 100);
+                break;
+                
+            case 'module_m17':
+                const m17Defis = progressItems.filter(p => p.moduleId === 'm17' && p.status === 'completed');
+                earned = m17Defis.length >= 4;
+                badgeProgress = Math.min(100, (m17Defis.length / 4) * 100);
+                break;
+                
+            case 'module_m18':
+                const m18Defis = progressItems.filter(p => p.moduleId === 'm18' && p.status === 'completed');
+                earned = m18Defis.length >= 4;
+                badgeProgress = Math.min(100, (m18Defis.length / 4) * 100);
+                break;
+                
+            case 'module_m19':
+                const m19Defis = progressItems.filter(p => p.moduleId === 'm19' && p.status === 'completed');
+                earned = m19Defis.length >= 4;
+                badgeProgress = Math.min(100, (m19Defis.length / 4) * 100);
+                break;
+            
+            // BADGE ULTIME : BLOC IA COMPLET
+            case 'ai_master':
+                const aiModuleIds = ['m14', 'm15', 'm16', 'm17', 'm18', 'm19'];
+                const completedAIModules = aiModuleIds.filter(mid => {
+                    const defisInModule = progressItems.filter((p: ExplorerProgressItem) => p.moduleId === mid);
+                    return defisInModule.length >= 4 && defisInModule.every((d: ExplorerProgressItem) => d.status === 'completed');
+                });
+                earned = completedAIModules.length === 6;
+                badgeProgress = Math.min(100, (completedAIModules.length / 6) * 100);
                 break;
         }
         

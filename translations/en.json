@@ -38,7 +38,45 @@
     "m12": "The Art of Connecting",
     "m12_desc": "Master the 5 superpowers of communication and become someone others WANT to be with.",
     "m13": "Money Smart",
-    "m13_desc": "Learn to manage your money like a pro: budget, savings, self-investment."
+    "m13_desc": "Learn to manage your money like a pro: budget, savings, self-investment.",
+    "m14": "Understanding AI",
+    "m14_desc": "Discover what Artificial Intelligence can and cannot do in your life.",
+    "m15": "Collaborating with AI",
+    "m15_desc": "Learn to use AI as a supercharged assistant (not as a crutch).",
+    "m16": "Surpassing AI",
+    "m16_desc": "Develop human skills that AI will never have.",
+    "m17": "Think Different",
+    "m17_desc": "Develop creative thinking and find solutions nobody has ever seen.",
+    "m18": "The Art of Disobedience",
+    "m18_desc": "Learn to think for yourself and not follow the crowd blindly.",
+    "m19": "Mastering Dependencies",
+    "m19_desc": "Understand how screens and algorithms manipulate you and take back control."
+  },
+  "blocks": {
+    "discovery": {
+      "title": "Discovery Module",
+      "description": "Start your adventure with this free module"
+    },
+    "ai_future": {
+      "title": "AI & Future",
+      "description": "Prepare yourself for the Artificial Intelligence era"
+    },
+    "leadership": {
+      "title": "Leadership & Influence",
+      "description": "Develop your power of influence and leadership"
+    },
+    "strategy": {
+      "title": "Strategy & Analysis",
+      "description": "Sharpen your strategic and analytical mind"
+    },
+    "execution": {
+      "title": "Execution & Management",
+      "description": "Master the art of taking effective action"
+    },
+    "excellence": {
+      "title": "Excellence & Mastery",
+      "description": "Reach the peak of your capabilities"
+    }
   },
   "defi": {
     "title": "Challenge",
@@ -1103,6 +1141,546 @@
       "referenceCroisee": "M6",
       "mentorGoal": "Introduce the concept of ASSET vs LIABILITY. The child must understand that investing in themselves (skills, education) brings infinitely more than spending for immediate pleasure.",
       "evaluationCriteria": "Correct answer: Option B (bike = expense, books = investment). Bonus: The child gives an example of self-investment they would like to make (course, books, training, etc.)."
+    }
+  },
+  "m14": {
+    "defi1": {
+      "titre": "Quiz: What is AI?",
+      "question": "Your friend says: 'ChatGPT is magic! It knows everything!' What do you reply?",
+      "options": [
+        "Yes, it's pure magic!",
+        "No, it's a super-computer that learned by reading millions of texts",
+        "It's a real human hidden behind the screen"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Exactly! AI (Artificial Intelligence) has NOTHING magical. It's a very powerful computer that learned by analyzing MILLIONS of examples. If you show it 1000 cat photos, it will recognize a cat. But it doesn't UNDERSTAND what a cat is like YOU understand it. It looks for similarities, that's all. It's impressive, but not magic!",
+      "feedbackIncorrect": "No! AI isn't magical. It's a computer that learns from examples. If ChatGPT can talk, it's because it read BILLIONS of sentences written by humans. It copies patterns, it doesn't really think. The difference? YOU understand what you say, AI doesn't.",
+      "leconStrategique": "Understanding how AI works gives you POWER. If you believe it's magic, you're subject to it. If you understand it learns from examples, you know how to use it and what its limits are. The leaders of the 22nd century will master AI, they won't be dominated by it.",
+      "referenceCroisee": "M1",
+      "mentorGoal": "Demystify AI. The child must understand that AI isn't magical but a tool that learns from examples. This lays the groundwork for using it intelligently.",
+      "evaluationCriteria": "Correct answer: Option 2 (super-computer that learns). Bonus: The child explains in their own words how AI learns or gives an example."
+    },
+    "defi2": {
+      "titre": "Mission: Test AI vs You",
+      "scenario": "Today, you'll conduct an experiment to understand the DIFFERENCE between AI and YOU. You'll create a funny story, and AI will too. Then you'll compare!",
+      "instruction": "**Step 1: YOU first**\nMake up a funny story about 'A dinosaur goes to school'.\nWrite it (3-5 sentences). Use details from YOUR life, YOUR school, YOUR friends.\n\n**Step 2: AI next**\nAsk ChatGPT (or an adult with ChatGPT):\n'Tell me a funny story about a dinosaur goes to school'\n\n**Step 3: Compare**\nAnswer these questions:\n1. Which story is funnier? Why?\n2. Which story has details from YOUR life?\n3. Did AI understand what makes YOU laugh?\n4. Can you guess that the AI story comes from a machine?\n\n**Step 4: Conclusion**\nExplain: What can YOU do that AI cannot?",
+      "leconStrategique": "AI can generate text quickly. But it doesn't know YOUR life, YOUR emotions, YOUR unique humor. It copies story styles it has seen, but it doesn't create something truly ORIGINAL with your experience. Your HUMAN creativity is irreplaceable.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why YOU First?",
+          "type_etape": "texte_guide",
+          "instruction": "If you ask AI BEFORE thinking yourself, you lose your ability to create. ALWAYS think ALONE first, then use AI as an assistant, never as a replacement."
+        },
+        "etape2": {
+          "titre": "2. What AI Doesn't Know",
+          "type_etape": "validation_case",
+          "instruction": "I understood: AI doesn't know my school, my friends, what makes ME laugh. It generates a 'generic' story that could suit anyone.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Experience",
+          "type_etape": "champ_texte",
+          "instruction": "Write:\n- Your story (YOU)\n- AI's story\n- Your comparison: what's the main difference?",
+          "placeholder": "My story: ... AI's story: ... Difference: ..."
+        }
+      },
+      "mentorGoal": "Make the child concretely experience the difference between human creativity and AI generation. The child must understand that AI copies, humans create with their unique experience.",
+      "evaluationCriteria": "1. The child created their own story BEFORE consulting AI. 2. Clear comparison of both stories. 3. Identification of at least one difference (personal details, unique humor, etc.). Bonus: The child realizes their story is more authentic."
+    },
+    "defi3": {
+      "titre": "Quiz: AI's Superpowers",
+      "question": "In which situation is AI BETTER than you?",
+      "options": [
+        "Calculate 8,754 × 6,321 in 0.001 seconds",
+        "Understand that your friend is sad just by looking at them",
+        "Invent a new game that nobody has ever seen"
+      ],
+      "bonneReponseIndex": 0,
+      "feedbackCorrect": "EXACTLY! AI is INCREDIBLY fast at calculating, searching through millions of information, recognizing images. It beats humans at these TECHNICAL tasks. BUT it's TERRIBLE at understanding emotions, having empathy, or creating something truly new. Use its strengths (calculation, search), but keep your human strengths (empathy, creativity, ethics)!",
+      "feedbackIncorrect": "No! AI is great for fast calculations and information search. But it CANNOT understand emotions (it doesn't 'see' sadness, it guesses patterns) and can't invent something truly original (it mixes what exists). Your HUMAN superpowers are irreplaceable!",
+      "leconStrategique": "Knowing what AI does better than you AND what YOU do better than AI allows you to collaborate with it intelligently. Don't see it as a threat, but as a tool that makes you 10x stronger on certain tasks, while you keep your superiority on human tasks.",
+      "referenceCroisee": "M12",
+      "mentorGoal": "The child must understand AI's strengths AND weaknesses. It's overpowered for calculation/data, but weak for emotions/creativity/ethics. This lays the groundwork for intelligent collaboration.",
+      "evaluationCriteria": "Correct answer: Option 1 (fast calculation). Bonus: The child lists other tasks where AI is strong (search, translation, image recognition) and others where it's weak (empathy, original creativity)."
+    },
+    "defi4": {
+      "titre": "Mission: AI in My Life",
+      "scenario": "AI is EVERYWHERE in your life, but you don't always see it. For 3 days, you'll become an 'AI detective' and note ALL the times you encounter AI. You'll be surprised!",
+      "instruction": "**Your detective mission (3 days):**\n\nNote EVERY time you use something with AI:\n\n📱 **YouTube**: Recommended videos (how does YouTube know what you like?)\n📺 **Netflix**: Movie suggestions\n🎮 **Video games**: Automatic opponents, non-player characters\n🗣️ **Voice assistants**: Siri, Alexa, Google Assistant\n📸 **Photos**: Your phone recognizing faces\n🚗 **Car**: GPS calculating the best route\n🛒 **Internet**: Ads that follow you\n\n**After 3 days, answer:**\n1. How many times per day do you interact with AI? (Count!)\n2. Does it help you or does it decide for you?\n3. Could you live without AI for a week?\n4. Are there times when you prefer to decide YOURSELF rather than let AI choose?",
+      "leconStrategique": "AI is already everywhere in 2025. In 10 years, it will be 100x more present. Those who understand how it works will have POWER over their lives. Those who don't understand will be CONTROLLED by it without knowing. You're becoming one who understands. It's a huge advantage.",
+      "referenceCroisee": "M2",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Invisible AI",
+          "type_etape": "texte_guide",
+          "instruction": "Most people use AI 50 times a day without knowing. YouTube recommends, Netflix suggests, your phone predicts your words. It's everywhere! Knowing how to spot it gives you control."
+        },
+        "etape2": {
+          "titre": "2. Detective Guide",
+          "type_etape": "validation_case",
+          "instruction": "I understood: For 3 days, I note EVERY AI interaction. I'll probably discover it's much more than I thought!",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Report",
+          "type_etape": "champ_texte",
+          "instruction": "After 3 days, write your detective report:\n- List of ALL AIs you encountered\n- Number of interactions per day (estimate)\n- Your reflection: does it help you or control you?",
+          "placeholder": "Day 1: ... Day 2: ... Day 3: ... Total: ... My conclusion: ..."
+        }
+      },
+      "mentorGoal": "Make the child AWARE of AI's omnipresence in their daily life. This awareness is the first step to using it actively rather than passively.",
+      "evaluationCriteria": "1. List of at least 5-7 situations where the child encountered AI. 2. Estimate of number of interactions (any answer is acceptable as long as it's thoughtful). 3. Personal reflection on help vs control. Bonus: The child expresses a desire to regain control over certain decisions."
+    }
+  },
+  "m15": {
+    "defi1": {
+      "titre": "Quiz: Using AI Intelligently",
+      "question": "You have a presentation to make on dolphins. What's the BEST way to use AI?",
+      "options": [
+        "Ask ChatGPT: 'Make me a presentation on dolphins' and copy-paste",
+        "Think of 5 specific questions, ask AI to help answer them, then write the presentation in your own words",
+        "Don't use AI at all, it's cheating"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO! Using AI intelligently = THINK first, THEN use AI as a super-assistant. If you mindlessly copy-paste, you don't develop your brain. If you refuse AI, you're missing out on a powerful tool. The right balance: YOUR brain + AI = superpower! You remain the CAPTAIN, AI is your co-pilot.",
+      "feedbackIncorrect": "No! Copy-paste = you develop nothing. Refusing AI = you're missing out on a super-tool. True intelligence: USE AI as an assistant, not a replacement. The best in the world use AI, but they think FIRST. It's the golden rule: Brain THEN AI, never the reverse.",
+      "leconStrategique": "AI is neither your enemy nor your savior. It's an AMPLIFIER. If you think poorly, AI amplifies your mediocrity. If you think well, AI makes you 10x stronger. Future leaders will know how to pilot AI like professional pilots pilot autopilot: they remain in control.",
+      "referenceCroisee": "M1",
+      "mentorGoal": "Establish the golden rule: 'Think first, AI second'. The child must understand that AI is an amplifier, not a substitute for thought.",
+      "evaluationCriteria": "Correct answer: Option 2 (think first, then use AI as assistant). Bonus: The child gives a personal example where they could use this method."
+    },
+    "defi2": {
+      "titre": "Mission: The 5-2-1 Method",
+      "scenario": "Today, you'll learn the 5-2-1 method: 5 minutes of reflection, 2 specific questions to AI, 1 personal creation. It's THE pro method for collaborating with AI without losing your brain!",
+      "instruction": "**Your challenge: Create a 5-question quiz on a subject you LOVE**\n\n**STEP 1: 5 minutes of reflection (WITHOUT AI)**\n- Choose a subject you love (dinosaurs, football, space, Minecraft, etc.)\n- Note 10 things YOU already know about this subject\n- Invent 2-3 quiz questions (without looking up the answers)\n\n**STEP 2: 2 specific questions to AI**\nNow ask ChatGPT:\n1. 'Give me 5 surprising facts about [your subject] that few people know'\n2. 'What's the most recent information (2024-2025) about [your subject]?'\n\n**STEP 3: 1 personal creation**\nCreate your 5-question quiz by mixing:\n- Your knowledge (step 1)\n- AI's info (step 2)\n- YOUR style, YOUR humor, YOUR jokes\n\n**Share your final quiz + explain:**\nWhat did AI bring you? What did YOU bring that AI couldn't do?",
+      "leconStrategique": "The 5-2-1 method prevents you from becoming AI-dependent. By thinking FIRST, you anchor your thought. By asking SPECIFIC questions, you guide AI (instead of it guiding you). By creating the final result YOURSELF, you keep your originality. This method works for EVERYTHING: presentations, projects, artistic creations.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why Think BEFORE?",
+          "type_etape": "texte_guide",
+          "instruction": "If you go to AI directly, your brain stays passive. By thinking 5 minutes BEFORE, you activate your neurons. AI completes your thought, it doesn't replace it. It's the difference between being ACTIVE and PASSIVE."
+        },
+        "etape2": {
+          "titre": "2. Specific Questions = Useful Answers",
+          "type_etape": "validation_case",
+          "instruction": "I understood: If I ask 'Tell me about dinosaurs', AI gives me generic info. If I ask 'Which dinosaur had the biggest brain relative to its body?', I get specific and surprising info!",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your 5-2-1 Quiz",
+          "type_etape": "champ_texte",
+          "instruction": "Share:\n- Your subject\n- Your 5 quiz questions (with answers)\n- What AI brought you vs what YOU created",
+          "placeholder": "My subject: ... My 5 questions: 1. ... 2. ... 3. ... 4. ... 5. ... What AI did: ... What I created: ..."
+        }
+      },
+      "mentorGoal": "Introduce a concrete methodology for collaborating with AI. The child must experience the cycle: Think → Question AI → Create. This is the basis of all effective AI collaboration.",
+      "evaluationCriteria": "1. The child thought BEFORE consulting AI (proof: list of prior knowledge). 2. Specific questions asked to AI (not 'Tell me about X'). 3. Final quiz that mixes knowledge + AI info + personal style. Bonus: The child clearly identifies their unique contribution."
+    },
+    "defi3": {
+      "titre": "Quiz: AI's Traps",
+      "question": "ChatGPT gives you an answer on a history subject. What should you do?",
+      "options": [
+        "Copy-paste directly, ChatGPT never makes mistakes",
+        "Verify the info on 2-3 sources (Wikipedia, book, educational site) before using it",
+        "Don't use ChatGPT for history, it knows nothing"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACTLY! AI can be wrong. It sometimes 'hallucinates' (= invents facts that seem true but are false). ALWAYS verify important information on multiple sources. AI is a super-assistant, but YOU remain the final verifier. You're the boss, not it!",
+      "feedbackIncorrect": "No! AI can be wrong. It was trained on billions of texts, but it doesn't UNDERSTAND what it says. It can invent dates, names, events that seem true but are false. Golden rule: ALWAYS verify important info. AI suggests, YOU validate.",
+      "leconStrategique": "Critical thinking is YOUR superpower. AI generates fast, but it doesn't verify. YOU must verify. Future leaders won't be those who use AI the most, but those who know WHEN to believe it and WHEN to question it. This skill is worth GOLD.",
+      "referenceCroisee": "M2",
+      "mentorGoal": "Develop critical thinking towards AI. The child must understand that AI can be wrong and that they're responsible for verifying information before using it.",
+      "evaluationCriteria": "Correct answer: Option 2 (verify on multiple sources). Bonus: The child gives an example of a situation where they MUST verify AI (presentations, homework, important information)."
+    },
+    "defi4": {
+      "titre": "Mission: AI = Tool, Not Crutch",
+      "scenario": "For 1 week, you'll do a test: use AI INTELLIGENTLY for a real project. You'll see the difference between 'AI-crutch' (weakens you) and 'AI-turbo' (makes you stronger)!",
+      "instruction": "**Your project for the week: Create something cool**\nChoose 1 project among:\n- 📖 Write a 3-page story\n- 🎨 Create a tutorial to learn something (origami, drawing, video game)\n- 🎭 Invent a 5-minute theater sketch\n- 🎮 Draw plans for a video game (characters, rules, levels)\n\n**Rule: Use AI as TURBO, not as CRUTCH**\n\n✅ **AI-TURBO (allowed):**\n- 'Give me 3 title ideas for my story'\n- 'What word could replace 'nice' to describe my hero?'\n- 'Explain how perspective works in drawing'\n\n❌ **AI-CRUTCH (forbidden):**\n- 'Write me the complete story'\n- 'Do all the work for me'\n- 'Give me the answer without me thinking'\n\n**After 1 week, share:**\n1. Your final project\n2. How AI helped you (be specific)\n3. What YOU created that AI couldn't do\n4. Are you proud of your project? Why?",
+      "leconStrategique": "AI-crutch makes you WEAK (you lose your skills). AI-turbo makes you STRONG (you keep your skills + you go faster/further). The difference? YOU pilot. If you feel AI is doing the work for you, STOP. If you feel it's ASSISTING you while you create, CONTINUE. This feeling is your GPS.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. AI-Crutch vs AI-Turbo",
+          "type_etape": "texte_guide",
+          "instruction": "Imagine two students:\n- Student A asks AI: 'Do my presentation'. Copy-pastes. Grade: 15/20. But learned nothing.\n- Student B thinks, creates, then asks AI: 'How to improve this sentence?'. Grade: 17/20. And developed their skills.\n\nIn 5 years, who will be stronger? Student B, obviously. AI-turbo makes you better. AI-crutch makes you dependent."
+        },
+        "etape2": {
+          "titre": "2. Your Project",
+          "type_etape": "validation_case",
+          "instruction": "I understood: I'm going to create something cool by PILOTING AI. It assists me, I don't delegate everything to it. I want to be PROUD of my project!",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Final Report",
+          "type_etape": "champ_texte",
+          "instruction": "After 1 week, share:\n- Your project (or a summary)\n- 3 specific examples where AI helped you (AI-turbo)\n- What YOU created that AI couldn't do\n- Your pride: are you proud of your project? Why?",
+          "placeholder": "My project: ... 3 AI-turbo moments: 1. ... 2. ... 3. ... My unique contribution: ... My pride: ..."
+        }
+      },
+      "mentorGoal": "Make the child experience AI collaboration on a real project. The child must feel the difference between 'using AI intelligently' (AI-turbo) and 'being replaced by AI' (AI-crutch).",
+      "evaluationCriteria": "1. Personal project created (whatever it is, as long as it's original). 2. Documented use of AI as assistant (not as replacement). 3. Clear identification of personal contribution. 4. Expressed feeling of pride. Bonus: The child expresses they learned something through collaboration with AI."
+    }
+  },
+  "m16": {
+    "defi1": {
+      "titre": "Quiz: AI-Proof Skills",
+      "question": "In 2035, AI will be 1000x more powerful than today. Which skill will be MOST VALUABLE?",
+      "options": [
+        "Know how to calculate mentally quickly",
+        "Understand people's emotions and create authentic connections",
+        "Know all the world's capitals by heart"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO! AI will ALWAYS beat humans at calculation, memory, speed. BUT it will NEVER truly understand human emotions, create authentic connections, or have real empathy. Future jobs? Those requiring HUMANITY. Coach, psychologist, leader, artist, negotiator, educator... YOUR humanity is your superpower!",
+      "feedbackIncorrect": "No! AI will always be better than you at calculating or memorizing facts. These skills are losing value. BUT AI will NEVER truly understand emotions, create authentic human connections, or have empathy. Your ability to CONNECT with humans will be worth GOLD in 2035. That's AI-proof skills!",
+      "leconStrategique": "Ask yourself: 'Could AI do what I'm doing?' If yes, this skill is losing value. Invest in skills that AI CANNOT copy: empathy, original creativity, leadership, ethics, human relationships. These skills will be worth 10x more in 10 years.",
+      "referenceCroisee": "M12",
+      "mentorGoal": "Introduce the concept of 'AI-proof' skills. The child must understand that human skills (empathy, creativity, leadership) become increasingly valuable in a world where AI handles technical tasks.",
+      "evaluationCriteria": "Correct answer: Option 2 (understand emotions and create connections). Bonus: The child lists 2-3 other AI-proof skills (original creativity, ethics, leadership, etc.)."
+    },
+    "defi2": {
+      "titre": "Mission: Your AI-Proof Portfolio",
+      "scenario": "Today, you'll create your 'AI-Proof Portfolio': a list of YOUR HUMAN superpowers that AI will NEVER be able to copy. It's your shield against professional obsolescence!",
+      "instruction": "**Step 1: Identify YOUR human superpowers**\n\nAnswer these questions:\n\n1. **Empathy**: Give an example where you understood what someone felt without them saying it.\n2. **Original creativity**: What's the most original thing you've created (drawing, story, game, invention)?\n3. **Human connection**: Who's your best friend? Why? What makes your friendship unique?\n4. **Ethical reflection**: Tell about a time when you had to choose between what was EASY and what was RIGHT.\n5. **Learning from failure**: What's the biggest mistake you've made? What did you learn?\n\n**Step 2: Your training plan**\n\nFor EACH superpower, write 1 concrete action to develop it this week:\n- Empathy: 'I'll ask mom how her day went and really listen'\n- Creativity: 'I'll invent a new game with my friends'\n- Connection: 'I'll write a letter to my friend telling them what I like about them'\n- Ethics: 'If I see someone alone at recess, I'll go talk to them'\n- Learning: 'I'll retry something I failed at'\n\n**Step 3: Share your portfolio + your plan**",
+      "leconStrategique": "Your 'AI-Proof Portfolio' is your professional life insurance. In a world where AI does technical tasks, humans who master HUMANITY will be most sought after. Every day you develop these skills, you increase your value. It's the most profitable investment you can make.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why 'AI-Proof'?",
+          "type_etape": "texte_guide",
+          "instruction": "AI-Proof = AI-resistant. These are skills that AI will NEVER be able to copy. Even in 2050, with AI 1 million times more powerful, it won't be able to feel real emotions, have true original creativity, or understand what friendship is. YOU can. That's your competitive advantage."
+        },
+        "etape2": {
+          "titre": "2. Your 5 Superpowers",
+          "type_etape": "validation_case",
+          "instruction": "I understood: I'm going to identify MY human superpowers by giving concrete examples from my life. Then, I'll create a plan to develop them even more!",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Portfolio + Plan",
+          "type_etape": "champ_texte",
+          "instruction": "Share:\n- Your 5 superpowers with concrete examples\n- Your training plan for the week (1 action per superpower)",
+          "placeholder": "1. EMPATHY - Example: ... Action this week: ...\n2. CREATIVITY - Example: ... Action: ...\n3. CONNECTION - Example: ... Action: ...\n4. ETHICS - Example: ... Action: ...\n5. LEARNING - Example: ... Action: ..."
+        }
+      },
+      "mentorGoal": "Make the child aware of their unique human skills and create a concrete plan to develop them. The goal is to build an 'AI-proof identity': I know what I do better than AI.",
+      "evaluationCriteria": "1. Concrete examples for the 5 superpowers. 2. Training plan with at least 3 realistic actions. 3. Awareness that these skills are precious and unique. Bonus: The child expresses pride in their human skills."
+    },
+    "defi3": {
+      "titre": "Quiz: The 2035 Test",
+      "question": "Imagine 2035. Two candidates apply for the same job. Candidate A: AI expert, zero human skills. Candidate B: good at AI + excellent at human relations. Who gets hired?",
+      "options": [
+        "Candidate A (the technical expert)",
+        "Candidate B (technical + human)",
+        "Neither, AI took their job"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACTLY! In 2035, EVERYONE will know how to use AI (it will be as common as knowing how to use Google in 2025). The difference? HUMAN skills. Candidate B will be chosen because they bring what AI can't: leadership, empathy, creativity, ethics. The winning formula = Technical mastery + Human superpowers. You're building this formula!",
+      "feedbackIncorrect": "No! In 2035, knowing how to use AI will be COMMON (like knowing how to use Google today). What will make the difference? HUMAN skills. Candidate B wins because they combine technique + humanity. AI won't take all jobs, it will take jobs where humans bring NOTHING human. Your goal: be irreplaceable by your humanity!",
+      "leconStrategique": "The success formula in 2035: Technical skills (including AI) + Human superpowers (empathy, creativity, leadership). If you only have technique, AI replaces you. If you have technique + humanity, you're IRREPLACEABLE. Apex trains you in both. That's your advantage.",
+      "referenceCroisee": "M1",
+      "mentorGoal": "Consolidate the vision: the future belongs to those who master technique AND humanity. The child must understand they're building this double competence.",
+      "evaluationCriteria": "Correct answer: Option 2 (candidate B, technical + human). Bonus: The child explains why human skills will make the difference in 2035."
+    },
+    "defi4": {
+      "titre": "Mission: My Anti-AI Manifesto",
+      "scenario": "Final mission: write YOUR 'Anti-AI Manifesto'. It's NOT against AI (you'll use it!), it's a manifesto to affirm what YOU bring that AI will NEVER be able to bring. It's your declaration of independence!",
+      "instruction": "**Write your Anti-AI Manifesto (10-15 lines)**\n\nMust include:\n\n1. **Your name**: 'I am [your name], and here's what AI will never be in my place...'\n\n2. **3 things YOU do better than AI**:\n   - Example: 'I can make my friend happy just by being there'\n   - Example: 'I can invent a joke that NOBODY has ever made'\n   - Example: 'I can choose to do what's RIGHT even if it's hard'\n\n3. **How you'll use AI WITHOUT losing your humanity**:\n   - Example: 'I'll use AI to go faster, but I'll always think ALONE first'\n   - Example: 'AI will be my assistant, never my replacement'\n\n4. **Your promise for 2035**:\n   - Example: 'In 2035, I'll be a leader who understands AI AND humans'\n   - Example: 'I'll be someone AI can't replace'\n\n**Your manifesto must sound like a (positive) DECLARATION OF WAR against obsolescence! Be PROUD of your humanity!**",
+      "leconStrategique": "Writing your manifesto anchors your vision of the future. It's a compass. Every time you feel AI is taking too much space, reread your manifesto. Every time you have a choice (copy-paste AI vs create yourself), think of your manifesto. This document is your identity for the next 10 years. Take it seriously.",
+      "referenceCroisee": "M11",
+      "briefing": {
+        "etape1": {
+          "titre": "1. What's a Manifesto?",
+          "type_etape": "texte_guide",
+          "instruction": "A manifesto is a public declaration of YOUR VALUES and YOUR INTENTIONS. Famous examples:\n- American Declaration of Independence: 'All men are created free and equal'\n- Martin Luther King's Manifesto: 'I have a dream'\n\nYour Anti-AI manifesto is YOUR 'I have a dream' for the future. Be courageous. Be proud. Be HUMAN."
+        },
+        "etape2": {
+          "titre": "2. Your Manifesto",
+          "type_etape": "champ_texte",
+          "instruction": "Write your Anti-AI Manifesto (10-15 lines). Include:\n- Your name\n- 3 things YOU do better than AI\n- How you'll use AI without losing your humanity\n- Your promise for 2035\n\nMake it sound POWERFUL!",
+          "placeholder": "I am [your name], and here's what AI will never be in my place...\n\nWhat I do better than AI:\n1. ...\n2. ...\n3. ...\n\nHow I'll use AI:\n...\n\nMy promise for 2035:\n..."
+        },
+        "etape3": {
+          "titre": "3. Share and Pride",
+          "type_etape": "validation_case",
+          "instruction": "I understand: This manifesto isn't an exercise, it's MY declaration of independence. It's what will make me irreplaceable in an AI world. I'll keep it and reread it regularly.",
+          "placeholder": null
+        }
+      },
+      "mentorGoal": "Create a powerful personal document that anchors the child's 'AI-proof' identity. The goal is for them to leave this module with a clear awareness of their human superpowers and a vision of how to navigate the future.",
+      "evaluationCriteria": "1. Manifesto written with the 4 mandatory elements (name, 3 human advantages, AI use, 2035 promise). 2. Affirming and proud tone (not hesitant). 3. Concrete and personal examples. Bonus: The manifesto is inspiring and could be shared with other children."
+    }
+  },
+  "m17": {
+    "defi1": {
+      "titre": "Quiz: The 9 Dots Problem",
+      "question": "Here are 9 dots arranged in a square (3x3). Can you connect them ALL with only 4 straight lines, WITHOUT lifting the pencil? Most people say 'impossible'. Why?",
+      "options": [
+        "Because it's mathematically impossible",
+        "Because we imagine an invisible limit (the square) that doesn't exist",
+        "Because you need to be a math genius"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO! You understood the trap! The solution exists, but it requires getting OUT of the imaginary square. Most people self-limit by imagining a rule that doesn't exist. That's thinking 'outside the box': seeing that limits are in your HEAD, not in reality. Innovators like Elon Musk do this all the time: they see possibilities others don't because they refuse imaginary limits.",
+      "feedbackIncorrect": "No! The solution EXISTS, but 90% of people don't find it. Why? Because they imagine an invisible rule: 'I must stay inside the square of 9 dots'. But this rule DOESN'T EXIST in the instructions! The solution requires going outside the square. That's innovation: refusing the limits everyone imposes on themselves.",
+      "leconStrategique": "The greatest innovations come from people who refused invisible limits. Airbnb: 'You can't sleep at strangers' homes' → FALSE. Uber: 'You can't get in a stranger's car' → FALSE. SpaceX: 'Rockets can't be reusable' → FALSE. These limits were in HEADS, not in reality. Your job: identify imaginary limits and EXPLODE them.",
+      "referenceCroisee": "M7",
+      "mentorGoal": "Introduce the concept of 'self-imposed limits'. The child must understand that most 'impossibles' are beliefs, not facts. This is the basis of innovative thinking.",
+      "evaluationCriteria": "Correct answer: Option 2 (invisible imagined limit). Bonus: The child gives an example of an 'invisible rule' they impose on themselves in their life (sports, school, creativity)."
+    },
+    "defi2": {
+      "titre": "Mission: The 10 Impossible Solutions",
+      "scenario": "Today, you'll train your brain to find solutions NOBODY would have imagined. The goal: solve a simple problem in 10 DIFFERENT ways, including at least 5 'absurd' ones. This is how we find real innovations!",
+      "instruction": "**Your problem: How to get to school?**\n\n**Step 1: The 3 NORMAL solutions (everyone knows them)**\nExample:\n1. Walking\n2. Car with parents\n3. School bus\n\n**Step 2: The 4 ORIGINAL solutions (but realistic)**\nExample:\n4. Electric bike\n5. Scooter with a friend\n6. Rollerblades\n7. Carpool with 3 neighborhood families\n\n**Step 3: The 3 ABSURD solutions (but creative!)**\nExample:\n8. With a jetpack (like Iron Man)\n9. Through a secret tunnel under the city\n10. Quantum teleportation\n\n**After finding your 10 solutions, answer:**\n- Which 'absurd' solution could become real in 20 years?\n- Which 'original' solution could you test next week?\n- Why do most people only think of the first 3 solutions?",
+      "leconStrategique": "Innovations DON'T come from people looking for the 'right' answer. They come from people looking for ALL possible answers, even the 'crazy' ones. Example: Wright brothers (airplane) → Everyone said 'impossible'. Jeff Bezos (Amazon) → Everyone said 'people will never buy online'. By listing 10 solutions, you force your brain to leave beaten paths. Solution #8 or #10 often contains the revolutionary idea.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why 10 Solutions?",
+          "type_etape": "texte_guide",
+          "instruction": "The first 3 solutions are EASY (everyone finds them). Solutions 4-7 require some thinking. Solutions 8-10 require creative audacity. THAT'S where innovation hides. If you stop at 3, you think like everyone else."
+        },
+        "etape2": {
+          "titre": "2. Today's 'Absurd' = Tomorrow's Realities",
+          "type_etape": "validation_case",
+          "instruction": "I understood: In 1900, 'flying in the air' was absurd. In 1990, 'having all the world's knowledge in your pocket' was absurd. My 'crazy' ideas today could be normal in 2045!",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your 10 Solutions",
+          "type_etape": "champ_texte",
+          "instruction": "List your 10 ways to get to school:\n- 3 normal\n- 4 original\n- 3 absurd\n\nThen answer the 3 reflection questions.",
+          "placeholder": "NORMAL: 1. ... 2. ... 3. ...\nORIGINAL: 4. ... 5. ... 6. ... 7. ...\nABSURD: 8. ... 9. ... 10. ...\n\nReflection: ..."
+        }
+      },
+      "mentorGoal": "Train divergent thinking: seek the MAXIMUM solutions, not the 'right' solution. The child must understand that innovation comes from creative exploration, not conventional logic.",
+      "evaluationCriteria": "1. 10 solutions listed (any answer is valid). 2. At least 2 truly original/absurd solutions. 3. Reflection on innovation (why most stop at the first 3). Bonus: The child identifies an 'absurd' idea that could become real."
+    },
+    "defi3": {
+      "titre": "Quiz: The Innovation That Changed the World",
+      "question": "In 2007, Steve Jobs presents the iPhone. EVERYONE mocks: 'Who would want a phone without a physical keyboard?' What allowed the iPhone to succeed?",
+      "options": [
+        "Steve Jobs was right, others were wrong, it's just luck",
+        "Steve Jobs saw a possibility nobody saw: a TOUCH screen that replaces everything",
+        "Apple forced people to buy the iPhone with advertising"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACTLY! Steve Jobs didn't have 'luck'. He SAW something nobody saw: a touch screen could REPLACE buttons. Everyone was limited by the belief 'a phone MUST have a keyboard'. Jobs exploded that limit. Result: 2 billion iPhones sold, the world transformed. That's thinking differently: seeing what others don't see because they're prisoners of their beliefs.",
+      "feedbackIncorrect": "No! The iPhone is NOT the result of luck or advertising. It's the result of revolutionary thinking: 'What if we removed ALL buttons?' In 2007, this idea seemed crazy. BlackBerry (the leader at the time) said 'Impossible, people want physical keyboards'. They were wrong. Jobs saw the future, they were stuck in the present.",
+      "leconStrategique": "The greatest innovations seem OBVIOUS in retrospect, but crazy at the time of their creation. Netflix (streaming) → 'Nobody will watch movies online'. Tesla (electric car) → 'Electric cars will never work'. Airbnb → 'Sleep at strangers' homes? Never!'. All were right against EVERYONE. That's the price of innovation: being alone in seeing something for a while.",
+      "referenceCroisee": "M5",
+      "mentorGoal": "Show that revolutionary innovations are first rejected by the majority. The child must understand that 'being right alone against everyone' is sometimes the sign of true innovation.",
+      "evaluationCriteria": "Correct answer: Option 2 (Steve Jobs saw an invisible possibility). Bonus: The child gives an example of a recent innovation that was rejected at first."
+    },
+    "defi4": {
+      "titre": "Mission: Your Impossible Innovation",
+      "scenario": "Final mission: you'll invent an 'impossible' solution to a REAL problem. Then, you'll defend your idea as if you were Steve Jobs presenting the iPhone. Get ready, you'll be told it's impossible. It's the ultimate test of innovative thinking!",
+      "instruction": "**Step 1: Choose a REAL problem**\nExamples:\n- Homework is boring\n- Children don't move enough (health)\n- Too much plastic waste\n- People spend too much time on screens\n- School doesn't prepare for the future\n\n**Step 2: Invent an 'IMPOSSIBLE' solution**\nRules:\n- It must seem crazy/unrealistic\n- But it must solve the problem\n- Ignore 'normal' constraints (money, technology, laws)\n\nExample:\nProblem: Homework is boring\nIMPOSSIBLE Solution: A video game that adapts exercises to YOUR passions. You like Minecraft? Math becomes construction challenges. You like football? Fractions become team strategies.\n\n**Step 3: Defend your idea**\nAnswer these objections:\n1. 'It's technically impossible' → Why it might be in 10 years?\n2. 'It costs too much' → Why it could become profitable?\n3. 'Nobody will want it' → Why people would LOVE it actually?\n\n**Step 4: Present your pitch**\nWrite your pitch like Steve Jobs: 'Today, I'm going to solve [problem]. Here's [your solution]. Here's why it will change the world: [3 reasons].'",
+      "leconStrategique": "All great innovations were defended by someone who said 'Everyone thinks it's impossible, but HERE'S why it will work'. Innovators aren't smarter than others. They're just more AUDACIOUS in their imagination and more TENACIOUS in their defense. What you invent today at 8-9 years could become your startup at 20. Keep this idea. Seriously.",
+      "referenceCroisee": "M11",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why 'Impossible'?",
+          "type_etape": "texte_guide",
+          "instruction": "If your solution is 'easy' and 'obvious', it already exists or someone else will do it before you. Real innovations are those that seem impossible today. You're not limited by current technology. You're imagining the FUTURE."
+        },
+        "etape2": {
+          "titre": "2. Ignore Constraints",
+          "type_etape": "validation_case",
+          "instruction": "I understood: For this mission, I should NOT ask 'is it realistic today?' I should ask 'would it really solve the problem if we could do it?'",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Impossible Innovation",
+          "type_etape": "champ_texte",
+          "instruction": "Present:\n- The problem you want to solve\n- Your 'impossible' solution\n- Your answers to the 3 objections\n- Your final pitch (Steve Jobs style)",
+          "placeholder": "PROBLEM: ...\n\nIMPOSSIBLE SOLUTION: ...\n\nAnswers to objections:\n1. 'It's impossible' → ...\n2. 'Too expensive' → ...\n3. 'Nobody will want it' → ...\n\nMY PITCH: Today, I'm going to solve... Here's... Here's why it will change the world..."
+        }
+      },
+      "mentorGoal": "Experience the complete innovation process: identify a problem, imagine an audacious solution, defend against objections. The child must feel the power of 'out-of-the-box' thinking.",
+      "evaluationCriteria": "1. Real problem identified. 2. Original/audacious solution (not obvious). 3. Argued defense against objections. 4. Structured pitch. Bonus: The idea is audacious enough to seem 'crazy' but thoughtful enough to be defendable."
+    }
+  },
+  "m18": {
+    "defi1": {
+      "titre": "Quiz: Asch's Experiment (Group Pressure)",
+      "question": "Imagine: You're in a class. The teacher shows 2 lines. Line A is CLEARLY longer than line B. But 9 students (accomplices) say 'Line B is longer'. Your turn. What do you do?",
+      "options": [
+        "I say 'Line A is longer' even if everyone says the opposite (I trust my eyes)",
+        "I say 'Line B is longer' to not be the only weird one",
+        "I say nothing to avoid conflict"
+      ],
+      "bonneReponseIndex": 0,
+      "feedbackCorrect": "BRAVO! You have the courage to tell the truth even when EVERYONE says the opposite. That's RARE. In Asch's real experiment (1951), 75% of people lied at least once to follow the group! They said the short line was long just to 'do like others'. YOU have the mental strength to resist group pressure. That's a leader's superpower.",
+      "feedbackIncorrect": "That's human! In Asch's real experiment (1951), 75% of people did like you: they followed the group EVEN KNOWING it was false. Why? Social pressure. We'd rather be WRONG with everyone than RIGHT alone. But leaders, innovators, heroes? They learned to say 'No, you're wrong' when necessary. It's a skill you can develop.",
+      "leconStrategique": "AI ALWAYS follows the majority (it learns from dominant patterns). YOU can choose not to follow. The world's greatest changes came from people who said 'No' when everyone said 'Yes'. Rosa Parks (civil rights), Galileo (Earth rotates), Malala (girls' education). Being right ALONE is uncomfortable. But that's where change is.",
+      "referenceCroisee": "M10",
+      "mentorGoal": "Introduce the concept of social conformity and develop the courage to think independently. The child must understand that following the group isn't always the right decision.",
+      "evaluationCriteria": "Correct answer: Option 1 (tell the truth despite the group). Bonus: The child gives a personal example where they resisted or didn't resist group pressure."
+    },
+    "defi2": {
+      "titre": "Mission: The 3 Stupid Rules",
+      "scenario": "Around you, there are plenty of 'rules' everyone follows without thinking. Some are useful. Others are STUPID, but nobody dares question them. Today, you'll become a 'stupid rules detective'!",
+      "instruction": "**Your mission: Identify 3 stupid rules everyone follows**\n\n**Examples of rules to analyze:**\n- At school: 'You must raise your hand to speak' (Why? What if we had another method?)\n- At home: 'We eat at the table' (Why not a picnic in the living room sometimes?)\n- In society: 'Boys in blue, girls in pink' (Who decided that?)\n- At school: 'Everyone must learn the same thing at the same time' (Why?)\n- Everywhere: 'You must be serious to be respected' (What about humor?)\n\n**For EACH rule you identify, answer:**\n1. What's the rule?\n2. Why does everyone follow it without thinking?\n3. Why is this rule stupid (or at least debatable)?\n4. What would be a better rule?\n\n**Attention: This is NOT 'disobey for the sake of disobedience'. It's THINKING before obeying.**",
+      "leconStrategique": "Many 'rules' are just habits. They existed at a time for a reason, but that reason disappeared. Yet, nobody dares question them. Innovators DARE. Example: Before, they said 'Women can't vote' → Stupid, but accepted for centuries. 'Children must work in factories' → Accepted, then banned. Your job: identify today's 'obviousnesses' that will be tomorrow's absurdities.",
+      "referenceCroisee": "M2",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Rule vs Habit",
+          "type_etape": "texte_guide",
+          "instruction": "A REAL rule has a reason (e.g., 'Stop at red light' → safety). A HABIT is followed 'because that's how it is' (e.g., 'Don't wear a hat in class' → why?). Habits deserve to be questioned."
+        },
+        "etape2": {
+          "titre": "2. Questioning ≠ Disobeying",
+          "type_etape": "validation_case",
+          "instruction": "I understood: Questioning a stupid rule is INTELLIGENT. Disobeying just to annoy is immature. I'll look for rules that no longer make sense, not disobey blindly.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your 3 Stupid Rules",
+          "type_etape": "champ_texte",
+          "instruction": "For each of the 3 rules:\n1. What's the rule?\n2. Why is it followed without thinking?\n3. Why is it stupid/debatable?\n4. Your better alternative?",
+          "placeholder": "RULE 1: ...\nWhy followed: ...\nWhy stupid: ...\nBetter alternative: ...\n\nRULE 2: ...\n(etc.)"
+        }
+      },
+      "mentorGoal": "Develop critical thinking towards social norms. The child must learn to question 'obviousnesses' rather than follow them blindly. This is the basis of intelligent nonconformity.",
+      "evaluationCriteria": "1. 3 rules identified (any rule is valid as long as it's questioned). 2. Critical analysis of why it's followed and why it might be stupid. 3. Thoughtful alternative proposal. Bonus: The child identifies a really relevant rule and proposes an innovative alternative."
+    },
+    "defi3": {
+      "titre": "Quiz: When Disobedience Changes the World",
+      "question": "In 1955, Rosa Parks (USA) refuses to give up her bus seat to a White person. It was ILLEGAL. She risked prison. Why is her act considered heroic?",
+      "options": [
+        "Because she disobeyed, and disobeying is always good",
+        "Because she disobeyed an UNJUST LAW, in the name of a higher value (equality)",
+        "Because she became famous"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACTLY! Rosa Parks didn't disobey 'for fun'. She disobeyed an UNJUST LAW (racial segregation) in the name of a HIGHER VALUE (equality of all humans). That's INTELLIGENT disobedience: knowing when a rule is BAD and having the courage to say 'No'. Result: Her act launched the civil rights movement. One person, one act of disobedience, one global change.",
+      "feedbackIncorrect": "No! Rosa Parks is NOT a hero 'because she disobeyed'. She's a hero because she disobeyed an UNJUST LAW. The difference is HUGE. Disobeying a stupid rule to defend a just value = heroism. Disobeying just to annoy = immaturity. Rosa Parks knew WHY she was disobeying. That's intelligent disobedience.",
+      "leconStrategique": "History's greatest heroes DISOBEYED: Gandhi (civil disobedience against British occupation), Mandela (fight against apartheid), Malala (defend girls' education). They all said 'This rule is unjust, I refuse'. But they didn't disobey 'to disobey'. They disobeyed to CHANGE an injustice. That's the difference between stupid rebellion and intelligent revolution.",
+      "referenceCroisee": "M10",
+      "mentorGoal": "Introduce the concept of civil and ethical disobedience. The child must understand that disobeying can be a moral act when defending a higher value against an unjust rule.",
+      "evaluationCriteria": "Correct answer: Option 2 (disobey an unjust law for a higher value). Bonus: The child gives another historical example of heroic disobedience (Gandhi, Mandela, Malala, etc.)."
+    },
+    "defi4": {
+      "titre": "Mission: Your Intelligent Disobedience Manifesto",
+      "scenario": "Final mission: write YOUR personal code of 'Intelligent Disobedience'. When will you follow? When will you disobey? What are YOUR red lines? It's your moral compass for the next 10 years.",
+      "instruction": "**Write your Intelligent Disobedience Manifesto**\n\n**Part 1: My Non-Negotiable Values (3 values)**\nExamples:\n- Honesty: I'll never lie, even if everyone does\n- Equality: I'll never let someone be excluded or mocked\n- Curiosity: I'll always ask questions, even if I'm told 'Shut up'\n\n**Part 2: When I'll OBEY (even if I don't like it)**\nExamples:\n- When the rule protects someone (safety, respect, health)\n- When disobeying wouldn't change anything important\n- When I don't yet understand why the rule exists\n\n**Part 3: When I'll DISOBEY (with courage)**\nExamples:\n- When a rule is unjust towards someone\n- When everyone follows a stupid idea and I can propose better\n- When I'm asked to do something that violates my values (Part 1)\n\n**Part 4: How I'll Disobey (intelligently, not stupidly)**\nExamples:\n- By explaining WHY I'm disobeying\n- By proposing a BETTER solution\n- By accepting the consequences of my choice\n- Without violence, with respect\n\n**Part 5: My Promise**\nExample: 'I promise to think BEFORE obeying. I promise to have the courage to say No when it's right. I promise to never follow the crowd blindly.'",
+      "leconStrategique": "This manifesto is your moral GPS. In 10 years, you'll face difficult choices: follow the group or follow your values? Do like everyone or dare to be different? This document will remind you who you are. Leaders have principles. Sheep follow. YOU are defining YOUR principles. Keep this document. Reread it when you hesitate.",
+      "referenceCroisee": "M10",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why a Manifesto?",
+          "type_etape": "texte_guide",
+          "instruction": "A manifesto is your declaration of WHO YOU ARE. When you face a difficult decision ('Everyone cheats, do I cheat too?'), you'll reread this document and know what to do. It's your armor against group pressure."
+        },
+        "etape2": {
+          "titre": "2. Intelligent, Not Rebellious",
+          "type_etape": "validation_case",
+          "instruction": "I understood: This manifesto is NOT 'How to be a cool rebel'. It's 'How to think for myself and have the courage of my convictions'. Intelligent disobedience isn't a game, it's a responsibility.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Complete Manifesto",
+          "type_etape": "champ_texte",
+          "instruction": "Write your manifesto with 5 parts:\n1. My 3 non-negotiable values\n2. When I obey\n3. When I disobey\n4. How I disobey (method)\n5. My promise",
+          "placeholder": "MY VALUES:\n1. ...\n2. ...\n3. ...\n\nI OBEY WHEN: ...\n\nI DISOBEY WHEN: ...\n\nHOW I DISOBEY: ...\n\nMY PROMISE: ..."
+        }
+      },
+      "mentorGoal": "Create a personal document that anchors the child's values and principles. The goal is for them to have a clear moral compass to navigate future social pressures and develop their independent thinking.",
+      "evaluationCriteria": "1. Complete manifesto with 5 parts. 2. Clear and personal values (not copied). 3. Clear distinction between legitimate obedience and justified disobedience. 4. Respectful and thoughtful disobedience method. Bonus: The manifesto is personal and powerful enough to serve as a true moral compass."
+    }
+  },
+  "m19": {
+    "defi1": {
+      "titre": "Quiz: Who Controls Who?",
+      "question": "You say 'I'll just watch one YouTube video', and 2 hours later you're still scrolling. Why?",
+      "options": [
+        "Because I have no willpower",
+        "Because YouTube is DESIGNED to keep you as long as possible (addictive algorithms)",
+        "Because the videos are too interesting"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACTLY! It's NOT your fault. YouTube (and TikTok, Instagram, etc.) employ HUNDREDS of engineers paid to keep you captive as long as possible. How? Automatic autoplay, infinite recommendations, notifications, endless scroll. It's DESIGNED like a casino: you can't win. The first step to regaining control? UNDERSTAND you're being manipulated.",
+      "feedbackIncorrect": "No! It's NOT a willpower problem. YouTube employs HUNDREDS of engineers to TRAP you. Their job? Maximize 'screen time'. They use algorithms that study what captures you and give you EXACTLY that, in an infinite loop. You're not fighting your willpower, you're fighting a machine designed to manipulate you. Understanding this gives you POWER.",
+      "leconStrategique": "The biggest tech companies (Google, Meta, TikTok) make BILLIONS selling your attention to advertisers. The longer you stay, the more they earn. They've invested MILLIONS in research to make you addicted. Result: average screen time explodes every year. Knowing this allows you to take back control. You're not 'weak', you're facing a war machine. But you can win.",
+      "referenceCroisee": "M14",
+      "mentorGoal": "Make the child understand that modern dependencies aren't a willpower problem but a MANIPULATIVE DESIGN problem. The child must understand they're facing systems designed to trap them.",
+      "evaluationCriteria": "Correct answer: Option 2 (YouTube designed to be addictive). Bonus: The child gives a personal example where they lost control of time on a screen."
+    },
+    "defi2": {
+      "titre": "Mission: The 24-Hour Test",
+      "scenario": "You'll do the most difficult experience of your life: live 24 hours WITHOUT leisure screens (YouTube, TikTok, video games, Netflix). Warning: it's MUCH harder than you think. It's the ultimate freedom test.",
+      "instruction": "**The rules of the 24h no-screens challenge:**\n\n✅ **ALLOWED:**\n- Screens for school/homework (mandatory)\n- Phone for calls/important messages\n- Reading books, playing outside, drawing, building, creating\n\n❌ **FORBIDDEN:**\n- YouTube, TikTok, Instagram, Snapchat\n- Video games (console, phone, tablet)\n- Netflix, series, movies\n- Scrolling on social media\n\n**During these 24h, note on paper:**\n1. How many times you wanted to take your phone/tablet (count!)\n2. When it was hardest (after school? before sleeping?)\n3. What you did instead?\n4. How you felt? (boredom, stress, freedom, creativity?)\n\n**After 24h, answer:**\n- Was it harder or easier than expected?\n- What did you discover about yourself?\n- Are you dependent or free?",
+      "leconStrategique": "If you CAN'T spend 24h without leisure screens, you have a dependency problem. It's not serious, most people are in the same case. BUT now you KNOW. And knowing is the first step towards freedom. Free people CHOOSE when they use screens. Dependent people SUFFER. This test shows you where you are.",
+      "referenceCroisee": "M18",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why 24h?",
+          "type_etape": "texte_guide",
+          "instruction": "24h is long enough to feel withdrawal if you're dependent, but short enough to be doable. If you can't last 24h, you have a dependency. Period. This test is brutal but honest."
+        },
+        "etape2": {
+          "titre": "2. Prepare Yourself",
+          "type_etape": "validation_case",
+          "instruction": "I understood: It will be difficult. I'll have urges. That's NORMAL. The important thing isn't to never have urges, it's to RESIST the urge. I'll note everything I feel.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Post-Mission Report",
+          "type_etape": "champ_texte",
+          "instruction": "After 24h, write:\n- Number of times you wanted to give in\n- Hardest moments\n- What you did instead\n- How you felt\n- Your conclusion: dependent or free?",
+          "placeholder": "Urges to give in: ... times\nHard moments: ...\nReplacement activities: ...\nMy sensations: ...\nMy conclusion: ..."
+        }
+      },
+      "mentorGoal": "Make the child live the concrete experience of dependency. The child must physically feel what it means to be controlled by screens. It's a powerful awakening.",
+      "evaluationCriteria": "1. The child attempted the challenge (success or failure, doesn't matter). 2. Honest report on difficulties encountered. 3. Awareness of their dependency level. Bonus: The child expresses a desire to change their habits."
+    },
+    "defi3": {
+      "titre": "Quiz: The Instant Reward Trap",
+      "question": "You finish your homework. Your brain says 'Reward! YouTube 5 minutes!'. 2h later, you're still there. Why is it a trap?",
+      "options": [
+        "Because 5 minutes of YouTube deserve 5 minutes, not 2h",
+        "Because your brain becomes ADDICTED to instant reward and can't wait anymore",
+        "Because YouTube is too good"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO! It's the DOPAMINE trap. Each like, each new video, each scroll gives your brain a mini-dose of dopamine (pleasure hormone). Your brain LOVES it. Problem: the more you give it instant rewards, the more it wants. Result: you can't do difficult things that require effort anymore (sports, homework, reading). Your brain becomes a capricious child who wants pleasure NOW. It's dangerous.",
+      "feedbackIncorrect": "No! The real problem isn't YouTube itself. It's that your brain gets USED to INSTANT rewards. Each video = mini-pleasure. Your brain wants MORE. And MORE. Result: when you have to do something difficult (learn, create, think), your brain says 'No! Give me easy pleasure!'. You lose your ability to make efforts. That's the real danger.",
+      "leconStrategique": "Leaders, creators, champions have one thing in common: they know how to DELAY gratification. They make the effort NOW, the reward LATER. Losers do the opposite: pleasure now, pain later. Your brain must relearn to wait. How? By reducing instant rewards (screens, sugar, games). It's hard, but it makes you 10x stronger.",
+      "referenceCroisee": "M6",
+      "mentorGoal": "Explain the neurological mechanism of dependency (dopamine) in an accessible way. The child must understand that each instant reward weakens their willpower.",
+      "evaluationCriteria": "Correct answer: Option 2 (brain addicted to instant rewards). Bonus: The child identifies other sources of instant rewards in their life (games, candy, notifications)."
+    },
+    "defi4": {
+      "titre": "Mission: Your Freedom Code",
+      "scenario": "Final mission: create YOUR personal 'Freedom Code'. These are YOUR rules to NOT be controlled by screens, algorithms, or dependencies. It's your shield for the next 10 years.",
+      "instruction": "**Write your Freedom Code (5 parts)**\n\n**Part 1: My Non-Negotiable Limits**\nExamples:\n- No screens 1h before sleeping\n- Maximum 30 minutes of YouTube per day\n- No phone during meals\n- No video games on weekdays\n\n**Part 2: My Warning Signs (How I know I'm losing control)**\nExamples:\n- When I say 'just 5 minutes' and can't stop\n- When I think about screens while doing something else\n- When I feel irritated if asked to stop\n- When I hide my screen time from my parents\n\n**Part 3: My Alternatives (What to do instead of taking the screen)**\nExamples:\n- Read a book\n- Play outside\n- Build something\n- Call a friend to play\n- Draw, create, invent\n\n**Part 4: My Check System (How I verify I'm free)**\nExample:\n- Every week, I test: 'Can I spend 24h without leisure screens?'\n- If yes → I'm free\n- If no → I take back control\n\n**Part 5: My Promise**\nExample: 'I promise to never let an algorithm control my life. I promise to stay FREE. Screens are my TOOLS, not my MASTERS.'",
+      "leconStrategique": "This code is your armor. In 10 years, screens will be 100x more addictive than today (virtual reality, hyper-personalized AI, etc.). Those without rules will be SLAVES. Those with a Freedom Code will remain MASTERS of their lives. This document is as important as your anti-AI manifesto (M16). Keep it. Reread it. Adjust it. It's your GPS to stay free.",
+      "referenceCroisee": "M16",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why a Code?",
+          "type_etape": "texte_guide",
+          "instruction": "Without clear rules, you'll LOSE against algorithms. They're too powerful. They have too much data on you. But if you have a personal Code, you KNOW when you're slipping. It's your early warning system."
+        },
+        "etape2": {
+          "titre": "2. Be Honest, Not Perfect",
+          "type_etape": "validation_case",
+          "instruction": "I understood: This Code isn't to be perfect 100% of the time. It's to KNOW when I'm slipping and get back on track. The important thing is to be CONSCIOUS, not perfect.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Complete Code",
+          "type_etape": "champ_texte",
+          "instruction": "Write your Freedom Code with 5 parts:\n1. My non-negotiable limits\n2. My warning signs\n3. My alternatives\n4. My check system\n5. My promise",
+          "placeholder": "MY LIMITS:\n1. ...\n2. ...\n3. ...\n\nWARNING SIGNS: ...\n\nALTERNATIVES: ...\n\nCHECK SYSTEM: ...\n\nMY PROMISE: ..."
+        }
+      },
+      "mentorGoal": "Create an operational personal document the child can use to resist dependencies. The goal is for them to leave this module with concrete rules and awareness of their freedom.",
+      "evaluationCriteria": "1. Complete code with 5 parts. 2. Realistic limits (not too strict, not too lax). 3. Personal and honest warning signs. 4. Concrete alternatives. 5. Affirmative promise. Bonus: The code is solid enough to be applied immediately."
     }
   },
   "badges": {

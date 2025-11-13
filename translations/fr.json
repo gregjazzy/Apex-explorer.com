@@ -38,7 +38,45 @@
     "m12": "L'Art de Connecter",
     "m12_desc": "Maîtriser les 5 super-pouvoirs de la communication et devenir quelqu'un avec qui les autres VEULENT être.",
     "m13": "Money Smart",
-    "m13_desc": "Apprendre à gérer son argent comme un pro : budget, économies, investissement en soi."
+    "m13_desc": "Apprendre à gérer son argent comme un pro : budget, économies, investissement en soi.",
+    "m14": "Comprendre l'IA",
+    "m14_desc": "Découvrir ce que l'Intelligence Artificielle peut et ne peut pas faire dans ta vie.",
+    "m15": "Collaborer avec l'IA",
+    "m15_desc": "Apprendre à utiliser l'IA comme un assistant surpuissant (pas comme une béquille).",
+    "m16": "Dépasser l'IA",
+    "m16_desc": "Développer les compétences humaines que l'IA ne pourra jamais avoir.",
+    "m17": "Penser Autrement",
+    "m17_desc": "Développer la pensée créative et trouver des solutions que personne n'a jamais vues.",
+    "m18": "L'Art de Désobéir",
+    "m18_desc": "Apprendre à penser par soi-même et à ne pas suivre la foule aveuglément.",
+    "m19": "Maîtriser les Dépendances",
+    "m19_desc": "Comprendre comment les écrans et algorithmes te manipulent et reprendre le contrôle."
+  },
+  "blocks": {
+    "discovery": {
+      "title": "Module Découverte",
+      "description": "Commence ton aventure avec ce module gratuit"
+    },
+    "ai_future": {
+      "title": "IA & Futur",
+      "description": "Prépare-toi pour l'ère de l'Intelligence Artificielle"
+    },
+    "leadership": {
+      "title": "Leadership & Influence",
+      "description": "Développe ton pouvoir d'influence et de leadership"
+    },
+    "strategy": {
+      "title": "Stratégie & Analyse",
+      "description": "Affûte ton esprit stratégique et analytique"
+    },
+    "execution": {
+      "title": "Exécution & Gestion",
+      "description": "Maîtrise l'art de passer à l'action efficacement"
+    },
+    "excellence": {
+      "title": "Excellence & Maîtrise",
+      "description": "Atteins le sommet de tes capacités"
+    }
   },
   "defi": {
     "title": "Défi",
@@ -1135,6 +1173,546 @@
       "referenceCroisee": "M6",
       "mentorGoal": "Introduire le concept d'ACTIF vs PASSIF. L'enfant doit comprendre qu'investir en soi (compétences, éducation) rapporte infiniment plus que dépenser pour le plaisir immédiat.",
       "evaluationCriteria": "Réponse correcte : Option B (vélo = dépense, livres = investissement). Bonus : L'enfant donne un exemple d'investissement en soi qu'il aimerait faire (cours, livres, formation, etc.)."
+    }
+  },
+  "m14": {
+    "defi1": {
+      "titre": "Quiz: Qu'est-ce que l'IA ?",
+      "question": "Ton copain dit : \"ChatGPT, c'est magique ! Il sait tout !\" Que lui réponds-tu ?",
+      "options": [
+        "Oui, c'est de la magie pure !",
+        "Non, c'est un super-ordinateur qui a appris en lisant des millions de textes",
+        "C'est un vrai humain caché derrière l'écran"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Exactement ! L'IA (Intelligence Artificielle) n'a RIEN de magique. C'est un ordinateur très puissant qui a appris en analysant des MILLIONS d'exemples. Si tu lui montres 1000 photos de chats, elle reconnaîtra un chat. Mais elle ne COMPREND pas ce qu'est un chat comme TOI tu le comprends. Elle cherche des ressemblances, c'est tout. C'est impressionnant, mais pas magique !",
+      "feedbackIncorrect": "Non ! L'IA n'est pas magique. C'est un ordinateur qui apprend des exemples. Si ChatGPT peut parler, c'est parce qu'il a lu des MILLIARDS de phrases écrites par des humains. Il copie des patterns, il ne pense pas vraiment. La différence ? TOI tu comprends ce que tu dis, l'IA non.",
+      "leconStrategique": "Comprendre comment l'IA fonctionne te donne du POUVOIR. Si tu crois que c'est magique, tu la subis. Si tu comprends qu'elle apprend des exemples, tu sais comment l'utiliser et quelles sont ses limites. Les leaders du 22ème siècle maîtriseront l'IA, ils ne seront pas dominés par elle.",
+      "referenceCroisee": "M1",
+      "mentorGoal": "Démystifier l'IA. L'enfant doit comprendre que l'IA n'est pas magique mais un outil qui apprend des exemples. Cela pose les bases pour l'utiliser intelligemment.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (super-ordinateur qui apprend). Bonus : L'enfant explique avec ses mots comment l'IA apprend ou donne un exemple."
+    },
+    "defi2": {
+      "titre": "Mission: Test IA vs Toi",
+      "scenario": "Aujourd'hui, tu vas faire une expérience pour comprendre la DIFFÉRENCE entre l'IA et TOI. Tu vas créer une histoire drôle, et l'IA aussi. Puis tu vas comparer !",
+      "instruction": "**Étape 1 : TOI d'abord**\nInvente une histoire drôle sur \"Un dinosaure qui va à l'école\".\nÉcris-la (3-5 phrases). Utilise des détails de TA vie, TON école, TES amis.\n\n**Étape 2 : L'IA ensuite**\nDemande à ChatGPT (ou un adulte avec ChatGPT) :\n\"Raconte-moi une histoire drôle sur un dinosaure qui va à l'école\"\n\n**Étape 3 : Compare**\nRéponds à ces questions :\n1. Quelle histoire est plus drôle ? Pourquoi ?\n2. Quelle histoire a des détails de TA vie ?\n3. Est-ce que l'IA a compris ce qui te fait rire TOI ?\n4. Peux-tu deviner que l'histoire de l'IA vient d'une machine ?\n\n**Étape 4 : Conclusion**\nExplique : Qu'est-ce que TOI tu peux faire que l'IA ne peut pas faire ?",
+      "leconStrategique": "L'IA peut générer du texte rapidement. Mais elle ne connaît pas TA vie, TES émotions, TON humour unique. Elle copie des styles d'histoires qu'elle a vus, mais elle ne crée pas quelque chose de vraiment ORIGINAL avec ton vécu. Ta créativité HUMAINE est irremplaçable.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi TOI d'Abord ?",
+          "type_etape": "texte_guide",
+          "instruction": "Si tu demandes à l'IA AVANT de réfléchir toi-même, tu perds ta capacité à créer. TOUJOURS penser SEUL d'abord, puis utiliser l'IA comme assistant, jamais comme remplaçant."
+        },
+        "etape2": {
+          "titre": "2. Ce Que l'IA Ne Sait Pas",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : L'IA ne connaît pas mon école, mes amis, ce qui me fait rire MOI. Elle génère une histoire 'générique' qui pourrait convenir à n'importe qui.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Expérience",
+          "type_etape": "champ_texte",
+          "instruction": "Écris :\n- Ton histoire (TOI)\n- L'histoire de l'IA\n- Ta comparaison : quelle est la différence principale ?",
+          "placeholder": "Mon histoire : ... Histoire de l'IA : ... Différence : ..."
+        }
+      },
+      "mentorGoal": "Faire expérimenter concrètement la différence entre créativité humaine et génération par IA. L'enfant doit comprendre que l'IA copie, les humains créent avec leur vécu unique.",
+      "evaluationCriteria": "1. L'enfant a créé sa propre histoire AVANT de consulter l'IA. 2. Comparaison claire des deux histoires. 3. Identification d'au moins une différence (détails personnels, humour unique, etc.). Bonus : L'enfant réalise que son histoire est plus authentique."
+    },
+    "defi3": {
+      "titre": "Quiz: Les Super-Pouvoirs de l'IA",
+      "question": "Dans quelle situation l'IA est-elle MEILLEURE que toi ?",
+      "options": [
+        "Calculer 8 754 × 6 321 en 0,001 seconde",
+        "Comprendre que ton ami est triste juste en le regardant",
+        "Inventer un nouveau jeu que personne n'a jamais vu"
+      ],
+      "bonneReponseIndex": 0,
+      "feedbackCorrect": "EXACT ! L'IA est INCROYABLEMENT rapide pour calculer, chercher dans des millions d'informations, reconnaître des images. Elle bat les humains sur ces tâches TECHNIQUES. MAIS elle est NULLE pour comprendre les émotions, avoir de l'empathie, ou créer quelque chose de vraiment nouveau. Utilise ses forces (calcul, recherche), mais garde tes forces humaines (empathie, créativité, éthique) !",
+      "feedbackIncorrect": "Non ! L'IA est super pour les calculs rapides et la recherche d'informations. Mais elle ne peut PAS comprendre les émotions (elle ne 'voit' pas la tristesse, elle devine des patterns) et elle ne peut pas inventer quelque chose de vraiment original (elle mixe ce qui existe). Tes super-pouvoirs HUMAINS sont irremplaçables !",
+      "leconStrategique": "Savoir ce que l'IA fait mieux que toi ET ce que TOI tu fais mieux que l'IA te permet de collaborer avec elle intelligemment. Ne la vois pas comme une menace, mais comme un outil qui te rend 10x plus fort sur certaines tâches, pendant que tu gardes ta supériorité sur les tâches humaines.",
+      "referenceCroisee": "M12",
+      "mentorGoal": "L'enfant doit comprendre les forces ET faiblesses de l'IA. Elle est surpuissante pour calcul/données, mais faible pour émotions/créativité/éthique. Cela pose les bases pour une collaboration intelligente.",
+      "evaluationCriteria": "Réponse correcte : Option 1 (calcul rapide). Bonus : L'enfant liste d'autres tâches où l'IA est forte (recherche, traduction, reconnaissance d'images) et d'autres où elle est faible (empathie, créativité originale)."
+    },
+    "defi4": {
+      "titre": "Mission: L'IA Dans Ma Vie",
+      "scenario": "L'IA est PARTOUT dans ta vie, mais tu ne la vois pas toujours. Pendant 3 jours, tu vas devenir un 'détective IA' et noter TOUS les moments où tu croises l'IA. Tu vas être surpris !",
+      "instruction": "**Ta mission de détective (3 jours) :**\n\nNote CHAQUE fois que tu utilises quelque chose qui a de l'IA :\n\n📱 **YouTube** : Les vidéos recommandées (comment YouTube sait ce que tu aimes ?)\n📺 **Netflix** : Les suggestions de films\n🎮 **Jeux vidéo** : Les adversaires automatiques, les personnages non-joueurs\n🗣️ **Assistants vocaux** : Siri, Alexa, Google Assistant\n📸 **Photos** : Ton téléphone qui reconnaît les visages\n🚗 **Voiture** : GPS qui calcule le meilleur chemin\n🛒 **Internet** : Publicités qui te suivent\n\n**Après 3 jours, réponds :**\n1. Combien de fois par jour tu interagis avec l'IA ? (Compte !)\n2. Est-ce que ça t'aide ou est-ce que ça décide pour toi ?\n3. Pourrais-tu vivre sans IA pendant une semaine ?\n4. Y a-t-il des moments où tu préfères décider TOI plutôt que laisser l'IA choisir ?",
+      "leconStrategique": "L'IA est déjà partout en 2025. Dans 10 ans, elle sera 100x plus présente. Ceux qui comprennent comment elle fonctionne auront du POUVOIR sur leur vie. Ceux qui ne comprennent pas seront CONTRÔLÉS par elle sans le savoir. Tu es en train de devenir celui qui comprend. C'est un énorme avantage.",
+      "referenceCroisee": "M2",
+      "briefing": {
+        "etape1": {
+          "titre": "1. L'IA Invisible",
+          "type_etape": "texte_guide",
+          "instruction": "La plupart des gens utilisent l'IA 50 fois par jour sans le savoir. YouTube recommande, Netflix suggère, ton téléphone prédit tes mots. C'est partout ! Savoir la repérer te donne du contrôle."
+        },
+        "etape2": {
+          "titre": "2. Guide du Détective",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Pendant 3 jours, je note CHAQUE interaction IA. Je vais probablement découvrir que c'est beaucoup plus que ce que je pensais !",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Rapport",
+          "type_etape": "champ_texte",
+          "instruction": "Après 3 jours, écris ton rapport de détective :\n- Liste de TOUTES les IA que tu as croisées\n- Nombre d'interactions par jour (estime)\n- Ta réflexion : est-ce que ça t'aide ou ça te contrôle ?",
+          "placeholder": "Jour 1 : ... Jour 2 : ... Jour 3 : ... Total : ... Ma conclusion : ..."
+        }
+      },
+      "mentorGoal": "Rendre l'enfant CONSCIENT de l'omniprésence de l'IA dans sa vie quotidienne. Cette prise de conscience est le premier pas pour l'utiliser activement plutôt que passivement.",
+      "evaluationCriteria": "1. Liste d'au moins 5-7 situations où l'enfant a croisé l'IA. 2. Estimation du nombre d'interactions (toute réponse est acceptable tant qu'elle est réfléchie). 3. Réflexion personnelle sur aide vs contrôle. Bonus : L'enfant exprime un désir de reprendre du contrôle sur certaines décisions."
+    }
+  },
+  "m15": {
+    "defi1": {
+      "titre": "Quiz: Utiliser l'IA Intelligemment",
+      "question": "Tu as un exposé à faire sur les dauphins. Quelle est la MEILLEURE façon d'utiliser l'IA ?",
+      "options": [
+        "Demander à ChatGPT : 'Fais-moi un exposé sur les dauphins' et copier-coller",
+        "Réfléchir à 5 questions précises, demander à l'IA de t'aider à y répondre, puis écrire l'exposé avec tes mots",
+        "Ne pas utiliser l'IA du tout, c'est de la triche"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO ! Utiliser l'IA intelligemment = PENSER d'abord, PUIS utiliser l'IA comme un super-assistant. Si tu copies-colles bêtement, tu ne développes pas ton cerveau. Si tu refuses l'IA, tu te prives d'un outil puissant. Le bon équilibre : TON cerveau + l'IA = superpuissance ! Tu restes le CAPITAINE, l'IA est ton co-pilote.",
+      "feedbackIncorrect": "Non ! Copier-coller = tu ne développes rien. Refuser l'IA = tu te prives d'un super-outil. La vraie intelligence : UTILISER l'IA comme assistant, pas comme remplaçant. Les meilleurs au monde utilisent l'IA, mais ils pensent d'ABORD. C'est la règle d'or : Cerveau PUIS IA, jamais l'inverse.",
+      "leconStrategique": "L'IA n'est ni ton ennemi ni ton sauveur. C'est un AMPLIFICATEUR. Si tu penses mal, l'IA amplifie ta médiocrité. Si tu penses bien, l'IA te rend 10x plus fort. Les leaders du futur sauront piloter l'IA comme les pilotes professionnels pilotent l'autopilote : ils restent aux commandes.",
+      "referenceCroisee": "M1",
+      "mentorGoal": "Établir la règle d'or : 'Réfléchir d'abord, IA ensuite'. L'enfant doit comprendre que l'IA est un amplificateur, pas un substitut à la pensée.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (réfléchir d'abord, puis utiliser l'IA comme assistant). Bonus : L'enfant donne un exemple personnel où il pourrait utiliser cette méthode."
+    },
+    "defi2": {
+      "titre": "Mission: La Méthode 5-2-1",
+      "scenario": "Aujourd'hui, tu vas apprendre la méthode 5-2-1 : 5 minutes de réflexion, 2 questions précises à l'IA, 1 création personnelle. C'est LA méthode des pros pour collaborer avec l'IA sans perdre son cerveau !",
+      "instruction": "**Ton défi : Créer un quiz de 5 questions sur un sujet que tu ADORES**\n\n**ÉTAPE 1 : 5 minutes de réflexion (SANS IA)**\n- Choisis un sujet que tu adores (dinosaures, football, espace, Minecraft, etc.)\n- Note 10 choses que TU sais déjà sur ce sujet\n- Invente 2-3 questions de quiz (sans chercher les réponses)\n\n**ÉTAPE 2 : 2 questions précises à l'IA**\nMaintenant demande à ChatGPT :\n1. \"Donne-moi 5 faits surprenants sur [ton sujet] que peu de gens connaissent\"\n2. \"Quelle est l'information la plus récente (2024-2025) sur [ton sujet] ?\"\n\n**ÉTAPE 3 : 1 création personnelle**\nCrée ton quiz de 5 questions en mélangeant :\n- Tes connaissances (étape 1)\n- Les infos de l'IA (étape 2)\n- TON style, TON humour, TES blagues\n\n**Partage ton quiz final + explique :**\nQu'est-ce que l'IA t'a apporté ? Qu'est-ce que TOI tu as apporté que l'IA ne pouvait pas faire ?",
+      "leconStrategique": "La méthode 5-2-1 t'empêche de devenir dépendant de l'IA. En réfléchissant d'ABORD, tu ancres ta pensée. En posant des questions PRÉCISES, tu guides l'IA (au lieu qu'elle te guide). En créant TOI-MÊME le résultat final, tu gardes ton originalité. Cette méthode fonctionne pour TOUT : exposés, projets, créations artistiques.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi Réfléchir AVANT ?",
+          "type_etape": "texte_guide",
+          "instruction": "Si tu vas voir l'IA directement, ton cerveau reste passif. En réfléchissant 5 minutes AVANT, tu actives tes neurones. L'IA complète ta pensée, elle ne la remplace pas. C'est la différence entre être ACTIF et PASSIF."
+        },
+        "etape2": {
+          "titre": "2. Questions Précises = Réponses Utiles",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Si je demande 'Parle-moi des dinosaures', l'IA me donne des infos génériques. Si je demande 'Quel dinosaure avait le plus grand cerveau par rapport à son corps ?', j'obtiens des infos précises et surprenantes !",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Quiz 5-2-1",
+          "type_etape": "champ_texte",
+          "instruction": "Partage :\n- Ton sujet\n- Tes 5 questions de quiz (avec réponses)\n- Ce que l'IA t'a apporté vs ce que TOI tu as créé",
+          "placeholder": "Mon sujet : ... Mes 5 questions : 1. ... 2. ... 3. ... 4. ... 5. ... Ce que l'IA a fait : ... Ce que MOI j'ai créé : ..."
+        }
+      },
+      "mentorGoal": "Introduire une méthodologie concrète pour collaborer avec l'IA. L'enfant doit expérimenter le cycle : Penser → Questionner l'IA → Créer. C'est la base de toute collaboration IA efficace.",
+      "evaluationCriteria": "1. L'enfant a réfléchi AVANT de consulter l'IA (preuve : liste de connaissances préalables). 2. Questions précises posées à l'IA (pas 'Parle-moi de X'). 3. Quiz final qui mélange connaissances + infos IA + style personnel. Bonus : L'enfant identifie clairement sa contribution unique."
+    },
+    "defi3": {
+      "titre": "Quiz: Les Pièges de l'IA",
+      "question": "ChatGPT te donne une réponse sur un sujet d'histoire. Que dois-tu faire ?",
+      "options": [
+        "Copier-coller directement, ChatGPT ne se trompe jamais",
+        "Vérifier l'info sur 2-3 sources (Wikipédia, livre, site éducatif) avant de l'utiliser",
+        "Ne pas utiliser ChatGPT pour l'histoire, il ne connaît rien"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACT ! L'IA peut se tromper. Elle 'hallucine' parfois (= invente des faits qui semblent vrais mais sont faux). TOUJOURS vérifier les informations importantes sur plusieurs sources. L'IA est un super-assistant, mais TOI tu restes le vérificateur final. C'est toi le boss, pas elle !",
+      "feedbackIncorrect": "Non ! L'IA peut se tromper. Elle a été entraînée sur des milliards de textes, mais elle ne COMPREND pas ce qu'elle dit. Elle peut inventer des dates, des noms, des événements qui semblent vrais mais sont faux. Règle d'or : TOUJOURS vérifier les infos importantes. L'IA suggère, TOI tu valides.",
+      "leconStrategique": "La pensée critique est TON super-pouvoir. L'IA génère vite, mais elle ne vérifie pas. TOI tu dois vérifier. Les leaders du futur ne seront pas ceux qui utilisent l'IA le plus, mais ceux qui savent QUAND la croire et QUAND la remettre en question. Cette compétence vaut de l'OR.",
+      "referenceCroisee": "M2",
+      "mentorGoal": "Développer l'esprit critique face à l'IA. L'enfant doit comprendre que l'IA peut se tromper et qu'il est responsable de vérifier les informations avant de les utiliser.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (vérifier sur plusieurs sources). Bonus : L'enfant donne un exemple de situation où il DOIT vérifier l'IA (exposés, devoirs, informations importantes)."
+    },
+    "defi4": {
+      "titre": "Mission: IA = Outil, Pas Béquille",
+      "scenario": "Pendant 1 semaine, tu vas faire un test : utiliser l'IA INTELLIGEMMENT pour un vrai projet. Tu vas voir la différence entre 'IA-béquille' (qui t'affaiblit) et 'IA-turbo' (qui te rend plus fort) !",
+      "instruction": "**Ton projet de la semaine : Créer quelque chose de cool**\nChoisis 1 projet parmi :\n- 📖 Écrire une histoire de 3 pages\n- 🎨 Créer un tutoriel pour apprendre quelque chose (origami, dessin, jeu vidéo)\n- 🎭 Inventer un sketch de théâtre de 5 minutes\n- 🎮 Dessiner les plans d'un jeu vidéo (personnages, règles, niveaux)\n\n**Règle : Utilise l'IA comme TURBO, pas comme BÉQUILLE**\n\n✅ **IA-TURBO (autorisé) :**\n- \"Donne-moi 3 idées de titres pour mon histoire\"\n- \"Quel mot pourrait remplacer 'gentil' pour décrire mon héros ?\"\n- \"Explique-moi comment fonctionne la perspective en dessin\"\n\n❌ **IA-BÉQUILLE (interdit) :**\n- \"Écris-moi l'histoire complète\"\n- \"Fais tout le travail à ma place\"\n- \"Donne-moi la réponse sans que je réfléchisse\"\n\n**Après 1 semaine, partage :**\n1. Ton projet final\n2. Comment l'IA t'a aidé (sois précis)\n3. Ce que TOI tu as créé que l'IA ne pouvait pas faire\n4. Es-tu fier de ton projet ? Pourquoi ?",
+      "leconStrategique": "L'IA-béquille te rend FAIBLE (tu perds tes compétences). L'IA-turbo te rend FORT (tu gardes tes compétences + tu vas plus vite/plus loin). La différence ? TOI tu pilotes. Si tu sens que l'IA fait le travail à ta place, STOP. Si tu sens qu'elle t'ASSISTE pendant que tu crées, CONTINUE. Cette sensation, c'est ton GPS.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. IA-Béquille vs IA-Turbo",
+          "type_etape": "texte_guide",
+          "instruction": "Imagine deux élèves :\n- Élève A demande à l'IA : 'Fais mon exposé'. Il copie-colle. Note : 15/20. Mais il n'a rien appris.\n- Élève B réfléchit, crée, puis demande à l'IA : 'Comment améliorer cette phrase ?'. Note : 17/20. Et il a développé ses compétences.\n\nDans 5 ans, qui sera le plus fort ? Élève B, évidemment. L'IA-turbo te rend meilleur. L'IA-béquille te rend dépendant."
+        },
+        "etape2": {
+          "titre": "2. Ton Projet",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Je vais créer quelque chose de cool en PILOTANT l'IA. Elle m'assiste, je ne lui délègue pas tout. Je veux être FIER de mon projet !",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Rapport Final",
+          "type_etape": "champ_texte",
+          "instruction": "Après 1 semaine, partage :\n- Ton projet (ou un résumé)\n- 3 exemples précis où l'IA t'a aidé (IA-turbo)\n- Ce que TOI tu as créé que l'IA ne pouvait pas faire\n- Ta fierté : es-tu fier de ton projet ? Pourquoi ?",
+          "placeholder": "Mon projet : ... 3 moments IA-turbo : 1. ... 2. ... 3. ... Ma contribution unique : ... Ma fierté : ..."
+        }
+      },
+      "mentorGoal": "Faire vivre l'expérience de la collaboration IA sur un vrai projet. L'enfant doit ressentir la différence entre 'utiliser l'IA intelligemment' (IA-turbo) et 'se faire remplacer par l'IA' (IA-béquille).",
+      "evaluationCriteria": "1. Projet personnel créé (quel qu'il soit, tant qu'il est original). 2. Utilisation documentée de l'IA comme assistant (pas comme remplaçant). 3. Identification claire de la contribution personnelle. 4. Sentiment de fierté exprimé. Bonus : L'enfant exprime qu'il a appris quelque chose grâce à la collaboration avec l'IA."
+    }
+  },
+  "m16": {
+    "defi1": {
+      "titre": "Quiz: Les Compétences IA-Proof",
+      "question": "En 2035, l'IA sera 1000x plus puissante qu'aujourd'hui. Quelle compétence sera la PLUS PRÉCIEUSE ?",
+      "options": [
+        "Savoir calculer de tête rapidement",
+        "Comprendre les émotions des gens et créer des liens authentiques",
+        "Connaître toutes les capitales du monde par cœur"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO ! L'IA battra TOUJOURS les humains en calcul, mémoire, vitesse. MAIS elle ne pourra JAMAIS vraiment comprendre les émotions humaines, créer des liens authentiques, ou avoir de l'empathie réelle. Les métiers du futur ? Ceux qui nécessitent de l'HUMANITÉ. Coach, psychologue, leader, artiste, négociateur, éducateur... TON humanité est ton super-pouvoir !",
+      "feedbackIncorrect": "Non ! L'IA sera toujours meilleure que toi pour calculer ou mémoriser des faits. Ces compétences perdent de la valeur. MAIS l'IA ne pourra JAMAIS comprendre vraiment les émotions, créer des liens humains authentiques, ou avoir de l'empathie. Ta capacité à CONNECTER avec les humains vaudra de l'OR en 2035. C'est ça, les compétences IA-proof !",
+      "leconStrategique": "Pose-toi la question : 'Est-ce qu'une IA pourrait faire ce que je fais ?' Si oui, cette compétence perd de la valeur. Investis dans les compétences que l'IA ne peut PAS copier : empathie, créativité originale, leadership, éthique, relations humaines. Ces compétences vaudront 10x plus cher dans 10 ans.",
+      "referenceCroisee": "M12",
+      "mentorGoal": "Introduire le concept de compétences 'IA-proof'. L'enfant doit comprendre que les compétences humaines (empathie, créativité, leadership) deviennent de plus en plus précieuses dans un monde où l'IA gère les tâches techniques.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (comprendre les émotions et créer des liens). Bonus : L'enfant liste 2-3 autres compétences IA-proof (créativité originale, éthique, leadership, etc.)."
+    },
+    "defi2": {
+      "titre": "Mission: Ton Portfolio IA-Proof",
+      "scenario": "Aujourd'hui, tu vas créer ton 'Portfolio IA-Proof' : une liste de TES super-pouvoirs HUMAINS que l'IA ne pourra JAMAIS copier. C'est ton bouclier contre l'obsolescence professionnelle !",
+      "instruction": "**Étape 1 : Identifie TES super-pouvoirs humains**\n\nRéponds à ces questions :\n\n1. **Empathie** : Donne un exemple où tu as compris ce que quelqu'un ressentait sans qu'il le dise.\n2. **Créativité originale** : Quelle est la chose la plus originale que tu aies créée (dessin, histoire, jeu, invention) ?\n3. **Connexion humaine** : Qui est ton meilleur ami ? Pourquoi ? Qu'est-ce qui rend votre amitié unique ?\n4. **Réflexion éthique** : Raconte une fois où tu as dû choisir entre ce qui était FACILE et ce qui était JUSTE.\n5. **Apprentissage par l'échec** : Quelle est la plus grosse erreur que tu aies faite ? Qu'as-tu appris ?\n\n**Étape 2 : Ton plan d'entraînement**\n\nPour CHAQUE super-pouvoir, écris 1 action concrète pour le développer cette semaine :\n- Empathie : \"Je vais demander à maman comment s'est passée sa journée et écouter vraiment\"\n- Créativité : \"Je vais inventer un nouveau jeu avec mes amis\"\n- Connexion : \"Je vais écrire une lettre à mon ami pour lui dire ce que j'aime chez lui\"\n- Éthique : \"Si je vois quelqu'un seul à la récré, je vais aller lui parler\"\n- Apprentissage : \"Je vais réessayer quelque chose que j'avais raté\"\n\n**Étape 3 : Partage ton portfolio + ton plan**",
+      "leconStrategique": "Ton 'Portfolio IA-Proof' est ton assurance-vie professionnelle. Dans un monde où l'IA fait les tâches techniques, les humains qui maîtrisent l'HUMANITÉ seront les plus recherchés. Chaque jour où tu développes ces compétences, tu augmentes ta valeur. C'est l'investissement le plus rentable que tu puisses faire.",
+      "referenceCroisee": "M6",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi 'IA-Proof' ?",
+          "type_etape": "texte_guide",
+          "instruction": "IA-Proof = à l'épreuve de l'IA. Ce sont les compétences que l'IA ne pourra JAMAIS copier. Même en 2050, avec une IA 1 million de fois plus puissante, elle ne pourra pas ressentir de vraies émotions, avoir de vraie créativité originale, ou comprendre ce qu'est l'amitié. TOI oui. C'est ton avantage compétitif."
+        },
+        "etape2": {
+          "titre": "2. Tes 5 Super-Pouvoirs",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Je vais identifier MES super-pouvoirs humains en donnant des exemples concrets de ma vie. Ensuite, je vais créer un plan pour les développer encore plus !",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Portfolio + Plan",
+          "type_etape": "champ_texte",
+          "instruction": "Partage :\n- Tes 5 super-pouvoirs avec exemples concrets\n- Ton plan d'entraînement pour la semaine (1 action par super-pouvoir)",
+          "placeholder": "1. EMPATHIE - Exemple : ... Action cette semaine : ...\n2. CRÉATIVITÉ - Exemple : ... Action : ...\n3. CONNEXION - Exemple : ... Action : ...\n4. ÉTHIQUE - Exemple : ... Action : ...\n5. APPRENTISSAGE - Exemple : ... Action : ..."
+        }
+      },
+      "mentorGoal": "Faire prendre conscience à l'enfant de ses compétences humaines uniques et créer un plan concret pour les développer. L'objectif est de construire une 'identité IA-proof' : je sais ce que je fais mieux que l'IA.",
+      "evaluationCriteria": "1. Exemples concrets pour les 5 super-pouvoirs. 2. Plan d'entraînement avec au moins 3 actions réalistes. 3. Conscience que ces compétences sont précieuses et uniques. Bonus : L'enfant exprime de la fierté pour ses compétences humaines."
+    },
+    "defi3": {
+      "titre": "Quiz: Le Test de 2035",
+      "question": "Imagine 2035. Deux candidats postulent pour le même job. Candidat A : expert en IA, zéro compétences humaines. Candidat B : bon en IA + excellent en relations humaines. Qui est embauché ?",
+      "options": [
+        "Candidat A (l'expert technique)",
+        "Candidat B (technique + humain)",
+        "Aucun des deux, l'IA a pris leur job"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACT ! En 2035, TOUT LE MONDE saura utiliser l'IA (ce sera aussi banal que savoir utiliser Google en 2025). La différence ? Les compétences HUMAINES. Candidat B sera choisi parce qu'il apporte ce que l'IA ne peut pas : leadership, empathie, créativité, éthique. La formule gagnante = Maîtrise technique + Super-pouvoirs humains. Tu es en train de construire cette formule !",
+      "feedbackIncorrect": "Non ! En 2035, savoir utiliser l'IA sera BANAL (comme savoir utiliser Google aujourd'hui). Ce qui fera la différence ? Les compétences HUMAINES. Candidat B gagne parce qu'il combine technique + humanité. L'IA ne prendra pas tous les jobs, elle prendra les jobs où l'humain n'apporte RIEN d'humain. Ton but : être irremplaçable par ton humanité !",
+      "leconStrategique": "La formule du succès en 2035 : Compétences techniques (y compris IA) + Super-pouvoirs humains (empathie, créativité, leadership). Si tu n'as que la technique, l'IA te remplace. Si tu as la technique + l'humanité, tu es IRREMPLAÇABLE. Apex t'entraîne aux deux. C'est ton avantage.",
+      "referenceCroisee": "M1",
+      "mentorGoal": "Consolider la vision : le futur appartient à ceux qui maîtrisent la technique ET l'humanité. L'enfant doit comprendre qu'il est en train de construire cette double compétence.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (candidat B, technique + humain). Bonus : L'enfant explique pourquoi les compétences humaines feront la différence en 2035."
+    },
+    "defi4": {
+      "titre": "Mission: Mon Manifeste Anti-IA",
+      "scenario": "Dernière mission : écrire TON 'Manifeste Anti-IA'. Ce n'est PAS contre l'IA (tu vas l'utiliser !), c'est un manifeste pour affirmer ce que TOI tu apportes que l'IA ne pourra JAMAIS apporter. C'est ta déclaration d'indépendance !",
+      "instruction": "**Écris ton Manifeste Anti-IA (10-15 lignes)**\n\nInclus OBLIGATOIREMENT :\n\n1. **Ton nom** : 'Je suis [ton nom], et voici ce que l'IA ne pourra jamais être à ma place...'\n\n2. **3 choses que TU fais mieux que l'IA** :\n   - Exemple : 'Je peux rendre mon ami heureux juste en étant là'\n   - Exemple : 'Je peux inventer une blague que PERSONNE n'a jamais faite'\n   - Exemple : 'Je peux choisir de faire ce qui est JUSTE même si c'est dur'\n\n3. **Comment tu vas utiliser l'IA SANS perdre ton humanité** :\n   - Exemple : 'J'utiliserai l'IA pour aller plus vite, mais je penserai toujours SEUL d'abord'\n   - Exemple : 'L'IA sera mon assistant, jamais mon remplaçant'\n\n4. **Ta promesse pour 2035** :\n   - Exemple : 'En 2035, je serai un leader qui comprend l'IA ET les humains'\n   - Exemple : 'Je serai quelqu'un que l'IA ne peut pas remplacer'\n\n**Ton manifeste doit sonner comme une DÉCLARATION DE GUERRE** (positive) contre l'obsolescence ! Sois FIER de ton humanité !",
+      "leconStrategique": "Écrire ton manifeste ancre ta vision du futur. C'est une boussole. Chaque fois que tu sens que l'IA prend trop de place, relis ton manifeste. Chaque fois que tu as un choix (copier-coller l'IA vs créer toi-même), pense à ton manifeste. Ce document est ton identité pour les 10 prochaines années. Prends-le au sérieux.",
+      "referenceCroisee": "M11",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Qu'est-ce qu'un Manifeste ?",
+          "type_etape": "texte_guide",
+          "instruction": "Un manifeste, c'est une déclaration publique de TES VALEURS et TES INTENTIONS. Des exemples célèbres :\n- Déclaration d'Indépendance américaine : 'Tous les hommes naissent libres et égaux'\n- Manifeste de Martin Luther King : 'I have a dream'\n\nTon manifeste Anti-IA, c'est TON 'I have a dream' pour le futur. Sois courageux. Sois fier. Sois HUMAIN."
+        },
+        "etape2": {
+          "titre": "2. Ton Manifeste",
+          "type_etape": "champ_texte",
+          "instruction": "Écris ton Manifeste Anti-IA (10-15 lignes). Inclus :\n- Ton nom\n- 3 choses que TU fais mieux que l'IA\n- Comment tu utiliseras l'IA sans perdre ton humanité\n- Ta promesse pour 2035\n\nFais-le sonner PUISSANT !",
+          "placeholder": "Je suis [ton nom], et voici ce que l'IA ne pourra jamais être à ma place...\n\nCe que je fais mieux que l'IA :\n1. ...\n2. ...\n3. ...\n\nComment j'utiliserai l'IA :\n...\n\nMa promesse pour 2035 :\n..."
+        },
+        "etape3": {
+          "titre": "3. Partage et Fierté",
+          "type_etape": "validation_case",
+          "instruction": "Je comprends : Ce manifeste n'est pas un exercice, c'est MA déclaration d'indépendance. C'est ce qui me rendra irremplaçable dans un monde d'IA. Je vais le garder et le relire régulièrement.",
+          "placeholder": null
+        }
+      },
+      "mentorGoal": "Créer un document personnel puissant qui ancre l'identité 'IA-proof' de l'enfant. L'objectif est qu'il ressorte de ce module avec une conscience claire de ses super-pouvoirs humains et une vision de comment naviguer le futur.",
+      "evaluationCriteria": "1. Manifeste rédigé avec les 4 éléments obligatoires (nom, 3 avantages humains, utilisation IA, promesse 2035). 2. Ton affirmatif et fier (pas hésitant). 3. Exemples concrets et personnels. Bonus : Le manifeste est inspirant et pourrait être partagé avec d'autres enfants."
+    }
+  },
+  "m17": {
+    "defi1": {
+      "titre": "Quiz: Le Problème des 9 Points",
+      "question": "Voici 9 points disposés en carré (3x3). Peux-tu les relier TOUS avec seulement 4 lignes droites, SANS lever le crayon ? La plupart des gens disent 'impossible'. Pourquoi ?",
+      "options": [
+        "Parce que c'est mathématiquement impossible",
+        "Parce qu'on imagine une limite invisible (le carré) qui n'existe pas",
+        "Parce qu'il faut être un génie en maths"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO ! Tu as compris le piège ! La solution existe, mais elle demande de SORTIR du carré imaginaire. La plupart des gens s'auto-limitent en imaginant une règle qui n'existe pas. C'est ça, 'penser outside the box' : voir que les limites sont dans ta TÊTE, pas dans la réalité. Les innovateurs comme Elon Musk font ça tout le temps : ils voient des possibilités que les autres ne voient pas parce qu'ils refusent les limites imaginaires.",
+      "feedbackIncorrect": "Non ! La solution EXISTE, mais 90% des gens ne la trouvent pas. Pourquoi ? Parce qu'ils imaginent une règle invisible : 'Je dois rester dans le carré des 9 points'. Mais cette règle N'EXISTE PAS dans l'énoncé ! La solution demande de sortir du carré. C'est ça, l'innovation : refuser les limites que tout le monde s'impose.",
+      "leconStrategique": "Les plus grandes innovations viennent de gens qui ont refusé les limites invisibles. Airbnb : 'On ne peut pas dormir chez des inconnus' → FAUX. Uber : 'On ne peut pas monter dans la voiture d'un inconnu' → FAUX. SpaceX : 'Les fusées ne peuvent pas être réutilisables' → FAUX. Ces limites étaient dans les TÊTES, pas dans la réalité. Ton job : identifier les limites imaginaires et les EXPLOSER.",
+      "referenceCroisee": "M7",
+      "mentorGoal": "Introduire le concept de 'limites auto-imposées'. L'enfant doit comprendre que la plupart des 'impossibles' sont des croyances, pas des faits. C'est la base de la pensée innovante.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (limite invisible imaginée). Bonus : L'enfant donne un exemple de 'règle invisible' qu'il s'impose dans sa vie (sport, école, créativité)."
+    },
+    "defi2": {
+      "titre": "Mission: Les 10 Solutions Impossibles",
+      "scenario": "Aujourd'hui, tu vas entraîner ton cerveau à trouver des solutions que PERSONNE n'aurait imaginées. L'objectif : résoudre un problème simple de 10 façons DIFFÉRENTES, dont au moins 5 'absurdes'. C'est comme ça qu'on trouve les vraies innovations !",
+      "instruction": "**Ton problème : Comment se rendre à l'école ?**\n\n**Étape 1 : Les 3 solutions NORMALES (tout le monde les connaît)**\nExemple :\n1. À pied\n2. En voiture avec les parents\n3. En bus scolaire\n\n**Étape 2 : Les 4 solutions ORIGINALES (mais réalistes)**\nExemple :\n4. En vélo électrique\n5. En trottinette avec un copain\n6. En rollers\n7. En covoiturage avec 3 familles du quartier\n\n**Étape 3 : Les 3 solutions ABSURDES (mais créatives !)**\nExemple :\n8. Avec un jetpack (comme Iron Man)\n9. Par un tunnel secret sous la ville\n10. Téléportation quantique\n\n**Après avoir trouvé tes 10 solutions, réponds :**\n- Quelle solution 'absurde' pourrait devenir réelle dans 20 ans ?\n- Quelle solution 'originale' tu pourrais tester la semaine prochaine ?\n- Pourquoi la plupart des gens ne pensent qu'aux 3 premières solutions ?",
+      "leconStrategique": "Les innovations ne viennent PAS de gens qui cherchent la 'bonne' réponse. Elles viennent de gens qui cherchent TOUTES les réponses possibles, même les 'folles'. Exemple : Les frères Wright (avion) → Tout le monde disait 'impossible'. Jeff Bezos (Amazon) → Tout le monde disait 'les gens n'achèteront jamais en ligne'. En listant 10 solutions, tu forces ton cerveau à quitter les sentiers battus. La solution n°8 ou n°10 contient souvent l'idée révolutionnaire.",
+      "referenceCroisee": "M7",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi 10 Solutions ?",
+          "type_etape": "texte_guide",
+          "instruction": "Les 3 premières solutions sont FACILES (tout le monde les trouve). Les solutions 4-7 demandent de réfléchir un peu. Les solutions 8-10 demandent de l'audace créative. C'est LÀ que se cache l'innovation. Si tu t'arrêtes à 3, tu penses comme tout le monde."
+        },
+        "etape2": {
+          "titre": "2. Les 'Absurdes' d'Aujourd'hui = Les Réalités de Demain",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : En 1900, 'voler dans les airs' était absurde. En 1990, 'avoir toute la connaissance du monde dans sa poche' était absurde. Mes idées 'folles' d'aujourd'hui pourraient être normales en 2045 !",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Tes 10 Solutions",
+          "type_etape": "champ_texte",
+          "instruction": "Liste tes 10 façons d'aller à l'école :\n- 3 normales\n- 4 originales\n- 3 absurdes\n\nPuis réponds aux 3 questions de réflexion.",
+          "placeholder": "NORMALES: 1. ... 2. ... 3. ...\nORIGINALES: 4. ... 5. ... 6. ... 7. ...\nABSURDES: 8. ... 9. ... 10. ...\n\nRéflexion : ..."
+        }
+      },
+      "mentorGoal": "Entraîner la pensée divergente : chercher le MAXIMUM de solutions, pas la 'bonne' solution. L'enfant doit comprendre que l'innovation vient de l'exploration créative, pas de la logique conventionnelle.",
+      "evaluationCriteria": "1. 10 solutions listées (toute réponse est valable). 2. Au moins 2 solutions vraiment originales/absurdes. 3. Réflexion sur l'innovation (pourquoi la plupart s'arrêtent aux 3 premières). Bonus : L'enfant identifie une idée 'absurde' qui pourrait devenir réelle."
+    },
+    "defi3": {
+      "titre": "Quiz: L'Innovation Qui a Changé le Monde",
+      "question": "En 2007, Steve Jobs présente l'iPhone. TOUT LE MONDE se moque : 'Qui voudrait un téléphone sans clavier physique ?' Qu'est-ce qui a permis à l'iPhone de réussir ?",
+      "options": [
+        "Steve Jobs avait raison, les autres avaient tort, c'est juste de la chance",
+        "Steve Jobs a vu une possibilité que personne ne voyait : un écran TACTILE qui remplace tout",
+        "Apple a forcé les gens à acheter l'iPhone avec de la publicité"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACT ! Steve Jobs n'a pas eu 'de la chance'. Il a VU quelque chose que personne ne voyait : un écran tactile pouvait REMPLACER les boutons. Tout le monde était limité par la croyance 'un téléphone DOIT avoir un clavier'. Jobs a explosé cette limite. Résultat : 2 milliards d'iPhones vendus, le monde transformé. C'est ça, penser autrement : voir ce que les autres ne voient pas parce qu'ils sont prisonniers de leurs croyances.",
+      "feedbackIncorrect": "Non ! L'iPhone n'est PAS le résultat de la chance ou de la pub. C'est le résultat d'une pensée révolutionnaire : 'Et si on supprimait TOUS les boutons ?' En 2007, cette idée semblait folle. BlackBerry (leader à l'époque) a dit 'Impossible, les gens veulent des claviers physiques'. Ils avaient tort. Jobs a vu le futur, eux étaient coincés dans le présent.",
+      "leconStrategique": "Les plus grandes innovations semblent ÉVIDENTES rétrospectivement, mais folles au moment de leur création. Netflix (streaming) → 'Personne ne regardera des films en ligne'. Tesla (voiture électrique) → 'Les voitures électriques ne marcheront jamais'. Airbnb → 'Dormir chez des inconnus ? Jamais !'. Tous ont eu raison contre TOUT LE MONDE. C'est le prix de l'innovation : être seul à voir quelque chose pendant un moment.",
+      "referenceCroisee": "M5",
+      "mentorGoal": "Montrer que les innovations révolutionnaires sont d'abord rejetées par la majorité. L'enfant doit comprendre que 'avoir raison seul contre tous' est parfois le signe d'une vraie innovation.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (Steve Jobs a vu une possibilité invisible). Bonus : L'enfant donne un exemple d'innovation récente qui a été rejetée au début."
+    },
+    "defi4": {
+      "titre": "Mission: Ton Innovation Impossible",
+      "scenario": "Dernière mission : tu vas inventer une solution 'impossible' à un VRAI problème. Ensuite, tu vas défendre ton idée comme si tu étais Steve Jobs présentant l'iPhone. Prépare-toi, on va te dire que c'est impossible. C'est le test ultime de la pensée innovante !",
+      "instruction": "**Étape 1 : Choisis un VRAI problème**\nExemples :\n- Les devoirs sont ennuyeux\n- Les enfants ne bougent pas assez (santé)\n- Trop de déchets plastiques\n- Les gens passent trop de temps sur leurs écrans\n- L'école ne prépare pas au futur\n\n**Étape 2 : Invente une solution 'IMPOSSIBLE'**\nRègles :\n- Elle doit sembler folle/irréaliste\n- Mais elle doit résoudre le problème\n- Ignore les contraintes 'normales' (argent, technologie, lois)\n\nExemple :\nProblème : Les devoirs sont ennuyeux\nSolution IMPOSSIBLE : Un jeu vidéo qui adapte les exercices à TES passions. Tu aimes Minecraft ? Les maths deviennent des défis de construction. Tu aimes le foot ? Les fractions deviennent des stratégies d'équipe.\n\n**Étape 3 : Défends ton idée**\nRéponds à ces objections :\n1. 'C'est impossible techniquement' → Pourquoi ça le sera peut-être dans 10 ans ?\n2. 'Ça coûte trop cher' → Pourquoi ça pourrait devenir rentable ?\n3. 'Personne ne voudra' → Pourquoi les gens ADORERAIENT en fait ?\n\n**Étape 4 : Présente ton pitch**\nÉcris ton pitch comme Steve Jobs : 'Aujourd'hui, je vais résoudre [problème]. Voici [ta solution]. Voici pourquoi ça va changer le monde : [3 raisons].'",
+      "leconStrategique": "Toutes les grandes innovations ont été défendues par quelqu'un qui a dit 'Tout le monde pense que c'est impossible, mais VOICI pourquoi ça marchera'. Les innovateurs ne sont pas plus intelligents que les autres. Ils sont juste plus AUDACIEUX dans leur imagination et plus TENACES dans leur défense. Ce que tu inventes aujourd'hui à 8-9 ans pourrait devenir ta startup à 20 ans. Garde cette idée. Sérieusement.",
+      "referenceCroisee": "M11",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi 'Impossible' ?",
+          "type_etape": "texte_guide",
+          "instruction": "Si ta solution est 'facile' et 'évidente', elle existe déjà ou quelqu'un d'autre la fera avant toi. Les vraies innovations sont celles qui semblent impossibles aujourd'hui. Tu n'es pas limité par la technologie actuelle. Tu imagines le FUTUR."
+        },
+        "etape2": {
+          "titre": "2. Ignore les Contraintes",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Pour cette mission, je ne dois PAS me demander 'est-ce réaliste aujourd'hui ?' Je dois me demander 'est-ce que ça résoudrait vraiment le problème si on pouvait le faire ?'",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Innovation Impossible",
+          "type_etape": "champ_texte",
+          "instruction": "Présente :\n- Le problème que tu veux résoudre\n- Ta solution 'impossible'\n- Tes réponses aux 3 objections\n- Ton pitch final (style Steve Jobs)",
+          "placeholder": "PROBLÈME : ...\n\nSOLUTION IMPOSSIBLE : ...\n\nRéponses aux objections :\n1. 'C'est impossible' → ...\n2. 'Trop cher' → ...\n3. 'Personne ne voudra' → ...\n\nMON PITCH : Aujourd'hui, je vais résoudre... Voici... Voici pourquoi ça va changer le monde..."
+        }
+      },
+      "mentorGoal": "Faire vivre l'expérience complète de l'innovation : identifier un problème, imaginer une solution audacieuse, défendre contre les objections. L'enfant doit ressentir la puissance de la pensée 'out-of-the-box'.",
+      "evaluationCriteria": "1. Problème réel identifié. 2. Solution originale/audacieuse (pas évidente). 3. Défense argumentée face aux objections. 4. Pitch structuré. Bonus : L'idée est suffisamment audacieuse pour sembler 'folle' mais suffisamment réfléchie pour être défendable."
+    }
+  },
+  "m18": {
+    "defi1": {
+      "titre": "Quiz: L'Expérience de Asch (La Pression du Groupe)",
+      "question": "Imagine : Tu es dans une classe. Le prof montre 2 lignes. La ligne A est CLAIREMENT plus longue que la ligne B. Mais 9 élèves (complices) disent 'La ligne B est plus longue'. À ton tour. Que fais-tu ?",
+      "options": [
+        "Je dis 'La ligne A est plus longue' même si tout le monde dit le contraire (je fais confiance à mes yeux)",
+        "Je dis 'La ligne B est plus longue' pour ne pas être le seul bizarre",
+        "Je ne dis rien pour éviter le conflit"
+      ],
+      "bonneReponseIndex": 0,
+      "feedbackCorrect": "BRAVO ! Tu as le courage de dire la vérité même quand TOUT LE MONDE dit le contraire. C'est RARE. Dans l'expérience réelle de Asch (1951), 75% des gens ont menti au moins une fois pour suivre le groupe ! Ils ont dit que la ligne courte était longue juste pour 'faire comme les autres'. TOI tu as la force mentale de résister à la pression du groupe. C'est un super-pouvoir de leader.",
+      "feedbackIncorrect": "C'est humain ! Dans l'expérience réelle de Asch (1951), 75% des gens ont fait comme toi : ils ont suivi le groupe MÊME EN SACHANT que c'était faux. Pourquoi ? La pression sociale. On préfère avoir TORT avec tout le monde qu'avoir RAISON tout seul. Mais les leaders, les innovateurs, les héros ? Ils ont appris à dire 'Non, vous avez tort' quand c'est nécessaire. C'est une compétence qui se travaille.",
+      "leconStrategique": "L'IA suit TOUJOURS la majorité (elle apprend des patterns dominants). TOI tu peux choisir de ne pas suivre. Les plus grands changements du monde sont venus de gens qui ont dit 'Non' quand tout le monde disait 'Oui'. Rosa Parks (droits civiques), Galilée (la Terre tourne), Malala (éducation des filles). Avoir raison SEUL est inconfortable. Mais c'est là que se trouve le changement.",
+      "referenceCroisee": "M10",
+      "mentorGoal": "Introduire le concept de conformité sociale et développer le courage de penser indépendamment. L'enfant doit comprendre que suivre le groupe n'est pas toujours la bonne décision.",
+      "evaluationCriteria": "Réponse correcte : Option 1 (dire la vérité malgré le groupe). Bonus : L'enfant donne un exemple personnel où il a résisté ou non à la pression du groupe."
+    },
+    "defi2": {
+      "titre": "Mission: Les 3 Règles Stupides",
+      "scenario": "Autour de toi, il y a plein de 'règles' que tout le monde suit sans réfléchir. Certaines sont utiles. D'autres sont STUPIDES, mais personne n'ose les remettre en question. Aujourd'hui, tu vas devenir un 'détective de règles stupides' !",
+      "instruction": "**Ta mission : Identifier 3 règles stupides que tout le monde suit**\n\n**Exemples de règles à analyser :**\n- À l'école : 'On doit lever la main pour parler' (Pourquoi ? Et si on avait une autre méthode ?)\n- À la maison : 'On mange à table' (Pourquoi pas un pique-nique dans le salon parfois ?)\n- Dans la société : 'Les garçons en bleu, les filles en rose' (Qui a décidé ça ?)\n- À l'école : 'Tout le monde doit apprendre la même chose en même temps' (Pourquoi ?)\n- Partout : 'Il faut être sérieux pour être respecté' (Et l'humour ?)\n\n**Pour CHAQUE règle que tu identifies, réponds :**\n1. Quelle est la règle ?\n2. Pourquoi tout le monde la suit sans réfléchir ?\n3. Pourquoi cette règle est stupide (ou au moins discutable) ?\n4. Quelle serait une meilleure règle ?\n\n**Attention : Ce n'est PAS 'désobéir pour désobéir'. C'est RÉFLÉCHIR avant d'obéir.**",
+      "leconStrategique": "Beaucoup de 'règles' ne sont que des habitudes. Elles existaient à une époque pour une raison, mais cette raison a disparu. Pourtant, personne n'ose les remettre en question. Les innovateurs OSENT. Exemple : Avant, on disait 'Les femmes ne peuvent pas voter' → Stupide, mais accepté pendant des siècles. 'Les enfants doivent travailler dans les usines' → Accepté, puis interdit. Ton job : identifier les 'évidences' d'aujourd'hui qui seront les absurdités de demain.",
+      "referenceCroisee": "M2",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Règle vs Habitude",
+          "type_etape": "texte_guide",
+          "instruction": "Une VRAIE règle a une raison (ex: 'On s'arrête au feu rouge' → sécurité). Une HABITUDE est suivie 'parce que c'est comme ça' (ex: 'On ne porte pas de chapeau en classe' → pourquoi ?). Les habitudes méritent d'être questionnées."
+        },
+        "etape2": {
+          "titre": "2. Questionner ≠ Désobéir",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Questionner une règle stupide, c'est INTELLIGENT. Désobéir juste pour embêter, c'est immature. Je vais chercher les règles qui n'ont plus de sens, pas désobéir aveuglément.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Tes 3 Règles Stupides",
+          "type_etape": "champ_texte",
+          "instruction": "Pour chacune des 3 règles :\n1. Quelle est la règle ?\n2. Pourquoi elle est suivie sans réfléchir ?\n3. Pourquoi elle est stupide/discutable ?\n4. Ta meilleure alternative ?",
+          "placeholder": "RÈGLE 1 : ...\nPourquoi suivie : ...\nPourquoi stupide : ...\nMeilleure alternative : ...\n\nRÈGLE 2 : ...\n(etc.)"
+        }
+      },
+      "mentorGoal": "Développer la pensée critique face aux normes sociales. L'enfant doit apprendre à questionner les 'évidences' plutôt que les suivre aveuglément. C'est la base de l'anticonformisme intelligent.",
+      "evaluationCriteria": "1. 3 règles identifiées (toute règle est valable tant qu'elle est questionnée). 2. Analyse critique de pourquoi elle est suivie et pourquoi elle pourrait être stupide. 3. Proposition d'alternative réfléchie. Bonus : L'enfant identifie une règle vraiment pertinente et propose une alternative innovante."
+    },
+    "defi3": {
+      "titre": "Quiz: Quand Désobéir Change le Monde",
+      "question": "En 1955, Rosa Parks (États-Unis) refuse de céder sa place dans le bus à un Blanc. C'était ILLÉGAL. Elle risquait la prison. Pourquoi son acte est-il considéré comme héroïque ?",
+      "options": [
+        "Parce qu'elle a désobéi, et désobéir c'est toujours bien",
+        "Parce qu'elle a désobéi à une LOI INJUSTE, au nom d'une valeur supérieure (l'égalité)",
+        "Parce qu'elle est devenue célèbre"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACT ! Rosa Parks n'a pas désobéi 'pour le plaisir'. Elle a désobéi à une LOI INJUSTE (ségrégation raciale) au nom d'une VALEUR SUPÉRIEURE (l'égalité de tous les humains). C'est ça, la désobéissance INTELLIGENTE : savoir quand une règle est MAUVAISE et avoir le courage de dire 'Non'. Résultat : Son acte a lancé le mouvement des droits civiques. Une personne, un acte de désobéissance, un changement mondial.",
+      "feedbackIncorrect": "Non ! Rosa Parks n'est PAS une héroïne 'parce qu'elle a désobéi'. Elle est une héroïne parce qu'elle a désobéi à une LOI INJUSTE. La différence est ÉNORME. Désobéir à une règle stupide pour défendre une valeur juste = héroïsme. Désobéir juste pour embêter = immaturité. Rosa Parks savait POURQUOI elle désobéissait. C'est ça, la désobéissance intelligente.",
+      "leconStrategique": "Les plus grands héros de l'Histoire ont DÉSOBÉI : Gandhi (désobéissance civile contre l'occupation britannique), Mandela (lutte contre l'apartheid), Malala (défendre l'éducation des filles). Ils ont tous dit 'Cette règle est injuste, je refuse'. Mais ils ne désobéissaient pas 'pour désobéir'. Ils désobéissaient pour CHANGER une injustice. C'est la différence entre la rébellion stupide et la révolution intelligente.",
+      "referenceCroisee": "M10",
+      "mentorGoal": "Introduire le concept de désobéissance civile et éthique. L'enfant doit comprendre que désobéir peut être un acte moral quand on défend une valeur supérieure face à une règle injuste.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (désobéir à une loi injuste pour une valeur supérieure). Bonus : L'enfant donne un autre exemple historique de désobéissance héroïque (Gandhi, Mandela, Malala, etc.)."
+    },
+    "defi4": {
+      "titre": "Mission: Ton Manifeste de Désobéissance Intelligente",
+      "scenario": "Dernière mission : écrire TON code personnel de 'Désobéissance Intelligente'. Quand vas-tu suivre ? Quand vas-tu désobéir ? Quelles sont TES lignes rouges ? C'est ta boussole morale pour les 10 prochaines années.",
+      "instruction": "**Écris ton Manifeste de Désobéissance Intelligente**\n\n**Partie 1 : Mes Valeurs Non-Négociables (3 valeurs)**\nExemples :\n- Honnêteté : Je ne mentirai jamais, même si tout le monde le fait\n- Égalité : Je ne laisserai jamais quelqu'un être exclu ou moqué\n- Curiosité : Je poserai toujours des questions, même si on me dit 'Tais-toi'\n\n**Partie 2 : Quand Je Vais OBÉIR (même si je n'aime pas)**\nExemples :\n- Quand la règle protège quelqu'un (sécurité, respect, santé)\n- Quand désobéir ne changerait rien de important\n- Quand je ne comprends pas encore pourquoi la règle existe\n\n**Partie 3 : Quand Je Vais DÉSOBÉIR (avec courage)**\nExemples :\n- Quand une règle est injuste envers quelqu'un\n- Quand tout le monde suit une idée stupide et que je peux proposer mieux\n- Quand on me demande de faire quelque chose qui viole mes valeurs (Partie 1)\n\n**Partie 4 : Comment Je Vais Désobéir (intelligemment, pas bêtement)**\nExemples :\n- En expliquant POURQUOI je désobéis\n- En proposant une MEILLEURE solution\n- En acceptant les conséquences de mon choix\n- Sans violence, avec respect\n\n**Partie 5 : Ma Promesse**\nExemple : 'Je promets de réfléchir AVANT d'obéir. Je promets d'avoir le courage de dire Non quand c'est juste. Je promets de ne jamais suivre la foule aveuglément.'",
+      "leconStrategique": "Ce manifeste est ton GPS moral. Dans 10 ans, tu seras confronté à des choix difficiles : suivre le groupe ou suivre tes valeurs ? Faire comme tout le monde ou oser être différent ? Ce document te rappellera qui tu es. Les leaders ont des principes. Les moutons suivent. TOI, tu es en train de définir TES principes. Garde ce document. Relis-le quand tu hésites.",
+      "referenceCroisee": "M10",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi un Manifeste ?",
+          "type_etape": "texte_guide",
+          "instruction": "Un manifeste, c'est ta déclaration de QUI TU ES. Quand tu seras face à une décision difficile ('Tout le monde triche, je triche aussi ?'), tu reliras ce document et tu sauras quoi faire. C'est ton armure contre la pression du groupe."
+        },
+        "etape2": {
+          "titre": "2. Intelligent, Pas Rebelle",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Ce manifeste n'est PAS 'Comment être un rebelle cool'. C'est 'Comment penser par moi-même et avoir le courage de mes convictions'. La désobéissance intelligente n'est pas un jeu, c'est une responsabilité.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Manifeste Complet",
+          "type_etape": "champ_texte",
+          "instruction": "Écris ton manifeste avec les 5 parties :\n1. Mes 3 valeurs non-négociables\n2. Quand j'obéis\n3. Quand je désobéis\n4. Comment je désobéis (méthode)\n5. Ma promesse",
+          "placeholder": "MES VALEURS :\n1. ...\n2. ...\n3. ...\n\nJ'OBÉIS QUAND : ...\n\nJE DÉSOBÉIS QUAND : ...\n\nCOMMENT JE DÉSOBÉIS : ...\n\nMA PROMESSE : ..."
+        }
+      },
+      "mentorGoal": "Créer un document personnel qui ancre les valeurs et les principes de l'enfant. L'objectif est qu'il ait une boussole morale claire pour naviguer les pressions sociales futures et développer sa pensée indépendante.",
+      "evaluationCriteria": "1. Manifeste complet avec les 5 parties. 2. Valeurs claires et personnelles (pas copiées). 3. Distinction claire entre obéissance légitime et désobéissance justifiée. 4. Méthode de désobéissance respectueuse et réfléchie. Bonus : Le manifeste est suffisamment personnel et puissant pour servir de vraie boussole morale."
+    }
+  },
+  "m19": {
+    "defi1": {
+      "titre": "Quiz: Qui Contrôle Qui ?",
+      "question": "Tu dis 'Je vais juste regarder une vidéo YouTube', et 2 heures plus tard tu scrolles encore. Pourquoi ?",
+      "options": [
+        "Parce que je n'ai pas de volonté",
+        "Parce que YouTube est CONÇU pour te garder le plus longtemps possible (algorithmes addictifs)",
+        "Parce que les vidéos sont trop intéressantes"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXACT ! Ce n'est PAS ta faute. YouTube (et TikTok, Instagram, etc.) emploient des CENTAINES d'ingénieurs payés pour te garder captif le plus longtemps possible. Comment ? Autoplay automatique, recommandations infinies, notifications, scroll sans fin. C'est CONÇU comme un casino : tu ne peux pas gagner. La première étape pour reprendre le contrôle ? COMPRENDRE qu'on te manipule.",
+      "feedbackIncorrect": "Non ! Ce n'est PAS un problème de volonté. YouTube emploie des CENTAINES d'ingénieurs pour te PIÉGER. Leur job ? Maximiser le 'temps d'écran'. Ils utilisent des algorithmes qui étudient ce qui te capte et te donnent EXACTEMENT ça, en boucle infinie. Tu ne combats pas ta volonté, tu combats une machine conçue pour te manipuler. Comprendre ça te donne du POUVOIR.",
+      "leconStrategique": "Les plus grandes entreprises tech (Google, Meta, TikTok) gagnent des MILLIARDS en vendant ton attention aux publicitaires. Plus tu restes, plus elles gagnent. Elles ont investi des MILLIONS dans la recherche pour te rendre accro. Résultat : le temps d'écran moyen explose chaque année. Savoir ça te permet de reprendre le contrôle. Tu n'es pas 'faible', tu es face à une machine de guerre. Mais tu peux gagner.",
+      "referenceCroisee": "M14",
+      "mentorGoal": "Faire comprendre que les dépendances modernes ne sont pas un problème de volonté mais un problème de DESIGN MANIPULATEUR. L'enfant doit comprendre qu'il est face à des systèmes conçus pour le piéger.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (YouTube conçu pour être addictif). Bonus : L'enfant donne un exemple personnel où il a perdu le contrôle du temps sur un écran."
+    },
+    "defi2": {
+      "titre": "Mission: Le Test des 24 Heures",
+      "scenario": "Tu vas faire l'expérience la plus difficile de ta vie : vivre 24 heures SANS écrans de loisir (YouTube, TikTok, jeux vidéo, Netflix). Attention : c'est BEAUCOUP plus dur que tu ne penses. C'est le test ultime de liberté.",
+      "instruction": "**Les règles du défi 24h sans écrans :**\n\n✅ **AUTORISÉ :**\n- Écrans pour l'école/devoirs (obligatoire)\n- Téléphone pour appeler/messages importants\n- Lire des livres, jouer dehors, dessiner, construire, créer\n\n❌ **INTERDIT :**\n- YouTube, TikTok, Instagram, Snapchat\n- Jeux vidéo (console, téléphone, tablette)\n- Netflix, séries, films\n- Scroll sur les réseaux sociaux\n\n**Pendant ces 24h, note sur papier :**\n1. Combien de fois tu as eu envie de prendre ton téléphone/tablette (compte !)\n2. À quels moments c'était le plus dur (après l'école ? avant de dormir ?)\n3. Qu'est-ce que tu as fait à la place ?\n4. Comment tu t'es senti ? (ennui, stress, liberté, créativité ?)\n\n**Après les 24h, réponds :**\n- Est-ce que c'était plus dur ou plus facile que prévu ?\n- Qu'as-tu découvert sur toi ?\n- Es-tu dépendant ou libre ?",
+      "leconStrategique": "Si tu ne peux PAS passer 24h sans écrans de loisir, tu as un problème de dépendance. Ce n'est pas grave, la plupart des gens sont dans le même cas. MAIS maintenant tu SAIS. Et savoir, c'est le premier pas vers la liberté. Les personnes libres CHOISISSENT quand elles utilisent les écrans. Les personnes dépendantes SUBISSENT. Ce test te montre où tu en es.",
+      "referenceCroisee": "M18",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi 24h ?",
+          "type_etape": "texte_guide",
+          "instruction": "24h, c'est suffisamment long pour ressentir le manque si tu es dépendant, mais suffisamment court pour être faisable. Si tu ne peux pas tenir 24h, tu as une dépendance. Point. Ce test est brutal mais honnête."
+        },
+        "etape2": {
+          "titre": "2. Prépare-toi",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Ce sera difficile. J'aurai des envies. C'est NORMAL. L'important n'est pas de ne jamais avoir envie, c'est de RÉSISTER à l'envie. Je vais noter tout ce que je ressens.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Rapport Post-Mission",
+          "type_etape": "champ_texte",
+          "instruction": "Après les 24h, écris :\n- Nombre de fois où tu as eu envie de craquer\n- Moments les plus durs\n- Ce que tu as fait à la place\n- Comment tu t'es senti\n- Ta conclusion : dépendant ou libre ?",
+          "placeholder": "Envies de craquer : ... fois\nMoments durs : ...\nActivités de remplacement : ...\nMes sensations : ...\nMa conclusion : ..."
+        }
+      },
+      "mentorGoal": "Faire vivre l'expérience concrète de la dépendance. L'enfant doit ressentir physiquement ce que signifie être contrôlé par les écrans. C'est une prise de conscience puissante.",
+      "evaluationCriteria": "1. L'enfant a tenté le défi (succès ou échec, peu importe). 2. Rapport honnête sur les difficultés rencontrées. 3. Prise de conscience de son niveau de dépendance. Bonus : L'enfant exprime un désir de changer ses habitudes."
+    },
+    "defi3": {
+      "titre": "Quiz: Le Piège de la Récompense Instantanée",
+      "question": "Tu finis tes devoirs. Ton cerveau dit 'Récompense ! YouTube 5 minutes !'. 2h plus tard, tu y es encore. Pourquoi c'est un piège ?",
+      "options": [
+        "Parce que 5 minutes de YouTube méritent 5 minutes, pas 2h",
+        "Parce que ton cerveau devient ACCRO à la récompense instantanée et ne sait plus attendre",
+        "Parce que YouTube c'est trop bien"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BRAVO ! C'est le piège de la DOPAMINE. Chaque like, chaque nouvelle vidéo, chaque scroll donne à ton cerveau une mini-dose de dopamine (hormone du plaisir). Ton cerveau ADORE ça. Problème : plus tu lui donnes de récompenses instantanées, plus il en veut. Résultat : tu ne sais plus faire des choses difficiles qui demandent de l'effort (sport, devoirs, lecture). Ton cerveau devient un enfant capricieux qui veut du plaisir MAINTENANT. C'est dangereux.",
+      "feedbackIncorrect": "Non ! Le vrai problème n'est pas YouTube en soi. C'est que ton cerveau s'HABITUE aux récompenses INSTANTANÉES. Chaque vidéo = mini-plaisir. Ton cerveau en veut ENCORE. Et ENCORE. Résultat : quand tu dois faire quelque chose de difficile (apprendre, créer, réfléchir), ton cerveau dit 'Non ! Donne-moi du plaisir facile !'. Tu perds ta capacité à faire des efforts. C'est le vrai danger.",
+      "leconStrategique": "Les leaders, les créateurs, les champions ont un point commun : ils savent RETARDER la gratification. Ils font l'effort MAINTENANT, la récompense PLUS TARD. Les perdants font l'inverse : plaisir maintenant, douleur plus tard. Ton cerveau doit réapprendre à attendre. Comment ? En réduisant les récompenses instantanées (écrans, sucre, jeux). C'est dur, mais ça te rend 10x plus fort.",
+      "referenceCroisee": "M6",
+      "mentorGoal": "Expliquer le mécanisme neurologique de la dépendance (dopamine) de manière accessible. L'enfant doit comprendre que chaque récompense instantanée affaiblit sa volonté.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (cerveau accro aux récompenses instantanées). Bonus : L'enfant identifie d'autres sources de récompenses instantanées dans sa vie (jeux, bonbons, notifications)."
+    },
+    "defi4": {
+      "titre": "Mission: Ton Code de Liberté",
+      "scenario": "Dernière mission : créer TON 'Code de Liberté' personnel. Ce sont TES règles pour ne PAS être contrôlé par les écrans, les algorithmes, ou les dépendances. C'est ton bouclier pour les 10 prochaines années.",
+      "instruction": "**Écris ton Code de Liberté (5 parties)**\n\n**Partie 1 : Mes Limites Non-Négociables**\nExemples :\n- Pas d'écrans 1h avant de dormir\n- Maximum 30 minutes de YouTube par jour\n- Pas de téléphone pendant les repas\n- Pas de jeux vidéo en semaine\n\n**Partie 2 : Mes Signaux d'Alerte (Comment je sais que je perds le contrôle)**\nExemples :\n- Quand je dis 'juste 5 minutes' et que je ne peux pas m'arrêter\n- Quand je pense aux écrans pendant que je fais autre chose\n- Quand je me sens irrité si on me demande d'arrêter\n- Quand je cache mon temps d'écran à mes parents\n\n**Partie 3 : Mes Alternatives (Que faire au lieu de prendre l'écran)**\nExemples :\n- Lire un livre\n- Jouer dehors\n- Construire quelque chose\n- Appeler un ami pour jouer\n- Dessiner, créer, inventer\n\n**Partie 4 : Mon Système de Check (Comment je vérifie que je suis libre)**\nExemple :\n- Chaque semaine, je teste : 'Puis-je passer 24h sans écrans de loisir ?'\n- Si oui → Je suis libre\n- Si non → Je reprends le contrôle\n\n**Partie 5 : Ma Promesse**\nExemple : 'Je promets de ne jamais laisser un algorithme contrôler ma vie. Je promets de rester LIBRE. Les écrans sont mes OUTILS, pas mes MAÎTRES.'",
+      "leconStrategique": "Ce code est ton armure. Dans 10 ans, les écrans seront 100x plus addictifs qu'aujourd'hui (réalité virtuelle, IA hyper-personnalisée, etc.). Ceux qui n'ont pas de règles seront ESCLAVES. Ceux qui ont un Code de Liberté resteront MAÎTRES de leur vie. Ce document est aussi important que ton manifeste anti-IA (M16). Garde-le. Relis-le. Ajuste-le. C'est ton GPS pour rester libre.",
+      "referenceCroisee": "M16",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi un Code ?",
+          "type_etape": "texte_guide",
+          "instruction": "Sans règles claires, tu PERDRAS face aux algorithmes. Ils sont trop puissants. Ils ont trop de données sur toi. Mais si tu as un Code personnel, tu SAIS quand tu dérapes. C'est ton système d'alerte précoce."
+        },
+        "etape2": {
+          "titre": "2. Sois Honnête, Pas Parfait",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Ce Code n'est pas pour être parfait 100% du temps. C'est pour SAVOIR quand je dérape et me remettre sur les rails. L'important est d'être CONSCIENT, pas parfait.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Code Complet",
+          "type_etape": "champ_texte",
+          "instruction": "Écris ton Code de Liberté avec les 5 parties :\n1. Mes limites non-négociables\n2. Mes signaux d'alerte\n3. Mes alternatives\n4. Mon système de check\n5. Ma promesse",
+          "placeholder": "MES LIMITES :\n1. ...\n2. ...\n3. ...\n\nSIGNAUX D'ALERTE : ...\n\nALTERNATIVES : ...\n\nSYSTÈME DE CHECK : ...\n\nMA PROMESSE : ..."
+        }
+      },
+      "mentorGoal": "Créer un document personnel opérationnel que l'enfant pourra utiliser pour résister aux dépendances. L'objectif est qu'il sorte de ce module avec des règles concrètes et une conscience de sa liberté.",
+      "evaluationCriteria": "1. Code complet avec les 5 parties. 2. Limites réalistes (pas trop strictes, pas trop laxistes). 3. Signaux d'alerte personnels et honnêtes. 4. Alternatives concrètes. 5. Promesse affirmative. Bonus : Le code est suffisamment solide pour être appliqué immédiatement."
     }
   },
   "speed_drills": {
