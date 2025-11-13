@@ -877,7 +877,7 @@ const styles = StyleSheet.create({
         width: isWeb ? (MAX_WIDTH - 80) / 3.2 : '100%',
         backgroundColor: PremiumTheme.colors.white,
         borderRadius: PremiumTheme.borderRadius.xlarge,
-        marginBottom: PremiumTheme.spacing.lg,
+        marginBottom: PremiumTheme.spacing.xs, // Réduit pour compacité
         overflow: 'hidden',
         borderWidth: 1,
         borderColor: 'rgba(0, 0, 0, 0.08)',
