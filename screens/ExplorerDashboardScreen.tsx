@@ -119,6 +119,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const [showSpeedDrillDetails, setShowSpeedDrillDetails] = useState(false);
     const [loading, setLoading] = useState(true);
     const [showMascot, setShowMascot] = useState(false); // NOUVEAU: Affichage temporaire mascotte
+    const [mascotAnimation, setMascotAnimation] = useState<'fadeInDown' | 'fadeOutUp'>('fadeInDown');
     
     // Hook pour la détection automatique des badges
     const { unlockedBadge, triggerBadgeUnlock, closeBadgeModal } = useBadgeUnlock();
@@ -223,11 +224,22 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     useEffect(() => {
         if (!loading && modules.length > 0) {
             setShowMascot(true);
-            // Masquer après 6 secondes
-            const timer = setTimeout(() => {
+            setMascotAnimation('fadeInDown');
+            
+            // Commencer le fade out après 5,5 secondes
+            const fadeOutTimer = setTimeout(() => {
+                setMascotAnimation('fadeOutUp');
+            }, 5500);
+            
+            // Masquer complètement après 6 secondes (500ms pour l'animation)
+            const hideTimer = setTimeout(() => {
                 setShowMascot(false);
             }, 6000);
-            return () => clearTimeout(timer);
+            
+            return () => {
+                clearTimeout(fadeOutTimer);
+                clearTimeout(hideTimer);
+            };
         }
     }, [loading, modules.length]); 
 
@@ -277,8 +289,8 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                     {/* Mascotte temporaire qui apparaît/disparaît */}
                     {showMascot && (
                         <Animatable.View 
-                            animation="fadeInDown" 
-                            duration={600}
+                            animation={mascotAnimation}
+                            duration={500}
                             style={styles.mascotTemporary}
                         >
                             <Mascot 

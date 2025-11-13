@@ -283,7 +283,7 @@ export const saveDefiProgress = async (
         .eq('user_id', userId)
         .eq('module_id', moduleId)
         .eq('defi_id', defiId)
-        .single();
+        .maybeSingle();
     
     const attemptCount = existing ? (existing.attempt_count || 1) + 1 : 1;
     
@@ -362,14 +362,14 @@ export const loginExplorerByPin = async (name: string, pin: string): Promise<Exp
         .eq('name', name)
         .eq('pin_code', pin)
         .eq('is_active', true)
-        .single();
+        .maybeSingle(); // CORRIGÉ: maybeSingle au lieu de single (pas d'erreur si 0 résultat)
         
     if (error) {
         console.error("Échec de la connexion Explorateur:", error);
         return null;
     }
 
-    return data as ExplorerProfile;
+    return data as ExplorerProfile | null;
 };
 
 /**
@@ -418,14 +418,14 @@ export const getExplorerProfile = async (explorerUuid: string): Promise<Explorer
         .from('explorers')
         .select('*')
         .eq('explorer_uuid', explorerUuid)
-        .single();
+        .maybeSingle();
     
     if (error) {
         console.error("Échec de la récupération du profil explorateur:", error);
         return null;
     }
 
-    return data as ExplorerProfile;
+    return data as ExplorerProfile | null;
 };
 
 /**
@@ -545,13 +545,18 @@ export const fetchExplorerProgressForDefi = async (
         .eq('user_id', userId)
         .eq('module_id', moduleId)
         .eq('defi_id', defiId)
-        .single();
+        .maybeSingle();
 
     if (error) {
         if (error.code === 'PGRST116') { // No rows returned
             return null;
         }
         console.error("Erreur Supabase lors du fetch du défi spécifique:", error);
+        return null;
+    }
+
+    // IMPORTANT: data peut être null si aucun résultat
+    if (!data) {
         return null;
     }
 
@@ -901,7 +906,7 @@ export const updateUserStreak = async (userId: string): Promise<UserStreak | nul
             .from('user_streaks')
             .select('*')
             .eq('user_id', userId)
-            .single();
+            .maybeSingle();
         
         if (streakError || !streakData) {
             return {
@@ -938,7 +943,7 @@ export const getUserStreak = async (userId: string): Promise<UserStreak | null> 
             .from('user_streaks')
             .select('*')
             .eq('user_id', userId)
-            .single();
+            .maybeSingle();
         
         if (error) {
             return {

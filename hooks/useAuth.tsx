@@ -16,7 +16,7 @@ interface AuthContextType {
   user: UserProfile | null;
   loading: boolean;
   signUpMentor: (name: string, email: string, password: string) => Promise<void>;
-  login: (nameOrEmail: string, password?: string, role?: 'explorer' | 'mentor') => Promise<void>; 
+  login: (nameOrEmail: string, password?: string, role?: 'explorer' | 'explorer_solo' | 'mentor') => Promise<void>; 
   logout: () => Promise<void>;
 }
 
@@ -103,21 +103,38 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
              Alert.alert(i18n.t('global.welcome'), `Connexion Mentor réussie.`);
           }
       } else if (isExplorerSolo && password) {
-          // NOUVEAU: Créer un explorateur solo (sans mentor)
-          const newExplorer = await createSoloExplorer(nameOrEmail, password);
+          // NOUVEAU: Mode explorateur solo - Essayer connexion puis création
+          // 1. Essayer de se connecter d'abord
+          const existingExplorer = await loginExplorerByPin(nameOrEmail, password);
           
-          if (newExplorer) {
+          if (existingExplorer) {
+              // Connexion réussie !
               const loggedInUser: UserProfile = { 
                   ...SIM_USER_BASE, 
-                  id: newExplorer.explorer_uuid,
+                  id: existingExplorer.explorer_uuid,
                   role: 'explorer', 
-                  user_metadata: { name: newExplorer.name } 
+                  user_metadata: { name: existingExplorer.name } 
               } as UserProfile;
               setSession({ ...SIM_SESSION_BASE, user: loggedInUser });
               setUser(loggedInUser);
-              Alert.alert('🎉 Compte créé !', `Bienvenue, ${newExplorer.name}! Ton aventure commence maintenant.`);
+              Alert.alert('👋 Re-bonjour !', `Content de te revoir, ${existingExplorer.name}!`);
           } else {
-              Alert.alert(i18n.t('global.error'), "Impossible de créer le compte. Ce nom est peut-être déjà pris.");
+              // 2. Si connexion échoue, essayer de créer le compte
+              const newExplorer = await createSoloExplorer(nameOrEmail, password);
+              
+              if (newExplorer) {
+                  const loggedInUser: UserProfile = { 
+                      ...SIM_USER_BASE, 
+                      id: newExplorer.explorer_uuid,
+                      role: 'explorer', 
+                      user_metadata: { name: newExplorer.name } 
+                  } as UserProfile;
+                  setSession({ ...SIM_SESSION_BASE, user: loggedInUser });
+                  setUser(loggedInUser);
+                  Alert.alert('🎉 Compte créé !', `Bienvenue, ${newExplorer.name}! Ton aventure commence maintenant.`);
+              } else {
+                  Alert.alert(i18n.t('global.error'), "Impossible de créer le compte. Ce nom est peut-être déjà pris.");
+              }
           }
       } else if (role === 'explorer' && password) {
           // Vérification de l'Explorateur par Nom et PIN
