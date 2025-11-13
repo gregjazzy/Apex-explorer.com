@@ -706,7 +706,7 @@ const styles = StyleSheet.create({
     // Séparateur de bloc (fond coloré + bordure top)
     blockSeparator: {
         marginTop: 0, // Supprimé pour réduire l'espace
-        marginBottom: PremiumTheme.spacing.md,
+        marginBottom: PremiumTheme.spacing.xs, // Réduit au minimum
         marginHorizontal: isWeb ? -PremiumTheme.spacing.lg : -PremiumTheme.spacing.md, // Extend to edges
         paddingHorizontal: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
         paddingVertical: PremiumTheme.spacing.md,
