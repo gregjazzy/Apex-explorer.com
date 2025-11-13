@@ -201,12 +201,9 @@ const BadgeUnlockModal: React.FC<BadgeUnlockModalProps> = ({ visible, badge, onC
             {badge.xpReward && (
               <Animatable.View animation="bounceIn" delay={800} style={styles.xpReward}>
                 <Text style={styles.xpIcon}>⭐</Text>
-                <Animated.Text style={styles.xpText}>
-                  +{xpCounterAnim.interpolate({
-                    inputRange: [0, badge.xpReward],
-                    outputRange: [0, badge.xpReward],
-                  }).toString().split('.')[0]} XP
-                </Animated.Text>
+                <Text style={styles.xpText}>
+                  +{badge.xpReward} XP
+                </Text>
               </Animatable.View>
             )}
           </Animated.View>
