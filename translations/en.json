@@ -34,7 +34,11 @@
     "m10": "The Leader's Code (Ethics)",
     "m10_desc": "Develop integrity and ethical leadership values.",
     "m11": "The Capital Project (Synthesis)",
-    "m11_desc": "Final synthesis: apply all acquired skills in a complete project."
+    "m11_desc": "Final synthesis: apply all acquired skills in a complete project.",
+    "m12": "The Art of Connecting",
+    "m12_desc": "Master the 5 superpowers of communication and become someone others WANT to be with.",
+    "m13": "Money Smart",
+    "m13_desc": "Learn to manage your money like a pro: budget, savings, self-investment."
   },
   "defi": {
     "title": "Challenge",
@@ -914,6 +918,192 @@
     "choose_role": "Please choose your profile to start.",
     "explorer_name_placeholder": "Explorer's Name",
     "start_adventure": "Start the Adventure"
+  },
+  "m12": {
+    "defi1": {
+      "titre": "Quiz: The Social Mirror",
+      "question": "It's recess at school. You observe three different people. Who would you prefer to spend time with?",
+      "options": [
+        "Alex: Silent, never speaks, always looking at their phone",
+        "Bea: Talks all the time about herself, never asks questions to others",
+        "Camille: Joyful, asks how you're doing, listens to your stories with attention"
+      ],
+      "bonneReponseIndex": 2,
+      "feedbackCorrect": "Excellent! You understood: people want to be with someone who makes them feel IMPORTANT. Camille asks questions, listens, shows interest. This is the SECRET #1 of communication! If YOU want others to like you, become like Camille: curious, attentive, joyful.",
+      "feedbackIncorrect": "Think about it: who makes you feel GOOD? Someone who ignores you (Alex) or only talks about themselves (Bea)? NO! You prefer Camille because she makes you feel important. This is the golden rule: people love those who LISTEN and care about them.",
+      "leconStrategique": "The best communicators (CEOs, leaders, entrepreneurs) all have this in common: they LISTEN more than they talk. They ask questions. They are TRULY interested in others. It's not manipulation, it's authentic empathy. And it creates powerful connections.",
+      "referenceCroisee": "M5",
+      "mentorGoal": "Introduce the fundamental communication concept: being interested in others BEFORE talking about oneself. The child must understand that active listening is superpower #1.",
+      "evaluationCriteria": "Correct answer: Camille (option 3). Bonus: The child explains why listening is important or gives an example from their life."
+    },
+    "defi2": {
+      "titre": "Mission: The 3 Golden Rules of Communication",
+      "scenario": "You want to become someone everyone WANTS to be with? There are 3 golden rules that all great communicators use. They're simple, but POWERFUL. If you apply them for a week, you'll see the difference.",
+      "instruction": "Here are the 3 Golden Rules:\n\n**RULE 1: Ask questions about THE OTHER** (not just about you)\nInstead of saying: \"I did this...\"\nSay: \"And you, how did it go for you?\"\n\n**RULE 2: REALLY listen** (look in the eyes, not at your screen)\nWhen someone speaks, look at them, nod your head, don't interrupt.\n\n**RULE 3: Share POSITIVE energy** (smile, encourage)\nSay things like: \"Cool!\" \"That's interesting!\" \"Well done!\"\n\nYOUR MISSION:\n1. Choose ONE person (friend, family, neighbor)\n2. Apply these 3 rules for 5 minutes in a conversation\n3. Observe what happens: does the person smile? Talk more? Feel good?\n4. Write your experience: what did you notice?",
+      "leconStrategique": "The leaders of the 22nd century are not those who talk the loudest, but those who CONNECT best. These 3 rules create trust, influence, opportunities. The best negotiators, entrepreneurs, politicians use them every day.",
+      "referenceCroisee": "M5",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why It Works?",
+          "type_etape": "texte_guide",
+          "instruction": "People LOVE talking about themselves. If you ask them questions and really listen, they will LOVE you back! It's mathematical: you give attention → you receive affection."
+        },
+        "etape2": {
+          "titre": "2. The Trap To Avoid",
+          "type_etape": "validation_case",
+          "instruction": "I understood: DON'T listen just to wait for my turn to speak. Really listening means being curious about the other.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Experience",
+          "type_etape": "champ_texte",
+          "instruction": "After applying the 3 rules with someone, describe:\n- Who was the person?\n- What did you notice differently?\n- How did the person react?",
+          "placeholder": "My experience: I talked with... and I noticed that..."
+        }
+      },
+      "mentorGoal": "Make the child concretely experience active listening and interest in others. The child must observe the direct impact of these techniques on their interactions.",
+      "evaluationCriteria": "1. The child tested the 3 rules with someone. 2. Clear description of the experience (who, what, result). 3. Observation of impact (e.g., person smiled more, talked more, etc.). Bonus: The child mentions they will continue using these rules."
+    },
+    "defi3": {
+      "titre": "Quiz: Body Language",
+      "question": "Your friend is telling you a super important story. You are sitting, arms crossed, looking out the window. Suddenly, your friend stops talking and leaves. Why?",
+      "options": [
+        "They forgot what they wanted to say",
+        "Your BODY told them 'I'm not interested' even if you were listening",
+        "They had to go to the bathroom"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BINGO! Your BODY speaks LOUDER than your words. Even if you were listening in your head, your friend saw: crossed arms = closed, looking away = not interested. Result? They felt ignored and left. This is the power of NON-VERBAL LANGUAGE: 70% of communication happens through your body, not your words!",
+      "feedbackIncorrect": "No! It's your BODY LANGUAGE that ruined everything. Crossed arms + looking away = your body says 'I don't care'. Your friend felt it and left. The SECRET: your body must show you're listening EVEN if you're really listening in your head!",
+      "leconStrategique": "The best leaders master body language. Steve Jobs, Oprah Winfrey, Barack Obama: they know that 70% of communication is NON-VERBAL. Learning to control your body = multiplying your influence by 10.",
+      "referenceCroisee": "M5",
+      "mentorGoal": "Introduce the concept of non-verbal communication and its MAJOR impact. The child must understand that their body speaks louder than their words.",
+      "evaluationCriteria": "Correct answer: Option 2 (body language). Bonus: The child gives a personal example where their body sent a wrong message."
+    },
+    "defi4": {
+      "titre": "Mission: The Empathy Test",
+      "scenario": "Your little brother (or sister, or cousin) breaks your favorite toy BY ACCIDENT. They start crying. You're angry because your toy is broken. What do you do?",
+      "instruction": "You have 3 options. Read them and choose what you would REALLY do:\n\n**Option A: Immediate reaction**\n\"YOU ALWAYS BREAK EVERYTHING! I HATE YOU!\"\n→ You yell, push them, go see your parents to complain.\n\n**Option B: Escape**\nYou say nothing, take your broken toy, go to your room and sulk.\n→ You ignore your brother/sister who is crying.\n\n**Option C: The 3-Second Pause + Empathy**\nYou breathe for 3 seconds. You look at your brother/sister who is crying.\nYou say: \"I see you're sad too. It was an accident. Can we fix it together?\"\n\nNow, EXPLAIN:\n1. Which option would you REALLY choose in this situation?\n2. Why is Option C the best for a future leader?\n3. Describe a real situation where someone annoyed you: how did you react? What could you have done differently with the 3-Second Pause technique?",
+      "leconStrategique": "EMPATHY is not weakness. It's the superpower of the most powerful leaders. Understanding the other's emotions BEFORE reacting gives you a strategic advantage: you control the situation instead of exploding. The 3-Second Pause = technique used by FBI negotiators, CEOs under pressure, diplomats in crisis.",
+      "referenceCroisee": "M10",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Why Immediate Anger Is Dangerous",
+          "type_etape": "texte_guide",
+          "instruction": "When you react IMMEDIATELY under emotion, you lose control. You say/do things you regret later. Strategic leaders always take 3 seconds to THINK before ACTING."
+        },
+        "etape2": {
+          "titre": "2. The Emotional Mirror Technique",
+          "type_etape": "validation_case",
+          "instruction": "I understood: Before reacting, I NAME the other's emotion: 'I see you're sad/scared/sorry.' It instantly calms the situation.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Self-Analysis",
+          "type_etape": "champ_texte",
+          "instruction": "Tell a REAL situation where someone annoyed you:\n- What did the person do?\n- How did you react in the moment?\n- If you had taken 3 seconds and used empathy, what would you have said/done differently?",
+          "placeholder": "Situation: ... My reaction: ... What I could have done: ..."
+        }
+      },
+      "mentorGoal": "Introduce empathy and emotional control as strategic tools (not just 'being nice'). The child must understand that managing emotions = taking control of the situation.",
+      "evaluationCriteria": "1. The child identifies Option C as the best. 2. Clear explanation of why (emotional control, empathy). 3. Personal example of a real situation with honest self-analysis. Bonus: The child mentions they will try the 3-Second Pause technique in their life."
+    }
+  },
+  "m13": {
+    "defi1": {
+      "titre": "Mission: Pocket Money Budget",
+      "scenario": "You receive €10 of pocket money every week. The question: how to use it INTELLIGENTLY? The rich have a secret: they don't spend everything immediately. They use the 3 Jars method.",
+      "instruction": "The 3 Jars Method:\n\n**JAR 1: SPEND** (Immediate pleasure) = 50%\nThis is your money to have fun: candy, games, outings with friends.\n\n**JAR 2: SAVE** (Future goal) = 40%\nThis is your money for a BIG goal: bike, console, trip.\n\n**JAR 3: GIVE** (Impact on others) = 10%\nThis is your money to help: gift for someone, charity, good deed.\n\nYOUR MISSION:\n1. Calculate how many euros go in each jar if you receive €10.\n2. Choose a GOAL for your Jar 2 (something you really want to buy).\n3. Calculate: if you save 40% each week, how long to reach your goal?\n4. Explain: why is giving 10% important even if it's YOUR money?",
+      "leconStrategique": "Billionaires didn't become wealthy by chance. They ALL learned young to manage money with discipline. The 3 Jars method = basis of financial management. Warren Buffett, Bill Gates, Elon Musk: all use this principle (spend, invest, give). You learn it at 8, you're 10 years ahead of 99% of people.",
+      "referenceCroisee": "M8",
+      "briefing": {
+        "etape1": {
+          "titre": "1. The 3 Jars Calculation",
+          "type_etape": "validation_case",
+          "instruction": "I understood: €10 × 50% = €5 (Spend), €10 × 40% = €4 (Save), €10 × 10% = €1 (Give).",
+          "placeholder": null
+        },
+        "etape2": {
+          "titre": "2. Why 40% For Saving?",
+          "type_etape": "texte_guide",
+          "instruction": "Most people spend 100% of what they earn. Result? They stay poor their whole life. The rich save BEFORE spending. It's the difference between being SLAVE to money or MASTER of money."
+        },
+        "etape3": {
+          "titre": "3. Your Goal & Calculation",
+          "type_etape": "champ_texte",
+          "instruction": "Choose something you REALLY want (example: bike at €80, console at €300).\n\nCalculate: If you save €4/week, how many weeks to buy it?\nFormula: Price of goal ÷ €4 = number of weeks",
+          "placeholder": "My goal: ... Price: ...€. Time needed: ... weeks."
+        },
+        "etape4": {
+          "titre": "4. The Power of Giving",
+          "type_etape": "champ_texte",
+          "instruction": "Giving 10% creates an ABUNDANCE MENTALITY: 'I have enough for me AND to help others.' The greatest leaders are also the most generous. Explain to whom you would give your €1 and why.",
+          "placeholder": "I would give to... because..."
+        }
+      },
+      "mentorGoal": "Introduce basic financial management with the 3 Jars method. The child must understand that managing money = discipline + goals + generosity.",
+      "evaluationCriteria": "1. Correct calculations: €5, €4, €1. 2. Clear goal with calculation of time needed. 3. Explanation of why give 10%. Bonus: The child mentions they will apply this method in real life."
+    },
+    "defi2": {
+      "titre": "Mission: Save For A Goal",
+      "scenario": "You want to buy a video game for €60. Problem: you only have €10 pocket money per week and you put 40% in your Jar 2 (Save). But you're IMPATIENT! You want the game NOW. What do you do?",
+      "instruction": "**Starting situation:**\n- Goal: Video game at €60\n- Pocket money: €10/week\n- Savings (Jar 2): €4/week\n- Time needed: €60 ÷ €4 = 15 weeks (almost 4 months!)\n\n**The problem: It's TOO LONG!**\n\nYou have 3 options:\n\n**Option A: Borrow money from your parents**\n\"Mom/Dad, lend me €60, I'll pay you back later.\"\n→ You have the game NOW, but you must repay.\n\n**Option B: Use ALL your pocket money (100%)**\nInstead of €4/week, you put the entire €10 in Jar 2.\n→ You have the game in 6 weeks, but you can't spend anything for 6 weeks.\n\n**Option C: Find ADDITIONAL INCOME**\nPropose extra tasks: wash the car (€5), clean the garage (€10), mow the lawn (€8).\n→ You keep your €4/week AND you earn more!\n\nYOUR MISSION:\n1. Which option would you choose? Why?\n2. Calculate: If you do 2 extra tasks per month (€15), how long to reach €60?\n3. Explain: Which is the BEST option for a future entrepreneur?",
+      "leconStrategique": "Entrepreneurs don't ASK for money, they CREATE it. Option C (additional income) is the billionaire mentality: increase your income instead of cutting spending or going into debt. Elon Musk, Jeff Bezos, Mark Zuckerberg: they all started by creating value to earn money.",
+      "referenceCroisee": "M9",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Comparison of 3 Options",
+          "type_etape": "texte_guide",
+          "instruction": "Option A (Borrow) = You become DEPENDENT. Option B (Save everything) = You DEPRIVE yourself. Option C (Create income) = You become ACTIVE. Leaders always choose Option C."
+        },
+        "etape2": {
+          "titre": "2. Option C Calculation",
+          "type_etape": "validation_case",
+          "instruction": "I understood: €4/week (normal savings) + €15/month (extra tasks) = €4×4 + €15 = €31/month. So €60 in 2 months instead of 4!",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Your Choice & Justification",
+          "type_etape": "champ_texte",
+          "instruction": "Explain which option you would choose and WHY. If you choose Option C, list 3 tasks you could propose to your parents or neighbors to earn extra money.",
+          "placeholder": "My choice: Option ... because... My 3 task ideas: 1. ... 2. ... 3. ..."
+        }
+      },
+      "mentorGoal": "Introduce entrepreneurial mentality: create value to increase income instead of going into debt or depriving yourself. The child must understand they can ACT to accelerate their goals.",
+      "evaluationCriteria": "1. Choice of option (all acceptable if justified). 2. Correct calculation if Option C chosen. 3. List of 3 realistic tasks to earn money. Bonus: The child explains why Option C is best for an entrepreneur."
+    },
+    "defi3": {
+      "titre": "Quiz: Earning Money",
+      "question": "You're 8 years old. You want to earn money to buy things. What's the BEST strategy?",
+      "options": [
+        "Ask for more pocket money from your parents without doing anything extra",
+        "Wait for your birthday to receive money as a gift",
+        "Propose to do extra tasks (wash the car, clean the garage, help neighbors) and negotiate a price"
+      ],
+      "bonneReponseIndex": 2,
+      "feedbackCorrect": "PERFECT! You understood the entrepreneur's secret: money EARNED (by your work) is worth 10 times more than money RECEIVED (gift). Why? Because you learn 3 ESSENTIAL things: 1) The value of work, 2) How to create value for others, 3) How to NEGOTIATE. These skills are worth MILLIONS later!",
+      "feedbackIncorrect": "No! Asking for money without giving anything in return = DEPENDENCE mentality. Waiting for a gift = PASSIVITY mentality. Future leaders CREATE value and NEGOTIATE. Propose services, set a price, work, earn. That's how you become an entrepreneur!",
+      "leconStrategique": "Warren Buffett sold chewing gum at 6. Elon Musk coded video games at 12. Mark Zuckerberg created websites at 10. All billionaires have one thing in common: they started YOUNG creating value and earning money. Not by begging, but by CREATING.",
+      "referenceCroisee": "M9",
+      "mentorGoal": "Introduce the fundamental difference between EARNED money and RECEIVED money. The child must understand that creating value for others is the basis of all business.",
+      "evaluationCriteria": "Correct answer: Option 3 (propose tasks). Bonus: The child explains why earned money is more valuable than received money."
+    },
+    "defi4": {
+      "titre": "Quiz: Invest In Yourself vs Spend",
+      "question": "It's your birthday! You receive €100. You can buy 2 different things. Which one is an INVESTMENT (brings you money/skills) and which is an EXPENSE (immediate pleasure)?",
+      "options": [
+        "Option A: Buy a bike to have fun = INVESTMENT / Option B: Buy books to learn coding = EXPENSE",
+        "Option A: Buy a bike to have fun = EXPENSE / Option B: Buy books to learn coding = INVESTMENT",
+        "Both are EXPENSES because you lose €100"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXCELLENT! You understood the difference between ASSET and LIABILITY:\n\n**EXPENSE (Bike)**: You spend €100 → You have pleasure → It's over. You can't earn money with it.\n\n**INVESTMENT (Coding books)**: You spend €100 → You learn a SKILL → You can create websites, games, earn money for 50 years!\n\nThe rich buy ASSETS (that bring returns). The poor buy LIABILITIES (that cost). You think like a rich person!",
+      "feedbackIncorrect": "No! The bike = EXPENSE (immediate pleasure, brings nothing). The coding books = INVESTMENT (skill that can bring you money all your life). The rich invest in themselves BEFORE spending for pleasure. It's rule #1 of wealth.",
+      "leconStrategique": "Billionaires invest massively in their EDUCATION and their SKILLS before buying things. Bill Gates read 50 books/year since childhood. Elon Musk taught himself physics and programming. Warren Buffett invested in books and courses. The rule: INVEST IN YOURSELF = best possible return on investment.",
+      "referenceCroisee": "M6",
+      "mentorGoal": "Introduce the concept of ASSET vs LIABILITY. The child must understand that investing in themselves (skills, education) brings infinitely more than spending for immediate pleasure.",
+      "evaluationCriteria": "Correct answer: Option B (bike = expense, books = investment). Bonus: The child gives an example of self-investment they would like to make (course, books, training, etc.)."
+    }
   },
   "badges": {
     "title": "Your Badges of Honor",
