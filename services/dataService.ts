@@ -88,6 +88,8 @@ const BASE_MODULE_DATA_SIM = [
   { id: 'm9', isUnlocked: true },
   { id: 'm10', isUnlocked: true },
   { id: 'm11', isUnlocked: true },
+  { id: 'm12', isUnlocked: true },
+  { id: 'm13', isUnlocked: true },
 ];
 
 interface BaseDefi {
@@ -160,6 +162,18 @@ const BASE_DEFIS_SIM: Record<string, BaseDefi[]> = {
     m11: [
         { id: 'defi1', xpValue: 100, requires: [] },
         { id: 'defi2', xpValue: 100, requires: [] },
+    ],
+    m12: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
+    ],
+    m13: [
+        { id: 'defi1', xpValue: 100, requires: [] },
+        { id: 'defi2', xpValue: 100, requires: [] },
+        { id: 'defi3', xpValue: 100, requires: [] },
+        { id: 'defi4', xpValue: 100, requires: [] },
     ]
 };
 
