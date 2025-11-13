@@ -1029,11 +1029,11 @@ export const calculateAdvancedBadges = async (
         if (earned) {
             earnedBadgeIds.push(badge.id);
             
-            // TEMPORAIRE: Sauvegarde Supabase désactivée à cause des RLS policies
-            // TODO: Configurer les RLS policies pour earned_badges dans Supabase
-            // if (!previouslyEarned.includes(badge.id)) {
-            //     saveEarnedBadge(userId, badge.id);
-            // }
+            // Sauvegarder dans Supabase si nouveau badge
+            // Nécessite: RLS policies configurées (voir earned_badges_rls.sql)
+            if (!previouslyEarned.includes(badge.id)) {
+                saveEarnedBadge(userId, badge.id);
+            }
             
             // Si le badge n'a PAS encore été affiché à l'écran, l'ajouter aux nouveaux
             if (!displayedBadges.includes(badge.id)) {
