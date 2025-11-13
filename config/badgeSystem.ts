@@ -252,18 +252,76 @@ export const BADGE_CATALOG: BadgeConfig[] = [
     rarity: 'legendary',
   },
   
-  // BADGES PAR MODULE (M12-M19)
+  // ===== BADGES M12 (MODULE GRATUIT) - SYSTÈME HYBRIDE =====
+  // 🎁 Stratégie : Micro-badges par défi pour accrocher l'utilisateur
+  
+  // Défi 1 : Écoute Active
+  {
+    id: 'm12_defi1',
+    tier: 'bronze',
+    category: 'completion',
+    icon: '👂',
+    title: 'Oreilles Ouvertes',
+    description: 'Défi 1 : Tu sais maintenant écouter activement !',
+    requirement: 'Compléter Défi 1 de M12',
+    xpReward: 50,
+    rarity: 'common',
+  },
+  
+  // Défi 2 : Poser des Questions
+  {
+    id: 'm12_defi2',
+    tier: 'bronze',
+    category: 'completion',
+    icon: '❓',
+    title: 'Poseur de Questions',
+    description: 'Défi 2 : Tu maîtrises l\'art de poser les bonnes questions !',
+    requirement: 'Compléter Défi 2 de M12',
+    xpReward: 50,
+    rarity: 'common',
+  },
+  
+  // Défi 3 : Empathie
+  {
+    id: 'm12_defi3',
+    tier: 'bronze',
+    category: 'completion',
+    icon: '💙',
+    title: 'Cœur Empathique',
+    description: 'Défi 3 : Tu comprends les émotions des autres !',
+    requirement: 'Compléter Défi 3 de M12',
+    xpReward: 50,
+    rarity: 'common',
+  },
+  
+  // Défi 4 : Communication Non-Verbale
+  {
+    id: 'm12_defi4',
+    tier: 'bronze',
+    category: 'completion',
+    icon: '👀',
+    title: 'Lecteur de Langage Corporel',
+    description: 'Défi 4 : Tu décodes le langage du corps !',
+    requirement: 'Compléter Défi 4 de M12',
+    xpReward: 50,
+    rarity: 'common',
+  },
+  
+  // Badge MASTER du module M12 (après les 4 défis)
   {
     id: 'module_m12',
     tier: 'silver',
     category: 'completion',
     icon: '💬',
     title: 'Maître Communicateur',
-    description: 'Module M12 "L\'Art de Connecter" complété !',
-    requirement: 'Terminer M12',
+    description: 'Module M12 "L\'Art de Communiquer" complété !',
+    requirement: 'Terminer M12 (4/4 défis)',
     xpReward: 200,
     rarity: 'rare',
   },
+  
+  // ===== BADGES MODULES PREMIUM (M13-M19) =====
+  // Pas de micro-badges, uniquement badge de module
   {
     id: 'module_m13',
     tier: 'gold',

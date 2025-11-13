@@ -935,12 +935,41 @@ export const calculateAdvancedBadges = async (
                 badgeProgress = Math.min(100, (perfectModules.length / 19) * 100);
                 break;
             
-            // BADGES PAR MODULE (M12-M19)
+            // ===== BADGES M12 (MODULE GRATUIT) - MICRO-BADGES PAR DÉFI =====
+            // 🎁 Stratégie d'engagement : badge immédiat à chaque défi
+            case 'm12_defi1':
+                const m12d1 = progressItems.find(p => p.moduleId === 'm12' && p.defiId === 'defi1' && p.status === 'completed');
+                earned = !!m12d1;
+                badgeProgress = earned ? 100 : 0;
+                break;
+                
+            case 'm12_defi2':
+                const m12d2 = progressItems.find(p => p.moduleId === 'm12' && p.defiId === 'defi2' && p.status === 'completed');
+                earned = !!m12d2;
+                badgeProgress = earned ? 100 : 0;
+                break;
+                
+            case 'm12_defi3':
+                const m12d3 = progressItems.find(p => p.moduleId === 'm12' && p.defiId === 'defi3' && p.status === 'completed');
+                earned = !!m12d3;
+                badgeProgress = earned ? 100 : 0;
+                break;
+                
+            case 'm12_defi4':
+                const m12d4 = progressItems.find(p => p.moduleId === 'm12' && p.defiId === 'defi4' && p.status === 'completed');
+                earned = !!m12d4;
+                badgeProgress = earned ? 100 : 0;
+                break;
+            
+            // Badge MASTER M12 (après les 4 défis)
             case 'module_m12':
                 const m12Defis = progressItems.filter(p => p.moduleId === 'm12' && p.status === 'completed');
                 earned = m12Defis.length >= 4;
                 badgeProgress = Math.min(100, (m12Defis.length / 4) * 100);
                 break;
+            
+            // ===== BADGES MODULES PREMIUM (M13-M19) =====
+            // Pas de micro-badges, uniquement badge de module
                 
             case 'module_m13':
                 const m13Defis = progressItems.filter(p => p.moduleId === 'm13' && p.status === 'completed');
