@@ -1069,12 +1069,17 @@ export const markBadgeAsDisplayed = async (userId: string, badgeId: string): Pro
 // Sauvegarder un badge débloqué dans la base
 async function saveEarnedBadge(userId: string, badgeId: string) {
     try {
+        // Utiliser upsert pour éviter les erreurs de duplication
+        // onConflict spécifie la contrainte unique (user_id, badge_id)
         const { error } = await supabase
             .from('earned_badges')
-            .insert({
+            .upsert({
                 user_id: userId,
                 badge_id: badgeId,
                 earned_at: new Date().toISOString(),
+            }, {
+                onConflict: 'user_id,badge_id',
+                ignoreDuplicates: false // Met à jour earned_at si le badge existe déjà
             });
         
         if (error) console.error('Erreur sauvegarde badge:', error);
