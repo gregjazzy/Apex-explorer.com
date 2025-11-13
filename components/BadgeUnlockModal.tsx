@@ -6,6 +6,7 @@ import { Modal, View, Text, StyleSheet, TouchableOpacity, Animated, Platform } f
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
 import * as Animatable from 'react-native-animatable';
+import { useTranslation } from 'react-i18next';
 import PremiumTheme from '../config/premiumTheme';
 import ConfettiAnimation from './ConfettiAnimation';
 import Badge3D from './Badge3D';
@@ -27,6 +28,7 @@ interface BadgeUnlockModalProps {
 }
 
 const BadgeUnlockModal: React.FC<BadgeUnlockModalProps> = ({ visible, badge, onClose }) => {
+  const { t } = useTranslation();
   const scaleAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(50)).current;
@@ -147,7 +149,7 @@ const BadgeUnlockModal: React.FC<BadgeUnlockModalProps> = ({ visible, badge, onC
             duration={500}
             style={styles.mainTitle}
           >
-            🎉 NOUVEAU BADGE ! 🎉
+            {t('badges.new_badge_title')}
           </Animatable.Text>
 
           {/* Badge 3D spectaculaire */}

@@ -22,7 +22,7 @@ const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 900;
 
-// Composant pour le séparateur de bloc thématique (fond coloré + contraste amélioré)
+// Composant pour le séparateur de bloc thématique (GRIS NEUTRE pour app premium)
 const BlockSeparator: React.FC<{
     block: ModuleBlock;
     moduleCount: number;
@@ -32,21 +32,13 @@ const BlockSeparator: React.FC<{
     const blockTitle = t(block.titleKey);
     
     return (
-        <View style={[
-            styles.blockSeparator, 
-            { 
-                backgroundColor: block.color + '30',
-                borderTopColor: block.color + '40',
-            }
-        ]}>
+        <View style={styles.blockSeparator}>
             <View style={styles.separatorContent}>
                 <View style={styles.separatorLeft}>
                     <Text style={styles.separatorIcon}>{block.icon}</Text>
                     <Text style={styles.separatorTitle}>{blockTitle}</Text>
                     {block.isFree && (
-                        <View style={styles.freeBadgeSmall}>
-                            <Text style={styles.freeBadgeSmallText}>GRATUIT</Text>
-                        </View>
+                        <Text style={styles.freeText}>• Gratuit</Text>
                     )}
                 </View>
                 
@@ -84,11 +76,11 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
         }
     };
 
-    // Gradients selon le statut (plus subtils et sophistiqués)
+    // Gradients selon le statut - BLEU INDIGO SOBRE pour app premium
     const gradientColors = isCompleted 
         ? ['#10B981', '#059669'] as const // Vert succès
         : module.isUnlocked 
-        ? ['#4F46E5', '#7C3AED'] as const // Indigo/Violet élégant
+        ? ['#4F46E5', '#7C3AED'] as const // Bleu indigo élégant (comme avant)
         : ['#F3F4F6', '#E5E7EB'] as const; // Gris neutre
 
     return (
@@ -96,6 +88,7 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
             animation="fadeInUp" 
             delay={index * 100}
             duration={600}
+            useNativeDriver
         >
             <TouchableOpacity 
                 style={[
@@ -105,7 +98,7 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
                 ]} 
                 onPress={handlePress} 
                 disabled={!module.isUnlocked}
-                activeOpacity={0.9}
+                activeOpacity={0.7}
             >
                 <LinearGradient
                     colors={gradientColors}
@@ -116,17 +109,10 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
                     <View style={styles.cardHeader}>
                         {/* Numéro dynamique basé sur MODULE_DISPLAY_ORDER (voir ⚠️_ARCHITECTURE_MODULES_CRITIQUE_⚠️.md) */}
                         <Text style={styles.moduleId}>MODULE {index + 1}</Text>
-                        <View style={[
-                            styles.statusBadge,
-                            { backgroundColor: isCompleted ? '#D1FAE5' : module.isUnlocked ? '#EBF5FF' : '#F3F4F6' }
-                        ]}>
-                            <Text style={[
-                                styles.cardStatus, 
-                                { color: isCompleted ? '#065F46' : module.isUnlocked ? '#1E40AF' : '#6B7280' }
-                            ]}>
-                                {isCompleted ? '✅ ' + t('defi.completed') : module.isUnlocked ? '🚀 ' + t('defi.unlocked') : '🔒 ' + t('defi.locked')}
-                            </Text>
-                        </View>
+                        {/* Badge de statut simplifié - juste un emoji discret */}
+                        <Text style={styles.statusEmoji}>
+                            {isCompleted ? '✅' : module.isUnlocked ? '' : '🔒'}
+                        </Text>
                     </View>
                 </LinearGradient>
                 
@@ -141,7 +127,7 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
                             {t('defi.completed_count', { completed: defisCompletedCount, total: totalDefisCount })}
                         </Text>
                         {module.isUnlocked && !isCompleted && (
-                            <Text style={styles.ctaText}>Continuer →</Text>
+                            <Text style={styles.ctaText}>{t('dashboard.continue_button')} →</Text>
                         )}
                     </View>
                 </View>
@@ -151,7 +137,7 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
 };
 
 const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>> = ({ navigation }) => {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const { t, i18n } = useTranslation();
     const [modules, setModules] = useState<Module[]>([]);
     const [badges, setBadges] = useState<EarnedBadge[]>([]);
@@ -162,6 +148,9 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const [loading, setLoading] = useState(true);
     const [showMascot, setShowMascot] = useState(false);
     const [mascotAnimation, setMascotAnimation] = useState<'fadeInDown' | 'fadeOutUp'>('fadeInDown');
+    
+    // Calculer le meilleur temps Speed Drill
+    const bestSpeedTime = speedDrillStats?.bestTime || null;
     
     // Hook pour la détection automatique des badges
     const { unlockedBadge, triggerBadgeUnlock, closeBadgeModal } = useBadgeUnlock();
@@ -286,15 +275,15 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             setShowMascot(true);
             setMascotAnimation('fadeInDown');
             
-            // Commencer le fade out après 5,5 secondes
+            // Commencer le fade out après 2,5 secondes
             const fadeOutTimer = setTimeout(() => {
                 setMascotAnimation('fadeOutUp');
-            }, 5500);
+            }, 2500);
             
-            // Masquer complètement après 6 secondes (500ms pour l'animation)
+            // Masquer complètement après 3 secondes (500ms pour l'animation)
             const hideTimer = setTimeout(() => {
                 setShowMascot(false);
-            }, 6000);
+            }, 3000);
             
             return () => {
                 clearTimeout(fadeOutTimer);
@@ -327,21 +316,86 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
         <SafeAreaView style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollContent}>
                 <View style={styles.container}>
-                    {/* Header avec mascotte et streak intégrés - ULTRA COMPACT */}
-                    <View style={styles.headerCompact}>
-                        <View style={styles.greetingRow}>
-                            <View style={styles.leftSection}>
-                                <Text style={styles.greetingText}>👋 Bonjour, {userName}</Text>
+                    {/* Header CUSTOM complet avec tous les éléments */}
+                    <View style={styles.customHeader}>
+                        {/* Ligne du haut : 3 mini-boutons à gauche + Langue/Déco à droite */}
+                        <View style={styles.headerTop}>
+                            <View style={styles.miniCircularButtons}>
+                                <TouchableOpacity 
+                                    style={styles.miniCircularButton}
+                                    onPress={() => navigation.navigate('Badges' as never)}
+                                    activeOpacity={0.7}
+                                >
+                                    <Text style={styles.miniCircularIcon}>🏆</Text>
+                                    <View style={styles.miniCircularBadge}>
+                                        <Text style={styles.miniCircularBadgeText}>{badges.filter(b => b.earned).length}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                
+                                <TouchableOpacity 
+                                    style={styles.miniCircularButton}
+                                    onPress={() => navigation.navigate('HallOfFame' as never)}
+                                    activeOpacity={0.7}
+                                >
+                                    <Text style={styles.miniCircularIcon}>👑</Text>
+                                    <View style={styles.miniCircularBadge}>
+                                        <Text style={styles.miniCircularBadgeText}>{Math.floor(totalXP / 100) || 1}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                
+                                <TouchableOpacity 
+                                    style={styles.miniCircularButton}
+                                    onPress={() => navigation.navigate('SpeedDrill' as never)}
+                                    activeOpacity={0.7}
+                                >
+                                    <Text style={styles.miniCircularIcon}>⚡</Text>
+                                    {bestSpeedTime && (
+                                        <View style={styles.miniCircularBadge}>
+                                            <Text style={styles.miniCircularBadgeText}>{bestSpeedTime}</Text>
+                                        </View>
+                                    )}
+                                </TouchableOpacity>
+                            </View>
+                            
+                            <View style={styles.headerTopRight}>
+                                <TouchableOpacity 
+                                    onPress={() => {
+                                        const currentLang = i18n.language.substring(0, 2);
+                                        const nextLang = currentLang === 'fr' ? 'en' : 'fr';
+                                        i18n.changeLanguage(nextLang);
+                                    }}
+                                    style={styles.headerIconButton}
+                                >
+                                    <Text style={styles.headerIcon}>🌐</Text>
+                                </TouchableOpacity>
+                                
+                                <TouchableOpacity 
+                                    onPress={logout} 
+                                    style={styles.headerIconButton}
+                                >
+                                    <Text style={styles.headerIcon}>🚪</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        
+                        {/* Ligne du bas : Bonjour + XP + Streak */}
+                        <View style={styles.headerBottom}>
+                            <Text style={styles.greetingText}>👋 {t('dashboard.greeting')} {userName}</Text>
+                            
+                            <View style={styles.headerBottomRight}>
+                                <View style={styles.xpBadge}>
+                                    <Text style={styles.xpValue}>{totalXP}</Text>
+                                    <Text style={styles.xpLabel}>XP</Text>
+                                </View>
+                                
                                 {streak && streak.currentStreak > 0 && (
                                     <View style={styles.inlineStreak}>
                                         <Text style={styles.streakEmoji}>🔥</Text>
-                                        <Text style={styles.streakText}>{streak.currentStreak} jour{streak.currentStreak > 1 ? 's' : ''}</Text>
+                                        <Text style={styles.streakText}>
+                                            {streak.currentStreak} {streak.currentStreak > 1 ? t('dashboard.days') : t('dashboard.day')}
+                                        </Text>
                                     </View>
                                 )}
-                            </View>
-                            <View style={styles.xpBadge}>
-                                <Text style={styles.xpValue}>{totalXP}</Text>
-                                <Text style={styles.xpLabel}>XP</Text>
                             </View>
                         </View>
                     </View>
@@ -374,19 +428,19 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                 <View style={styles.inviteBannerLeft}>
                                     <Text style={styles.inviteBannerEmoji}>🤝</Text>
                                     <View>
-                                        <Text style={styles.inviteBannerTitle}>Mode Autonome actif</Text>
-                                        <Text style={styles.inviteBannerSubtitle}>Invite un mentor pour des feedbacks personnalisés</Text>
+                                        <Text style={styles.inviteBannerTitle}>{t('dashboard.solo_mode_title')}</Text>
+                                        <Text style={styles.inviteBannerSubtitle}>{t('dashboard.solo_mode_subtitle')}</Text>
                                     </View>
                                 </View>
                                 <TouchableOpacity 
                                     style={styles.inviteButton}
                                     onPress={() => Alert.alert(
-                                        "Inviter un Mentor",
-                                        "Partage ton nom d'utilisateur avec un parent ou mentor pour qu'il te rejoigne :\n\n👤 " + userName + "\n\nIl pourra créer un compte mentor et te lier à son profil.",
+                                        t('dashboard.invite_mentor_title'),
+                                        t('dashboard.invite_mentor_message', { username: userName }),
                                         [{ text: "OK" }]
                                     )}
                                 >
-                                    <Text style={styles.inviteButtonText}>En savoir +</Text>
+                                    <Text style={styles.inviteButtonText}>{t('dashboard.learn_more')}</Text>
                                 </TouchableOpacity>
                             </View>
                         </Animatable.View>
@@ -408,54 +462,24 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                 <Text style={styles.speedDrillButtonText}>⚡ {t('speed_drills.button')}</Text>
                                 {speedDrillStats && speedDrillStats.totalSessions > 0 && (
                                     <Text style={styles.speedDrillStats}>
-                                        🏆 Meilleur: {speedDrillStats.bestScore}/10 en {speedDrillStats.bestTime}s
+                                        🏆 {t('dashboard.best_score')}: {speedDrillStats.bestScore}/10 {t('global.in')} {speedDrillStats.bestTime}s
                                     </Text>
                                 )}
                             </LinearGradient>
                         </TouchableOpacity>
 
-                        {/* BOUTON POUR DÉPLIER/REPLIER LES DÉTAILS */}
-                        {speedDrillStats && speedDrillStats.totalSessions > 0 && speedDrillStats.byCategory && speedDrillStats.byCategory.length > 0 && (
-                            <>
-                                <TouchableOpacity 
-                                    style={styles.toggleDetailsButton} 
-                                    onPress={() => setShowSpeedDrillDetails(!showSpeedDrillDetails)}
-                                >
-                                    <Text style={styles.toggleDetailsText}>
-                                        {showSpeedDrillDetails ? '▲ Masquer mes records' : '▼ Voir tous mes records'}
-                                    </Text>
-                                </TouchableOpacity>
-
-                                {/* DÉTAILS PAR CATÉGORIE (ACCORDÉON) */}
-                                {showSpeedDrillDetails && (
-                                    <View style={styles.speedDrillDetailsContainer}>
-                                        <Text style={styles.detailsHeader}>Mes records par type :</Text>
-                                        {speedDrillStats.byCategory.map((cat, idx) => (
-                                            <View key={idx} style={styles.detailRow}>
-                                                <Text style={styles.detailLabel}>
-                                                    {getOperationEmoji(cat.operation)} {t(`speed_drills.${cat.operation.toLowerCase()}`)} ({t(`speed_drills.${cat.difficulty.toLowerCase()}`)})
-                                                </Text>
-                                                <Text style={styles.detailValue}>
-                                                    {cat.bestScore}/10 en {cat.bestTime}s • {cat.sessions} session{cat.sessions > 1 ? 's' : ''}
-                                                </Text>
-                                            </View>
-                                        ))}
-                                    </View>
-                                )}
-                            </>
-                        )}
+                        {/* BOUTON POUR DÉPLIER/REPLIER LES DÉTAILS - SUPPRIMÉ POUR SIMPLIFIER */}
                     </Animatable.View>
 
                     <View style={styles.sectionHeader}>
                         <View>
                             <Text style={styles.sectionTitle}>🎯 {t('global.continue')}</Text>
                             <Text style={styles.sectionSubtitle}>
-                                {modules.filter(m => m.completionRate === 1).length} complétés • {modules.filter(m => m.isUnlocked && m.completionRate < 1).length} en cours
+                                {modules.filter(m => m.completionRate === 1).length} {modules.filter(m => m.completionRate === 1).length > 1 ? t('dashboard.completed_plural') : t('dashboard.completed')} • {modules.filter(m => m.isUnlocked && m.completionRate < 1).length} {t('dashboard.in_progress')}
                             </Text>
                         </View>
-                        <View style={styles.modulesCountBadge}>
-                            <Text style={styles.modulesCountText}>{modules.length}</Text>
-                        </View>
+                        {/* Badge de compteur réduit et discret */}
+                        <Text style={styles.modulesCountSmall}>{modules.length}</Text>
                     </View>
                     
                     {/* Affichage des modules par blocs thématiques avec SÉPARATEURS VISUELS */}
@@ -550,36 +574,79 @@ const styles = StyleSheet.create({
         color: PremiumTheme.colors.gray,
     },
     scrollContent: {
-        padding: isWeb ? 40 : 20,
+        paddingHorizontal: isWeb ? 40 : 20,
+        paddingTop: isWeb ? 40 : 8,
+        paddingBottom: isWeb ? 40 : 20,
         alignItems: 'center',
     },
     container: {
         width: isWeb ? Math.min(width * 0.9, MAX_WIDTH) : '100%',
         padding: 0,
+        marginTop: -8,
     },
-    // Header compact et discret
-    headerCompact: {
-        paddingVertical: PremiumTheme.spacing.sm,
-        marginBottom: PremiumTheme.spacing.xs,
+    // Header CUSTOM complet
+    customHeader: {
+        backgroundColor: '#fff',
+        paddingTop: PremiumTheme.spacing.md,
+        paddingBottom: PremiumTheme.spacing.md,
         paddingHorizontal: PremiumTheme.spacing.sm,
-    },
-    greetingRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    leftSection: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: 'rgba(0,0,0,0.05)',
         gap: PremiumTheme.spacing.sm,
+        marginBottom: PremiumTheme.spacing.lg,
+    },
+    headerTop: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        minHeight: 36,
+    },
+    headerBottom: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    headerBottomRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
+    headerLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+        flex: 1,
+        flexShrink: 1,
+        overflow: 'hidden',
+    },
+    headerTopRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
+    headerSeparator: {
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        color: PremiumTheme.colors.gray,
+        opacity: 0.5,
+    },
+    headerIconButton: {
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    headerIcon: {
+        fontSize: 18,
     },
     inlineStreak: {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#FFA500',
         paddingHorizontal: PremiumTheme.spacing.sm,
-        paddingVertical: 2,
-        borderRadius: PremiumTheme.borderRadius.full,
+        paddingVertical: 4,
+        borderRadius: PremiumTheme.borderRadius.medium,
         gap: 4,
     },
     streakEmoji: {
@@ -598,6 +665,43 @@ const styles = StyleSheet.create({
     inviteMentorBanner: {
         marginTop: PremiumTheme.spacing.sm,
         marginBottom: PremiumTheme.spacing.lg,
+    },
+    // OPTION HYBRIDE : Mini boutons circulaires dans le header
+    miniCircularButtons: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+    },
+    miniCircularButton: {
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+    },
+    miniCircularIcon: {
+        fontSize: 18,
+    },
+    miniCircularBadge: {
+        position: 'absolute',
+        top: -3,
+        right: -3,
+        backgroundColor: '#EF4444',
+        borderRadius: 8,
+        minWidth: 16,
+        height: 16,
+        paddingHorizontal: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1.5,
+        borderColor: '#fff',
+    },
+    miniCircularBadgeText: {
+        color: '#fff',
+        fontSize: 9,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
     },
     inviteBannerContent: {
         flexDirection: 'row',
@@ -650,22 +754,22 @@ const styles = StyleSheet.create({
         color: PremiumTheme.colors.white,
     },
     greetingText: {
-        fontSize: PremiumTheme.typography.fontSize.sm,
-        fontWeight: PremiumTheme.typography.fontWeight.medium,
+        fontSize: PremiumTheme.typography.fontSize.base,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
         color: PremiumTheme.colors.gray,
     },
     xpBadge: {
         flexDirection: 'row',
         alignItems: 'baseline',
         backgroundColor: PremiumTheme.colors.lightGray,
-        paddingHorizontal: PremiumTheme.spacing.md,
-        paddingVertical: PremiumTheme.spacing.xs,
-        borderRadius: PremiumTheme.borderRadius.large,
+        paddingHorizontal: PremiumTheme.spacing.sm,
+        paddingVertical: 4,
+        borderRadius: PremiumTheme.borderRadius.medium,
         borderWidth: 1,
         borderColor: 'rgba(0, 0, 0, 0.06)',
     },
     xpValue: {
-        fontSize: PremiumTheme.typography.fontSize.lg,
+        fontSize: PremiumTheme.typography.fontSize.base,
         fontWeight: PremiumTheme.typography.fontWeight.bold,
         color: PremiumTheme.colors.orange,
         marginRight: 4,
@@ -691,29 +795,10 @@ const styles = StyleSheet.create({
         color: PremiumTheme.colors.gray,
         marginTop: 2,
     },
-    modulesCountBadge: {
-        backgroundColor: PremiumTheme.colors.primary,
-        width: 32,
-        height: 32,
-        borderRadius: 16,
-        justifyContent: 'center',
-        alignItems: 'center',
-        // Ombres cross-platform
-        ...(isWeb 
-            ? { boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)' }
-            : {
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.08,
-                shadowRadius: 8,
-                elevation: 4,
-            }
-        ),
-    },
-    modulesCountText: {
+    modulesCountSmall: {
         fontSize: PremiumTheme.typography.fontSize.sm,
-        color: PremiumTheme.colors.white,
-        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.gray,
     },
     
     // Styles pour les blocs thématiques
@@ -730,6 +815,8 @@ const styles = StyleSheet.create({
         paddingVertical: 6, // Ultra-fin
         borderRadius: 0, // Supprimé pour coller parfaitement
         borderTopWidth: 2,
+        backgroundColor: '#D1D5DB', // Gris bien marqué
+        borderTopColor: '#9CA3AF', // Gris plus foncé pour contraste
     },
     separatorContent: {
         flexDirection: 'row',
@@ -750,17 +837,11 @@ const styles = StyleSheet.create({
         fontWeight: PremiumTheme.typography.fontWeight.bold,
         color: PremiumTheme.colors.darkGray,
     },
-    freeBadgeSmall: {
-        backgroundColor: '#10B981',
-        paddingHorizontal: PremiumTheme.spacing.xs,
-        paddingVertical: 2,
-        borderRadius: PremiumTheme.borderRadius.small,
-    },
-    freeBadgeSmallText: {
-        fontSize: 9,
-        fontWeight: PremiumTheme.typography.fontWeight.bold,
-        color: PremiumTheme.colors.white,
-        letterSpacing: 0.5,
+    freeText: {
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        fontWeight: PremiumTheme.typography.fontWeight.medium,
+        color: '#10B981',
+        marginLeft: PremiumTheme.spacing.xs,
     },
     separatorRight: {
         marginLeft: PremiumTheme.spacing.sm,
@@ -885,28 +966,28 @@ const styles = StyleSheet.create({
     },
     
     moduleGrid: {
-        flexDirection: 'row',
+        flexDirection: isWeb ? 'row' : 'column',
         flexWrap: 'wrap',
         justifyContent: 'flex-start',
-        marginBottom: PremiumTheme.spacing.xxxl,
-        gap: isWeb ? PremiumTheme.spacing.xl : PremiumTheme.spacing.md,
+        marginBottom: PremiumTheme.spacing.xl,
+        gap: isWeb ? PremiumTheme.spacing.xl : PremiumTheme.spacing.sm,
     },
     moduleCard: {
         width: isWeb ? (MAX_WIDTH - 80) / 3.2 : '100%',
         backgroundColor: PremiumTheme.colors.white,
         borderRadius: PremiumTheme.borderRadius.xlarge,
         marginBottom: PremiumTheme.spacing.xs, // Réduit pour compacité
-        overflow: 'hidden',
+        // ENLEVÉ overflow: 'hidden' pour permettre les ombres !
         borderWidth: 1,
-        borderColor: 'rgba(0, 0, 0, 0.08)',
-        // Ombres cross-platform
+        borderColor: 'rgba(0, 0, 0, 0.12)', // Bordure visible
+        // Ombres ENCORE PLUS VISIBLES
         ...(isWeb 
-            ? { boxShadow: '0 6px 16px rgba(0, 0, 0, 0.15)' }
+            ? { boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)' }
             : {
                 shadowColor: '#000',
-                shadowOffset: { width: 0, height: 6 },
-                shadowOpacity: 0.15,
-                shadowRadius: 16,
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.25,
+                shadowRadius: 12,
                 elevation: 8,
             }
         ),
@@ -928,8 +1009,11 @@ const styles = StyleSheet.create({
         opacity: 0.6,
     },
     gradientHeader: {
-        padding: PremiumTheme.spacing.xl,
-        paddingVertical: PremiumTheme.spacing.xxl,
+        padding: PremiumTheme.spacing.md,
+        paddingVertical: PremiumTheme.spacing.lg,
+        borderTopLeftRadius: PremiumTheme.borderRadius.xlarge,
+        borderTopRightRadius: PremiumTheme.borderRadius.xlarge,
+        overflow: 'hidden', // Clip les coins du gradient
     },
     cardHeader: {
         flexDirection: 'row',
@@ -941,17 +1025,11 @@ const styles = StyleSheet.create({
         fontWeight: PremiumTheme.typography.fontWeight.extrabold,
         color: PremiumTheme.colors.white,
     },
-    statusBadge: {
-        paddingHorizontal: PremiumTheme.spacing.sm,
-        paddingVertical: 4,
-        borderRadius: PremiumTheme.borderRadius.medium,
-    },
-    cardStatus: {
-        fontSize: PremiumTheme.typography.fontSize.xs,
-        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+    statusEmoji: {
+        fontSize: PremiumTheme.typography.fontSize.xl,
     },
     cardContent: {
-        padding: PremiumTheme.spacing.xl,
+        padding: PremiumTheme.spacing.md,
     },
     cardTitle: {
         fontSize: PremiumTheme.typography.fontSize.lg,
@@ -962,9 +1040,8 @@ const styles = StyleSheet.create({
     cardDescription: {
         fontSize: PremiumTheme.typography.fontSize.sm,
         color: PremiumTheme.colors.gray,
-        marginBottom: PremiumTheme.spacing.md,
-        minHeight: 40,
-        lineHeight: 20,
+        marginBottom: PremiumTheme.spacing.sm,
+        lineHeight: 18,
     },
     moduleFooter: {
         flexDirection: 'row',

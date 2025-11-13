@@ -1,6 +1,8 @@
 // /config/badgeSystem.ts
 // Système de badges sophistiqué pour gamification
 
+import i18n from './i18n';
+
 export type BadgeTier = 'bronze' | 'silver' | 'gold' | 'platinum' | 'diamond';
 export type BadgeCategory = 'completion' | 'speed' | 'accuracy' | 'streak' | 'special';
 
@@ -281,27 +283,27 @@ export const BADGE_CATALOG: BadgeConfig[] = [
     rarity: 'common',
   },
   
-  // Défi 3 : Empathie
+  // Défi 3 : Communication Non-Verbale (Body Language)
   {
     id: 'm12_defi3',
     tier: 'bronze',
     category: 'completion',
-    icon: '💙',
-    title: 'Cœur Empathique',
-    description: 'Défi 3 : Tu comprends les émotions des autres !',
+    icon: '👀',
+    title: 'Lecteur de Langage Corporel',
+    description: 'Défi 3 : Tu décodes le langage du corps !',
     requirement: 'Compléter Défi 3 de M12',
     xpReward: 50,
     rarity: 'common',
   },
   
-  // Défi 4 : Communication Non-Verbale
+  // Défi 4 : Empathie
   {
     id: 'm12_defi4',
     tier: 'bronze',
     category: 'completion',
-    icon: '👀',
-    title: 'Lecteur de Langage Corporel',
-    description: 'Défi 4 : Tu décodes le langage du corps !',
+    icon: '💙',
+    title: 'Cœur Empathique',
+    description: 'Défi 4 : Tu comprends les émotions des autres !',
     requirement: 'Compléter Défi 4 de M12',
     xpReward: 50,
     rarity: 'common',
@@ -434,5 +436,22 @@ export const getNextBadgeToUnlock = (earnedBadges: string[]): BadgeConfig | null
 // Fonction pour calculer le % de badges gagnés
 export const getBadgeCompletionPercentage = (earnedBadges: string[]): number => {
   return Math.round((earnedBadges.length / BADGE_CATALOG.length) * 100);
+};
+
+// Fonction pour traduire un badge
+export const getTranslatedBadge = (badge: BadgeConfig): BadgeConfig => {
+  const key = `badges.${badge.id}`;
+  
+  return {
+    ...badge,
+    title: i18n.t(`${key}.title`, { defaultValue: badge.title }),
+    description: i18n.t(`${key}.description`, { defaultValue: badge.description }),
+    requirement: i18n.t(`${key}.requirement`, { defaultValue: badge.requirement }),
+  };
+};
+
+// Fonction pour traduire tous les badges
+export const getTranslatedBadgeCatalog = (): BadgeConfig[] => {
+  return BADGE_CATALOG.map(getTranslatedBadge);
 };
 

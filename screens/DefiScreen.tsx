@@ -1,13 +1,14 @@
 // /screens/DefiScreen.tsx
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, Alert, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, Alert, TextInput, TouchableOpacity, ActivityIndicator, Modal } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useFocusEffect } from '@react-navigation/native';
 import { BriefingModal } from '../components/BriefingModal'; 
-import { saveDefiProgress, fetchExplorerProgressForDefi, ExplorerProgressItem, getExplorerProfile } from '../services/dataService';
-import { useAuth } from '../hooks/useAuth'; 
+import { saveDefiProgress, fetchExplorerProgressForDefi, ExplorerProgressItem, getExplorerProfile, willUnlockNewBadge } from '../services/dataService';
+import { useAuth } from '../hooks/useAuth';
+import { LinearGradient } from 'expo-linear-gradient'; 
 
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
@@ -43,13 +44,15 @@ interface DefiContentRendererProps {
     responseText: string;
     setResponseText: (text: string) => void;
     onQuizValidation: (isCorrect: boolean, selectedIndex: number) => void;
+    onQuizError: () => void; // Nouveau callback pour les erreurs
 }
 
 const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({ 
     content, 
     responseText, 
     setResponseText,
-    onQuizValidation
+    onQuizValidation,
+    onQuizError
 }) => {
     const { t } = useTranslation();
     
@@ -73,18 +76,8 @@ const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({
         onQuizValidation(correct, selectedOption);
         
         if (!correct) {
-            Alert.alert(
-                t('defi.feedback_incorrect') || "Incorrect",
-                t('defi.incorrect_answer') || "Réessaie !",
-                [{
-                    text: "OK",
-                    onPress: () => {
-                        // Réinitialiser pour permettre une nouvelle tentative
-                        setValidated(false);
-                        setSelectedOption(null);
-                    }
-                }]
-            );
+            // Afficher la modal de leçon au lieu de l'Alert
+            onQuizError();
         }
     };
     
@@ -148,6 +141,81 @@ const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({
 };
 // --- FIN NOUVEAU COMPOSANT ---
 
+// --- COMPOSANT MODAL LEÇON STRATÉGIQUE ---
+interface StrategicLessonModalProps {
+    visible: boolean;
+    onClose: () => void;
+    lesson: string;
+    isCorrect: boolean;
+    isMentorSubmission?: boolean; // Nouveau : défi soumis au mentor
+}
+
+const StrategicLessonModal: React.FC<StrategicLessonModalProps> = ({ visible, onClose, lesson, isCorrect, isMentorSubmission = false }) => {
+    const { t } = useTranslation();
+    
+    return (
+        <Modal
+            visible={visible}
+            transparent={true}
+            animationType="fade"
+            onRequestClose={onClose}
+        >
+            <View style={lessonModalStyles.overlay}>
+                <View style={lessonModalStyles.modalContainer}>
+                    {/* Header avec gradient */}
+                    <LinearGradient
+                        colors={isCorrect ? ['#10B981', '#059669'] : ['#4F46E5', '#7C3AED']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={lessonModalStyles.header}
+                    >
+                        <Text style={lessonModalStyles.headerEmoji}>
+                            {isCorrect ? '🎉' : '💡'}
+                        </Text>
+                        <Text style={lessonModalStyles.headerTitle}>
+                            {isCorrect ? t('defi.completed_title') || 'Bravo !' : t('defi.feedback_incorrect') || 'Pas tout à fait'}
+                        </Text>
+                        {isCorrect && (
+                            <Text style={lessonModalStyles.xpBadge}>+100 XP</Text>
+                        )}
+                    </LinearGradient>
+                    
+                    {/* Contenu */}
+                    <View style={lessonModalStyles.content}>
+                        <View style={lessonModalStyles.lessonHeader}>
+                            <Text style={lessonModalStyles.lessonIcon}>💡</Text>
+                            <Text style={lessonModalStyles.lessonTitle}>
+                                {t('defi.lecon_title') || 'Leçon Stratégique'}
+                            </Text>
+                        </View>
+                        
+                        <Text style={lessonModalStyles.lessonText}>
+                            {lesson}
+                        </Text>
+                    </View>
+                    
+                    {/* Bouton */}
+                    <TouchableOpacity
+                        style={lessonModalStyles.button}
+                        onPress={onClose}
+                        activeOpacity={0.7}
+                    >
+                        <Text style={lessonModalStyles.buttonText}>
+                            {isMentorSubmission 
+                                ? (t('defi.submit_understood') || "J'ai compris 💡")
+                                : isCorrect 
+                                    ? (t('global.continue') || 'Continuer 🚀') 
+                                    : (t('defi.retry_button') || 'Réessayer')
+                            }
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </Modal>
+    );
+};
+// --- FIN COMPOSANT MODAL LEÇON STRATÉGIQUE ---
+
 const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const { t } = useTranslation();
     const { user } = useAuth();
@@ -167,6 +235,12 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const [quizValidated, setQuizValidated] = useState(false);
     const [quizFeedback, setQuizFeedback] = useState<'correct' | 'incorrect' | null>(null);
     
+    // États pour la modal de leçon stratégique
+    const [showLessonModal, setShowLessonModal] = useState(false);
+    const [lessonIsCorrect, setLessonIsCorrect] = useState(false);
+    const [hasNewBadgeToUnlock, setHasNewBadgeToUnlock] = useState(false);
+    const [isMentorSubmission, setIsMentorSubmission] = useState(false);
+    
     // Callback pour la validation du Quiz
     const handleQuizValidation = async (isCorrect: boolean, selectedIndex: number) => {
         setQuizValidated(isCorrect);
@@ -185,12 +259,13 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     100
                 );
                 
-                // Afficher le feedback correct du quiz
-                Alert.alert(
-                    t('defi.submit_title') || "Défi complété !",
-                    t('defi.submit_message') || "Bravo ! Tu as gagné 100 XP.",
-                    [{ text: "OK", onPress: () => navigation.pop(2) }]
-                );
+                // Vérifier si un nouveau badge sera débloqué
+                const hasNewBadge = await willUnlockNewBadge(user.id, moduleId, defiId);
+                setHasNewBadgeToUnlock(hasNewBadge);
+                
+                // Afficher la modal de leçon stratégique
+                setLessonIsCorrect(true);
+                setShowLessonModal(true);
             } catch (error: any) {
                 console.error("Erreur lors de la soumission automatique du Quiz:", error);
                 Alert.alert(
@@ -201,6 +276,27 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                 setSubmitting(false);
             }
         }
+    };
+
+    // Fonction pour fermer la modal et naviguer
+    const handleLessonModalClose = () => {
+        setShowLessonModal(false);
+        
+        // Si réponse correcte, naviguer
+        if (lessonIsCorrect) {
+            navigation.pop(2);
+            // Recharger UNIQUEMENT si nouveau badge
+            if (hasNewBadgeToUnlock) {
+                navigation.navigate('Explorer', { shouldReload: true });
+            }
+        }
+        // Si incorrecte, juste fermer la modal pour réessayer
+    };
+    
+    // Callback pour gérer les erreurs de quiz (afficher modal avec leçon)
+    const handleQuizError = () => {
+        setLessonIsCorrect(false);
+        setShowLessonModal(true);
     };
 
     // Chargement du contenu réel depuis i18n
@@ -353,30 +449,20 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
             
             // Message de succès adapté au mode
             if (evaluationStatus === 'SOUMIS') {
-                Alert.alert(
-                    t('defi.submit_title') || "Défi soumis !",
-                    t('defi.submit_message_pending') || "Ton mentor va évaluer ta réponse. Tu seras notifié quand il aura répondu.",
-                    [{ text: "OK", onPress: () => {
-                        navigation.pop(2);
-                        // Demander un rechargement car soumission effectuée
-                        navigation.navigate('Explorer', { shouldReload: true });
-                    }}]
-                );
+                // Défi soumis à un mentor → Afficher leçon quand même
+                setHasNewBadgeToUnlock(false); // Pas de badge tant que pas validé
+                setLessonIsCorrect(true);
+                setIsMentorSubmission(true);
+                setShowLessonModal(true);
             } else {
-                // Afficher le feedback correct pour les Quiz ET les défis solo
-                const successMessage = isSoloExplorer && isTextDefi
-                    ? "🎉 Défi complété ! Tu as gagné 100 XP.\n💡 Astuce : Tu peux inviter un mentor depuis ton tableau de bord pour obtenir des feedbacks personnalisés."
-                    : "Bravo ! Tu as gagné 100 XP.";
-                    
-                Alert.alert(
-                    t('defi.submit_title') || "Défi complété !",
-                    successMessage,
-                    [{ text: "OK", onPress: () => {
-                        navigation.pop(2);
-                        // Demander un rechargement car défi complété (XP + badges)
-                        navigation.navigate('Explorer', { shouldReload: true });
-                    }}]
-                );
+                // Défi complété immédiatement → Vérifier si nouveau badge
+                const hasNewBadge = await willUnlockNewBadge(userId, moduleId, defiId);
+                setHasNewBadgeToUnlock(hasNewBadge);
+                
+                // Afficher la modal de leçon stratégique
+                setLessonIsCorrect(true);
+                setIsMentorSubmission(false);
+                setShowLessonModal(true);
             }
 
         } catch (error: any) {
@@ -429,7 +515,7 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     {/* Badge Mode Autonome */}
                     {isSoloExplorer && isTextDefi && (
                         <View style={styles.soloBadge}>
-                            <Text style={styles.soloBadgeText}>🚀 Mode Autonome - Auto-validation activée</Text>
+                            <Text style={styles.soloBadgeText}>{t('defi.solo_mode_badge')}</Text>
                         </View>
                     )}
                     
@@ -463,6 +549,7 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                             responseText={responseText}
                             setResponseText={setResponseText}
                             onQuizValidation={handleQuizValidation}
+                            onQuizError={handleQuizError}
                         /> 
                     </View>
                     
@@ -520,10 +607,6 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
 
                     {submitting && <ActivityIndicator size="large" color="#3B82F6" style={{ marginVertical: 20 }} />}
 
-                    <Text style={styles.lecon}>
-                        {t('defi.lecon_title') || "Leçon Stratégique"}: {defiContent.leconStrategique}
-                    </Text>
-
                 </View>
             </ScrollView>
             
@@ -536,6 +619,15 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                     briefingContent={defiContent.briefing} 
                 />
             )}
+            
+            {/* Modal de Leçon Stratégique */}
+            <StrategicLessonModal
+                visible={showLessonModal}
+                onClose={handleLessonModalClose}
+                lesson={defiContent.leconStrategique}
+                isCorrect={lessonIsCorrect}
+                isMentorSubmission={isMentorSubmission}
+            />
         </SafeAreaView>
     );
 };
@@ -733,6 +825,86 @@ const styles = StyleSheet.create({
     paddingTop: 15, 
     textAlign: 'center' 
   },
+});
+
+// Styles pour la Modal de Leçon Stratégique
+const lessonModalStyles = StyleSheet.create({
+    overlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    modalContainer: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 20,
+        width: '100%',
+        maxWidth: 500,
+        overflow: 'hidden',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 10 },
+        shadowOpacity: 0.3,
+        shadowRadius: 20,
+        elevation: 10,
+    },
+    header: {
+        padding: 24,
+        alignItems: 'center',
+    },
+    headerEmoji: {
+        fontSize: 48,
+        marginBottom: 8,
+    },
+    headerTitle: {
+        fontSize: 24,
+        fontWeight: '700',
+        color: '#FFFFFF',
+        marginBottom: 8,
+    },
+    xpBadge: {
+        fontSize: 18,
+        fontWeight: '600',
+        color: '#FFFFFF',
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        paddingHorizontal: 16,
+        paddingVertical: 4,
+        borderRadius: 12,
+    },
+    content: {
+        padding: 24,
+    },
+    lessonHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 16,
+    },
+    lessonIcon: {
+        fontSize: 24,
+        marginRight: 8,
+    },
+    lessonTitle: {
+        fontSize: 18,
+        fontWeight: '600',
+        color: '#1F2937',
+    },
+    lessonText: {
+        fontSize: 16,
+        lineHeight: 24,
+        color: '#4B5563',
+    },
+    button: {
+        backgroundColor: '#4F46E5',
+        margin: 20,
+        paddingVertical: 16,
+        borderRadius: 12,
+        alignItems: 'center',
+    },
+    buttonText: {
+        fontSize: 16,
+        fontWeight: '600',
+        color: '#FFFFFF',
+    },
 });
 
 export default DefiScreen;

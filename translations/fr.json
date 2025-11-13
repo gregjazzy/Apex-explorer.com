@@ -8,7 +8,8 @@
     "close_guide": "Fermer le Guide",
     "error": "Erreur",
     "back": "Retour",
-    "cancel": "Annuler"
+    "cancel": "Annuler",
+    "in": "en"
   },
   "modules": {
     "xp_label": "Points d'Expérience (XP)",
@@ -93,6 +94,8 @@
     "submit_button": "Soumettre le Défi",
     "resubmit_button": "📤 Soumettre à nouveau",
     "validate_button": "Valider ma Réponse",
+    "retry_button": "Réessayer",
+    "submit_understood": "J'ai compris 💡",
     "correct_answer": "✅ Parfait! Réponse Correcte. Vous pouvez soumettre.",
     "incorrect_answer": "❌ Ce n'est pas la bonne réponse. Analysez votre erreur ou utilisez la Fiche Guidée!",
     "feedback_correct": "Correct",
@@ -100,6 +103,10 @@
     "submit_title": "Défi Soumis",
     "submit_message": "Ta réponse a été envoyée au mentor pour validation!",
     "submit_message_pending": "Ton mentor va évaluer ta réponse. Tu seras notifié quand il aura répondu.",
+    "completed_title": "Défi complété !",
+    "completed_message": "Bravo ! Tu as gagné 100 XP.",
+    "completed_solo_message": "🎉 Défi complété ! Tu as gagné 100 XP.\n💡 Astuce : Tu peux inviter un mentor depuis ton tableau de bord pour obtenir des feedbacks personnalisés.",
+    "solo_mode_badge": "🚀 Mode Autonome - Auto-validation activée",
     "scenario_title": "Scénario",
     "instruction_title": "Instruction",
     "lecon_title": "Leçon Stratégique",
@@ -977,7 +984,20 @@
     "title": "Tableau de Bord de l'Explorateur",
     "status_unlocked": "Débloqué",
     "status_locked": "Verrouillé",
-    "load_error": "Erreur de chargement des données."
+    "load_error": "Erreur de chargement des données.",
+    "greeting": "Bonjour",
+    "day": "jour",
+    "days": "jours",
+    "solo_mode_title": "Mode Autonome actif",
+    "solo_mode_subtitle": "Invite un mentor pour des feedbacks personnalisés",
+    "learn_more": "En savoir +",
+    "invite_mentor_title": "Inviter un Mentor",
+    "invite_mentor_message": "Partage ton nom d'utilisateur avec un parent ou mentor pour qu'il te rejoigne :\n\n👤 {{username}}\n\nIl pourra créer un compte mentor et te lier à son profil.",
+    "best_score": "Meilleur",
+    "completed": "complété",
+    "completed_plural": "complétés",
+    "in_progress": "en cours",
+    "continue_button": "Continuer"
   },
   "auth": {
     "back_to_explorer": "Retour à l'Explorateur",
@@ -987,7 +1007,183 @@
   },
   "badges": {
     "title": "Vos Badges d'Honneur",
-    "no_badges": "Commencez un module pour gagner votre premier badge!"
+    "no_badges": "Commencez un module pour gagner votre premier badge!",
+    "new_badge_title": "🎉 NOUVEAU BADGE ! 🎉",
+    "first_module": {
+      "title": "Premier Pas",
+      "description": "Complété ton premier module !",
+      "requirement": "Terminer 1 module"
+    },
+    "five_modules": {
+      "title": "Explorateur Confirmé",
+      "description": "5 modules complétés !",
+      "requirement": "Terminer 5 modules"
+    },
+    "all_modules": {
+      "title": "Maître Explorateur",
+      "description": "Tous les modules terminés !",
+      "requirement": "Terminer tous les modules"
+    },
+    "speed_drill_10": {
+      "title": "Éclair de Bronze",
+      "description": "10/10 en Speed Drill en moins de 30s !",
+      "requirement": "Score parfait sous 30s"
+    },
+    "speed_drill_20": {
+      "title": "Fusée d'Argent",
+      "description": "10/10 en Speed Drill en moins de 20s !",
+      "requirement": "Score parfait sous 20s"
+    },
+    "speed_drill_15": {
+      "title": "Météore d'Or",
+      "description": "10/10 en Speed Drill en moins de 15s !",
+      "requirement": "Score parfait sous 15s"
+    },
+    "speed_drill_master": {
+      "title": "Maître du Temps",
+      "description": "10/10 en toutes catégories sous 20s !",
+      "requirement": "Perfection sur tous types"
+    },
+    "accuracy_95": {
+      "title": "Sniper",
+      "description": "95%+ de précision sur 10 Speed Drills !",
+      "requirement": "Maintenir 95%+ sur 10 sessions"
+    },
+    "accuracy_100": {
+      "title": "Œil de Lynx",
+      "description": "100% de précision sur 5 Speed Drills d'affilée !",
+      "requirement": "5 sessions parfaites consécutives"
+    },
+    "streak_3": {
+      "title": "Flamme Naissante",
+      "description": "3 jours d'activité consécutifs !",
+      "requirement": "3 jours de suite"
+    },
+    "streak_7": {
+      "title": "Brasier d'Argent",
+      "description": "7 jours d'activité consécutifs !",
+      "requirement": "7 jours de suite"
+    },
+    "streak_30": {
+      "title": "Inferno d'Or",
+      "description": "30 jours d'activité consécutifs !",
+      "requirement": "30 jours de suite"
+    },
+    "early_bird": {
+      "title": "Lève-Tôt",
+      "description": "Complété 10 défis avant 8h du matin !",
+      "requirement": "10 défis avant 8h"
+    },
+    "night_owl": {
+      "title": "Oiseau de Nuit",
+      "description": "Complété 10 défis après 22h !",
+      "requirement": "10 défis après 22h"
+    },
+    "perfectionist": {
+      "title": "Perfectionniste",
+      "description": "Tous les modules avec 100% de réussite !",
+      "requirement": "Perfection absolue"
+    },
+    "m12_defi1": {
+      "title": "Oreilles Ouvertes",
+      "description": "Défi 1 : Tu sais maintenant écouter activement !",
+      "requirement": "Compléter Défi 1 de M12"
+    },
+    "m12_defi2": {
+      "title": "Poseur de Questions",
+      "description": "Défi 2 : Tu maîtrises l'art de poser les bonnes questions !",
+      "requirement": "Compléter Défi 2 de M12"
+    },
+    "m12_defi3": {
+      "title": "Lecteur de Langage Corporel",
+      "description": "Défi 3 : Tu décodes le langage du corps !",
+      "requirement": "Compléter Défi 3 de M12"
+    },
+    "m12_defi4": {
+      "title": "Cœur Empathique",
+      "description": "Défi 4 : Tu comprends les émotions des autres !",
+      "requirement": "Compléter Défi 4 de M12"
+    },
+    "module_m12": {
+      "title": "Maître Communicateur",
+      "description": "Module M12 \"L'Art de Communiquer\" complété !",
+      "requirement": "Terminer M12 (4/4 défis)"
+    },
+    "module_m13": {
+      "title": "Money Smart",
+      "description": "Module M13 \"Money Smart\" complété !",
+      "requirement": "Terminer M13"
+    },
+    "module_m14": {
+      "title": "Comprendre l'IA",
+      "description": "Module M14 \"Comprendre l'IA\" complété !",
+      "requirement": "Terminer M14"
+    },
+    "module_m15": {
+      "title": "Collaborateur IA",
+      "description": "Module M15 \"Collaborer avec l'IA\" complété !",
+      "requirement": "Terminer M15"
+    },
+    "module_m16": {
+      "title": "IA-Proof",
+      "description": "Module M16 \"Dépasser l'IA\" complété !",
+      "requirement": "Terminer M16"
+    },
+    "module_m17": {
+      "title": "Penseur Innovant",
+      "description": "Module M17 \"Penser Autrement\" complété !",
+      "requirement": "Terminer M17"
+    },
+    "module_m18": {
+      "title": "Rebelle Intelligent",
+      "description": "Module M18 \"L'Art de Désobéir\" complété !",
+      "requirement": "Terminer M18"
+    },
+    "module_m19": {
+      "title": "Maître de la Liberté",
+      "description": "Module M19 \"Maîtriser les Dépendances\" complété !",
+      "requirement": "Terminer M19"
+    },
+    "ai_master": {
+      "title": "Maître du Futur",
+      "description": "Bloc IA complet (M14-M19) terminé !",
+      "requirement": "Terminer tous les modules IA"
+    }
+  },
+  "mascot": {
+    "welcome_morning": "🌅 Bonjour ! Prêt pour une belle journée d'apprentissage ?",
+    "welcome_afternoon": "☀️ Bon après-midi ! Continue ton aventure !",
+    "welcome_evening": "🌙 Bonsoir ! Dernière session avant de dormir ?",
+    "new_badge": "🏆 Tu viens de débloquer un nouveau badge ! Incroyable !",
+    "speed_drill_start": "⚡ Speed Drill ! Montre-moi ta rapidité !",
+    "perfect_score": "💯 Parfait ! Tu es un champion !",
+    "good_progress": "🚀 Tu progresses super bien ! Continue !",
+    "comeback": "👋 Content de te revoir ! On continue l'aventure ?",
+    "streak_high": "🔥 {{days}} jours de suite ! Tu es inarrêtable !",
+    "streak_medium": "✨ {{days}} jours consécutifs ! Super régularité !",
+    "streak_low": "💪 Continue à revenir chaque jour !",
+    "module_complete": "🎉 Module terminé ! Tu es brillant !",
+    "default": "👋 Salut ! Prêt pour l'aventure ?",
+    "xp_beginner": "🌱 Bienvenue explorateur ! Commence ton aventure !",
+    "xp_starter": "🌟 Bon début ! Continue à explorer !",
+    "xp_explorer": "✨ Tu deviens un vrai explorateur !",
+    "xp_confirmed": "🚀 Explorateur confirmé ! Impressionnant !",
+    "xp_master": "🏆 Maître explorateur en vue !",
+    "xp_legend": "👑 Légende d'Apex ! Tu es exceptionnel !",
+    "perf_perfect_fast": "⚡💯 Parfait ET rapide ! Incroyable !",
+    "perf_perfect": "💯 Score parfait ! Bravo champion !",
+    "perf_good_fast": "🚀 Rapide et précis ! Excellent !",
+    "perf_good": "👍 Très bon travail ! Continue !",
+    "perf_ok": "💪 Pas mal ! Tu progresses !",
+    "perf_low": "🤗 N'abandonne pas ! Tu vas y arriver !",
+    "encouragement_1": "💪 Chaque petit pas compte !",
+    "encouragement_2": "🌟 Tu es sur la bonne voie !",
+    "encouragement_3": "🚀 Continue comme ça !",
+    "encouragement_4": "✨ Tu fais des progrès incroyables !",
+    "encouragement_5": "🎯 Concentre-toi, tu peux y arriver !",
+    "encouragement_6": "🏆 Champion en devenir !",
+    "encouragement_7": "💡 L'apprentissage est une aventure !",
+    "encouragement_8": "🌈 Chaque défi est une opportunité !"
   },
   "m12": {
     "defi1": {
@@ -1764,5 +1960,32 @@
     "difficulty_label": "Niveau",
     "best_score_label": "Meilleur",
     "sessions_count": "Sessions"
+  },
+  "badges_screen": {
+    "title": "Mes Badges",
+    "progress": "Ta Progression",
+    "earned": "Obtenu",
+    "all": "Tous",
+    "modules": "Modules",
+    "speed": "Vitesse",
+    "precision": "Précision",
+    "special": "Spéciaux"
+  },
+  "hall_of_fame": {
+    "title": "Hall of Fame",
+    "your_stats": "Tes Statistiques",
+    "xp_rank": "Classement XP",
+    "best_streak": "Meilleure Série",
+    "best_time": "Meilleur Temps",
+    "modules_completed": "modules complétés",
+    "current": "Actuel",
+    "days": "jours",
+    "xp_tab": "XP",
+    "streaks_tab": "Séries",
+    "speed_tab": "Vitesse",
+    "multiplication": "Multiplication",
+    "division": "Division",
+    "addition": "Addition",
+    "subtraction": "Soustraction"
   }
 }

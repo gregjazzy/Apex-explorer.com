@@ -8,7 +8,8 @@
     "close_guide": "Close Guide",
     "error": "Error",
     "back": "Back",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "in": "in"
   },
   "modules": {
     "xp_label": "Experience Points (XP)",
@@ -93,6 +94,8 @@
     "submit_button": "Submit Challenge",
     "resubmit_button": "📤 Resubmit",
     "validate_button": "Validate My Answer",
+    "retry_button": "Try Again",
+    "submit_understood": "I Understand 💡",
     "correct_answer": "✅ Perfect! Correct Answer. You can submit now.",
     "incorrect_answer": "❌ That's not the right answer. Analyze your mistake or use the Guided Sheet!",
     "feedback_correct": "Correct",
@@ -100,6 +103,10 @@
     "submit_title": "Challenge Submitted",
     "submit_message": "Your answer has been sent to the mentor for validation!",
     "submit_message_pending": "Your mentor will evaluate your answer. You will be notified when they respond.",
+    "completed_title": "Challenge Completed!",
+    "completed_message": "Congratulations! You earned 100 XP.",
+    "completed_solo_message": "🎉 Challenge completed! You earned 100 XP.\n💡 Tip: You can invite a mentor from your dashboard to get personalized feedback.",
+    "solo_mode_badge": "🚀 Solo Mode - Auto-validation enabled",
     "scenario_title": "Scenario",
     "instruction_title": "Instruction",
     "lecon_title": "Strategic Lesson",
@@ -949,7 +956,20 @@
     "title": "Explorer Dashboard",
     "status_unlocked": "Unlocked",
     "status_locked": "Locked",
-    "load_error": "Data loading error."
+    "load_error": "Data loading error.",
+    "greeting": "Hello",
+    "day": "day",
+    "days": "days",
+    "solo_mode_title": "Solo Mode Active",
+    "solo_mode_subtitle": "Invite a mentor for personalized feedback",
+    "learn_more": "Learn more +",
+    "invite_mentor_title": "Invite a Mentor",
+    "invite_mentor_message": "Share your username with a parent or mentor to join you:\n\n👤 {{username}}\n\nThey will be able to create a mentor account and link to your profile.",
+    "best_score": "Best",
+    "completed": "completed",
+    "completed_plural": "completed",
+    "in_progress": "in progress",
+    "continue_button": "Continue"
   },
   "auth": {
     "back_to_explorer": "Back to Explorer",
@@ -1685,7 +1705,183 @@
   },
   "badges": {
     "title": "Your Badges of Honor",
-    "no_badges": "Start a module to earn your first badge!"
+    "no_badges": "Start a module to earn your first badge!",
+    "new_badge_title": "🎉 NEW BADGE ! 🎉",
+    "first_module": {
+      "title": "First Step",
+      "description": "Completed your first module!",
+      "requirement": "Complete 1 module"
+    },
+    "five_modules": {
+      "title": "Experienced Explorer",
+      "description": "5 modules completed!",
+      "requirement": "Complete 5 modules"
+    },
+    "all_modules": {
+      "title": "Master Explorer",
+      "description": "All modules completed!",
+      "requirement": "Complete all modules"
+    },
+    "speed_drill_10": {
+      "title": "Bronze Lightning",
+      "description": "10/10 in Speed Drill in under 30s!",
+      "requirement": "Perfect score under 30s"
+    },
+    "speed_drill_20": {
+      "title": "Silver Rocket",
+      "description": "10/10 in Speed Drill in under 20s!",
+      "requirement": "Perfect score under 20s"
+    },
+    "speed_drill_15": {
+      "title": "Golden Meteor",
+      "description": "10/10 in Speed Drill in under 15s!",
+      "requirement": "Perfect score under 15s"
+    },
+    "speed_drill_master": {
+      "title": "Time Master",
+      "description": "10/10 in all categories under 20s!",
+      "requirement": "Perfection in all types"
+    },
+    "accuracy_95": {
+      "title": "Sniper",
+      "description": "95%+ accuracy on 10 Speed Drills!",
+      "requirement": "Maintain 95%+ over 10 sessions"
+    },
+    "accuracy_100": {
+      "title": "Eagle Eye",
+      "description": "100% accuracy on 5 Speed Drills in a row!",
+      "requirement": "5 perfect consecutive sessions"
+    },
+    "streak_3": {
+      "title": "Rising Flame",
+      "description": "3 consecutive days of activity!",
+      "requirement": "3 days in a row"
+    },
+    "streak_7": {
+      "title": "Silver Blaze",
+      "description": "7 consecutive days of activity!",
+      "requirement": "7 days in a row"
+    },
+    "streak_30": {
+      "title": "Golden Inferno",
+      "description": "30 consecutive days of activity!",
+      "requirement": "30 days in a row"
+    },
+    "early_bird": {
+      "title": "Early Bird",
+      "description": "Completed 10 challenges before 8am!",
+      "requirement": "10 challenges before 8am"
+    },
+    "night_owl": {
+      "title": "Night Owl",
+      "description": "Completed 10 challenges after 10pm!",
+      "requirement": "10 challenges after 10pm"
+    },
+    "perfectionist": {
+      "title": "Perfectionist",
+      "description": "All modules with 100% success!",
+      "requirement": "Absolute perfection"
+    },
+    "m12_defi1": {
+      "title": "Open Ears",
+      "description": "Challenge 1: You now know how to listen actively!",
+      "requirement": "Complete Challenge 1 of M12"
+    },
+    "m12_defi2": {
+      "title": "Question Asker",
+      "description": "Challenge 2: You master the art of asking the right questions!",
+      "requirement": "Complete Challenge 2 of M12"
+    },
+    "m12_defi3": {
+      "title": "Body Language Reader",
+      "description": "Challenge 3: You decode body language!",
+      "requirement": "Complete Challenge 3 of M12"
+    },
+    "m12_defi4": {
+      "title": "Empathetic Heart",
+      "description": "Challenge 4: You understand others' emotions!",
+      "requirement": "Complete Challenge 4 of M12"
+    },
+    "module_m12": {
+      "title": "Master Communicator",
+      "description": "Module M12 \"The Art of Communication\" completed!",
+      "requirement": "Complete M12 (4/4 challenges)"
+    },
+    "module_m13": {
+      "title": "Money Smart",
+      "description": "Module M13 \"Money Smart\" completed!",
+      "requirement": "Complete M13"
+    },
+    "module_m14": {
+      "title": "Understanding AI",
+      "description": "Module M14 \"Understanding AI\" completed!",
+      "requirement": "Complete M14"
+    },
+    "module_m15": {
+      "title": "AI Collaborator",
+      "description": "Module M15 \"Collaborating with AI\" completed!",
+      "requirement": "Complete M15"
+    },
+    "module_m16": {
+      "title": "AI-Proof",
+      "description": "Module M16 \"Surpassing AI\" completed!",
+      "requirement": "Complete M16"
+    },
+    "module_m17": {
+      "title": "Innovative Thinker",
+      "description": "Module M17 \"Think Different\" completed!",
+      "requirement": "Complete M17"
+    },
+    "module_m18": {
+      "title": "Smart Rebel",
+      "description": "Module M18 \"The Art of Disobedience\" completed!",
+      "requirement": "Complete M18"
+    },
+    "module_m19": {
+      "title": "Master of Freedom",
+      "description": "Module M19 \"Mastering Dependencies\" completed!",
+      "requirement": "Complete M19"
+    },
+    "ai_master": {
+      "title": "Master of the Future",
+      "description": "Complete AI block (M14-M19) finished!",
+      "requirement": "Complete all AI modules"
+    }
+  },
+  "mascot": {
+    "welcome_morning": "🌅 Good morning! Ready for a great day of learning?",
+    "welcome_afternoon": "☀️ Good afternoon! Continue your adventure!",
+    "welcome_evening": "🌙 Good evening! Last session before bed?",
+    "new_badge": "🏆 You just unlocked a new badge! Amazing!",
+    "speed_drill_start": "⚡ Speed Drill! Show me your speed!",
+    "perfect_score": "💯 Perfect! You're a champion!",
+    "good_progress": "🚀 You're making great progress! Keep going!",
+    "comeback": "👋 Good to see you again! Ready to continue?",
+    "streak_high": "🔥 {{days}} days in a row! You're unstoppable!",
+    "streak_medium": "✨ {{days}} consecutive days! Great consistency!",
+    "streak_low": "💪 Keep coming back every day!",
+    "module_complete": "🎉 Module complete! You're brilliant!",
+    "default": "👋 Hi! Ready for the adventure?",
+    "xp_beginner": "🌱 Welcome explorer! Start your journey!",
+    "xp_starter": "🌟 Good start! Keep exploring!",
+    "xp_explorer": "✨ You're becoming a real explorer!",
+    "xp_confirmed": "🚀 Confirmed explorer! Impressive!",
+    "xp_master": "🏆 Master explorer in sight!",
+    "xp_legend": "👑 Apex legend! You're exceptional!",
+    "perf_perfect_fast": "⚡💯 Perfect AND fast! Incredible!",
+    "perf_perfect": "💯 Perfect score! Bravo champion!",
+    "perf_good_fast": "🚀 Fast and accurate! Excellent!",
+    "perf_good": "👍 Great work! Keep it up!",
+    "perf_ok": "💪 Not bad! You're improving!",
+    "perf_low": "🤗 Don't give up! You'll get there!",
+    "encouragement_1": "💪 Every little step counts!",
+    "encouragement_2": "🌟 You're on the right track!",
+    "encouragement_3": "🚀 Keep it up!",
+    "encouragement_4": "✨ You're making incredible progress!",
+    "encouragement_5": "🎯 Focus, you can do it!",
+    "encouragement_6": "🏆 Champion in the making!",
+    "encouragement_7": "💡 Learning is an adventure!",
+    "encouragement_8": "🌈 Every challenge is an opportunity!"
   },
   "speed_drills": {
     "title": "Speed Drill Training Zone",
@@ -1736,5 +1932,32 @@
     "difficulty_label": "Level",
     "best_score_label": "Best",
     "sessions_count": "Sessions"
+  },
+  "badges_screen": {
+    "title": "My Badges",
+    "progress": "Your Progress",
+    "earned": "Earned",
+    "all": "All",
+    "modules": "Modules",
+    "speed": "Speed",
+    "precision": "Precision",
+    "special": "Special"
+  },
+  "hall_of_fame": {
+    "title": "Hall of Fame",
+    "your_stats": "Your Stats",
+    "xp_rank": "XP Rank",
+    "best_streak": "Best Streak",
+    "best_time": "Best Time",
+    "modules_completed": "modules completed",
+    "current": "Current",
+    "days": "days",
+    "xp_tab": "XP",
+    "streaks_tab": "Streaks",
+    "speed_tab": "Speed",
+    "multiplication": "Multiplication",
+    "division": "Division",
+    "addition": "Addition",
+    "subtraction": "Subtraction"
   }
 }

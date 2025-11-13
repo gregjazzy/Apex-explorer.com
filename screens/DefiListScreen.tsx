@@ -65,7 +65,7 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
                     style={[styles.defiItem, isLocked && styles.lockedItem]}
                     onPress={() => handleDefiPress(item.id, item.title)}
                     disabled={isLocked}
-                    activeOpacity={0.8}
+                    activeOpacity={0.7}
                 >
                     {/* Badge avec gradient */}
                     <LinearGradient

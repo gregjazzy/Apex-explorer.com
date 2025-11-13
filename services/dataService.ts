@@ -3,7 +3,7 @@
 import i18n from '../config/i18n';
 import { supabase } from '../config/supabase';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { BADGE_CATALOG, BadgeConfig } from '../config/badgeSystem';
+import { BADGE_CATALOG, BadgeConfig, getTranslatedBadge } from '../config/badgeSystem';
 
 // --- Interfaces de Données ---
 
@@ -27,6 +27,30 @@ export interface Module {
 }
 
 // --- Nouvelles Interfaces ---
+
+// Interface pour Hall of Fame
+export interface LeaderboardEntry {
+    user_id: string;
+    user_name: string;
+    xp: number;
+    completed_modules: number;
+    rank: number;
+}
+
+export interface SpeedDrillRecord {
+    user_id: string;
+    user_name: string;
+    operation_type: string;
+    best_time: number;
+    best_score: number;
+}
+
+export interface StreakLeader {
+    user_id: string;
+    user_name: string;
+    longest_streak: number;
+    current_streak: number;
+}
 
 // Interface pour les données de progression stockées dans Supabase
 interface ProgressDBItem {
@@ -810,12 +834,16 @@ export const calculateAdvancedBadges = async (
     const displayedBadgesJson = await AsyncStorage.getItem(displayedBadgesKey);
     const displayedBadges: string[] = displayedBadgesJson ? JSON.parse(displayedBadgesJson) : [];
     
-    // Calculer les modules complétés
-    const completedModules = new Set(
-        progressItems
-            .filter(item => item.status === 'completed')
-            .map(item => item.moduleId)
-    ).size;
+    // Calculer les modules complétés (TOUS les défis du module doivent être complétés)
+    const allModuleIds = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15', 'm16', 'm17', 'm18', 'm19'];
+    const completedModules = allModuleIds.filter(moduleId => {
+        const defisInModule = BASE_DEFIS_SIM[moduleId] || [];
+        const completedDefisInModule = progressItems.filter(p => 
+            p.moduleId === moduleId && p.status === 'completed'
+        );
+        // Un module est complété si TOUS ses défis sont complétés
+        return completedDefisInModule.length >= defisInModule.length && defisInModule.length > 0;
+    }).length;
     
     // Calculer les défis complétés avec timestamps
     const completedDefis = progressItems.filter(item => item.status === 'completed');
@@ -928,8 +956,13 @@ export const calculateAdvancedBadges = async (
                 // Tous les modules avec 100% (tous les défis complétés)
                 const allModuleIds = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15', 'm16', 'm17', 'm18', 'm19'];
                 const perfectModules = allModuleIds.filter(mid => {
-                    const defisInModule = progressItems.filter((p: ExplorerProgressItem) => p.moduleId === mid);
-                    return defisInModule.length >= 4 && defisInModule.every((d: ExplorerProgressItem) => d.status === 'completed');
+                    const defisInModuleConfig = BASE_DEFIS_SIM[mid] || [];
+                    const totalDefisInModule = defisInModuleConfig.length;
+                    const completedDefisInModule = progressItems.filter((p: ExplorerProgressItem) => 
+                        p.moduleId === mid && p.status === 'completed'
+                    );
+                    // Un module est parfait si TOUS ses défis sont complétés
+                    return totalDefisInModule > 0 && completedDefisInModule.length >= totalDefisInModule;
                 });
                 earned = perfectModules.length === 19;
                 badgeProgress = Math.min(100, (perfectModules.length / 19) * 100);
@@ -1017,8 +1050,13 @@ export const calculateAdvancedBadges = async (
             case 'ai_master':
                 const aiModuleIds = ['m14', 'm15', 'm16', 'm17', 'm18', 'm19'];
                 const completedAIModules = aiModuleIds.filter(mid => {
-                    const defisInModule = progressItems.filter((p: ExplorerProgressItem) => p.moduleId === mid);
-                    return defisInModule.length >= 4 && defisInModule.every((d: ExplorerProgressItem) => d.status === 'completed');
+                    const defisInModuleConfig = BASE_DEFIS_SIM[mid] || [];
+                    const totalDefisInModule = defisInModuleConfig.length;
+                    const completedDefisInModule = progressItems.filter((p: ExplorerProgressItem) => 
+                        p.moduleId === mid && p.status === 'completed'
+                    );
+                    // Un module est complété si TOUS ses défis sont complétés
+                    return totalDefisInModule > 0 && completedDefisInModule.length >= totalDefisInModule;
                 });
                 earned = completedAIModules.length === 6;
                 badgeProgress = Math.min(100, (completedAIModules.length / 6) * 100);
@@ -1037,12 +1075,15 @@ export const calculateAdvancedBadges = async (
             
             // Si le badge n'a PAS encore été affiché à l'écran, l'ajouter aux nouveaux
             if (!displayedBadges.includes(badge.id)) {
-                const newBadge: EarnedBadge = { ...badge, earned, earnedAt: new Date().toISOString(), progress: badgeProgress };
+                const translatedBadge = getTranslatedBadge(badge);
+                const newBadge: EarnedBadge = { ...translatedBadge, earned, earnedAt: new Date().toISOString(), progress: badgeProgress };
                 newlyUnlocked.push(newBadge);
             }
         }
         
-        return { ...badge, earned, progress: badgeProgress };
+        // Traduire le badge avant de le retourner
+        const translatedBadge = getTranslatedBadge(badge);
+        return { ...translatedBadge, earned, progress: badgeProgress };
     });
     
     // NOTE: On ne marque PAS comme "displayed" ici !
@@ -1108,6 +1149,78 @@ async function getEarnedBadgeIds(userId: string): Promise<string[]> {
         return [];
     }
 }
+
+/**
+ * Vérifie rapidement si la complétion d'un défi débloquera un nouveau badge
+ * SANS recalculer tous les badges (optimisation de performance)
+ * 
+ * @param userId - explorer_uuid de l'explorateur
+ * @param moduleId - ID du module (ex: 'm12')
+ * @param defiId - ID du défi (ex: 'defi1')
+ * @returns true si un nouveau badge sera débloqué, false sinon
+ */
+export const willUnlockNewBadge = async (
+    userId: string,
+    moduleId: string,
+    defiId: string
+): Promise<boolean> => {
+    try {
+        // 1. Récupérer les badges déjà gagnés
+        const earnedBadgeIds = await getEarnedBadgeIds(userId);
+        
+        // 2. Vérifier le badge micro du défi (uniquement pour M12)
+        if (moduleId === 'm12') {
+            const microBadgeId = `m12_${defiId}`; // Ex: 'm12_defi1'
+            
+            // Si le badge micro n'existe pas encore, on aura un nouveau badge
+            if (!earnedBadgeIds.includes(microBadgeId)) {
+                console.log(`✨ Nouveau badge détecté: ${microBadgeId}`);
+                return true;
+            }
+        }
+        
+        // 3. Vérifier le badge module (si tous les défis du module sont complétés)
+        const moduleBadgeId = `module_${moduleId}`; // Ex: 'module_m12'
+        
+        // Si le badge module n'existe pas encore, vérifier si on va le débloquer
+        if (!earnedBadgeIds.includes(moduleBadgeId)) {
+            // Récupérer tous les défis complétés pour ce module
+            const { data: progressData, error } = await supabase
+                .from('explorer_progress')
+                .select('defi_id')
+                .eq('user_id', userId)
+                .eq('module_id', moduleId)
+                .eq('status', 'completed');
+            
+            if (error) {
+                console.error('Erreur vérification progression:', error);
+                return false;
+            }
+            
+            const completedDefiIds = progressData?.map(p => p.defi_id) || [];
+            const defisConfig = BASE_DEFIS_SIM[moduleId] || [];
+            const totalDefis = defisConfig.length;
+            
+            // Compter les défis déjà complétés + le défi en cours
+            const completedCount = completedDefiIds.length;
+            const willCompleteModule = completedCount + 1 >= totalDefis; // +1 pour le défi qu'on vient de compléter
+            
+            if (willCompleteModule) {
+                console.log(`✨ Badge module détecté: ${moduleBadgeId}`);
+                return true;
+            }
+        }
+        
+        // 4. Aucun nouveau badge
+        console.log(`⚪ Aucun nouveau badge pour ${moduleId}/${defiId}`);
+        return false;
+        
+    } catch (error) {
+        console.error('Erreur willUnlockNewBadge:', error);
+        // En cas d'erreur, on recharge par sécurité
+        return true;
+    }
+};
 
 // ANCIEN SYSTÈME (Rétro-compatibilité)
 export const calculateBadges = (progress: ExplorerProgressItem[]): Badge[] => {
@@ -1462,3 +1575,190 @@ export const fetchAllExplorerSpeedDrillStats = async (mentorId: string): Promise
     const statsArray = await Promise.all(statsPromises);
     return Object.assign({}, ...statsArray);
 };
+
+// ===== HALL OF FAME FUNCTIONS =====
+
+/**
+ * Récupérer le classement XP (Top 10)
+ */
+export const getXPLeaderboard = async (currentUserId?: string): Promise<LeaderboardEntry[]> => {
+    try {
+        const { data, error } = await supabase
+            .from('explorers')
+            .select('user_id, name, xp')
+            .order('xp', { ascending: false })
+            .limit(10);
+
+        if (error) {
+            console.error('Erreur récupération leaderboard XP:', error);
+            return [];
+        }
+
+        // Calculer le nombre de modules complétés pour chaque utilisateur
+        const leaderboard: LeaderboardEntry[] = await Promise.all(
+            (data || []).map(async (explorer, index) => {
+                const { data: progressData } = await supabase
+                    .from('explorer_progress')
+                    .select('module_id, status')
+                    .eq('user_id', explorer.user_id)
+                    .eq('status', 'completed');
+
+                const completedModules = new Set(
+                    (progressData || []).map(p => p.module_id)
+                ).size;
+
+                return {
+                    user_id: explorer.user_id,
+                    user_name: explorer.name || 'Explorateur',
+                    xp: explorer.xp || 0,
+                    completed_modules: completedModules,
+                    rank: index + 1,
+                };
+            })
+        );
+
+        return leaderboard;
+    } catch (error) {
+        console.error('Erreur getXPLeaderboard:', error);
+        return [];
+    }
+};
+
+/**
+ * Récupérer le classement des streaks (Top 10)
+ */
+export const getStreakLeaderboard = async (): Promise<StreakLeader[]> => {
+    try {
+        const { data, error } = await supabase
+            .from('explorers')
+            .select('user_id, name, longest_streak, current_streak')
+            .order('longest_streak', { ascending: false })
+            .limit(10);
+
+        if (error) {
+            console.error('Erreur récupération leaderboard streaks:', error);
+            return [];
+        }
+
+        return (data || []).map(explorer => ({
+            user_id: explorer.user_id,
+            user_name: explorer.name || 'Explorateur',
+            longest_streak: explorer.longest_streak || 0,
+            current_streak: explorer.current_streak || 0,
+        }));
+    } catch (error) {
+        console.error('Erreur getStreakLeaderboard:', error);
+        return [];
+    }
+};
+
+/**
+ * Récupérer les records Speed Drill (meilleurs temps par opération)
+ */
+export const getSpeedDrillRecords = async (): Promise<SpeedDrillRecord[]> => {
+    try {
+        const operations = ['Multiplication', 'Division', 'Addition', 'Subtraction'];
+        const records: SpeedDrillRecord[] = [];
+
+        for (const operation of operations) {
+            const { data, error } = await supabase
+                .from('speed_drill_sessions')
+                .select(`
+                    user_id,
+                    operation_type,
+                    time_seconds,
+                    score
+                `)
+                .eq('operation_type', operation)
+                .eq('score', 10)
+                .order('time_seconds', { ascending: true })
+                .limit(1);
+
+            if (!error && data && data.length > 0) {
+                const record = data[0];
+                
+                // Récupérer le nom de l'utilisateur
+                const { data: explorerData } = await supabase
+                    .from('explorers')
+                    .select('name')
+                    .eq('user_id', record.user_id)
+                    .single();
+
+                records.push({
+                    user_id: record.user_id,
+                    user_name: explorerData?.name || 'Explorateur',
+                    operation_type: operation,
+                    best_time: record.time_seconds,
+                    best_score: record.score,
+                });
+            }
+        }
+
+        return records;
+    } catch (error) {
+        console.error('Erreur getSpeedDrillRecords:', error);
+        return [];
+    }
+};
+
+/**
+ * Récupérer les stats de l'utilisateur actuel pour le Hall of Fame
+ */
+export const getCurrentUserHallOfFameStats = async (userId: string) => {
+    try {
+        // 1. Récupérer le profil de l'utilisateur
+        const { data: explorer, error: explorerError } = await supabase
+            .from('explorers')
+            .select('name, xp, longest_streak, current_streak')
+            .eq('user_id', userId)
+            .single();
+
+        if (explorerError) {
+            console.error('Erreur récupération profil:', explorerError);
+            return null;
+        }
+
+        // 2. Calculer le classement XP
+        const { count: betterCount } = await supabase
+            .from('explorers')
+            .select('*', { count: 'exact', head: true })
+            .gt('xp', explorer.xp || 0);
+
+        const xpRank = (betterCount || 0) + 1;
+
+        // 3. Récupérer les modules complétés
+        const { data: progressData } = await supabase
+            .from('explorer_progress')
+            .select('module_id, status')
+            .eq('user_id', userId)
+            .eq('status', 'completed');
+
+        const completedModules = new Set(
+            (progressData || []).map(p => p.module_id)
+        ).size;
+
+        // 4. Récupérer le meilleur temps Speed Drill
+        const { data: speedData } = await supabase
+            .from('speed_drill_sessions')
+            .select('time_seconds, operation_type')
+            .eq('user_id', userId)
+            .eq('score', 10)
+            .order('time_seconds', { ascending: true })
+            .limit(1);
+
+        return {
+            name: explorer.name || 'Explorateur',
+            xp: explorer.xp || 0,
+            xpRank,
+            completedModules,
+            longestStreak: explorer.longest_streak || 0,
+            currentStreak: explorer.current_streak || 0,
+            bestSpeedTime: speedData && speedData.length > 0 ? speedData[0].time_seconds : null,
+            bestSpeedOperation: speedData && speedData.length > 0 ? speedData[0].operation_type : null,
+        };
+    } catch (error) {
+        console.error('Erreur getCurrentUserHallOfFameStats:', error);
+        return null;
+    }
+};
+

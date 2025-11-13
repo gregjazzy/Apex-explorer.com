@@ -18,7 +18,9 @@ import ExplorerDashboardScreen from './screens/ExplorerDashboardScreen';
 import MentorDashboardScreen from './screens/MentorDashboardScreen';
 import DefiListScreen from './screens/DefiListScreen'; 
 import DefiScreen from './screens/DefiScreen';
-import SpeedDrillScreen from './screens/SpeedDrillScreen'; 
+import SpeedDrillScreen from './screens/SpeedDrillScreen';
+import BadgesScreen from './screens/BadgesScreen';
+import HallOfFameScreen from './screens/HallOfFameScreen'; 
 
 const Stack = createNativeStackNavigator();
 
@@ -126,9 +128,7 @@ const AppContent: React.FC = () => {
             name="Explorer" 
             component={ExplorerDashboardScreen} 
             options={{ 
-              headerTitle: t('dashboard.title'),
-              headerBackVisible: false,
-              headerRight: () => <HeaderRightExplorer logout={logout} i18n={i18n} />,
+              headerShown: false,
               animation: 'slide_from_bottom',
             }}
           />
@@ -157,6 +157,24 @@ const AppContent: React.FC = () => {
               headerTitle: t('speed_drills.title'),
               headerBackVisible: true,
               headerRight: () => <HeaderRightExplorer logout={logout} i18n={i18n} />,
+              animation: 'slide_from_bottom',
+              presentation: 'modal',
+            }}
+          />
+          <Stack.Screen 
+            name="Badges" 
+            component={BadgesScreen as any}
+            options={{ 
+              headerShown: false,
+              animation: 'slide_from_bottom',
+              presentation: 'modal',
+            }}
+          />
+          <Stack.Screen 
+            name="HallOfFame" 
+            component={HallOfFameScreen as any}
+            options={{ 
+              headerShown: false,
               animation: 'slide_from_bottom',
               presentation: 'modal',
             }}

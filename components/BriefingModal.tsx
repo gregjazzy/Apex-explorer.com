@@ -32,6 +32,8 @@ interface BriefingProps {
 export const BriefingModal: React.FC<BriefingProps> = ({ isVisible, onClose, defiTitle, briefingContent }) => {
   const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(1);
+  const [checkedSteps, setCheckedSteps] = useState<Record<number, boolean>>({}); // État pour les checkboxes
+  const [textInputs, setTextInputs] = useState<Record<number, string>>({}); // État pour les champs texte
   
   // Compter le nombre réel d'étapes disponibles
   const etapes = [briefingContent.etape1, briefingContent.etape2, briefingContent.etape3].filter(e => e !== undefined) as BriefingEtape[];
@@ -48,21 +50,32 @@ export const BriefingModal: React.FC<BriefingProps> = ({ isVisible, onClose, def
   const renderStepContent = (stepData: BriefingEtape) => {
     switch(stepData.type_etape) {
       case 'validation_case':
+        const isChecked = checkedSteps[currentStep] || false;
         return (
-          <TouchableOpacity style={styles.validationCase} onPress={() => Alert.alert(t('defi.advice'), "Case de validation cochée!")}>
-            <View style={styles.checkbox}></View>
-            <Text style={styles.validationText}>{t('defi.advice')} : J'ai lu et je suis prêt !</Text>
+          <TouchableOpacity 
+            style={styles.validationCase} 
+            onPress={() => setCheckedSteps(prev => ({ ...prev, [currentStep]: !prev[currentStep] }))}
+            activeOpacity={0.7}
+          >
+            <View style={[styles.checkbox, isChecked && styles.checkboxChecked]}>
+              {isChecked && <Text style={styles.checkmark}>✓</Text>}
+            </View>
+            <Text style={styles.validationText}>{stepData.instruction}</Text>
           </TouchableOpacity>
         );
       case 'champ_texte':
         return (
-          <TextInput
-            style={styles.textInput}
-            placeholder={stepData.placeholder || t('defi.write_here')}
-            multiline
-            numberOfLines={4}
-            editable={false} // Lecture seule dans le guide FTG
-          />
+          <View>
+            <TextInput
+              style={styles.textInput}
+              placeholder={stepData.placeholder || t('defi.write_here')}
+              multiline
+              numberOfLines={4}
+              value={textInputs[currentStep] || ''}
+              onChangeText={(text) => setTextInputs(prev => ({ ...prev, [currentStep]: text }))}
+            />
+            <Text style={styles.helperText}>💡 Brouillon : écris ici pour t'exercer</Text>
+          </View>
         );
       case 'texte_guide':
       default:
@@ -138,8 +151,10 @@ const styles = StyleSheet.create({
   contentArea: { padding: 15, backgroundColor: '#F9FAFB', borderRadius: 10, borderWidth: 1, borderColor: '#E5E7EB' },
   guideText: { fontSize: isWeb ? 18 : 16, color: '#10B981', fontWeight: '500' },
   validationCase: { flexDirection: 'row', alignItems: 'center', padding: 10, justifyContent: 'center' },
-  checkbox: { width: 24, height: 24, borderRadius: 4, borderWidth: 2, borderColor: '#3B82F6', marginRight: 10 },
-  validationText: { fontSize: 16, color: '#1F2937' },
+  checkbox: { width: 24, height: 24, borderRadius: 4, borderWidth: 2, borderColor: '#3B82F6', marginRight: 10, justifyContent: 'center', alignItems: 'center' },
+  checkboxChecked: { backgroundColor: '#3B82F6' },
+  checkmark: { color: '#FFFFFF', fontSize: 18, fontWeight: 'bold' },
+  validationText: { fontSize: 16, color: '#1F2937', flex: 1 },
   textInput: {
     minHeight: 100,
     borderColor: '#D1D5DB',
@@ -149,6 +164,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     fontSize: isWeb ? 16 : 14,
     textAlignVertical: 'top'
+  },
+  helperText: {
+    fontSize: 12,
+    color: '#6B7280',
+    fontStyle: 'italic',
+    marginTop: 8,
+    textAlign: 'center'
   },
   buttonRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, paddingHorizontal: isWeb ? 30 : 0 },
 });
