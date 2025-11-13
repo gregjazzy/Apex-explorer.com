@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile } from '../services/dataService'; 
+import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile, markBadgeAsDisplayed } from '../services/dataService'; 
 import ProgressBar from '../components/ProgressBar';
 import BadgeList from '../components/BadgeList';
 import XPCounter from '../components/XPCounter';
@@ -122,6 +122,14 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     
     // Hook pour la détection automatique des badges
     const { unlockedBadge, triggerBadgeUnlock, closeBadgeModal } = useBadgeUnlock();
+
+    // NOUVEAU: Fonction pour fermer la modal ET marquer le badge comme affiché
+    const handleBadgeModalClose = useCallback(async () => {
+        if (unlockedBadge && user?.id) {
+            await markBadgeAsDisplayed(user.id, unlockedBadge.id);
+        }
+        closeBadgeModal();
+    }, [unlockedBadge, user?.id, closeBadgeModal]);
 
     const loadModules = useCallback(async () => {
         setLoading(true);
@@ -400,7 +408,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                 <BadgeUnlockModal
                     visible={!!unlockedBadge}
                     badge={unlockedBadge}
-                    onClose={closeBadgeModal}
+                    onClose={handleBadgeModalClose}
                 />
             )}
         </SafeAreaView>

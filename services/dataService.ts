@@ -2,6 +2,8 @@
 
 import i18n from '../config/i18n';
 import { supabase } from '../config/supabase';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { BADGE_CATALOG, BadgeConfig } from '../config/badgeSystem';
 
 // --- Interfaces de Données ---
 
@@ -615,8 +617,6 @@ export const requestRevision = async (
 
 // --- Logique de Badges Sophistiqués (Gamification) ---
 
-import { BADGE_CATALOG, BadgeConfig } from '../config/badgeSystem';
-
 export interface EarnedBadge extends BadgeConfig {
     earned: boolean;
     earnedAt?: string;
@@ -641,6 +641,11 @@ export const calculateAdvancedBadges = async (
     
     // Récupérer les badges déjà débloqués depuis la base
     const previouslyEarned = await getEarnedBadgeIds(userId);
+    
+    // NOUVEAU: Récupérer les badges déjà AFFICHÉS à l'écran (côté client)
+    const displayedBadgesKey = `displayed_badges_${userId}`;
+    const displayedBadgesJson = await AsyncStorage.getItem(displayedBadgesKey);
+    const displayedBadges: string[] = displayedBadgesJson ? JSON.parse(displayedBadgesJson) : [];
     
     // Calculer les modules complétés
     const completedModules = new Set(
@@ -768,22 +773,45 @@ export const calculateAdvancedBadges = async (
                 break;
         }
         
-        // Détecter les nouveaux badges
-        if (earned && !previouslyEarned.includes(badge.id)) {
-            const newBadge: EarnedBadge = { ...badge, earned, earnedAt: new Date().toISOString(), progress: badgeProgress };
-            newlyUnlocked.push(newBadge);
+        // Détecter les nouveaux badges (jamais gagnés OU gagnés mais jamais affichés)
+        if (earned) {
             earnedBadgeIds.push(badge.id);
             
-            // Sauvegarder dans la base
-            saveEarnedBadge(userId, badge.id);
-        } else if (earned) {
-            earnedBadgeIds.push(badge.id);
+            // Si le badge n'était PAS déjà dans la DB, le sauvegarder
+            if (!previouslyEarned.includes(badge.id)) {
+                saveEarnedBadge(userId, badge.id);
+            }
+            
+            // Si le badge n'a PAS encore été affiché à l'écran, l'ajouter aux nouveaux
+            if (!displayedBadges.includes(badge.id)) {
+                const newBadge: EarnedBadge = { ...badge, earned, earnedAt: new Date().toISOString(), progress: badgeProgress };
+                newlyUnlocked.push(newBadge);
+            }
         }
         
         return { ...badge, earned, progress: badgeProgress };
     });
     
+    // NOTE: On ne marque PAS comme "displayed" ici !
+    // C'est fait dans ExplorerDashboardScreen après que l'utilisateur ferme la modal
+    
     return { badges, newlyUnlocked };
+};
+
+// Marquer un badge comme "affiché" dans AsyncStorage (après fermeture de la modal)
+export const markBadgeAsDisplayed = async (userId: string, badgeId: string): Promise<void> => {
+    try {
+        const displayedBadgesKey = `displayed_badges_${userId}`;
+        const displayedBadgesJson = await AsyncStorage.getItem(displayedBadgesKey);
+        const displayedBadges: string[] = displayedBadgesJson ? JSON.parse(displayedBadgesJson) : [];
+        
+        if (!displayedBadges.includes(badgeId)) {
+            displayedBadges.push(badgeId);
+            await AsyncStorage.setItem(displayedBadgesKey, JSON.stringify(displayedBadges));
+        }
+    } catch (error) {
+        console.error('Erreur markBadgeAsDisplayed:', error);
+    }
 };
 
 // Sauvegarder un badge débloqué dans la base
