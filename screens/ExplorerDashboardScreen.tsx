@@ -37,7 +37,8 @@ const BlockCard: React.FC<{
     onToggle: () => void;
     navigation: any;
     t: any;
-}> = ({ block, modules, isExpanded, onToggle, navigation, t }) => {
+    blockRef?: (ref: View | null) => void;
+}> = ({ block, modules, isExpanded, onToggle, navigation, t, blockRef }) => {
     const blockTitle = t(block.titleKey);
     const blockDescription = t(block.descriptionKey);
     const moduleCount = modules.length;
@@ -50,6 +51,7 @@ const BlockCard: React.FC<{
             animation="fadeInUp" 
             duration={600}
             style={styles.blockSection}
+            ref={blockRef as any}
         >
             {/* En-tête du bloc (cliquable) */}
             <TouchableOpacity 
@@ -254,6 +256,8 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const [showMascot, setShowMascot] = useState(false); // NOUVEAU: Affichage temporaire mascotte
     const [mascotAnimation, setMascotAnimation] = useState<'fadeInDown' | 'fadeOutUp'>('fadeInDown');
     const [expandedBlockId, setExpandedBlockId] = useState<string | null>(null); // NOUVEAU: Gestion dépliage
+    const scrollViewRef = React.useRef<ScrollView>(null); // NOUVEAU: Référence pour scroll
+    const blockRefs = React.useRef<Record<string, View | null>>({}); // NOUVEAU: Références des blocs
     
     // Hook pour la détection automatique des badges
     const { unlockedBadge, triggerBadgeUnlock, closeBadgeModal } = useBadgeUnlock();
@@ -286,6 +290,25 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
         try {
             if (newExpandedId) {
                 await AsyncStorage.setItem(EXPANDED_BLOCK_KEY, newExpandedId);
+                
+                // NOUVEAU: Scroll vers le bloc ouvert après un petit délai (attendre l'animation)
+                setTimeout(() => {
+                    const blockView = blockRefs.current[blockId];
+                    if (blockView && scrollViewRef.current) {
+                        blockView.measureLayout(
+                            scrollViewRef.current as any,
+                            (x, y) => {
+                                scrollViewRef.current?.scrollTo({
+                                    y: y - 20, // Petit offset pour ne pas coller au bord
+                                    animated: true
+                                });
+                            },
+                            () => {
+                                // Fallback si measureLayout échoue: ne rien faire
+                            }
+                        );
+                    }
+                }, 100); // Délai pour laisser l'animation se terminer
             } else {
                 await AsyncStorage.removeItem(EXPANDED_BLOCK_KEY);
             }
@@ -435,7 +458,10 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            <ScrollView contentContainerStyle={styles.scrollContent}>
+            <ScrollView 
+                contentContainerStyle={styles.scrollContent}
+                ref={scrollViewRef}
+            >
                 <View style={styles.container}>
                     {/* Header avec mascotte et streak intégrés - ULTRA COMPACT */}
                     <View style={styles.headerCompact}>
@@ -583,6 +609,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                 onToggle={() => toggleBlock(block.id)}
                                 navigation={navigation}
                                 t={t}
+                                blockRef={(ref) => blockRefs.current[block.id] = ref}
                             />
                         );
                     })}
