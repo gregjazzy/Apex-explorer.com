@@ -709,8 +709,8 @@ const styles = StyleSheet.create({
         marginBottom: PremiumTheme.spacing.md,
         marginHorizontal: isWeb ? -PremiumTheme.spacing.lg : -PremiumTheme.spacing.md,
         paddingHorizontal: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
-        paddingVertical: 6, // Ultra-fin (~6px)
-        borderRadius: PremiumTheme.borderRadius.medium,
+        paddingVertical: 6, // Ultra-fin
+        borderRadius: 0, // Supprimé pour coller parfaitement
         borderTopWidth: 2,
     },
     separatorContent: {
