@@ -705,13 +705,13 @@ const styles = StyleSheet.create({
     
     // Séparateur de bloc (fond coloré + bordure top)
     blockSeparator: {
-        marginTop: 0, // Supprimé pour réduire l'espace
-        marginBottom: PremiumTheme.spacing.xs, // Réduit au minimum
-        marginHorizontal: isWeb ? -PremiumTheme.spacing.lg : -PremiumTheme.spacing.md, // Extend to edges
+        marginTop: 0,
+        marginBottom: PremiumTheme.spacing.md, // Restauré à md
+        marginHorizontal: isWeb ? -PremiumTheme.spacing.lg : -PremiumTheme.spacing.md,
         paddingHorizontal: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
-        paddingVertical: PremiumTheme.spacing.md,
+        paddingVertical: PremiumTheme.spacing.xs, // RÉDUIT ici pour moins d'espace
         borderRadius: PremiumTheme.borderRadius.medium,
-        borderTopWidth: 2, // Bordure top pour plus de contraste
+        borderTopWidth: 2,
     },
     separatorContent: {
         flexDirection: 'row',
