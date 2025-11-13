@@ -204,6 +204,11 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                     } as ExplorerProgressItem))
             );
             
+            // DEBUG: Afficher la progression pour M12
+            const m12Progress = allProgress.filter(p => p.moduleId === 'm12');
+            console.log('🔍 Progression M12:', m12Progress);
+            console.log('🔍 DefiIds trouvés:', m12Progress.map(p => p.defiId));
+            
             // NOUVEAU : Charger les stats Speed Drill
             let speedSessions = undefined;
             if (user?.id) {
