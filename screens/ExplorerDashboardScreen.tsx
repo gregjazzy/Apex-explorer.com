@@ -250,12 +250,15 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
         }
     }, [i18n.language]);
 
-    // NOUVEAU: Recharger les badges quand on revient d'un défi
+    // OPTIMISÉ: Recharger seulement si nécessaire (via paramètre de navigation)
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
-            // Recharger uniquement si on était sur un autre écran
-            if (user && !loading) {
+            // Ne recharger que si explicitement demandé via params
+            const route = navigation.getState().routes.find((r: any) => r.name === 'Explorer');
+            if (route?.params?.shouldReload && user && !loading) {
                 loadModules();
+                // Nettoyer le paramètre
+                navigation.setParams({ shouldReload: undefined });
             }
         });
 
