@@ -22,7 +22,7 @@ const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 900;
 
-// Composant pour le séparateur de bloc thématique (fond coloré léger)
+// Composant pour le séparateur de bloc thématique (fond coloré + contraste amélioré)
 const BlockSeparator: React.FC<{
     block: ModuleBlock;
     moduleCount: number;
@@ -32,7 +32,13 @@ const BlockSeparator: React.FC<{
     const blockTitle = t(block.titleKey);
     
     return (
-        <View style={[styles.blockSeparator, { backgroundColor: block.color + '15' }]}>
+        <View style={[
+            styles.blockSeparator, 
+            { 
+                backgroundColor: block.color + '30',
+                borderTopColor: block.color + '40',
+            }
+        ]}>
             <View style={styles.separatorContent}>
                 <View style={styles.separatorLeft}>
                     <Text style={styles.separatorIcon}>{block.icon}</Text>
@@ -694,17 +700,18 @@ const styles = StyleSheet.create({
     
     // Styles pour les blocs thématiques
     blockSection: {
-        marginBottom: PremiumTheme.spacing.lg, // Réduit de xxl à lg
+        marginBottom: PremiumTheme.spacing.md, // Réduit à md pour moins d'espace
     },
     
-    // Séparateur de bloc (fond coloré pleine largeur)
+    // Séparateur de bloc (fond coloré + bordure top)
     blockSeparator: {
-        marginTop: PremiumTheme.spacing.lg,
+        marginTop: 0, // Supprimé pour réduire l'espace
         marginBottom: PremiumTheme.spacing.md,
         marginHorizontal: isWeb ? -PremiumTheme.spacing.lg : -PremiumTheme.spacing.md, // Extend to edges
         paddingHorizontal: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
         paddingVertical: PremiumTheme.spacing.md,
         borderRadius: PremiumTheme.borderRadius.medium,
+        borderTopWidth: 2, // Bordure top pour plus de contraste
     },
     separatorContent: {
         flexDirection: 'row',
