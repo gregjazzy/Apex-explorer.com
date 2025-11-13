@@ -34,7 +34,9 @@
     "m10": "Le Code du Leader (Éthique)",
     "m10_desc": "Développer l'intégrité et les valeurs éthiques du leadership.",
     "m11": "Le Projet Capital (Synthèse)",
-    "m11_desc": "Synthèse finale : appliquer toutes les compétences acquises dans un projet complet."
+    "m11_desc": "Synthèse finale : appliquer toutes les compétences acquises dans un projet complet.",
+    "m12": "L'Art de Connecter",
+    "m12_desc": "Maîtriser les 5 super-pouvoirs de la communication et devenir quelqu'un avec qui les autres VEULENT être."
   },
   "defi": {
     "title": "Défi",
@@ -946,6 +948,96 @@
   "badges": {
     "title": "Vos Badges d'Honneur",
     "no_badges": "Commencez un module pour gagner votre premier badge!"
+  },
+  "m12": {
+    "defi1": {
+      "titre": "Quiz: Le Miroir Social",
+      "question": "C'est la récréation à l'école. Tu observes trois personnes différentes. Avec qui préfères-tu passer du temps ?",
+      "options": [
+        "Alex : Silencieux, ne parle jamais, regarde toujours son téléphone",
+        "Béa : Parle tout le temps d'elle, ne pose jamais de questions aux autres",
+        "Camille : Joyeuse, te demande comment tu vas, écoute tes histoires avec attention"
+      ],
+      "bonneReponseIndex": 2,
+      "feedbackCorrect": "Excellent ! Tu as compris : les gens veulent être avec quelqu'un qui les fait sentir IMPORTANTS. Camille pose des questions, écoute, montre de l'intérêt. C'est le SECRET n°1 de la communication ! Si TU veux que les autres t'aiment, deviens comme Camille : curieux, attentif, joyeux.",
+      "feedbackIncorrect": "Réfléchis : avec qui te sens-tu BIEN ? Quelqu'un qui t'ignore (Alex) ou qui parle seulement d'elle (Béa) ? NON ! Tu préfères Camille car elle te fait sentir important. C'est la règle d'or : les gens aiment ceux qui les ÉCOUTENT et s'intéressent à eux.",
+      "leconStrategique": "Les meilleurs communicateurs (PDG, leaders, entrepreneurs) ont tous ce point commun : ils ÉCOUTENT plus qu'ils ne parlent. Ils posent des questions. Ils s'intéressent VRAIMENT aux autres. Ce n'est pas de la manipulation, c'est de l'empathie authentique. Et ça crée des connexions puissantes.",
+      "referenceCroisee": "M5",
+      "mentorGoal": "Introduire le concept fondamental de communication : s'intéresser aux autres AVANT de parler de soi. L'enfant doit comprendre que l'écoute active est le super-pouvoir n°1.",
+      "evaluationCriteria": "Réponse correcte : Camille (option 3). Bonus : L'enfant explique pourquoi l'écoute est importante ou donne un exemple de sa vie."
+    },
+    "defi2": {
+      "titre": "Mission: Les 3 Règles d'Or de la Communication",
+      "scenario": "Tu veux devenir quelqu'un avec qui tout le monde VEUT être ? Il existe 3 règles d'or que tous les grands communicateurs utilisent. Elles sont simples, mais PUISSANTES. Si tu les appliques pendant une semaine, tu verras la différence.",
+      "instruction": "Voici les 3 Règles d'Or :\n\n**RÈGLE 1 : Pose des questions sur L'AUTRE** (pas juste toi)\nAu lieu de dire : \"Moi j'ai fait ça...\"\nDis : \"Et toi, comment ça s'est passé pour toi ?\"\n\n**RÈGLE 2 : Écoute VRAIMENT** (regarde dans les yeux, pas ton écran)\nQuand quelqu'un parle, regarde-le, hoche la tête, ne coupe pas la parole.\n\n**RÈGLE 3 : Partage de l'ÉNERGIE positive** (souris, encourage)\nDis des choses comme : \"Cool !\" \"C'est intéressant !\" \"Bravo !\"\n\nTA MISSION :\n1. Choisis UNE personne (ami, famille, voisin)\n2. Applique ces 3 règles pendant 5 minutes dans une conversation\n3. Observe ce qui se passe : la personne sourit ? Parle plus ? Se sent bien ?\n4. Écris ton expérience : qu'as-tu remarqué ?",
+      "leconStrategique": "Les leaders du 22ème siècle ne sont pas ceux qui parlent le plus fort, mais ceux qui CONNECTENT le mieux. Ces 3 règles créent de la confiance, de l'influence, des opportunités. Les meilleurs négociateurs, entrepreneurs, politiciens les utilisent tous les jours.",
+      "referenceCroisee": "M5",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi Ça Marche ?",
+          "type_etape": "texte_guide",
+          "instruction": "Les gens ADORENT parler d'eux. Si tu leur poses des questions et les écoutes vraiment, ils vont t'ADORER en retour ! C'est mathématique : tu donnes de l'attention → tu reçois de l'affection."
+        },
+        "etape2": {
+          "titre": "2. Le Piège À Éviter",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : NE PAS écouter juste pour attendre mon tour de parler. Écouter VRAIMENT signifie être curieux de l'autre.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Expérience",
+          "type_etape": "champ_texte",
+          "instruction": "Après avoir appliqué les 3 règles avec quelqu'un, décris :\n- Qui était la personne ?\n- Qu'as-tu remarqué de différent ?\n- Comment la personne a réagi ?",
+          "placeholder": "Mon expérience : J'ai parlé avec... et j'ai remarqué que..."
+        }
+      },
+      "mentorGoal": "Faire expérimenter concrètement l'écoute active et l'intérêt pour les autres. L'enfant doit observer l'impact direct de ces techniques sur ses interactions.",
+      "evaluationCriteria": "1. L'enfant a testé les 3 règles avec quelqu'un. 2. Description claire de l'expérience (qui, quoi, résultat). 3. Observation de l'impact (ex: la personne souriait plus, parlait plus, etc.). Bonus : L'enfant mentionne qu'il va continuer à utiliser ces règles."
+    },
+    "defi3": {
+      "titre": "Quiz: Le Langage du Corps",
+      "question": "Ton ami te raconte une histoire super importante pour lui. Toi, tu es assis, bras croisés, tu regardes par la fenêtre. Soudain, ton ami arrête de parler et part. Pourquoi ?",
+      "options": [
+        "Il a oublié ce qu'il voulait dire",
+        "Ton CORPS lui a dit 'Je ne suis pas intéressé' même si tu écoutais",
+        "Il devait aller aux toilettes"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "BINGO ! Ton CORPS parle PLUS FORT que tes mots. Même si tu écoutais dans ta tête, ton ami a vu : bras croisés = fermé, regard ailleurs = pas intéressé. Résultat ? Il s'est senti ignoré et est parti. C'est le pouvoir du LANGAGE NON-VERBAL : 70% de la communication passe par ton corps, pas tes mots !",
+      "feedbackIncorrect": "Non ! C'est ton LANGAGE DU CORPS qui a tout gâché. Bras croisés + regard ailleurs = ton corps dit 'Je m'en fiche'. Ton ami l'a ressenti et est parti. Le SECRET : ton corps doit montrer que tu écoutes MÊME si tu écoutes vraiment dans ta tête !",
+      "leconStrategique": "Les meilleurs leaders maîtrisent le langage du corps. Steve Jobs, Oprah Winfrey, Barack Obama : ils savent que 70% de la communication est NON-VERBALE. Apprendre à contrôler ton corps = multiplier ton influence par 10.",
+      "referenceCroisee": "M5",
+      "mentorGoal": "Introduire le concept de communication non-verbale et son impact MAJEUR. L'enfant doit comprendre que son corps parle plus fort que ses mots.",
+      "evaluationCriteria": "Réponse correcte : Option 2 (langage du corps). Bonus : L'enfant donne un exemple personnel où son corps a envoyé un mauvais message."
+    },
+    "defi4": {
+      "titre": "Mission: Le Test de l'Empathie",
+      "scenario": "Ton petit frère (ou sœur, ou cousin) casse ton jouet préféré PAR ACCIDENT. Il/Elle commence à pleurer. Tu es en colère car ton jouet est cassé. Qu'est-ce que tu fais ?",
+      "instruction": "Tu as 3 options. Lis-les et choisis celle que tu ferais VRAIMENT :\n\n**Option A : Réaction immédiate**\n\"TU CASSES TOUJOURS TOUT ! JE TE DÉTESTE !\"\n→ Tu cries, tu le pousses, tu vas voir tes parents pour te plaindre.\n\n**Option B : Fuite**\nTu ne dis rien, tu prends ton jouet cassé, tu vas dans ta chambre et tu boudes.\n→ Tu ignores ton frère/sœur qui pleure.\n\n**Option C : La Pause de 3 Secondes + Empathie**\nTu respires 3 secondes. Tu regardes ton frère/sœur qui pleure.\nTu dis : \"Je vois que tu es triste aussi. C'était un accident. On peut le réparer ensemble ?\"\n\nMaintenant, EXPLIQUE :\n1. Quelle option choisirais-tu VRAIMENT dans cette situation ?\n2. Pourquoi l'Option C est la meilleure pour un futur leader ?\n3. Décris une situation réelle où quelqu'un t'a énervé : comment as-tu réagi ? Qu'aurais-tu pu faire différemment avec la technique de la Pause de 3 Secondes ?",
+      "leconStrategique": "L'EMPATHIE n'est pas de la faiblesse. C'est le super-pouvoir des leaders les plus puissants. Comprendre les émotions de l'autre AVANT de réagir te donne un avantage stratégique : tu contrôles la situation au lieu d'exploser. La Pause de 3 Secondes = technique utilisée par les négociateurs FBI, les PDG sous pression, les diplomates en crise.",
+      "referenceCroisee": "M10",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Pourquoi La Colère Immédiate Est Dangereuse",
+          "type_etape": "texte_guide",
+          "instruction": "Quand tu réagis IMMÉDIATEMENT sous le coup de l'émotion, tu perds le contrôle. Tu dis/fais des choses que tu regrettes après. Les leaders stratégiques prennent toujours 3 secondes pour PENSER avant d'AGIR."
+        },
+        "etape2": {
+          "titre": "2. La Technique Du Miroir Émotionnel",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Avant de réagir, je NOMME l'émotion de l'autre : 'Je vois que tu es triste/effrayé/désolé.' Ça calme la situation instantanément.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Auto-Analyse",
+          "type_etape": "champ_texte",
+          "instruction": "Raconte une VRAIE situation où quelqu'un t'a énervé :\n- Qu'a fait la personne ?\n- Comment as-tu réagi sur le moment ?\n- Si tu avais pris 3 secondes et utilisé l'empathie, qu'aurais-tu dit/fait différemment ?",
+          "placeholder": "Situation : ... Ma réaction : ... Ce que j'aurais pu faire : ..."
+        }
+      },
+      "mentorGoal": "Introduire l'empathie et le contrôle émotionnel comme outils stratégiques (pas juste 'être gentil'). L'enfant doit comprendre que gérer ses émotions = prendre le contrôle de la situation.",
+      "evaluationCriteria": "1. L'enfant identifie l'Option C comme la meilleure. 2. Explication claire de pourquoi (contrôle émotionnel, empathie). 3. Exemple personnel d'une situation réelle avec auto-analyse honnête. Bonus : L'enfant mentionne qu'il va essayer la technique de la Pause de 3 Secondes dans sa vie."
+    }
   },
   "speed_drills": {
     "title": "Zone d'Entraînement Rapide",
