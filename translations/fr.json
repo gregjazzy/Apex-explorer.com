@@ -36,7 +36,9 @@
     "m11": "Le Projet Capital (Synthèse)",
     "m11_desc": "Synthèse finale : appliquer toutes les compétences acquises dans un projet complet.",
     "m12": "L'Art de Connecter",
-    "m12_desc": "Maîtriser les 5 super-pouvoirs de la communication et devenir quelqu'un avec qui les autres VEULENT être."
+    "m12_desc": "Maîtriser les 5 super-pouvoirs de la communication et devenir quelqu'un avec qui les autres VEULENT être.",
+    "m13": "Money Smart",
+    "m13_desc": "Apprendre à gérer son argent comme un pro : budget, économies, investissement en soi."
   },
   "defi": {
     "title": "Défi",
@@ -1037,6 +1039,102 @@
       },
       "mentorGoal": "Introduire l'empathie et le contrôle émotionnel comme outils stratégiques (pas juste 'être gentil'). L'enfant doit comprendre que gérer ses émotions = prendre le contrôle de la situation.",
       "evaluationCriteria": "1. L'enfant identifie l'Option C comme la meilleure. 2. Explication claire de pourquoi (contrôle émotionnel, empathie). 3. Exemple personnel d'une situation réelle avec auto-analyse honnête. Bonus : L'enfant mentionne qu'il va essayer la technique de la Pause de 3 Secondes dans sa vie."
+    }
+  },
+  "m13": {
+    "defi1": {
+      "titre": "Mission: Budget d'Argent de Poche",
+      "scenario": "Tu reçois 10€ d'argent de poche chaque semaine. La question : comment les utiliser INTELLIGEMMENT ? Les riches ont un secret : ils ne dépensent pas tout immédiatement. Ils utilisent la méthode des 3 Pots.",
+      "instruction": "La Méthode des 3 Pots :\n\n**POT 1 : DÉPENSER** (Plaisir immédiat) = 50%\nC'est ton argent pour t'amuser : bonbons, jeux, sorties avec les amis.\n\n**POT 2 : ÉCONOMISER** (Objectif futur) = 40%\nC'est ton argent pour un GRAND objectif : vélo, console, voyage.\n\n**POT 3 : DONNER** (Impact sur les autres) = 10%\nC'est ton argent pour aider : cadeau pour quelqu'un, association, bonne action.\n\nTA MISSION :\n1. Calcule combien d'euros vont dans chaque pot si tu reçois 10€.\n2. Choisis un OBJECTIF pour ton Pot 2 (quelque chose que tu veux vraiment acheter).\n3. Calcule : si tu économises 40% chaque semaine, combien de temps pour atteindre ton objectif ?\n4. Explique : pourquoi donner 10% est important même si c'est TON argent ?",
+      "leconStrategique": "Les milliardaires ne le sont pas devenus par hasard. Ils ont TOUS appris jeunes à gérer l'argent avec discipline. La méthode des 3 Pots = base de la gestion financière. Warren Buffett, Bill Gates, Elon Musk : tous utilisent ce principe (dépenser, investir, donner). Tu l'apprends à 8 ans, tu as 10 ans d'avance sur 99% des gens.",
+      "referenceCroisee": "M8",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Le Calcul des 3 Pots",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : 10€ × 50% = 5€ (Dépenser), 10€ × 40% = 4€ (Économiser), 10€ × 10% = 1€ (Donner).",
+          "placeholder": null
+        },
+        "etape2": {
+          "titre": "2. Pourquoi 40% Pour Économiser ?",
+          "type_etape": "texte_guide",
+          "instruction": "La plupart des gens dépensent 100% de ce qu'ils gagnent. Résultat ? Ils restent pauvres toute leur vie. Les riches économisent AVANT de dépenser. C'est la différence entre être ESCLAVE de l'argent ou MAÎTRE de l'argent."
+        },
+        "etape3": {
+          "titre": "3. Ton Objectif & Calcul",
+          "type_etape": "champ_texte",
+          "instruction": "Choisis quelque chose que tu veux VRAIMENT (exemple : vélo à 80€, console à 300€).\n\nCalcule : Si tu économises 4€/semaine, combien de semaines pour l'acheter ?\nFormule : Prix de l'objectif ÷ 4€ = nombre de semaines",
+          "placeholder": "Mon objectif : ... Prix : ...€. Temps nécessaire : ... semaines."
+        },
+        "etape4": {
+          "titre": "4. Le Pouvoir de Donner",
+          "type_etape": "champ_texte",
+          "instruction": "Donner 10% crée une MENTALITÉ d'ABONDANCE : 'J'ai assez pour moi ET pour aider les autres.' Les plus grands leaders sont aussi les plus généreux. Explique à qui tu donnerais tes 1€ et pourquoi.",
+          "placeholder": "Je donnerais à... parce que..."
+        }
+      },
+      "mentorGoal": "Introduire la gestion financière de base avec la méthode des 3 Pots. L'enfant doit comprendre que gérer l'argent = discipline + objectifs + générosité.",
+      "evaluationCriteria": "1. Calculs corrects : 5€, 4€, 1€. 2. Objectif clair avec calcul du temps nécessaire. 3. Explication de la raison de donner 10%. Bonus : L'enfant mentionne qu'il va appliquer cette méthode dans sa vraie vie."
+    },
+    "defi2": {
+      "titre": "Mission: Économiser Pour Un Objectif",
+      "scenario": "Tu veux acheter un jeu vidéo à 60€. Problème : tu n'as que 10€ d'argent de poche par semaine et tu mets 40% dans ton Pot 2 (Économiser). Mais tu es IMPATIENT ! Tu veux le jeu MAINTENANT. Que fais-tu ?",
+      "instruction": "**Situation de départ :**\n- Objectif : Jeu vidéo à 60€\n- Argent de poche : 10€/semaine\n- Économies (Pot 2) : 4€/semaine\n- Temps nécessaire : 60€ ÷ 4€ = 15 semaines (presque 4 mois !)\n\n**Le problème : C'est TROP LONG !**\n\nTu as 3 options :\n\n**Option A : Emprunter l'argent à tes parents**\n\"Papa/Maman, prête-moi 60€, je te rembourserai plus tard.\"\n→ Tu as le jeu MAINTENANT, mais tu dois rembourser.\n\n**Option B : Utiliser TOUT ton argent de poche (100%)**\nAu lieu de 4€/semaine, tu mets les 10€ entiers dans Pot 2.\n→ Tu as le jeu en 6 semaines, mais tu ne peux rien dépenser pendant 6 semaines.\n\n**Option C : Trouver des REVENUS SUPPLÉMENTAIRES**\nProposer des tâches en plus : laver la voiture (5€), ranger le garage (10€), tondre la pelouse (8€).\n→ Tu gardes tes 4€/semaine ET tu gagnes plus !\n\nTA MISSION :\n1. Quelle option choisirais-tu ? Pourquoi ?\n2. Calcule : Si tu fais 2 tâches supplémentaires par mois (15€), combien de temps pour atteindre 60€ ?\n3. Explique : Quelle est la MEILLEURE option pour un futur entrepreneur ?",
+      "leconStrategique": "Les entrepreneurs ne DEMANDENT pas d'argent, ils le CRÉENT. L'Option C (revenus supplémentaires) est la mentalité des milliardaires : augmenter ses revenus au lieu de rogner sur ses dépenses ou s'endetter. Elon Musk, Jeff Bezos, Mark Zuckerberg : ils ont tous commencé par créer de la valeur pour gagner de l'argent.",
+      "referenceCroisee": "M9",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Comparaison des 3 Options",
+          "type_etape": "texte_guide",
+          "instruction": "Option A (Emprunter) = Tu deviens DÉPENDANT. Option B (Tout économiser) = Tu te PRIVES. Option C (Créer des revenus) = Tu deviens ACTIF. Les leaders choisissent toujours l'Option C."
+        },
+        "etape2": {
+          "titre": "2. Le Calcul Option C",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : 4€/semaine (économies normales) + 15€/mois (tâches extra) = 4€×4 + 15€ = 31€/mois. Donc 60€ en 2 mois au lieu de 4 !",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ton Choix & Justification",
+          "type_etape": "champ_texte",
+          "instruction": "Explique quelle option tu choisirais et POURQUOI. Si tu choisis Option C, liste 3 tâches que tu pourrais proposer à tes parents ou voisins pour gagner de l'argent supplémentaire.",
+          "placeholder": "Mon choix : Option ... parce que... Mes 3 idées de tâches : 1. ... 2. ... 3. ..."
+        }
+      },
+      "mentorGoal": "Introduire la mentalité entrepreneuriale : créer de la valeur pour augmenter ses revenus au lieu de s'endetter ou se priver. L'enfant doit comprendre qu'il peut AGIR pour accélérer ses objectifs.",
+      "evaluationCriteria": "1. Choix de l'option (toutes sont acceptables si justifiées). 2. Calcul correct si Option C choisie. 3. Liste de 3 tâches réalistes pour gagner de l'argent. Bonus : L'enfant explique pourquoi Option C est la meilleure pour un entrepreneur."
+    },
+    "defi3": {
+      "titre": "Quiz: Gagner de l'Argent",
+      "question": "Tu as 8 ans. Tu veux gagner de l'argent pour t'acheter des choses. Quelle est la MEILLEURE stratégie ?",
+      "options": [
+        "Demander plus d'argent de poche à tes parents sans rien faire en plus",
+        "Attendre ton anniversaire pour recevoir de l'argent en cadeau",
+        "Proposer de faire des tâches supplémentaires (laver la voiture, ranger le garage, aider les voisins) et négocier un prix"
+      ],
+      "bonneReponseIndex": 2,
+      "feedbackCorrect": "PARFAIT ! Tu as compris le secret des entrepreneurs : l'argent GAGNÉ (par ton travail) vaut 10 fois plus que l'argent REÇU (cadeau). Pourquoi ? Parce que tu apprends 3 choses ESSENTIELLES : 1) La valeur du travail, 2) Comment créer de la valeur pour les autres, 3) Comment NÉGOCIER. Ces compétences valent des MILLIONS plus tard !",
+      "feedbackIncorrect": "Non ! Demander de l'argent sans rien donner en retour = mentalité de DÉPENDANCE. Attendre un cadeau = mentalité de PASSIVITÉ. Les futurs leaders CRÉENT de la valeur et NÉGOCIENT. Propose des services, fixe un prix, travaille, gagne. C'est comme ça qu'on devient entrepreneur !",
+      "leconStrategique": "Warren Buffett vendait des chewing-gums à 6 ans. Elon Musk codait des jeux vidéo à 12 ans. Mark Zuckerberg créait des sites web à 10 ans. Tous les milliardaires ont un point commun : ils ont commencé JEUNES à créer de la valeur et gagner de l'argent. Pas en mendiant, mais en CRÉANT.",
+      "referenceCroisee": "M9",
+      "mentorGoal": "Introduire la différence fondamentale entre argent GAGNÉ et argent REÇU. L'enfant doit comprendre que créer de la valeur pour les autres est la base de tout business.",
+      "evaluationCriteria": "Réponse correcte : Option 3 (proposer des tâches). Bonus : L'enfant explique pourquoi l'argent gagné est plus valorisant que l'argent reçu."
+    },
+    "defi4": {
+      "titre": "Quiz: Investir en Soi vs Dépenser",
+      "question": "C'est ton anniversaire ! Tu reçois 100€. Tu peux acheter 2 choses différentes. Laquelle est un INVESTISSEMENT (te rapporte de l'argent/compétences) et laquelle est une DÉPENSE (plaisir immédiat) ?",
+      "options": [
+        "Option A : Acheter un vélo pour s'amuser = INVESTISSEMENT / Option B : Acheter des livres pour apprendre à coder = DÉPENSE",
+        "Option A : Acheter un vélo pour s'amuser = DÉPENSE / Option B : Acheter des livres pour apprendre à coder = INVESTISSEMENT",
+        "Les deux sont des DÉPENSES car tu perds 100€"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "EXCELLENT ! Tu as compris la différence entre ACTIF et PASSIF :\n\n**DÉPENSE (Vélo)** : Tu dépenses 100€ → Tu as du plaisir → C'est fini. Tu ne peux pas gagner d'argent avec.\n\n**INVESTISSEMENT (Livres de code)** : Tu dépenses 100€ → Tu apprends une COMPÉTENCE → Tu peux créer des sites web, des jeux, gagner de l'argent pendant 50 ans !\n\nLes riches achètent des ACTIFS (qui rapportent). Les pauvres achètent des PASSIFS (qui coûtent). Toi, tu penses comme un riche !",
+      "feedbackIncorrect": "Non ! Le vélo = DÉPENSE (plaisir immédiat, ne rapporte rien). Les livres de code = INVESTISSEMENT (compétence qui peut te rapporter de l'argent toute ta vie). Les riches investissent en eux-mêmes AVANT de dépenser pour le plaisir. C'est la règle n°1 de la richesse.",
+      "leconStrategique": "Les milliardaires investissent massivement dans leur ÉDUCATION et leurs COMPÉTENCES avant d'acheter des choses. Bill Gates lisait 50 livres/an dès l'enfance. Elon Musk apprenait seul la physique et la programmation. Warren Buffett investissait dans des livres et des cours. La règle : INVESTIR EN SOI = meilleur retour sur investissement possible.",
+      "referenceCroisee": "M6",
+      "mentorGoal": "Introduire le concept d'ACTIF vs PASSIF. L'enfant doit comprendre qu'investir en soi (compétences, éducation) rapporte infiniment plus que dépenser pour le plaisir immédiat.",
+      "evaluationCriteria": "Réponse correcte : Option B (vélo = dépense, livres = investissement). Bonus : L'enfant donne un exemple d'investissement en soi qu'il aimerait faire (cours, livres, formation, etc.)."
     }
   },
   "speed_drills": {
