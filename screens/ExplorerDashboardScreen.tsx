@@ -22,7 +22,7 @@ const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 900;
 
-// Composant pour le séparateur de bloc thématique (simple header visuel)
+// Composant pour le séparateur de bloc thématique (ultra-léger)
 const BlockSeparator: React.FC<{
     block: ModuleBlock;
     moduleCount: number;
@@ -30,54 +30,34 @@ const BlockSeparator: React.FC<{
     t: any;
 }> = ({ block, moduleCount, completedCount, t }) => {
     const blockTitle = t(block.titleKey);
-    const blockDescription = t(block.descriptionKey);
-    const completionPercentage = moduleCount > 0 ? Math.round((completedCount / moduleCount) * 100) : 0;
     
     return (
-        <Animatable.View 
-            animation="fadeInUp" 
-            duration={600}
-            style={styles.blockSeparator}
-        >
-            <LinearGradient
-                colors={[block.color + '20', block.color + '10']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={[styles.blockHeader, { borderLeftColor: block.color, borderLeftWidth: 5 }]}
-            >
-                <View style={styles.blockTitleRow}>
-                    <View style={styles.blockTitleLeft}>
-                        <Text style={styles.blockIcon}>{block.icon}</Text>
-                        <View style={styles.blockTitleContent}>
-                            <View style={styles.blockTitleWithBadge}>
-                                <Text style={styles.blockTitle}>{blockTitle}</Text>
-                                {block.isFree && (
-                                    <View style={styles.freeBadge}>
-                                        <Text style={styles.freeBadgeText}>GRATUIT</Text>
-                                    </View>
-                                )}
-                            </View>
-                            <Text style={styles.blockDescription}>
-                                {blockDescription}
-                            </Text>
+        <View style={styles.blockSeparator}>
+            {/* Ligne de séparation supérieure */}
+            <View style={[styles.separatorLine, { backgroundColor: block.color + '30' }]} />
+            
+            {/* Titre du bloc */}
+            <View style={styles.separatorContent}>
+                <View style={styles.separatorLeft}>
+                    <Text style={styles.separatorIcon}>{block.icon}</Text>
+                    <Text style={styles.separatorTitle}>{blockTitle}</Text>
+                    {block.isFree && (
+                        <View style={styles.freeBadgeSmall}>
+                            <Text style={styles.freeBadgeSmallText}>GRATUIT</Text>
                         </View>
-                    </View>
-                    
-                    {/* Badge progression */}
-                    <View style={styles.blockRightSection}>
-                        {completedCount === moduleCount ? (
-                            <Text style={styles.blockCompletedBadge}>✓</Text>
-                        ) : (
-                            <View style={styles.progressBadge}>
-                                <Text style={styles.progressBadgeText}>
-                                    {completedCount}/{moduleCount}
-                                </Text>
-                            </View>
-                        )}
-                    </View>
+                    )}
                 </View>
-            </LinearGradient>
-        </Animatable.View>
+                
+                {/* Compteur de progression */}
+                <View style={styles.separatorRight}>
+                    {completedCount === moduleCount ? (
+                        <Text style={styles.separatorCompleted}>✓ {completedCount}/{moduleCount}</Text>
+                    ) : (
+                        <Text style={styles.separatorCount}>{completedCount}/{moduleCount}</Text>
+                    )}
+                </View>
+            </View>
+        </View>
     );
 };
 
@@ -718,11 +698,67 @@ const styles = StyleSheet.create({
     
     // Styles pour les blocs thématiques
     blockSection: {
-        marginBottom: PremiumTheme.spacing.xxxl,
+        marginBottom: PremiumTheme.spacing.xxl,
     },
+    
+    // Séparateur de bloc (ultra-léger)
     blockSeparator: {
-        marginBottom: PremiumTheme.spacing.lg,
+        marginTop: PremiumTheme.spacing.xl,
+        marginBottom: PremiumTheme.spacing.md,
     },
+    separatorLine: {
+        height: 2,
+        width: '100%',
+        marginBottom: PremiumTheme.spacing.sm,
+        opacity: 0.5,
+    },
+    separatorContent: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: PremiumTheme.spacing.xs,
+    },
+    separatorLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: PremiumTheme.spacing.sm,
+        flex: 1,
+    },
+    separatorIcon: {
+        fontSize: isWeb ? 24 : 22,
+    },
+    separatorTitle: {
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.lg : PremiumTheme.typography.fontSize.md,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.darkGray,
+    },
+    freeBadgeSmall: {
+        backgroundColor: '#10B981',
+        paddingHorizontal: PremiumTheme.spacing.xs,
+        paddingVertical: 2,
+        borderRadius: PremiumTheme.borderRadius.small,
+    },
+    freeBadgeSmallText: {
+        fontSize: 9,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
+        letterSpacing: 0.5,
+    },
+    separatorRight: {
+        marginLeft: PremiumTheme.spacing.sm,
+    },
+    separatorCount: {
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.gray,
+    },
+    separatorCompleted: {
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: '#10B981',
+    },
+    
+    // Anciens styles (nettoyage)
     blockHeader: {
         backgroundColor: '#FFFFFF',
         borderRadius: PremiumTheme.borderRadius.large,
