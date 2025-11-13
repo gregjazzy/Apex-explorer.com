@@ -700,7 +700,7 @@ const styles = StyleSheet.create({
     
     // Styles pour les blocs thématiques
     blockSection: {
-        marginBottom: PremiumTheme.spacing.xs, // Minimal pour plus de compacité
+        marginBottom: 0, // Aucun espace - séparateur collé au dernier module
     },
     
     // Séparateur de bloc (fond coloré + bordure top)
