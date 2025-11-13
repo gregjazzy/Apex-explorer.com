@@ -74,7 +74,16 @@ export interface Badge {
   earned: boolean;
 }
 
-// --- Données de Simulation de Base (M1-M4) ---
+// --- Données de Simulation de Base (M1-M13) ---
+
+// Ordre d'affichage des modules (stratégie marketing)
+const MODULE_DISPLAY_ORDER = [
+  'm12', // MODULE GRATUIT - L'Art de Connecter (Communication)
+  'm13', 'm5', 'm10', 'm7', // BLOC 1: Leadership & Influence
+  'm1', 'm4', 'm2',          // BLOC 2: Stratégie & Analyse
+  'm3', 'm8', 'm6',          // BLOC 3: Exécution & Gestion
+  'm9', 'm11'                // BLOC 4: Excellence & Maîtrise
+];
 
 const BASE_MODULE_DATA_SIM = [
   { id: 'm1', isUnlocked: true },
@@ -204,8 +213,11 @@ export const fetchModulesWithProgress = async (userId: string): Promise<Module[]
         });
     }
 
-    // 2. Construire la liste finale des modules
-    const modules = BASE_MODULE_DATA_SIM.map(module => {
+    // 2. Construire la liste finale des modules selon MODULE_DISPLAY_ORDER
+    const modules = MODULE_DISPLAY_ORDER.map(moduleId => {
+        const module = BASE_MODULE_DATA_SIM.find(m => m.id === moduleId);
+        if (!module) return null;
+        
         const baseDefis = BASE_DEFIS_SIM[module.id] || [];
         let completedDefis = 0;
         let totalXP = 0;
@@ -264,7 +276,7 @@ export const fetchModulesWithProgress = async (userId: string): Promise<Module[]
             completionRate,
             totalXP,
         };
-    });
+    }).filter((m): m is Module => m !== null);
     
     // Simuler le temps de chargement pour le confort de développement
     await new Promise(resolve => setTimeout(resolve, 300));
