@@ -504,17 +504,27 @@ export const fetchMentorExplorers = async (mentorId: string): Promise<ExplorerPr
  * Connecte l'explorateur en vérifiant le Nom et le PIN contre la table 'explorers'.
  */
 export const loginExplorerByPin = async (name: string, pin: string): Promise<ExplorerProfile | null> => {
+    console.log('🔍 Tentative de connexion avec:', { name, pin });
+    
     const { data, error } = await supabase
         .from('explorers')
         .select('*')
         .eq('name', name)
         .eq('pin_code', pin)
         .eq('is_active', true)
-        .maybeSingle(); // CORRIGÉ: maybeSingle au lieu de single (pas d'erreur si 0 résultat)
+        .maybeSingle();
+        
+    console.log('📊 Résultat de la recherche:', { data, error });
         
     if (error) {
         console.error("Échec de la connexion Explorateur:", error);
         return null;
+    }
+
+    if (data) {
+        console.log('✅ Compte trouvé!', data);
+    } else {
+        console.log('❌ Aucun compte trouvé');
     }
 
     return data as ExplorerProfile | null;
