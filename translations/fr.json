@@ -235,77 +235,89 @@
   },
   "m3": {
     "defi1": {
-        "titre": "Défi: L'Équilibre de la Tour",
-        "scenario": "Tu dois construire une tour la plus haute possible avec 10 blocs. Comment dois-tu placer les blocs pour garantir la STABILITÉ maximale ?",
-        "instruction": "Écris une phrase expliquant où doit se trouver le centre de gravité (CG) : Haut ou Bas, et pourquoi.",
-        "leconStrategique": "La stabilité est plus importante que la hauteur. Une fondation solide permet une croissance durable.",
+        "titre": "Mission: La Cabane Dans Les Arbres",
+        "scenario": "Tu veux construire une cabane dans un arbre avec tes amis. Tu as des planches de bois de différentes tailles. Ton ami veut mettre toutes les grosses planches EN HAUT pour faire le toit. Toi, tu penses qu'il faut les mettre EN BAS. Qui a raison ?",
+        "instruction": "1. Où dois-tu mettre les planches les plus lourdes : en haut ou en bas ?\n2. Explique pourquoi avec tes propres mots (pense à l'équilibre).\n3. Que se passerait-il si tu mettais tout le poids en haut ?",
+        "leconStrategique": "Dans la construction (et dans la vie), les bases solides sont essentielles. Une entreprise, un projet, une équipe : tout commence par des fondations fortes. Les choses lourdes et importantes vont toujours en bas.",
         "referenceCroisee": "M7",
         "briefing": {
             "etape1": {
-                "titre": "1. Le Centre de Gravité",
+                "titre": "1. Penser À L'Équilibre",
                 "type_etape": "validation_case",
-                "instruction": "J'ai compris que le centre de gravité doit être le plus bas possible. Les blocs lourds vont en bas, les plus légers en haut."
+                "instruction": "J'ai compris : si je mets les choses lourdes en haut, la cabane risque de basculer ou de tomber. C'est comme une pyramide : large en bas, léger en haut."
             },
             "etape2": {
-                "titre": "2. La Règle de la Base",
+                "titre": "2. Tester Mentalement",
                 "type_etape": "texte_guide",
-                "instruction": "Pour être stable, la tour doit avoir une base large. La stabilité provient de la largeur et de la hauteur inversée (plus large que haute)."
+                "instruction": "Imagine que tu portes un sac à dos très lourd. C'est plus facile si le poids est en bas du sac ou en haut ? La réponse : EN BAS ! C'est pareil pour tout ce qu'on construit."
             }
       },
-      "mentorGoal": "Évaluer la compréhension du centre de gravité et de la stabilité structurelle. L'enfant doit démontrer qu'il sait où placer le poids pour maximiser la stabilité.",
-      "evaluationCriteria": "La réponse doit identifier la position la plus basse et centrale pour le centre de gravité. Bonus: L'enfant explique pourquoi un centre de gravité bas rend la structure plus stable."
+      "mentorGoal": "Introduit le concept d'équilibre et de stabilité structurelle de manière concrète. L'enfant doit comprendre que le poids doit être en bas pour la stabilité.",
+      "evaluationCriteria": "1. Réponse : planches lourdes EN BAS. 2. Explication cohérente avec l'équilibre (risque de tomber, basculer). 3. Anticipation : tout en haut = cabane instable/dangereuse."
     },
     "defi2": {
-        "titre": "Quiz: Le Levier Efficace",
-        "question": "Tu dois soulever une roche très lourde avec une barre. Où dois-tu placer le point d'appui (fulcrum) pour la soulever le plus facilement ?",
+        "titre": "Quiz: Le Vélo Dans La Côte",
+        "question": "Tu es à vélo en haut d'une grande descente. Tu te lances sans pédaler. Qu'est-ce qui fait que tu vas de plus en plus vite ?",
       "options": [
-        "Au milieu de la barre",
-        "Le plus près possible de la roche",
-        "Le plus loin possible de la roche"
+        "La force de tes jambes",
+        "La pente qui tire le vélo vers le bas (gravité)",
+        "Le vent qui pousse le vélo"
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Bravo! Plus le point d'appui est proche de la charge, plus le levier est puissant.",
-        "leconStrategique": "L'efficacité est l'art de faire plus avec moins d'effort. Trouve le bon point d'appui (la bonne relation, la bonne ressource).",
+        "feedbackCorrect": "Exact ! La gravité est une force invisible qui attire tout vers le bas. Plus la pente est forte, plus tu accélères. C'est pour ça qu'il faut freiner en descente !",
+        "feedbackIncorrect": "La gravité (la force qui tire tout vers le bas) est ce qui te fait accélérer en descente, même sans pédaler !",
+        "leconStrategique": "Comprendre les forces invisibles (gravité, énergie, élan) aide à mieux comprendre le monde. Dans les affaires, il y a aussi des forces invisibles : tendances du marché, confiance des clients, réputation.",
       "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension de l'effet de levier et du bras de levier (Force × Distance = Moment). L'enfant doit démontrer comment optimiser l'utilisation d'une force limitée.",
-      "evaluationCriteria": "La réponse doit identifier que l'augmentation de la distance (bras de levier) permet de soulever un poids plus lourd avec moins de force. Bonus: L'enfant mentionne la formule ou le principe physique."
+      "mentorGoal": "Introduit le concept de gravité et d'énergie potentielle de manière simple et concrète (vélo).",
+      "evaluationCriteria": "Réponse correcte : Option 2 (gravité). Bonus : L'enfant mentionne que l'énergie vient de la hauteur."
     },
     "defi3": {
-      "titre": "Défi: Le Problème de la Friction",
-      "scenario": "Tu dois faire glisser une lourde caisse sur une surface rugueuse. Tu peux : 1. Pousser la caisse directement. 2. La mettre sur des rondins de bois. Quelle méthode réduit le mieux la friction, et pourquoi ?",
-      "instruction": "Écris la méthode (1 ou 2) et le concept de physique qui la justifie (Friction statique vs. roulante).",
-      "leconStrategique": "Les leaders cherchent toujours à réduire la résistance (la friction) dans un système pour atteindre leurs objectifs plus facilement.",
-      "referenceCroisee": "M6",
+      "titre": "Défi: Le Pont de Papier",
+      "scenario": "Défi fou ! Tu dois faire un pont avec UNE SEULE feuille de papier qui relie deux tables (espace de 20 cm). Le pont doit supporter un petit jouet (50g). Si tu laisses la feuille PLATE, elle tombe. Comment peux-tu plier la feuille pour qu'elle soit plus solide ?",
+      "instruction": "1. Quelle forme donnerais-tu au papier pour le rendre plus solide ? (Pli en accordéon ? Roulé en tube ? En triangle ?)\n2. Pourquoi cette forme est plus solide qu'une feuille plate ?\n3. Teste mentalement : qu'est-ce qui pourrait faire échouer ton pont ?",
+      "leconStrategique": "La forme change tout ! Un matériau faible (papier) peut devenir fort avec la bonne structure. Dans les entreprises, c'est pareil : ce n'est pas la TAILLE qui compte, c'est l'ORGANISATION.",
+      "referenceCroisee": "M7",
       "briefing": {
         "etape1": {
-          "titre": "1. Identifier la Résistance",
+          "titre": "1. La Force De La Forme",
           "type_etape": "validation_case",
-          "instruction": "J'ai identifié que la friction est la force qui s'oppose au mouvement et qui gaspille de l'énergie (Effort)."
+          "instruction": "J'ai compris : une feuille plate plie facilement. Mais si je la plie en accordéon ou en tube, elle devient beaucoup plus rigide !"
         },
         "etape2": {
-          "titre": "2. La Solution de Roulement",
+          "titre": "2. Pourquoi Ça Marche ?",
           "type_etape": "texte_guide",
-          "instruction": "Les rondins transforment la friction de glissement (statique) en friction de roulement, qui est beaucoup plus faible. Les leaders trouvent des systèmes qui roulent, au lieu de les pousser de force."
+          "instruction": "Les plis créent de la hauteur et de l'épaisseur. C'est comme comparer une règle plate (qui plie) et un tube en carton (qui ne plie presque pas). Les ingénieurs utilisent ce principe partout !"
+        },
+        "etape3": {
+          "titre": "3. Anticiper L'Échec",
+          "type_etape": "champ_texte",
+          "instruction": "Qu'est-ce qui pourrait faire tomber ton pont ? (Poids trop lourd ? Mauvais équilibre ? Pli qui casse ?)",
+          "placeholder": "Les risques que je vois..."
         }
       },
-      "mentorGoal": "Évaluer la compréhension de la résistance des matériaux et du design optimal pour supporter une charge.",
-      "evaluationCriteria": "La réponse doit choisir la forme triangulaire ou en arc comme la plus résistante. Bonus: L'enfant justifie par la distribution des forces ou la compression uniforme."
+      "mentorGoal": "Introduit les concepts de structure, rigidité et résistance des matériaux de manière ludique et expérimentale.",
+      "evaluationCriteria": "1. Forme proposée cohérente (accordéon, tube, triangle). 2. Explication logique (hauteur, rigidité, résistance). 3. Anticipation des risques. Bonus : L'enfant fait le lien avec des objets réels (tubes, boîtes)."
     },
     "defi4": {
-      "titre": "Quiz: Optimisation de Charge",
-      "question": "Tu dois transporter des objets de poids différent. Comment les charges lourdes et légères doivent-elles être empilées pour maximiser la sécurité et la stabilité du véhicule ?",
-      "options": [
-        "Les objets lourds au-dessus des légers.",
-        "Les objets lourds au fond, centrés.",
-        "L'ordre n'a pas d'importance."
-      ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Les charges lourdes au fond et centrées minimisent le centre de gravité, augmentant la stabilité. C'est essentiel pour le transport.",
-      "feedbackIncorrect": "Empiler des objets lourds sur des objets légers crée de l'instabilité et un risque de basculement.",
-      "leconStrategique": "Chaque décision logistique doit servir la sécurité et la stabilité en premier. L'optimisation passe par la prudence.",
+      "titre": "Mission: La Valise Trop Lourde",
+      "scenario": "Départ en vacances ! Ta valise pèse 20 kg et tu dois la porter dans les escaliers (pas d'ascenseur). Option 1 : La porter à bout de bras. Option 2 : La tirer avec les roulettes. Option 3 : Demander à quelqu'un de t'aider à la porter. Quelle est la solution la PLUS INTELLIGENTE et pourquoi ?",
+      "instruction": "1. Quelle option choisis-tu ?\n2. Explique pourquoi c'est plus facile (pense à l'effort, aux outils, à l'aide).\n3. Dans la vraie vie, comment les adultes transportent des choses très lourdes sans se fatiguer ?",
+      "leconStrategique": "Les meilleurs leaders ne forcent jamais. Ils utilisent des OUTILS (comme les roulettes) ou demandent de l'AIDE. Travailler intelligemment > Travailler dur. C'est la base de l'efficacité.",
       "referenceCroisee": "M8",
-      "mentorGoal": "Tester la compréhension de la friction et de l'efficacité mécanique. L'enfant doit identifier comment réduire la friction pour optimiser le mouvement.",
-      "evaluationCriteria": "La réponse doit suggérer des solutions pour réduire la friction (huile, roues, surface lisse). Bonus: L'enfant quantifie l'amélioration ou cite le coefficient de friction."
+      "briefing": {
+        "etape1": {
+          "titre": "1. Comparer Les Efforts",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : porter 20kg à bout de bras = très fatigant. Les roulettes réduisent l'effort (mais escaliers = impossible). Demander de l'aide = diviser le poids par 2 !"
+        },
+        "etape2": {
+          "titre": "2. Le Principe D'Efficacité",
+          "type_etape": "texte_guide",
+          "instruction": "Les humains intelligents utilisent toujours : 1) Des OUTILS (roues, machines). 2) De l'AIDE (coopération). 3) Des STRATÉGIES (diviser en plusieurs voyages). Ne jamais forcer bêtement !"
+        }
+      },
+      "mentorGoal": "Introduit les concepts de travail intelligent, utilisation d'outils et coopération. Lien avec physique : réduction de l'effort par les machines simples.",
+      "evaluationCriteria": "1. Choix cohérent (aide = meilleur pour escaliers). 2. Explication logique (division effort, coopération). 3. Exemples réels : chariots, ascenseurs, diables, grues. Bonus : L'enfant fait le lien avec 'travailler intelligemment'."
     }
   },
   "m4": {
