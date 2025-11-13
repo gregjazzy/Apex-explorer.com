@@ -22,7 +22,7 @@ const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 900;
 
-// Composant pour le séparateur de bloc thématique (ultra-léger)
+// Composant pour le séparateur de bloc thématique (fond coloré léger)
 const BlockSeparator: React.FC<{
     block: ModuleBlock;
     moduleCount: number;
@@ -32,11 +32,7 @@ const BlockSeparator: React.FC<{
     const blockTitle = t(block.titleKey);
     
     return (
-        <View style={styles.blockSeparator}>
-            {/* Ligne de séparation supérieure */}
-            <View style={[styles.separatorLine, { backgroundColor: block.color + '30' }]} />
-            
-            {/* Titre du bloc */}
+        <View style={[styles.blockSeparator, { backgroundColor: block.color + '15' }]}>
             <View style={styles.separatorContent}>
                 <View style={styles.separatorLeft}>
                     <Text style={styles.separatorIcon}>{block.icon}</Text>
@@ -698,25 +694,22 @@ const styles = StyleSheet.create({
     
     // Styles pour les blocs thématiques
     blockSection: {
-        marginBottom: PremiumTheme.spacing.xxl,
+        marginBottom: PremiumTheme.spacing.lg, // Réduit de xxl à lg
     },
     
-    // Séparateur de bloc (ultra-léger)
+    // Séparateur de bloc (fond coloré pleine largeur)
     blockSeparator: {
-        marginTop: PremiumTheme.spacing.xl,
+        marginTop: PremiumTheme.spacing.lg,
         marginBottom: PremiumTheme.spacing.md,
-    },
-    separatorLine: {
-        height: 2,
-        width: '100%',
-        marginBottom: PremiumTheme.spacing.sm,
-        opacity: 0.5,
+        marginHorizontal: isWeb ? -PremiumTheme.spacing.lg : -PremiumTheme.spacing.md, // Extend to edges
+        paddingHorizontal: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
+        paddingVertical: PremiumTheme.spacing.md,
+        borderRadius: PremiumTheme.borderRadius.medium,
     },
     separatorContent: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: PremiumTheme.spacing.xs,
     },
     separatorLeft: {
         flexDirection: 'row',
@@ -725,7 +718,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     separatorIcon: {
-        fontSize: isWeb ? 24 : 22,
+        fontSize: isWeb ? 26 : 24,
     },
     separatorTitle: {
         fontSize: isWeb ? PremiumTheme.typography.fontSize.lg : PremiumTheme.typography.fontSize.md,
