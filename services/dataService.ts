@@ -1585,7 +1585,7 @@ export const getXPLeaderboard = async (currentUserId?: string): Promise<Leaderbo
     try {
         const { data, error } = await supabase
             .from('explorers')
-            .select('user_id, name, xp')
+            .select('explorer_uuid, name, xp')
             .order('xp', { ascending: false })
             .limit(10);
 
@@ -1600,7 +1600,7 @@ export const getXPLeaderboard = async (currentUserId?: string): Promise<Leaderbo
                 const { data: progressData } = await supabase
                     .from('explorer_progress')
                     .select('module_id, status')
-                    .eq('user_id', explorer.user_id)
+                    .eq('user_id', explorer.explorer_uuid)
                     .eq('status', 'completed');
 
                 const completedModules = new Set(
@@ -1608,7 +1608,7 @@ export const getXPLeaderboard = async (currentUserId?: string): Promise<Leaderbo
                 ).size;
 
                 return {
-                    user_id: explorer.user_id,
+                    user_id: explorer.explorer_uuid,
                     user_name: explorer.name || 'Explorateur',
                     xp: explorer.xp || 0,
                     completed_modules: completedModules,
@@ -1629,22 +1629,42 @@ export const getXPLeaderboard = async (currentUserId?: string): Promise<Leaderbo
  */
 export const getStreakLeaderboard = async (): Promise<StreakLeader[]> => {
     try {
-        const { data, error } = await supabase
-            .from('explorers')
-            .select('user_id, name, longest_streak, current_streak')
+        // Solution temporaire : retourner un tableau vide si RLS bloque
+        // TODO: Ajouter une policy RLS publique pour le leaderboard
+        const { data: streaksData, error } = await supabase
+            .from('user_streaks')
+            .select('user_id, longest_streak, current_streak')
             .order('longest_streak', { ascending: false })
             .limit(10);
 
+        // Si erreur RLS, retourner vide plutôt que crasher
         if (error) {
-            console.error('Erreur récupération leaderboard streaks:', error);
+            console.warn('⚠️ Leaderboard streaks désactivé (RLS):', error.message);
             return [];
         }
 
-        return (data || []).map(explorer => ({
-            user_id: explorer.user_id,
-            user_name: explorer.name || 'Explorateur',
-            longest_streak: explorer.longest_streak || 0,
-            current_streak: explorer.current_streak || 0,
+        if (!streaksData || streaksData.length === 0) {
+            return [];
+        }
+
+        // 2. Récupérer les noms des explorateurs
+        const userIds = streaksData.map(s => s.user_id);
+        const { data: explorersData } = await supabase
+            .from('explorers')
+            .select('explorer_uuid, name')
+            .in('explorer_uuid', userIds);
+
+        // 3. Créer un map des noms
+        const namesMap = new Map(
+            (explorersData || []).map(e => [e.explorer_uuid, e.name])
+        );
+
+        // 4. Combiner les données
+        return streaksData.map(streak => ({
+            user_id: streak.user_id,
+            user_name: namesMap.get(streak.user_id) || 'Explorateur',
+            longest_streak: streak.longest_streak || 0,
+            current_streak: streak.current_streak || 0,
         }));
     } catch (error) {
         console.error('Erreur getStreakLeaderboard:', error);
@@ -1709,7 +1729,7 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
         // 1. Récupérer le profil de l'utilisateur
         const { data: explorer, error: explorerError } = await supabase
             .from('explorers')
-            .select('name, xp, longest_streak, current_streak')
+            .select('name, xp')
             .eq('user_id', userId)
             .single();
 
@@ -1718,7 +1738,14 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
             return null;
         }
 
-        // 2. Calculer le classement XP
+        // 2. Récupérer le streak depuis user_streaks
+        const { data: streakData } = await supabase
+            .from('user_streaks')
+            .select('longest_streak, current_streak')
+            .eq('user_id', userId)
+            .maybeSingle();
+
+        // 3. Calculer le classement XP
         const { count: betterCount } = await supabase
             .from('explorers')
             .select('*', { count: 'exact', head: true })
@@ -1726,7 +1753,7 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
 
         const xpRank = (betterCount || 0) + 1;
 
-        // 3. Récupérer les modules complétés
+        // 4. Récupérer les modules complétés
         const { data: progressData } = await supabase
             .from('explorer_progress')
             .select('module_id, status')
@@ -1737,7 +1764,7 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
             (progressData || []).map(p => p.module_id)
         ).size;
 
-        // 4. Récupérer le meilleur temps Speed Drill
+        // 5. Récupérer le meilleur temps Speed Drill
         const { data: speedData } = await supabase
             .from('speed_drill_sessions')
             .select('time_seconds, operation_type')
@@ -1751,8 +1778,8 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
             xp: explorer.xp || 0,
             xpRank,
             completedModules,
-            longestStreak: explorer.longest_streak || 0,
-            currentStreak: explorer.current_streak || 0,
+            longestStreak: streakData?.longest_streak || 0,
+            currentStreak: streakData?.current_streak || 0,
             bestSpeedTime: speedData && speedData.length > 0 ? speedData[0].time_seconds : null,
             bestSpeedOperation: speedData && speedData.length > 0 ? speedData[0].operation_type : null,
         };

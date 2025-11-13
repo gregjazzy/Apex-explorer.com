@@ -23,12 +23,20 @@ import {
 
 type TabType = 'xp' | 'streaks' | 'speed';
 
-const HallOfFameScreen: React.FC = () => {
+interface HallOfFameScreenProps {
+    route?: {
+        params?: {
+            initialTab?: TabType;
+        };
+    };
+}
+
+const HallOfFameScreen: React.FC<HallOfFameScreenProps> = ({ route }) => {
     const { t } = useTranslation();
     const navigation = useNavigation();
     const { user } = useAuth();
     const [loading, setLoading] = useState(true);
-    const [selectedTab, setSelectedTab] = useState<TabType>('xp');
+    const [selectedTab, setSelectedTab] = useState<TabType>(route?.params?.initialTab || 'xp');
     const [xpLeaderboard, setXpLeaderboard] = useState<LeaderboardEntry[]>([]);
     const [streakLeaderboard, setStreakLeaderboard] = useState<StreakLeader[]>([]);
     const [speedRecords, setSpeedRecords] = useState<SpeedDrillRecord[]>([]);

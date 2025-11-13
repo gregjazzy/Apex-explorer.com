@@ -112,7 +112,7 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
                         {/* Badge de statut simplifié - juste un emoji discret */}
                         <Text style={styles.statusEmoji}>
                             {isCompleted ? '✅' : module.isUnlocked ? '' : '🔒'}
-                        </Text>
+                            </Text>
                     </View>
                 </LinearGradient>
                 
@@ -345,15 +345,15 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                 
                                 <TouchableOpacity 
                                     style={styles.miniCircularButton}
-                                    onPress={() => navigation.navigate('SpeedDrill' as never)}
+                                    onPress={() => navigation.navigate('HallOfFame' as never, { initialTab: 'speed' } as never)}
                                     activeOpacity={0.7}
                                 >
                                     <Text style={styles.miniCircularIcon}>⚡</Text>
                                     {bestSpeedTime && (
                                         <View style={styles.miniCircularBadge}>
                                             <Text style={styles.miniCircularBadgeText}>{bestSpeedTime}</Text>
-                                        </View>
-                                    )}
+                                    </View>
+                                )}
                                 </TouchableOpacity>
                             </View>
                             
@@ -383,10 +383,10 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                             <Text style={styles.greetingText}>👋 {t('dashboard.greeting')} {userName}</Text>
                             
                             <View style={styles.headerBottomRight}>
-                                <View style={styles.xpBadge}>
-                                    <Text style={styles.xpValue}>{totalXP}</Text>
-                                    <Text style={styles.xpLabel}>XP</Text>
-                                </View>
+                            <View style={styles.xpBadge}>
+                                <Text style={styles.xpValue}>{totalXP}</Text>
+                                <Text style={styles.xpLabel}>XP</Text>
+                            </View>
                                 
                                 {streak && streak.currentStreak > 0 && (
                                     <View style={styles.inlineStreak}>

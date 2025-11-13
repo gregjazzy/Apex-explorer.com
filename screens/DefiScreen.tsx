@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useFocusEffect } from '@react-navigation/native';
 import { BriefingModal } from '../components/BriefingModal'; 
 import { saveDefiProgress, fetchExplorerProgressForDefi, ExplorerProgressItem, getExplorerProfile, willUnlockNewBadge } from '../services/dataService';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuth'; 
 import { LinearGradient } from 'expo-linear-gradient'; 
 
 const { width } = Dimensions.get('window');
@@ -904,7 +904,7 @@ const lessonModalStyles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
         color: '#FFFFFF',
-    },
+  },
 });
 
 export default DefiScreen;

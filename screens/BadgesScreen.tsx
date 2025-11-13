@@ -11,7 +11,13 @@ import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { calculateAdvancedBadges, EarnedBadge } from '../services/dataService';
+import { 
+    calculateAdvancedBadges, 
+    EarnedBadge, 
+    fetchModulesWithProgress,
+    ExplorerProgressItem,
+    fetchSpeedDrillStats 
+} from '../services/dataService';
 import Badge3D from '../components/Badge3D';
 
 type BadgeCategory = 'all' | 'modules' | 'speed' | 'precision' | 'special';
@@ -32,7 +38,35 @@ const BadgesScreen: React.FC = () => {
         if (!user) return;
         try {
             setLoading(true);
-            const result = await calculateAdvancedBadges(user.id);
+            
+            // Récupérer les modules avec progression
+            const fetchedModules = await fetchModulesWithProgress(user.id);
+            
+            // Calculer la progression (même logique que ExplorerDashboardScreen)
+            const allProgress: ExplorerProgressItem[] = fetchedModules.flatMap(module => 
+                module.defis
+                    .filter(defi => defi.status === 'completed')
+                    .map(defi => ({
+                        id: Math.random(),
+                        moduleId: module.id,
+                        defiId: defi.id,
+                        status: 'completed' as 'completed' | 'submitted',
+                        xpEarned: defi.xpValue,
+                        completedAt: new Date().toISOString(),
+                    } as ExplorerProgressItem))
+            );
+            
+            // Récupérer les stats speed drill
+            const speedDrillData = await fetchSpeedDrillStats(user.id);
+            const speedSessions = speedDrillData?.sessions || [];
+            
+            // Calculer les badges
+            const result = await calculateAdvancedBadges(
+                user.id,
+                allProgress,
+                speedSessions
+            );
+            
             setBadges(result.badges);
         } catch (error) {
             console.error('Erreur chargement badges:', error);
@@ -42,9 +76,12 @@ const BadgesScreen: React.FC = () => {
     };
 
     const getCategoryBadges = (category: BadgeCategory): EarnedBadge[] => {
-        if (category === 'all') return badges;
+        // Filtrer UNIQUEMENT les badges gagnés
+        const earnedBadges = badges.filter(b => b.earned);
+        
+        if (category === 'all') return earnedBadges;
 
-        return badges.filter(badge => {
+        return earnedBadges.filter(badge => {
             if (category === 'modules') {
                 return badge.id.startsWith('module_') || badge.id.startsWith('m12_') || 
                        badge.id === 'first_module' || badge.id === 'five_modules' || 
@@ -66,9 +103,9 @@ const BadgesScreen: React.FC = () => {
     };
 
     const filteredBadges = getCategoryBadges(selectedCategory);
-    const earnedCount = filteredBadges.filter(b => b.earned).length;
-    const totalCount = filteredBadges.length;
-    const progressPercentage = totalCount > 0 ? (earnedCount / totalCount) * 100 : 0;
+    const earnedCount = filteredBadges.length; // Tous les badges affichés sont gagnés
+    const totalBadgesInCatalog = badges.length; // Total de tous les badges possibles
+    const progressPercentage = totalBadgesInCatalog > 0 ? (badges.filter(b => b.earned).length / totalBadgesInCatalog) * 100 : 0;
 
     const categories: { key: BadgeCategory; label: string; icon: string }[] = [
         { key: 'all', label: t('badges_screen.all'), icon: '🏆' },
@@ -101,7 +138,7 @@ const BadgesScreen: React.FC = () => {
             <View style={styles.statsCard}>
                 <Text style={styles.statsTitle}>{t('badges_screen.progress')}</Text>
                 <Text style={styles.statsCount}>
-                    {earnedCount} / {totalCount}
+                    {badges.filter(b => b.earned).length} / {totalBadgesInCatalog}
                 </Text>
                 <View style={styles.progressBarContainer}>
                     <View style={[styles.progressBarFill, { width: `${progressPercentage}%` }]} />
@@ -139,6 +176,7 @@ const BadgesScreen: React.FC = () => {
                     {filteredBadges.map((badge, index) => (
                         <View key={badge.id} style={styles.badgeCard}>
                             <Badge3D
+                                tier={badge.tier}
                                 icon={badge.icon}
                                 earned={badge.earned}
                                 size={60}
@@ -149,17 +187,6 @@ const BadgesScreen: React.FC = () => {
                             <Text style={styles.badgeDescription} numberOfLines={3}>
                                 {badge.description}
                             </Text>
-                            {badge.earned ? (
-                                <View style={styles.earnedBadge}>
-                                    <Text style={styles.earnedText}>✓ {t('badges_screen.earned')}</Text>
-                                </View>
-                            ) : (
-                                <View style={styles.progressBadge}>
-                                    <Text style={styles.progressText}>
-                                        {Math.round(badge.progress || 0)}%
-                                    </Text>
-                                </View>
-                            )}
                         </View>
                     ))}
                 </View>

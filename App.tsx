@@ -18,7 +18,7 @@ import ExplorerDashboardScreen from './screens/ExplorerDashboardScreen';
 import MentorDashboardScreen from './screens/MentorDashboardScreen';
 import DefiListScreen from './screens/DefiListScreen'; 
 import DefiScreen from './screens/DefiScreen';
-import SpeedDrillScreen from './screens/SpeedDrillScreen';
+import SpeedDrillScreen from './screens/SpeedDrillScreen'; 
 import BadgesScreen from './screens/BadgesScreen';
 import HallOfFameScreen from './screens/HallOfFameScreen'; 
 
