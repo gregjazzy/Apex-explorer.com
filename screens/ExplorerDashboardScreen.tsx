@@ -706,10 +706,10 @@ const styles = StyleSheet.create({
     // Séparateur de bloc (fond coloré + bordure top)
     blockSeparator: {
         marginTop: 0,
-        marginBottom: PremiumTheme.spacing.md, // Restauré à md
+        marginBottom: PremiumTheme.spacing.md,
         marginHorizontal: isWeb ? -PremiumTheme.spacing.lg : -PremiumTheme.spacing.md,
         paddingHorizontal: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
-        paddingVertical: PremiumTheme.spacing.xs, // RÉDUIT ici pour moins d'espace
+        paddingVertical: 6, // Ultra-fin (~6px)
         borderRadius: PremiumTheme.borderRadius.medium,
         borderTopWidth: 2,
     },
