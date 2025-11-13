@@ -55,27 +55,27 @@
   "blocks": {
     "discovery": {
       "title": "Module Découverte",
-      "description": "Commence ton aventure avec ce module gratuit"
+      "description": "Développe tes compétences de communication"
     },
     "ai_future": {
-      "title": "IA & Futur",
-      "description": "Prépare-toi pour l'ère de l'Intelligence Artificielle"
+      "title": "Préparation au Futur avec l'IA",
+      "description": "Comprends et collabore avec l'Intelligence Artificielle"
     },
     "leadership": {
-      "title": "Leadership & Influence",
-      "description": "Développe ton pouvoir d'influence et de leadership"
+      "title": "Leadership & Gestion",
+      "description": "Développe ta confiance, ton influence et gère ton argent"
     },
     "strategy": {
-      "title": "Stratégie & Analyse",
-      "description": "Affûte ton esprit stratégique et analytique"
+      "title": "Esprit Critique & Stratégie",
+      "description": "Apprends à penser, analyser et résoudre des problèmes"
     },
     "execution": {
-      "title": "Exécution & Gestion",
-      "description": "Maîtrise l'art de passer à l'action efficacement"
+      "title": "Autonomie & Action",
+      "description": "Passe de l'idée à la réalisation concrète"
     },
     "excellence": {
-      "title": "Excellence & Maîtrise",
-      "description": "Atteins le sommet de tes capacités"
+      "title": "Projet Entrepreneurial",
+      "description": "Réalise ton premier projet de A à Z"
     }
   },
   "defi": {

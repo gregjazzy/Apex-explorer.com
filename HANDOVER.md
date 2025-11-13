@@ -1,14 +1,25 @@
 # 📘 HANDOVER - Apex Junior Explorer
 
-**Date de mise à jour** : 12 Novembre 2025  
+**Date de mise à jour** : 13 Novembre 2025  
 **Statut** : ✅ Production Ready  
-**Version** : 3.0 - Premium Experience & Gamification Avancée
+**Version** : 3.1 - 19 Modules avec Bloc IA + Architecture Modulaire
+
+---
+
+## 📚 DOCUMENTATION CRITIQUE
+
+**⚠️ AVANT TOUTE MODIFICATION, CONSULTEZ :**
+- **`⚠️_ARCHITECTURE_MODULES_CRITIQUE_⚠️.md`** : Architecture des modules (IDs techniques vs affichage) - **À LIRE ABSOLUMENT**
+- **`DOCUMENTATION_V3.md`** : Système de badges, streaks, mascotte
+- **`HANDOVER_REVISION_PEDAGOGIQUE.md`** : Stratégie pédagogique et contenu
 
 ---
 
 ## 🎯 Vue d'Ensemble
 
 **Apex Junior Explorer** est une application mobile éducative React Native pour développer l'esprit stratégique et entrepreneurial des enfants (8-12 ans) via un système de **défis** et **jeux rapides**.
+
+**Particularité** : Préparer les enfants à l'ère de l'IA avec des compétences "IA-proof" (communication, pensée critique, créativité, liberté numérique).
 
 ### Architecture
 - **Frontend** : React Native (Expo) - Cross-platform (iOS, Android, Web)

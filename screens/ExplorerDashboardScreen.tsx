@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile, markBadgeAsDisplayed } from '../services/dataService'; 
+import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile, markBadgeAsDisplayed, MODULE_BLOCKS, ModuleBlock } from '../services/dataService'; 
 import ProgressBar from '../components/ProgressBar';
 import BadgeList from '../components/BadgeList';
 import XPCounter from '../components/XPCounter';
@@ -21,6 +21,39 @@ import PremiumTheme from '../config/premiumTheme';
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 900;
+
+// Composant pour l'en-tête de bloc
+const BlockHeader: React.FC<{ block: ModuleBlock; moduleCount: number; completedCount: number; t: any }> = ({ block, moduleCount, completedCount, t }) => {
+    const blockTitle = t(block.titleKey);
+    const blockDescription = t(block.descriptionKey);
+    
+    return (
+        <View style={[styles.blockHeader, { borderLeftColor: block.color }]}>
+            <View style={styles.blockTitleRow}>
+                <View style={styles.blockTitleLeft}>
+                    <Text style={styles.blockIcon}>{block.icon}</Text>
+                    <View>
+                        <View style={styles.blockTitleWithBadge}>
+                            <Text style={styles.blockTitle}>{blockTitle}</Text>
+                            {block.isFree && (
+                                <View style={styles.freeBadge}>
+                                    <Text style={styles.freeBadgeText}>GRATUIT</Text>
+                                </View>
+                            )}
+                        </View>
+                        <Text style={styles.blockModuleCount}>
+                            {completedCount}/{moduleCount} {moduleCount === 1 ? 'module' : 'modules'}
+                        </Text>
+                    </View>
+                </View>
+                {completedCount === moduleCount && (
+                    <Text style={styles.blockCompletedBadge}>✓ Complété</Text>
+                )}
+            </View>
+            <Text style={styles.blockDescription}>{blockDescription}</Text>
+        </View>
+    );
+};
 
 // Composant de l'item de module PREMIUM avec gradient
 const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: number }> = ({ module, navigation, t, index }) => {
@@ -73,7 +106,8 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
                     style={styles.gradientHeader}
                 >
                     <View style={styles.cardHeader}>
-                        <Text style={styles.moduleId}>{module.id.toUpperCase()}</Text>
+                        {/* Numéro dynamique basé sur MODULE_DISPLAY_ORDER (voir ⚠️_ARCHITECTURE_MODULES_CRITIQUE_⚠️.md) */}
+                        <Text style={styles.moduleId}>MODULE {index + 1}</Text>
                         <View style={[
                             styles.statusBadge,
                             { backgroundColor: isCompleted ? '#D1FAE5' : module.isUnlocked ? '#EBF5FF' : '#F3F4F6' }
@@ -398,17 +432,48 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                         </View>
                     </View>
                     
-                    <View style={styles.moduleGrid}>
-                        {modules.map((module, index) => (
-                            <ModuleItem 
-                                key={module.id} 
-                                module={module} 
-                                navigation={navigation} 
-                                t={t}
-                                index={index}
-                            />
-                        ))}
-                    </View>
+                    {/* Affichage des modules par blocs thématiques */}
+                    {MODULE_BLOCKS.map((block, blockIndex) => {
+                        // Filtrer les modules de ce bloc
+                        const blockModules = modules.filter(m => block.moduleIds.includes(m.id));
+                        if (blockModules.length === 0) return null;
+                        
+                        // Compter les modules complétés
+                        const completedInBlock = blockModules.filter(m => 
+                            m.defis.every(d => d.status === 'completed')
+                        ).length;
+                        
+                        // Index global pour l'animation
+                        let globalIndex = 0;
+                        for (let i = 0; i < blockIndex; i++) {
+                            globalIndex += modules.filter(m => MODULE_BLOCKS[i].moduleIds.includes(m.id)).length;
+                        }
+                        
+                        return (
+                            <View key={block.id} style={styles.blockSection}>
+                                <BlockHeader 
+                                    block={block} 
+                                    moduleCount={blockModules.length}
+                                    completedCount={completedInBlock}
+                                    t={t}
+                                />
+                                <View style={styles.moduleGrid}>
+                                    {blockModules.map((module, localIndex) => {
+                                        const moduleGlobalIndex = globalIndex + localIndex;
+                                        return (
+                                            <ModuleItem 
+                                                key={module.id} 
+                                                module={module} 
+                                                navigation={navigation} 
+                                                t={t}
+                                                index={moduleGlobalIndex}
+                                            />
+                                        );
+                                    })}
+                                </View>
+                            </View>
+                        );
+                    })}
 
                     {/* INTÉGRATION DES BADGES (EN BAS) */}
                     <BadgeList badges={badges} />
@@ -621,6 +686,82 @@ const styles = StyleSheet.create({
         color: PremiumTheme.colors.white,
         fontWeight: PremiumTheme.typography.fontWeight.bold,
     },
+    
+    // Styles pour les blocs thématiques
+    blockSection: {
+        marginBottom: PremiumTheme.spacing.xxxl,
+    },
+    blockHeader: {
+        backgroundColor: '#F9FAFB',
+        borderLeftWidth: 4,
+        borderRadius: PremiumTheme.borderRadius.large,
+        padding: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
+        marginBottom: PremiumTheme.spacing.lg,
+        ...(isWeb 
+            ? { boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)' }
+            : {
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.05,
+                shadowRadius: 4,
+                elevation: 2,
+            }
+        ),
+    },
+    blockTitleRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        marginBottom: PremiumTheme.spacing.xs,
+    },
+    blockTitleLeft: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        flex: 1,
+    },
+    blockIcon: {
+        fontSize: isWeb ? 32 : 28,
+        marginRight: PremiumTheme.spacing.md,
+    },
+    blockTitleWithBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: PremiumTheme.spacing.sm,
+    },
+    blockTitle: {
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.xl : PremiumTheme.typography.fontSize.lg,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.darkGray,
+    },
+    freeBadge: {
+        backgroundColor: '#10B981',
+        paddingHorizontal: PremiumTheme.spacing.sm,
+        paddingVertical: 2,
+        borderRadius: PremiumTheme.borderRadius.small,
+    },
+    freeBadgeText: {
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        fontWeight: PremiumTheme.typography.fontWeight.bold,
+        color: PremiumTheme.colors.white,
+        letterSpacing: 0.5,
+    },
+    blockModuleCount: {
+        fontSize: PremiumTheme.typography.fontSize.xs,
+        color: PremiumTheme.colors.gray,
+        marginTop: 2,
+    },
+    blockCompletedBadge: {
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: '#10B981',
+    },
+    blockDescription: {
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.sm : PremiumTheme.typography.fontSize.xs,
+        color: PremiumTheme.colors.gray,
+        lineHeight: isWeb ? 20 : 18,
+    },
+    
     moduleGrid: {
         flexDirection: 'row',
         flexWrap: 'wrap',
