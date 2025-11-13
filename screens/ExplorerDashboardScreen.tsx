@@ -1,11 +1,10 @@
 // /screens/ExplorerDashboardScreen.tsx
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, TouchableOpacity, ActivityIndicator, Alert, LayoutAnimation, UIManager } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile, markBadgeAsDisplayed, MODULE_BLOCKS, ModuleBlock } from '../services/dataService'; 
@@ -19,140 +18,66 @@ import { useBadgeUnlock } from '../hooks/useBadgeUnlock';
 import { getMascotMessageForContext, getMascotMessageForXP } from '../utils/mascotMessages';
 import PremiumTheme from '../config/premiumTheme';
 
-// Activer les animations de layout pour Android
-if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
-    UIManager.setLayoutAnimationEnabledExperimental(true);
-}
-
 const { width } = Dimensions.get('window');
 const isWeb = Platform.OS === 'web';
 const MAX_WIDTH = 900;
-const EXPANDED_BLOCK_KEY = '@apex_expanded_block';
 
-// Composant pour la carte de bloc avec dépliage (accordéon)
-const BlockCard: React.FC<{
+// Composant pour le séparateur de bloc thématique (simple header visuel)
+const BlockSeparator: React.FC<{
     block: ModuleBlock;
-    modules: Module[];
-    isExpanded: boolean;
-    onToggle: () => void;
-    navigation: any;
+    moduleCount: number;
+    completedCount: number;
     t: any;
-    blockRef?: (ref: View | null) => void;
-}> = ({ block, modules, isExpanded, onToggle, navigation, t, blockRef }) => {
+}> = ({ block, moduleCount, completedCount, t }) => {
     const blockTitle = t(block.titleKey);
     const blockDescription = t(block.descriptionKey);
-    const moduleCount = modules.length;
-    const completedCount = modules.filter(m => m.defis.every(d => d.status === 'completed')).length;
-    
     const completionPercentage = moduleCount > 0 ? Math.round((completedCount / moduleCount) * 100) : 0;
     
     return (
         <Animatable.View 
             animation="fadeInUp" 
             duration={600}
-            style={styles.blockSection}
-            ref={blockRef as any}
+            style={styles.blockSeparator}
         >
-            {/* En-tête du bloc (cliquable) */}
-            <TouchableOpacity 
-                onPress={onToggle}
-                activeOpacity={0.8}
+            <LinearGradient
+                colors={[block.color + '20', block.color + '10']}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={[styles.blockHeader, { borderLeftColor: block.color, borderLeftWidth: 5 }]}
             >
-                <LinearGradient
-                    colors={[block.color + '15', block.color + '05']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 1 }}
-                    style={[styles.blockHeader, { borderLeftColor: block.color }]}
-                >
-                    <View style={styles.blockTitleRow}>
-                        <View style={styles.blockTitleLeft}>
-                            <Text style={styles.blockIcon}>{block.icon}</Text>
-                            <View style={styles.blockTitleContent}>
-                                <View style={styles.blockTitleWithBadge}>
-                                    <Text style={styles.blockTitle}>{blockTitle}</Text>
-                                    {block.isFree && (
-                                        <View style={styles.freeBadge}>
-                                            <Text style={styles.freeBadgeText}>GRATUIT</Text>
-                                        </View>
-                                    )}
-                                </View>
-                                <Text style={styles.blockModuleCount}>
-                                    {completedCount}/{moduleCount} {moduleCount === 1 ? 'module' : 'modules'}
-                                    {completionPercentage > 0 && ` • ${completionPercentage}%`}
-                                </Text>
+                <View style={styles.blockTitleRow}>
+                    <View style={styles.blockTitleLeft}>
+                        <Text style={styles.blockIcon}>{block.icon}</Text>
+                        <View style={styles.blockTitleContent}>
+                            <View style={styles.blockTitleWithBadge}>
+                                <Text style={styles.blockTitle}>{blockTitle}</Text>
+                                {block.isFree && (
+                                    <View style={styles.freeBadge}>
+                                        <Text style={styles.freeBadgeText}>GRATUIT</Text>
+                                    </View>
+                                )}
                             </View>
-                        </View>
-                        
-                        {/* Badge "Complété" ou icône dépliage */}
-                        <View style={styles.blockRightSection}>
-                            {completedCount === moduleCount && (
-                                <Text style={styles.blockCompletedBadge}>✓</Text>
-                            )}
-                            <Text style={styles.expandIcon}>{isExpanded ? '▲' : '▼'}</Text>
+                            <Text style={styles.blockDescription}>
+                                {blockDescription}
+                            </Text>
                         </View>
                     </View>
                     
-                    {!isExpanded && (
-                        <Text style={styles.blockDescription} numberOfLines={2}>
-                            {blockDescription}
-                        </Text>
-                    )}
-                </LinearGradient>
-            </TouchableOpacity>
-            
-            {/* Contenu déplié (modules) */}
-            {isExpanded && (
-                <View style={styles.expandedContent}>
-                    <Text style={styles.blockDescriptionExpanded}>
-                        {blockDescription}
-                    </Text>
-                    <View style={styles.moduleGrid}>
-                        {modules.map((module, localIndex) => (
-                            <ModuleItem
-                                key={module.id}
-                                module={module}
-                                navigation={navigation}
-                                t={t}
-                                index={localIndex}
-                            />
-                        ))}
+                    {/* Badge progression */}
+                    <View style={styles.blockRightSection}>
+                        {completedCount === moduleCount ? (
+                            <Text style={styles.blockCompletedBadge}>✓</Text>
+                        ) : (
+                            <View style={styles.progressBadge}>
+                                <Text style={styles.progressBadgeText}>
+                                    {completedCount}/{moduleCount}
+                                </Text>
+                            </View>
+                        )}
                     </View>
                 </View>
-            )}
+            </LinearGradient>
         </Animatable.View>
-    );
-};
-
-// Composant pour l'en-tête de bloc (OBSOLÈTE - conservé pour compatibilité)
-const BlockHeader: React.FC<{ block: ModuleBlock; moduleCount: number; completedCount: number; t: any }> = ({ block, moduleCount, completedCount, t }) => {
-    const blockTitle = t(block.titleKey);
-    const blockDescription = t(block.descriptionKey);
-    
-    return (
-        <View style={[styles.blockHeader, { borderLeftColor: block.color }]}>
-            <View style={styles.blockTitleRow}>
-                <View style={styles.blockTitleLeft}>
-                    <Text style={styles.blockIcon}>{block.icon}</Text>
-                    <View>
-                        <View style={styles.blockTitleWithBadge}>
-                            <Text style={styles.blockTitle}>{blockTitle}</Text>
-                            {block.isFree && (
-                                <View style={styles.freeBadge}>
-                                    <Text style={styles.freeBadgeText}>GRATUIT</Text>
-                                </View>
-                            )}
-                        </View>
-                        <Text style={styles.blockModuleCount}>
-                            {completedCount}/{moduleCount} {moduleCount === 1 ? 'module' : 'modules'}
-                        </Text>
-                    </View>
-                </View>
-                {completedCount === moduleCount && (
-                    <Text style={styles.blockCompletedBadge}>✓ Complété</Text>
-                )}
-            </View>
-            <Text style={styles.blockDescription}>{blockDescription}</Text>
-        </View>
     );
 };
 
@@ -247,77 +172,19 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const { user } = useAuth();
     const { t, i18n } = useTranslation();
     const [modules, setModules] = useState<Module[]>([]);
-    const [badges, setBadges] = useState<EarnedBadge[]>([]); // NOUVEAU: EarnedBadge au lieu de Badge
+    const [badges, setBadges] = useState<EarnedBadge[]>([]);
     const [speedDrillStats, setSpeedDrillStats] = useState<SpeedDrillStats | null>(null);
-    const [streak, setStreak] = useState<UserStreak | null>(null); // NOUVEAU: Streak
-    const [isSoloExplorer, setIsSoloExplorer] = useState(false); // NOUVEAU: Mode solo
+    const [streak, setStreak] = useState<UserStreak | null>(null);
+    const [isSoloExplorer, setIsSoloExplorer] = useState(false);
     const [showSpeedDrillDetails, setShowSpeedDrillDetails] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [showMascot, setShowMascot] = useState(false); // NOUVEAU: Affichage temporaire mascotte
+    const [showMascot, setShowMascot] = useState(false);
     const [mascotAnimation, setMascotAnimation] = useState<'fadeInDown' | 'fadeOutUp'>('fadeInDown');
-    const [expandedBlockId, setExpandedBlockId] = useState<string | null>(null); // NOUVEAU: Gestion dépliage
-    const scrollViewRef = React.useRef<ScrollView>(null); // NOUVEAU: Référence pour scroll
-    const blockRefs = React.useRef<Record<string, View | null>>({}); // NOUVEAU: Références des blocs
     
     // Hook pour la détection automatique des badges
     const { unlockedBadge, triggerBadgeUnlock, closeBadgeModal } = useBadgeUnlock();
 
-    // NOUVEAU: Charger le dernier bloc consulté
-    useEffect(() => {
-        const loadExpandedBlock = async () => {
-            try {
-                const savedBlockId = await AsyncStorage.getItem(EXPANDED_BLOCK_KEY);
-                if (savedBlockId) {
-                    setExpandedBlockId(savedBlockId);
-                }
-            } catch (error) {
-                console.error('Erreur lors du chargement du bloc sauvegardé:', error);
-            }
-        };
-        loadExpandedBlock();
-    }, []);
-
-    // NOUVEAU: Toggle bloc avec animation et sauvegarde
-    const toggleBlock = useCallback(async (blockId: string) => {
-        // Animation de layout
-        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-        
-        // Toggle: si déjà ouvert, fermer; sinon ouvrir et fermer les autres
-        const newExpandedId = expandedBlockId === blockId ? null : blockId;
-        setExpandedBlockId(newExpandedId);
-        
-        // Sauvegarder la préférence (Option B)
-        try {
-            if (newExpandedId) {
-                await AsyncStorage.setItem(EXPANDED_BLOCK_KEY, newExpandedId);
-                
-                // NOUVEAU: Scroll vers le bloc ouvert après un petit délai (attendre l'animation)
-                setTimeout(() => {
-                    const blockView = blockRefs.current[blockId];
-                    if (blockView && scrollViewRef.current) {
-                        blockView.measureLayout(
-                            scrollViewRef.current as any,
-                            (x, y) => {
-                                scrollViewRef.current?.scrollTo({
-                                    y: y - 20, // Petit offset pour ne pas coller au bord
-                                    animated: true
-                                });
-                            },
-                            () => {
-                                // Fallback si measureLayout échoue: ne rien faire
-                            }
-                        );
-                    }
-                }, 100); // Délai pour laisser l'animation se terminer
-            } else {
-                await AsyncStorage.removeItem(EXPANDED_BLOCK_KEY);
-            }
-        } catch (error) {
-            console.error('Erreur lors de la sauvegarde du bloc:', error);
-        }
-    }, [expandedBlockId]);
-
-    // NOUVEAU: Fonction pour fermer la modal ET marquer le badge comme affiché
+    // Fonction pour fermer la modal ET marquer le badge comme affiché
     const handleBadgeModalClose = useCallback(async () => {
         if (unlockedBadge && user?.id) {
             await markBadgeAsDisplayed(user.id, unlockedBadge.id);
@@ -458,10 +325,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            <ScrollView 
-                contentContainerStyle={styles.scrollContent}
-                ref={scrollViewRef}
-            >
+            <ScrollView contentContainerStyle={styles.scrollContent}>
                 <View style={styles.container}>
                     {/* Header avec mascotte et streak intégrés - ULTRA COMPACT */}
                     <View style={styles.headerCompact}>
@@ -594,23 +458,49 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                         </View>
                     </View>
                     
-                    {/* Affichage des modules par blocs thématiques avec ACCORDÉON */}
-                    {MODULE_BLOCKS.map((block) => {
+                    {/* Affichage des modules par blocs thématiques avec SÉPARATEURS VISUELS */}
+                    {MODULE_BLOCKS.map((block, blockIndex) => {
                         // Filtrer les modules de ce bloc
                         const blockModules = modules.filter(m => block.moduleIds.includes(m.id));
                         if (blockModules.length === 0) return null;
                         
+                        // Compter les modules complétés
+                        const completedInBlock = blockModules.filter(m => 
+                            m.defis.every(d => d.status === 'completed')
+                        ).length;
+                        
+                        // Index global pour l'animation
+                        let globalIndex = 0;
+                        for (let i = 0; i < blockIndex; i++) {
+                            globalIndex += modules.filter(m => MODULE_BLOCKS[i].moduleIds.includes(m.id)).length;
+                        }
+                        
                         return (
-                            <BlockCard
-                                key={block.id}
-                                block={block}
-                                modules={blockModules}
-                                isExpanded={expandedBlockId === block.id}
-                                onToggle={() => toggleBlock(block.id)}
-                                navigation={navigation}
-                                t={t}
-                                blockRef={(ref) => blockRefs.current[block.id] = ref}
-                            />
+                            <View key={block.id} style={styles.blockSection}>
+                                {/* Séparateur visuel du bloc */}
+                                <BlockSeparator 
+                                    block={block} 
+                                    moduleCount={blockModules.length}
+                                    completedCount={completedInBlock}
+                                    t={t}
+                                />
+                                
+                                {/* Tous les modules du bloc (toujours visibles) */}
+                                <View style={styles.moduleGrid}>
+                                    {blockModules.map((module, localIndex) => {
+                                        const moduleGlobalIndex = globalIndex + localIndex;
+                                        return (
+                                            <ModuleItem 
+                                                key={module.id} 
+                                                module={module} 
+                                                navigation={navigation} 
+                                                t={t}
+                                                index={moduleGlobalIndex}
+                                            />
+                                        );
+                                    })}
+                                </View>
+                            </View>
                         );
                     })}
 
@@ -828,21 +718,23 @@ const styles = StyleSheet.create({
     
     // Styles pour les blocs thématiques
     blockSection: {
-        marginBottom: PremiumTheme.spacing.xl,
+        marginBottom: PremiumTheme.spacing.xxxl,
+    },
+    blockSeparator: {
+        marginBottom: PremiumTheme.spacing.lg,
     },
     blockHeader: {
         backgroundColor: '#FFFFFF',
-        borderLeftWidth: 4,
         borderRadius: PremiumTheme.borderRadius.large,
         padding: isWeb ? PremiumTheme.spacing.lg : PremiumTheme.spacing.md,
         ...(isWeb 
-            ? { boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)' }
+            ? { boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }
             : {
                 shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.08,
-                shadowRadius: 8,
-                elevation: 3,
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.1,
+                shadowRadius: 12,
+                elevation: 4,
             }
         ),
     },
@@ -850,7 +742,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: PremiumTheme.spacing.xs,
     },
     blockTitleLeft: {
         flexDirection: 'row',
@@ -861,7 +752,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     blockIcon: {
-        fontSize: isWeb ? 36 : 32,
+        fontSize: isWeb ? 40 : 36,
         marginRight: PremiumTheme.spacing.md,
     },
     blockTitleWithBadge: {
@@ -872,14 +763,14 @@ const styles = StyleSheet.create({
         marginBottom: 4,
     },
     blockTitle: {
-        fontSize: isWeb ? PremiumTheme.typography.fontSize.xl : PremiumTheme.typography.fontSize.lg,
+        fontSize: isWeb ? PremiumTheme.typography.fontSize.xxl : PremiumTheme.typography.fontSize.xl,
         fontWeight: PremiumTheme.typography.fontWeight.bold,
         color: PremiumTheme.colors.darkGray,
     },
     freeBadge: {
         backgroundColor: '#10B981',
         paddingHorizontal: PremiumTheme.spacing.sm,
-        paddingVertical: 2,
+        paddingVertical: 4,
         borderRadius: PremiumTheme.borderRadius.small,
     },
     freeBadgeText: {
@@ -898,9 +789,20 @@ const styles = StyleSheet.create({
         gap: PremiumTheme.spacing.sm,
     },
     blockCompletedBadge: {
-        fontSize: 24,
+        fontSize: 32,
         fontWeight: PremiumTheme.typography.fontWeight.bold,
         color: '#10B981',
+    },
+    progressBadge: {
+        backgroundColor: PremiumTheme.colors.lightGray,
+        paddingHorizontal: PremiumTheme.spacing.md,
+        paddingVertical: PremiumTheme.spacing.xs,
+        borderRadius: PremiumTheme.borderRadius.medium,
+    },
+    progressBadgeText: {
+        fontSize: PremiumTheme.typography.fontSize.sm,
+        fontWeight: PremiumTheme.typography.fontWeight.semibold,
+        color: PremiumTheme.colors.primary,
     },
     expandIcon: {
         fontSize: PremiumTheme.typography.fontSize.lg,
@@ -910,7 +812,7 @@ const styles = StyleSheet.create({
     blockDescription: {
         fontSize: isWeb ? PremiumTheme.typography.fontSize.sm : PremiumTheme.typography.fontSize.xs,
         color: PremiumTheme.colors.gray,
-        lineHeight: isWeb ? 20 : 18,
+        lineHeight: isWeb ? 22 : 20,
         marginTop: PremiumTheme.spacing.xs,
     },
     blockDescriptionExpanded: {
