@@ -218,6 +218,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             }
             
             // NOUVEAU : Calculer les badges sophistiqués avec détection auto
+            console.log('🎯 Calcul des badges avec', allProgress.length, 'défis complétés');
             const { badges: allBadges, newlyUnlocked } = await calculateAdvancedBadges(
                 userId,
                 allProgress,
@@ -225,9 +226,18 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             );
             setBadges(allBadges);
             
+            console.log('🏆 Badges calculés:', allBadges.filter(b => b.earned).length, '/', allBadges.length);
+            console.log('🎉 Nouveaux badges à afficher:', newlyUnlocked.length);
+            if (newlyUnlocked.length > 0) {
+                console.log('🎁 Détail nouveaux badges:', newlyUnlocked.map(b => b.id));
+            }
+            
             // Si nouveaux badges, les afficher
             if (newlyUnlocked.length > 0) {
+                console.log('✨ Déclenchement de triggerBadgeUnlock...');
                 triggerBadgeUnlock(newlyUnlocked);
+            } else {
+                console.log('⚠️ Aucun nouveau badge à afficher');
             }
             
             // NOUVEAU : Mettre à jour et récupérer le streak
