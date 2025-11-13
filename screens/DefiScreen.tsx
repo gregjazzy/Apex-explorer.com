@@ -356,7 +356,11 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                 Alert.alert(
                     t('defi.submit_title') || "Défi soumis !",
                     t('defi.submit_message_pending') || "Ton mentor va évaluer ta réponse. Tu seras notifié quand il aura répondu.",
-                    [{ text: "OK", onPress: () => navigation.pop(2) }]
+                    [{ text: "OK", onPress: () => {
+                        navigation.pop(2);
+                        // Demander un rechargement car soumission effectuée
+                        navigation.navigate('Explorer', { shouldReload: true });
+                    }}]
                 );
             } else {
                 // Afficher le feedback correct pour les Quiz ET les défis solo
@@ -367,7 +371,11 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
                 Alert.alert(
                     t('defi.submit_title') || "Défi complété !",
                     successMessage,
-                    [{ text: "OK", onPress: () => navigation.pop(2) }]
+                    [{ text: "OK", onPress: () => {
+                        navigation.pop(2);
+                        // Demander un rechargement car défi complété (XP + badges)
+                        navigation.navigate('Explorer', { shouldReload: true });
+                    }}]
                 );
             }
 
