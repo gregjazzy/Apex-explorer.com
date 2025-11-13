@@ -18,3 +18,4 @@ COMMENT ON COLUMN explorer_progress.attempt_count IS 'Nombre de tentatives pour 
 -- Note: Les politiques RLS existantes fonctionnent avec ces nouvelles colonnes
 -- car elles se basent sur user_id qui correspond à explorer_uuid
 
+

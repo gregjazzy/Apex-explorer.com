@@ -90,3 +90,4 @@ CREATE INDEX IF NOT EXISTS idx_mentor_view ON explorer_progress(user_id, evaluat
 -- SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'explorer_progress';
 -- SELECT * FROM pg_policies WHERE tablename = 'explorer_progress';
 
+

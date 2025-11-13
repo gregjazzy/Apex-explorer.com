@@ -197,7 +197,19 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
         if (user) {
             loadModules();
         }
-    }, [i18n.language]); 
+    }, [i18n.language]);
+
+    // NOUVEAU: Recharger les badges quand on revient d'un défi
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            // Recharger uniquement si on était sur un autre écran
+            if (user && !loading) {
+                loadModules();
+            }
+        });
+
+        return unsubscribe;
+    }, [navigation, user, loading, loadModules]); 
     
     // NOUVEAU: Afficher la mascotte temporairement au chargement
     useEffect(() => {
