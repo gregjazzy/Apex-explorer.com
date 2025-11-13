@@ -62,8 +62,8 @@ const ConfettiAnimation: React.FC<ConfettiProps> = ({ active, count = 50, durati
           style={[
             styles.confetti,
             {
-              left: piece.x,
               transform: [
+                { translateX: piece.x },
                 { translateY: piece.y },
                 {
                   rotate: piece.rotation.interpolate({
