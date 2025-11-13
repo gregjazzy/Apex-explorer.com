@@ -108,33 +108,38 @@ const BadgeUnlockModal: React.FC<BadgeUnlockModalProps> = ({ visible, badge, onC
       animationType="none"
       onRequestClose={onClose}
     >
-      <Animated.View style={[styles.overlay, { opacity: fadeAnim }]}>
-        <ConfettiAnimation active={visible} count={confettiCount} duration={4000} />
+      <TouchableOpacity 
+        style={{ flex: 1 }} 
+        activeOpacity={1} 
+        onPress={onClose}
+      >
+        <Animated.View style={[styles.overlay, { opacity: fadeAnim }]}>
+          <ConfettiAnimation active={visible} count={confettiCount} duration={4000} />
         
-        {/* Rayons de lumière */}
-        <Animatable.View
-          animation="rotate"
-          iterationCount="infinite"
-          duration={20000}
-          easing="linear"
-          style={styles.raysContainer}
-        >
-          {[...Array(12)].map((_, i) => (
-            <View
-              key={i}
-              style={[
-                styles.ray,
-                {
-                  transform: [{ rotate: `${i * 30}deg` }],
-                  backgroundColor: gradient.colors[0],
-                },
-              ]}
-            />
-          ))}
-        </Animatable.View>
+          {/* Rayons de lumière */}
+          <Animatable.View
+            animation="rotate"
+            iterationCount="infinite"
+            duration={20000}
+            easing="linear"
+            style={styles.raysContainer}
+          >
+            {[...Array(12)].map((_, i) => (
+              <View
+                key={i}
+                style={[
+                  styles.ray,
+                  {
+                    transform: [{ rotate: `${i * 30}deg` }],
+                    backgroundColor: gradient.colors[0],
+                  },
+                ]}
+              />
+            ))}
+          </Animatable.View>
 
-        {/* Content */}
-        <View style={styles.content}>
+          {/* Content */}
+          <View style={styles.content}>
           {/* Titre animé */}
           <Animatable.Text
             animation="flash"
@@ -209,7 +214,7 @@ const BadgeUnlockModal: React.FC<BadgeUnlockModalProps> = ({ visible, badge, onC
           </Animated.View>
 
           {/* Bouton de fermeture */}
-          <Animatable.View animation="bounceIn" delay={1200}>
+          <Animatable.View animation="bounceIn" delay={500}>
             <TouchableOpacity
               style={styles.closeButton}
               onPress={onClose}
@@ -225,8 +230,18 @@ const BadgeUnlockModal: React.FC<BadgeUnlockModalProps> = ({ visible, badge, onC
               </LinearGradient>
             </TouchableOpacity>
           </Animatable.View>
+          
+          {/* Hint pour fermer */}
+          <Animatable.Text 
+            animation="fadeIn" 
+            delay={800} 
+            style={styles.tapHint}
+          >
+            Tape n'importe où pour fermer
+          </Animatable.Text>
         </View>
       </Animated.View>
+      </TouchableOpacity>
     </Modal>
   );
 };
@@ -354,6 +369,13 @@ const styles = StyleSheet.create({
     fontSize: PremiumTheme.typography.fontSize.xl,
     fontWeight: PremiumTheme.typography.fontWeight.bold,
     color: PremiumTheme.colors.white,
+  },
+  tapHint: {
+    fontSize: PremiumTheme.typography.fontSize.sm,
+    color: 'rgba(255, 255, 255, 0.6)',
+    marginTop: PremiumTheme.spacing.md,
+    textAlign: 'center',
+    fontStyle: 'italic',
   },
 });
 
