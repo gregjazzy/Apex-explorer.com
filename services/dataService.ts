@@ -524,17 +524,16 @@ export const loginExplorerByPin = async (name: string, pin: string): Promise<Exp
  * NOUVEAU: Crée un explorateur solo (sans mentor).
  */
 export const createSoloExplorer = async (name: string, pin: string): Promise<ExplorerProfile | null> => {
-    // Vérifier si le NOM + PIN existe déjà (vrai doublon)
-    const { data: existing } = await supabase
+    // IMPORTANT: Vérifier d'abord si le NOM existe déjà (indépendamment du PIN)
+    const { data: nameExists } = await supabase
         .from('explorers')
-        .select('name, pin_code')
+        .select('name')
         .eq('name', name)
-        .eq('pin_code', pin)
         .maybeSingle();
     
-    if (existing) {
-        console.error("Ce nom + PIN existe déjà");
-        return null; // Vrai doublon
+    if (nameExists) {
+        console.error("Ce nom d'explorateur existe déjà");
+        return null; // Le nom est déjà pris
     }
     
     // Créer le nouvel explorateur solo
