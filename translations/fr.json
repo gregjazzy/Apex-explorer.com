@@ -1961,6 +1961,20 @@
     "best_score_label": "Meilleur",
     "sessions_count": "Sessions"
   },
+  "speed_drill_stats": {
+    "title": "Mes Records Speed Drill",
+    "summary": "Résumé",
+    "sessions": "Sessions",
+    "best_time": "Meilleur Temps",
+    "avg_score": "Score Moyen",
+    "records_by_op": "Records par Opération",
+    "no_session": "Pas encore de session",
+    "no_sessions": "Aucune session Speed Drill",
+    "start_hint": "Lance une session pour voir tes stats !",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile"
+  },
   "badges_screen": {
     "title": "Mes Badges",
     "progress": "Ta Progression",

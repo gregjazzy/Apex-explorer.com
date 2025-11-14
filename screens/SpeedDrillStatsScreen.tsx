@@ -70,28 +70,28 @@ const SpeedDrillStatsScreen: React.FC = () => {
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
                     <Text style={styles.backButtonText}>←</Text>
                 </TouchableOpacity>
-                <Text style={styles.headerTitle}>⚡ Mes Records Speed Drill</Text>
+                <Text style={styles.headerTitle}>⚡ {t('speed_drill_stats.title')}</Text>
                 <View style={styles.placeholder} />
             </View>
 
             {/* Stats Summary Card */}
             {stats && (
                 <View style={styles.summaryCard}>
-                    <Text style={styles.summaryTitle}>📊 Résumé</Text>
+                    <Text style={styles.summaryTitle}>📊 {t('speed_drill_stats.summary')}</Text>
                     <View style={styles.summaryGrid}>
                         <View style={styles.summaryItem}>
                             <Text style={styles.summaryValue}>{stats.totalSessions || 0}</Text>
-                            <Text style={styles.summaryLabel}>Sessions</Text>
+                            <Text style={styles.summaryLabel}>{t('speed_drill_stats.sessions')}</Text>
                         </View>
                         <View style={styles.summaryItem}>
                             <Text style={styles.summaryValue}>⚡ {stats.bestTime || '--'}s</Text>
-                            <Text style={styles.summaryLabel}>Meilleur Temps</Text>
+                            <Text style={styles.summaryLabel}>{t('speed_drill_stats.best_time')}</Text>
                         </View>
                         <View style={styles.summaryItem}>
                             <Text style={styles.summaryValue}>
                                 {stats.averageScore ? `${stats.averageScore.toFixed(1)}/10` : '--'}
                             </Text>
-                            <Text style={styles.summaryLabel}>Score Moyen</Text>
+                            <Text style={styles.summaryLabel}>{t('speed_drill_stats.avg_score')}</Text>
                         </View>
                     </View>
                 </View>
@@ -99,7 +99,7 @@ const SpeedDrillStatsScreen: React.FC = () => {
 
             {/* Records by Operation */}
             <ScrollView style={styles.recordsScroll} showsVerticalScrollIndicator={false}>
-                <Text style={styles.sectionTitle}>🏆 Records par Opération</Text>
+                <Text style={styles.sectionTitle}>🏆 {t('speed_drill_stats.records_by_op')}</Text>
                 
                 {sessions && sessions.length > 0 ? (
                     <View style={styles.recordsContainer}>
@@ -118,7 +118,7 @@ const SpeedDrillStatsScreen: React.FC = () => {
                                             <Text style={styles.recordOperation}>{displayName}</Text>
                                         </View>
                                         <View style={styles.noRecord}>
-                                            <Text style={styles.noRecordText}>Pas encore de session</Text>
+                                            <Text style={styles.noRecordText}>{t('speed_drill_stats.no_session')}</Text>
                                         </View>
                                     </View>
                                 );
@@ -150,7 +150,11 @@ const SpeedDrillStatsScreen: React.FC = () => {
                                                 return best;
                                             }, null as any);
                                         
-                                        const diffLabel = difficulty === 'easy' ? 'Facile' : difficulty === 'medium' ? 'Moyen' : 'Difficile';
+                                        const diffLabel = difficulty === 'easy' 
+                                            ? t('speed_drill_stats.easy') 
+                                            : difficulty === 'medium' 
+                                                ? t('speed_drill_stats.medium') 
+                                                : t('speed_drill_stats.hard');
                                         
                                         return (
                                             <View key={difficulty} style={styles.difficultyRow}>
@@ -173,8 +177,8 @@ const SpeedDrillStatsScreen: React.FC = () => {
                 ) : (
                     <View style={styles.emptyState}>
                         <Text style={styles.emptyEmoji}>⚡</Text>
-                        <Text style={styles.emptyText}>Aucune session Speed Drill</Text>
-                        <Text style={styles.emptyHint}>Lance une session pour voir tes stats !</Text>
+                        <Text style={styles.emptyText}>{t('speed_drill_stats.no_sessions')}</Text>
+                        <Text style={styles.emptyHint}>{t('speed_drill_stats.start_hint')}</Text>
                     </View>
                 )}
             </ScrollView>
