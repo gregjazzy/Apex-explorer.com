@@ -487,20 +487,20 @@
       "evaluationCriteria": "1. Correct answer: C (5 boosters). 2. BONUS: The child explains the pattern in their own words (e.g., 'we add 1 each time') or correctly predicts stage 10 (10 boosters) to show they understood the general rule."
     },
     "defi4": {
-      "titre": "Challenge: The Variable Rule",
-      "scenario": "A sorting machine must assign a code (X or Y) to an object. Rule 1: If the object is red OR heavy, it receives X. Rule 2: If it is green AND light, it receives Y. An object is red and light. What code does it receive and why?",
-      "instruction": "Write the code (X or Y) and the rule that prevailed.",
-      "leconStrategique": "The leader makes decisions under multiple rules. Knowing which rule prevails (OR vs. AND) is essential to avoid logical errors.",
-      "referenceCroisee": "M5",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Priority of Logical Operators",
-          "type_etape": "validation_case",
-          "instruction": "I understood that Rule 1 (OR) allows a single condition (red or heavy) for X, while Rule 2 (AND) requires two simultaneous conditions (green and light)."
-        }
-      },
-      "mentorGoal": "Test ability to identify contradictions and logical paradoxes. The child must demonstrate critical thinking.",
-      "evaluationCriteria": "The answer must clearly identify the contradiction and propose a resolution or problem reformulation. Bonus: The child cites a known paradox (Achilles and the tortoise, Liar's paradox)."
+      "titre": "Quiz: The Captain's Choice",
+      "question": "You're the captain of your soccer team! You must choose who will take the decisive penalty kick to win the match.\n\nYou have 3 available players:\n\n• Lucas: Very good kicker, BUT he's tired (ran a lot already)\n• Emma: Good kicker, she's in great shape!\n• Noah: Excellent kicker, BUT he's afraid of missing in front of everyone\n\nConstraint: The penalty is VERY important (deciding match).\n\nQuestion: Who do you choose as captain and why?",
+      "options": [
+        "Lucas (very good but tired)",
+        "Emma (good and in shape)",
+        "Noah (excellent but stressed)"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Well done! 🎉 You made the right TRADE-OFF.\n\nHere's your leader's reasoning:\n\n• Lucas = Very good kicker ❌ BUT tired → Physical risk (tired legs = less precise shot)\n• Noah = Excellent kicker ❌ BUT stressed → Mental risk (fear can freeze)\n• Emma = Good kicker ✅ AND in shape → NO major risk!\n\nIn a PRESSURE situation, a leader chooses the most STABLE person, not necessarily the most 'excellent' one. Emma has fewer risks than the others.\n\n💡 This is the art of TRADE-OFF: weighing advantages AND risks! A good leader eliminates risky options first.",
+      "feedbackIncorrect": "Think carefully! A good captain doesn't just choose the 'best', they choose the one with the LEAST RISKS in a pressure situation.\n\nHint: Look at the word 'BUT' in the descriptions.\n→ 'Very good BUT tired' = physical risk (tired legs)\n→ 'Excellent BUT afraid' = mental risk (stress that blocks)\n\nWho doesn't have a 'BUT'? Who is stable with no major risk?",
+      "leconStrategique": "A leader must make TRADE-OFFS: choose between several options by weighing advantages AND risks.\n\nThe best decision isn't always choosing 'the best', but choosing 'the most stable' in a pressure situation.\n\nIn real life:\n• Choosing a project partner: Not the most brilliant but stressed, but the most reliable\n• Investing money: Not the most profitable but risky option, but the stable one\n• Recruiting for your team: Not the most impressive resume, but the most balanced person\n\nIn business: Leaders first eliminate HIGH-RISK options, then choose among STABLE options. That's risk management!",
+      "referenceCroisee": "M4 (Analysis and Logic), M8 (Leadership and Team)",
+      "mentorGoal": "Introduce TRADE-OFF UNDER CONSTRAINTS and RISK MANAGEMENT. The child must demonstrate they can eliminate risky options to identify the most stable choice in a pressure situation.",
+      "evaluationCriteria": "1. Correct answer: B (Emma). 2. BONUS: The child explains that 'stable' is better than 'excellent with risks' or mentions they eliminated options with 'BUT' first (elimination method)."
     }
   },
   "m5": {

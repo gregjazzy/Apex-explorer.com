@@ -487,20 +487,20 @@
       "evaluationCriteria": "1. Réponse correcte : C (5 boosters). 2. BONUS : L'enfant explique le pattern avec ses mots (ex: 'on ajoute 1 à chaque fois') ou prédit correctement l'étape 10 (10 boosters) pour montrer qu'il a compris la règle générale."
     },
     "defi4": {
-      "titre": "Défi: La Règle des Variables",
-      "scenario": "Une machine de tri doit attribuer un code (X ou Y) à un objet. Règle 1: Si l'objet est rouge OU lourd, il reçoit X. Règle 2: S'il est vert ET léger, il reçoit Y. Un objet est rouge et léger. Quel code reçoit-il et pourquoi?",
-      "instruction": "Écris le code (X ou Y) et la règle qui a primé.",
-      "leconStrategique": "Le leader prend des décisions sous des règles multiples. Savoir quelle règle prime (OU vs ET) est essentiel pour éviter les erreurs logiques.",
-      "referenceCroisee": "M5",
-      "briefing": {
-        "etape1": {
-          "titre": "1. Priorité des Opérateurs Logiques",
-          "type_etape": "validation_case",
-          "instruction": "J'ai compris que la Règle 1 (OU) autorise une seule condition (rouge ou lourd) pour X, tandis que la Règle 2 (ET) exige deux conditions simultanément (vert et léger)."
-        }
-      },
-      "mentorGoal": "Tester la capacité à identifier les contradictions et les paradoxes logiques. L'enfant doit démontrer son esprit critique.",
-      "evaluationCriteria": "La réponse doit identifier clairement la contradiction et proposer une résolution ou une reformulation du problème. Bonus: L'enfant cite un paradoxe connu (Achille et la tortue, Paradoxe du menteur)."
+      "titre": "Quiz: Le Choix du Capitaine",
+      "question": "Tu es capitaine de ton équipe de foot ! Tu dois choisir qui va tirer le penalty décisif pour gagner le match.\n\nTu as 3 joueurs disponibles :\n\n• Lucas : Très bon tireur, MAIS il est fatigué (a déjà beaucoup couru)\n• Emma : Bonne tireuse, elle est en pleine forme !\n• Noah : Excellent tireur, MAIS il a peur de rater devant tout le monde\n\nContrainte : Le penalty est TRÈS important (match décisif).\n\nQuestion : Qui choisis-tu comme capitaine et pourquoi ?",
+      "options": [
+        "Lucas (très bon mais fatigué)",
+        "Emma (bonne et en forme)",
+        "Noah (excellent mais stressé)"
+      ],
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Bravo ! 🎉 Tu as fait le bon ARBITRAGE.\n\nVoici ton raisonnement de leader :\n\n• Lucas = Très bon tireur ❌ MAIS fatigué → Risque physique (jambes fatiguées = tir moins précis)\n• Noah = Excellent tireur ❌ MAIS stressé → Risque mental (la peur peut bloquer)\n• Emma = Bonne tireuse ✅ ET en forme → AUCUN risque majeur !\n\nEn situation de PRESSION, un leader choisit la personne la plus STABLE, pas forcément la plus 'excellente'. Emma a moins de risques que les autres.\n\n💡 C'est l'art de l'ARBITRAGE : peser les avantages ET les risques ! Un bon leader élimine d'abord les options à risques.",
+      "feedbackIncorrect": "Réfléchis bien ! Un bon capitaine ne choisit pas seulement le 'meilleur', il choisit celui qui a le MOINS DE RISQUES en situation de pression.\n\nAstuce : Regarde les mots 'MAIS' dans les descriptions.\n→ 'Très bon MAIS fatigué' = risque physique (jambes fatiguées)\n→ 'Excellent MAIS peur' = risque mental (stress qui bloque)\n\nQui n'a PAS de 'MAIS' ? Qui est stable et sans risque majeur ?",
+      "leconStrategique": "Un leader doit faire des ARBITRAGES : choisir entre plusieurs options en pesant les avantages ET les risques.\n\nLa meilleure décision n'est pas toujours de choisir 'le meilleur', mais de choisir 'le plus stable' en situation de pression.\n\nDans la vie réelle :\n• Choisir un partenaire pour un projet : Pas le plus brillant mais stressé, mais le plus fiable\n• Investir son argent : Pas l'option la plus rentable mais risquée, mais l'option stable\n• Recruter dans son équipe : Pas le CV le plus impressionnant, mais la personne la plus équilibrée\n\nDans les affaires : Les leaders éliminent d'abord les options à RISQUES ÉLEVÉS, puis choisissent parmi les options STABLES. C'est la gestion du risque !",
+      "referenceCroisee": "M4 (Analyse et Logique), M8 (Leadership et Équipe)",
+      "mentorGoal": "Introduire l'ARBITRAGE SOUS CONTRAINTES et la GESTION DU RISQUE. L'enfant doit démontrer qu'il peut éliminer les options à risques pour identifier le choix le plus stable en situation de pression.",
+      "evaluationCriteria": "1. Réponse correcte : B (Emma). 2. BONUS : L'enfant explique que 'stable' est mieux qu''excellent avec risques' ou mentionne qu'il a éliminé les options avec 'MAIS' en premier (méthode d'élimination)."
     }
   },
   "m5": {
