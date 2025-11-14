@@ -357,19 +357,19 @@
     },
     "defi2": {
         "titre": "Quiz: Le Vélo Dans La Côte",
-        "question": "Tu es à vélo en haut d'une grande descente. Tu te lances sans pédaler. Qu'est-ce qui fait que tu vas de plus en plus vite ?",
+        "question": "Tu es à vélo en haut d'une grande descente. Tu te lances sans pédaler et tu vas de plus en plus vite.\n\nQuelle est la FORCE qui te fait accélérer ?",
       "options": [
         "La force de tes jambes",
-        "La pente qui tire le vélo vers le bas (gravité)",
+        "La gravité (la pente tire le vélo vers le bas)",
         "Le vent qui pousse le vélo"
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Exact ! La gravité est une force invisible qui attire tout vers le bas. Plus la pente est forte, plus tu accélères. C'est pour ça qu'il faut freiner en descente !",
-        "feedbackIncorrect": "La gravité (la force qui tire tout vers le bas) est ce qui te fait accélérer en descente, même sans pédaler !",
-        "leconStrategique": "Comprendre les forces invisibles (gravité, énergie, élan) aide à mieux comprendre le monde. Dans les affaires, il y a aussi des forces invisibles : tendances du marché, confiance des clients, réputation.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Introduit le concept de gravité et d'énergie potentielle de manière simple et concrète (vélo).",
-      "evaluationCriteria": "Réponse correcte : Option 2 (gravité). Bonus : L'enfant mentionne que l'énergie vient de la hauteur."
+        "feedbackCorrect": "Bravo ! Tu as identifié la FORCE DOMINANTE : la gravité.\n\nCette force invisible utilise ta hauteur pour créer de la vitesse. C'est de l'ÉNERGIE POTENTIELLE (l'énergie de la hauteur) qui se transforme en mouvement. Plus tu es haut, plus tu as d'énergie à libérer en descendant !\n\n💡 Un bon leader comprend toujours d'où vient l'énergie dans un système pour l'utiliser intelligemment.",
+        "feedbackIncorrect": "Pas tout à fait. En descente, c'est la GRAVITÉ qui te fait accélérer sans effort.\n\nLa gravité est une force invisible qui attire tout vers le bas. Plus la pente est forte, plus tu accélères. C'est pour ça qu'il faut freiner en descente !\n\n💡 Cette force transforme ta HAUTEUR en VITESSE : c'est l'énergie potentielle en action.",
+        "leconStrategique": "Dans un système efficace, il existe toujours des FORCES DOMINANTES qui peuvent t'aider ou te ralentir.\n\nLa gravité dans le vélo, c'est comme :\n• La RÉPUTATION dans les affaires (te donne de l'élan)\n• L'ÉNERGIE D'UNE ÉQUIPE dans un projet (accélère le travail)\n• L'ÉLAN INITIAL d'une idée (crée le mouvement)\n\nUn leader comprend ces forces invisibles pour les utiliser intelligemment : accélérer quand c'est utile, freiner quand c'est nécessaire.",
+      "referenceCroisee": "M3 (Structures et Systèmes)",
+      "mentorGoal": "Introduire le concept de FORCES INVISIBLES (gravité, énergie potentielle) et leur rôle dans un système. L'enfant doit comprendre qu'une force externe peut être la source principale d'énergie dans un système, et qu'un leader doit identifier ces forces pour les utiliser.",
+      "evaluationCriteria": "1. Réponse correcte : B (Gravité). 2. BONUS : L'enfant comprend que l'énergie vient de la hauteur (énergie potentielle) ou mentionne que la gravité est une force externe/dominante dans le système."
     },
     "defi3": {
       "titre": "Défi: Le Pont de Papier",

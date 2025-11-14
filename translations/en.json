@@ -356,19 +356,20 @@
       "evaluationCriteria": "1. Correct answer: Heavy planks DOWN LOW. 2. Coherent explanation: Mentions stability, balance, or risk of toppling. 3. Anticipation: Everything up high = unstable/dangerous treehouse. 4. BONUS: The child uses the term 'STRONG BASE' or makes the connection with other structures (buildings, pyramids)."
     },
     "defi2": {
-        "titre": "Quiz: The Efficient Lever",
-        "question": "You must lift a very heavy rock with a bar. Where should you place the fulcrum (support point) to lift it most easily?",
+        "titre": "Quiz: The Bike on the Hill",
+        "question": "You're on your bike at the top of a big downhill. You launch yourself without pedaling and you go faster and faster.\n\nWhat FORCE makes you accelerate?",
       "options": [
-        "In the middle of the bar",
-        "As close to the rock as possible",
-        "As far from the rock as possible"
+        "The force of your legs",
+        "Gravity (the slope pulls the bike down)",
+        "The wind pushing the bike"
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Great! The closer the fulcrum is to the load, the more powerful the lever.",
-        "leconStrategique": "Efficiency is the art of doing more with less effort. Find the right fulcrum (the right relationship, the right resource).",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of leverage and lever arm (Force × Distance = Moment). The child must demonstrate how to optimize the use of limited force.",
-      "evaluationCriteria": "The answer must identify that increasing distance (lever arm) allows lifting heavier weight with less force. Bonus: The child mentions the formula or physical principle."
+        "feedbackCorrect": "Well done! You identified the DOMINANT FORCE: gravity.\n\nThis invisible force uses your height to create speed. It's POTENTIAL ENERGY (the energy of height) that transforms into movement. The higher you are, the more energy you have to release going down!\n\n💡 A good leader always understands where energy comes from in a system to use it intelligently.",
+        "feedbackIncorrect": "Not quite. Downhill, it's GRAVITY that makes you accelerate without effort.\n\nGravity is an invisible force that pulls everything down. The steeper the slope, the more you accelerate. That's why you need to brake downhill!\n\n💡 This force transforms your HEIGHT into SPEED: that's potential energy in action.",
+        "leconStrategique": "In an effective system, there are always DOMINANT FORCES that can help you or slow you down.\n\nGravity on a bike is like:\n• REPUTATION in business (gives you momentum)\n• TEAM ENERGY in a project (accelerates work)\n• INITIAL MOMENTUM of an idea (creates movement)\n\nA leader understands these invisible forces to use them intelligently: accelerate when useful, brake when necessary.",
+      "referenceCroisee": "M3 (Structures and Systems)",
+      "mentorGoal": "Introduce the concept of INVISIBLE FORCES (gravity, potential energy) and their role in a system. The child must understand that an external force can be the main source of energy in a system, and that a leader must identify these forces to use them.",
+      "evaluationCriteria": "1. Correct answer: B (Gravity). 2. BONUS: The child understands that energy comes from height (potential energy) or mentions that gravity is an external/dominant force in the system."
     },
     "defi3": {
       "titre": "Challenge: The Friction Problem",
