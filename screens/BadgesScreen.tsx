@@ -144,7 +144,7 @@ const BadgesScreen: React.FC = () => {
             </View>
 
             {/* Category Tabs */}
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categoryScroll}>
+            <View style={styles.categoryContainer}>
                 {categories.map(cat => (
                     <TouchableOpacity
                         key={cat.key}
@@ -165,7 +165,7 @@ const BadgesScreen: React.FC = () => {
                         </Text>
                     </TouchableOpacity>
                 ))}
-            </ScrollView>
+            </View>
 
             {/* Badges Grid */}
             <ScrollView style={styles.badgesScroll} showsVerticalScrollIndicator={false}>
@@ -263,14 +263,17 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
     },
-    categoryScroll: {
-        maxHeight: 60,
+    categoryContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 15,
         marginBottom: 20,
+        paddingHorizontal: 20,
     },
     categoryTab: {
-        paddingHorizontal: 20,
-        paddingVertical: 10,
-        marginLeft: 10,
+        paddingHorizontal: 25,
+        paddingVertical: 12,
         borderRadius: 20,
         backgroundColor: 'rgba(255,255,255,0.1)',
         flexDirection: 'row',

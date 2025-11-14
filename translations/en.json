@@ -82,6 +82,7 @@
   "defi": {
     "title": "Challenge",
     "completed": "Completed",
+    "submitted": "Submitted",
     "unlocked": "Unlocked",
     "locked": "Locked",
     "start_button": "Start Challenge",

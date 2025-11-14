@@ -82,6 +82,7 @@
   "defi": {
     "title": "Défi",
     "completed": "Complété",
+    "submitted": "Soumis",
     "unlocked": "Débloqué",
     "locked": "Verrouillé",
     "start_button": "Démarrer le Défi",
