@@ -11,14 +11,15 @@ import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { getSpeedDrillStats, SpeedDrillStats } from '../services/dataService';
+import { fetchSpeedDrillStats, fetchSpeedDrillSessions } from '../services/dataService';
 
 const SpeedDrillStatsScreen: React.FC = () => {
     const { t } = useTranslation();
     const navigation = useNavigation();
     const { user } = useAuth();
     const [loading, setLoading] = useState(true);
-    const [stats, setStats] = useState<SpeedDrillStats | null>(null);
+    const [stats, setStats] = useState<any>(null);
+    const [sessions, setSessions] = useState<any[]>([]);
 
     useEffect(() => {
         loadStats();
@@ -28,8 +29,15 @@ const SpeedDrillStatsScreen: React.FC = () => {
         if (!user) return;
         try {
             setLoading(true);
-            const data = await getSpeedDrillStats(user.id);
-            setStats(data);
+            const [statsData, sessionsData] = await Promise.all([
+                fetchSpeedDrillStats(user.id),
+                fetchSpeedDrillSessions(user.id)
+            ]);
+            console.log('📊 Stats Speed Drill:', statsData);
+            console.log('📋 Sessions Speed Drill:', sessionsData);
+            console.log('📋 Exemple session:', sessionsData[0]);
+            setStats(statsData);
+            setSessions(sessionsData);
         } catch (error) {
             console.error('Erreur chargement stats Speed Drill:', error);
         } finally {
@@ -93,54 +101,71 @@ const SpeedDrillStatsScreen: React.FC = () => {
             <ScrollView style={styles.recordsScroll} showsVerticalScrollIndicator={false}>
                 <Text style={styles.sectionTitle}>🏆 Records par Opération</Text>
                 
-                {stats?.sessions && stats.sessions.length > 0 ? (
+                {sessions && sessions.length > 0 ? (
                     <View style={styles.recordsContainer}>
-                        {['Multiplication', 'Division', 'Addition', 'Soustraction'].map(opType => {
-                            const opSessions = stats.sessions.filter(s => s.operation_type === opType);
-                            const bestSession = opSessions.reduce((best, current) => {
-                                if (current.score === 10) {
-                                    if (!best || current.time_seconds < best.time_seconds) {
-                                        return current;
-                                    }
-                                }
-                                return best;
-                            }, null as any);
+                        {['multiplication', 'division', 'addition', 'soustraction'].map(opType => {
+                            const opSessions = sessions.filter(s => s.operation_type === opType);
+                            
+                            // Nom d'affichage avec majuscule
+                            const displayName = opType.charAt(0).toUpperCase() + opType.slice(1);
+
+                            // Si pas de sessions pour cette opération
+                            if (opSessions.length === 0) {
+                                return (
+                                    <View key={opType} style={styles.recordCard}>
+                                        <View style={styles.recordHeader}>
+                                            <Text style={styles.recordEmoji}>{getOperationEmoji(displayName)}</Text>
+                                            <Text style={styles.recordOperation}>{displayName}</Text>
+                                        </View>
+                                        <View style={styles.noRecord}>
+                                            <Text style={styles.noRecordText}>Pas encore de session</Text>
+                                        </View>
+                                    </View>
+                                );
+                            }
 
                             return (
                                 <View key={opType} style={styles.recordCard}>
                                     <View style={styles.recordHeader}>
-                                        <Text style={styles.recordEmoji}>{getOperationEmoji(opType)}</Text>
-                                        <Text style={styles.recordOperation}>{opType}</Text>
+                                        <Text style={styles.recordEmoji}>{getOperationEmoji(displayName)}</Text>
+                                        <Text style={styles.recordOperation}>{displayName}</Text>
                                     </View>
-                                    <View style={styles.recordStats}>
-                                        {bestSession ? (
-                                            <>
-                                                <View style={styles.recordStat}>
-                                                    <Text style={styles.recordStatLabel}>⚡ Meilleur temps</Text>
-                                                    <Text style={styles.recordStatValue}>{bestSession.time_seconds}s</Text>
-                                                </View>
-                                                <View style={styles.recordStat}>
-                                                    <Text style={styles.recordStatLabel}>🎯 Score parfait</Text>
-                                                    <Text style={styles.recordStatValue}>10/10</Text>
-                                                </View>
-                                                <View style={styles.recordStat}>
-                                                    <Text style={styles.recordStatLabel}>📅 Date</Text>
-                                                    <Text style={styles.recordStatValue}>
-                                                        {new Date(bestSession.created_at).toLocaleDateString('fr-FR')}
+                                    
+                                    {/* Records par difficulté */}
+                                    {['easy', 'medium', 'hard'].map(difficulty => {
+                                        const diffSessions = opSessions.filter(s => s.difficulty === difficulty);
+                                        
+                                        if (diffSessions.length === 0) return null;
+                                        
+                                        // Meilleur score (prioritaire)
+                                        const maxScore = Math.max(...diffSessions.map(s => s.score));
+                                        
+                                        // Meilleur temps pour ce score
+                                        const bestSession = diffSessions
+                                            .filter(s => s.score === maxScore)
+                                            .reduce((best, current) => {
+                                                if (!best || current.time_seconds < best.time_seconds) {
+                                                    return current;
+                                                }
+                                                return best;
+                                            }, null as any);
+                                        
+                                        const diffLabel = difficulty === 'easy' ? 'Facile' : difficulty === 'medium' ? 'Moyen' : 'Difficile';
+                                        
+                                        return (
+                                            <View key={difficulty} style={styles.difficultyRow}>
+                                                <Text style={styles.difficultyLabel}>{diffLabel}</Text>
+                                                <View style={styles.difficultyStats}>
+                                                    <Text style={styles.difficultyScore}>
+                                                        🎯 {bestSession.score}/10
+                                                    </Text>
+                                                    <Text style={styles.difficultyTime}>
+                                                        ⚡ {bestSession.time_seconds}s
                                                     </Text>
                                                 </View>
-                                            </>
-                                        ) : (
-                                            <View style={styles.noRecord}>
-                                                <Text style={styles.noRecordText}>Aucun score parfait</Text>
-                                                <Text style={styles.noRecordHint}>
-                                                    {opSessions.length > 0 
-                                                        ? `Meilleur score : ${Math.max(...opSessions.map(s => s.score))}/10`
-                                                        : 'Pas encore de session'}
-                                                </Text>
                                             </View>
-                                        )}
-                                    </View>
+                                        );
+                                    })}
                                 </View>
                             );
                         })}
@@ -152,15 +177,6 @@ const SpeedDrillStatsScreen: React.FC = () => {
                         <Text style={styles.emptyHint}>Lance une session pour voir tes stats !</Text>
                     </View>
                 )}
-
-                {/* CTA Button */}
-                <TouchableOpacity
-                    style={styles.ctaButton}
-                    onPress={() => navigation.navigate('SpeedDrill' as never)}
-                    activeOpacity={0.8}
-                >
-                    <Text style={styles.ctaButtonText}>🚀 Lancer une Session</Text>
-                </TouchableOpacity>
             </ScrollView>
         </LinearGradient>
     );
@@ -263,6 +279,35 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
     },
+    difficultyRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: 8,
+        paddingHorizontal: 10,
+        backgroundColor: 'rgba(255,255,255,0.1)',
+        borderRadius: 8,
+        marginBottom: 8,
+    },
+    difficultyLabel: {
+        color: 'rgba(255,255,255,0.9)',
+        fontSize: 14,
+        fontWeight: '600',
+    },
+    difficultyStats: {
+        flexDirection: 'row',
+        gap: 15,
+    },
+    difficultyScore: {
+        color: '#fff',
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
+    difficultyTime: {
+        color: '#fff',
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
     recordStats: {
         gap: 10,
     },
@@ -311,18 +356,6 @@ const styles = StyleSheet.create({
     emptyHint: {
         color: 'rgba(255,255,255,0.7)',
         fontSize: 14,
-    },
-    ctaButton: {
-        backgroundColor: '#fff',
-        borderRadius: 15,
-        padding: 18,
-        marginVertical: 20,
-        alignItems: 'center',
-    },
-    ctaButtonText: {
-        color: '#F59E0B',
-        fontSize: 18,
-        fontWeight: 'bold',
     },
 });
 

@@ -20,7 +20,7 @@ import {
 } from '../services/dataService';
 import Badge3D from '../components/Badge3D';
 
-type BadgeCategory = 'all' | 'modules' | 'speed' | 'precision' | 'special';
+type BadgeCategory = 'all' | 'modules';
 
 const BadgesScreen: React.FC = () => {
     const { t } = useTranslation();
@@ -110,9 +110,6 @@ const BadgesScreen: React.FC = () => {
     const categories: { key: BadgeCategory; label: string; icon: string }[] = [
         { key: 'all', label: t('badges_screen.all'), icon: '🏆' },
         { key: 'modules', label: t('badges_screen.modules'), icon: '📚' },
-        { key: 'speed', label: t('badges_screen.speed'), icon: '⚡' },
-        { key: 'precision', label: t('badges_screen.precision'), icon: '🎯' },
-        { key: 'special', label: t('badges_screen.special'), icon: '⭐' },
     ];
 
     if (loading) {
