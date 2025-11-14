@@ -181,20 +181,20 @@
       "evaluationCriteria": "1. Correct calculation: 180L if equal. 2. Coherent logic: More water to high-impact groups (Kitchen/Showers > Garden/Reserve > Pool). 3. Clear justification of choices. 4. BONUS: The child anticipates consequences (e.g., 'If the garden has no water, vegetables die')."
     },
     "defi3": {
-      "titre": "Quiz: Quick Chains",
-      "question": "An architect needs to buy 50 bricks for 6 projects. What is the total number of bricks required?",
+      "titre": "Quiz: The Cookie Business",
+      "question": "You want to make money selling homemade cookies. You calculated: making 1 cookie costs €1. You want to sell 50.\n\nBut you discover a DISCOUNT: if you buy ingredients for 100 cookies at once, the cost per cookie drops to €0.60!\n\nWhat do you decide?",
       "options": [
-        "50 x 6 = 300 bricks",
-        "50 + 6 = 56 bricks",
-        "50 ÷ 6 = 8.3 bricks"
+        "Make only 50 cookies at €1 each (cost: €50, no risk)",
+        "Make 100 cookies at €0.60 each (cost: €60, but I must sell double)",
+        "Give up the idea, it's too complicated"
       ],
-      "bonneReponseIndex": 0,
-      "feedbackCorrect": "Excellent. Multiplication allows you to quickly calculate all needs.",
-      "feedbackIncorrect": "Multiplication helps avoid long successive additions.",
-      "leconStrategique": "Multiplication is the tool for scaling up. When you need to manage the same need for multiple projects, you multiply.",
-      "referenceCroisee": "M8",
-      "mentorGoal": "Introduce proportionality and leverage effect in resource management (multiplying a small number by a large multiplier).",
-      "evaluationCriteria": "The answer must be 6000. Bonus: The child explains the reasoning (30 × 200) or mentions the leverage principle in their justification."
+      "bonneReponseIndex": 1,
+      "feedbackCorrect": "Bravo! 🎉 You understood: investing €10 more (€60 instead of €50) saves you €40 on 100 cookies! If you sell everything at €2, you earn €140 profit instead of €50. This is called ECONOMY OF SCALE: producing more = costing less!",
+      "feedbackIncorrect": "Careful! Thinking small can limit you. Look closely: Option 1 = €50 spent, €50 profit. Option 2 = €60 spent (+€10), but €140 profit if you sell everything! A small extra effort = A BIG result. Try again thinking: which choice earns me the most money?",
+      "leconStrategique": "Leaders think in ECONOMY OF SCALE: buy in bulk, produce more, to reduce costs. It's the secret to going from 'small business' to 'big company'. Amazon, McDonald's, Apple: they all use this principle!",
+      "referenceCroisee": "M4, M9",
+      "mentorGoal": "Introduce the concept of ECONOMY OF SCALE and strategic INVESTMENT. The child must understand that taking a calculated risk (investing €10 more) can multiply gains.",
+      "evaluationCriteria": "Correct answer: Option 2. BONUS: The child spontaneously calculates potential profit (€140 vs €50), savings per cookie (€0.40 × 100 = €40), or mentions the concept of 'producing more = costs less'."
     },
     "defi4": {
       "titre": "Challenge: The Pie Share (Fractions)",

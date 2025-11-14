@@ -182,19 +182,19 @@
     },
     "defi3": {
       "titre": "Quiz: Le Business des Cookies",
-      "question": "Tu veux gagner de l'argent en vendant des cookies faits maison. Chaque cookie coûte 1€ à fabriquer. Tu veux en vendre 50. Mais tu découvres que tu peux avoir une RÉDUCTION : si tu achètes les ingrédients pour 100 cookies d'un coup, le coût par cookie descend à 0,60€. Que décides-tu ?",
+      "question": "Tu veux gagner de l'argent en vendant des cookies faits maison. Tu as calculé : fabriquer 1 cookie coûte 1€. Tu veux en vendre 50.\n\nMais tu découvres une RÉDUCTION : si tu achètes les ingrédients pour 100 cookies d'un coup, le coût par cookie descend à 0,60€ !\n\nQue décides-tu ?",
       "options": [
-        "Fabriquer seulement 50 cookies à 1€ chacun (coût total : 50€, pas de risque)",
-        "Fabriquer 100 cookies à 0,60€ chacun (coût total : 60€, mais tu dois vendre le double)",
+        "Fabriquer seulement 50 cookies à 1€ chacun (coût : 50€, sans risque)",
+        "Fabriquer 100 cookies à 0,60€ chacun (coût : 60€, mais je dois vendre le double)",
         "Abandonner l'idée, c'est trop compliqué"
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "Excellent ! Tu as compris : investir 10€ de plus (60€ au lieu de 50€) te permet d'économiser 40€ sur 100 cookies ET de gagner beaucoup plus. C'est exactement comme ça que pensent les grands entrepreneurs !",
-      "feedbackIncorrect": "Penser petit te limite. L'option 2 coûte 10€ de plus, mais te permet de gagner BEAUCOUP plus si tu vends tout. Un petit effort supplémentaire pour un grand résultat !",
-      "leconStrategique": "Les leaders pensent en SYSTÈMES et en ÉCHELLE. Acheter en gros, automatiser, déléguer : c'est le secret pour passer de petit à grand.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Introduit le concept d'économies d'échelle et d'investissement stratégique. L'enfant doit comprendre que prendre un risque calculé peut multiplier les gains.",
-      "evaluationCriteria": "Réponse correcte : Option 2. Bonus : L'enfant calcule le profit potentiel (100 cookies vendus à 2€ = 200€ - 60€ coût = 140€ profit vs 50 cookies = 100€ - 50€ = 50€ profit)."
+      "feedbackCorrect": "Bravo ! 🎉 Tu as compris : investir 10€ de plus (60€ au lieu de 50€) te permet d'économiser 40€ sur 100 cookies ! Si tu vends tout à 2€, tu gagnes 140€ de profit au lieu de 50€. C'est ce qu'on appelle l'ÉCONOMIE D'ÉCHELLE : produire plus = coûter moins cher !",
+      "feedbackIncorrect": "Attention ! Penser petit peut te limiter. Regarde bien : Option 1 = 50€ dépensés, 50€ de profit. Option 2 = 60€ dépensés (+10€), mais 140€ de profit si tu vends tout ! Un petit effort supplémentaire = Un GRAND résultat. Réessaie en pensant : quel choix me rapporte le plus d'argent ?",
+      "leconStrategique": "Les leaders pensent en ÉCONOMIE D'ÉCHELLE : acheter en gros, produire plus, pour réduire les coûts. C'est le secret pour passer de 'petit business' à 'grande entreprise'. Amazon, McDonald's, Apple : tous utilisent ce principe !",
+      "referenceCroisee": "M4, M9",
+      "mentorGoal": "Introduire le concept d'ÉCONOMIE D'ÉCHELLE et d'INVESTISSEMENT stratégique. L'enfant doit comprendre que prendre un risque calculé (investir 10€ de plus) peut multiplier les gains.",
+      "evaluationCriteria": "Réponse correcte : Option 2. BONUS : L'enfant calcule spontanément le profit potentiel (140€ vs 50€), l'économie par cookie (0,40€ × 100 = 40€), ou mentionne le concept de 'produire plus = coûte moins cher'."
     },
     "defi4": {
       "titre": "Mission: La Recette de Gâteau",
