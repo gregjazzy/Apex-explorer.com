@@ -19,6 +19,7 @@ import MentorDashboardScreen from './screens/MentorDashboardScreen';
 import DefiListScreen from './screens/DefiListScreen'; 
 import DefiScreen from './screens/DefiScreen';
 import SpeedDrillScreen from './screens/SpeedDrillScreen'; 
+import SpeedDrillStatsScreen from './screens/SpeedDrillStatsScreen';
 import BadgesScreen from './screens/BadgesScreen';
 import HallOfFameScreen from './screens/HallOfFameScreen'; 
 
@@ -159,6 +160,14 @@ const AppContent: React.FC = () => {
               headerRight: () => <HeaderRightExplorer logout={logout} i18n={i18n} />,
               animation: 'slide_from_bottom',
               presentation: 'modal',
+            }}
+          />
+          <Stack.Screen 
+            name="SpeedDrillStats" 
+            component={SpeedDrillStatsScreen as any}
+            options={{ 
+              headerShown: false,
+              animation: 'slide_from_right',
             }}
           />
           <Stack.Screen 

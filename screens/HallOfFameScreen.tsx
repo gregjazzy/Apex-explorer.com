@@ -21,7 +21,7 @@ import {
     SpeedDrillRecord,
 } from '../services/dataService';
 
-type TabType = 'xp' | 'streaks' | 'speed';
+type TabType = 'xp' | 'streaks';
 
 interface HallOfFameScreenProps {
     route?: {
@@ -206,12 +206,6 @@ const HallOfFameScreen: React.FC<HallOfFameScreenProps> = ({ route }) => {
                             <Text style={styles.statValue}>🔥 {userStats.longestStreak}</Text>
                             <Text style={styles.statLabel}>{t('hall_of_fame.best_streak')}</Text>
                         </View>
-                        {userStats.bestSpeedTime && (
-                            <View style={styles.statItem}>
-                                <Text style={styles.statValue}>⚡ {userStats.bestSpeedTime}s</Text>
-                                <Text style={styles.statLabel}>{t('hall_of_fame.best_time')}</Text>
-                            </View>
-                        )}
                     </View>
                 </View>
             )}
@@ -234,21 +228,12 @@ const HallOfFameScreen: React.FC<HallOfFameScreenProps> = ({ route }) => {
                         🔥 {t('hall_of_fame.streaks_tab')}
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.tab, selectedTab === 'speed' && styles.tabActive]}
-                    onPress={() => setSelectedTab('speed')}
-                >
-                    <Text style={[styles.tabText, selectedTab === 'speed' && styles.tabTextActive]}>
-                        ⚡ {t('hall_of_fame.speed_tab')}
-                    </Text>
-                </TouchableOpacity>
             </View>
 
             {/* Content */}
             <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
                 {selectedTab === 'xp' && renderXPLeaderboard()}
                 {selectedTab === 'streaks' && renderStreakLeaderboard()}
-                {selectedTab === 'speed' && renderSpeedRecords()}
             </ScrollView>
         </LinearGradient>
     );

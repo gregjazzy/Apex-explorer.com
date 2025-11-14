@@ -345,7 +345,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                 
                                 <TouchableOpacity 
                                     style={styles.miniCircularButton}
-                                    onPress={() => navigation.navigate('HallOfFame' as never, { initialTab: 'speed' } as never)}
+                                    onPress={() => navigation.navigate('SpeedDrillStats' as never)}
                                     activeOpacity={0.7}
                                 >
                                     <Text style={styles.miniCircularIcon}>⚡</Text>

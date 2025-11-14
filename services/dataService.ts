@@ -1583,41 +1583,56 @@ export const fetchAllExplorerSpeedDrillStats = async (mentorId: string): Promise
  */
 export const getXPLeaderboard = async (currentUserId?: string): Promise<LeaderboardEntry[]> => {
     try {
-        const { data, error } = await supabase
+        const { data: explorers, error } = await supabase
             .from('explorers')
-            .select('explorer_uuid, name, xp')
-            .order('xp', { ascending: false })
-            .limit(10);
+            .select('explorer_uuid, name')
+            .limit(50); // On prend plus large pour ensuite trier par XP calculé
 
         if (error) {
             console.error('Erreur récupération leaderboard XP:', error);
             return [];
         }
 
-        // Calculer le nombre de modules complétés pour chaque utilisateur
+        // Calculer les XP réels pour chaque utilisateur depuis explorer_progress
         const leaderboard: LeaderboardEntry[] = await Promise.all(
-            (data || []).map(async (explorer, index) => {
+            (explorers || []).map(async (explorer) => {
                 const { data: progressData } = await supabase
                     .from('explorer_progress')
-                    .select('module_id, status')
-                    .eq('user_id', explorer.explorer_uuid)
-                    .eq('status', 'completed');
+                    .select('xp_earned, status, module_id')
+                    .eq('user_id', explorer.explorer_uuid);
 
+                // Calculer XP total
+                const totalXP = (progressData || [])
+                    .filter(p => p.status === 'completed')
+                    .reduce((sum, p) => sum + (p.xp_earned || 0), 0);
+
+                // Calculer modules complétés
                 const completedModules = new Set(
-                    (progressData || []).map(p => p.module_id)
+                    (progressData || [])
+                        .filter(p => p.status === 'completed')
+                        .map(p => p.module_id)
                 ).size;
 
                 return {
                     user_id: explorer.explorer_uuid,
                     user_name: explorer.name || 'Explorateur',
-                    xp: explorer.xp || 0,
+                    xp: totalXP,
                     completed_modules: completedModules,
-                    rank: index + 1,
+                    rank: 0, // On assignera après le tri
                 };
             })
         );
 
-        return leaderboard;
+        // Trier par XP décroissant et assigner les rangs
+        const sorted = leaderboard
+            .sort((a, b) => b.xp - a.xp)
+            .slice(0, 10) // Top 10
+            .map((entry, index) => ({
+                ...entry,
+                rank: index + 1,
+            }));
+
+        return sorted;
     } catch (error) {
         console.error('Erreur getXPLeaderboard:', error);
         return [];
@@ -1729,8 +1744,8 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
         // 1. Récupérer le profil de l'utilisateur
         const { data: explorer, error: explorerError } = await supabase
             .from('explorers')
-            .select('name, xp')
-            .eq('user_id', userId)
+            .select('name')
+            .eq('explorer_uuid', userId)
             .single();
 
         if (explorerError) {
@@ -1738,31 +1753,36 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
             return null;
         }
 
-        // 2. Récupérer le streak depuis user_streaks
+        // 2. Récupérer la progression et calculer les XP
+        const { data: progressData } = await supabase
+            .from('explorer_progress')
+            .select('xp_earned, status, module_id')
+            .eq('user_id', userId);
+
+        const totalXP = (progressData || [])
+            .filter(p => p.status === 'completed')
+            .reduce((sum, p) => sum + (p.xp_earned || 0), 0);
+
+        const completedModules = new Set(
+            (progressData || [])
+                .filter(p => p.status === 'completed')
+                .map(p => p.module_id)
+        ).size;
+
+        // 3. Récupérer le streak depuis user_streaks
         const { data: streakData } = await supabase
             .from('user_streaks')
             .select('longest_streak, current_streak')
             .eq('user_id', userId)
             .maybeSingle();
 
-        // 3. Calculer le classement XP
+        // 4. Calculer le classement XP
         const { count: betterCount } = await supabase
             .from('explorers')
             .select('*', { count: 'exact', head: true })
-            .gt('xp', explorer.xp || 0);
+            .gt('xp_total', totalXP);
 
         const xpRank = (betterCount || 0) + 1;
-
-        // 4. Récupérer les modules complétés
-        const { data: progressData } = await supabase
-            .from('explorer_progress')
-            .select('module_id, status')
-            .eq('user_id', userId)
-            .eq('status', 'completed');
-
-        const completedModules = new Set(
-            (progressData || []).map(p => p.module_id)
-        ).size;
 
         // 5. Récupérer le meilleur temps Speed Drill
         const { data: speedData } = await supabase
@@ -1775,7 +1795,7 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
 
         return {
             name: explorer.name || 'Explorateur',
-            xp: explorer.xp || 0,
+            xp: totalXP,
             xpRank,
             completedModules,
             longestStreak: streakData?.longest_streak || 0,
