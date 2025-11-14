@@ -61,8 +61,7 @@ const ModuleItem: React.FC<{
     navigation: any; 
     t: any; 
     index: number;
-    onModulePress: () => void;
-}> = ({ module, navigation, t, index, onModulePress }) => {
+}> = ({ module, navigation, t, index }) => {
     const [hovered, setHovered] = useState(false);
     
     // Détermination simple du statut (pour l'affichage)
@@ -72,7 +71,7 @@ const ModuleItem: React.FC<{
 
     const handlePress = () => {
         if (module.isUnlocked) {
-            onModulePress(); // Marquer qu'il faut refresh au retour
+            // Ne plus marquer needsRefresh ici - attendre qu'un défi soit complété
             navigation.navigate('DefiList', {
                 moduleId: module.id,
                 moduleTitle: module.title,
@@ -155,7 +154,6 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const [loading, setLoading] = useState(true);
     const [showMascot, setShowMascot] = useState(false);
     const [mascotAnimation, setMascotAnimation] = useState<'fadeInDown' | 'fadeOutUp'>('fadeInDown');
-    const [needsRefresh, setNeedsRefresh] = useState(false);
     
     // NOUVEAU : Compteurs d'éléments non vus
     const [unseenBadgesCount, setUnseenBadgesCount] = useState(0);
@@ -274,25 +272,22 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
         }
     }, [i18n.language]);
 
-    // OPTIMISÉ: Recharger seulement si nécessaire (via paramètre de navigation OU flag interne)
+    // OPTIMISÉ: Recharger seulement si explicitement demandé via paramètre de navigation
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
-            // Ne recharger que si explicitement demandé via params OU si needsRefresh
+            // Ne recharger que si explicitement demandé via params (nouveau badge débloqué)
             const route = navigation.getState().routes.find((r: any) => r.name === 'Explorer');
             const shouldReloadFromParams = route?.params?.shouldReload;
             
-            if ((shouldReloadFromParams || needsRefresh) && user && !loading) {
+            if (shouldReloadFromParams && user && !loading) {
                 loadModules();
                 // Nettoyer les paramètres
-                if (shouldReloadFromParams) {
-                    navigation.setParams({ shouldReload: undefined });
-                }
-                setNeedsRefresh(false);
+                navigation.setParams({ shouldReload: undefined });
             }
         });
 
         return unsubscribe;
-    }, [navigation, user, loading, loadModules, needsRefresh]); 
+    }, [navigation, user, loading, loadModules]); 
     
     // NOUVEAU: Afficher la mascotte temporairement au chargement
     useEffect(() => {
@@ -558,7 +553,6 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                                 navigation={navigation} 
                                                 t={t}
                                                 index={moduleGlobalIndex}
-                                                onModulePress={() => setNeedsRefresh(true)}
                                             />
                                         );
                                     })}
