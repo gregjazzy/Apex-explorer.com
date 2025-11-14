@@ -312,18 +312,19 @@
     },
     "defi4": {
       "titre": "Quiz: The Cost of Delay",
-      "question": "You promise to return a book to a friend at 4 PM. If you return it at 5 PM, what is the main cost?",
+      "question": "You promise to finish an important assignment before 4 PM to help your friend who needs it. At 3:30 PM, you haven't started yet because you were playing. What is the BIGGEST cost of this delay?",
       "options": [
-        "The fine.",
-        "The loss of trust.",
-        "The time spent apologizing."
+        "You'll have to work fast and do poor quality work.",
+        "Your friend won't be able to count on you anymore.",
+        "You'll have to apologize and waste time."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "The cost of a delay is the loss of trust. Reputation is a leader's most valuable resource.",
-      "leconStrategique": "Reliability is the foundation of any collaboration. Honor your commitment, even if it's uncomfortable.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of opportunity cost (what is sacrificed by choosing one option over another).",
-      "evaluationCriteria": "The answer must clearly identify what is sacrificed and why the final choice is optimal. Bonus: The child quantifies the opportunity cost (time, money, value)."
+      "feedbackCorrect": "Well done! The biggest cost of a delay is not the lost time, but the lost TRUST.\n\nA leader manages their time to HONOR their commitments. Respecting a deadline means respecting others. A reputation for reliability is a leader's most valuable resource.\n\n💡 Link to Time Management: If you had PLANNED your time (M2-D2), you would have started the assignment at 2 PM and avoided this delay!",
+      "feedbackIncorrect": "Not quite. The lost time or apologies are minor costs.\n\nThe REAL cost of a delay is the lost TRUST. Your friend won't be able to count on you next time.\n\nA leader manages their time to protect their reputation for reliability.",
+      "leconStrategique": "Reliability is the foundation of all collaboration. A leader doesn't manage their time just for themselves, but to honor their commitments to others. Respecting a deadline means respecting the people who count on you.",
+      "referenceCroisee": "M2-D2 (Planning), M8 (Leadership & Team)",
+      "mentorGoal": "Test understanding of INTANGIBLE COST (trust, reputation) vs tangible cost (time, apologies). The child must understand that delay impacts the RELATIONSHIP and future ability to collaborate, which is the foundation of time management in leadership context.",
+      "evaluationCriteria": "1. Correct answer: B (Loss of trust). 2. BONUS (mentor discussion): The child understands that managing their time protects their reputation as a reliable leader."
     }
   },
   "m3": {

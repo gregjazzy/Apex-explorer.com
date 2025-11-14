@@ -312,18 +312,19 @@
     },
     "defi4": {
       "titre": "Quiz: Le Coût du Retard",
-      "question": "Tu promets de rendre un livre à un ami à 16h. Si tu le rends à 17h, quel est le coût principal ?",
+      "question": "Tu promets de finir un devoir important avant 16h pour aider ton ami qui en a besoin. À 15h30, tu n'as pas encore commencé car tu as joué. Quel est le PLUS GRAND coût de ce retard ?",
       "options": [
-        "L'amende.",
-        "La perte de confiance.",
-        "Le temps passé à s'excuser."
+        "Tu devras travailler vite et faire un travail de mauvaise qualité.",
+        "Ton ami ne pourra plus compter sur toi.",
+        "Tu devras t'excuser et perdre du temps."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "Le coût d'un retard est la perte de confiance. La réputation est la ressource la plus précieuse d'un leader.",
-      "leconStrategique": "La fiabilité est la base de toute collaboration. Honore ton engagement, même si c'est inconfortable.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension du coût d'opportunité (ce que l'on sacrifie en choisissant une option plutôt qu'une autre).",
-      "evaluationCriteria": "La réponse doit identifier clairement ce qui est sacrifié et pourquoi le choix final est optimal. Bonus: L'enfant quantifie le coût d'opportunité (temps, argent, valeur)."
+      "feedbackCorrect": "Bravo ! Le plus grand coût d'un retard n'est pas le temps perdu, mais la CONFIANCE perdue.\n\nUn leader gère son temps pour HONORER ses engagements. Respecter un délai, c'est respecter les autres. La réputation de fiabilité est la ressource la plus précieuse d'un leader.\n\n💡 Lien avec la Gestion du Temps : Si tu avais PLANIFIÉ ton temps (M2-D2), tu aurais commencé le devoir à 14h et évité ce retard !",
+      "feedbackIncorrect": "Pas tout à fait. Le temps perdu ou les excuses sont des coûts mineurs.\n\nLe VRAI coût d'un retard, c'est la CONFIANCE perdue. Ton ami ne pourra plus compter sur toi pour les prochaines fois.\n\nUn leader gère son temps pour protéger sa réputation de fiabilité.",
+      "leconStrategique": "La fiabilité est la base de toute collaboration. Un leader ne gère pas son temps seulement pour lui, mais pour honorer ses engagements envers les autres. Respecter un délai, c'est respecter les personnes qui comptent sur toi.",
+      "referenceCroisee": "M2-D2 (Planification), M8 (Leadership & Équipe)",
+      "mentorGoal": "Tester la compréhension du COÛT IMMATÉRIEL (confiance, réputation) vs coût matériel (temps, excuses). L'enfant doit comprendre que le retard a un impact sur la RELATION et la capacité future à collaborer, ce qui est le fondement de la gestion du temps en contexte de leadership.",
+      "evaluationCriteria": "1. Réponse correcte : B (Perte de confiance). 2. BONUS (discussion mentor) : L'enfant comprend que gérer son temps protège sa réputation de leader fiable."
     }
   },
   "m3": {
