@@ -132,7 +132,7 @@
           "instruction": "A resource allocation problem always starts with a precise calculation. Here: 100 cupcakes ÷ 12 per box = ?"
         },
         "etape2": {
-          "titre": "2. Euclidean Division",
+          "titre": "2. Calculate The Boxes And The Rest",
           "type_etape": "validation_case",
           "instruction": "I understand: 100 ÷ 12 gives me a QUOTIENT (number of complete boxes) and a REMAINDER (surplus to manage).",
           "placeholder": null
@@ -204,9 +204,9 @@
       "referenceCroisee": "M8, M9",
         "briefing": {
         "etape1": {
-          "titre": "1. Understanding The Ratio",
+          "titre": "1. Find The Number To Multiply By",
           "type_etape": "validation_case",
-          "instruction": "I understand: 8 people ÷ 4 people = 2. So I must MULTIPLY all quantities by 2. This is the transformation RATIO.",
+          "instruction": "I understand: 8 people ÷ 4 people = 2. So I must MULTIPLY all quantities by 2. This is the number by which I transform the recipe.",
           "placeholder": null
         },
         "etape2": {
@@ -234,9 +234,9 @@
         "referenceCroisee": "M1, M8",
         "briefing": {
             "etape1": {
-                "titre": "1. The Eisenhower Matrix",
+                "titre": "1. The 4 Types Of Missions",
                 "type_etape": "texte_guide",
-                "instruction": "The Matrix has 4 boxes: (1) URGENT + IMPORTANT = Do first (e.g., feed the dog). (2) NOT URGENT + IMPORTANT = The leader's true priority (e.g., homework). (3) URGENT + NOT IMPORTANT = Do quickly or delegate (e.g., help sister). (4) NEITHER URGENT NOR IMPORTANT = Avoid or do last (e.g., video game)."
+                "instruction": "There are 4 types of missions: (1) URGENT + IMPORTANT = Do first (e.g., feed the dog). (2) NOT URGENT + IMPORTANT = The leader's true priority (e.g., homework). (3) URGENT + NOT IMPORTANT = Do quickly or delegate (e.g., help sister). (4) NEITHER URGENT NOR IMPORTANT = Avoid or do last (e.g., video game)."
             },
             "etape2": {
                 "titre": "2. Place The Missions",
@@ -257,8 +257,8 @@
     "defi2": {
         "titre": "Mission: Party Planning",
         "scenario": "You're organizing a surprise birthday party for your best friend on Saturday at 2pm. Guests arrive at that time, you MUST be ready!\n\nYou have 3 days (Wednesday, Thursday, Friday) to prepare everything. Here are the 4 tasks to do:\n\n• Task A: Buy decorations → Takes 1 day (because you must go to the store with your parents)\n• Task B: Prepare cakes → Takes 3 hours (baking included)\n• Task C: Install decorations → Takes 2 hours\n• Task D: Wrap gifts → Takes 1 hour\n\nWARNING: You can only do one thing at a time!",
-        "instruction": "1. In what order should you do these 4 tasks to be ready Saturday 2pm? (Write the order: A, then..., then..., then...)\n2. What day and time should you start the first task to finish on time?\n3. Which task is the most critical (if you miss it, everything fails)? Why?\n\n💡 Important word: BACKWARD PLANNING = Start from the end (the deadline) and go back in time to know when to start.",
-        "leconStrategique": "Leaders never start by doing the first thing that comes to mind. They first look at the deadline, then they go back in time to plan each step. This is backward planning: starting from the goal to build the path.",
+        "instruction": "1. In what order should you do these 4 tasks to be ready Saturday 2pm? (Write the order: A, then..., then..., then...)\n2. What day and time should you start the first task to finish on time?\n3. Which task is the most critical (if you miss it, everything fails)? Why?\n\n💡 Important word: PLAN BACKWARD = Start from the end (the deadline) and go back in time to know when to start. It's like going back in time!",
+        "leconStrategique": "Leaders never start by doing the first thing that comes to mind. They first look at the deadline, then they go back in time to plan each step. This is planning backward: starting from the goal to build the path.\n\nIn business: Professionals call this 'backward planning'. It's an essential skill for all projects!",
       "referenceCroisee": "M6, M8",
       "briefing": {
         "etape1": {
@@ -321,7 +321,7 @@
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Well done! The biggest cost of a delay is not the lost time, but the lost TRUST.\n\nA leader manages their time to HONOR their commitments. Respecting a deadline means respecting others. A reputation for reliability is a leader's most valuable resource.\n\n💡 Link to Time Management: If you had PLANNED your time (M2-D2), you would have started the assignment at 2 PM and avoided this delay!",
       "feedbackIncorrect": "Not quite. The lost time or apologies are minor costs.\n\nThe REAL cost of a delay is the lost TRUST. Your friend won't be able to count on you next time.\n\nA leader manages their time to protect their reputation for reliability.",
-      "leconStrategique": "Reliability is the foundation of all collaboration. A leader doesn't manage their time just for themselves, but to honor their commitments to others. Respecting a deadline means respecting the people who count on you.",
+      "leconStrategique": "Delay has an INVISIBLE COST: what we lose without seeing it (trust, reputation). Reliability is the foundation of all collaboration. A leader doesn't manage their time just for themselves, but to honor their commitments to others.\n\nIn business: Professionals talk about 'intangible cost' (invisible). Respecting a deadline means respecting the people who count on you.",
       "referenceCroisee": "M2-D2 (Planning), M8 (Leadership & Team)",
       "mentorGoal": "Test understanding of INTANGIBLE COST (trust, reputation) vs tangible cost (time, apologies). The child must understand that delay impacts the RELATIONSHIP and future ability to collaborate, which is the foundation of time management in leadership context.",
       "evaluationCriteria": "1. Correct answer: B (Loss of trust). 2. BONUS (mentor discussion): The child understands that managing their time protects their reputation as a reliable leader."
@@ -374,8 +374,8 @@
     "defi3": {
       "titre": "Mission: The Paper Bridge",
       "scenario": "Engineer challenge! You must build a bridge with a SINGLE sheet of paper to connect two tables (20 cm gap). The bridge must support a small toy (50g).\n\nProblem: If you leave the sheet FLAT, it falls immediately.\n\nYour mission: Find what SHAPE to give the paper to make it strong enough.",
-      "instruction": "1. What shape would you give the paper to make it stronger? (Accordion fold? Rolled tube? V-fold?)\n\n2. Explain why this shape is stronger than a flat sheet (think about rigidity and weight distribution).\n\n3. If you had to build 10 identical bridges quickly, which shape would be easiest to replicate?\n\n4. Test mentally: what could make your bridge fail?\n\n💡 Important words:\n• RIGIDITY = resistance to bending\n• REPLICATION = reproduce the same thing multiple times",
-      "leconStrategique": "SHAPE changes everything! A weak material (paper) can become strong with the right STRUCTURE.\n\nIt's not the SIZE of the resource that matters (money, materials, team), it's the MODELING and INTERNAL ORGANIZATION that guarantee resistance to stress and system stability.\n\nIn business: A small well-organized team (V-structure) often beats a large disorganized team (flat sheet).",
+      "instruction": "1. What shape would you give the paper to make it stronger? (Accordion fold? Rolled tube? V-fold?)\n\n2. Explain why this shape is stronger than a flat sheet (think about rigidity and weight distribution).\n\n3. If you had to build 10 identical bridges quickly, which shape would be easiest to replicate?\n\n4. Test mentally: what could make your bridge fail?\n\n💡 Important words:\n• RIGIDITY = resistance to bending\n• DO THE SAME EVERY TIME = reproduce the same thing multiple times (that's how you guarantee quality!)",
+      "leconStrategique": "SHAPE changes everything! A weak material (paper) can become strong with the right STRUCTURE.\n\nIt's not the SIZE of the resource that matters (money, materials, team), it's the ORGANIZATION that guarantees the system's strength.\n\nIn business: A small well-organized team (V-structure) often beats a large disorganized team (flat sheet). Professionals call this 'standardization': doing the same every time to guarantee quality.",
       "referenceCroisee": "M3 (Structures and Systems), M7 (Automation)",
       "briefing": {
         "etape1": {
