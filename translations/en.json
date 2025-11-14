@@ -153,25 +153,32 @@
       "evaluationCriteria": "1. Exact calculation: 8 complete boxes, 4 remaining cupcakes. 2. At least 2 creative reallocation solutions. 3. BONUS (Systems Thinking): The child proposes a preventive solution (e.g., 'order 96 cupcakes next time') or systematizable approach."
     },
     "defi2": {
-      "titre": "Challenge: Fair Share",
-      "scenario": "You must distribute 1500 liters of water among 5 camps. Each camp is entitled to an equal share. How many liters of water should each camp receive?",
-      "instruction": "Use division to find the fairest share. (Answer: Number of Liters).",
-      "leconStrategique": "Division is the fundamental tool for justice and equity in resource management. Sharing is the essence of leadership.",
-      "referenceCroisee": "M9",
+      "titre": "Mission: The Camp Water Manager",
+      "scenario": "You are responsible for water management at a summer camp. You have 900 liters of water for today. Five groups need it:\n\n• Group A: Kitchen (prepares meals for everyone)\n• Group B: Showers (hygiene and health)\n• Group C: Pool (games and swimming)\n• Group D: Garden (watering vegetables)\n• Group E: Reserve (in case there's a problem)\n\nProblem: You can't give 200 liters to each group. There isn't enough!",
+      "instruction": "1. If you shared equally, how much would each group receive? (Calculation: 900 ÷ 5)\n2. Now, rank the groups from MOST to LEAST important. Why?\n3. Propose your final distribution in liters for each group.\n\n💡 Important word: PRIORITIZATION = Choosing what's most important when you can't do everything.\n\n💡 Important word: IMPACT = The effect of your decision on the whole camp. Example: The kitchen feeds EVERYONE = big impact!",
+      "leconStrategique": "A good leader knows how to prioritize. You must give more to things that have the most IMPACT. What you learn with water also works with time and money: the method is the same!",
+      "referenceCroisee": "M2, M9",
       "briefing": {
         "etape1": {
-          "titre": "1. Define the Divisor",
+          "titre": "1. Equal Sharing",
           "type_etape": "validation_case",
-          "instruction": "I have identified the total number (1500) and the number of recipients (5). The operation is: 1500 ÷ 5."
+          "instruction": "I calculated: 900 ÷ 5 = 180 liters per group. But giving the same to everyone isn't always the best solution!",
+          "placeholder": null
         },
         "etape2": {
-          "titre": "2. Simplify the Task",
+          "titre": "2. Measuring Impact",
           "type_etape": "texte_guide",
-          "instruction": "Temporarily ignore the zeros (15 ÷ 5). Find the result. Then put the zeros back at the end. Simplifying complex problems is the mark of a strategic mind."
+          "instruction": "Ask yourself this question for each group: 'If this group doesn't have enough water, how serious is it for how many people?' Kitchen → Everyone is hungry = 100 people affected. Pool → No swimming = Too bad, but we can play elsewhere. The more people affected, the greater the IMPACT."
+        },
+        "etape3": {
+          "titre": "3. My Decision",
+          "type_etape": "champ_texte",
+          "instruction": "Distribute the 900 liters among the 5 groups. Explain why you give more to some than others.",
+          "placeholder": "Kitchen: ...L because... | Showers: ...L because... | etc."
         }
       },
-      "mentorGoal": "Evaluates understanding of equity and large-scale division. The goal is to simplify large numbers to find the solution quickly.",
-      "evaluationCriteria": "The answer must be 300. Bonus: The child mentions simplification (15/5=3, then adding zeros) in their reasoning (if open-ended response)."
+      "mentorGoal": "Introduce PRIORITIZATION and IMPACT measurement. The child must understand that equality ≠ efficiency and that a leader distributes according to importance, not blind equity.",
+      "evaluationCriteria": "1. Correct calculation: 180L if equal. 2. Coherent logic: More water to high-impact groups (Kitchen/Showers > Garden/Reserve > Pool). 3. Clear justification of choices. 4. BONUS: The child anticipates consequences (e.g., 'If the garden has no water, vegetables die')."
     },
     "defi3": {
       "titre": "Quiz: Quick Chains",

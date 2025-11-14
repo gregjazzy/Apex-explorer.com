@@ -153,31 +153,32 @@
       "evaluationCriteria": "1. Calcul exact : 8 boîtes complètes, 4 cupcakes restants. 2. Au moins 2 solutions créatives de réaffectation. 3. BONUS (Pensée Systémique) : L'enfant propose une solution préventive (ex: 'commander 96 cupcakes la prochaine fois') ou systématisable."
     },
     "defi2": {
-      "titre": "Défi: Le Dilemme du Camp de Vacances",
-      "scenario": "Tu es responsable de l'eau dans un camp de vacances. Tu as 900 litres d'eau pour aujourd'hui. Il y a 5 groupes différents qui en ont besoin :\n\n• Groupe A : Cuisine (prépare les repas pour tout le monde)\n• Groupe B : Douches (hygiène)\n• Groupe C : Piscine (loisirs)\n• Groupe D : Jardin (arrosage des plantes)\n• Groupe E : Réserve d'urgence (au cas où)\n\nProblème : il n'y a PAS assez d'eau pour donner 200 litres à chacun !",
-      "instruction": "1. Si tu devais partager équitablement, combien chaque groupe recevrait-il ? (Calcul simple)\n2. Maintenant, utilise la PRIORISATION : classe les groupes du PLUS au MOINS important.\n3. Propose ta répartition finale en expliquant ton raisonnement.\n\n💡 **Nouveau mot** : PRIORISATION = Choisir ce qui est le plus important quand tu ne peux pas tout faire. C'est la compétence n°1 des PDG et dirigeants !\n\n🚀 **Concept clé** : IMPACT = L'effet de ta décision sur tout le groupe. Exemple : La cuisine a un IMPACT énorme car elle nourrit TOUT LE MONDE.",
-      "leconStrategique": "Dans le monde de demain, tu devras souvent choisir entre plusieurs bonnes options avec des ressources limitées. Savoir PRIORISER selon l'IMPACT (pas l'urgence !) est ce qui distingue un leader d'un exécutant.",
-      "referenceCroisee": "M9",
+      "titre": "Mission: Le Chef de l'Eau au Camp",
+      "scenario": "Tu es responsable de l'eau dans un camp de vacances. Tu as 900 litres d'eau pour aujourd'hui. Cinq groupes en ont besoin :\n\n• Groupe A : Cuisine (prépare les repas pour tout le monde)\n• Groupe B : Douches (hygiène et santé)\n• Groupe C : Piscine (jeux et baignade)\n• Groupe D : Jardin (arrosage des légumes)\n• Groupe E : Réserve (au cas où il y a un problème)\n\nProblème : Tu ne peux pas donner 200 litres à chacun. Il n'y en a pas assez !",
+      "instruction": "1. Si tu partageais équitablement, combien chaque groupe recevrait-il ? (Calcul : 900 ÷ 5)\n2. Maintenant, classe les groupes du PLUS au MOINS important. Pourquoi ?\n3. Propose ta répartition finale en litres pour chaque groupe.\n\n💡 Mot important : PRIORISATION = Choisir ce qui est le plus important quand tu ne peux pas tout faire.\n\n💡 Mot important : IMPACT = L'effet de ta décision sur tout le camp. Exemple : La cuisine nourrit TOUT LE MONDE = gros impact !",
+      "leconStrategique": "Un bon leader sait prioriser. Tu dois donner plus aux choses qui ont le plus d'IMPACT. Ce que tu apprends avec l'eau marche aussi avec le temps et l'argent : la méthode est la même !",
+      "referenceCroisee": "M2, M9",
       "briefing": {
         "etape1": {
-          "titre": "1. Le Calcul Équitable",
+          "titre": "1. Le Partage Égal",
           "type_etape": "validation_case",
-          "instruction": "J'ai calculé : 900 litres ÷ 5 groupes = 180 litres par groupe. Mais l'ÉQUITÉ (donner pareil à tous) n'est pas toujours la meilleure stratégie."
+          "instruction": "J'ai calculé : 900 ÷ 5 = 180 litres par groupe. Mais donner pareil à tous n'est pas toujours la meilleure solution !",
+          "placeholder": null
         },
         "etape2": {
-          "titre": "2. Analyser L'IMPACT",
+          "titre": "2. Mesurer L'Impact",
           "type_etape": "texte_guide",
-          "instruction": "Pose-toi cette question pour chaque groupe : 'Si je réduis l'eau ICI, quel est l'effet sur TOUT le camp ?' La cuisine nourrit 100% des gens = IMPACT maximum. La piscine = plaisir = IMPACT faible."
+          "instruction": "Pose-toi cette question pour chaque groupe : 'Si ce groupe n'a pas assez d'eau, c'est grave pour combien de personnes ?' Cuisine → Tout le monde a faim = 100 personnes touchées. Piscine → Pas de baignade = Dommage, mais on peut jouer ailleurs. Plus il y a de personnes touchées, plus l'IMPACT est grand."
         },
         "etape3": {
-          "titre": "3. Le Système De PRIORISATION",
+          "titre": "3. Ma Décision",
           "type_etape": "champ_texte",
-          "instruction": "Un leader efficace utilise toujours cette méthode :\n1. Identifier les contraintes (ici : pas assez d'eau)\n2. Mesurer l'IMPACT de chaque choix\n3. PRIORISER selon l'impact\n4. Expliquer et justifier\n\nEssaie maintenant avec ce défi !",
-          "placeholder": "Ma stratégie : Cuisine (300L car...), Douches (250L car...), etc."
+          "instruction": "Répartis les 900 litres entre les 5 groupes. Explique pourquoi tu donnes plus à certains qu'à d'autres.",
+          "placeholder": "Cuisine : ...L car... | Douches : ...L car... | etc."
         }
       },
-      "mentorGoal": "Introduit les concepts de PRIORISATION et d'IMPACT. L'enfant doit comprendre que l'équité n'est pas toujours optimale et qu'un leader mesure l'effet systémique de ses décisions.",
-      "evaluationCriteria": "1. Calcul correct : 180L si équitable. 2. Classification cohérente basée sur l'IMPACT (Cuisine/Douches > Réserve > Jardin > Piscine). 3. Utilisation des termes 'priorisation' et 'impact' dans la justification. Bonus : L'enfant anticipe les conséquences système (ex: moins d'eau au jardin = légumes morts = moins de nourriture)."
+      "mentorGoal": "Introduire la PRIORISATION et la mesure d'IMPACT. L'enfant doit comprendre qu'égalité ≠ efficacité et qu'un leader répartit selon l'importance, pas selon l'équité aveugle.",
+      "evaluationCriteria": "1. Calcul correct : 180L si équitable. 2. Logique cohérente : Plus d'eau aux groupes à fort impact (Cuisine/Douches > Jardin/Réserve > Piscine). 3. Justification claire de ses choix. 4. BONUS : L'enfant anticipe les conséquences (ex: 'Si le jardin n'a pas d'eau, les légumes meurent')."
     },
     "defi3": {
       "titre": "Quiz: Le Business des Cookies",
