@@ -329,25 +329,31 @@
   },
   "m3": {
     "defi1": {
-        "titre": "Challenge: The Tower Balance",
-        "scenario": "You must build the tallest possible tower with 10 blocks. How should you place the blocks to ensure maximum STABILITY?",
-        "instruction": "Write a sentence explaining where the center of gravity (CG) should be: High or Low, and why.",
-        "leconStrategique": "Stability is more important than height. A solid foundation allows for sustainable growth.",
-        "referenceCroisee": "M7",
+        "titre": "Mission: The Treehouse",
+        "scenario": "You're building a treehouse with your team. You have light planks and very heavy planks.\n\nYour friend says: 'Let's put the heavy planks UP TOP to make a strong roof!'\n\nYou think: 'No, the heavy planks should go DOWN for the base.'\n\nWho's right? Why?",
+        "instruction": "1. Where should you put the heaviest planks: up high or down low?\n\n2. Explain your leader's reasoning: why does the BASE of the treehouse need the heavy planks (think about stability and balance).\n\n3. What would happen if you put all the weight up high?\n\n💡 Important word: STABILITY = ability of a structure to stay balanced without falling.",
+        "leconStrategique": "An effective system or structure requires a solid BASE. The weight (the most important resources) must always be at the bottom to ensure stability and balance.\n\nWhether it's a treehouse, a project, or a team: everything starts with strong foundations. This is the STRONG BASE rule.",
+        "referenceCroisee": "M7 (Systems and Automation)",
         "briefing": {
             "etape1": {
-                "titre": "1. The Center of Gravity",
+                "titre": "1. The Stability Concept",
                 "type_etape": "validation_case",
-                "instruction": "I understand that the center of gravity must be as low as possible. Heavy blocks go down, lighter ones go up."
+                "instruction": "I understand: if the weight is up high, the structure is dangerous and can topple. An inverted pyramid won't stand. The weight must be DOWN LOW."
             },
             "etape2": {
-                "titre": "2. The Base Rule",
+                "titre": "2. The Backpack Analogy",
                 "type_etape": "texte_guide",
-                "instruction": "To be stable, the tower must have a wide base. Stability comes from width and inverse height (wider than tall)."
+                "instruction": "Imagine you're carrying a very heavy backpack (10 kg). If the weight is at the TOP of the pack (near your shoulders), you're off-balance and risk falling backward. If the weight is at the BOTTOM of the pack (near your waist), you're stable and balanced. It's the same for ALL structures: treehouses, buildings, towers!"
+            },
+            "etape3": {
+                "titre": "3. My Leader's Explanation",
+                "type_etape": "champ_texte",
+                "instruction": "Explain the STRONG BASE RULE in your own words. Use the example of a pyramid, backpack, or tower.",
+                "placeholder": "The STRONG BASE rule says that..."
             }
       },
-      "mentorGoal": "Assess understanding of center of gravity and structural stability. The child must demonstrate they know where to place weight to maximize stability.",
-      "evaluationCriteria": "The answer must identify the lowest and most central position for the center of gravity. Bonus: The child explains why a low center of gravity makes the structure more stable."
+      "mentorGoal": "Introduce the concept of STRUCTURAL STABILITY and the STRONG BASE rule. The child must understand that in any system (physical, organizational, strategic), heavy/important resources must be at the bottom to ensure balance.",
+      "evaluationCriteria": "1. Correct answer: Heavy planks DOWN LOW. 2. Coherent explanation: Mentions stability, balance, or risk of toppling. 3. Anticipation: Everything up high = unstable/dangerous treehouse. 4. BONUS: The child uses the term 'STRONG BASE' or makes the connection with other structures (buildings, pyramids)."
     },
     "defi2": {
         "titre": "Quiz: The Efficient Lever",

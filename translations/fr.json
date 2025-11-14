@@ -330,24 +330,30 @@
   "m3": {
     "defi1": {
         "titre": "Mission: La Cabane Dans Les Arbres",
-        "scenario": "Tu veux construire une cabane dans un arbre avec tes amis. Tu as des planches de bois de différentes tailles. Ton ami veut mettre toutes les grosses planches EN HAUT pour faire le toit. Toi, tu penses qu'il faut les mettre EN BAS. Qui a raison ?",
-        "instruction": "1. Où dois-tu mettre les planches les plus lourdes : en haut ou en bas ?\n2. Explique pourquoi avec tes propres mots (pense à l'équilibre).\n3. Que se passerait-il si tu mettais tout le poids en haut ?",
-        "leconStrategique": "Dans la construction (et dans la vie), les bases solides sont essentielles. Une entreprise, un projet, une équipe : tout commence par des fondations fortes. Les choses lourdes et importantes vont toujours en bas.",
-        "referenceCroisee": "M7",
+        "scenario": "Tu construis une cabane dans un arbre avec ton équipe. Tu as des planches légères et des planches très lourdes.\n\nTon ami dit : 'Mettons les planches lourdes EN HAUT pour faire un toit solide !'\n\nToi, tu penses : 'Non, les planches lourdes doivent aller EN BAS pour la base.'\n\nQui a raison ? Pourquoi ?",
+        "instruction": "1. Où dois-tu mettre les planches les plus lourdes : en haut ou en bas ?\n\n2. Explique ton raisonnement de leader : pourquoi la BASE de la cabane a besoin des planches lourdes (pense à la stabilité et à l'équilibre).\n\n3. Que se passerait-il si tu mettais tout le poids en haut ?\n\n💡 Mot important : STABILITÉ = capacité d'une structure à rester en équilibre sans tomber.",
+        "leconStrategique": "Un système ou une structure efficace nécessite une BASE solide. Le poids (les ressources les plus importantes) doit toujours être en bas pour garantir la stabilité et l'équilibre.\n\nQue ce soit une cabane, un projet ou une équipe : tout commence par des fondations fortes. C'est la règle de la BASE FORTE.",
+        "referenceCroisee": "M7 (Systèmes et Automatisation)",
         "briefing": {
             "etape1": {
-                "titre": "1. Penser À L'Équilibre",
+                "titre": "1. Le Concept de Stabilité",
                 "type_etape": "validation_case",
-                "instruction": "J'ai compris : si je mets les choses lourdes en haut, la cabane risque de basculer ou de tomber. C'est comme une pyramide : large en bas, léger en haut."
+                "instruction": "J'ai compris : si le poids est en haut, la structure est dangereuse et peut basculer. Une pyramide inversée ne tient pas. Le poids doit être EN BAS."
             },
             "etape2": {
-                "titre": "2. Tester Mentalement",
+                "titre": "2. L'Analogie du Sac À Dos",
                 "type_etape": "texte_guide",
-                "instruction": "Imagine que tu portes un sac à dos très lourd. C'est plus facile si le poids est en bas du sac ou en haut ? La réponse : EN BAS ! C'est pareil pour tout ce qu'on construit."
+                "instruction": "Imagine que tu portes un sac à dos très lourd (10 kg). Si le poids est en HAUT du sac (près de tes épaules), tu es déséquilibré et tu risques de tomber en arrière. Si le poids est en BAS du sac (près de ta taille), tu es stable et en équilibre. C'est pareil pour TOUTES les structures : cabanes, immeubles, tours !"
+            },
+            "etape3": {
+                "titre": "3. Mon Explication de Leader",
+                "type_etape": "champ_texte",
+                "instruction": "Explique la RÈGLE DE LA BASE FORTE avec tes propres mots. Utilise l'exemple de la pyramide, du sac à dos, ou d'une tour.",
+                "placeholder": "La règle de la BASE FORTE dit que..."
             }
       },
-      "mentorGoal": "Introduit le concept d'équilibre et de stabilité structurelle de manière concrète. L'enfant doit comprendre que le poids doit être en bas pour la stabilité.",
-      "evaluationCriteria": "1. Réponse : planches lourdes EN BAS. 2. Explication cohérente avec l'équilibre (risque de tomber, basculer). 3. Anticipation : tout en haut = cabane instable/dangereuse."
+      "mentorGoal": "Introduire le concept de STABILITÉ STRUCTURELLE et la règle de la BASE FORTE. L'enfant doit comprendre que dans tout système (physique, organisationnel, stratégique), les ressources lourdes/importantes doivent être en bas pour garantir l'équilibre.",
+      "evaluationCriteria": "1. Réponse correcte : Planches lourdes EN BAS. 2. Explication cohérente : Mentionne stabilité, équilibre, ou risque de basculer. 3. Anticipation : Tout en haut = cabane instable/dangereuse. 4. BONUS : L'enfant utilise le terme 'BASE FORTE' ou fait le lien avec d'autres structures (immeubles, pyramides)."
     },
     "defi2": {
         "titre": "Quiz: Le Vélo Dans La Côte",
