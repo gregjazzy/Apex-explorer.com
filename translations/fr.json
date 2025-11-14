@@ -227,20 +227,32 @@
   },
   "m2": {
     "defi1": {
-        "titre": "Défi: L'Urgence et l'Importance",
-        "scenario": "Tu as quatre tâches : 1. Nourrir le chien (Urgent/Important). 2. Jouer à un jeu (Ni Urgent/Ni Important). 3. Finir un devoir (Non Urgent/Important). 4. Aider ta sœur (Urgent/Non Important). Comment les priorises-tu (1 à 4) ?",
-        "instruction": "Écris la tâche que tu vas faire en PREMIER et la tâche que tu vas faire en DERNIER.",
-        "leconStrategique": "Les leaders s'occupent d'abord de l'IMPORTANT (même si ce n'est pas urgent) avant de l'Urgent mais non important.",
-        "referenceCroisee": "M8",
+        "titre": "Mission: L'Arbitrage des Priorités",
+        "scenario": "Ton agenda est plein ! Tu as quatre missions pour réussir ta journée. Ton rôle de leader : identifier la vraie valeur de chaque tâche.\n\n• Mission A : Nourrir le chien → Si tu ne le fais pas, il souffre et tes parents se fâchent. (Urgent ET Important)\n• Mission B : Finir un devoir → Ce n'est que pour la semaine prochaine, mais il te permet d'apprendre une compétence importante. (Non Urgent MAIS Important)\n• Mission C : Aider ta sœur avec son jeu → Elle a besoin de toi tout de suite, mais c'est juste pour s'amuser. (Urgent MAIS Non Important)\n• Mission D : Jouer à ton jeu vidéo → C'est amusant, mais ça n'a aucune conséquence sur ton avenir. (Ni Urgent Ni Important)",
+        "instruction": "1. Classe les quatre missions dans l'ordre où tu devrais les faire (de 1 à 4).\n2. Explique pourquoi la mission que tu as mise en position 2 est plus importante que celle en position 3.\n\n💡 Mots importants :\n• URGENT = À faire tout de suite\n• IMPORTANT = A un impact sur ton avenir ou tes responsabilités",
+        "leconStrategique": "Les leaders savent que l'URGENT n'est pas toujours l'IMPORTANT. La vraie priorité ? Les tâches importantes non urgentes (comme apprendre, se préparer, réfléchir). C'est ce qui différencie un leader qui construit son avenir d'une personne qui ne fait que réagir aux urgences !",
+        "referenceCroisee": "M1, M8",
         "briefing": {
             "etape1": {
-                "titre": "1. La Matrice Eisenhower",
+                "titre": "1. La Matrice D'Eisenhower",
                 "type_etape": "texte_guide",
-                "instruction": "Dessine une boîte avec 4 cases (Urgent/Important, Urgent/Non Important, Non Urgent/Important, Non Urgent/Non Important). Place chaque tâche dans sa bonne case. Les cases non urgentes et importantes sont la vraie priorité."
+                "instruction": "La Matrice a 4 cases : (1) URGENT + IMPORTANT = À faire en premier (ex: nourrir le chien). (2) NON URGENT + IMPORTANT = La vraie priorité du leader (ex: devoir). (3) URGENT + NON IMPORTANT = À faire vite ou déléguer (ex: aider sœur). (4) NI URGENT NI IMPORTANT = À éviter ou faire en dernier (ex: jeu vidéo)."
+            },
+            "etape2": {
+                "titre": "2. Placer Les Missions",
+                "type_etape": "validation_case",
+                "instruction": "J'ai compris : Le devoir (Mission B) n'est pas urgent, mais c'est le plus IMPORTANT pour mon avenir. C'est ma vraie priorité de leader !",
+                "placeholder": null
+            },
+            "etape3": {
+                "titre": "3. Mon Arbitrage",
+                "type_etape": "champ_texte",
+                "instruction": "Explique pourquoi tu as classé les missions dans cet ordre. Quelle mission as-tu mise en 2ème position et pourquoi ?",
+                "placeholder": "J'ai mis ... en 2ème car..."
             }
       },
-      "mentorGoal": "Évaluer la compréhension de la Matrice d'Eisenhower (Important vs Urgent). L'enfant doit démontrer qu'il sait différencier Urgent/Important et prioriser correctement.",
-      "evaluationCriteria": "La réponse doit inclure la PRIORISATION CORRECTE des tâches selon la matrice (Important/Non Urgent en premier). Bonus: L'enfant justifie pourquoi les tâches importantes doivent précéder les urgentes."
+      "mentorGoal": "Évaluer la compréhension de la Matrice d'Eisenhower (Important vs Urgent). L'enfant doit démontrer qu'il sait différencier les 4 catégories et prioriser le Non Urgent/Important.",
+      "evaluationCriteria": "1. Ordre correct : A (Urgent+Important) → B (Non Urgent+Important) → C (Urgent+Non Important) → D (Ni Urgent Ni Important). 2. Justification cohérente : L'enfant explique que B (devoir) construit son avenir. 3. BONUS : L'enfant mentionne que les urgences non importantes (C) peuvent être déléguées ou faites rapidement."
     },
     "defi2": {
         "titre": "Quiz: Planification et Préparation",

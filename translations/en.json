@@ -227,20 +227,32 @@
   },
   "m2": {
     "defi1": {
-        "titre": "Challenge: Urgency vs. Importance",
-        "scenario": "You have four tasks: 1. Feed the dog (Urgent/Important). 2. Play a game (Neither Urgent/Nor Important). 3. Finish homework (Not Urgent/Important). 4. Help your sister (Urgent/Not Important). How do you prioritize them (1 to 4)?",
-        "instruction": "Write the task you will do FIRST and the task you will do LAST.",
-        "leconStrategique": "Leaders deal with the IMPORTANT things first (even if not urgent) before the Urgent but non-important ones.",
-        "referenceCroisee": "M8",
+        "titre": "Mission: Priority Arbitration",
+        "scenario": "Your schedule is full! You have four missions to succeed in your day. Your leader role: identify the true value of each task.\n\n• Mission A: Feed the dog → If you don't do it, he suffers and your parents get angry. (Urgent AND Important)\n• Mission B: Finish homework → It's only for next week, but it helps you learn an important skill. (Not Urgent BUT Important)\n• Mission C: Help your sister with her game → She needs you right now, but it's just for fun. (Urgent BUT Not Important)\n• Mission D: Play your video game → It's fun, but it has no consequence on your future. (Neither Urgent Nor Important)",
+        "instruction": "1. Rank the four missions in the order you should do them (from 1 to 4).\n2. Explain why the mission you put in position 2 is more important than the one in position 3.\n\n💡 Important words:\n• URGENT = To do right now\n• IMPORTANT = Has an impact on your future or responsibilities",
+        "leconStrategique": "Leaders know that URGENT is not always IMPORTANT. The real priority? Important non-urgent tasks (like learning, preparing, thinking). This is what differentiates a leader who builds their future from a person who only reacts to urgencies!",
+        "referenceCroisee": "M1, M8",
         "briefing": {
             "etape1": {
                 "titre": "1. The Eisenhower Matrix",
                 "type_etape": "texte_guide",
-                "instruction": "Draw a box with 4 squares (Urgent/Important, Urgent/Not Important, Not Urgent/Important, Not Urgent/Not Important). Place each task in its correct square. The non-urgent and important squares are the true priority."
+                "instruction": "The Matrix has 4 boxes: (1) URGENT + IMPORTANT = Do first (e.g., feed the dog). (2) NOT URGENT + IMPORTANT = The leader's true priority (e.g., homework). (3) URGENT + NOT IMPORTANT = Do quickly or delegate (e.g., help sister). (4) NEITHER URGENT NOR IMPORTANT = Avoid or do last (e.g., video game)."
+            },
+            "etape2": {
+                "titre": "2. Place The Missions",
+                "type_etape": "validation_case",
+                "instruction": "I understand: Homework (Mission B) is not urgent, but it's the most IMPORTANT for my future. It's my true leader priority!",
+                "placeholder": null
+            },
+            "etape3": {
+                "titre": "3. My Arbitration",
+                "type_etape": "champ_texte",
+                "instruction": "Explain why you ranked the missions in this order. Which mission did you put in 2nd position and why?",
+                "placeholder": "I put ... in 2nd because..."
             }
       },
-      "mentorGoal": "Assess understanding of the Eisenhower Matrix (Important vs Urgent). The child must demonstrate they can differentiate Urgent/Important and prioritize correctly.",
-      "evaluationCriteria": "The answer must include CORRECT PRIORITIZATION of tasks according to the matrix (Important/Not Urgent first). Bonus: The child justifies why important tasks should precede urgent ones."
+      "mentorGoal": "Evaluate understanding of the Eisenhower Matrix (Important vs Urgent). The child must demonstrate they can differentiate the 4 categories and prioritize Not Urgent/Important.",
+      "evaluationCriteria": "1. Correct order: A (Urgent+Important) → B (Not Urgent+Important) → C (Urgent+Not Important) → D (Neither Urgent Nor Important). 2. Coherent justification: The child explains that B (homework) builds their future. 3. BONUS: The child mentions that non-important urgencies (C) can be delegated or done quickly."
     },
     "defi2": {
         "titre": "Quiz: Planning and Preparation",
