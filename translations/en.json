@@ -471,19 +471,20 @@
       "evaluationCriteria": "1. Correct sequence: A → B → C → D (Cut → Paint → Assemble → Dry). 2. Error explanation: Identifies that C (Assembly) cannot be done before A (Cut) because it's a blockage. 3. Justification for D at the end: Drying must be done after painting. 4. BONUS: The child makes a connection with a real project (construction, cooking recipe) or mentions the term 'Critical Path'."
     },
     "defi3": {
-      "titre": "Quiz: The Missing Pattern",
-      "question": "What is the next symbol in this sequence: Circle, Square, Triangle, Circle, Square, ... ?",
+      "titre": "Quiz: The Rocket Sequence",
+      "question": "A rocket takes off in stages. At each new stage, it adds one more booster to go higher!\n\nHere are the first 4 stages:\n\nStage 1: 🚀 (1 booster)\nStage 2: 🚀🚀 (2 boosters)\nStage 3: 🚀🚀🚀 (3 boosters)\nStage 4: 🚀🚀🚀🚀 (4 boosters)\n\nQuestion: How many boosters will the rocket have at stage 5?",
       "options": [
-        "Circle",
-        "Square",
-        "Triangle"
+        "3 boosters",
+        "4 boosters",
+        "5 boosters"
       ],
       "bonneReponseIndex": 2,
-      "feedbackCorrect": "It's a sequence of 3. You found the pattern!",
-      "leconStrategique": "Identifying patterns allows you to predict the future and save time. Forecasting is the first quality of a leader.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Assess ability to use conditional logic (If...Then...Else) to solve complex problems.",
-      "evaluationCriteria": "The answer must correctly use conditional structures to arrive at the solution. Bonus: The child creates a decision tree or flowchart."
+      "feedbackCorrect": "Well done! 🎉 You found the RULE!\n\nLook carefully:\n→ Stage 1 = 1 booster\n→ Stage 2 = 2 boosters (+1)\n→ Stage 3 = 3 boosters (+1)\n→ Stage 4 = 4 boosters (+1)\n→ Stage 5 = 5 boosters (+1)\n\nThe rule: We always add +1 booster each time!\n\nThis is called LINEAR GROWTH: the number always increases the same way. A leader who sees this rule can predict stage 10, 20, or even 100!",
+      "feedbackIncorrect": "Not quite! Look carefully:\n\n• Stage 2 has ONE more booster than stage 1\n• Stage 3 has ONE more booster than stage 2\n\nHint: Look for the constant rule: What number do we add each time?",
+      "leconStrategique": "Finding the RULE (the pattern) of a system is an essential skill for a leader.\n\nIn real life:\n• A company gaining +10 customers per month = growth rule\n• A project progressing by +1 stage per day = constant rule\n• Sales that double = multiplication rule\n\nA leader who identifies these rules can ANTICIPATE the future and plan resources (team, budget, materials) BEFORE being overwhelmed.\n\nIn business: This is the power of PREDICTION!",
+      "referenceCroisee": "M4 (Analysis and Logic), M7 (Systems and Automation)",
+      "mentorGoal": "Introduce GROWTH PATTERN RECOGNITION and PREDICTION. The child must demonstrate they can identify a linear growth sequence (+1) and extrapolate to anticipate what comes next.",
+      "evaluationCriteria": "1. Correct answer: C (5 boosters). 2. BONUS: The child explains the pattern in their own words (e.g., 'we add 1 each time') or correctly predicts stage 10 (10 boosters) to show they understood the general rule."
     },
     "defi4": {
       "titre": "Challenge: The Variable Rule",

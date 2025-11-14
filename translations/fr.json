@@ -471,19 +471,20 @@
       "evaluationCriteria": "1. Séquence correcte : A → B → C → D (Couper → Peindre → Assembler → Sécher). 2. Explication erreur : Identifie que C (Assemblage) ne peut pas se faire avant A (Coupe) car c'est un blocage. 3. Justification D à la fin : Le séchage doit être fait après la peinture. 4. BONUS : L'enfant fait le lien avec un projet réel (construction, recette de cuisine) ou mentionne le terme 'Chemin Critique'."
     },
     "defi3": {
-      "titre": "Quiz: Le Schéma Manquant",
-      "question": "Quel est le prochain symbole dans cette séquence: Cercle, Carré, Triangle, Cercle, Carré, ... ?",
+      "titre": "Quiz: La Séquence de la Fusée",
+      "question": "Une fusée décolle par étapes. À chaque nouvelle étape, elle ajoute un booster supplémentaire pour aller plus haut !\n\nVoici les 4 premières étapes :\n\nÉtape 1 : 🚀 (1 booster)\nÉtape 2 : 🚀🚀 (2 boosters)\nÉtape 3 : 🚀🚀🚀 (3 boosters)\nÉtape 4 : 🚀🚀🚀🚀 (4 boosters)\n\nQuestion : Combien de boosters la fusée aura-t-elle à l'étape 5 ?",
       "options": [
-        "Cercle",
-        "Carré",
-        "Triangle"
+        "3 boosters",
+        "4 boosters",
+        "5 boosters"
       ],
       "bonneReponseIndex": 2,
-      "feedbackCorrect": "C'est une séquence de 3. Vous avez trouvé le patron!",
-      "leconStrategique": "Identifier des patrons vous permet de prévoir l'avenir et de gagner du temps. La prévision est la première qualité du leader.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Évaluer la capacité à utiliser la logique conditionnelle (Si...Alors...Sinon) pour résoudre des problèmes complexes.",
-      "evaluationCriteria": "La réponse doit utiliser correctement les structures conditionnelles pour arriver à la solution. Bonus: L'enfant crée un arbre de décision ou un organigramme."
+      "feedbackCorrect": "Bravo ! 🎉 Tu as trouvé la RÈGLE !\n\nObserve bien :\n→ Étape 1 = 1 booster\n→ Étape 2 = 2 boosters (+1)\n→ Étape 3 = 3 boosters (+1)\n→ Étape 4 = 4 boosters (+1)\n→ Étape 5 = 5 boosters (+1)\n\nLa règle : On ajoute toujours +1 booster à chaque fois !\n\nC'est ce qu'on appelle une CROISSANCE LINÉAIRE : le nombre augmente toujours de la même façon. Un leader qui voit cette règle peut prédire l'étape 10, 20, ou même 100 !",
+      "feedbackIncorrect": "Pas tout à fait ! Regarde attentivement :\n\n• L'étape 2 a UN booster de plus que l'étape 1\n• L'étape 3 a UN booster de plus que l'étape 2\n\nAstuce : Cherche la règle constante : Quel nombre ajoute-t-on à chaque fois ?",
+      "leconStrategique": "Trouver la RÈGLE (le pattern) d'un système est une compétence essentielle pour un leader.\n\nDans la vie réelle :\n• Une entreprise qui gagne +10 clients par mois = règle de croissance\n• Un projet qui progresse de +1 étape par jour = règle constante\n• Des ventes qui doublent = règle de multiplication\n\nUn leader qui identifie ces règles peut ANTICIPER l'avenir et planifier ses ressources (équipe, budget, matériel) AVANT d'être débordé.\n\nDans les affaires : C'est le pouvoir de la PRÉVISION !",
+      "referenceCroisee": "M4 (Analyse et Logique), M7 (Systèmes et Automatisation)",
+      "mentorGoal": "Introduire la RECONNAISSANCE DE PATTERNS DE CROISSANCE et la PRÉDICTION. L'enfant doit démontrer qu'il peut identifier une séquence de croissance linéaire (+1) et l'extrapoler pour anticiper la suite.",
+      "evaluationCriteria": "1. Réponse correcte : C (5 boosters). 2. BONUS : L'enfant explique le pattern avec ses mots (ex: 'on ajoute 1 à chaque fois') ou prédit correctement l'étape 10 (10 boosters) pour montrer qu'il a compris la règle générale."
     },
     "defi4": {
       "titre": "Défi: La Règle des Variables",
