@@ -356,7 +356,7 @@
       "evaluationCriteria": "1. Correct answer: Heavy planks DOWN LOW. 2. Coherent explanation: Mentions stability, balance, or risk of toppling. 3. Anticipation: Everything up high = unstable/dangerous treehouse. 4. BONUS: The child uses the term 'STRONG BASE' or makes the connection with other structures (buildings, pyramids)."
     },
     "defi2": {
-        "titre": "Quiz: The Bike on the Hill",
+"suivant"        "titre": "Quiz: The Bike on the Hill",
         "question": "You're on your bike at the top of a big downhill. You launch yourself without pedaling and you go faster and faster.\n\nWhat FORCE makes you accelerate?",
       "options": [
         "The force of your legs",
@@ -372,25 +372,31 @@
       "evaluationCriteria": "1. Correct answer: B (Gravity). 2. BONUS: The child understands that energy comes from height (potential energy) or mentions that gravity is an external/dominant force in the system."
     },
     "defi3": {
-      "titre": "Challenge: The Friction Problem",
-      "scenario": "You need to slide a heavy box across a rough surface. You can: 1. Push the box directly. 2. Put it on wooden logs. Which method best reduces friction, and why?",
-      "instruction": "Write the method (1 or 2) and the physics concept that justifies it (Static vs. Rolling Friction).",
-      "leconStrategique": "Leaders always seek to reduce resistance (friction) in a system to achieve their goals more easily.",
-      "referenceCroisee": "M6",
+      "titre": "Mission: The Paper Bridge",
+      "scenario": "Engineer challenge! You must build a bridge with a SINGLE sheet of paper to connect two tables (20 cm gap). The bridge must support a small toy (50g).\n\nProblem: If you leave the sheet FLAT, it falls immediately.\n\nYour mission: Find what SHAPE to give the paper to make it strong enough.",
+      "instruction": "1. What shape would you give the paper to make it stronger? (Accordion fold? Rolled tube? V-fold?)\n\n2. Explain why this shape is stronger than a flat sheet (think about rigidity and weight distribution).\n\n3. If you had to build 10 identical bridges quickly, which shape would be easiest to replicate?\n\n4. Test mentally: what could make your bridge fail?\n\n💡 Important words:\n• RIGIDITY = resistance to bending\n• REPLICATION = reproduce the same thing multiple times",
+      "leconStrategique": "SHAPE changes everything! A weak material (paper) can become strong with the right STRUCTURE.\n\nIt's not the SIZE of the resource that matters (money, materials, team), it's the MODELING and INTERNAL ORGANIZATION that guarantee resistance to stress and system stability.\n\nIn business: A small well-organized team (V-structure) often beats a large disorganized team (flat sheet).",
+      "referenceCroisee": "M3 (Structures and Systems), M7 (Automation)",
       "briefing": {
         "etape1": {
-          "titre": "1. Identify Resistance",
+          "titre": "1. The Power of Shape",
           "type_etape": "validation_case",
-          "instruction": "I have identified that friction is the force that opposes motion and wastes energy (Effort)."
+          "instruction": "I understand: a flat sheet bends easily. But if I fold it accordion-style, into a tube, or V-shape, it becomes much more RIGID because the folds create height and thickness!"
         },
         "etape2": {
-          "titre": "2. The Rolling Solution",
+          "titre": "2. The Engineer's Secret",
           "type_etape": "texte_guide",
-          "instruction": "Logs convert sliding friction (static) into rolling friction, which is much weaker. Leaders find systems that roll, rather than pushing them by force."
+          "instruction": "Engineers often use 'I', 'V' or tube shapes because these shapes distribute weight to the sides instead of concentrating everything in the center. It's like comparing a flat ruler (which bends) and a cardboard tube (which barely bends). This principle is used in bridges, skyscrapers, and even airplanes!"
+        },
+        "etape3": {
+          "titre": "3. My Engineer's Solution",
+          "type_etape": "champ_texte",
+          "instruction": "Explain which shape you choose and why it's strong. Also add: is it easy to replicate 10 times?",
+          "placeholder": "I choose the ... shape because it's rigid and easy to replicate because..."
         }
       },
-      "mentorGoal": "Assess understanding of material resistance and optimal design to support a load.",
-      "evaluationCriteria": "The answer must choose triangular or arch shape as the strongest. Bonus: The child justifies by force distribution or uniform compression."
+      "mentorGoal": "Introduce the concepts of STRUCTURAL RIGIDITY, WEIGHT DISTRIBUTION and STANDARDIZATION (replication). The child must understand that geometry (shape) transforms a material's properties and that a good system must be reproducible.",
+      "evaluationCriteria": "1. Coherent shape proposed (accordion, tube, V, triangle). 2. Logical explanation: Mentions rigidity, height, thickness, or weight distribution. 3. Risk anticipation (question 4). 4. BONUS: The child mentions that the chosen shape is easy to REPLICATE (standardization) or makes the connection with real objects (bridges, towers, tubes)."
     },
     "defi4": {
       "titre": "Quiz: Load Optimization",

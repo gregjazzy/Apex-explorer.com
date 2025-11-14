@@ -372,31 +372,31 @@
       "evaluationCriteria": "1. Réponse correcte : B (Gravité). 2. BONUS : L'enfant comprend que l'énergie vient de la hauteur (énergie potentielle) ou mentionne que la gravité est une force externe/dominante dans le système."
     },
     "defi3": {
-      "titre": "Défi: Le Pont de Papier",
-      "scenario": "Défi fou ! Tu dois faire un pont avec UNE SEULE feuille de papier qui relie deux tables (espace de 20 cm). Le pont doit supporter un petit jouet (50g). Si tu laisses la feuille PLATE, elle tombe. Comment peux-tu plier la feuille pour qu'elle soit plus solide ?",
-      "instruction": "1. Quelle forme donnerais-tu au papier pour le rendre plus solide ? (Pli en accordéon ? Roulé en tube ? En triangle ?)\n2. Pourquoi cette forme est plus solide qu'une feuille plate ?\n3. Teste mentalement : qu'est-ce qui pourrait faire échouer ton pont ?",
-      "leconStrategique": "La forme change tout ! Un matériau faible (papier) peut devenir fort avec la bonne structure. Dans les entreprises, c'est pareil : ce n'est pas la TAILLE qui compte, c'est l'ORGANISATION.",
-      "referenceCroisee": "M7",
+      "titre": "Mission: Le Pont de Papier",
+      "scenario": "Défi d'ingénieur ! Tu dois construire un pont avec UNE SEULE feuille de papier pour relier deux tables (espace de 20 cm). Le pont doit supporter un petit jouet (50g).\n\nProblème : Si tu laisses la feuille PLATE, elle tombe immédiatement.\n\nTa mission : Trouver quelle FORME donner au papier pour le rendre assez solide.",
+      "instruction": "1. Quelle forme donnerais-tu au papier pour le rendre plus solide ? (Pli en accordéon ? Roulé en tube ? Plié en V ?)\n\n2. Explique pourquoi cette forme est plus solide qu'une feuille plate (pense à la rigidité et à la répartition du poids).\n\n3. Si tu devais construire 10 ponts identiques rapidement, quelle forme serait la plus facile à répliquer ?\n\n4. Teste mentalement : qu'est-ce qui pourrait faire échouer ton pont ?\n\n💡 Mots importants :\n• RIGIDITÉ = résistance au pliage\n• RÉPLICATION = reproduire la même chose plusieurs fois",
+      "leconStrategique": "La FORME change tout ! Un matériau faible (papier) peut devenir fort avec la bonne STRUCTURE.\n\nCe n'est pas la TAILLE de la ressource qui compte (argent, matériel, équipe), c'est la MODÉLISATION et l'ORGANISATION INTERNE qui garantissent la résistance au stress et la stabilité du système.\n\nDans les entreprises : Une petite équipe bien organisée (structure en V) bat souvent une grande équipe désorganisée (feuille plate).",
+      "referenceCroisee": "M3 (Structures et Systèmes), M7 (Automatisation)",
       "briefing": {
         "etape1": {
           "titre": "1. La Force De La Forme",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris : une feuille plate plie facilement. Mais si je la plie en accordéon ou en tube, elle devient beaucoup plus rigide !"
+          "instruction": "J'ai compris : une feuille plate plie facilement. Mais si je la plie en accordéon, en tube, ou en V, elle devient beaucoup plus RIGIDE car les plis créent de la hauteur et de l'épaisseur !"
         },
         "etape2": {
-          "titre": "2. Pourquoi Ça Marche ?",
+          "titre": "2. Le Secret Des Ingénieurs",
           "type_etape": "texte_guide",
-          "instruction": "Les plis créent de la hauteur et de l'épaisseur. C'est comme comparer une règle plate (qui plie) et un tube en carton (qui ne plie presque pas). Les ingénieurs utilisent ce principe partout !"
+          "instruction": "Les ingénieurs utilisent souvent des formes en 'I', 'V' ou tubes car ces formes répartissent le poids sur les côtés au lieu de tout concentrer au centre. C'est comme comparer une règle plate (qui plie) et un tube en carton (qui ne plie presque pas). Ce principe est utilisé dans les ponts, les gratte-ciels, et même les avions !"
         },
         "etape3": {
-          "titre": "3. Anticiper L'Échec",
+          "titre": "3. Ma Solution D'Ingénieur",
           "type_etape": "champ_texte",
-          "instruction": "Qu'est-ce qui pourrait faire tomber ton pont ? (Poids trop lourd ? Mauvais équilibre ? Pli qui casse ?)",
-          "placeholder": "Les risques que je vois..."
+          "instruction": "Explique quelle forme tu choisis et pourquoi elle est solide. Ajoute aussi : est-elle facile à répliquer 10 fois ?",
+          "placeholder": "Je choisis la forme ... car elle est rigide et facile à répliquer parce que..."
         }
       },
-      "mentorGoal": "Introduit les concepts de structure, rigidité et résistance des matériaux de manière ludique et expérimentale.",
-      "evaluationCriteria": "1. Forme proposée cohérente (accordéon, tube, triangle). 2. Explication logique (hauteur, rigidité, résistance). 3. Anticipation des risques. Bonus : L'enfant fait le lien avec des objets réels (tubes, boîtes)."
+      "mentorGoal": "Introduire les concepts de RIGIDITÉ STRUCTURELLE, RÉPARTITION DU POIDS et STANDARDISATION (réplication). L'enfant doit comprendre que la géométrie (la forme) transforme les propriétés d'un matériau et qu'un bon système doit être reproductible.",
+      "evaluationCriteria": "1. Forme proposée cohérente (accordéon, tube, V, triangle). 2. Explication logique : Mentionne rigidité, hauteur, épaisseur, ou répartition poids. 3. Anticipation des risques (question 4). 4. BONUS : L'enfant mentionne que la forme choisie est facile à RÉPLIQUER (standardisation) ou fait le lien avec objets réels (ponts, tours, tubes)."
     },
     "defi4": {
       "titre": "Mission: La Valise Trop Lourde",
