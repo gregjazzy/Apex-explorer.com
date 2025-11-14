@@ -120,33 +120,37 @@
   },
   "m1": {
       "defi1": {
-        "titre": "Challenge: The Egg Logistics",
-      "scenario": "You must transport 100 eggs with a single truck that can only take crates of 12 eggs. How many complete crates and how many remaining eggs must you manage? (Division and Remainder).",
-      "instruction": "Write the number of COMPLETE crates and the number of REMAINING eggs. (The Remainder is the part the leader must manage!)",
-      "leconStrategique": "Every resource must be counted. The 'remainders' are often where inefficiency hides or where hidden value lies.",
+        "titre": "Mission: The 100 Cupcakes Strategy",
+      "scenario": "You are organizing a surprise party for your grandmother! You ordered 100 delicious cupcakes for the guests. The baker calls you: 'I can only deliver them in boxes of 12 cupcakes.' Problem: Cupcakes that don't fit in a complete box risk being crushed during transport! As the leader of this event, you must ensure zero waste.",
+      "instruction": "1. How many complete boxes will you have?\n2. How many cupcakes constitute the surplus (the 'remainder')?\n3. Propose 2 reallocation strategies for this surplus to avoid any loss.",
+      "leconStrategique": "A good leader maximizes the utility of every resource. 'Remainders' are not a problem, but an opportunity for strategic creativity. In business, the best managers transform exceptions into added value.",
       "referenceCroisee": "M8",
       "briefing": {
         "etape1": {
-          "titre": "1. Analyze the Fixed Constraint",
-          "type_etape": "validation_case",
-          "instruction": "I have read the problem and identified the operation: 100 ÷ 12. I know the Remainder must be managed first to prevent breakage.",
-          "placeholder": null
+          "titre": "1. Understanding The Problem Type",
+          "type_etape": "texte_guide",
+          "instruction": "A resource allocation problem always starts with a precise calculation. Here: 100 cupcakes ÷ 12 per box = ?"
         },
         "etape2": {
-          "titre": "2. The 'Remainder' Rule of Action",
-          "type_etape": "texte_guide",
-          "instruction": "The result (the quotient) gives you the COMPLETE crates. The remainder tells you the number of eggs that will require special attention. The leader manages the exceptions.",
+          "titre": "2. Euclidean Division",
+          "type_etape": "validation_case",
+          "instruction": "I understand: 100 ÷ 12 gives me a QUOTIENT (number of complete boxes) and a REMAINDER (surplus to manage).",
           "placeholder": null
         },
         "etape3": {
-          "titre": "3. Strategic Anchoring",
+          "titre": "3. The Leader's Challenge",
+          "type_etape": "texte_guide",
+          "instruction": "The real work of a leader is not counting, but deciding what to do with the surplus. 'Reallocation' = finding a smart new use for what remains."
+        },
+        "etape4": {
+          "titre": "4. My Strategy",
           "type_etape": "champ_texte",
-          "instruction": "If you hadn't calculated the Remainder, what would you risk losing?",
-          "placeholder": "e.g., Safety, Money, Time..."
+          "instruction": "What can you do with these 4 cupcakes to avoid waste? Find 2 different solutions.",
+          "placeholder": "Solution 1: ... | Solution 2: ..."
         }
       },
-      "mentorGoal": "This challenge assesses the child's ability to manage resource allocation with a remainder (division with remainder). The goal is to focus on the exception (remaining eggs) as this is where the logistical risk lies.",
-      "evaluationCriteria": "The answer must contain TWO numbers (quotient and remainder). 1. The quotient must be exact (8 crates). 2. The remainder must be exact (4 eggs). Bonus: The child justifies the importance of managing the remainder."
+      "mentorGoal": "Evaluate the ability to manage resource allocation with a remainder (Euclidean division). The child must understand that exceptions require strategic creativity and should not be ignored.",
+      "evaluationCriteria": "1. Exact calculation: 8 complete boxes, 4 remaining cupcakes. 2. At least 2 creative reallocation solutions. 3. BONUS (Systems Thinking): The child proposes a preventive solution (e.g., 'order 96 cupcakes next time') or systematizable approach."
     },
     "defi2": {
       "titre": "Challenge: Fair Share",

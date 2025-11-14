@@ -120,32 +120,37 @@
   },
   "m1": {
       "defi1": {
-        "titre": "Mission: La Fête d'Anniversaire de Grand-Mère",
-      "scenario": "Tu organises la fête surprise de ta grand-mère ! Tu as commandé 100 cupcakes délicieux pour les invités. Le pâtissier t'appelle : 'Je peux seulement les livrer dans des boîtes de 12 cupcakes.' Problème : Les cupcakes qui ne rentrent pas dans une boîte risquent d'être écrasés pendant le transport !",
-      "instruction": "1. Combien de boîtes complètes auras-tu ?\n2. Combien de cupcakes resteront en dehors des boîtes ?\n3. Que peux-tu faire avec ces cupcakes 'en trop' pour éviter qu'ils soient gâchés ?",
-      "leconStrategique": "Un bon leader compte toutes ses ressources et trouve toujours une solution pour les 'restes'. Rien ne doit être gaspillé ! Dans les entreprises, les meilleurs dirigeants savent gérer les exceptions et transformer les problèmes en opportunités.",
+        "titre": "Mission: La Stratégie des 100 Cupcakes",
+      "scenario": "Tu organises la fête surprise de ta grand-mère ! Tu as commandé 100 cupcakes délicieux pour les invités. Le pâtissier t'appelle : 'Je peux seulement les livrer dans des boîtes de 12 cupcakes.' Problème : Les cupcakes qui ne rentrent pas dans une boîte complète risquent d'être écrasés pendant le transport ! En tant que leader de cette organisation, tu dois garantir zéro gaspillage.",
+      "instruction": "1. Combien de boîtes complètes auras-tu ?\n2. Combien de cupcakes constituent l'excédent (le 'reste') ?\n3. Propose 2 stratégies de réaffectation pour cet excédent afin d'éviter toute perte.",
+      "leconStrategique": "Un bon leader maximise l'utilité de chaque ressource. Les 'restes' ne sont pas un problème, mais une opportunité de créativité stratégique. Dans les entreprises, les meilleurs dirigeants transforment les exceptions en valeur ajoutée.",
       "referenceCroisee": "M8",
       "briefing": {
         "etape1": {
-          "titre": "1. Comprendre La Contrainte",
-          "type_etape": "validation_case",
-          "instruction": "J'ai compris : 100 cupcakes ÷ 12 par boîte. Le calcul me donne les boîtes complètes ET les cupcakes restants.",
-          "placeholder": null
+          "titre": "1. Comprendre Le Type De Problème",
+          "type_etape": "texte_guide",
+          "instruction": "Un problème d'allocation de ressources commence toujours par un calcul précis. Ici : 100 cupcakes ÷ 12 par boîte = ?"
         },
         "etape2": {
-          "titre": "2. Le Problème Des Restes",
-          "type_etape": "texte_guide",
-          "instruction": "Les cupcakes qui ne rentrent pas dans une boîte complète sont fragiles. C'est TON travail de leader de trouver comment les protéger ou les utiliser autrement."
+          "titre": "2. La Division Euclidienne",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : 100 ÷ 12 me donne un QUOTIENT (nombre de boîtes complètes) et un RESTE (excédent à gérer).",
+          "placeholder": null
         },
         "etape3": {
-          "titre": "3. Solutions Créatives",
+          "titre": "3. Le Défi Du Leader",
+          "type_etape": "texte_guide",
+          "instruction": "Le vrai travail du leader n'est pas de compter, mais de décider quoi faire de l'excédent. 'Réaffectation' = trouver un nouvel usage intelligent pour ce qui reste."
+        },
+        "etape4": {
+          "titre": "4. Ma Stratégie",
           "type_etape": "champ_texte",
-          "instruction": "Trouve 2 solutions pour gérer les cupcakes restants (Ex: les donner aux voisins ? Les mettre dans une boîte spéciale ? Les manger en famille ?)",
-          "placeholder": "Mes 2 idées..."
+          "instruction": "Que peux-tu faire avec ces 4 cupcakes pour éviter qu'ils soient gâchés ? Trouve 2 solutions différentes.",
+          "placeholder": "Solution 1 : ... | Solution 2 : ..."
         }
       },
-      "mentorGoal": "Évalue la capacité à gérer l'allocation de ressources avec un reste (division). L'enfant doit comprendre que les 'exceptions' nécessitent de la créativité et ne doivent pas être ignorées.",
-      "evaluationCriteria": "1. Calcul exact : 8 boîtes complètes, 4 cupcakes restants. 2. Au moins UNE solution créative pour gérer le reste. Bonus : L'enfant propose plusieurs solutions ou anticipe le problème du transport."
+      "mentorGoal": "Évaluer la capacité à gérer l'allocation de ressources avec un reste (division euclidienne). L'enfant doit comprendre que les exceptions nécessitent de la créativité stratégique et ne doivent pas être ignorées.",
+      "evaluationCriteria": "1. Calcul exact : 8 boîtes complètes, 4 cupcakes restants. 2. Au moins 2 solutions créatives de réaffectation. 3. BONUS (Pensée Systémique) : L'enfant propose une solution préventive (ex: 'commander 96 cupcakes la prochaine fois') ou systématisable."
     },
     "defi2": {
       "titre": "Défi: Le Dilemme du Camp de Vacances",
