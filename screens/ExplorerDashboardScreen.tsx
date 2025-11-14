@@ -359,9 +359,6 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                     activeOpacity={0.7}
                                 >
                                     <Text style={styles.miniCircularIcon}>👑</Text>
-                                    <View style={styles.miniCircularBadge}>
-                                        <Text style={styles.miniCircularBadgeText}>{Math.floor(totalXP / 100) || 1}</Text>
-                                    </View>
                                 </TouchableOpacity>
                                 
                                 <TouchableOpacity 
