@@ -1786,12 +1786,12 @@
       "question": "You say 'I'll just watch one YouTube video', and 2 hours later you're still scrolling. Why?",
       "options": [
         "Because I have no willpower",
-        "Because YouTube is DESIGNED to keep you as long as possible (addictive algorithms)",
+        "Because YouTube is DESIGNED to keep you as long as possible (with algorithms = programs that choose videos to make you addicted)",
         "Because the videos are too interesting"
       ],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "EXACTLY! It's NOT your fault. YouTube (and TikTok, Instagram, etc.) employ HUNDREDS of engineers paid to keep you captive as long as possible. How? Automatic autoplay, infinite recommendations, notifications, endless scroll. It's DESIGNED like a casino: you can't win. The first step to regaining control? UNDERSTAND you're being manipulated.",
-      "feedbackIncorrect": "No! It's NOT a willpower problem. YouTube employs HUNDREDS of engineers to TRAP you. Their job? Maximize 'screen time'. They use algorithms that study what captures you and give you EXACTLY that, in an infinite loop. You're not fighting your willpower, you're fighting a machine designed to manipulate you. Understanding this gives you POWER.",
+      "feedbackIncorrect": "No! It's NOT a willpower problem. YouTube employs HUNDREDS of engineers to TRAP you. Their job? Maximize 'screen time'. They use algorithms (= computer programs that choose the videos) that study what captures you and give you EXACTLY that, in an infinite loop. You're not fighting your willpower, you're fighting a machine designed to manipulate you. Understanding this gives you POWER.",
       "leconStrategique": "The biggest tech companies (Google, Meta, TikTok) make BILLIONS selling your attention to advertisers. The longer you stay, the more they earn. They've invested MILLIONS in research to make you addicted. Result: average screen time explodes every year. Knowing this allows you to take back control. You're not 'weak', you're facing a war machine. But you can win.",
       "referenceCroisee": "M14",
       "mentorGoal": "Make the child understand that modern dependencies aren't a willpower problem but a MANIPULATIVE DESIGN problem. The child must understand they're facing systems designed to trap them.",
@@ -1842,8 +1842,36 @@
       "evaluationCriteria": "Correct answer: Option 2 (brain addicted to instant rewards). Bonus: The child identifies other sources of instant rewards in their life (games, candy, notifications)."
     },
     "defi4": {
+      "titre": "Mission: Active or Passive?",
+      "scenario": "When you watch YouTube, you're like sitting in a chair: you receive. When you build a fort or draw, you're standing: you create. Which one makes you stronger?",
+      "instruction": "**On YouTube, there are 2 roles:**\n\n🎬 **THE ONE WHO MAKES VIDEOS**\n✅ They are ACTIVE: they think, create, work\n✅ They DECIDE: what to talk about, how long\n✅ They LEARN: how to film, speak on camera\n✅ They can earn money\n\n👀 **THE ONE WHO WATCHES (you)**\n❌ They are PASSIVE: they receive, they watch\n❌ They DON'T DECIDE: YouTube chooses videos for them\n❌ They don't learn much\n❌ They waste time (without realizing it)\n\n**Your 3 questions:**\n\n1. **Who is more ACTIVE?** (The one who creates or the one who watches?)\n\n2. **In your life, list 3 things where you are ACTIVE** (you create, you build, you invent)\n   Examples: drawing, playing outside, building with Lego, inventing a game...\n\n3. **This week, what ACTIVITY will you do instead of watching a screen?**\n\n💡 **Important:** Watching a video from time to time is OK! But if you spend TOO MUCH time watching, you become PASSIVE. And passive people never become strong.",
+      "leconStrategique": "Champions, inventors, artists have a secret: they are ACTIVE, not PASSIVE. Being active means: creating, building, inventing, moving, trying. Being passive means: watching, consuming, receiving. When you're active, your brain works and you become STRONGER. When you're passive too long, your brain falls asleep. The golden rule? Spend more time DOING than WATCHING.",
+      "referenceCroisee": "M18",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Understand the difference",
+          "type_etape": "texte_guide",
+          "instruction": "ACTIVE = you do something (create, play, build). PASSIVE = you receive something (watch, listen). When you're active, you grow. When you're too passive, you stagnate."
+        },
+        "etape2": {
+          "titre": "2. Find your ACTIVE activities",
+          "type_etape": "champ_texte",
+          "instruction": "List 3 things you DO (not just watch). Examples: drawing, playing soccer, building, inventing...",
+          "placeholder": "1. ...\n2. ...\n3. ..."
+        },
+        "etape3": {
+          "titre": "3. Choose an action this week",
+          "type_etape": "champ_texte",
+          "instruction": "Instead of 30 minutes of YouTube, what will you do? Write your idea!",
+          "placeholder": "This week, instead of watching a screen, I will..."
+        }
+      },
+      "mentorGoal": "Make the child understand the difference between passive consumption and active creation. The child must realize that activity makes them stronger, and identify concrete alternatives to screens.",
+      "evaluationCriteria": "1. The child correctly identifies the active role (creator). 2. Lists 3 personal activities where they are active. 3. Proposes a concrete alternative for this week. Bonus: The child expresses awareness of their current passive time."
+    },
+    "defi5": {
       "titre": "Mission: Your Freedom Code",
-      "scenario": "Final mission: create YOUR personal 'Freedom Code'. These are YOUR rules to NOT be controlled by screens, algorithms, or dependencies. It's your shield for the next 10 years.",
+      "scenario": "Final mission: create YOUR personal 'Freedom Code'. These are YOUR rules to NOT be controlled by screens, algorithms (= programs that choose what you see), or dependencies. It's your shield for the next 10 years.",
       "instruction": "**Write your Freedom Code (5 parts)**\n\n**Part 1: My Non-Negotiable Limits**\nExample (to understand the concept):\n- No screens 1h before sleeping\n\n⚠️ **DON'T use this example! Find YOUR own limits according to YOUR life.**\n\n**Part 2: My Warning Signs (How I know I'm losing control)**\nExample:\n- When I say 'just 5 minutes' and can't stop\n\n⚠️ **Find YOUR own warning signs! Observe yourself this week.**\n\n**Part 3: My Alternatives (What to do instead of taking the screen)**\nExamples:\n- Read a book\n- Play outside\n\n⚠️ **Find what WORKS for YOU! Not what others do.**\n\n**Part 4: My Check System (How I verify I'm free)**\nExample:\n- Every week, I test: 'Can I spend 24h without leisure screens?'\n- If yes → I'm free\n- If no → I take back control\n\n**Part 5: My Promise**\nExample: 'I promise to never let an algorithm control my life. I promise to stay FREE.'\n\n⚠️ **Write a promise that comes from YOUR heart, not a copied sentence!**",
       "leconStrategique": "This code is your armor. In 10 years, screens will be 100x more addictive than today (virtual reality, hyper-personalized AI, etc.). Those without rules will be SLAVES. Those with a Freedom Code will remain MASTERS of their lives. This document is as important as your anti-AI manifesto (M16). Keep it. Reread it. Adjust it. It's your GPS to stay free.",
       "referenceCroisee": "M16",
@@ -1851,7 +1879,7 @@
         "etape1": {
           "titre": "1. Why a Code?",
           "type_etape": "texte_guide",
-          "instruction": "Without clear rules, you'll LOSE against algorithms. They're too powerful. They have too much data on you. But if you have a personal Code, you KNOW when you're slipping. It's your early warning system."
+          "instruction": "Without clear rules, you'll LOSE against algorithms (= programs that decide what you see to keep you as long as possible). They're too powerful. They have too much data on you. But if you have a personal Code, you KNOW when you're slipping. It's your early warning system."
         },
         "etape2": {
           "titre": "2. Be Honest, Not Perfect",

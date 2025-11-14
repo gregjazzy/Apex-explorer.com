@@ -1971,12 +1971,12 @@
       "question": "Tu dis 'Je vais juste regarder une vidéo YouTube', et 2 heures plus tard tu scrolles encore. Pourquoi ?",
       "options": [
         "Parce que je n'ai pas de volonté",
-        "Parce que YouTube est CONÇU pour te garder le plus longtemps possible (algorithmes addictifs)",
+        "Parce que YouTube est CONÇU pour te garder le plus longtemps possible (avec des algorithmes = des programmes qui choisissent les vidéos pour te rendre accro)",
         "Parce que les vidéos sont trop intéressantes"
       ],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "EXACT ! Ce n'est PAS ta faute. YouTube (et TikTok, Instagram, etc.) emploient des CENTAINES d'ingénieurs payés pour te garder captif le plus longtemps possible. Comment ? Autoplay automatique, recommandations infinies, notifications, scroll sans fin. C'est CONÇU comme un casino : tu ne peux pas gagner. La première étape pour reprendre le contrôle ? COMPRENDRE qu'on te manipule.",
-      "feedbackIncorrect": "Non ! Ce n'est PAS un problème de volonté. YouTube emploie des CENTAINES d'ingénieurs pour te PIÉGER. Leur job ? Maximiser le 'temps d'écran'. Ils utilisent des algorithmes qui étudient ce qui te capte et te donnent EXACTEMENT ça, en boucle infinie. Tu ne combats pas ta volonté, tu combats une machine conçue pour te manipuler. Comprendre ça te donne du POUVOIR.",
+      "feedbackIncorrect": "Non ! Ce n'est PAS un problème de volonté. YouTube emploie des CENTAINES d'ingénieurs pour te PIÉGER. Leur job ? Maximiser le 'temps d'écran'. Ils utilisent des algorithmes (= des programmes informatiques qui choisissent les vidéos) qui étudient ce qui te capte et te donnent EXACTEMENT ça, en boucle infinie. Tu ne combats pas ta volonté, tu combats une machine conçue pour te manipuler. Comprendre ça te donne du POUVOIR.",
       "leconStrategique": "Les plus grandes entreprises tech (Google, Meta, TikTok) gagnent des MILLIARDS en vendant ton attention aux publicitaires. Plus tu restes, plus elles gagnent. Elles ont investi des MILLIONS dans la recherche pour te rendre accro. Résultat : le temps d'écran moyen explose chaque année. Savoir ça te permet de reprendre le contrôle. Tu n'es pas 'faible', tu es face à une machine de guerre. Mais tu peux gagner.",
       "referenceCroisee": "M14",
       "mentorGoal": "Faire comprendre que les dépendances modernes ne sont pas un problème de volonté mais un problème de DESIGN MANIPULATEUR. L'enfant doit comprendre qu'il est face à des systèmes conçus pour le piéger.",
@@ -2027,8 +2027,36 @@
       "evaluationCriteria": "Réponse correcte : Option 2 (cerveau accro aux récompenses instantanées). Bonus : L'enfant identifie d'autres sources de récompenses instantanées dans sa vie (jeux, bonbons, notifications)."
     },
     "defi4": {
+      "titre": "Mission: Actif ou Passif ?",
+      "scenario": "Quand tu regardes YouTube, tu es comme assis dans un fauteuil : tu reçois. Quand tu construis une cabane ou tu dessines, tu es debout : tu crées. Lequel te rend plus fort ?",
+      "instruction": "**Sur YouTube, il y a 2 rôles :**\n\n🎬 **CELUI QUI FAIT LES VIDÉOS**\n✅ Il est ACTIF : il réfléchit, crée, travaille\n✅ Il DÉCIDE : de quoi parler, combien de temps\n✅ Il APPREND : filmer, parler devant la caméra\n✅ Il peut gagner de l'argent\n\n👀 **CELUI QUI REGARDE (toi)**\n❌ Il est PASSIF : il reçoit, il regarde\n❌ Il NE DÉCIDE PAS : YouTube choisit les vidéos pour lui\n❌ Il n'apprend pas grand-chose\n❌ Il perd son temps (sans s'en rendre compte)\n\n**Tes 3 questions :**\n\n1. **Qui est le plus ACTIF ?** (Celui qui crée ou celui qui regarde ?)\n\n2. **Dans ta vie, note 3 choses où tu es ACTIF** (tu crées, tu construis, tu inventes)\n   Exemples : dessiner, jouer dehors, construire en Lego, inventer un jeu...\n\n3. **Cette semaine, quelle ACTIVITÉ tu vas faire au lieu de regarder un écran ?**\n\n💡 **Important :** Regarder une vidéo de temps en temps, c'est OK ! Mais si tu passes TROP de temps à regarder, tu deviens PASSIF. Et les personnes passives ne deviennent jamais fortes.",
+      "leconStrategique": "Les champions, les inventeurs, les artistes ont un secret : ils sont ACTIFS, pas PASSIFS. Être actif, ça veut dire : créer, construire, inventer, bouger, essayer. Être passif, ça veut dire : regarder, consommer, recevoir. Quand tu es actif, ton cerveau travaille et tu deviens PLUS FORT. Quand tu es passif trop longtemps, ton cerveau s'endort. La règle d'or ? Passe plus de temps à FAIRE qu'à REGARDER.",
+      "referenceCroisee": "M18",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Comprends la différence",
+          "type_etape": "texte_guide",
+          "instruction": "ACTIF = tu fais quelque chose (créer, jouer, construire). PASSIF = tu reçois quelque chose (regarder, écouter). Quand tu es actif, tu grandis. Quand tu es trop passif, tu stagnes."
+        },
+        "etape2": {
+          "titre": "2. Trouve tes activités ACTIVES",
+          "type_etape": "champ_texte",
+          "instruction": "Liste 3 choses que tu FAIS (pas que tu regardes). Exemples : dessiner, jouer au foot, construire, inventer...",
+          "placeholder": "1. ...\n2. ...\n3. ..."
+        },
+        "etape3": {
+          "titre": "3. Choisis une action cette semaine",
+          "type_etape": "champ_texte",
+          "instruction": "Au lieu de 30 minutes de YouTube, tu fais quoi ? Écris ton idée !",
+          "placeholder": "Cette semaine, au lieu de regarder un écran, je vais..."
+        }
+      },
+      "mentorGoal": "Faire comprendre la différence entre consommation passive et création active. L'enfant doit réaliser que l'activité le rend plus fort, et identifier des alternatives concrètes aux écrans.",
+      "evaluationCriteria": "1. L'enfant identifie correctement le rôle actif (créateur). 2. Liste 3 activités personnelles où il est actif. 3. Propose une alternative concrète pour cette semaine. Bonus : L'enfant exprime une prise de conscience sur son temps passif actuel."
+    },
+    "defi5": {
       "titre": "Mission: Ton Code de Liberté",
-      "scenario": "Dernière mission : créer TON 'Code de Liberté' personnel. Ce sont TES règles pour ne PAS être contrôlé par les écrans, les algorithmes, ou les dépendances. C'est ton bouclier pour les 10 prochaines années.",
+      "scenario": "Dernière mission : créer TON 'Code de Liberté' personnel. Ce sont TES règles pour ne PAS être contrôlé par les écrans, les algorithmes (= les programmes qui choisissent ce que tu vois), ou les dépendances. C'est ton bouclier pour les 10 prochaines années.",
       "instruction": "**Écris ton Code de Liberté (5 parties)**\n\n**Partie 1 : Mes Limites Non-Négociables**\nExemple (pour comprendre le concept) :\n- Pas d'écrans 1h avant de dormir\n\n⚠️ **N'utilise PAS cet exemple ! Trouve TES propres limites selon TA vie.**\n\n**Partie 2 : Mes Signaux d'Alerte (Comment je sais que je perds le contrôle)**\nExemple :\n- Quand je dis 'juste 5 minutes' et que je ne peux pas m'arrêter\n\n⚠️ **Trouve TES propres signaux ! Observe-toi cette semaine.**\n\n**Partie 3 : Mes Alternatives (Que faire au lieu de prendre l'écran)**\nExemples :\n- Lire un livre\n- Jouer dehors\n\n⚠️ **Trouve ce qui MARCHE pour TOI ! Pas ce que les autres font.**\n\n**Partie 4 : Mon Système de Check (Comment je vérifie que je suis libre)**\nExemple :\n- Chaque semaine, je teste : 'Puis-je passer 24h sans écrans de loisir ?'\n- Si oui → Je suis libre\n- Si non → Je reprends le contrôle\n\n**Partie 5 : Ma Promesse**\nExemple : 'Je promets de ne jamais laisser un algorithme contrôler ma vie. Je promets de rester LIBRE.'\n\n⚠️ **Écris une promesse qui vient de TON cœur, pas une phrase copiée !**",
       "leconStrategique": "Ce code est ton armure. Dans 10 ans, les écrans seront 100x plus addictifs qu'aujourd'hui (réalité virtuelle, IA hyper-personnalisée, etc.). Ceux qui n'ont pas de règles seront ESCLAVES. Ceux qui ont un Code de Liberté resteront MAÎTRES de leur vie. Ce document est aussi important que ton manifeste anti-IA (M16). Garde-le. Relis-le. Ajuste-le. C'est ton GPS pour rester libre.",
       "referenceCroisee": "M16",
@@ -2036,7 +2064,7 @@
         "etape1": {
           "titre": "1. Pourquoi un Code ?",
           "type_etape": "texte_guide",
-          "instruction": "Sans règles claires, tu PERDRAS face aux algorithmes. Ils sont trop puissants. Ils ont trop de données sur toi. Mais si tu as un Code personnel, tu SAIS quand tu dérapes. C'est ton système d'alerte précoce."
+          "instruction": "Sans règles claires, tu PERDRAS face aux algorithmes (= les programmes qui décident ce que tu vois pour te garder le plus longtemps possible). Ils sont trop puissants. Ils ont trop de données sur toi. Mais si tu as un Code personnel, tu SAIS quand tu dérapes. C'est ton système d'alerte précoce."
         },
         "etape2": {
           "titre": "2. Sois Honnête, Pas Parfait",

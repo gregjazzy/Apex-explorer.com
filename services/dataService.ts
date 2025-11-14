@@ -329,6 +329,7 @@ const BASE_DEFIS_SIM: Record<string, BaseDefi[]> = {
         { id: 'defi2', xpValue: 100, requires: [] },
         { id: 'defi3', xpValue: 100, requires: [] },
         { id: 'defi4', xpValue: 100, requires: [] },
+        { id: 'defi5', xpValue: 100, requires: [] },
     ]
 };
 
