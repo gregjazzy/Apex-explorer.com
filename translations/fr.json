@@ -197,32 +197,33 @@
       "evaluationCriteria": "Réponse correcte : Option 2. BONUS : L'enfant calcule spontanément le profit potentiel (140€ vs 50€), l'économie par cookie (0,40€ × 100 = 40€), ou mentionne le concept de 'produire plus = coûte moins cher'."
     },
     "defi4": {
-      "titre": "Mission: La Recette de Gâteau",
+      "titre": "Mission: Les Proportions du Chef Pâtissier",
       "scenario": "Tu veux faire un gâteau pour 8 personnes. La recette originale est pour 4 personnes et demande : 200g de farine, 3 œufs, 100g de sucre, 50g de beurre. Tu dois adapter les quantités pour 8 personnes !",
-      "instruction": "1. Si la recette est pour 4 personnes et tu en veux pour 8, tu dois multiplier par combien ?\n2. Calcule les nouvelles quantités pour chaque ingrédient.\n3. Si tu as seulement 5 œufs à la maison, pour combien de personnes maximum peux-tu faire le gâteau ?",
-      "leconStrategique": "Les proportions et les ratios sont partout dans la vie : recettes, construction, business. Savoir adapter les quantités est une compétence mathématique essentielle. Dans les entreprises, on utilise les ratios pour tout mesurer : coûts, performances, croissance.",
-      "referenceCroisee": "M8",
-        "briefing": {
+      "instruction": "1. Si la recette est pour 4 personnes et tu en veux pour 8, tu dois multiplier par combien ?\n2. Calcule les nouvelles quantités pour chaque ingrédient.\n3. Si tu as seulement 5 œufs à la maison, pour combien de personnes maximum peux-tu faire le gâteau ?\n\n💡 Mots importants : RATIO = Le rapport entre deux quantités. PROPORTIONNALITÉ = Garder le même ratio quand on change d'échelle.",
+      "leconStrategique": "Les proportions et les ratios sont partout : recettes, construction, business. Savoir adapter les quantités est une compétence essentielle. Dans les entreprises, on utilise les ratios pour tout mesurer : coûts par client, temps par projet, revenus par employé. Un bon leader maîtrise ses ratios !",
+      "referenceCroisee": "M8, M9",
+      "briefing": {
         "etape1": {
           "titre": "1. Comprendre Le Ratio",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris : 8 personnes ÷ 4 personnes = 2. Je dois donc MULTIPLIER toutes les quantités par 2."
+          "instruction": "J'ai compris : 8 personnes ÷ 4 personnes = 2. Je dois donc MULTIPLIER toutes les quantités par 2. C'est le RATIO de transformation.",
+          "placeholder": null
         },
         "etape2": {
-          "titre": "2. Appliquer La Multiplication",
+          "titre": "2. Appliquer La Proportionnalité",
           "type_etape": "texte_guide",
-          "instruction": "Chaque ingrédient doit être multiplié par le même nombre. Farine : 200g × 2 = 400g. Œufs : 3 × 2 = 6. Sucre : 100g × 2 = 200g. Beurre : 50g × 2 = 100g."
+          "instruction": "Chaque ingrédient doit être multiplié par le même ratio (×2) pour garder les PROPORTIONS. Farine : 200g × 2 = 400g. Œufs : 3 × 2 = 6. Sucre : 100g × 2 = 200g. Beurre : 50g × 2 = 100g. Si tu changes un seul ingrédient, le gâteau est raté ! En business, c'est pareil : tous les éléments doivent suivre le même ratio de croissance."
         },
         "etape3": {
           "titre": "3. Gérer La Contrainte",
           "type_etape": "champ_texte",
-          "instruction": "Si tu n'as que 5 œufs au lieu de 6, tu dois RÉDUIRE la recette. Avec 5 œufs, tu peux faire combien de personnes ? (Indice : 3 œufs = 4 personnes, donc 5 œufs = ?)",
+          "instruction": "Si tu n'as que 5 œufs au lieu de 6, tu dois RÉDUIRE la recette pour garder les proportions. Avec 5 œufs, tu peux faire combien de personnes ? (Indice : 3 œufs = 4 personnes, donc 5 œufs = ?)",
           "placeholder": "Mon calcul : 5 œufs permettent de faire pour..."
         }
       },
-      "mentorGoal": "Évalue la compréhension des proportions, ratios et multiplication. L'enfant doit démontrer qu'il sait adapter des quantités selon un ratio et gérer les contraintes réelles.",
-      "evaluationCriteria": "1. Ratio correct : ×2. 2. Calculs exacts : 400g farine, 6 œufs, 200g sucre, 100g beurre. 3. Contrainte œufs : environ 6-7 personnes (5÷3×4≈6,67). Bonus : L'enfant explique la logique des proportions ou mentionne que tous les ingrédients doivent garder le même ratio."
-      }
+      "mentorGoal": "Évaluer la compréhension des proportions, ratios et multiplication. L'enfant doit démontrer qu'il sait adapter des quantités selon un ratio et gérer les contraintes réelles.",
+      "evaluationCriteria": "1. Ratio correct : ×2. 2. Calculs exacts : 400g farine, 6 œufs, 200g sucre, 100g beurre. 3. Contrainte œufs : environ 6-7 personnes (5÷3×4≈6,67). 4. BONUS : L'enfant explique pourquoi tous les ingrédients doivent suivre le même ratio (proportionnalité) ou mentionne qu'en changer un seul compromet le résultat."
+    }
   },
   "m2": {
     "defi1": {

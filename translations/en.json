@@ -197,26 +197,33 @@
       "evaluationCriteria": "Correct answer: Option 2. BONUS: The child spontaneously calculates potential profit (€140 vs €50), savings per cookie (€0.40 × 100 = €40), or mentions the concept of 'producing more = costs less'."
     },
     "defi4": {
-      "titre": "Challenge: The Pie Share (Fractions)",
-      "scenario": "You must share a pie with 8 friends, but you can only cut it into 4 pieces. What is the smallest fraction you can give each person for a fair share?",
-      "instruction": "Write the exact fraction each person will receive (Ex: 1/2).",
-      "leconStrategique": "Proportion is the key to equity. Knowing how a part relates to the whole is essential for resource management.",
-      "referenceCroisee": "M9",
-        "briefing": {
+      "titre": "Mission: The Pastry Chef's Proportions",
+      "scenario": "You want to make a cake for 8 people. The original recipe is for 4 people and requires: 200g flour, 3 eggs, 100g sugar, 50g butter. You must adapt the quantities for 8 people!",
+      "instruction": "1. If the recipe is for 4 people and you want it for 8, what should you multiply by?\n2. Calculate the new quantities for each ingredient.\n3. If you only have 5 eggs at home, for how many people maximum can you make the cake?\n\n💡 Important words: RATIO = The relationship between two quantities. PROPORTIONALITY = Keeping the same ratio when scaling.",
+      "leconStrategique": "Proportions and ratios are everywhere: recipes, construction, business. Knowing how to adapt quantities is an essential skill. In companies, ratios are used to measure everything: cost per customer, time per project, revenue per employee. A good leader masters their ratios!",
+      "referenceCroisee": "M8, M9",
+      "briefing": {
         "etape1": {
-          "titre": "1. The Whole and the Parts",
+          "titre": "1. Understanding The Ratio",
           "type_etape": "validation_case",
-          "instruction": "I have identified the whole (1 pie) and the number of required shares (8 friends). The fraction is the number of shares over the total."
+          "instruction": "I understand: 8 people ÷ 4 people = 2. So I must MULTIPLY all quantities by 2. This is the transformation RATIO.",
+          "placeholder": null
         },
         "etape2": {
-          "titre": "2. Resource Simplification",
+          "titre": "2. Applying Proportionality",
           "type_etape": "texte_guide",
-          "instruction": "If you cut into 4, each piece is 1/4. For 8 people, you must divide each quarter into two (which results in 1/8). A fraction is a simple division."
+          "instruction": "Each ingredient must be multiplied by the same ratio (×2) to keep the PROPORTIONS. Flour: 200g × 2 = 400g. Eggs: 3 × 2 = 6. Sugar: 100g × 2 = 200g. Butter: 50g × 2 = 100g. If you change just one ingredient, the cake fails! In business, it's the same: all elements must follow the same growth ratio."
+        },
+        "etape3": {
+          "titre": "3. Managing The Constraint",
+          "type_etape": "champ_texte",
+          "instruction": "If you only have 5 eggs instead of 6, you must REDUCE the recipe to keep proportions. With 5 eggs, how many people can you serve? (Hint: 3 eggs = 4 people, so 5 eggs = ?)",
+          "placeholder": "My calculation: 5 eggs allow me to make for..."
         }
       },
-      "mentorGoal": "Test the ability to identify the limiting factor (bottleneck) and analyze parallel resources.",
-      "evaluationCriteria": "The answer must identify worker 2 as the bottleneck. Bonus: The child suggests a reorganization or support solution to balance the times."
-      }
+      "mentorGoal": "Evaluate understanding of proportions, ratios and multiplication. The child must demonstrate they can adapt quantities according to a ratio and manage real constraints.",
+      "evaluationCriteria": "1. Correct ratio: ×2. 2. Exact calculations: 400g flour, 6 eggs, 200g sugar, 100g butter. 3. Egg constraint: approximately 6-7 people (5÷3×4≈6.67). 4. BONUS: The child explains why all ingredients must follow the same ratio (proportionality) or mentions that changing just one compromises the result."
+    }
   },
   "m2": {
     "defi1": {
