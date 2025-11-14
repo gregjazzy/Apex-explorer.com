@@ -444,25 +444,31 @@
       "evaluationCriteria": "1. Réponse correcte : A (Bleu). 2. BONUS : L'enfant explique les 3 étapes séquentielles (Alice → Ben → Claire) ou identifie qu'Alice est le point de départ car elle a le plus de contraintes (2 contraintes)."
     },
     "defi2": {
-        "titre": "Défi: La Séquence des Tâches",
-        "scenario": "La séquence de fabrication d'un jouet est : A=Coupe, B=Peinture, C=Assemblage, D=Séchage. Mais l'ordre est (C, D, A, B). Explique pourquoi cet ordre est inefficace et propose un meilleur ordre.",
-        "instruction": "Écris la séquence des tâches (lettres) que tu vas choisir pour une efficacité maximale (ex: A, B, C, D).",
-        "leconStrategique": "L'ordre fait partie de la logique. La logique s'assure que chaque étape prépare correctement la suivante.",
-        "referenceCroisee": "M3",
+        "titre": "Mission: Le Chemin Critique",
+        "scenario": "Tu gères la fabrication d'un jouet. Il y a 4 étapes obligatoires :\n\nA = Couper les pièces\nB = Peindre les pièces\nC = Assembler le jouet\nD = Sécher le jouet\n\nProblème : L'ordre actuel de l'usine est (C, D, A, B).\n\nTa mission : Trouver le CHEMIN CRITIQUE (la meilleure séquence logique).",
+        "instruction": "1. Écris la séquence optimale des tâches (ex: A, B, C, D).\n\n2. Explique pourquoi l'ordre actuel (C, D, A, B) ne fonctionne pas. Quelle est la première erreur qui bloque tout ?\n\n3. Identifie les DÉPENDANCES : Quelles étapes doivent absolument être terminées AVANT de pouvoir assembler (C) ?\n\n💡 Mots importants :\n• CHEMIN CRITIQUE = séquence optimale qui respecte toutes les dépendances\n• DÉPENDANCE = une tâche qui doit être faite avant une autre",
+        "leconStrategique": "Dans l'analyse, la logique s'appelle le CHEMIN CRITIQUE. C'est la séquence des étapes qui doivent absolument être faites dans le bon ordre (les DÉPENDANCES).\n\nUne erreur de séquence bloque tout le système. Par exemple : on ne peut pas assembler des pièces qui n'existent pas encore !\n\nDans les affaires : Un leader identifie le chemin critique d'un projet pour éviter les blocages et livrer à temps. Si une étape clé est retardée, tout le projet est retardé.\n\nPrincipe : L'efficacité vient de l'ORDRE, pas juste de la vitesse.",
+        "referenceCroisee": "M4 (Analyse et Logique), M2-D2 (Planification)",
         "briefing": {
             "etape1": {
-                "titre": "1. Identifier les Dépendances",
+                "titre": "1. Le Concept De Dépendance",
                 "type_etape": "validation_case",
-                "instruction": "J'ai identifié que 'Peinture' doit précéder 'Séchage' et que 'Coupe' doit être fait en premier pour l'efficacité."
+                "instruction": "J'ai compris le problème de la DÉPENDANCE LOGIQUE : Une tâche suivante dépend d'une tâche précédente. On ne peut pas travailler sur des pièces qui n'existent pas encore ! Exemple : On ne peut pas assembler (C) avant de couper (A)."
             },
             "etape2": {
-                "titre": "2. Construire la Chaîne Logique",
+                "titre": "2. Identifier Les Étapes Bloquantes",
                 "type_etape": "texte_guide",
-                "instruction": "Une chaîne logique ne peut pas commencer par l'Assemblage (C) si la Coupe (A) n'est pas faite. Trouve l'ordre où chaque étape est un prérequis pour la suivante."
+                "instruction": "Dans l'ordre actuel (C, D, A, B), l'erreur commence dès la première étape : on essaie d'assembler (C) des pièces qui n'ont pas encore été coupées (A). C'est un BLOCAGE. Ensuite, on essaie de sécher (D) quelque chose qui n'a pas été peint (B). Deux erreurs majeures ! Le chemin critique commence toujours par la PRÉPARATION (couper les pièces)."
+            },
+            "etape3": {
+                "titre": "3. Mon Chemin Critique",
+                "type_etape": "champ_texte",
+                "instruction": "Écris ta séquence optimale et explique pourquoi c'est le bon ordre. Utilise le mot DÉPENDANCE dans ton explication.",
+                "placeholder": "Ma séquence : ... parce que chaque étape respecte les dépendances..."
             }
       },
-      "mentorGoal": "Tester la compréhension des séquences logiques et des patterns (motifs répétitifs). L'enfant doit démontrer sa capacité à identifier la règle sous-jacente.",
-      "evaluationCriteria": "La réponse doit identifier correctement le pattern et prédire le prochain élément. Bonus: L'enfant explique la règle ou la formule du pattern."
+      "mentorGoal": "Introduire les concepts de CHEMIN CRITIQUE et DÉPENDANCES LOGIQUES. L'enfant doit comprendre qu'un processus a un ordre optimal basé sur les dépendances entre les tâches, et qu'une erreur de séquence crée des blocages.",
+      "evaluationCriteria": "1. Séquence correcte : A → B → C → D (Couper → Peindre → Assembler → Sécher). 2. Explication erreur : Identifie que C (Assemblage) ne peut pas se faire avant A (Coupe). 3. Identification dépendances : C dépend de A ET B (besoin pièces coupées ET peintes). 4. BONUS : L'enfant utilise les termes CHEMIN CRITIQUE ou DÉPENDANCE LOGIQUE, ou fait le lien avec un projet réel (construction maison, recette cuisine)."
     },
     "defi3": {
       "titre": "Quiz: Le Schéma Manquant",
