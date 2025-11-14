@@ -30,7 +30,6 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
     const { user } = useAuth();
     const { moduleId, moduleTitle, defis: initialDefis } = route.params;
     const [defis, setDefis] = useState<Defi[]>(initialDefis || []);
-    const [needsRefresh, setNeedsRefresh] = useState(false);
 
     // Met à jour le titre de la navigation (laissé pour la compatibilité mobile)
     React.useLayoutEffect(() => {
@@ -55,30 +54,18 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
         }
     }, [user?.id, moduleId]);
 
-    // Recharger UNIQUEMENT quand l'écran redevient focus ET qu'un défi a été complété
+    // Recharger UNIQUEMENT quand un défi a été complété (signalé via params)
     useFocusEffect(
         useCallback(() => {
-            if (needsRefresh) {
-                loadDefis();
-                setNeedsRefresh(false); // Reset le flag
-            }
-        }, [needsRefresh, loadDefis])
-    );
-
-    // Écouter l'événement de complétion de défi
-    React.useEffect(() => {
-        const unsubscribe = navigation.addListener('focus', () => {
             // Vérifier dans les route params si un défi a été complété
-            const params = (navigation.getState().routes.find(r => r.name === 'DefiList')?.params as any);
+            const params = route.params as any;
             if (params?.defiCompleted) {
-                setNeedsRefresh(true);
+                loadDefis();
                 // Nettoyer le param
                 navigation.setParams({ defiCompleted: undefined } as any);
             }
-        });
-
-        return unsubscribe;
-    }, [navigation]);
+        }, [loadDefis, navigation, route.params])
+    );
 
     const handleDefiPress = (defiId: string, defiTitle: string) => {
         // Ne PAS marquer refresh ici - on attendra le retour pour vérifier
