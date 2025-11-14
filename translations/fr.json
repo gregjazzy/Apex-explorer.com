@@ -132,7 +132,7 @@
           "instruction": "Un problème d'allocation de ressources commence toujours par un calcul précis. Ici : 100 cupcakes ÷ 12 par boîte = ?"
         },
         "etape2": {
-          "titre": "2. La Division Euclidienne",
+          "titre": "2. Calculer Les Boîtes Et Le Reste",
           "type_etape": "validation_case",
           "instruction": "J'ai compris : 100 ÷ 12 me donne un QUOTIENT (nombre de boîtes complètes) et un RESTE (excédent à gérer).",
           "placeholder": null
@@ -204,9 +204,9 @@
       "referenceCroisee": "M8, M9",
         "briefing": {
         "etape1": {
-          "titre": "1. Comprendre Le Ratio",
+          "titre": "1. Trouver Le Nombre Par Lequel Multiplier",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris : 8 personnes ÷ 4 personnes = 2. Je dois donc MULTIPLIER toutes les quantités par 2. C'est le RATIO de transformation.",
+          "instruction": "J'ai compris : 8 personnes ÷ 4 personnes = 2. Je dois donc MULTIPLIER toutes les quantités par 2. C'est le nombre par lequel je transforme la recette.",
           "placeholder": null
         },
         "etape2": {
@@ -234,9 +234,9 @@
         "referenceCroisee": "M1, M8",
         "briefing": {
             "etape1": {
-                "titre": "1. La Matrice D'Eisenhower",
+                "titre": "1. Les 4 Types De Missions",
                 "type_etape": "texte_guide",
-                "instruction": "La Matrice a 4 cases : (1) URGENT + IMPORTANT = À faire en premier (ex: nourrir le chien). (2) NON URGENT + IMPORTANT = La vraie priorité du leader (ex: devoir). (3) URGENT + NON IMPORTANT = À faire vite ou déléguer (ex: aider sœur). (4) NI URGENT NI IMPORTANT = À éviter ou faire en dernier (ex: jeu vidéo)."
+                "instruction": "Il y a 4 types de missions : (1) URGENT + IMPORTANT = À faire en premier (ex: nourrir le chien). (2) NON URGENT + IMPORTANT = La vraie priorité du leader (ex: devoir). (3) URGENT + NON IMPORTANT = À faire vite ou déléguer (ex: aider sœur). (4) NI URGENT NI IMPORTANT = À éviter ou faire en dernier (ex: jeu vidéo)."
             },
             "etape2": {
                 "titre": "2. Placer Les Missions",
@@ -257,8 +257,8 @@
     "defi2": {
         "titre": "Mission: La Planification de la Fête",
         "scenario": "Tu organises une fête d'anniversaire surprise pour ton meilleur ami samedi à 14h. Les invités arrivent à ce moment-là, tu DOIS être prêt !\n\nTu as 3 jours (mercredi, jeudi, vendredi) pour tout préparer. Voici les 4 tâches à faire :\n\n• Tâche A : Acheter les décorations → Prend 1 jour (car tu dois aller en magasin avec tes parents)\n• Tâche B : Préparer les gâteaux → Prend 3 heures (cuisson incluse)\n• Tâche C : Installer les décorations → Prend 2 heures\n• Tâche D : Emballer les cadeaux → Prend 1 heure\n\nATTENTION : Tu ne peux faire qu'une seule chose à la fois !",
-        "instruction": "1. Dans quel ordre dois-tu faire ces 4 tâches pour être prêt samedi 14h ? (Écris l'ordre : A, puis..., puis..., puis...)\n2. Quel jour et à quelle heure dois-tu commencer la première tâche pour finir à temps ?\n3. Quelle tâche est la plus critique (si tu la rates, tout est raté) ? Pourquoi ?\n\n💡 Mot important : RÉTRO-PLANIFICATION = Commencer par la fin (le deadline) et remonter dans le temps pour savoir quand commencer.",
-        "leconStrategique": "Les leaders ne commencent jamais par faire la première chose qui leur passe par la tête. Ils regardent d'abord la date limite (deadline), puis ils remontent le temps pour planifier chaque étape. C'est la rétro-planification : partir de l'objectif pour construire le chemin.",
+      "instruction": "1. Dans quel ordre dois-tu faire ces 4 tâches pour être prêt samedi 14h ? (Écris l'ordre : A, puis..., puis..., puis...)\n2. Quel jour et à quelle heure dois-tu commencer la première tâche pour finir à temps ?\n3. Quelle tâche est la plus critique (si tu la rates, tout est raté) ? Pourquoi ?\n\n💡 Mot important : PLANIFIER À L'ENVERS = Commencer par la fin (le deadline) et remonter dans le temps pour savoir quand commencer. C'est comme si tu remontais le temps !",
+      "leconStrategique": "Les leaders ne commencent jamais par faire la première chose qui leur passe par la tête. Ils regardent d'abord la date limite (deadline), puis ils remontent le temps pour planifier chaque étape. C'est planifier à l'envers : partir de l'objectif pour construire le chemin.\n\nDans les affaires : Les professionnels appellent ça la 'rétro-planification'. C'est une compétence essentielle pour tous les projets !",
       "referenceCroisee": "M6, M8",
       "briefing": {
         "etape1": {
@@ -283,32 +283,32 @@
       "evaluationCriteria": "1. Ordre correct : A (acheter) en premier obligatoire, puis B/C/D dans n'importe quel ordre. 2. Début réaliste : Commence mercredi ou jeudi (laisse du temps). 3. Tâche critique identifiée : A (acheter) car sans décorations, impossible de faire C. 4. BONUS : L'enfant mentionne une 'marge de sécurité' ou anticipe un imprévu."
     },
     "defi3": {
-      "titre": "Mission: Le Principe du 80/20",
+      "titre": "Mission: Le Meilleur Résultat Avec Moins D'Effort",
       "scenario": "Ton école organise une kermesse et tu dois vendre le plus de tickets possible. Tu as identifié 4 stratégies pour y arriver :\n\n• Stratégie A : Parler à tes 5 meilleurs amis → Ils adorent les kermesses et vont sûrement acheter. Temps : 30 minutes | Ventes estimées : 5 tickets garantis\n\n• Stratégie B : Distribuer 50 flyers dans la rue → Tu donnes des flyers à des inconnus qui passent. Temps : 2 heures | Ventes estimées : 2-3 tickets peut-être\n\n• Stratégie C : Envoyer un message à tes 20 camarades de classe → Message rapide avec toutes les infos. Temps : 20 minutes | Ventes estimées : 8-10 tickets probables\n\n• Stratégie D : Faire une belle affiche pour la classe → Créer une affiche colorée à accrocher. Temps : 1 heure | Ventes estimées : 3-4 tickets peut-être\n\nPROBLÈME : Tu as seulement 1 heure disponible aujourd'hui. Tu ne peux pas tout faire !",
-      "instruction": "1. Avec seulement 1 heure, quelles stratégies choisis-tu ? (Tu peux en combiner plusieurs si le temps le permet)\n2. Explique ton choix en parlant de l'IMPACT (nombre de tickets) et de l'EFFORT (temps).\n3. Quelles stratégies as-tu décidé de NE PAS faire ? Pourquoi un leader dit 'NON' ?\n\n💡 Mots importants :\n• PRINCIPE 80/20 (Principe de Pareto) = 20% des efforts produisent 80% des résultats\n• EFFET DE LEVIER = Obtenir un grand résultat avec peu d'effort",
-      "leconStrategique": "Les leaders ne font pas tout. Ils identifient les 20% d'actions qui vont créer les 80% de résultats. Savoir dire 'NON' aux tâches qui prennent beaucoup de temps pour un faible impact est le secret de l'efficacité. C'est le Principe de Pareto ou règle du 80/20.",
+      "instruction": "1. Avec seulement 1 heure, quelles stratégies choisis-tu ? (Tu peux en combiner plusieurs si le temps le permet)\n2. Explique ton choix en parlant du RÉSULTAT (nombre de tickets) et de l'EFFORT (temps).\n3. Quelles stratégies as-tu décidé de NE PAS faire ? Pourquoi un leader dit 'NON' ?\n\n💡 Mot important : MEILLEUR RÉSULTAT AVEC MOINS D'EFFORT = Chercher les actions qui donnent beaucoup de résultats sans prendre trop de temps.",
+      "leconStrategique": "Les leaders ne font pas tout. Ils cherchent les actions qui donnent le MEILLEUR RÉSULTAT avec le MOINS D'EFFORT. Savoir dire 'NON' aux tâches qui prennent beaucoup de temps pour un faible résultat est le secret de l'efficacité.\n\nDans les affaires : Les professionnels appellent ça le 'Principe 80/20' : 20% des efforts produisent 80% des résultats. Un leader intelligent identifie ces 20% et se concentre dessus !",
       "referenceCroisee": "M1, M6",
       "briefing": {
         "etape1": {
-          "titre": "1. Analyser Le Ratio Impact/Effort",
+          "titre": "1. Comparer Résultat Et Effort",
           "type_etape": "texte_guide",
-          "instruction": "Pour chaque stratégie, calcule mentalement : Combien de tickets par heure ? Stratégie A : 5 tickets en 0,5h = 10 tickets/heure. Stratégie C : 10 tickets en 0,3h = 30 tickets/heure ! Cherche le meilleur ratio."
+          "instruction": "Pour chaque stratégie, compare : Combien de tickets pour combien de temps ? Stratégie A : 5 tickets en 30 min = Bon ! Stratégie C : 10 tickets en 20 min = Super ! Cherche ce qui marche le mieux pour le moins de temps."
         },
         "etape2": {
-          "titre": "2. Le Principe 80/20",
+          "titre": "2. Le Secret De L'Efficacité",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris : Les stratégies A et C demandent peu d'effort (50 min total) mais génèrent beaucoup de ventes (15 tickets). C'est le Principe 80/20 : concentrer mon énergie sur ce qui marche le mieux !",
+          "instruction": "J'ai compris : Les stratégies A et C demandent peu de temps (50 min total) mais donnent beaucoup de ventes (15 tickets). C'est le secret : concentrer mon énergie sur ce qui marche le mieux !",
           "placeholder": null
         },
         "etape3": {
-          "titre": "3. Mon Arbitrage Stratégique",
+          "titre": "3. Mon Choix De Leader",
           "type_etape": "champ_texte",
-          "instruction": "Explique quelles stratégies tu choisis et pourquoi tu dis NON aux autres. Utilise les mots IMPACT et EFFORT.",
-          "placeholder": "Je choisis ... car IMPACT élevé avec peu d'EFFORT. Je dis NON à ... car..."
+          "instruction": "Explique quelles stratégies tu choisis et pourquoi tu dis NON aux autres. Utilise les mots RÉSULTAT et EFFORT.",
+          "placeholder": "Je choisis ... car beaucoup de RÉSULTAT avec peu d'EFFORT. Je dis NON à ... car..."
         }
       },
-      "mentorGoal": "Introduire le PRINCIPE 80/20 (Pareto) et l'EFFET DE LEVIER. L'enfant doit comprendre qu'un leader maximise l'impact en choisissant les actions à fort ratio résultat/effort.",
-      "evaluationCriteria": "1. Choix optimal : A + C (15 tickets en 50 min). 2. Justification ratio : L'enfant parle d'IMPACT vs EFFORT. 3. Dire NON justifié : Explique pourquoi B et D sont rejetés (faible impact, temps long). 4. BONUS : L'enfant mentionne 'Principe 80/20' ou 'effet de levier'."
+      "mentorGoal": "Introduire le concept de MAXIMISER LE RÉSULTAT en MINIMISANT L'EFFORT (Principe 80/20 simplifié). L'enfant doit comprendre qu'un leader efficace choisit les actions à fort impact/faible effort.",
+      "evaluationCriteria": "1. Choix optimal : A + C (15 tickets en 50 min). 2. Justification claire : L'enfant parle de RÉSULTAT vs EFFORT. 3. Dire NON justifié : Explique pourquoi B et D sont rejetés (faible résultat, temps long). 4. BONUS : L'enfant mentionne spontanément 'meilleur résultat, moins d'effort' ou comprend qu'il faut se concentrer sur ce qui marche."
     },
     "defi4": {
       "titre": "Quiz: Le Coût du Retard",
@@ -321,7 +321,7 @@
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Bravo ! Le plus grand coût d'un retard n'est pas le temps perdu, mais la CONFIANCE perdue.\n\nUn leader gère son temps pour HONORER ses engagements. Respecter un délai, c'est respecter les autres. La réputation de fiabilité est la ressource la plus précieuse d'un leader.\n\n💡 Lien avec la Gestion du Temps : Si tu avais PLANIFIÉ ton temps (M2-D2), tu aurais commencé le devoir à 14h et évité ce retard !",
       "feedbackIncorrect": "Pas tout à fait. Le temps perdu ou les excuses sont des coûts mineurs.\n\nLe VRAI coût d'un retard, c'est la CONFIANCE perdue. Ton ami ne pourra plus compter sur toi pour les prochaines fois.\n\nUn leader gère son temps pour protéger sa réputation de fiabilité.",
-      "leconStrategique": "La fiabilité est la base de toute collaboration. Un leader ne gère pas son temps seulement pour lui, mais pour honorer ses engagements envers les autres. Respecter un délai, c'est respecter les personnes qui comptent sur toi.",
+      "leconStrategique": "Le retard a un COÛT INVISIBLE : ce qu'on perd sans le voir (confiance, réputation). La fiabilité est la base de toute collaboration. Un leader ne gère pas son temps seulement pour lui, mais pour honorer ses engagements envers les autres.\n\nDans les affaires : Les professionnels parlent de 'coût intangible' (invisible). Respecter un délai, c'est respecter les personnes qui comptent sur toi.",
       "referenceCroisee": "M2-D2 (Planification), M8 (Leadership & Équipe)",
       "mentorGoal": "Tester la compréhension du COÛT IMMATÉRIEL (confiance, réputation) vs coût matériel (temps, excuses). L'enfant doit comprendre que le retard a un impact sur la RELATION et la capacité future à collaborer, ce qui est le fondement de la gestion du temps en contexte de leadership.",
       "evaluationCriteria": "1. Réponse correcte : B (Perte de confiance). 2. BONUS (discussion mentor) : L'enfant comprend que gérer son temps protège sa réputation de leader fiable."
@@ -374,8 +374,8 @@
     "defi3": {
       "titre": "Mission: Le Pont de Papier",
       "scenario": "Défi d'ingénieur ! Tu dois construire un pont avec UNE SEULE feuille de papier pour relier deux tables (espace de 20 cm). Le pont doit supporter un petit jouet (50g).\n\nProblème : Si tu laisses la feuille PLATE, elle tombe immédiatement.\n\nTa mission : Trouver quelle FORME donner au papier pour le rendre assez solide.",
-      "instruction": "1. Quelle forme donnerais-tu au papier pour le rendre plus solide ? (Pli en accordéon ? Roulé en tube ? Plié en V ?)\n\n2. Explique pourquoi cette forme est plus solide qu'une feuille plate (pense à la rigidité et à la répartition du poids).\n\n3. Si tu devais construire 10 ponts identiques rapidement, quelle forme serait la plus facile à répliquer ?\n\n4. Teste mentalement : qu'est-ce qui pourrait faire échouer ton pont ?\n\n💡 Mots importants :\n• RIGIDITÉ = résistance au pliage\n• RÉPLICATION = reproduire la même chose plusieurs fois",
-      "leconStrategique": "La FORME change tout ! Un matériau faible (papier) peut devenir fort avec la bonne STRUCTURE.\n\nCe n'est pas la TAILLE de la ressource qui compte (argent, matériel, équipe), c'est la MODÉLISATION et l'ORGANISATION INTERNE qui garantissent la résistance au stress et la stabilité du système.\n\nDans les entreprises : Une petite équipe bien organisée (structure en V) bat souvent une grande équipe désorganisée (feuille plate).",
+      "instruction": "1. Quelle forme donnerais-tu au papier pour le rendre plus solide ? (Pli en accordéon ? Roulé en tube ? Plié en V ?)\n\n2. Explique pourquoi cette forme est plus solide qu'une feuille plate (pense à la rigidité et à la répartition du poids).\n\n3. Si tu devais construire 10 ponts identiques rapidement, quelle forme serait la plus facile à répliquer ?\n\n4. Teste mentalement : qu'est-ce qui pourrait faire échouer ton pont ?\n\n💡 Mots importants :\n• RIGIDITÉ = résistance au pliage\n• FAIRE PAREIL À CHAQUE FOIS = reproduire la même chose plusieurs fois (c'est comme ça qu'on garantit la qualité !)",
+      "leconStrategique": "La FORME change tout ! Un matériau faible (papier) peut devenir fort avec la bonne STRUCTURE.\n\nCe n'est pas la TAILLE de la ressource qui compte (argent, matériel, équipe), c'est l'ORGANISATION qui garantit la solidité du système.\n\nDans les entreprises : Une petite équipe bien organisée (structure en V) bat souvent une grande équipe désorganisée (feuille plate). Les professionnels appellent ça la 'standardisation' : faire pareil à chaque fois pour garantir la qualité.",
       "referenceCroisee": "M3 (Structures et Systèmes), M7 (Automatisation)",
       "briefing": {
         "etape1": {

@@ -283,32 +283,32 @@
       "evaluationCriteria": "1. Correct order: A (buy) must be first, then B/C/D in any order. 2. Realistic start: Begins Wednesday or Thursday (leaves time). 3. Critical task identified: A (buy) because without decorations, impossible to do C. 4. BONUS: The child mentions a 'safety margin' or anticipates a contingency."
     },
     "defi3": {
-      "titre": "Mission: The 80/20 Principle",
+      "titre": "Mission: Best Result With Less Effort",
       "scenario": "Your school is organizing a fair and you need to sell as many tickets as possible. You have identified 4 strategies to achieve this:\n\n• Strategy A: Talk to your 5 best friends → They love fairs and will surely buy. Time: 30 minutes | Estimated sales: 5 guaranteed tickets\n\n• Strategy B: Distribute 50 flyers on the street → You give flyers to passing strangers. Time: 2 hours | Estimated sales: 2-3 tickets maybe\n\n• Strategy C: Send a message to your 20 classmates → Quick message with all the info. Time: 20 minutes | Estimated sales: 8-10 probable tickets\n\n• Strategy D: Make a nice poster for the classroom → Create a colorful poster to hang up. Time: 1 hour | Estimated sales: 3-4 tickets maybe\n\nPROBLEM: You only have 1 hour available today. You can't do everything!",
-      "instruction": "1. With only 1 hour, which strategies do you choose? (You can combine several if time allows)\n2. Explain your choice by talking about IMPACT (number of tickets) and EFFORT (time).\n3. Which strategies did you decide NOT to do? Why does a leader say 'NO'?\n\n💡 Important words:\n• 80/20 PRINCIPLE (Pareto Principle) = 20% of efforts produce 80% of results\n• LEVERAGE = Getting a big result with little effort",
-      "leconStrategique": "Leaders don't do everything. They identify the 20% of actions that will create 80% of results. Knowing how to say 'NO' to tasks that take a lot of time for low impact is the secret of efficiency. This is the Pareto Principle or 80/20 rule.",
+      "instruction": "1. With only 1 hour, which strategies do you choose? (You can combine several if time allows)\n2. Explain your choice by talking about RESULT (number of tickets) and EFFORT (time).\n3. Which strategies did you decide NOT to do? Why does a leader say 'NO'?\n\n💡 Important word: BEST RESULT WITH LESS EFFORT = Look for actions that give great results without taking too much time.",
+      "leconStrategique": "Leaders don't do everything. They look for actions that give the BEST RESULT with the LEAST EFFORT. Knowing how to say 'NO' to tasks that take a lot of time for low results is the secret of efficiency.\n\nIn business: Professionals call this the '80/20 Principle': 20% of efforts produce 80% of results. A smart leader identifies these 20% and focuses on them!",
       "referenceCroisee": "M1, M6",
       "briefing": {
         "etape1": {
-          "titre": "1. Analyze The Impact/Effort Ratio",
+          "titre": "1. Compare Result And Effort",
           "type_etape": "texte_guide",
-          "instruction": "For each strategy, calculate mentally: How many tickets per hour? Strategy A: 5 tickets in 0.5h = 10 tickets/hour. Strategy C: 10 tickets in 0.3h = 30 tickets/hour! Look for the best ratio."
+          "instruction": "For each strategy, compare: How many tickets for how much time? Strategy A: 5 tickets in 30 min = Good! Strategy C: 10 tickets in 20 min = Great! Look for what works best with the least time."
         },
         "etape2": {
-          "titre": "2. The 80/20 Principle",
+          "titre": "2. The Secret Of Efficiency",
           "type_etape": "validation_case",
-          "instruction": "I understand: Strategies A and C require little effort (50 min total) but generate many sales (15 tickets). This is the 80/20 Principle: focus my energy on what works best!",
+          "instruction": "I understand: Strategies A and C require little time (50 min total) but give many sales (15 tickets). That's the secret: focus my energy on what works best!",
           "placeholder": null
         },
         "etape3": {
-          "titre": "3. My Strategic Choice",
+          "titre": "3. My Leader's Choice",
           "type_etape": "champ_texte",
-          "instruction": "Explain which strategies you choose and why you say NO to others. Use the words IMPACT and EFFORT.",
-          "placeholder": "I choose ... because high IMPACT with little EFFORT. I say NO to ... because..."
+          "instruction": "Explain which strategies you choose and why you say NO to others. Use the words RESULT and EFFORT.",
+          "placeholder": "I choose ... because great RESULT with little EFFORT. I say NO to ... because..."
         }
       },
-      "mentorGoal": "Introduce the 80/20 PRINCIPLE (Pareto) and LEVERAGE. The child must understand that a leader maximizes impact by choosing actions with a high result/effort ratio.",
-      "evaluationCriteria": "1. Optimal choice: A + C (15 tickets in 50 min). 2. Ratio justification: The child talks about IMPACT vs EFFORT. 3. Justified NO: Explains why B and D are rejected (low impact, long time). 4. BONUS: The child mentions '80/20 Principle' or 'leverage'."
+      "mentorGoal": "Introduce the concept of MAXIMIZING RESULT while MINIMIZING EFFORT (80/20 Principle simplified). The child must understand that an effective leader chooses high-impact/low-effort actions.",
+      "evaluationCriteria": "1. Optimal choice: A + C (15 tickets in 50 min). 2. Clear justification: The child talks about RESULT vs EFFORT. 3. Justified NO: Explains why B and D are rejected (low result, long time). 4. BONUS: The child spontaneously mentions 'best result, less effort' or understands they need to focus on what works."
     },
     "defi4": {
       "titre": "Quiz: The Cost of Delay",
