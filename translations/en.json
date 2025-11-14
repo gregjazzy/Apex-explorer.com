@@ -399,20 +399,31 @@
       "evaluationCriteria": "1. Coherent shape proposed (accordion, tube, V, triangle). 2. Logical explanation: Mentions rigidity, height, thickness, or weight distribution. 3. Risk anticipation (question 4). 4. BONUS: The child mentions that the chosen shape is easy to REPLICATE (standardization) or makes the connection with real objects (bridges, towers, tubes)."
     },
     "defi4": {
-      "titre": "Quiz: Load Optimization",
-      "question": "You need to transport objects of different weights. How should heavy and light loads be stacked to maximize vehicle safety and stability?",
-      "options": [
-        "Heavy objects on top of light ones.",
-        "Heavy objects at the bottom, centered.",
-        "The order doesn't matter."
-      ],
-      "bonneReponseIndex": 1,
-      "feedbackCorrect": "Heavy loads at the bottom and centered minimize the center of gravity, increasing stability. This is essential for transport.",
-      "feedbackIncorrect": "Stacking heavy objects on light ones creates instability and a risk of tipping.",
-      "leconStrategique": "Every logistical decision must serve safety and stability first. Optimization comes through prudence.",
-      "referenceCroisee": "M8",
-      "mentorGoal": "Test understanding of friction and mechanical efficiency. The child must identify how to reduce friction to optimize movement.",
-      "evaluationCriteria": "The answer must suggest solutions to reduce friction (oil, wheels, smooth surface). Bonus: The child quantifies the improvement or cites the friction coefficient."
+      "titre": "Mission: The Heavy Suitcase",
+      "scenario": "Vacation time! Your suitcase weighs 20 kg and you must carry it up to the 3rd floor via the stairs (no elevator).\n\nOption 1: Carry it alone in your arms (very tiring)\nOption 2: Ask someone to help you carry it (divide the weight)\nOption 3: Make several trips by dividing the contents into lighter bags\n\nWhat is the SMARTEST solution and why?",
+      "instruction": "1. Which option do you choose?\n\n2. Explain why it's more efficient than the other options (think about effort, cooperation, time).\n\n3. In real life, how do adults transport very heavy loads up stairs without getting tired?\n\n💡 Important words:\n• COOPERATION = working together to share the effort\n• LEVERAGE = tool or method that reduces the effort needed",
+      "leconStrategique": "Smart leaders never force alone. They always seek LEVERAGE:\n\n1. Use TOOLS (machines, carts, elevators)\n2. Use COOPERATION (share the weight, delegate)\n3. Use STRATEGY (divide into multiple trips)\n\nIn this case: no tools available (stairs) → COOPERATION is the best leverage. Asking for help means using available human resources to divide the effort.\n\nPrinciple: Work SMART > Work HARD.",
+      "referenceCroisee": "M3 (Structures and Systems), M8 (Leadership and Team)",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Analyze The Options",
+          "type_etape": "validation_case",
+          "instruction": "I understand: Option 1 (alone) = exhausting. Option 2 (help) = divides weight by 2. Option 3 (multiple trips) = lighter but longer. I'm looking for the best effort/time ratio."
+        },
+        "etape2": {
+          "titre": "2. The Cooperation Principle",
+          "type_etape": "texte_guide",
+          "instruction": "In a system without available tools (no elevator, no cart), the best resource is COOPERATION. Two people carry 10 kg each instead of one person carrying 20 kg. The effort is DIVIDED, not DOUBLED. This is the teamwork principle: 1 + 1 = 3 in efficiency!"
+        },
+        "etape3": {
+          "titre": "3. My Leader's Reasoning",
+          "type_etape": "champ_texte",
+          "instruction": "Explain which option you choose and why it's 'working smart'. Use the words COOPERATION or STRATEGY.",
+          "placeholder": "I choose option ... because it's working smart because..."
+        }
+      },
+      "mentorGoal": "Introduce the concepts of SMART WORK, COOPERATION and LEVERAGE. The child must understand that in a system without tools (stairs), human resources (cooperation) are the best leverage to reduce individual effort.",
+      "evaluationCriteria": "1. Coherent choice: Option 2 (help) = optimal for effort/time. 2. Justification: Mentions weight division, cooperation, or teamwork. 3. Real examples: Movers, porters, teamwork. 4. BONUS: The child explains the '1+1=3' principle (synergy) or mentions that without tools, humans ARE the leverage."
     }
   },
   "m4": {

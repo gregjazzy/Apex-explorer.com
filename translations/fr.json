@@ -400,24 +400,30 @@
     },
     "defi4": {
       "titre": "Mission: La Valise Trop Lourde",
-      "scenario": "Départ en vacances ! Ta valise pèse 20 kg et tu dois la porter dans les escaliers (pas d'ascenseur). Option 1 : La porter à bout de bras. Option 2 : La tirer avec les roulettes. Option 3 : Demander à quelqu'un de t'aider à la porter. Quelle est la solution la PLUS INTELLIGENTE et pourquoi ?",
-      "instruction": "1. Quelle option choisis-tu ?\n2. Explique pourquoi c'est plus facile (pense à l'effort, aux outils, à l'aide).\n3. Dans la vraie vie, comment les adultes transportent des choses très lourdes sans se fatiguer ?",
-      "leconStrategique": "Les meilleurs leaders ne forcent jamais. Ils utilisent des OUTILS (comme les roulettes) ou demandent de l'AIDE. Travailler intelligemment > Travailler dur. C'est la base de l'efficacité.",
-      "referenceCroisee": "M8",
+      "scenario": "Départ en vacances ! Ta valise pèse 20 kg et tu dois la monter au 3ème étage par les escaliers (pas d'ascenseur).\n\nOption 1 : La porter seul à bout de bras (très fatigant)\nOption 2 : Demander à quelqu'un de t'aider à la porter (diviser le poids)\nOption 3 : Faire plusieurs voyages en divisant le contenu en sacs plus légers\n\nQuelle est la solution la PLUS INTELLIGENTE et pourquoi ?",
+      "instruction": "1. Quelle option choisis-tu ?\n\n2. Explique pourquoi c'est plus efficace que les autres options (pense à l'effort, à la coopération, au temps).\n\n3. Dans la vraie vie, comment les adultes transportent-ils des charges très lourdes dans les escaliers sans se fatiguer ?\n\n💡 Mots importants :\n• COOPÉRATION = travailler ensemble pour partager l'effort\n• LEVIER = outil ou méthode qui réduit l'effort nécessaire",
+      "leconStrategique": "Les leaders intelligents ne forcent jamais seuls. Ils cherchent toujours l'EFFET DE LEVIER :\n\n1. Utiliser des OUTILS (machines, chariots, ascenseurs)\n2. Utiliser la COOPÉRATION (partager le poids, déléguer)\n3. Utiliser la STRATÉGIE (diviser en plusieurs fois)\n\nDans ce cas : pas d'outil disponible (escaliers) → la COOPÉRATION est le meilleur levier. Demander de l'aide, c'est utiliser les ressources humaines disponibles pour diviser l'effort.\n\nPrincipe : Travailler INTELLIGEMMENT > Travailler DUR.",
+      "referenceCroisee": "M3 (Structures et Systèmes), M8 (Leadership et Équipe)",
       "briefing": {
         "etape1": {
-          "titre": "1. Comparer Les Efforts",
+          "titre": "1. Analyser Les Options",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris : porter 20kg à bout de bras = très fatigant. Les roulettes réduisent l'effort (mais escaliers = impossible). Demander de l'aide = diviser le poids par 2 !"
+          "instruction": "J'ai compris : Option 1 (seul) = épuisant. Option 2 (aide) = divise le poids par 2. Option 3 (plusieurs voyages) = moins lourd mais plus long. Je cherche le meilleur ratio effort/temps."
         },
         "etape2": {
-          "titre": "2. Le Principe D'Efficacité",
+          "titre": "2. Le Principe De Coopération",
           "type_etape": "texte_guide",
-          "instruction": "Les humains intelligents utilisent toujours : 1) Des OUTILS (roues, machines). 2) De l'AIDE (coopération). 3) Des STRATÉGIES (diviser en plusieurs voyages). Ne jamais forcer bêtement !"
+          "instruction": "Dans un système sans outils disponibles (pas d'ascenseur, pas de chariot), la meilleure ressource est la COOPÉRATION. Deux personnes portent 10 kg chacune au lieu d'une personne qui porte 20 kg. L'effort est DIVISÉ, pas DOUBLÉ. C'est le principe du travail d'équipe : 1 + 1 = 3 en efficacité !"
+        },
+        "etape3": {
+          "titre": "3. Mon Raisonnement De Leader",
+          "type_etape": "champ_texte",
+          "instruction": "Explique quelle option tu choisis et pourquoi c'est 'travailler intelligemment'. Utilise les mots COOPÉRATION ou STRATÉGIE.",
+          "placeholder": "Je choisis l'option ... car c'est travailler intelligemment parce que..."
         }
       },
-      "mentorGoal": "Introduit les concepts de travail intelligent, utilisation d'outils et coopération. Lien avec physique : réduction de l'effort par les machines simples.",
-      "evaluationCriteria": "1. Choix cohérent (aide = meilleur pour escaliers). 2. Explication logique (division effort, coopération). 3. Exemples réels : chariots, ascenseurs, diables, grues. Bonus : L'enfant fait le lien avec 'travailler intelligemment'."
+      "mentorGoal": "Introduire les concepts de TRAVAIL INTELLIGENT, COOPÉRATION et EFFET DE LEVIER. L'enfant doit comprendre que dans un système sans outils (escaliers), la ressource humaine (coopération) est le meilleur levier pour réduire l'effort individuel.",
+      "evaluationCriteria": "1. Choix cohérent : Option 2 (aide) = optimal pour effort/temps. 2. Justification : Mentionne division du poids, coopération, ou travail d'équipe. 3. Exemples réels : Déménageurs, porteurs, travail d'équipe. 4. BONUS : L'enfant explique le principe '1+1=3' (synergie) ou mentionne que sans outils, les humains SONT le levier."
     }
   },
   "m4": {
