@@ -444,31 +444,31 @@
       "evaluationCriteria": "1. Correct answer: A (Blue). 2. BONUS: The child explains the 3 sequential steps (Alice → Ben → Claire) or identifies that Alice is the starting point because she has the most constraints (2 constraints)."
     },
     "defi2": {
-        "titre": "Mission: The Critical Path",
-        "scenario": "You're managing the manufacturing of a toy. There are 4 mandatory steps:\n\nA = Cut the pieces\nB = Paint the pieces\nC = Assemble the toy\nD = Dry the toy\n\nProblem: The factory's current order is (C, D, A, B).\n\nYour mission: Find the CRITICAL PATH (the best logical sequence).",
-        "instruction": "1. Write the optimal sequence of tasks (e.g., A, B, C, D).\n\n2. Explain why the current order (C, D, A, B) doesn't work. What is the first error that blocks everything?\n\n3. Identify the DEPENDENCIES: Which steps must absolutely be completed BEFORE you can assemble (C)?\n\n💡 Important words:\n• CRITICAL PATH = optimal sequence that respects all dependencies\n• DEPENDENCY = a task that must be done before another",
-        "leconStrategique": "In analysis, logic is called the CRITICAL PATH. It's the sequence of steps that must absolutely be done in the right order (the DEPENDENCIES).\n\nA sequencing error blocks the entire system. For example: you can't assemble pieces that don't exist yet!\n\nIn business: A leader identifies a project's critical path to avoid bottlenecks and deliver on time. If a key step is delayed, the entire project is delayed.\n\nPrinciple: Efficiency comes from ORDER, not just speed.",
+        "titre": "Mission: The Best Order",
+        "scenario": "You're managing the manufacturing of a toy. There are 4 mandatory steps:\n\nA = Cut the pieces\nB = Paint the pieces\nC = Assemble the toy\nD = Dry the toy\n\nProblem: The factory's current order is (C, D, A, B). It's chaos!\n\nYour mission: Find the BEST ORDER to be super efficient.",
+        "instruction": "1. Write the perfect order of steps (e.g., A, B, C, D).\n\n2. Explain the biggest problem with the current order (C, D, A, B). Why does this error create a total BLOCKAGE?\n\n3. Your trick: Why did you put Drying (D) at the end?\n\n💡 Important words:\n• BLOCKAGE = when a step can't be done because the previous step isn't finished\n• BEST ORDER = the perfect sequence where each step prepares the next one",
+        "leconStrategique": "Logical analysis helps find the BEST ORDER for all your tasks. There are BLOCKAGES that prevent you from moving forward if you do things in the wrong order.\n\nAn efficient leader thinks ahead to eliminate blockages and ensure that step 1 always prepares step 2.\n\nIn business: Professionals call this the CRITICAL PATH. It's the order of steps in a project that allows delivery on time. If an important step is late, the entire project is late.\n\nPrinciple: Efficiency comes from ORDER, not just speed.",
         "referenceCroisee": "M4 (Analysis and Logic), M2-D2 (Planning)",
         "briefing": {
             "etape1": {
-                "titre": "1. The Dependency Concept",
+                "titre": "1. The Blockage Problem",
                 "type_etape": "validation_case",
-                "instruction": "I understand the LOGICAL DEPENDENCY problem: A following task depends on a previous task. You can't work on pieces that don't exist yet! Example: You can't assemble (C) before cutting (A)."
+                "instruction": "I understand the BLOCKAGE problem: You can't do a step if the previous step isn't finished. Example: You can't assemble (C) pieces that haven't been cut (A) yet. It's blocked!"
             },
             "etape2": {
-                "titre": "2. Identify Blocking Steps",
+                "titre": "2. Find The Errors",
                 "type_etape": "texte_guide",
-                "instruction": "In the current order (C, D, A, B), the error starts from the very first step: we're trying to assemble (C) pieces that haven't been cut (A) yet. That's a BOTTLENECK. Then, we're trying to dry (D) something that hasn't been painted (B). Two major errors! The critical path always starts with PREPARATION (cutting the pieces)."
+                "instruction": "In the current order (C, D, A, B), the first error is huge: we're trying to assemble (C) pieces that haven't been cut (A) yet. Impossible! Then, we're trying to dry (D) something that hasn't been painted (B). Still impossible! The best order always starts with PREPARATION: cutting the pieces first."
             },
             "etape3": {
-                "titre": "3. My Critical Path",
+                "titre": "3. My Best Order",
                 "type_etape": "champ_texte",
-                "instruction": "Write your optimal sequence and explain why it's the right order. Use the word DEPENDENCY in your explanation.",
-                "placeholder": "My sequence: ... because each step respects the dependencies..."
+                "instruction": "Write your perfect order and explain why it's the right one. Use the word BLOCKAGE in your explanation.",
+                "placeholder": "My order: ... because this way there's no blockage..."
             }
       },
-      "mentorGoal": "Introduce the concepts of CRITICAL PATH and LOGICAL DEPENDENCIES. The child must understand that a process has an optimal order based on dependencies between tasks, and that a sequencing error creates bottlenecks.",
-      "evaluationCriteria": "1. Correct sequence: A → B → C → D (Cut → Paint → Assemble → Dry). 2. Error explanation: Identifies that C (Assembly) cannot be done before A (Cut). 3. Dependency identification: C depends on A AND B (needs cut AND painted pieces). 4. BONUS: The child uses the terms CRITICAL PATH or LOGICAL DEPENDENCY, or makes the connection with a real project (house construction, cooking recipe)."
+      "mentorGoal": "Introduce the concepts of BEST ORDER (critical path) and BLOCKAGES (logical dependencies). The child must understand that a process has an optimal order and that a sequencing error creates blockages.",
+      "evaluationCriteria": "1. Correct sequence: A → B → C → D (Cut → Paint → Assemble → Dry). 2. Error explanation: Identifies that C (Assembly) cannot be done before A (Cut) because it's a blockage. 3. Justification for D at the end: Drying must be done after painting. 4. BONUS: The child makes a connection with a real project (construction, cooking recipe) or mentions the term 'Critical Path'."
     },
     "defi3": {
       "titre": "Quiz: The Missing Pattern",

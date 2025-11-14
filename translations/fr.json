@@ -444,31 +444,31 @@
       "evaluationCriteria": "1. Réponse correcte : A (Bleu). 2. BONUS : L'enfant explique les 3 étapes séquentielles (Alice → Ben → Claire) ou identifie qu'Alice est le point de départ car elle a le plus de contraintes (2 contraintes)."
     },
     "defi2": {
-        "titre": "Mission: Le Chemin Critique",
-        "scenario": "Tu gères la fabrication d'un jouet. Il y a 4 étapes obligatoires :\n\nA = Couper les pièces\nB = Peindre les pièces\nC = Assembler le jouet\nD = Sécher le jouet\n\nProblème : L'ordre actuel de l'usine est (C, D, A, B).\n\nTa mission : Trouver le CHEMIN CRITIQUE (la meilleure séquence logique).",
-        "instruction": "1. Écris la séquence optimale des tâches (ex: A, B, C, D).\n\n2. Explique pourquoi l'ordre actuel (C, D, A, B) ne fonctionne pas. Quelle est la première erreur qui bloque tout ?\n\n3. Identifie les DÉPENDANCES : Quelles étapes doivent absolument être terminées AVANT de pouvoir assembler (C) ?\n\n💡 Mots importants :\n• CHEMIN CRITIQUE = séquence optimale qui respecte toutes les dépendances\n• DÉPENDANCE = une tâche qui doit être faite avant une autre",
-        "leconStrategique": "Dans l'analyse, la logique s'appelle le CHEMIN CRITIQUE. C'est la séquence des étapes qui doivent absolument être faites dans le bon ordre (les DÉPENDANCES).\n\nUne erreur de séquence bloque tout le système. Par exemple : on ne peut pas assembler des pièces qui n'existent pas encore !\n\nDans les affaires : Un leader identifie le chemin critique d'un projet pour éviter les blocages et livrer à temps. Si une étape clé est retardée, tout le projet est retardé.\n\nPrincipe : L'efficacité vient de l'ORDRE, pas juste de la vitesse.",
+        "titre": "Mission: Le Meilleur Ordre",
+        "scenario": "Tu gères la fabrication d'un jouet. Il y a 4 étapes obligatoires :\n\nA = Couper les pièces\nB = Peindre les pièces\nC = Assembler le jouet\nD = Sécher le jouet\n\nProblème : L'ordre actuel de l'usine est (C, D, A, B). C'est le chaos !\n\nTa mission : Trouver le MEILLEUR ORDRE pour être ultra-efficace.",
+        "instruction": "1. Écris l'ordre parfait des étapes (ex: A, B, C, D).\n\n2. Explique le plus gros problème de l'ordre actuel (C, D, A, B). Pourquoi cette erreur crée un BLOCAGE total ?\n\n3. Ton astuce : Pourquoi as-tu mis le Séchage (D) à la fin ?\n\n💡 Mots importants :\n• BLOCAGE = quand une étape ne peut pas se faire car l'étape d'avant n'est pas terminée\n• MEILLEUR ORDRE = la séquence parfaite où chaque étape prépare la suivante",
+        "leconStrategique": "L'analyse logique sert à trouver le MEILLEUR ORDRE pour toutes tes tâches. Il y a des BLOCAGES qui t'empêchent d'avancer si tu fais les choses dans le mauvais ordre.\n\nLe leader efficace pense à l'avance pour éliminer les blocages et s'assurer que l'étape 1 prépare toujours l'étape 2.\n\nDans les affaires : Les professionnels appellent ça le CHEMIN CRITIQUE. C'est l'ordre des étapes d'un projet qui permet de livrer à temps. Si une étape importante est en retard, tout le projet est en retard.\n\nPrincipe : L'efficacité vient de l'ORDRE, pas juste de la vitesse.",
         "referenceCroisee": "M4 (Analyse et Logique), M2-D2 (Planification)",
         "briefing": {
             "etape1": {
-                "titre": "1. Le Concept De Dépendance",
+                "titre": "1. Le Problème Du Blocage",
                 "type_etape": "validation_case",
-                "instruction": "J'ai compris le problème de la DÉPENDANCE LOGIQUE : Une tâche suivante dépend d'une tâche précédente. On ne peut pas travailler sur des pièces qui n'existent pas encore ! Exemple : On ne peut pas assembler (C) avant de couper (A)."
+                "instruction": "J'ai compris le problème du BLOCAGE : On ne peut pas faire une étape si l'étape d'avant n'est pas terminée. Exemple : On ne peut pas assembler (C) des pièces qui n'ont pas encore été coupées (A). C'est bloqué !"
             },
             "etape2": {
-                "titre": "2. Identifier Les Étapes Bloquantes",
+                "titre": "2. Trouver Les Erreurs",
                 "type_etape": "texte_guide",
-                "instruction": "Dans l'ordre actuel (C, D, A, B), l'erreur commence dès la première étape : on essaie d'assembler (C) des pièces qui n'ont pas encore été coupées (A). C'est un BLOCAGE. Ensuite, on essaie de sécher (D) quelque chose qui n'a pas été peint (B). Deux erreurs majeures ! Le chemin critique commence toujours par la PRÉPARATION (couper les pièces)."
+                "instruction": "Dans l'ordre actuel (C, D, A, B), la première erreur est énorme : on essaie d'assembler (C) des pièces qui n'ont pas encore été coupées (A). Impossible ! Ensuite, on essaie de sécher (D) quelque chose qui n'a pas été peint (B). Encore impossible ! Le meilleur ordre commence toujours par la PRÉPARATION : couper les pièces en premier."
             },
             "etape3": {
-                "titre": "3. Mon Chemin Critique",
+                "titre": "3. Mon Meilleur Ordre",
                 "type_etape": "champ_texte",
-                "instruction": "Écris ta séquence optimale et explique pourquoi c'est le bon ordre. Utilise le mot DÉPENDANCE dans ton explication.",
-                "placeholder": "Ma séquence : ... parce que chaque étape respecte les dépendances..."
+                "instruction": "Écris ton ordre parfait et explique pourquoi c'est le bon. Utilise le mot BLOCAGE dans ton explication.",
+                "placeholder": "Mon ordre : ... parce que comme ça il n'y a pas de blocage..."
             }
       },
-      "mentorGoal": "Introduire les concepts de CHEMIN CRITIQUE et DÉPENDANCES LOGIQUES. L'enfant doit comprendre qu'un processus a un ordre optimal basé sur les dépendances entre les tâches, et qu'une erreur de séquence crée des blocages.",
-      "evaluationCriteria": "1. Séquence correcte : A → B → C → D (Couper → Peindre → Assembler → Sécher). 2. Explication erreur : Identifie que C (Assemblage) ne peut pas se faire avant A (Coupe). 3. Identification dépendances : C dépend de A ET B (besoin pièces coupées ET peintes). 4. BONUS : L'enfant utilise les termes CHEMIN CRITIQUE ou DÉPENDANCE LOGIQUE, ou fait le lien avec un projet réel (construction maison, recette cuisine)."
+      "mentorGoal": "Introduire les concepts de MEILLEUR ORDRE (chemin critique) et BLOCAGES (dépendances logiques). L'enfant doit comprendre qu'un processus a un ordre optimal et qu'une erreur de séquence crée des blocages.",
+      "evaluationCriteria": "1. Séquence correcte : A → B → C → D (Couper → Peindre → Assembler → Sécher). 2. Explication erreur : Identifie que C (Assemblage) ne peut pas se faire avant A (Coupe) car c'est un blocage. 3. Justification D à la fin : Le séchage doit être fait après la peinture. 4. BONUS : L'enfant fait le lien avec un projet réel (construction, recette de cuisine) ou mentionne le terme 'Chemin Critique'."
     },
     "defi3": {
       "titre": "Quiz: Le Schéma Manquant",
