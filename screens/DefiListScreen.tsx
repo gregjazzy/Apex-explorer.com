@@ -1,12 +1,14 @@
 // /screens/DefiListScreen.tsx
 
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Platform, Dimensions, TouchableOpacity, FlatList } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
-import { Defi } from '../services/dataService';
+import { useFocusEffect } from '@react-navigation/native';
+import { Defi, fetchModulesWithProgress } from '../services/dataService';
+import { useAuth } from '../hooks/useAuth';
 import PremiumTheme from '../config/premiumTheme';
 
 const { width } = Dimensions.get('window');
@@ -25,7 +27,10 @@ type DefiListScreenProps = NativeStackScreenProps<any, 'DefiList'> & {
 
 const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) => {
     const { t } = useTranslation();
-    const { moduleId, moduleTitle, defis } = route.params;
+    const { user } = useAuth();
+    const { moduleId, moduleTitle, defis: initialDefis } = route.params;
+    const [defis, setDefis] = useState<Defi[]>(initialDefis || []);
+    const [needsRefresh, setNeedsRefresh] = useState(false);
 
     // Met à jour le titre de la navigation (laissé pour la compatibilité mobile)
     React.useLayoutEffect(() => {
@@ -35,8 +40,37 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
         });
     }, [navigation, moduleTitle]);
 
+    // Fonction pour recharger les défis depuis Supabase
+    const loadDefis = useCallback(async () => {
+        if (!user?.id) return;
+        
+        try {
+            const modules = await fetchModulesWithProgress(user.id);
+            const currentModule = modules.find(m => m.id === moduleId);
+            if (currentModule) {
+                setDefis(currentModule.defis);
+            }
+        } catch (error) {
+            console.error('Erreur lors du rechargement des défis:', error);
+        }
+    }, [user?.id, moduleId]);
+
+    // Recharger UNIQUEMENT quand l'écran redevient focus ET qu'un défi a été complété
+    useFocusEffect(
+        useCallback(() => {
+            if (needsRefresh) {
+                loadDefis();
+                setNeedsRefresh(false); // Reset le flag
+            }
+        }, [needsRefresh, loadDefis])
+    );
+
     const handleDefiPress = (defiId: string, defiTitle: string) => {
-        // Navigue vers l'écran du défi (Prompt 5)
+        // Marquer qu'un refresh sera nécessaire au retour
+        // (au cas où le défi serait complété)
+        setNeedsRefresh(true);
+        
+        // Navigue vers l'écran du défi
         navigation.navigate('Defi', { moduleId: moduleId, defiId: defiId, defiTitle: defiTitle });
     };
 

@@ -98,7 +98,7 @@
     "retry_button": "Réessayer",
     "submit_understood": "J'ai compris 💡",
     "correct_answer": "✅ Parfait! Réponse Correcte. Vous pouvez soumettre.",
-    "incorrect_answer": "❌ Ce n'est pas la bonne réponse. Analysez votre erreur ou utilisez la Fiche Guidée!",
+    "incorrect_answer": "❌ Ce n'est pas la bonne réponse. Réfléchis bien et réessaye !",
     "feedback_correct": "Correct",
     "feedback_incorrect": "Incorrect",
     "submit_title": "Défi Soumis",
@@ -499,31 +499,37 @@
       "feedbackIncorrect": "Réfléchis bien ! Un bon capitaine ne choisit pas seulement le 'meilleur', il choisit celui qui a le MOINS DE RISQUES en situation de pression.\n\nAstuce : Regarde les mots 'MAIS' dans les descriptions.\n→ 'Très bon MAIS fatigué' = risque physique (jambes fatiguées)\n→ 'Excellent MAIS peur' = risque mental (stress qui bloque)\n\nQui n'a PAS de 'MAIS' ? Qui est stable et sans risque majeur ?",
       "leconStrategique": "Un leader doit faire des ARBITRAGES : choisir entre plusieurs options en pesant les avantages ET les risques.\n\nLa meilleure décision n'est pas toujours de choisir 'le meilleur', mais de choisir 'le plus stable' en situation de pression.\n\nDans la vie réelle :\n• Choisir un partenaire pour un projet : Pas le plus brillant mais stressé, mais le plus fiable\n• Investir son argent : Pas l'option la plus rentable mais risquée, mais l'option stable\n• Recruter dans son équipe : Pas le CV le plus impressionnant, mais la personne la plus équilibrée\n\nDans les affaires : Les leaders éliminent d'abord les options à RISQUES ÉLEVÉS, puis choisissent parmi les options STABLES. C'est la gestion du risque !",
       "referenceCroisee": "M4 (Analyse et Logique), M8 (Leadership et Équipe)",
-      "mentorGoal": "Introduire l'ARBITRAGE SOUS CONTRAINTES et la GESTION DU RISQUE. L'enfant doit démontrer qu'il peut éliminer les options à risques pour identifier le choix le plus stable en situation de pression.",
+      "mentorGoal": "Introduire l'ARBITRAGE SOUS CONTRAINTES et la GESTION DU RISQUE. L'enfant doit démontrer qu'il peut prioriser la STABILITÉ sur l'excellence potentielle, en éliminant d'abord les options qui présentent un facteur de risque (le 'MAIS').",
       "evaluationCriteria": "1. Réponse correcte : B (Emma). 2. BONUS : L'enfant explique que 'stable' est mieux qu''excellent avec risques' ou mentionne qu'il a éliminé les options avec 'MAIS' en premier (méthode d'élimination)."
     }
   },
   "m5": {
     "defi1": {
-        "titre": "Défi: Le Pitch de l'Inventeur",
-        "scenario": "Tu as inventé un objet révolutionnaire (ex: des chaussures volantes). Comment convaincrais-tu un investisseur de te donner de l'argent en 3 phrases ? (Focus : Problème, Solution, Valeur).",
-        "instruction": "Écris ton pitch. La clarté et l'impact sont évalués.",
-        "leconStrategique": "La clarté est la force d'un leader. Si tu ne peux pas expliquer ton idée simplement, elle sera ignorée.",
-        "referenceCroisee": "M7",
+        "titre": "Mission: Le Message Clair",
+        "scenario": "Tu as créé un jeu de société super amusant ! Tu veux convaincre tes camarades de classe d'y jouer avec toi à la récréation.\n\nLe problème : Tu n'as que 30 secondes pour leur expliquer ton jeu avant qu'ils partent jouer au foot.\n\nTa mission : Expliquer ton jeu en 3 phrases courtes pour donner envie d'y jouer !",
+        "instruction": "Écris 3 phrases pour convaincre tes camarades :\n\n1. PROBLÈME : Quel ennui ton jeu va résoudre ?\n   (Ex: 'Vous en avez marre de toujours jouer au même jeu ?')\n\n2. SOLUTION : C'est quoi ton jeu et comment ça marche en 1 phrase ?\n   (Ex: 'Mon jeu s'appelle ... et on doit ...')\n\n3. BÉNÉFICE : Pourquoi c'est génial pour eux ?\n   (Ex: 'C'est amusant parce que... et tout le monde peut gagner !')\n\n💡 Mot important : MESSAGE CLAIR = Expliquer simplement et rapidement pour que les autres comprennent tout de suite.",
+        "leconStrategique": "La CLARTÉ est le MOTEUR de l'INFLUENCE. Si tu ne peux pas expliquer ton idée simplement, les autres ne seront pas mobilisés.\n\nLes 3 règles du message clair :\n1. PROBLÈME d'abord (pourquoi les gens ont besoin de toi)\n2. SOLUTION ensuite (ce que tu proposes)\n3. BÉNÉFICE à la fin (ce qu'ils y gagnent)\n\nDans la vie réelle :\n• Convaincre tes parents de t'acheter quelque chose\n• Proposer une activité à tes amis\n• Expliquer une idée en classe\n\nDans les affaires : C'est la méthode de persuasion rapide (l'« elevator pitch »). Un message clair permet de mobiliser ton équipe ou de convaincre un partenaire. Un message clair = une idée retenue !",
+        "referenceCroisee": "M5 (Communication et Persuasion), M7 (Créativité)",
         "briefing": {
             "etape1": {
-                "titre": "1. Analyser l'Auditoire (Leur Besoin)",
-                "type_etape": "validation_case",
-                "instruction": "J'ai identifié que l'investisseur veut savoir s'il va gagner de l'argent. Mon pitch doit être rapide et excitant, et non technique."
+                "titre": "1. Identifier Le Problème",
+                "type_etape": "texte_guide",
+                "instruction": "Avant de convaincre, pose-toi la question : 'Quel problème mon idée va résoudre ?'\n\nExemple pour un jeu :\n• Problème : 'On s'ennuie à la récré'\n• Problème : 'Les jeux actuels sont trop compliqués'\n• Problème : 'On veut jouer tous ensemble'\n\nChoisis UN problème clair !"
             },
             "etape2": {
-                "titre": "2. La Méthode A-S-V (Appel - Solution - Valeur)",
-                "type_etape": "texte_guide",
-                "instruction": "Un bon pitch suit trois étapes : 1. L'Appel (le problème urgent). 2. La Solution (ton invention). 3. La Valeur (pourquoi c'est génial pour eux). Concentre-toi sur ces 3 idées."
+                "titre": "2. La Structure P-S-B",
+                "type_etape": "validation_case",
+                "instruction": "J'ai compris la structure :\n1. PROBLÈME (l'ennui que je résous)\n2. SOLUTION (mon idée en 1 phrase)\n3. BÉNÉFICE (ce qu'ils y gagnent)\n\nCette structure fonctionne pour tout : convaincre tes parents, tes amis, ou ton équipe !"
+            },
+            "etape3": {
+                "titre": "3. Mon Message Clair",
+                "type_etape": "champ_texte",
+                "instruction": "Écris ton message en 3 phrases en utilisant la structure P-S-B.",
+                "placeholder": "Phrase 1 (PROBLÈME) : ...\nPhrase 2 (SOLUTION) : ...\nPhrase 3 (BÉNÉFICE) : ...\n\nVérification : Est-ce que mon message donne vraiment envie de jouer ?"
             }
       },
-      "mentorGoal": "Évaluer la capacité de l'enfant à structurer un message persuasif en utilisant la méthode AIDA (Attention, Intérêt, Désir, Action).",
-      "evaluationCriteria": "La réponse doit contenir les 4 éléments de l'AIDA dans un ordre logique. Bonus: L'enfant utilise un storytelling captivant ou des données convaincantes."
+      "mentorGoal": "Introduire la STRUCTURE D'UN MESSAGE PERSUASIF (Problème-Solution-Bénéfice). L'enfant doit démontrer qu'il peut structurer un message clair et convaincant en 3 étapes logiques.",
+      "evaluationCriteria": "1. Structure respectée : Identifie un PROBLÈME, propose une SOLUTION, explique le BÉNÉFICE. 2. Clarté : Le message est compréhensible pour un enfant de 8-9 ans. 3. Concision : Les 3 phrases sont courtes et directes. 4. BONUS : L'enfant utilise des questions (ex: 'Tu veux...?') ou des mots qui donnent envie (ex: 'super amusant', 'facile', 'tout le monde peut jouer')."
     },
     "defi2": {
         "titre": "Quiz: Négociation Gagnant-Gagnant",
@@ -534,71 +540,84 @@
         "Dire '80€ ou rien' pour être ferme."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Parfait. Proposer un compromis et demander un échange crée une solution 'gagnant-gagnant'.",
-        "feedbackIncorrect": "Refuser ou être trop ferme met fin à la négociation. Le but est de trouver un point d'entente.",
-        "leconStrategique": "Une bonne négociation n'est pas de battre l'autre, mais de s'assurer que les deux parties obtiennent plus de valeur. Cela crée de futures collaborations.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Tester la compréhension de l'importance de la confiance et de la crédibilité dans l'influence. L'enfant doit démontrer comment construire la confiance.",
-      "evaluationCriteria": "La réponse doit identifier des stratégies concrètes pour bâtir la confiance (preuves, témoignages, expertise). Bonus: L'enfant cite le principe d'autorité ou de preuve sociale."
+        "feedbackCorrect": "Bravo ! 🎉 Tu as compris l'art de la NÉGOCIATION GAGNANT-GAGNANT.\n\nVoici pourquoi c'est la meilleure stratégie :\n\n• Option 1 (refuser) = Tu perds un bon fournisseur et tu recommences à zéro ❌\n• Option 3 (80€ ou rien) = Tu forces l'autre à perdre → Il accepte peut-être, mais il ne voudra plus travailler avec toi après ❌\n• Option 2 (90€ + service) = COMPROMIS : Toi tu paies 10€ de plus, lui il gagne 10€ de moins, MAIS vous échangez un service en plus ✅\n\nRésultat : Les DEUX parties gagnent quelque chose. Le fournisseur est content, toi aussi. Il voudra retravailler avec toi !\n\n💡 Une bonne négociation crée une RELATION DURABLE. Tu n'as pas 'gagné' aujourd'hui, tu as gagné un PARTENAIRE pour longtemps.",
+        "feedbackIncorrect": "Attention ! Une négociation n'est pas un combat où il faut 'gagner' contre l'autre.\n\nPense à long terme :\n• Si tu refuses (Option 1) → Tu dois chercher un autre fournisseur (temps perdu)\n• Si tu dis '80€ ou rien' (Option 3) → Le fournisseur se sent forcé, il accepte peut-être mais ne voudra plus te vendre après\n\nLa bonne question : 'Comment on peut TOUS LES DEUX gagner quelque chose ?'\n\nAstuce : Cherche un COMPROMIS où chacun donne un peu et reçoit un peu. C'est ça, le gagnant-gagnant !",
+        "leconStrategique": "La NÉGOCIATION GAGNANT-GAGNANT est un outil puissant d'INFLUENCE. Quand les deux parties gagnent, tu crées de la confiance et des relations durables.\n\nLes 3 règles d'une bonne négociation :\n1. Écoute ce que l'autre veut vraiment (pas seulement le prix)\n2. Cherche un COMPROMIS où chacun donne et reçoit\n3. Ajoute de la VALEUR (un service, du temps, une recommandation)\n\nDans la vie réelle :\n• Négocier avec tes parents : 'Je range ma chambre (tu donnes) si je peux jouer 30 min de plus (tu reçois)'\n• Négocier avec un ami : 'Je te prête mon jeu (tu donnes) si tu me montres ton nouveau tour de magie (tu reçois)'\n• Négocier à l'école : 'Je t'aide en maths (tu donnes) si tu m'aides en dessin (tu reçois)'\n\nDans les affaires : Les meilleurs leaders négocient toujours en gagnant-gagnant. Pourquoi ? Parce qu'ils construisent des PARTENARIATS solides. Un partenaire satisfait = des opportunités futures !",
+      "referenceCroisee": "M5 (Communication et Influence), M9 (Économie et Échange de Valeur)",
+      "mentorGoal": "Introduire la NÉGOCIATION GAGNANT-GAGNANT et le concept de COMPROMIS CRÉATIF. L'enfant doit démontrer qu'il comprend qu'une bonne négociation cherche à créer de la valeur pour les deux parties, pas à 'battre' l'autre.",
+      "evaluationCriteria": "1. Réponse correcte : B (Proposer 90€ + service). 2. BONUS : L'enfant explique que le compromis préserve la relation, ou mentionne qu'ajouter de la valeur (le service) rend l'accord plus équitable, ou comprend que perdre une bataille pour gagner la guerre (relation long terme)."
     },
     "defi3": {
-      "titre": "Défi: Écoute Active",
+      "titre": "Mission: Le Miroir de l'Émotion",
       "scenario": "Ton ami est fâché parce que tu as cassé son jouet. Il crie 'Je te déteste !'. Au lieu de te défendre, que réponds-tu pour montrer que tu as compris son émotion ?",
-      "instruction": "Écris une phrase qui reconnaît l'émotion de l'ami sans te justifier (Ex: 'Je comprends que tu sois en colère...').",
-      "leconStrategique": "L'écoute active désamorce les conflits. Le leader écoute pour comprendre, pas pour répondre.",
+      "instruction": "Écris une phrase qui VALIDE l'émotion de l'ami sans te justifier (Ex: 'Je comprends que tu sois en colère...').",
+      "leconStrategique": "L'ÉCOUTE ACTIVE désamorce les conflits. C'est une compétence de LEADERSHIP ÉMOTIONNEL : le leader écoute pour COMPRENDRE, pas pour répondre. En validant l'émotion de l'autre, tu montres du respect et tu désactives la confrontation.",
       "referenceCroisee": "M6",
       "briefing": {
         "etape1": {
           "titre": "1. Le Miroir de l'Émotion",
           "type_etape": "validation_case",
-          "instruction": "J'ai identifié l'émotion primaire (colère, tristesse, peur). Je ne réponds pas aux mots, mais à l'émotion."
+          "instruction": "J'ai identifié l'émotion primaire (colère, tristesse, déception, peur, frustration). Je ne réponds pas aux mots, mais à l'émotion."
         },
         "etape2": {
-          "titre": "2. La Formule : Je vois que...",
+          "titre": "2. La Formule du Leader",
           "type_etape": "texte_guide",
-          "instruction": "Utilise la formule : 'Je vois que tu es X (très en colère/déçu) à cause de Y (ce que j'ai fait)'. Cela montre que tu prends la responsabilité et que tu écoutes."
+          "instruction": "Utilise la formule : 'Je vois que tu es [Émotion] à cause de [Mon Action].' (Ex: 'Je vois que tu es très en colère à cause de ce que j'ai fait.')\n\nCette formule est la preuve que tu as écouté pour COMPRENDRE et non pour répondre. Cela montre que tu prends la responsabilité."
+        },
+        "etape3": {
+          "titre": "3. Ma Phrase d'Écoute Active",
+          "type_etape": "champ_texte",
+          "instruction": "Maintenant, écris ta phrase d'ÉCOUTE ACTIVE en utilisant la formule.\n\nRappel de la situation : Ton ami est fâché parce que tu as cassé son jouet. Il crie 'Je te déteste !'.\n\n✅ Bonne phrase : 'Je vois que tu es très en colère à cause de ce que j'ai fait avec ton jouet.'\n\n❌ À éviter :\n• 'Oui mais c'était un accident' (justification)\n• 'Calme-toi' (minimisation)\n• 'Je vais te le racheter' (solution trop rapide)\n\nD'abord VALIDER l'émotion, ensuite tu pourras proposer une solution.",
+          "placeholder": "Je vois que tu es... à cause de..."
         }
       },
-      "mentorGoal": "Évaluer la capacité à adapter son message en fonction de l'audience (personnalisation et empathie).",
-      "evaluationCriteria": "La réponse doit montrer que l'enfant a adapté son message aux besoins, motivations et langage de l'audience cible. Bonus: L'enfant segmente plusieurs types d'audiences."
+      "mentorGoal": "Évaluer la capacité à faire preuve d'EMPATHIE et de LEADERSHIP ÉMOTIONNEL. L'enfant doit démontrer qu'il peut désactiver le conflit en validant l'émotion de son interlocuteur sans se défendre.",
+      "evaluationCriteria": "1. Clarté : La phrase doit clairement VALIDER l'émotion sans se justifier, minimiser ou contre-attaquer. 2. Structure : L'enfant utilise une formule du type 'Je vois/comprends que tu es [émotion]'. 3. Contrainte : Pas de justification ('Mais...') ni de solution immédiate ('Je vais te le racheter'). BONUS : L'enfant utilise un terme précis pour l'émotion (ex: 'déception' ou 'tristesse' au lieu de juste 'colère')."
     },
     "defi4": {
       "titre": "Quiz: Le Langage Positif",
-      "question": "Tu veux que ton équipe range ses outils. Quelle phrase est la plus efficace pour obtenir un résultat positif ?",
+      "question": "Tu fais un projet de groupe à l'école. Les autres élèves laissent traîner le matériel partout. Que dis-tu pour qu'ils rangent ?",
       "options": [
-        "Arrêtez de laisser traîner vos outils !",
-        "Si vous rangez vos outils, je serai content.",
-        "Ranger les outils permet de travailler plus vite demain."
+        "Arrêtez de laisser traîner le matériel !",
+        "Si vous rangez, je serai content.",
+        "Ranger maintenant nous fera gagner du temps pour jouer après !"
       ],
       "bonneReponseIndex": 2,
-      "feedbackCorrect": "La réponse 3 donne un bénéfice direct et futur à l'équipe. C'est du leadership positif.",
-      "leconStrategique": "Le langage positif motive. Le leader ne dit pas 'Ne faites pas', mais 'Faites cela pour obtenir ceci'.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Tester la compréhension du pouvoir de l'émotion dans la persuasion. L'enfant doit démontrer comment utiliser l'émotion de manière éthique.",
-      "evaluationCriteria": "La réponse doit intégrer un appel émotionnel authentique sans manipulation. Bonus: L'enfant équilibre émotion et logique (Pathos + Logos)."
+      "feedbackCorrect": "Bravo ! 🎉 Tu as compris le LANGAGE POSITIF !\n\nPourquoi la réponse 3 est la meilleure :\n• Option 1 = Critique ('Arrêtez...') ❌\n• Option 2 = Parle de TOI ('je serai content') ❌\n• Option 3 = Montre le BÉNÉFICE pour EUX ('gagner du temps pour jouer') ✅\n\nUn bon leader explique POURQUOI faire quelque chose, pas juste QUOI faire. Résultat : tout le monde comprend et veut participer !",
+      "feedbackIncorrect": "Réessaie ! Un bon leader ne critique pas et ne parle pas que de lui.\n\nPose-toi la question : 'Qu'est-ce que les AUTRES vont gagner s'ils font ça ?'\n\n• Option 1 ('Arrêtez...') = Tu critiques ❌\n• Option 2 ('je serai content') = Tu parles de TOI ❌\n\nLe LANGAGE POSITIF montre le bénéfice : 'Si tu fais X, tu obtiendras Y'\n\nExemple : ❌ 'Range ta chambre !' → ✅ 'Range ta chambre pour retrouver tes jouets plus vite !'\n\nQuelle option montre un bénéfice pour tout le monde ?",
+      "leconStrategique": "Le LANGAGE POSITIF est un outil de LEADERSHIP PUISSANT. Un leader efficace ne dit pas 'Ne fais pas X', mais 'Fais Y pour obtenir Z'.\n\nLes 3 règles du langage positif :\n1. ÉVITER le négatif ('Arrête', 'Ne fais pas')\n2. EXPLIQUER le bénéfice ('Cela permet de...')\n3. PENSER à l'équipe, pas à soi\n\nDans la vie réelle :\n• ❌ 'Arrête de crier' → ✅ 'Parle calmement pour que je comprenne mieux'\n• ❌ 'Ne sois pas en retard' → ✅ 'Arrive à l'heure pour ne rien manquer'\n• ❌ 'Ne gaspille pas' → ✅ 'Économise pour avoir plus demain'\n\nDans les affaires : Les meilleurs managers motivent en montrant les BÉNÉFICES, pas en donnant des ordres. Une équipe motivée = une équipe performante !",
+      "referenceCroisee": "M5 (Communication et Influence), M10 (Éthique du Leader)",
+      "mentorGoal": "Tester la compréhension du LANGAGE POSITIF et de la formulation orientée BÉNÉFICES. L'enfant doit démontrer qu'il comprend qu'un leader motive en montrant les avantages futurs plutôt qu'en critiquant ou en donnant des ordres.",
+      "evaluationCriteria": "1. Réponse correcte : C (Ranger maintenant nous fera gagner du temps pour jouer après). 2. Compréhension : L'enfant identifie que l'option C donne un BÉNÉFICE concret et immédiat à tout le groupe (pas au leader). 3. Contraste : L'enfant comprend pourquoi les options A (négative/critique) et B (centrée sur le leader) sont moins efficaces. BONUS : L'enfant reformule un ordre négatif en langage positif dans sa propre vie."
     }
   },
   "m6": {
     "defi1": {
-        "titre": "Défi: L'Échec du Pont",
-        "scenario": "Tu as construit un pont pour un modèle réduit, mais il s'effondre. Tu peux recommencer ou abandonner et passer au module suivant. Que fais-tu ?",
-        "instruction": "Écris en une phrase la LEÇON que tu tires de l'effondrement et l'UNIQUE modification que tu ferais pour améliorer la prochaine tentative.",
-        "leconStrategique": "L'échec est une source d'information précieuse. Le leader n'abandonne jamais; il analyse et s'améliore.",
-        "referenceCroisee": "M3",
+        "titre": "Mission: L'Échec du Pont",
+        "scenario": "Tu as construit un pont en LEGO pour faire passer une petite voiture. Mais quand tu poses la voiture dessus, le pont s'effondre!\n\nTu pourrais être frustré et abandonner... Mais un vrai leader fait différemment : il analyse et recommence!",
+        "instruction": "Réponds en 2-3 phrases courtes :\n1. Quelle LEÇON tires-tu de cet échec? (Qu'as-tu appris?)\n2. Quelle est la SEULE chose que tu changerais pour le prochain essai?",
+        "leconStrategique": "L'ÉCHEC EST UNE DONNÉE, PAS UNE DÉFAITE. C'est le concept de GROWTH MINDSET : chaque erreur t'apprend quelque chose si tu l'analyses.\n\nLes 3 étapes pour transformer l'échec :\n1. ANALYSER : Pourquoi ça n'a pas marché? (pas 'qui est coupable?')\n2. ISOLER : Quelle est la CAUSE principale?\n3. ITÉRER : Changer UNE chose et retester\n\nDans la vie réelle :\n• ❌ Ton gâteau rate → ✅ 'Trop de liquide, je réduis le lait la prochaine fois'\n• ❌ Tu perds un match → ✅ 'Je n'ai pas assez défendu à gauche, je vais m'entraîner sur ça'\n• ❌ Ton exposé est confus → ✅ 'Je dois mieux structurer mes idées avec un plan'\n\nDans les affaires : Les plus grands entrepreneurs (Steve Jobs, Elon Musk) ont échoué plusieurs fois avant de réussir. Ils appellent ça 'FAIL FAST, LEARN FASTER' : échoue vite, apprends plus vite!\n\nUn leader ne dit pas 'J'ai échoué', il dit 'J'ai appris'.",
+        "referenceCroisee": "M3 (Planification et Exécution), M5 (Leadership Émotionnel)",
         "briefing": {
             "etape1": {
-                "titre": "1. Analyser l'Erreur, pas l'Émotion",
+                "titre": "1. Comprendre l'Échec comme Donnée",
                 "type_etape": "validation_case",
-                "instruction": "J'ai mis de côté ma frustration. Je me concentre sur la cause : instabilité, poids ou support."
+                "instruction": "J'ai compris : Un échec n'est PAS une punition, c'est une DONNÉE qui m'apprend quelque chose. La bonne question est 'Qu'est-ce qui n'a pas fonctionné?' et non 'Pourquoi je suis nul?'."
             },
             "etape2": {
-                "titre": "2. Isoler la Variable Critique",
+                "titre": "2. Analyser l'Erreur, pas l'Émotion",
+                "type_etape": "texte_guide",
+                "instruction": "Avant d'analyser, prends 3 grandes respirations. 😤\n\nL'échec crée de la FRUSTRATION. C'est normal! Mais un leader met ses émotions de côté pour analyser.\n\nLa bonne question n'est pas 'Pourquoi je suis nul?' mais 'Qu'est-ce qui n'a pas fonctionné?'\n\nCauses possibles :\n• Le pont n'était pas assez SOLIDE (structure faible)\n• Le pont ne pouvait pas supporter le POIDS (trop lourd)\n• Le pont n'avait pas assez de SUPPORT (appuis instables)\n\n💡 Un échec = Une DONNÉE. Pas une punition!"
+            },
+            "etape3": {
+                "titre": "3. Ma Leçon et Mon Action",
                 "type_etape": "champ_texte",
-          "instruction": "Sur les causes possibles (stabilité, poids, support), quelle est la SEULE que je vais changer pour le prochain essai ?"
+                "instruction": "Maintenant, réponds aux 2 questions :\n\n1. Quelle LEÇON tires-tu de cet échec?\n(Ex: 'Mon pont n'était pas assez solide')\n\n2. Quelle est la SEULE chose que tu vas changer?\n(Ex: 'Je vais ajouter un pilier au milieu')\n\n⚠️ Pourquoi UNE SEULE chose? Si tu changes 3 choses en même temps et que ça marche, tu ne sauras pas LAQUELLE a fonctionné!\n\nC'est la méthode scientifique : changer UNE variable à la fois.",
+                "placeholder": "1. Ma leçon : ...\n2. Je vais changer : ..."
         }
       },
-      "mentorGoal": "Évaluer la capacité de l'enfant à transformer un échec en opportunité d'apprentissage (Growth Mindset). L'enfant doit démontrer sa résilience.",
-      "evaluationCriteria": "La réponse doit identifier clairement les leçons apprises de l'échec et les actions correctrices. Bonus: L'enfant cite le concept de Growth Mindset ou d'itération."
+      "mentorGoal": "Évaluer la capacité de l'enfant à transformer un échec en opportunité d'apprentissage (GROWTH MINDSET). L'enfant doit démontrer qu'il peut analyser méthodiquement une erreur sans se laisser submerger par l'émotion et identifier une action corrective ciblée (ITÉRATION).",
+      "evaluationCriteria": "1. Leçon identifiée : L'enfant explique ce qu'il a appris de l'échec (ex: 'Mon pont n'était pas assez solide'). 2. Action corrective ciblée : L'enfant propose UNE modification précise (ex: 'Je vais ajouter un pilier au milieu'). 3. Séparation émotion/analyse : L'enfant ne se blâme pas ('je suis nul') mais analyse factuellement. BONUS : L'enfant utilise un vocabulaire stratégique (ex: 'tester', 'analyser', 'cause') ou mentionne qu'il va 'réessayer' sans abandonner."
     },
     "defi2": {
         "titre": "Quiz: La Procrastination",
@@ -609,27 +628,39 @@
         "Demander à quelqu'un d'autre de faire le début."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "L'action crée l'élan. Un petit pas facile brise le mur de la peur.",
-        "leconStrategique": "Le courage n'est pas l'absence de peur, mais la décision de passer à l'action malgré elle. La résilience commence par le premier pas.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Tester la compréhension du cycle PDCA (Plan-Do-Check-Act) pour l'amélioration continue. L'enfant doit démontrer une approche systématique de résolution de problème.",
-      "evaluationCriteria": "La réponse doit suivre les 4 étapes du PDCA avec des actions concrètes. Bonus: L'enfant mentionne l'itération ou le Kaizen."
+        "feedbackCorrect": "Bravo ! 🎉 Tu as découvert la technique du PREMIER PAS !\n\nPourquoi la réponse 2 est la meilleure :\n• Option 1 ('Attendre l'inspiration') = La peur grandit avec le temps ❌\n• Option 2 ('Plus petite tâche') = L'ACTION crée l'élan ✅\n• Option 3 ('Quelqu'un d'autre') = Tu ne démarres jamais toi-même ❌\n\nC'est la RÈGLE DES 2 MINUTES : commence par quelque chose de si petit que tu ne peux pas dire non. Une fois lancé, ton cerveau veut continuer!\n\nExemple : 'Je vais juste ouvrir le document' → Tu écris finalement 3 paragraphes !",
+        "feedbackIncorrect": "Réessaie ! La peur ne disparaît pas en attendant... elle grandit!\n\nLe secret : Ne pense pas au PROJET ENTIER, pense juste à la PREMIÈRE PETITE TÂCHE.\n\nLa RÈGLE DES 2 MINUTES : Trouve une tâche si petite qu'elle prend moins de 2 minutes. Une fois commencé, ton cerveau veut continuer!\n\nExemples de premières petites tâches :\n• Projet d'exposé → 'Juste écrire le titre'\n• Ranger sa chambre → 'Juste ramasser 3 objets'\n• Devoir de maths → 'Juste lire le premier exercice'\n\nQuelle option utilise cette technique ?",
+        "leconStrategique": "La PROCRASTINATION n'est pas de la paresse, c'est de la PEUR déguisée. Ton cerveau évite ce qui est difficile ou inconnu. La solution? La RÈGLE DES 2 MINUTES et la technique du PREMIER PAS.\n\nLes 3 techniques anti-procrastination :\n1. RÈGLE DES 2 MINUTES : Commence par une tâche de moins de 2 minutes\n2. DÉCOUPAGE : Découpe le gros projet en mini-missions si petites qu'elles ne font plus peur\n3. ACTION IMMÉDIATE : Agis dans les 5 secondes avant que ton cerveau trouve une excuse\n\nDans la vie réelle :\n• ❌ 'Je dois ranger toute ma chambre' (trop gros) → ✅ 'Je ramasse 3 objets' (petit pas)\n• ❌ 'Je dois faire mon exposé de 10 pages' (paralysant) → ✅ 'J'écris juste le titre' (démarrage)\n• ❌ 'Je vais commencer demain' (procrastination) → ✅ 'Je commence maintenant pendant 2 minutes' (action)\n\nDans les affaires : Les entrepreneurs utilisent la méthode 'START SMALL, SCALE FAST' : démarre petit, ajuste vite. Nike l'a résumé en 3 mots : 'JUST DO IT' - Fais-le maintenant!\n\nLe courage n'est pas l'absence de peur, c'est faire le PREMIER PAS malgré la peur.",
+      "referenceCroisee": "M2 (Gestion des Priorités), M6D1 (Transformer l'Échec)",
+      "mentorGoal": "Évaluer la capacité à transformer la PEUR (cause de la procrastination) en ACTION (PREMIER PAS). L'enfant doit démontrer qu'il comprend que l'action crée l'élan et que commencer petit (Règle des 2 minutes) est la clé pour briser le blocage et la peur de l'échec.",
+      "evaluationCriteria": "1. Réponse correcte : B (Commencer par la plus petite tâche). 2. Compréhension : L'enfant identifie que le démarrage par une petite action brise l'inertie. 3. Contraste : L'enfant comprend pourquoi attendre ou déléguer ne résout pas le problème. BONUS : L'enfant donne un exemple concret de première petite tâche dans sa propre vie."
     },
     "defi3": {
-      "titre": "Défi: Le Bouclier Mental",
+      "titre": "Mission: Le Bouclier Mental",
       "scenario": "Tu as fait de ton mieux dans une tâche, mais un ami te critique fortement devant d'autres personnes. Comment réagis-tu ?",
       "instruction": "Écris la phrase la plus calme et factuelle que tu peux utiliser pour te défendre sans attaquer l'autre.",
-      "leconStrategique": "Le leader garde le contrôle de ses émotions. Répondre avec calme est la vraie preuve de force.",
-      "referenceCroisee": "M5",
+      "leconStrategique": "Le CONTRÔLE ÉMOTIONNEL est une compétence de leadership critique. Quand on t'attaque, ton cerveau veut riposter. Mais un leader choisit la RÉPONSE CALME plutôt que la RÉACTION ÉMOTIONNELLE.\n\nLes 3 étapes du Bouclier Mental :\n1. PAUSE : Respire 3 secondes avant de répondre\n2. FACTUEL : Parle des faits, pas des émotions ('J'ai fait X' pas 'Tu es méchant')\n3. DÉSESCALADE : Propose de discuter calmement plus tard\n\nDans la vie réelle :\n• ❌ 'T'es bête, tu comprends rien !' (attaque) → ✅ 'Je comprends que tu n'es pas d'accord. On peut en parler calmement ?' (calme)\n• ❌ 'C'est pas vrai !' (défensif) → ✅ 'Peux-tu m'expliquer ce qui ne va pas exactement ?' (factuel)\n• ❌ Ignorer et partir (évitement) → ✅ 'J'ai fait de mon mieux. Si quelque chose ne va pas, dis-moi quoi précisément.' (assertif)\n\nDans les affaires : Les meilleurs leaders restent calmes sous pression. Steve Jobs disait : 'Stay hungry, stay foolish' mais il aurait dû ajouter 'Stay calm'. Un leader qui perd son calme perd son autorité.\n\nRépondre avec calme n'est pas de la faiblesse, c'est la vraie FORCE.",
+      "referenceCroisee": "M5 (Leadership Émotionnel), M6D1 (Gérer l'Échec)",
       "briefing": {
         "etape1": {
-          "titre": "1. Identifier l'Attaque",
-          "type_etape": "validation_case",
-          "instruction": "J'ai identifié que l'attaque est verbale et non physique. Je n'ai pas besoin de riposter avec le même niveau d'agressivité."
+          "titre": "1. La Technique des 3 Respirations",
+          "type_etape": "texte_guide",
+          "instruction": "Quand on t'attaque, ton corps réagit automatiquement : ton cœur bat vite, tu veux crier ou fuir. C'est normal!\n\nMais AVANT de répondre, fais 3 GRANDES RESPIRATIONS. 😤😤😤\n\nPourquoi? Parce que respirer ralentit ton cerveau émotionnel et active ton cerveau rationnel.\n\n💡 Pendant ces 3 secondes, ton cerveau passe de 'ATTAQUE!' à 'Réfléchis...'"
+        },
+        "etape2": {
+          "titre": "2. La Formule CALME",
+          "type_etape": "texte_guide",
+          "instruction": "Utilise cette structure pour ta réponse :\n\n'Je [ce que j'ai fait]. Si [problème précis], je peux [action concrète].'\n\nExemples :\n• 'J'ai fait de mon mieux. Si quelque chose ne va pas, dis-moi quoi exactement.'\n• 'J'ai essayé cette méthode. Si tu as une meilleure idée, je veux bien l'entendre.'\n• 'Je comprends que tu n'es pas content. Peux-tu m'expliquer calmement ce qui ne va pas ?'\n\n⚠️ NE DIS PAS : 'T'es méchant', 'C'est pas ma faute', 'Toi aussi tu fais des erreurs'"
+        },
+        "etape3": {
+          "titre": "3. Ma Réponse Calme",
+          "type_etape": "champ_texte",
+          "instruction": "Maintenant, écris ta phrase CALME et FACTUELLE pour répondre à la critique.\n\nRappel de la situation : Un ami te critique fortement devant d'autres personnes.\n\n✅ Bonne phrase : 'J'ai fait de mon mieux. Si quelque chose ne va pas, dis-moi quoi précisément.'\n\n❌ À éviter :\n• 'T'es méchant !' (attaque)\n• 'C'est pas ma faute !' (défensif)\n• 'Laisse-moi tranquille !' (évitement)\n\n💡 Rappelle-toi : Respire 3 fois AVANT d'écrire ta phrase !",
+          "placeholder": "J'ai... Si..., je peux..."
         }
       },
-      "mentorGoal": "Évaluer la capacité à accepter la critique constructive et à l'intégrer positivement. L'enfant doit démontrer son ouverture au feedback.",
-      "evaluationCriteria": "La réponse doit montrer que l'enfant accepte la critique sans se justifier et propose des actions d'amélioration. Bonus: L'enfant demande des précisions ou des exemples pour mieux comprendre."
+      "mentorGoal": "Évaluer la capacité à gérer une ATTAQUE VERBALE avec CONTRÔLE ÉMOTIONNEL. L'enfant doit démontrer qu'il peut rester calme, répondre factuellement sans contre-attaquer, et proposer une désescalade (INTELLIGENCE ÉMOTIONNELLE).",
+      "evaluationCriteria": "1. Calme : La réponse est posée, pas agressive ni défensive. 2. Factuelle : L'enfant parle de faits concrets, pas d'émotions ('J'ai fait X' pas 'Tu es méchant'). 3. Désescalade : L'enfant propose une discussion calme ou demande des précisions. BONUS : L'enfant mentionne qu'il va respirer ou prendre une pause avant de répondre."
     },
     "defi4": {
       "titre": "Quiz: La Leçon de l'Erreur",
@@ -640,29 +671,41 @@
         "Passer rapidement à autre chose sans y penser."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "L'erreur est une donnée. L'analyse des données avec l'aide d'un mentor est la seule voie vers l'amélioration.",
-      "leconStrategique": "Les données sont plus importantes que l'opinion. Le leader est humble face aux faits.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Tester la compréhension de la persévérance face à l'adversité. L'enfant doit démontrer sa capacité à persister malgré les obstacles.",
-      "evaluationCriteria": "La réponse doit montrer une stratégie de persévérance avec des étapes concrètes. Bonus: L'enfant cite des exemples de figures inspirantes qui ont persévéré (Edison, Lincoln)."
+      "feedbackCorrect": "Bravo ! 🎉 Tu as compris : l'ERREUR EST UNE DONNÉE, PAS UNE PUNITION !\n\nPourquoi la réponse 2 est la meilleure :\n• Option 1 ('Blâmer') = Tu n'apprends rien et tu repousses les autres ❌\n• Option 2 ('Analyser') = Tu transformes l'erreur en LEÇON ✅\n• Option 3 ('Passer à autre chose') = Tu vas refaire la même erreur ❌\n\nDemander de l'aide + analyser les données = double power! Tu combines l'intelligence de quelqu'un d'expérience AVEC les faits concrets.\n\nC'est la méthode scientifique : observer, analyser, apprendre.",
+      "feedbackIncorrect": "Réessaie ! Un échec n'est PAS une catastrophe, c'est une OPPORTUNITÉ d'apprendre.\n\nLa mauvaise réaction après un échec :\n• Blâmer les autres → Tu ne prends pas de responsabilité\n• Ignorer et continuer → Tu vas refaire la même erreur\n\nLa bonne réaction :\n• Demander de l'aide → Un mentor voit ce que tu ne vois pas\n• Analyser les DONNÉES → Les faits te disent exactement ce qui n'a pas marché\n\nLes plus grands inventeurs (Edison, les frères Wright) ont échoué des CENTAINES de fois avant de réussir. Leur secret? Analyser chaque échec.\n\nQuelle option transforme l'échec en apprentissage?",
+      "leconStrategique": "L'ÉCHEC N'EST PAS TON ENNEMI, C'EST TON PROFESSEUR. Les leaders qui réussissent ne sont pas ceux qui n'échouent jamais, ce sont ceux qui APPRENNENT DE CHAQUE ÉCHEC.\n\nLes 3 réflexes après un échec :\n1. DONNÉES > OPINIONS : Analyse les faits, pas les émotions\n2. DEMANDER DE L'AIDE : Un mentor voit ce que tu ne vois pas\n3. AJUSTER & RETESTER : Change UNE chose et recommence\n\nDans la vie réelle :\n• ❌ 'C'est la faute du prof' (blâme) → ✅ 'Je vais demander au prof où j'ai fait l'erreur' (analyse)\n• ❌ 'Tant pis, j'oublie' (évitement) → ✅ 'Je vais revoir mes notes pour comprendre' (apprentissage)\n• ❌ 'Je suis nul' (émotion) → ✅ 'Cette méthode ne marche pas, j'en essaie une autre' (données)\n\nDans les affaires : Les entrepreneurs qui réussissent échouent en MOYENNE 3-4 fois avant leur succès. Jeff Bezos (Amazon) dit : 'L'échec et l'innovation sont des jumeaux inséparables'. Les données d'échec sont PLUS précieuses que les données de succès!\n\nLe leader est humble face aux FAITS, pas face aux opinions.",
+      "referenceCroisee": "M4 (Analyse de Données), M6D1 (Transformer l'Échec)",
+      "mentorGoal": "Tester la compréhension de l'ANALYSE POST-ÉCHEC et de l'humilité intellectuelle face aux DONNÉES. L'enfant doit démontrer qu'il comprend que demander de l'aide + analyser les faits est la seule voie vers l'amélioration continue.",
+      "evaluationCriteria": "1. Réponse correcte : B (Demander de l'aide et analyser les données). 2. Compréhension : L'enfant identifie que l'analyse factuelle (pas émotionnelle) permet d'apprendre. 3. Contraste : L'enfant comprend pourquoi blâmer ou éviter ne résout rien. BONUS : L'enfant mentionne l'importance de demander de l'aide à un mentor ou expert."
     }
   },
   "m7": {
     "defi1": {
-        "titre": "Défi: L'Idée en Chaîne",
-        "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver une seule idée parfaite, génère 3 idées, même farfelues, en 3 minutes.",
-        "instruction": "Écris tes trois idées (1-2-3) en les laissant simples et sans jugement.",
-        "leconStrategique": "La quantité d'idées précède la qualité. Un leader explore beaucoup d'options avant de choisir la meilleure.",
-        "referenceCroisee": "M1",
+        "titre": "Mission: L'Idée en Chaîne",
+        "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver UNE idée parfaite, tu vas générer le MAXIMUM d'idées en 5 minutes, même farfelues!",
+        "instruction": "Écris AU MOINS 5 idées (1-2-3-4-5...) en les laissant simples et sans jugement.\n\n💡 Règle d'or : QUANTITÉ avant QUALITÉ. Ne critique AUCUNE idée pendant que tu génères!",
+        "leconStrategique": "La CRÉATIVITÉ commence par la QUANTITÉ, pas la qualité. C'est la méthode du BRAINSTORMING : générer un maximum d'idées sans jugement, puis choisir les meilleures après.\n\nLes 3 règles du brainstorming créatif :\n1. PAS DE CRITIQUE : Toutes les idées sont bonnes à cette étape\n2. QUANTITÉ > QUALITÉ : Plus tu génères, plus tu as de chances de trouver LA bonne\n3. IDÉES FOLLES BIENVENUES : Les meilleures innovations viennent d'idées 'impossibles'\n\nDans la vie réelle :\n• ❌ Chercher l'idée parfaite du premier coup (blocage) → ✅ Générer 10 idées rapidement, puis choisir (fluidité)\n• ❌ 'Cette idée est nulle' (auto-censure) → ✅ 'Je la note quand même' (ouverture)\n• ❌ Rester dans le conventionnel (boring) → ✅ 'Et si on faisait l'inverse?' (innovation)\n\nDans les affaires : Les entreprises les plus innovantes (Google, IDEO, Pixar) utilisent le brainstorming sauvage : 100 idées → 10 bonnes → 1 géniale. Thomas Edison a testé 1000 matériaux avant de trouver le filament parfait pour l'ampoule!\n\nUn leader créatif génère d'abord, juge ensuite.",
+        "referenceCroisee": "M1 (Analyse de Problèmes), M4 (Pensée Critique)",
         "briefing": {
             "etape1": {
                 "titre": "1. Pas de Critique (La Règle d'Or)",
-                "type_etape": "validation_case",
-                "instruction": "J'ai compris que je ne dois juger aucune idée. Le but est la quantité brute et la rapidité."
-        }
+                "type_etape": "texte_guide",
+                "instruction": "Pendant que tu génères tes idées, ton cerveau va vouloir dire : 'Cette idée est nulle!'\n\nMais tu dois IGNORER cette voix!\n\nPourquoi? Parce que la critique TUE la créativité. Si tu juges chaque idée, tu vas t'arrêter après 2-3 idées.\n\nLa règle : NOTE TOUTES les idées qui te viennent, même les plus folles. Tu trieras APRÈS.\n\n💡 Les meilleures innovations (Post-it, Velcro, micro-ondes) étaient des 'accidents' ou des idées 'stupides' au départ!"
+        },
+            "etape2": {
+                "titre": "2. La Technique du Rebond",
+                "type_etape": "texte_guide",
+                "instruction": "Pour générer plus d'idées, utilise la TECHNIQUE DU REBOND :\n\n1. Note ta première idée\n2. Demande-toi : 'Et si je faisais l'INVERSE?'\n3. Demande-toi : 'Et si je COMBINAIS avec autre chose?'\n4. Demande-toi : 'Et si je le rendais 10X plus GRAND ou plus PETIT?'\n\nExemple : Réduire le plastique\n• Idée 1 : Recycler le plastique\n• Inverse : Arrêter de PRODUIRE du plastique\n• Combiner : Utiliser du plastique qui se mange (comestible)\n• 10X plus petit : Remplacer par du papier super fin\n\nChaque idée en crée une nouvelle!"
+            },
+            "etape3": {
+                "titre": "3. Mon Brainstorming Sauvage",
+                "type_etape": "champ_texte",
+                "instruction": "Maintenant, c'est à toi! Génère AU MOINS 5 idées pour réduire les déchets plastiques.\n\nUtilise la technique du rebond:\n\n1. [Ta première idée]\n2. [Inverse ou variation]\n3. [Combinaison]\n4. [Plus grand/plus petit]\n5. [Idée folle bienvenue!]\n\n⚠️ RAPPEL : Ne critique AUCUNE idée maintenant! Même si elle te semble bizarre, note-la!\n\n💡 Exemples de démarreurs:\n• Remplacer le plastique par...\n• Inventer un plastique qui...\n• Transformer les déchets en...\n• Et si on interdisait...",
+                "placeholder": "1. \n2. \n3. \n4. \n5. "
+            }
       },
-      "mentorGoal": "Évaluer la capacité de pensée divergente et de brainstorming créatif. L'enfant doit démontrer qu'il peut générer de nombreuses idées sans auto-censure.",
-      "evaluationCriteria": "La réponse doit contenir au moins 10 idées variées et originales. Bonus: L'enfant utilise des techniques de créativité (SCAMPER, Mind Mapping)."
+      "mentorGoal": "Évaluer la capacité de PENSÉE DIVERGENTE et de brainstorming créatif sans auto-censure. L'enfant doit démontrer qu'il peut générer un VOLUME d'idées variées en suspendant son jugement critique.",
+      "evaluationCriteria": "1. Quantité : Au moins 5 idées générées (idéal 7-10). 2. Diversité : Les idées sont variées, pas toutes similaires. 3. Absence de critique : L'enfant n'a pas censuré ses idées ('cette idée est nulle'). BONUS : L'enfant propose au moins une idée 'folle' ou contre-intuitive qui sort du conventionnel."
     },
     "defi2": {
         "titre": "Quiz: Pensée Latérale",
@@ -673,27 +716,39 @@
         "Il fait fondre le récipient."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Il faut trouver une solution non évidente, en contournant le problème. Une pince à épiler est une 'pensée latérale'.",
-        "leconStrategique": "La pensée latérale cherche des solutions qui ne sont pas sur le chemin évident. Le leader trouve des solutions là où les autres ne regardent pas.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Tester la compréhension de la combinaison d'idées existantes pour créer de l'innovation (Innovation = Combinaison). L'enfant doit démontrer sa capacité à relier des concepts.",
-      "evaluationCriteria": "La réponse doit combiner au moins 2 concepts existants pour créer une nouvelle solution. Bonus: L'enfant explique le processus de fusion ou cite des exemples d'innovations combinatoires (iPhone = téléphone + ordinateur + musique)."
+        "feedbackCorrect": "Bravo ! 🎉 Tu as trouvé la PENSÉE LATÉRALE !\n\nPourquoi la réponse 2 est la meilleure :\n• Option 1 ('Vider le café') = Solution évidente mais tu perds le café ❌\n• Option 2 ('Pince à épiler') = Solution créative qui contourne le problème ✅\n• Option 3 ('Fondre le récipient') = Tu détruis tout ❌\n\nLa pensée latérale = trouver une solution EN DEHORS du cadre habituel. Au lieu de penser 'comment enlever le café?', tu penses 'comment attraper la pièce SANS toucher au café?'",
+        "feedbackIncorrect": "Réessaie ! La pensée latérale cherche une solution INDIRECTE.\n\nLa question semble dire : 'Il faut enlever le café pour avoir la pièce'\n\nMais la VRAIE solution contourne le problème : 'Et si j'attrapais la pièce SANS toucher au café?'\n\nC'est ça la pensée latérale : sortir du cadre habituel.\n\nAutres exemples :\n• Problème : 'Comment grimper ce mur?' → Pensée latérale : 'Et si je faisais le tour?'\n• Problème : 'Comment porter cette charge lourde?' → Pensée latérale : 'Et si je la faisais rouler?'\n\nQuelle option attrape la pièce SANS toucher au café ou au récipient?",
+        "leconStrategique": "La PENSÉE LATÉRALE résout les problèmes en sortant du cadre habituel. Au lieu de suivre le chemin évident (A → B), tu cherches un chemin indirect (A → Z → B).\n\nLes 3 techniques de pensée latérale :\n1. REFORMULER : Change la question ('Comment sortir la pièce?' → 'Comment l'attraper sans toucher au reste?')\n2. INVERSER : Fais l'opposé de ce qui semble logique\n3. CHERCHER L'ANGLE MORT : Quelle solution personne ne voit?\n\nDans la vie réelle :\n• ❌ 'Je ne peux pas faire mes devoirs, j'ai perdu mon stylo' → ✅ 'J'utilise un crayon, un marqueur, ou je tape sur ordi'\n• ❌ 'La porte est bloquée' → ✅ 'Je passe par la fenêtre'\n• ❌ 'Je suis trop petit pour atteindre' → ✅ 'J'utilise un tabouret'\n\nDans les affaires : Les plus grandes innovations viennent de la pensée latérale. Airbnb : au lieu de construire des hôtels (chemin direct), ils utilisent les maisons des gens (chemin latéral). Uber : au lieu d'acheter des taxis, ils utilisent les voitures existantes!\n\nLe leader créatif ne force pas le chemin direct, il trouve le chemin malin.",
+      "referenceCroisee": "M4 (Analyse de Problèmes), M7D1 (Brainstorming)",
+      "mentorGoal": "Tester la compréhension de la PENSÉE LATÉRALE et de la résolution de problème par contournement créatif. L'enfant doit démontrer qu'il peut sortir du cadre habituel pour trouver une solution non-évidente.",
+      "evaluationCriteria": "1. Réponse correcte : B (Utilise une pince à épiler). 2. Compréhension : L'enfant identifie que la pince contourne le problème au lieu de l'affronter directement. 3. Reformulation : L'enfant comprend que le vrai problème n'est pas 'enlever le café' mais 'attraper la pièce'. BONUS : L'enfant donne un exemple de pensée latérale dans sa vie quotidienne."
     },
     "defi3": {
-      "titre": "Défi: La Contrainte Créative",
+      "titre": "Mission: La Contrainte Créative",
       "scenario": "Tu dois construire une maison qui flotte, mais tu n'as le droit d'utiliser que des objets recyclés et du papier. Quels deux matériaux choisis-tu ?",
-      "instruction": "Écris les deux matériaux choisis et la raison de leur utilisation.",
-      "leconStrategique": "Les contraintes (rareté des ressources) sont le moteur de l'innovation. La créativité est la réponse à la rareté.",
-      "referenceCroisee": "M8",
+      "instruction": "Écris les deux matériaux choisis et EXPLIQUE pourquoi ils permettent de flotter ET respectent les contraintes (recyclé + papier).",
+      "leconStrategique": "Les CONTRAINTES stimulent la créativité. C'est le principe de 'CRÉATIVITÉ SOUS CONTRAINTE' : moins tu as de ressources, plus tu dois innover.\n\nLes 3 étapes pour transformer une contrainte en avantage :\n1. ACCEPTER : La contrainte n'est pas un problème, c'est un défi créatif\n2. ANALYSER : Quelles sont les propriétés que je dois respecter? (ici : flotter + recyclé + papier)\n3. COMBINER : Trouve des matériaux qui ont PLUSIEURS propriétés en même temps\n\nDans la vie réelle :\n• ❌ 'Je n'ai pas assez d'argent pour acheter un cadeau' → ✅ 'Je fabrique un cadeau fait-main, plus personnel!'\n• ❌ 'Je n'ai que 10 minutes pour me préparer' → ✅ 'Je choisis l'essentiel, pas de temps perdu!'\n• ❌ 'Il ne me reste que 3 ingrédients dans le frigo' → ✅ 'J'invente une nouvelle recette créative!'\n\nDans les affaires : Les plus grandes innovations viennent de contraintes. Twitter : limité à 140 caractères → les gens deviennent concis et créatifs. Instagram : seulement des photos carrées au début → un style visuel unique. SpaceX : budget limité → réutilise les fusées au lieu d'en construire des nouvelles!\n\nUn leader créatif dit : 'J'ai SEULEMENT X' → 'J'ai TOUT CE QU'IL ME FAUT avec X'.",
+      "referenceCroisee": "M8 (Optimisation de Ressources), M7D1 (Brainstorming)",
       "briefing": {
         "etape1": {
-          "titre": "1. Analyser les Limites",
+          "titre": "1. Comprendre la Contrainte",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris que la contrainte est 'flottabilité' et 'recyclé/papier'. Je dois choisir des matériaux qui répondent aux deux."
+          "instruction": "J'ai compris : Les contraintes ne bloquent pas la créativité, elles la STIMULENT. Je dois trouver des matériaux qui sont à la fois RECYCLÉS (ou papier) ET qui FLOTTENT."
+        },
+        "etape2": {
+          "titre": "2. Identifier les Propriétés Critiques",
+          "type_etape": "texte_guide",
+          "instruction": "Pour que ta maison flotte, il faut que les matériaux soient :\n• LÉGERS (pas trop lourds)\n• IMPERMÉABLES (ne se remplissent pas d'eau)\n• OU avec de l'AIR À L'INTÉRIEUR (comme une bouée)\n\nExemples d'objets recyclés qui flottent :\n• Bouteilles en plastique vides (air à l'intérieur)\n• Bouchons en liège (légers et imperméables)\n• Morceaux de polystyrène (légers)\n• Cartons plastifiés/imperméabilisés\n\nLe papier peut-il flotter? OUI, si tu le rends imperméable (cire, plastique) ou si tu en fais une structure creuse (origami)!\n\n💡 Astuce : Combine 2 matériaux pour compenser leurs faiblesses!"
+        },
+        "etape3": {
+          "titre": "3. Ma Solution Créative",
+          "type_etape": "champ_texte",
+          "instruction": "Choisis tes 2 matériaux en expliquant :\n1. POURQUOI ils flottent\n2. COMMENT tu les utilises ensemble\n\nExemple de bonne réponse :\n'Je choisis des BOUTEILLES EN PLASTIQUE vides (pour flotter grâce à l'air) et du PAPIER IMPERMÉABILISÉ avec de la cire (pour faire les murs). Les bouteilles forment une base flottante, le papier fait les murs.'\n\nÀ toi!",
+          "placeholder": "Matériau 1 : ... parce que... / Matériau 2 : ... parce que..."
         }
       },
-      "mentorGoal": "Évaluer la capacité à penser en dehors des cadres établis (Thinking Outside the Box). L'enfant doit démontrer qu'il peut challenger les hypothèses.",
-      "evaluationCriteria": "La réponse doit remettre en question une hypothèse implicite du problème et proposer une solution non conventionnelle. Bonus: L'enfant identifie clairement l'hypothèse challengée."
+      "mentorGoal": "Évaluer la capacité à transformer une CONTRAINTE en moteur d'innovation. L'enfant doit démontrer qu'il peut analyser les propriétés des matériaux sous contrainte (flottabilité + recyclage) et proposer une solution créative qui COMBINE intelligemment ces contraintes.",
+      "evaluationCriteria": "1. Matériaux pertinents : Les 2 matériaux choisis peuvent réellement flotter (légers, imperméables, ou avec air). 2. Respect des contraintes : Les matériaux sont recyclés OU du papier modifié. 3. Justification logique : L'enfant explique POURQUOI ils flottent (propriétés physiques). 4. Combinaison : L'enfant explique comment les 2 matériaux travaillent ensemble. BONUS : L'enfant mentionne une faiblesse d'un matériau compensée par l'autre (ex: 'le papier seul coule, mais avec des bouteilles en dessous ça flotte')."
     },
     "defi4": {
       "titre": "Quiz: La Diversité des Idées",
@@ -704,29 +759,41 @@
         "Chercher une solution dans un livre sans parler à personne."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "La diversité crée l'innovation. Différents points de vue apportent des solutions auxquelles vous n'auriez pas pensé seul.",
-      "leconStrategique": "Le leader cherche activement des perspectives différentes. L'intelligence collective est toujours supérieure à l'intelligence individuelle.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension du prototypage rapide et de l'expérimentation. L'enfant doit démontrer qu'il sait tester rapidement ses idées.",
-      "evaluationCriteria": "La réponse doit inclure un plan de test rapide (MVP - Minimum Viable Product) avec des critères de succès. Bonus: L'enfant anticipe les hypothèses à valider."
+      "feedbackCorrect": "Excellent ! 🎉 Tu as compris le pouvoir de la DIVERSITÉ COGNITIVE !\n\nPourquoi la réponse 2 est la meilleure :\n• Option 1 ('Un seul expert') = Tu as UN seul point de vue, même s'il est bon ❌\n• Option 2 ('Plusieurs personnes différentes') = Tu multiplies les angles d'approche ✅\n• Option 3 ('Livre seul') = Pas d'interaction, pas de nouvelles idées ❌\n\nLe principe : 1 + 1 = 3 en créativité !\n\nQuand tu combines des personnes avec des expériences DIFFÉRENTES (un artiste + un scientifique + un sportif), chacun voit le problème différemment et apporte des solutions auxquelles les autres n'auraient JAMAIS pensé.\n\nC'est l'INTELLIGENCE COLLECTIVE : le groupe est plus intelligent que la somme des individus!",
+      "feedbackIncorrect": "Réessaie ! Pense à la DIVERSITÉ des perspectives.\n\nImagine ce scénario :\nTu veux inventer un nouveau jeu. À qui demandes-tu des idées?\n• Option A : Un seul expert en jeux → Il connaît bien les jeux, mais il aura TOUJOURS le même type d'idées\n• Option B : Un expert en jeux + un artiste + un sportif + un musicien → Chacun apporte une vision DIFFÉRENTE et des idées surprenantes!\n\nLes meilleures innovations viennent du MÉLANGE de perspectives différentes.\n\nExemples :\n• Apple : Steve Jobs (design) + Steve Wozniak (ingénierie) = iPhone révolutionnaire\n• Pixar : artistes + ingénieurs informatiques = films d'animation innovants\n• LEGO : designers + éducateurs + enfants = jeux créatifs et pédagogiques\n\nUn seul expert = UNE vision. Plusieurs personnes différentes = MULTIPLES visions = INNOVATION!\n\nQuelle option maximise la diversité des idées?",
+      "leconStrategique": "La DIVERSITÉ COGNITIVE est le moteur de l'innovation. Plus les gens pensent différemment, plus les solutions sont créatives.\n\nLes 3 principes de l'intelligence collective :\n1. DIVERSITÉ > EXPERTISE : Un groupe diversifié bat un expert seul\n2. COMBINAISON : Les meilleures idées viennent de la FUSION de perspectives différentes\n3. ANGLES MORTS : Chaque personne voit ce que les autres ne voient pas\n\nDans la vie réelle :\n• ❌ 'Je demande à mon meilleur ami (qui pense comme moi)' → ✅ 'Je demande à des gens avec des expériences différentes'\n• ❌ 'Je fais tout seul, je suis le meilleur' → ✅ 'Je collabore, le groupe est plus fort'\n• ❌ 'Les gens différents de moi sont bizarres' → ✅ 'Les gens différents m'apportent des idées que je n'aurais jamais eues'\n\nDans les affaires : Les entreprises les plus innovantes (Google, Apple, Tesla) recrutent des gens avec des parcours ULTRA-DIFFÉRENTS. Ils appellent ça 'DIVERSITY OF THOUGHT' : avoir dans une équipe un artiste, un ingénieur, un philosophe, un marketeur... Chacun challenge les autres et crée des solutions révolutionnaires!\n\nLe leader créatif ne cherche pas des clones, il cherche des complémentaires.",
+      "referenceCroisee": "M5 (Communication et Influence), M7D1 (Brainstorming)",
+      "mentorGoal": "Tester la compréhension de la DIVERSITÉ COGNITIVE et de l'intelligence collective. L'enfant doit démontrer qu'il comprend que la multiplicité des perspectives (diversité) génère plus d'innovation qu'un seul point de vue expert.",
+      "evaluationCriteria": "1. Réponse correcte : B (Demander l'avis de plusieurs personnes avec des expériences différentes). 2. Compréhension : L'enfant identifie que la DIVERSITÉ des perspectives apporte plus de créativité qu'un seul expert. 3. Principe d'intelligence collective : L'enfant comprend que le groupe diversifié est plus fort que l'individu seul. BONUS : L'enfant donne un exemple concret où la diversité a créé une meilleure solution (ex: 'Dans mon équipe de sport, on a des joueurs différents et chacun apporte une stratégie')."
     }
   },
   "m8": {
     "defi1": {
-        "titre": "Défi: L'Audit du Sac à Dos",
+        "titre": "Mission: L'Audit du Sac à Dos",
         "scenario": "Tu dois partir en excursion d'une semaine et tu n'as le droit qu'à 5 objets essentiels dans ton sac. Fais l'audit des ressources : quels 5 objets maximisent tes chances de succès ?",
-        "instruction": "Écris la liste de tes 5 objets. Justifie ton choix n°1.",
-        "leconStrategique": "La rareté force l'excellence. Quand les ressources sont limitées, l'analyse de leur valeur est vitale.",
-        "referenceCroisee": "M1",
+        "instruction": "Écris la liste de tes 5 objets ET justifie pourquoi tu as choisi ton objet n°1 (le plus important).",
+        "leconStrategique": "L'AUDIT DE RESSOURCES est la première étape de l'optimisation. Quand les ressources sont limitées, tu dois prioriser selon la VALEUR et l'UTILITÉ.\n\nLes 3 étapes de l'audit sous contrainte :\n1. IDENTIFIER LES BESOINS : Qu'est-ce qui est vraiment essentiel? (survie, confort, sécurité)\n2. ÉVALUER LA VALEUR : Quel objet apporte le MAXIMUM d'utilité?\n3. PRIORISER : Classe par IMPACT (si je n'ai qu'un objet, lequel?)\n\nDans la vie réelle :\n• ❌ 'Je prends tout ce qui me plaît' → ✅ 'Je prends ce dont j'ai VRAIMENT besoin'\n• ❌ '5 jeux vidéo pour m'amuser' → ✅ '1 couteau suisse qui fait 10 fonctions'\n• ❌ 'Je ne réfléchis pas à l'ordre' → ✅ 'Je classe : survie d'abord, confort ensuite'\n\nDans les affaires : Les startups avec peu de budget font un audit strict : 'Quel est le MINIMUM pour réussir?' (MVP = Minimum Viable Product). Tesla : Elon Musk a commencé avec peu de ressources → il a priorisé les ingénieurs et les prototypes, pas les bureaux de luxe!\n\nLa RARETÉ force l'EXCELLENCE : moins tu as, mieux tu choisis.\n\nUn leader optimise : il fait PLUS avec MOINS.",
+        "referenceCroisee": "M1 (Analyse de Problèmes), M3 (Planification)",
         "briefing": {
             "etape1": {
-                "titre": "1. La Règle 'Survie d'abord'",
+                "titre": "1. Comprendre l'Audit",
                 "type_etape": "validation_case",
-                "instruction": "J'ai identifié les besoins de base (Eau, Nourriture, Lumière/Chaleur, Sécurité). Mes 5 objets doivent couvrir ces besoins."
-        }
-      },
-      "mentorGoal": "Évaluer la capacité d'audit des ressources disponibles (inventaire). L'enfant doit démontrer qu'il sait identifier et classifier ses ressources.",
-      "evaluationCriteria": "La réponse doit contenir une liste structurée des ressources avec une classification (humaines, financières, matérielles, temporelles). Bonus: L'enfant identifie les ressources sous-utilisées."
+                "instruction": "J'ai compris : Quand les ressources sont limitées, je dois PRIORISER selon la VALEUR et l'UTILITÉ. Un bon audit classe les besoins par IMPACT : survie d'abord, confort ensuite."
+            },
+            "etape2": {
+                "titre": "2. La Pyramide des Besoins (Survie d'abord)",
+                "type_etape": "texte_guide",
+                "instruction": "Pour survivre une semaine en excursion, tu as besoin de :\n\n🔴 NIVEAU 1 - SURVIE (obligatoire) :\n• EAU : Gourde ou système de purification\n• NOURRITURE : Barres énergétiques, conserves\n• CHALEUR/ABRI : Couverture de survie, allumettes\n• SANTÉ : Trousse de premiers soins\n\n🟡 NIVEAU 2 - SÉCURITÉ (important) :\n• ORIENTATION : Carte, boussole\n• PROTECTION : Couteau, sifflet\n• LUMIÈRE : Lampe torche\n\n🟢 NIVEAU 3 - CONFORT (bonus) :\n• Communication, divertissement\n\n💡 Stratégie : Choisis d'ABORD les objets de NIVEAU 1, puis complète avec NIVEAU 2.\n\nAstuce PRO : Choisis des objets MULTI-FONCTIONS (ex: un couteau suisse fait 10 outils en 1)!"
+            },
+            "etape3": {
+                "titre": "3. Mon Audit de Ressources",
+                "type_etape": "champ_texte",
+                "instruction": "Maintenant, fais ton audit :\n\n1. Liste tes 5 objets\n2. Classe-les par IMPORTANCE (1 = le plus vital)\n3. Pour ton objet n°1, explique POURQUOI c'est le plus important\n\nExemple de bonne réponse :\n'1. Couteau suisse (coupe, ouvre, répare - multi-fonction)\n2. Gourde avec filtre (eau potable)\n3. Couverture de survie (chaleur la nuit)\n4. Allumettes (feu, chaleur, cuisson)\n5. Trousse premiers soins (blessures)\n\nMon objet n°1 est le couteau suisse car il a 10+ fonctions : couper du bois, ouvrir des conserves, réparer du matériel. C'est l'outil le plus POLYVALENT.'\n\nÀ toi!",
+                "placeholder": "1. [Objet] (raison)\n2. [Objet] (raison)...\n\nMon n°1 est important parce que..."
+            }
+        },
+        "mentorGoal": "Évaluer la capacité d'AUDIT et de PRIORISATION sous contrainte de ressources. L'enfant doit démontrer qu'il peut identifier les besoins essentiels, sélectionner les objets selon leur valeur/utilité, et justifier une priorisation logique (survie > confort).",
+        "evaluationCriteria": "1. Liste complète : 5 objets identifiés. 2. Pertinence : Les objets répondent à des besoins réels (eau, nourriture, chaleur, sécurité). 3. Priorisation logique : L'objet n°1 est justifié comme le plus important avec une raison valide. 4. Pensée multi-fonction : L'enfant privilégie les objets polyvalents (ex: couteau suisse, gourde filtrante). BONUS : L'enfant mentionne explicitement la hiérarchie des besoins (survie avant confort) ou donne un ratio utilité/poids."
     },
     "defi2": {
         "titre": "Quiz: Coût d'Opportunité",
@@ -737,27 +804,39 @@
         "Le temps que tu vas passer à jouer."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Le coût d'opportunité est ce à quoi tu renonces (la connaissance). Les leaders choisissent en fonction du gain manqué, pas seulement de la dépense.",
-        "leconStrategique": "Chaque décision est un choix. Le coût d'opportunité est la vraie valeur du leadership : choisir le meilleur chemin, sachant ce que l'on abandonne.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Tester la compréhension de l'optimisation des ressources existantes (faire plus avec moins). L'enfant doit démontrer qu'il sait maximiser l'utilisation.",
-      "evaluationCriteria": "La réponse doit proposer des stratégies concrètes pour utiliser les ressources plus efficacement. Bonus: L'enfant quantifie les gains d'efficacité."
+        "feedbackCorrect": "Bravo ! 🎉 Tu as compris le COÛT D'OPPORTUNITÉ !\n\nPourquoi la réponse 2 est correcte :\n• Option 1 ('Le prix du jeu') = C'est le coût direct, pas le coût d'opportunité ❌\n• Option 2 ('La connaissance du livre') = C'est ce à quoi tu RENONCES en choisissant le jeu ✅\n• Option 3 ('Le temps à jouer') = C'est une conséquence, pas le coût d'opportunité ❌\n\nLe coût d'opportunité = CE QUE TU PERDS en ne choisissant PAS l'autre option.\n\nQuand tu achètes le jeu, tu RENONCES à la connaissance que tu aurais acquise avec le livre. C'est ça le vrai coût!\n\nLes leaders pensent toujours : 'Si je choisis A, qu'est-ce que je perds en ne choisissant pas B?'",
+        "feedbackIncorrect": "Réessaie ! Le coût d'opportunité est CE À QUOI TU RENONCES.\n\nLa question n'est pas : 'Combien ça coûte?' (10€)\nLa question est : 'Qu'est-ce que je PERDS en ne choisissant pas l'autre option?'\n\nExemples concrets :\n• Tu choisis de jouer 2h aux jeux vidéo → Coût d'opportunité = les devoirs que tu aurais pu finir\n• Tu choisis de regarder la TV → Coût d'opportunité = le match de foot avec tes amis que tu rates\n• Tu choisis d'acheter des bonbons → Coût d'opportunité = le livre que tu ne peux plus acheter\n\nLe coût d'opportunité, c'est le GAIN MANQUÉ.\n\nDans l'exercice : si tu achètes le jeu vidéo, tu RENONCES à quoi?",
+        "leconStrategique": "Le COÛT D'OPPORTUNITÉ est le gain que tu abandonnes en choisissant une option plutôt qu'une autre. C'est le concept-clé de l'optimisation des ressources.\n\nLa formule :\nCoût d'opportunité = Ce que tu AURAIS GAGNÉ avec l'option non choisie\n\nLes 3 questions du leader avant chaque décision :\n1. QU'EST-CE QUE JE GAGNE avec l'option A?\n2. QU'EST-CE QUE JE GAGNE avec l'option B?\n3. QU'EST-CE QUE JE PERDS en ne choisissant pas B?\n\nDans la vie réelle :\n• ❌ 'J'achète ce jouet à 50€' → ✅ 'Si j'achète ce jouet, je renonce à 5 sorties au cinéma. Ça vaut le coup?'\n• ❌ 'Je passe 3h sur les réseaux sociaux' → ✅ 'Ces 3h, je renonce à apprendre la guitare, faire du sport, ou lire'\n• ❌ 'Je choisis cette école' → ✅ 'En choisissant cette école, je renonce aux opportunités de l'autre école'\n\nDans les affaires : Les entrepreneurs calculent TOUJOURS le coût d'opportunité. Elon Musk investit dans SpaceX → coût d'opportunité = il aurait pu garder son argent sans risque. Mais le GAIN POTENTIEL (révolutionner l'espace) vaut le coût!\n\nChaque décision est un RENONCEMENT. Le leader choisit en connaissance de cause.\n\nUn leader ne dit pas 'J'ai choisi A'. Il dit 'J'ai choisi A en sachant que je renonce à B'.",
+      "referenceCroisee": "M9 (Négociation Stratégique), M8D1 (Audit des Ressources)",
+      "mentorGoal": "Tester la compréhension du COÛT D'OPPORTUNITÉ (opportunity cost). L'enfant doit démontrer qu'il comprend que chaque décision implique un RENONCEMENT au gain de l'option non choisie.",
+      "evaluationCriteria": "1. Réponse correcte : B (La connaissance que tu aurais pu acquérir avec le livre). 2. Compréhension : L'enfant identifie que le coût d'opportunité est le GAIN MANQUÉ, pas le prix payé. 3. Raisonnement : L'enfant comprend qu'en choisissant A, on RENONCE à B. BONUS : L'enfant donne un exemple personnel de coût d'opportunité dans sa vie (ex: 'Quand je choisis de jouer, je renonce à finir mes devoirs rapidement')."
     },
     "defi3": {
-      "titre": "Défi: Le Budget du Festival",
+      "titre": "Mission: Le Budget du Festival",
       "scenario": "Tu organises un festival de 3 jours qui attend 15 000 personnes. Le coût total par personne est estimé à 5€ par jour. Quel est le budget total minimum à prévoir pour les 3 jours ?",
-      "instruction": "Écris le montant total en chiffres.",
-      "leconStrategique": "La maîtrise des grands nombres permet la vision à long terme. Estimer un budget total évite les surprises et assure la réussite du projet.",
-      "referenceCroisee": "M10",
+      "instruction": "Écris le montant total en chiffres ET montre ton calcul (comment tu arrives à ce résultat).",
+      "leconStrategique": "La MAÎTRISE DES ÉCHELLES est essentielle pour gérer de grands projets. Savoir calculer rapidement un budget total évite les surprises et assure la viabilité du projet.\n\nLa méthode de calcul par DÉCOMPOSITION :\n1. IDENTIFIER LES VARIABLES : Qui? Combien? Pendant combien de temps?\n2. CALCULER PAR UNITÉ : Combien coûte 1 personne pour 1 jour?\n3. MULTIPLIER À L'ÉCHELLE : Appliquer à TOUS x TOUS LES JOURS\n\nDans la vie réelle :\n• ❌ 'Je ne sais pas combien ça va coûter, on verra' → ✅ '5€ x 3 jours x 15 000 personnes = 225 000€'\n• ❌ 'C'est trop compliqué de calculer' → ✅ 'Je décompose : d'abord par personne, ensuite j'augmente l'échelle'\n• ❌ 'Je lance le projet sans budget' → ✅ 'Je calcule AVANT pour éviter les mauvaises surprises'\n\nDans les affaires : Les entrepreneurs doivent TOUJOURS estimer à l'échelle. Un restaurant : '30 clients/jour x 15€/client x 365 jours = 164 250€/an'. Tesla : pour produire 500 000 voitures, ils calculent 'coût par voiture x 500 000' AVANT de lancer la production!\n\nLe principe d'ÉCONOMIE D'ÉCHELLE : plus tu produis, plus tu peux réduire le coût unitaire. Mais tu dois d'abord CALCULER l'échelle!\n\nUn leader ne devine pas, il CALCULE. La vision à grande échelle commence par la maîtrise des nombres.",
+      "referenceCroisee": "M10 (Décisions Sous Pression), M3 (Planification)",
       "briefing": {
         "etape1": {
-          "titre": "1. Décomposer l'Échelle",
+          "titre": "1. Comprendre le Calcul d'Échelle",
           "type_etape": "validation_case",
-          "instruction": "J'ai identifié le calcul par personne (5€ x 3 jours) et le nombre total de personnes (15 000). J'ai un plan d'action: Coût x Nombre de Jours x Nombre de Personnes."
+          "instruction": "J'ai compris : Pour calculer un budget à grande échelle, je dois d'abord identifier les VARIABLES (coût unitaire, nombre, durée), puis les MULTIPLIER ensemble. La clé est de décomposer le problème."
+        },
+        "etape2": {
+          "titre": "2. Décomposer le Problème (Variables)",
+          "type_etape": "texte_guide",
+          "instruction": "Un budget se calcule en identifiant les VARIABLES :\n\n📊 VARIABLE 1 : Coût par personne par jour = 5€\n📊 VARIABLE 2 : Nombre de jours = 3 jours\n📊 VARIABLE 3 : Nombre de personnes = 15 000\n\nMaintenant, tu dois MULTIPLIER ces 3 variables ensemble :\n\nBudget Total = Coût unitaire × Nombre de jours × Nombre de personnes\n\n💡 Astuce PRO : Calcule d'ABORD pour 1 personne, PUIS multiplie par le nombre de personnes.\n\nExemple simplifié :\n• 1 personne pour 3 jours = 5€ × 3 = 15€\n• 15 000 personnes pour 3 jours = 15€ × 15 000 = ?\n\nC'est plus facile comme ça!"
+        },
+        "etape3": {
+          "titre": "3. Mon Calcul à l'Échelle",
+          "type_etape": "champ_texte",
+          "instruction": "Maintenant, fais ton calcul complet :\n\n1. Calcule le coût pour 1 personne sur 3 jours\n2. Multiplie par le nombre total de personnes\n3. Donne le résultat final\n\nExemple de bonne réponse :\n'Étape 1 : 5€ × 3 jours = 15€ par personne\nÉtape 2 : 15€ × 15 000 personnes = 225 000€\nRésultat : 225 000€'\n\nÀ toi!",
+          "placeholder": "Mon calcul :\nÉtape 1 : ...\nÉtape 2 : ...\nRésultat final : ..."
         }
       },
-      "mentorGoal": "Évaluer la capacité à identifier les gaspillages et les inefficacités (Lean Thinking). L'enfant doit démontrer son œil critique pour détecter les pertes.",
-      "evaluationCriteria": "La réponse doit identifier au moins 3 types de gaspillages (surproduction, attente, transport, sur-traitement). Bonus: L'enfant cite les 7 gaspillages du Lean ou propose des solutions."
+      "mentorGoal": "Évaluer la capacité de CALCUL À L'ÉCHELLE et de gestion budgétaire. L'enfant doit démontrer qu'il peut décomposer un problème complexe en variables simples, calculer un coût unitaire, puis l'appliquer à grande échelle.",
+      "evaluationCriteria": "1. Résultat correct : 225 000€ (5 × 3 × 15 000). 2. Méthode décomposée : L'enfant montre les étapes de calcul (coût par personne, puis total). 3. Maîtrise des échelles : L'enfant comprend qu'on multiplie coût unitaire × volume. 4. Clarté : Le calcul est présenté de façon structurée. BONUS : L'enfant mentionne l'utilité de ce calcul (éviter les surprises, planifier) ou parle d'économie d'échelle."
     },
     "defi4": {
       "titre": "Quiz: Le Principe de Polyvalence",
@@ -1678,55 +1757,55 @@
       "evaluationCriteria": "Réponse correcte : Option 2 (candidat B, technique + humain). Bonus : L'enfant explique pourquoi les compétences humaines feront la différence en 2035."
     },
     "defi4": {
-      "titre": "Mission: Mon Manifeste Anti-IA",
-      "scenario": "Dernière mission : écrire TON 'Manifeste Anti-IA'. Ce n'est PAS contre l'IA (tu vas l'utiliser !), c'est un manifeste pour affirmer ce que TOI tu apportes que l'IA ne pourra JAMAIS apporter. C'est ta déclaration d'indépendance !",
-      "instruction": "**Écris ton Manifeste Anti-IA (10-15 lignes)**\n\nInclus OBLIGATOIREMENT :\n\n1. **Ton nom** : 'Je suis [ton nom], et voici ce que l'IA ne pourra jamais être à ma place...'\n\n2. **3 choses que TU fais mieux que l'IA** :\n   - Exemple : 'Je peux rendre mon ami heureux juste en étant là'\n   - Exemple : 'Je peux inventer une blague que PERSONNE n'a jamais faite'\n   - Exemple : 'Je peux choisir de faire ce qui est JUSTE même si c'est dur'\n\n3. **Comment tu vas utiliser l'IA SANS perdre ton humanité** :\n   - Exemple : 'J'utiliserai l'IA pour aller plus vite, mais je penserai toujours SEUL d'abord'\n   - Exemple : 'L'IA sera mon assistant, jamais mon remplaçant'\n\n4. **Ta promesse pour 2035** :\n   - Exemple : 'En 2035, je serai un leader qui comprend l'IA ET les humains'\n   - Exemple : 'Je serai quelqu'un que l'IA ne peut pas remplacer'\n\n**Ton manifeste doit sonner comme une DÉCLARATION DE GUERRE** (positive) contre l'obsolescence ! Sois FIER de ton humanité !",
-      "leconStrategique": "Écrire ton manifeste ancre ta vision du futur. C'est une boussole. Chaque fois que tu sens que l'IA prend trop de place, relis ton manifeste. Chaque fois que tu as un choix (copier-coller l'IA vs créer toi-même), pense à ton manifeste. Ce document est ton identité pour les 10 prochaines années. Prends-le au sérieux.",
+      "titre": "Mission: Ma Lettre de Super-Pouvoir",
+      "scenario": "Dernière mission : écrire TA 'Lettre de Super-Pouvoir'. C'est une lettre où tu expliques au futur (en 2035) ce que TOI tu peux faire que l'IA ne pourra JAMAIS faire. C'est ta déclaration d'indépendance !",
+      "instruction": "**Écris ta Lettre de Super-Pouvoir (10-15 lignes)**\n\nInclus OBLIGATOIREMENT :\n\n1. **Ton nom** : 'Je suis [ton nom], et voici ce que l'IA ne pourra jamais être à ma place...'\n\n2. **3 choses que TU fais mieux que l'IA** :\n   - Exemple : 'Je peux rendre mon ami heureux juste en étant là'\n   - Exemple : 'Je peux inventer une blague que PERSONNE n'a jamais faite'\n   - Exemple : 'Je peux choisir de faire ce qui est JUSTE même si c'est dur'\n\n3. **Comment tu vas utiliser l'IA SANS perdre ton humanité** :\n   - Exemple : 'J'utiliserai l'IA pour aller plus vite, mais je penserai toujours SEUL d'abord'\n   - Exemple : 'L'IA sera mon assistant, jamais mon remplaçant'\n\n4. **Ta promesse pour 2035** :\n   - Exemple : 'En 2035, je serai un leader qui comprend l'IA ET les humains'\n   - Exemple : 'Je serai quelqu'un que l'IA ne peut pas remplacer'\n\n**Ta lettre doit sonner comme une DÉCLARATION** forte ! Sois FIER de ton humanité !",
+      "leconStrategique": "Écrire ta lettre ancre ta vision du futur. C'est une boussole. Chaque fois que tu sens que l'IA prend trop de place, relis ta lettre. Chaque fois que tu as un choix (copier-coller l'IA vs créer toi-même), pense à ta lettre. Ce document est ton identité pour les 10 prochaines années. Prends-le au sérieux.\n\n💡 BONUS (pour les curieux) : Ce type de lettre s'appelle aussi un 'manifeste' dans le monde professionnel. C'est ce qu'écrivent les grands leaders pour affirmer leurs valeurs !",
       "referenceCroisee": "M11",
       "briefing": {
         "etape1": {
-          "titre": "1. Qu'est-ce qu'un Manifeste ?",
+          "titre": "1. Qu'est-ce qu'une Lettre de Super-Pouvoir ?",
           "type_etape": "texte_guide",
-          "instruction": "Un manifeste, c'est une déclaration publique de TES VALEURS et TES INTENTIONS. Des exemples célèbres :\n- Déclaration d'Indépendance américaine : 'Tous les hommes naissent libres et égaux'\n- Manifeste de Martin Luther King : 'I have a dream'\n\nTon manifeste Anti-IA, c'est TON 'I have a dream' pour le futur. Sois courageux. Sois fier. Sois HUMAIN."
+          "instruction": "C'est une lettre que TU écris pour TOI dans le futur. Tu expliques ce qui te rend UNIQUE et que l'IA ne pourra jamais copier. C'est comme écrire ta propre 'recette secrète' : ce qui fait que TOI, c'est TOI !\n\n💡 Dans le monde des adultes, on appelle ça un 'manifeste'. Des gens célèbres comme Martin Luther King ('I have a dream') ou la Déclaration d'Indépendance ('Tous les hommes naissent libres') ont écrit des manifestes pour changer le monde ! Toi aussi, tu peux en écrire un."
         },
         "etape2": {
-          "titre": "2. Ton Manifeste",
+          "titre": "2. Ta Lettre de Super-Pouvoir",
           "type_etape": "champ_texte",
-          "instruction": "Écris ton Manifeste Anti-IA (10-15 lignes). Inclus :\n- Ton nom\n- 3 choses que TU fais mieux que l'IA\n- Comment tu utiliseras l'IA sans perdre ton humanité\n- Ta promesse pour 2035\n\nFais-le sonner PUISSANT !",
+          "instruction": "Écris ta Lettre de Super-Pouvoir (10-15 lignes). Inclus :\n- Ton nom\n- 3 choses que TU fais mieux que l'IA\n- Comment tu utiliseras l'IA sans perdre ton humanité\n- Ta promesse pour 2035\n\nFais-la sonner PUISSANTE !",
           "placeholder": "Je suis [ton nom], et voici ce que l'IA ne pourra jamais être à ma place...\n\nCe que je fais mieux que l'IA :\n1. ...\n2. ...\n3. ...\n\nComment j'utiliserai l'IA :\n...\n\nMa promesse pour 2035 :\n..."
         },
         "etape3": {
           "titre": "3. Partage et Fierté",
           "type_etape": "validation_case",
-          "instruction": "Je comprends : Ce manifeste n'est pas un exercice, c'est MA déclaration d'indépendance. C'est ce qui me rendra irremplaçable dans un monde d'IA. Je vais le garder et le relire régulièrement.",
+          "instruction": "Je comprends : Cette lettre n'est pas un simple exercice, c'est MA déclaration d'indépendance. C'est ce qui me rendra irremplaçable dans un monde d'IA. Je vais la garder et la relire régulièrement.",
           "placeholder": null
         }
       },
       "mentorGoal": "Créer un document personnel puissant qui ancre l'identité 'IA-proof' de l'enfant. L'objectif est qu'il ressorte de ce module avec une conscience claire de ses super-pouvoirs humains et une vision de comment naviguer le futur.",
-      "evaluationCriteria": "1. Manifeste rédigé avec les 4 éléments obligatoires (nom, 3 avantages humains, utilisation IA, promesse 2035). 2. Ton affirmatif et fier (pas hésitant). 3. Exemples concrets et personnels. Bonus : Le manifeste est inspirant et pourrait être partagé avec d'autres enfants."
+      "evaluationCriteria": "1. Lettre rédigée avec les 4 éléments obligatoires (nom, 3 avantages humains, utilisation IA, promesse 2035). 2. Ton affirmatif et fier (pas hésitant). 3. Exemples concrets et personnels. Bonus : La lettre est inspirante et pourrait être partagée avec d'autres enfants."
     }
   },
   "m17": {
     "defi1": {
-      "titre": "Quiz: Le Problème des 9 Points",
-      "question": "Voici 9 points disposés en carré (3x3). Peux-tu les relier TOUS avec seulement 4 lignes droites, SANS lever le crayon ? La plupart des gens disent 'impossible'. Pourquoi ?",
+      "titre": "Quiz: Le Nœud Magique",
+      "question": "**LE DÉFI DE LA CORDE**\n\nImagine : tu tiens une corde par les deux bouts (un bout dans chaque main).\n\n〰️〰️〰️〰️〰️〰️〰️〰️\n\n**Ton défi :** Fais un nœud dans cette corde SANS JAMAIS lâcher les deux bouts.\n\nTu ne peux PAS lâcher les bouts. Normalement, pour faire un nœud, il faut lâcher un bout pour le passer dans la boucle...\n\n**Y a-t-il une solution ?**",
       "options": [
-        "Parce que c'est mathématiquement impossible",
-        "Parce qu'on imagine une limite invisible (le carré) qui n'existe pas",
-        "Parce qu'il faut être un génie en maths"
+        "C'est impossible, il faut forcément lâcher un bout",
+        "Tu croises tes BRAS d'abord, tu prends la corde avec tes bras croisés, puis tu les décroises : un nœud apparaît !",
+        "Tu demandes à quelqu'un de t'aider"
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "BRAVO ! Tu as compris le piège ! La solution existe, mais elle demande de SORTIR du carré imaginaire. La plupart des gens s'auto-limitent en imaginant une règle qui n'existe pas. C'est ça, 'penser outside the box' : voir que les limites sont dans ta TÊTE, pas dans la réalité. Les innovateurs comme Elon Musk font ça tout le temps : ils voient des possibilités que les autres ne voient pas parce qu'ils refusent les limites imaginaires.",
-      "feedbackIncorrect": "Non ! La solution EXISTE, mais 90% des gens ne la trouvent pas. Pourquoi ? Parce qu'ils imaginent une règle invisible : 'Je dois rester dans le carré des 9 points'. Mais cette règle N'EXISTE PAS dans l'énoncé ! La solution demande de sortir du carré. C'est ça, l'innovation : refuser les limites que tout le monde s'impose.",
-      "leconStrategique": "Les plus grandes innovations viennent de gens qui ont refusé les limites invisibles. Airbnb : 'On ne peut pas dormir chez des inconnus' → FAUX. Uber : 'On ne peut pas monter dans la voiture d'un inconnu' → FAUX. SpaceX : 'Les fusées ne peuvent pas être réutilisables' → FAUX. Ces limites étaient dans les TÊTES, pas dans la réalité. Ton job : identifier les limites imaginaires et les EXPLOSER.",
-      "referenceCroisee": "M7",
-      "mentorGoal": "Introduire le concept de 'limites auto-imposées'. L'enfant doit comprendre que la plupart des 'impossibles' sont des croyances, pas des faits. C'est la base de la pensée innovante.",
-      "evaluationCriteria": "Réponse correcte : Option 2 (limite invisible imaginée). Bonus : L'enfant donne un exemple de 'règle invisible' qu'il s'impose dans sa vie (sport, école, créativité)."
+      "feedbackCorrect": "BRAVO ! Tu as trouvé l'astuce GÉNIALE ! 🎩✨\n\nVoici comment ça marche :\n1. AVANT de toucher la corde : Croise tes bras (comme si tu boudais)\n2. GARDE tes bras croisés et prends les 2 bouts de la corde\n3. Décroise tes bras normalement\n4. MAGIE ! Un nœud apparaît dans la corde !\n\nPourquoi ? Quand tes bras étaient croisés, TU étais le nœud ! En décroisant tes bras, tu as 'transféré' le nœud de TOI vers la CORDE.\n\nC'est ça 'penser autrement' : 90% des gens pensent 'Comment faire le nœud APRÈS avoir pris la corde ?' La solution est de se préparer AVANT ! Tu changes QUAND tu agis, pas juste COMMENT.\n\n📹 Regarde la vidéo pour voir la solution en action : https://www.youtube.com/watch?v=ClxwTMwv6MY",
+      "feedbackIncorrect": "Presque ! Ce défi semble impossible, mais il y a une astuce simple !\n\nL'astuce : AVANT de prendre la corde, croise tes bras (comme si tu boudais). Garde tes bras croisés et prends les 2 bouts. Puis décroise tes bras : MAGIE, un nœud apparaît ! 🎩\n\nPourquoi ça marche ? Tes bras croisés SONT le nœud. En les décroisant, tu transfères ce nœud à la corde.\n\nLa leçon : La plupart des gens cherchent la solution PENDANT l'action ('Comment faire le nœud maintenant ?'). L'astuce est de se préparer AVANT ('Je croise mes bras d'abord !'). C'est ça, penser différemment : changer QUAND tu agis.\n\n📹 Regarde la vidéo pour voir la solution en action : https://www.youtube.com/watch?v=ClxwTMwv6MY",
+      "leconStrategique": "Ce nœud magique enseigne une leçon ÉNORME : Souvent, la solution n'est pas de changer COMMENT tu fais quelque chose, mais QUAND tu le fais.\n\nExemples :\n• Problème : 'Je n'ai jamais le temps pour mes devoirs' → Mauvaise question : 'Comment aller plus vite ?' → Bonne question : 'Comment PLANIFIER mon temps AVANT ?'\n• Problème : 'Je rate mes examens' → Mauvaise question : 'Comment réviser la veille ?' → Bonne question : 'Comment APPRENDRE dès le début ?'\n\nLes innovateurs changent le MOMENT où ils agissent, pas juste la méthode. Pense AVANT, agis APRÈS. C'est le secret des génies !\n\nhttps://youtu.be/ClxwTMwv6MY",
+      "referenceCroisee": "M2, M7",
+      "mentorGoal": "Enseigner que 'penser outside the box' signifie souvent changer QUAND on agit, pas juste COMMENT. L'enfant doit comprendre que la préparation (AVANT) est souvent plus importante que l'action (PENDANT).",
+      "evaluationCriteria": "Réponse correcte : Option 2 (croiser les bras d'abord). Bonus : L'enfant donne un exemple dans sa vie où il devrait 'se préparer AVANT' au lieu de 'réagir PENDANT' (devoirs, sport, conflits, etc.)."
     },
     "defi2": {
       "titre": "Mission: Les 10 Solutions Impossibles",
       "scenario": "Aujourd'hui, tu vas entraîner ton cerveau à trouver des solutions que PERSONNE n'aurait imaginées. L'objectif : résoudre un problème simple de 10 façons DIFFÉRENTES, dont au moins 5 'absurdes'. C'est comme ça qu'on trouve les vraies innovations !",
-      "instruction": "**Ton problème : Comment se rendre à l'école ?**\n\n**Étape 1 : Les 3 solutions NORMALES (tout le monde les connaît)**\nExemple :\n1. À pied\n2. En voiture avec les parents\n3. En bus scolaire\n\n**Étape 2 : Les 4 solutions ORIGINALES (mais réalistes)**\nExemple :\n4. En vélo électrique\n5. En trottinette avec un copain\n6. En rollers\n7. En covoiturage avec 3 familles du quartier\n\n**Étape 3 : Les 3 solutions ABSURDES (mais créatives !)**\nExemple :\n8. Avec un jetpack (comme Iron Man)\n9. Par un tunnel secret sous la ville\n10. Téléportation quantique\n\n**Après avoir trouvé tes 10 solutions, réponds :**\n- Quelle solution 'absurde' pourrait devenir réelle dans 20 ans ?\n- Quelle solution 'originale' tu pourrais tester la semaine prochaine ?\n- Pourquoi la plupart des gens ne pensent qu'aux 3 premières solutions ?",
+      "instruction": "**Ton problème : Comment se rendre à l'école ?**\n\n**Étape 1 : Les 3 solutions NORMALES (tout le monde les connaît)**\nExemple :\n1. À pied\n2. En voiture avec les parents\n3. En bus scolaire\n\n**Étape 2 : Les 4 solutions ORIGINALES (mais réalistes)**\nExemple :\n4. En vélo électrique\n5. En trottinette avec un copain\n6. En rollers\n7. En covoiturage avec 3 familles du quartier\n\n**Étape 3 : Les 3 solutions ABSURDES (mais créatives !)**\nExemple :\n8. Avec un jetpack (comme Iron Man)\n9. Par un tunnel secret sous la ville\n10. Téléportation quantique\n\n💡 **Ces exemples sont là pour t'inspirer, mais trouve TES propres idées !**\n\n**Après avoir trouvé tes 10 solutions, réponds :**\n- Quelle solution 'absurde' pourrait devenir réelle dans 20 ans ?\n- Quelle solution 'originale' tu pourrais tester la semaine prochaine ?\n- Pourquoi la plupart des gens ne pensent qu'aux 3 premières solutions ?",
       "leconStrategique": "Les innovations ne viennent PAS de gens qui cherchent la 'bonne' réponse. Elles viennent de gens qui cherchent TOUTES les réponses possibles, même les 'folles'. Exemple : Les frères Wright (avion) → Tout le monde disait 'impossible'. Jeff Bezos (Amazon) → Tout le monde disait 'les gens n'achèteront jamais en ligne'. En listant 10 solutions, tu forces ton cerveau à quitter les sentiers battus. La solution n°8 ou n°10 contient souvent l'idée révolutionnaire.",
       "referenceCroisee": "M7",
       "briefing": {
@@ -1816,7 +1895,7 @@
     "defi2": {
       "titre": "Mission: Les 3 Règles Stupides",
       "scenario": "Autour de toi, il y a plein de 'règles' que tout le monde suit sans réfléchir. Certaines sont utiles. D'autres sont STUPIDES, mais personne n'ose les remettre en question. Aujourd'hui, tu vas devenir un 'détective de règles stupides' !",
-      "instruction": "**Ta mission : Identifier 3 règles stupides que tout le monde suit**\n\n**Exemples de règles à analyser :**\n- À l'école : 'On doit lever la main pour parler' (Pourquoi ? Et si on avait une autre méthode ?)\n- À la maison : 'On mange à table' (Pourquoi pas un pique-nique dans le salon parfois ?)\n- Dans la société : 'Les garçons en bleu, les filles en rose' (Qui a décidé ça ?)\n- À l'école : 'Tout le monde doit apprendre la même chose en même temps' (Pourquoi ?)\n- Partout : 'Il faut être sérieux pour être respecté' (Et l'humour ?)\n\n**Pour CHAQUE règle que tu identifies, réponds :**\n1. Quelle est la règle ?\n2. Pourquoi tout le monde la suit sans réfléchir ?\n3. Pourquoi cette règle est stupide (ou au moins discutable) ?\n4. Quelle serait une meilleure règle ?\n\n**Attention : Ce n'est PAS 'désobéir pour désobéir'. C'est RÉFLÉCHIR avant d'obéir.**",
+      "instruction": "**Ta mission : Identifier 3 règles stupides que tout le monde suit**\n\n**Exemples de règles à analyser (pour comprendre le concept) :**\n- À l'école : 'On doit lever la main pour parler' (Pourquoi ? Et si on avait une autre méthode ?)\n- À la maison : 'On mange à table' (Pourquoi pas un pique-nique dans le salon parfois ?)\n\n⚠️ **IMPORTANT : N'utilise PAS ces exemples ! Trouve 3 règles stupides dans TA vie à toi (école, maison, sport, amis, etc.)**\n\n**Pour CHAQUE règle que tu identifies, réponds :**\n1. Quelle est la règle ?\n2. Pourquoi tout le monde la suit sans réfléchir ?\n3. Pourquoi cette règle est stupide (ou au moins discutable) ?\n4. Quelle serait une meilleure règle ?\n\n**Attention : Ce n'est PAS 'désobéir pour désobéir'. C'est RÉFLÉCHIR avant d'obéir.**",
       "leconStrategique": "Beaucoup de 'règles' ne sont que des habitudes. Elles existaient à une époque pour une raison, mais cette raison a disparu. Pourtant, personne n'ose les remettre en question. Les innovateurs OSENT. Exemple : Avant, on disait 'Les femmes ne peuvent pas voter' → Stupide, mais accepté pendant des siècles. 'Les enfants doivent travailler dans les usines' → Accepté, puis interdit. Ton job : identifier les 'évidences' d'aujourd'hui qui seront les absurdités de demain.",
       "referenceCroisee": "M2",
       "briefing": {

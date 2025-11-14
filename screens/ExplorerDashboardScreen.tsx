@@ -56,7 +56,13 @@ const BlockSeparator: React.FC<{
 };
 
 // Composant de l'item de module PREMIUM avec gradient
-const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: number }> = ({ module, navigation, t, index }) => {
+const ModuleItem: React.FC<{ 
+    module: Module; 
+    navigation: any; 
+    t: any; 
+    index: number;
+    onModulePress: () => void;
+}> = ({ module, navigation, t, index, onModulePress }) => {
     const [hovered, setHovered] = useState(false);
     
     // Détermination simple du statut (pour l'affichage)
@@ -66,6 +72,7 @@ const ModuleItem: React.FC<{ module: Module; navigation: any; t: any; index: num
 
     const handlePress = () => {
         if (module.isUnlocked) {
+            onModulePress(); // Marquer qu'il faut refresh au retour
             navigation.navigate('DefiList', {
                 moduleId: module.id,
                 moduleTitle: module.title,
@@ -148,6 +155,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const [loading, setLoading] = useState(true);
     const [showMascot, setShowMascot] = useState(false);
     const [mascotAnimation, setMascotAnimation] = useState<'fadeInDown' | 'fadeOutUp'>('fadeInDown');
+    const [needsRefresh, setNeedsRefresh] = useState(false);
     
     // NOUVEAU : Compteurs d'éléments non vus
     const [unseenBadgesCount, setUnseenBadgesCount] = useState(0);
@@ -266,20 +274,25 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
         }
     }, [i18n.language]);
 
-    // OPTIMISÉ: Recharger seulement si nécessaire (via paramètre de navigation)
+    // OPTIMISÉ: Recharger seulement si nécessaire (via paramètre de navigation OU flag interne)
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
-            // Ne recharger que si explicitement demandé via params
+            // Ne recharger que si explicitement demandé via params OU si needsRefresh
             const route = navigation.getState().routes.find((r: any) => r.name === 'Explorer');
-            if (route?.params?.shouldReload && user && !loading) {
+            const shouldReloadFromParams = route?.params?.shouldReload;
+            
+            if ((shouldReloadFromParams || needsRefresh) && user && !loading) {
                 loadModules();
-                // Nettoyer le paramètre
-                navigation.setParams({ shouldReload: undefined });
+                // Nettoyer les paramètres
+                if (shouldReloadFromParams) {
+                    navigation.setParams({ shouldReload: undefined });
+                }
+                setNeedsRefresh(false);
             }
         });
 
         return unsubscribe;
-    }, [navigation, user, loading, loadModules]); 
+    }, [navigation, user, loading, loadModules, needsRefresh]); 
     
     // NOUVEAU: Afficher la mascotte temporairement au chargement
     useEffect(() => {
@@ -545,6 +558,7 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                                 navigation={navigation} 
                                                 t={t}
                                                 index={moduleGlobalIndex}
+                                                onModulePress={() => setNeedsRefresh(true)}
                                             />
                                         );
                                     })}

@@ -98,7 +98,7 @@
     "retry_button": "Try Again",
     "submit_understood": "I Understand 💡",
     "correct_answer": "✅ Perfect! Correct Answer. You can submit now.",
-    "incorrect_answer": "❌ That's not the right answer. Analyze your mistake or use the Guided Sheet!",
+    "incorrect_answer": "❌ That's not the right answer. Think carefully and try again!",
     "feedback_correct": "Correct",
     "feedback_incorrect": "Incorrect",
     "submit_title": "Challenge Submitted",
@@ -356,7 +356,7 @@
       "evaluationCriteria": "1. Correct answer: Heavy planks DOWN LOW. 2. Coherent explanation: Mentions stability, balance, or risk of toppling. 3. Anticipation: Everything up high = unstable/dangerous treehouse. 4. BONUS: The child uses the term 'STRONG BASE' or makes the connection with other structures (buildings, pyramids)."
     },
     "defi2": {
-"suivant"        "titre": "Quiz: The Bike on the Hill",
+        "titre": "Quiz: The Bike on the Hill",
         "question": "You're on your bike at the top of a big downhill. You launch yourself without pedaling and you go faster and faster.\n\nWhat FORCE makes you accelerate?",
       "options": [
         "The force of your legs",
@@ -499,31 +499,37 @@
       "feedbackIncorrect": "Think carefully! A good captain doesn't just choose the 'best', they choose the one with the LEAST RISKS in a pressure situation.\n\nHint: Look at the word 'BUT' in the descriptions.\n→ 'Very good BUT tired' = physical risk (tired legs)\n→ 'Excellent BUT afraid' = mental risk (stress that blocks)\n\nWho doesn't have a 'BUT'? Who is stable with no major risk?",
       "leconStrategique": "A leader must make TRADE-OFFS: choose between several options by weighing advantages AND risks.\n\nThe best decision isn't always choosing 'the best', but choosing 'the most stable' in a pressure situation.\n\nIn real life:\n• Choosing a project partner: Not the most brilliant but stressed, but the most reliable\n• Investing money: Not the most profitable but risky option, but the stable one\n• Recruiting for your team: Not the most impressive resume, but the most balanced person\n\nIn business: Leaders first eliminate HIGH-RISK options, then choose among STABLE options. That's risk management!",
       "referenceCroisee": "M4 (Analysis and Logic), M8 (Leadership and Team)",
-      "mentorGoal": "Introduce TRADE-OFF UNDER CONSTRAINTS and RISK MANAGEMENT. The child must demonstrate they can eliminate risky options to identify the most stable choice in a pressure situation.",
+      "mentorGoal": "Introduce TRADE-OFF UNDER CONSTRAINTS and RISK MANAGEMENT. The child must demonstrate they can prioritize STABILITY over potential excellence, by first eliminating options that present a risk factor (the 'BUT').",
       "evaluationCriteria": "1. Correct answer: B (Emma). 2. BONUS: The child explains that 'stable' is better than 'excellent with risks' or mentions they eliminated options with 'BUT' first (elimination method)."
     }
   },
   "m5": {
     "defi1": {
-        "titre": "Challenge: The Inventor's Pitch",
-        "scenario": "You invented a revolutionary object (e.g., flying shoes). How would you convince an investor to give you money in 3 sentences? (Focus: Problem, Solution, Value).",
-        "instruction": "Write your pitch. Clarity and impact are evaluated.",
-        "leconStrategique": "Clarity is a leader's strength. If you can't explain your idea simply, it will be ignored.",
-        "referenceCroisee": "M7",
+        "titre": "Mission: The Clear Message",
+        "scenario": "You created a super fun board game! You want to convince your classmates to play it with you at recess.\n\nThe problem: You only have 30 seconds to explain your game before they go play soccer.\n\nYour mission: Explain your game in 3 short sentences to make them want to play!",
+        "instruction": "Write 3 sentences to convince your classmates:\n\n1. PROBLEM: What boredom will your game solve?\n   (Ex: 'Are you tired of always playing the same game?')\n\n2. SOLUTION: What is your game and how does it work in 1 sentence?\n   (Ex: 'My game is called ... and you have to ...')\n\n3. BENEFIT: Why is it great for them?\n   (Ex: 'It's fun because... and everyone can win!')\n\n💡 Important word: CLEAR MESSAGE = Explain simply and quickly so others understand right away.",
+        "leconStrategique": "CLARITY is the ENGINE of INFLUENCE. If you can't explain your idea simply, others won't be engaged.\n\nThe 3 rules of a clear message:\n1. PROBLEM first (why people need you)\n2. SOLUTION next (what you propose)\n3. BENEFIT last (what they gain)\n\nIn real life:\n• Convince your parents to buy you something\n• Propose an activity to your friends\n• Explain an idea in class\n\nIn business: It's the quick persuasion method (the \"elevator pitch\"). A clear message allows you to mobilize your team or convince a partner. A clear message = an idea that sticks!",
+        "referenceCroisee": "M5 (Communication and Persuasion), M7 (Creativity)",
         "briefing": {
             "etape1": {
-                "titre": "1. Analyze the Audience (Their Need)",
-                "type_etape": "validation_case",
-                "instruction": "I have identified that the investor wants to know if they will make money. My pitch must be fast and exciting, and not technical."
+                "titre": "1. Identify The Problem",
+                "type_etape": "texte_guide",
+                "instruction": "Before convincing, ask yourself: 'What problem will my idea solve?'\n\nExample for a game:\n• Problem: 'We're bored at recess'\n• Problem: 'Current games are too complicated'\n• Problem: 'We want to play all together'\n\nChoose ONE clear problem!"
             },
             "etape2": {
-                "titre": "2. The P-S-V Method (Problem - Solution - Value)",
-                "type_etape": "texte_guide",
-                "instruction": "A good pitch follows three steps: 1. The Call (the urgent problem). 2. The Solution (your invention). 3. The Value (why it's great for them). Focus on these 3 ideas."
+                "titre": "2. The P-S-B Structure",
+                "type_etape": "validation_case",
+                "instruction": "I understood the structure:\n1. PROBLEM (the boredom I solve)\n2. SOLUTION (my idea in 1 sentence)\n3. BENEFIT (what they gain)\n\nThis structure works for everything: convincing your parents, your friends, or your team!"
+            },
+            "etape3": {
+                "titre": "3. My Clear Message",
+                "type_etape": "champ_texte",
+                "instruction": "Write your message in 3 sentences using the P-S-B structure.",
+                "placeholder": "Sentence 1 (PROBLEM): ...\nSentence 2 (SOLUTION): ...\nSentence 3 (BENEFIT): ...\n\nCheck: Does my message really make you want to play?"
             }
       },
-      "mentorGoal": "Assess the child's ability to structure a persuasive message using the AIDA method (Attention, Interest, Desire, Action).",
-      "evaluationCriteria": "The answer must contain all 4 AIDA elements in logical order. Bonus: The child uses captivating storytelling or convincing data."
+      "mentorGoal": "Introduce the STRUCTURE OF A PERSUASIVE MESSAGE (Problem-Solution-Benefit). The child must demonstrate they can structure a clear and convincing message in 3 logical steps.",
+      "evaluationCriteria": "1. Structure respected: Identifies a PROBLEM, proposes a SOLUTION, explains the BENEFIT. 2. Clarity: The message is understandable for an 8-9 year old. 3. Conciseness: The 3 sentences are short and direct. 4. BONUS: The child uses questions (e.g., 'Do you want...?') or words that create desire (e.g., 'super fun', 'easy', 'everyone can play')."
     },
     "defi2": {
         "titre": "Quiz: Win-Win Negotiation",
@@ -534,71 +540,84 @@
         "Say '80€ or nothing' to be firm."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Perfect. Offering a compromise and asking for an exchange creates a 'win-win' solution.",
-        "feedbackIncorrect": "Refusing or being too firm ends the negotiation. The goal is to find common ground.",
-        "leconStrategique": "A good negotiation is not about beating the other person, but about ensuring both parties get more value. This builds future collaborations.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Test understanding of the importance of trust and credibility in influence. The child must demonstrate how to build trust.",
-      "evaluationCriteria": "The answer must identify concrete strategies to build trust (evidence, testimonials, expertise). Bonus: The child cites the principle of authority or social proof."
+        "feedbackCorrect": "Well done! 🎉 You understood the art of WIN-WIN NEGOTIATION.\n\nHere's why this is the best strategy:\n\n• Option 1 (refuse) = You lose a good supplier and start from scratch ❌\n• Option 3 (80€ or nothing) = You force the other to lose → They might accept, but won't want to work with you again ❌\n• Option 2 (90€ + favour) = COMPROMISE: You pay 10€ more, they earn 10€ less, BUT you exchange an additional service ✅\n\nResult: BOTH parties win something. The supplier is happy, you too. They'll want to work with you again!\n\n💡 A good negotiation creates a LASTING RELATIONSHIP. You didn't just 'win' today, you gained a PARTNER for the long term.",
+        "feedbackIncorrect": "Careful! A negotiation is not a battle where you must 'win' against the other.\n\nThink long-term:\n• If you refuse (Option 1) → You must find another supplier (wasted time)\n• If you say '80€ or nothing' (Option 3) → The supplier feels forced, might accept but won't want to sell to you again\n\nThe right question: 'How can we BOTH win something?'\n\nHint: Look for a COMPROMISE where each person gives a little and receives a little. That's win-win!",
+        "leconStrategique": "WIN-WIN NEGOTIATION is a powerful tool of INFLUENCE. When both parties win, you create trust and lasting relationships.\n\nThe 3 rules of good negotiation:\n1. Listen to what the other really wants (not just the price)\n2. Seek a COMPROMISE where each gives and receives\n3. Add VALUE (a service, time, a recommendation)\n\nIn real life:\n• Negotiating with your parents: 'I clean my room (you give) if I can play 30 min more (you receive)'\n• Negotiating with a friend: 'I lend you my game (you give) if you show me your new magic trick (you receive)'\n• Negotiating at school: 'I help you with math (you give) if you help me with art (you receive)'\n\nIn business: The best leaders always negotiate win-win. Why? Because they build solid PARTNERSHIPS. A satisfied partner = future opportunities!",
+      "referenceCroisee": "M5 (Communication and Influence), M9 (Economy and Value Exchange)",
+      "mentorGoal": "Introduce WIN-WIN NEGOTIATION and the concept of CREATIVE COMPROMISE. The child must demonstrate they understand that good negotiation seeks to create value for both parties, not to 'beat' the other.",
+      "evaluationCriteria": "1. Correct answer: B (Offer 90€ + favour). 2. BONUS: The child explains that compromise preserves the relationship, or mentions that adding value (the favour) makes the deal more fair, or understands losing a battle to win the war (long-term relationship)."
     },
     "defi3": {
-      "titre": "Challenge: Active Listening",
+      "titre": "Mission: The Emotion Mirror",
       "scenario": "Your friend is angry because you broke their toy. They shout 'I hate you!'. Instead of defending yourself, what do you say to show you understand their emotion?",
-      "instruction": "Write a sentence that acknowledges the friend's emotion without justifying yourself (E.g., 'I understand you are angry...').",
-      "leconStrategique": "Active listening defuses conflicts. The leader listens to understand, not to respond.",
+      "instruction": "Write a sentence that VALIDATES the friend's emotion without justifying yourself (E.g., 'I understand you are angry...').",
+      "leconStrategique": "ACTIVE LISTENING defuses conflicts. It's a skill of EMOTIONAL LEADERSHIP: the leader listens to UNDERSTAND, not to respond. By validating the other person's emotion, you show respect and deactivate confrontation.",
       "referenceCroisee": "M6",
       "briefing": {
         "etape1": {
           "titre": "1. The Emotion Mirror",
           "type_etape": "validation_case",
-          "instruction": "I have identified the primary emotion (anger, sadness, fear). I don't respond to the words, but to the emotion."
+          "instruction": "I have identified the primary emotion (anger, sadness, disappointment, fear, frustration). I don't respond to the words, but to the emotion."
         },
         "etape2": {
-          "titre": "2. The Formula: I see that...",
+          "titre": "2. The Leader's Formula",
           "type_etape": "texte_guide",
-          "instruction": "Use the formula: 'I see that you are X (very angry/disappointed) because of Y (what I did)'. This shows you take responsibility and listen."
+          "instruction": "Use the formula: 'I see that you are [Emotion] because of [My Action].' (E.g., 'I see that you are very angry because of what I did.')\n\nThis formula proves that you listened to UNDERSTAND and not to respond. It shows you take responsibility."
+        },
+        "etape3": {
+          "titre": "3. My Active Listening Phrase",
+          "type_etape": "champ_texte",
+          "instruction": "Now, write your ACTIVE LISTENING phrase using the formula.\n\nReminder of the situation: Your friend is angry because you broke their toy. They shout 'I hate you!'.\n\n✅ Good phrase: 'I see that you are very angry because of what I did with your toy.'\n\n❌ To avoid:\n• 'Yes but it was an accident' (justification)\n• 'Calm down' (minimization)\n• 'I'll buy you a new one' (solution too quick)\n\nFirst VALIDATE the emotion, then you can propose a solution.",
+          "placeholder": "I see that you are... because of..."
         }
       },
-      "mentorGoal": "Assess ability to adapt message according to audience (personalization and empathy).",
-      "evaluationCriteria": "The answer must show the child has adapted their message to the needs, motivations, and language of the target audience. Bonus: The child segments multiple audience types."
+      "mentorGoal": "Assess the ability to demonstrate EMPATHY and EMOTIONAL LEADERSHIP. The child must show they can deactivate conflict by validating their interlocutor's emotion without defending themselves.",
+      "evaluationCriteria": "1. Clarity: The sentence must clearly VALIDATE the emotion without justifying, minimizing, or counter-attacking. 2. Structure: The child uses a formula like 'I see/understand that you are [emotion]'. 3. Constraint: No justification ('But...') or immediate solution ('I'll buy you a new one'). BONUS: The child uses a precise term for the emotion (e.g., 'disappointment' or 'sadness' instead of just 'anger')."
     },
     "defi4": {
       "titre": "Quiz: Positive Language",
-      "question": "You want your team to tidy up their tools. Which phrase is most effective for achieving a positive result?",
+      "question": "You're doing a group project at school. The other students are leaving materials everywhere. What do you say to get them to tidy up?",
       "options": [
-        "Stop leaving your tools lying around!",
-        "If you put away your tools, I will be happy.",
-        "Putting away the tools allows us to work faster tomorrow."
+        "Stop leaving the materials lying around!",
+        "If you tidy up, I will be happy.",
+        "Tidying up now will save us time to play later!"
       ],
       "bonneReponseIndex": 2,
-      "feedbackCorrect": "Answer 3 gives a direct and future benefit to the team. This is positive leadership.",
-      "leconStrategique": "Positive language motivates. The leader doesn't say 'Don't do X', but 'Do this to achieve Y'.",
-      "referenceCroisee": "M10",
-      "mentorGoal": "Test understanding of the power of emotion in persuasion. The child must demonstrate how to use emotion ethically.",
-      "evaluationCriteria": "The answer must integrate an authentic emotional appeal without manipulation. Bonus: The child balances emotion and logic (Pathos + Logos)."
+      "feedbackCorrect": "Well done! 🎉 You understood POSITIVE LANGUAGE!\n\nWhy answer 3 is best:\n• Option 1 = Criticizes ('Stop...') ❌\n• Option 2 = Talks about YOU ('I will be happy') ❌\n• Option 3 = Shows the BENEFIT for THEM ('save time to play') ✅\n\nA good leader explains WHY to do something, not just WHAT to do. Result: everyone understands and wants to participate!",
+      "feedbackIncorrect": "Try again! A good leader doesn't criticize and doesn't just talk about themselves.\n\nAsk yourself: 'What will OTHERS gain if they do this?'\n\n• Option 1 ('Stop...') = You're criticizing ❌\n• Option 2 ('I will be happy') = You're talking about YOU ❌\n\nPOSITIVE LANGUAGE shows the benefit: 'If you do X, you'll get Y'\n\nExample: ❌ 'Clean your room!' → ✅ 'Clean your room to find your toys faster!'\n\nWhich option shows a benefit for everyone?",
+      "leconStrategique": "POSITIVE LANGUAGE is a POWERFUL LEADERSHIP tool. An effective leader doesn't say 'Don't do X', but 'Do Y to achieve Z'.\n\nThe 3 rules of positive language:\n1. AVOID the negative ('Stop', 'Don't do')\n2. EXPLAIN the benefit ('This allows us to...')\n3. THINK about the team, not yourself\n\nIn real life:\n• ❌ 'Stop shouting' → ✅ 'Speak calmly so I can understand better'\n• ❌ 'Don't be late' → ✅ 'Arrive on time so you don't miss anything'\n• ❌ 'Don't waste' → ✅ 'Save to have more tomorrow'\n\nIn business: The best managers motivate by showing BENEFITS, not by giving orders. A motivated team = a high-performing team!",
+      "referenceCroisee": "M5 (Communication and Influence), M10 (Leader's Ethics)",
+      "mentorGoal": "Test understanding of POSITIVE LANGUAGE and BENEFIT-oriented formulation. The child must demonstrate they understand that a leader motivates by showing future advantages rather than criticizing or giving orders.",
+      "evaluationCriteria": "1. Correct answer: C (Tidying up now will save us time to play later). 2. Understanding: The child identifies that option C gives a concrete and immediate BENEFIT to the whole group (not to the leader). 3. Contrast: The child understands why options A (negative/critical) and B (leader-focused) are less effective. BONUS: The child reformulates a negative order into positive language in their own life."
     }
   },
   "m6": {
     "defi1": {
-        "titre": "Challenge: The Bridge Failure",
-        "scenario": "You built a model bridge, but it collapsed. You can start over or give up and move to the next module. What do you do?",
-        "instruction": "Write one sentence about the LESSON you learned from the collapse and the SINGLE modification you would make to improve the next attempt.",
-        "leconStrategique": "Failure is a valuable source of information. The leader never gives up; they analyze and improve.",
-        "referenceCroisee": "M3",
+        "titre": "Mission: The Bridge Failure",
+        "scenario": "You built a LEGO bridge to let a small car pass. But when you place the car on it, the bridge collapses!\n\nYou could be frustrated and give up... But a true leader does differently: they analyze and try again!",
+        "instruction": "Answer in 2-3 short sentences:\n1. What LESSON do you learn from this failure? (What did you learn?)\n2. What is the ONE thing you would change for the next attempt?",
+        "leconStrategique": "FAILURE IS DATA, NOT DEFEAT. This is the concept of GROWTH MINDSET: every mistake teaches you something if you analyze it.\n\nThe 3 steps to transform failure:\n1. ANALYZE: Why didn't it work? (not 'who's to blame?')\n2. ISOLATE: What is the MAIN cause?\n3. ITERATE: Change ONE thing and retest\n\nIn real life:\n• ❌ Your cake fails → ✅ 'Too much liquid, I'll reduce the milk next time'\n• ❌ You lose a match → ✅ 'I didn't defend enough on the left, I'll train on that'\n• ❌ Your presentation is confusing → ✅ 'I need to better structure my ideas with a plan'\n\nIn business: The greatest entrepreneurs (Steve Jobs, Elon Musk) failed multiple times before succeeding. They call it 'FAIL FAST, LEARN FASTER': fail quickly, learn faster!\n\nA leader doesn't say 'I failed', they say 'I learned'.",
+        "referenceCroisee": "M3 (Planning and Execution), M5 (Emotional Leadership)",
         "briefing": {
             "etape1": {
-                "titre": "1. Analyze the Error, not the Emotion",
+                "titre": "1. Understanding Failure as Data",
                 "type_etape": "validation_case",
-                "instruction": "I put my frustration aside. I focus on the cause: instability, weight, or support."
+                "instruction": "I understand: Failure is NOT a punishment, it's DATA that teaches me something. The right question is 'What didn't work?' not 'Why am I bad?'."
             },
             "etape2": {
-                "titre": "2. Isolate the Critical Variable",
+                "titre": "2. Analyze the Error, not the Emotion",
+                "type_etape": "texte_guide",
+                "instruction": "Before analyzing, take 3 deep breaths. 😤\n\nFailure creates FRUSTRATION. That's normal! But a leader puts their emotions aside to analyze.\n\nThe right question isn't 'Why am I bad?' but 'What didn't work?'\n\nPossible causes:\n• The bridge wasn't strong enough (weak structure)\n• The bridge couldn't support the WEIGHT (too heavy)\n• The bridge didn't have enough SUPPORT (unstable foundations)\n\n💡 A failure = DATA. Not a punishment!"
+            },
+            "etape3": {
+                "titre": "3. My Lesson and My Action",
                 "type_etape": "champ_texte",
-          "instruction": "Of the possible causes (stability, weight, support), which SINGLE one will I change for the next try?"
+                "instruction": "Now, answer the 2 questions:\n\n1. What LESSON do you learn from this failure?\n(Ex: 'My bridge wasn't strong enough')\n\n2. What is the ONE thing you will change?\n(Ex: 'I'll add a pillar in the middle')\n\n⚠️ Why only ONE thing? If you change 3 things at once and it works, you won't know WHICH one worked!\n\nThis is the scientific method: change ONE variable at a time.",
+                "placeholder": "1. My lesson: ...\n2. I will change: ..."
         }
       },
-      "mentorGoal": "Assess the child's ability to transform failure into a learning opportunity (Growth Mindset). The child must demonstrate resilience.",
-      "evaluationCriteria": "The answer must clearly identify lessons learned from failure and corrective actions. Bonus: The child cites the Growth Mindset concept or iteration."
+      "mentorGoal": "Assess the child's ability to transform failure into a learning opportunity (GROWTH MINDSET). The child must demonstrate they can methodically analyze an error without being overwhelmed by emotion and identify a targeted corrective action (ITERATION).",
+      "evaluationCriteria": "1. Lesson identified: The child explains what they learned from the failure (e.g., 'My bridge wasn't strong enough'). 2. Targeted corrective action: The child proposes ONE specific modification (e.g., 'I'll add a pillar in the middle'). 3. Emotion/analysis separation: The child doesn't blame themselves ('I'm bad') but analyzes factually. BONUS: The child uses strategic vocabulary (e.g., 'test', 'analyze', 'cause') or mentions they will 'try again' without giving up."
     },
     "defi2": {
         "titre": "Quiz: Procrastination",
@@ -609,27 +628,39 @@
         "Ask someone else to do the beginning."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Action creates momentum. An easy small step breaks the wall of fear.",
-        "leconStrategique": "Courage is not the absence of fear, but the decision to take action despite it. Resilience starts with the first step.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Test understanding of the PDCA cycle (Plan-Do-Check-Act) for continuous improvement. The child must demonstrate a systematic problem-solving approach.",
-      "evaluationCriteria": "The answer must follow the 4 PDCA steps with concrete actions. Bonus: The child mentions iteration or Kaizen."
+        "feedbackCorrect": "Well done! 🎉 You discovered the FIRST STEP technique!\n\nWhy answer 2 is best:\n• Option 1 ('Wait for inspiration') = Fear grows over time ❌\n• Option 2 ('Smallest task') = ACTION creates momentum ✅\n• Option 3 ('Someone else') = You never start yourself ❌\n\nThis is the 2-MINUTE RULE: start with something so small you can't say no. Once started, your brain wants to continue!\n\nExample: 'I'll just open the document' → You end up writing 3 paragraphs!",
+        "feedbackIncorrect": "Try again! Fear doesn't disappear by waiting... it grows!\n\nThe secret: Don't think about the WHOLE PROJECT, just think about the FIRST SMALL TASK.\n\nThe 2-MINUTE RULE: Find a task so small it takes less than 2 minutes. Once started, your brain wants to continue!\n\nExamples of first small tasks:\n• Presentation project → 'Just write the title'\n• Clean your room → 'Just pick up 3 items'\n• Math homework → 'Just read the first exercise'\n\nWhich option uses this technique?",
+        "leconStrategique": "PROCRASTINATION isn't laziness, it's disguised FEAR. Your brain avoids what's difficult or unknown. The solution? The 2-MINUTE RULE and the FIRST STEP technique.\n\nThe 3 anti-procrastination techniques:\n1. 2-MINUTE RULE: Start with a task under 2 minutes\n2. BREAKDOWN: Break the big project into mini-missions so small they no longer scare you\n3. IMMEDIATE ACTION: Act within 5 seconds before your brain finds an excuse\n\nIn real life:\n• ❌ 'I need to clean my whole room' (too big) → ✅ 'I'll pick up 3 items' (small step)\n• ❌ 'I need to write my 10-page presentation' (paralyzing) → ✅ 'I'll just write the title' (starting)\n• ❌ 'I'll start tomorrow' (procrastination) → ✅ 'I'll start now for 2 minutes' (action)\n\nIn business: Entrepreneurs use the 'START SMALL, SCALE FAST' method: start small, adjust quickly. Nike summed it up in 3 words: 'JUST DO IT' - Do it now!\n\nCourage isn't the absence of fear, it's taking the FIRST STEP despite the fear.",
+      "referenceCroisee": "M2 (Priority Management), M6D1 (Transform Failure)",
+      "mentorGoal": "Assess the ability to transform FEAR (cause of procrastination) into ACTION (FIRST STEP). The child must demonstrate they understand that action creates momentum and that starting small (2-minute rule) is the key to breaking through blockage and fear of failure.",
+      "evaluationCriteria": "1. Correct answer: B (Start with the smallest task). 2. Understanding: The child identifies that starting with a small action breaks inertia. 3. Contrast: The child understands why waiting or delegating doesn't solve the problem. BONUS: The child gives a concrete example of a first small task in their own life."
     },
     "defi3": {
-      "titre": "Challenge: The Mental Shield",
+      "titre": "Mission: The Mental Shield",
       "scenario": "You did your best on a task, but a friend strongly criticizes you in front of others. How do you react?",
       "instruction": "Write the calmest and most factual sentence you can use to defend yourself without attacking the other person.",
-      "leconStrategique": "The leader keeps control of their emotions. Responding calmly is the true proof of strength.",
-      "referenceCroisee": "M5",
+      "leconStrategique": "EMOTIONAL CONTROL is a critical leadership skill. When attacked, your brain wants to strike back. But a leader chooses CALM RESPONSE over EMOTIONAL REACTION.\n\nThe 3 steps of the Mental Shield:\n1. PAUSE: Breathe for 3 seconds before responding\n2. FACTUAL: Talk about facts, not emotions ('I did X' not 'You're mean')\n3. DE-ESCALATE: Suggest discussing calmly later\n\nIn real life:\n• ❌ 'You're dumb, you don't understand!' (attack) → ✅ 'I understand you disagree. Can we talk calmly?' (calm)\n• ❌ 'That's not true!' (defensive) → ✅ 'Can you explain what's wrong exactly?' (factual)\n• ❌ Ignore and leave (avoidance) → ✅ 'I did my best. If something's wrong, tell me what specifically.' (assertive)\n\nIn business: The best leaders stay calm under pressure. Steve Jobs said: 'Stay hungry, stay foolish' but should have added 'Stay calm'. A leader who loses their calm loses their authority.\n\nResponding calmly isn't weakness, it's true STRENGTH.",
+      "referenceCroisee": "M5 (Emotional Leadership), M6D1 (Managing Failure)",
       "briefing": {
         "etape1": {
-          "titre": "1. Identify the Attack",
-          "type_etape": "validation_case",
-          "instruction": "I identified that the attack is verbal and not physical. I don't need to retaliate with the same level of aggression."
+          "titre": "1. The 3-Breath Technique",
+          "type_etape": "texte_guide",
+          "instruction": "When attacked, your body reacts automatically: your heart races, you want to shout or flee. That's normal!\n\nBut BEFORE responding, take 3 DEEP BREATHS. 😤😤😤\n\nWhy? Because breathing slows your emotional brain and activates your rational brain.\n\n💡 During these 3 seconds, your brain shifts from 'ATTACK!' to 'Think...'"
+        },
+        "etape2": {
+          "titre": "2. The CALM Formula",
+          "type_etape": "texte_guide",
+          "instruction": "Use this structure for your response:\n\n'I [what I did]. If [specific problem], I can [concrete action].'\n\nExamples:\n• 'I did my best. If something's wrong, tell me what exactly.'\n• 'I tried this method. If you have a better idea, I'd like to hear it.'\n• 'I understand you're upset. Can you explain calmly what's wrong?'\n\n⚠️ DON'T SAY: 'You're mean', 'It's not my fault', 'You make mistakes too'"
+        },
+        "etape3": {
+          "titre": "3. My Calm Response",
+          "type_etape": "champ_texte",
+          "instruction": "Now, write your CALM and FACTUAL phrase to respond to the criticism.\n\nReminder of the situation: A friend strongly criticizes you in front of other people.\n\n✅ Good phrase: 'I did my best. If something's wrong, tell me specifically what.'\n\n❌ To avoid:\n• 'You're mean!' (attack)\n• 'It's not my fault!' (defensive)\n• 'Leave me alone!' (avoidance)\n\n💡 Remember: Breathe 3 times BEFORE writing your phrase!",
+          "placeholder": "I... If..., I can..."
         }
       },
-      "mentorGoal": "Assess ability to accept constructive criticism and integrate it positively. The child must demonstrate openness to feedback.",
-      "evaluationCriteria": "The answer must show the child accepts criticism without justifying and proposes improvement actions. Bonus: The child asks for clarification or examples to better understand."
+      "mentorGoal": "Assess the ability to handle a VERBAL ATTACK with EMOTIONAL CONTROL. The child must demonstrate they can stay calm, respond factually without counter-attacking, and propose de-escalation (EMOTIONAL INTELLIGENCE).",
+      "evaluationCriteria": "1. Calm: The response is composed, not aggressive or defensive. 2. Factual: The child talks about concrete facts, not emotions ('I did X' not 'You're mean'). 3. De-escalation: The child proposes a calm discussion or asks for specifics. BONUS: The child mentions they will breathe or take a pause before responding."
     },
     "defi4": {
       "titre": "Quiz: The Lesson of Error",
@@ -640,29 +671,41 @@
         "Quickly move on without thinking about it."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "Error is data. Analyzing data with the help of a mentor is the only path to improvement.",
-      "leconStrategique": "Data is more important than opinion. The leader is humble in the face of facts.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Test understanding of perseverance in the face of adversity. The child must demonstrate their ability to persist despite obstacles.",
-      "evaluationCriteria": "The answer must show a perseverance strategy with concrete steps. Bonus: The child cites examples of inspiring figures who persevered (Edison, Lincoln)."
+      "feedbackCorrect": "Well done! 🎉 You understood: ERROR IS DATA, NOT PUNISHMENT!\n\nWhy answer 2 is best:\n• Option 1 ('Blame') = You learn nothing and push others away ❌\n• Option 2 ('Analyze') = You transform error into LESSON ✅\n• Option 3 ('Move on') = You'll make the same mistake again ❌\n\nAsking for help + analyzing data = double power! You combine someone experienced's intelligence WITH concrete facts.\n\nThis is the scientific method: observe, analyze, learn.",
+      "feedbackIncorrect": "Try again! Failure is NOT a catastrophe, it's an OPPORTUNITY to learn.\n\nThe wrong reaction after failure:\n• Blaming others → You don't take responsibility\n• Ignoring and continuing → You'll make the same mistake\n\nThe right reaction:\n• Ask for help → A mentor sees what you don't see\n• Analyze the DATA → Facts tell you exactly what didn't work\n\nThe greatest inventors (Edison, Wright brothers) failed HUNDREDS of times before succeeding. Their secret? Analyzing each failure.\n\nWhich option transforms failure into learning?",
+      "leconStrategique": "FAILURE IS NOT YOUR ENEMY, IT'S YOUR TEACHER. Successful leaders aren't those who never fail, they're those who LEARN FROM EVERY FAILURE.\n\nThe 3 reflexes after failure:\n1. DATA > OPINIONS: Analyze facts, not emotions\n2. ASK FOR HELP: A mentor sees what you don't see\n3. ADJUST & RETEST: Change ONE thing and try again\n\nIn real life:\n• ❌ 'It's the teacher's fault' (blame) → ✅ 'I'll ask the teacher where I made the mistake' (analysis)\n• ❌ 'Whatever, I forget' (avoidance) → ✅ 'I'll review my notes to understand' (learning)\n• ❌ 'I'm bad' (emotion) → ✅ 'This method doesn't work, I'll try another' (data)\n\nIn business: Successful entrepreneurs fail an AVERAGE of 3-4 times before succeeding. Jeff Bezos (Amazon) says: 'Failure and innovation are inseparable twins'. Failure data is MORE valuable than success data!\n\nThe leader is humble before FACTS, not opinions.",
+      "referenceCroisee": "M4 (Data Analysis), M6D1 (Transform Failure)",
+      "mentorGoal": "Test understanding of POST-FAILURE ANALYSIS and intellectual humility before DATA. The child must demonstrate they understand that asking for help + analyzing facts is the only path to continuous improvement.",
+      "evaluationCriteria": "1. Correct answer: B (Ask for help and analyze data). 2. Understanding: The child identifies that factual (not emotional) analysis enables learning. 3. Contrast: The child understands why blaming or avoiding solves nothing. BONUS: The child mentions the importance of asking for help from a mentor or expert."
     }
   },
   "m7": {
     "defi1": {
-        "titre": "Challenge: The Idea Chain",
-        "scenario": "You need to invent a solution to reduce plastic waste. Instead of finding one perfect idea, generate 3 ideas, even crazy ones, in 3 minutes.",
-        "instruction": "Write your three ideas (1-2-3), keeping them simple and without judgment.",
-        "leconStrategique": "Quantity of ideas precedes quality. A leader explores many options before choosing the best one.",
-        "referenceCroisee": "M1",
+        "titre": "Mission: The Idea Chain",
+        "scenario": "You need to invent a solution to reduce plastic waste. Instead of finding ONE perfect idea, generate the MAXIMUM number of ideas in 5 minutes, even crazy ones!",
+        "instruction": "Write AT LEAST 5 ideas (1-2-3-4-5...) keeping them simple and without judgment.\n\n💡 Golden rule: QUANTITY before QUALITY. Don't criticize ANY idea while generating!",
+        "leconStrategique": "CREATIVITY starts with QUANTITY, not quality. This is the BRAINSTORMING method: generate maximum ideas without judgment, then choose the best ones after.\n\nThe 3 rules of creative brainstorming:\n1. NO CRITICISM: All ideas are good at this stage\n2. QUANTITY > QUALITY: The more you generate, the better chance of finding THE right one\n3. CRAZY IDEAS WELCOME: The best innovations come from 'impossible' ideas\n\nIn real life:\n• ❌ Looking for the perfect idea first try (blockage) → ✅ Generate 10 ideas quickly, then choose (fluidity)\n• ❌ 'This idea is bad' (self-censorship) → ✅ 'I'll note it anyway' (openness)\n• ❌ Stay conventional (boring) → ✅ 'What if we did the opposite?' (innovation)\n\nIn business: The most innovative companies (Google, IDEO, Pixar) use wild brainstorming: 100 ideas → 10 good → 1 genius. Thomas Edison tested 1000 materials before finding the perfect filament for the lightbulb!\n\nA creative leader generates first, judges later.",
+        "referenceCroisee": "M1 (Problem Analysis), M4 (Critical Thinking)",
         "briefing": {
             "etape1": {
                 "titre": "1. No Criticism (The Golden Rule)",
-                "type_etape": "validation_case",
-                "instruction": "I understand that I must not judge any idea. The goal is raw quantity and speed."
-        }
+                "type_etape": "texte_guide",
+                "instruction": "While generating your ideas, your brain will want to say: 'This idea is bad!'\n\nBut you must IGNORE that voice!\n\nWhy? Because criticism KILLS creativity. If you judge each idea, you'll stop after 2-3 ideas.\n\nThe rule: WRITE DOWN all ideas that come to you, even the craziest ones. You'll sort them out LATER.\n\n💡 The best innovations (Post-it, Velcro, microwave) were 'accidents' or 'stupid' ideas at first!"
+        },
+            "etape2": {
+                "titre": "2. The Bounce Technique",
+                "type_etape": "texte_guide",
+                "instruction": "To generate more ideas, use the BOUNCE TECHNIQUE:\n\n1. Write your first idea\n2. Ask yourself: 'What if I did the OPPOSITE?'\n3. Ask yourself: 'What if I COMBINED it with something else?'\n4. Ask yourself: 'What if I made it 10X BIGGER or SMALLER?'\n\nExample: Reduce plastic\n• Idea 1: Recycle plastic\n• Opposite: STOP producing plastic\n• Combine: Use plastic you can eat (edible)\n• 10X smaller: Replace with super thin paper\n\nEach idea creates a new one!"
+            },
+            "etape3": {
+                "titre": "3. My Wild Brainstorm",
+                "type_etape": "champ_texte",
+                "instruction": "Now, your turn! Generate AT LEAST 5 ideas to reduce plastic waste.\n\nUse the bounce technique:\n\n1. [Your first idea]\n2. [Opposite or variation]\n3. [Combination]\n4. [Bigger/smaller]\n5. [Crazy idea welcome!]\n\n⚠️ REMINDER: Don't criticize ANY idea now! Even if it seems weird, write it down!\n\n💡 Starter examples:\n• Replace plastic with...\n• Invent a plastic that...\n• Transform waste into...\n• What if we banned...",
+                "placeholder": "1. \n2. \n3. \n4. \n5. "
+            }
       },
-      "mentorGoal": "Assess divergent thinking ability and creative brainstorming. The child must demonstrate they can generate many ideas without self-censorship.",
-      "evaluationCriteria": "The answer must contain at least 10 varied and original ideas. Bonus: The child uses creativity techniques (SCAMPER, Mind Mapping)."
+      "mentorGoal": "Assess DIVERGENT THINKING ability and creative brainstorming without self-censorship. The child must demonstrate they can generate a VOLUME of varied ideas while suspending critical judgment.",
+      "evaluationCriteria": "1. Quantity: At least 5 ideas generated (ideal 7-10). 2. Diversity: Ideas are varied, not all similar. 3. No criticism: The child hasn't censored their ideas ('this idea is bad'). BONUS: The child proposes at least one 'crazy' or counter-intuitive idea that breaks convention."
     },
     "defi2": {
         "titre": "Quiz: Lateral Thinking",
@@ -673,27 +716,39 @@
         "He melts the container."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "You must find a non-obvious solution, bypassing the problem. Tweezers is 'lateral thinking.'",
-        "leconStrategique": "Lateral thinking seeks solutions that are not on the obvious path. The leader finds solutions where others do not look.",
-      "referenceCroisee": "M4",
-      "mentorGoal": "Test understanding of combining existing ideas to create innovation (Innovation = Combination). The child must demonstrate ability to connect concepts.",
-      "evaluationCriteria": "The answer must combine at least 2 existing concepts to create a new solution. Bonus: The child explains the fusion process or cites examples of combinatorial innovations (iPhone = phone + computer + music)."
+        "feedbackCorrect": "Well done! 🎉 You found LATERAL THINKING!\n\nWhy answer 2 is best:\n• Option 1 ('Empty coffee') = Obvious solution but you lose the coffee ❌\n• Option 2 ('Tweezers') = Creative solution that bypasses the problem ✅\n• Option 3 ('Melt container') = You destroy everything ❌\n\nLateral thinking = finding a solution OUTSIDE the usual frame. Instead of thinking 'how to remove the coffee?', you think 'how to grab the coin WITHOUT touching the coffee?'",
+        "feedbackIncorrect": "Try again! Lateral thinking seeks an INDIRECT solution.\n\nThe question seems to say: 'You must remove the coffee to get the coin'\n\nBut the REAL solution bypasses the problem: 'What if I grabbed the coin WITHOUT touching the coffee?'\n\nThat's lateral thinking: breaking out of the usual frame.\n\nOther examples:\n• Problem: 'How to climb this wall?' → Lateral thinking: 'What if I went around?'\n• Problem: 'How to carry this heavy load?' → Lateral thinking: 'What if I rolled it?'\n\nWhich option grabs the coin WITHOUT touching the coffee or container?",
+        "leconStrategique": "LATERAL THINKING solves problems by stepping outside the usual frame. Instead of following the obvious path (A → B), you seek an indirect path (A → Z → B).\n\nThe 3 techniques of lateral thinking:\n1. REFRAME: Change the question ('How to get the coin out?' → 'How to grab it without touching anything else?')\n2. REVERSE: Do the opposite of what seems logical\n3. FIND THE BLIND SPOT: What solution is nobody seeing?\n\nIn real life:\n• ❌ 'I can't do homework, I lost my pen' → ✅ 'I use a pencil, marker, or type on computer'\n• ❌ 'The door is blocked' → ✅ 'I go through the window'\n• ❌ 'I'm too short to reach' → ✅ 'I use a stool'\n\nIn business: The greatest innovations come from lateral thinking. Airbnb: instead of building hotels (direct path), they use people's homes (lateral path). Uber: instead of buying taxis, they use existing cars!\n\nThe creative leader doesn't force the direct path, they find the smart path.",
+      "referenceCroisee": "M4 (Problem Analysis), M7D1 (Brainstorming)",
+      "mentorGoal": "Test understanding of LATERAL THINKING and creative problem-solving through bypassing. The child must demonstrate they can step outside the usual frame to find a non-obvious solution.",
+      "evaluationCriteria": "1. Correct answer: B (Uses tweezers). 2. Understanding: The child identifies that tweezers bypass the problem instead of confronting it directly. 3. Reframing: The child understands the real problem isn't 'remove coffee' but 'grab the coin'. BONUS: The child gives an example of lateral thinking in their daily life."
     },
     "defi3": {
-      "titre": "Challenge: Creative Constraint",
+      "titre": "Mission: Creative Constraint",
       "scenario": "You must build a house that floats, but you are only allowed to use recycled objects and paper. Which two materials do you choose?",
-      "instruction": "Write the two materials chosen and the reason for their use.",
-      "leconStrategique": "Constraints (resource scarcity) are the engine of innovation. Creativity is the response to scarcity.",
-      "referenceCroisee": "M8",
+      "instruction": "Write the two materials chosen and EXPLAIN why they allow floating AND respect the constraints (recycled + paper).",
+      "leconStrategique": "CONSTRAINTS stimulate creativity. This is the principle of 'CREATIVITY UNDER CONSTRAINT': the fewer resources you have, the more you must innovate.\n\nThe 3 steps to transform a constraint into an advantage:\n1. ACCEPT: The constraint isn't a problem, it's a creative challenge\n2. ANALYZE: What properties must I respect? (here: float + recycled + paper)\n3. COMBINE: Find materials that have MULTIPLE properties simultaneously\n\nIn real life:\n• ❌ 'I don't have enough money to buy a gift' → ✅ 'I make a handmade gift, more personal!'\n• ❌ 'I only have 10 minutes to get ready' → ✅ 'I choose the essentials, no time wasted!'\n• ❌ 'I only have 3 ingredients left in the fridge' → ✅ 'I invent a new creative recipe!'\n\nIn business: The greatest innovations come from constraints. Twitter: limited to 140 characters → people become concise and creative. Instagram: only square photos at first → a unique visual style. SpaceX: limited budget → reuses rockets instead of building new ones!\n\nA creative leader says: 'I have ONLY X' → 'I have EVERYTHING I NEED with X'.",
+      "referenceCroisee": "M8 (Resource Optimization), M7D1 (Brainstorming)",
       "briefing": {
         "etape1": {
-          "titre": "1. Analyze the Limits",
+          "titre": "1. Understanding the Constraint",
           "type_etape": "validation_case",
-          "instruction": "I understood that the constraint is 'flotation' and 'recycled/paper'. I must choose materials that meet both."
+          "instruction": "I understand: Constraints don't block creativity, they STIMULATE it. I must find materials that are both RECYCLED (or paper) AND FLOAT."
+        },
+        "etape2": {
+          "titre": "2. Identify Critical Properties",
+          "type_etape": "texte_guide",
+          "instruction": "For your house to float, the materials must be:\n• LIGHT (not too heavy)\n• WATERPROOF (don't fill with water)\n• OR with AIR INSIDE (like a buoy)\n\nExamples of recycled objects that float:\n• Empty plastic bottles (air inside)\n• Cork stoppers (light and waterproof)\n• Pieces of styrofoam (light)\n• Plasticized/waterproofed cardboard\n\nCan paper float? YES, if you make it waterproof (wax, plastic) or if you make it into a hollow structure (origami)!\n\n💡 Tip: Combine 2 materials to compensate for their weaknesses!"
+        },
+        "etape3": {
+          "titre": "3. My Creative Solution",
+          "type_etape": "champ_texte",
+          "instruction": "Choose your 2 materials by explaining:\n1. WHY they float\n2. HOW you use them together\n\nExample of good answer:\n'I choose empty PLASTIC BOTTLES (to float thanks to air) and WATERPROOFED PAPER with wax (to make walls). The bottles form a floating base, the paper makes the walls.'\n\nYour turn!",
+          "placeholder": "Material 1: ... because... / Material 2: ... because..."
         }
       },
-      "mentorGoal": "Assess ability to think outside established frameworks (Thinking Outside the Box). The child must demonstrate they can challenge assumptions.",
-      "evaluationCriteria": "The answer must question an implicit assumption of the problem and propose an unconventional solution. Bonus: The child clearly identifies the challenged assumption."
+      "mentorGoal": "Assess the ability to transform a CONSTRAINT into an innovation driver. The child must demonstrate they can analyze material properties under constraint (buoyancy + recycling) and propose a creative solution that intelligently COMBINES these constraints.",
+      "evaluationCriteria": "1. Relevant materials: The 2 chosen materials can actually float (light, waterproof, or with air). 2. Constraint compliance: Materials are recycled OR modified paper. 3. Logical justification: The child explains WHY they float (physical properties). 4. Combination: The child explains how the 2 materials work together. BONUS: The child mentions a weakness of one material compensated by the other (e.g., 'paper alone sinks, but with bottles underneath it floats')."
     },
     "defi4": {
       "titre": "Quiz: Diversity of Ideas",
@@ -704,29 +759,41 @@
         "Search for a solution in a book without talking to anyone."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "Diversity creates innovation. Different points of view bring solutions you wouldn't have thought of alone.",
-      "leconStrategique": "The leader actively seeks different perspectives. Collective intelligence is always superior to individual intelligence.",
-      "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of rapid prototyping and experimentation. The child must demonstrate they know how to test their ideas quickly.",
-      "evaluationCriteria": "The answer must include a rapid test plan (MVP - Minimum Viable Product) with success criteria. Bonus: The child anticipates assumptions to validate."
+      "feedbackCorrect": "Excellent! 🎉 You understood the power of COGNITIVE DIVERSITY!\n\nWhy answer 2 is best:\n• Option 1 ('Single expert') = You have ONE viewpoint, even if it's good ❌\n• Option 2 ('Several different people') = You multiply the approaches ✅\n• Option 3 ('Book alone') = No interaction, no new ideas ❌\n\nThe principle: 1 + 1 = 3 in creativity!\n\nWhen you combine people with DIFFERENT experiences (an artist + a scientist + an athlete), each sees the problem differently and brings solutions the others would NEVER have thought of.\n\nThis is COLLECTIVE INTELLIGENCE: the group is smarter than the sum of individuals!",
+      "feedbackIncorrect": "Try again! Think about DIVERSITY of perspectives.\n\nImagine this scenario:\nYou want to invent a new game. Who do you ask for ideas?\n• Option A: A single game expert → They know games well, but will ALWAYS have the same type of ideas\n• Option B: A game expert + an artist + an athlete + a musician → Each brings a DIFFERENT vision and surprising ideas!\n\nThe best innovations come from the MIX of different perspectives.\n\nExamples:\n• Apple: Steve Jobs (design) + Steve Wozniak (engineering) = revolutionary iPhone\n• Pixar: artists + computer engineers = innovative animated films\n• LEGO: designers + educators + children = creative and educational games\n\nOne expert = ONE vision. Several different people = MULTIPLE visions = INNOVATION!\n\nWhich option maximizes diversity of ideas?",
+      "leconStrategique": "COGNITIVE DIVERSITY is the engine of innovation. The more differently people think, the more creative the solutions.\n\nThe 3 principles of collective intelligence:\n1. DIVERSITY > EXPERTISE: A diverse group beats a single expert\n2. COMBINATION: The best ideas come from the FUSION of different perspectives\n3. BLIND SPOTS: Each person sees what others don't see\n\nIn real life:\n• ❌ 'I ask my best friend (who thinks like me)' → ✅ 'I ask people with different experiences'\n• ❌ 'I do everything alone, I'm the best' → ✅ 'I collaborate, the group is stronger'\n• ❌ 'People different from me are weird' → ✅ 'People different from me bring ideas I never would have had'\n\nIn business: The most innovative companies (Google, Apple, Tesla) recruit people with ULTRA-DIFFERENT backgrounds. They call it 'DIVERSITY OF THOUGHT': having an artist, an engineer, a philosopher, a marketer in a team... Each challenges the others and creates revolutionary solutions!\n\nThe creative leader doesn't seek clones, they seek complementary people.",
+      "referenceCroisee": "M5 (Communication and Influence), M7D1 (Brainstorming)",
+      "mentorGoal": "Test understanding of COGNITIVE DIVERSITY and collective intelligence. The child must demonstrate they understand that multiplicity of perspectives (diversity) generates more innovation than a single expert viewpoint.",
+      "evaluationCriteria": "1. Correct answer: B (Ask the opinion of several people with different experiences). 2. Understanding: The child identifies that DIVERSITY of perspectives brings more creativity than a single expert. 3. Collective intelligence principle: The child understands the diverse group is stronger than the individual alone. BONUS: The child gives a concrete example where diversity created a better solution (e.g., 'In my sports team, we have different players and each brings a strategy')."
     }
   },
   "m8": {
     "defi1": {
-        "titre": "Challenge: The Backpack Audit",
+        "titre": "Mission: The Backpack Audit",
         "scenario": "You have to go on a week-long excursion and are only allowed 5 essential items in your bag. Perform a resource audit: which 5 items maximize your chances of success?",
-        "instruction": "Write your list of 5 items. Justify your number 1 choice.",
-        "leconStrategique": "Scarcity forces excellence. When resources are limited, analyzing their value is vital.",
-        "referenceCroisee": "M1",
+        "instruction": "Write the list of your 5 items AND justify why you chose your item #1 (the most important).",
+        "leconStrategique": "RESOURCE AUDIT is the first step of optimization. When resources are limited, you must prioritize according to VALUE and UTILITY.\n\nThe 3 steps of audit under constraint:\n1. IDENTIFY NEEDS: What is truly essential? (survival, comfort, security)\n2. EVALUATE VALUE: Which item brings MAXIMUM utility?\n3. PRIORITIZE: Rank by IMPACT (if I only have one item, which one?)\n\nIn real life:\n• ❌ 'I take everything I like' → ✅ 'I take what I REALLY need'\n• ❌ '5 video games for fun' → ✅ '1 Swiss Army knife with 10 functions'\n• ❌ 'I don't think about order' → ✅ 'I rank: survival first, comfort second'\n\nIn business: Startups with small budgets do strict audits: 'What's the MINIMUM to succeed?' (MVP = Minimum Viable Product). Tesla: Elon Musk started with few resources → he prioritized engineers and prototypes, not luxury offices!\n\nSCARCITY forces EXCELLENCE: the less you have, the better you choose.\n\nA leader optimizes: they do MORE with LESS.",
+        "referenceCroisee": "M1 (Problem Analysis), M3 (Planning)",
         "briefing": {
             "etape1": {
-                "titre": "1. The 'Survival First' Rule",
+                "titre": "1. Understanding the Audit",
                 "type_etape": "validation_case",
-                "instruction": "I have identified the basic needs (Water, Food, Light/Heat, Safety). My 5 items must cover these needs."
-        }
-      },
-      "mentorGoal": "Assess ability to audit available resources (inventory). The child must demonstrate they can identify and classify their resources.",
-      "evaluationCriteria": "The answer must contain a structured resource list with classification (human, financial, material, temporal). Bonus: The child identifies underutilized resources."
+                "instruction": "I understand: When resources are limited, I must PRIORITIZE according to VALUE and UTILITY. A good audit ranks needs by IMPACT: survival first, comfort later."
+            },
+            "etape2": {
+                "titre": "2. The Needs Pyramid (Survival First)",
+                "type_etape": "texte_guide",
+                "instruction": "To survive a week on excursion, you need:\n\n🔴 LEVEL 1 - SURVIVAL (mandatory):\n• WATER: Bottle or purification system\n• FOOD: Energy bars, canned goods\n• WARMTH/SHELTER: Survival blanket, matches\n• HEALTH: First aid kit\n\n🟡 LEVEL 2 - SECURITY (important):\n• ORIENTATION: Map, compass\n• PROTECTION: Knife, whistle\n• LIGHT: Flashlight\n\n🟢 LEVEL 3 - COMFORT (bonus):\n• Communication, entertainment\n\n💡 Strategy: Choose LEVEL 1 items FIRST, then complete with LEVEL 2.\n\nPRO tip: Choose MULTI-FUNCTION items (e.g., a Swiss Army knife is 10 tools in 1)!"
+            },
+            "etape3": {
+                "titre": "3. My Resource Audit",
+                "type_etape": "champ_texte",
+                "instruction": "Now, do your audit:\n\n1. List your 5 items\n2. Rank them by IMPORTANCE (1 = most vital)\n3. For your item #1, explain WHY it's most important\n\nExample of good answer:\n'1. Swiss Army knife (cuts, opens, repairs - multi-function)\n2. Bottle with filter (drinkable water)\n3. Survival blanket (warmth at night)\n4. Matches (fire, warmth, cooking)\n5. First aid kit (injuries)\n\nMy item #1 is the Swiss Army knife because it has 10+ functions: cut wood, open cans, repair equipment. It's the most VERSATILE tool.'\n\nYour turn!",
+                "placeholder": "1. [Item] (reason)\n2. [Item] (reason)...\n\nMy #1 is important because..."
+            }
+        },
+        "mentorGoal": "Assess AUDIT and PRIORITIZATION ability under resource constraint. The child must demonstrate they can identify essential needs, select items according to their value/utility, and justify logical prioritization (survival > comfort).",
+        "evaluationCriteria": "1. Complete list: 5 items identified. 2. Relevance: Items address real needs (water, food, warmth, security). 3. Logical prioritization: Item #1 is justified as most important with valid reason. 4. Multi-function thinking: The child favors versatile items (e.g., Swiss Army knife, filter bottle). BONUS: The child explicitly mentions needs hierarchy (survival before comfort) or gives a utility/weight ratio."
     },
     "defi2": {
         "titre": "Quiz: Opportunity Cost",
@@ -737,27 +804,39 @@
         "The time you will spend playing."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Opportunity cost is what you give up (knowledge). Leaders choose based on the missed gain, not just the expense.",
-        "leconStrategique": "Every decision is a choice. Opportunity cost is the true value of leadership: choosing the best path, knowing what you give up.",
-      "referenceCroisee": "M9",
-      "mentorGoal": "Test understanding of optimizing existing resources (do more with less). The child must demonstrate they can maximize utilization.",
-      "evaluationCriteria": "The answer must propose concrete strategies to use resources more efficiently. Bonus: The child quantifies efficiency gains."
+        "feedbackCorrect": "Well done! 🎉 You understood OPPORTUNITY COST!\n\nWhy answer 2 is correct:\n• Option 1 ('Game price') = That's the direct cost, not the opportunity cost ❌\n• Option 2 ('Book knowledge') = That's what you GIVE UP by choosing the game ✅\n• Option 3 ('Time playing') = That's a consequence, not the opportunity cost ❌\n\nOpportunity cost = WHAT YOU LOSE by NOT choosing the other option.\n\nWhen you buy the game, you GIVE UP the knowledge you would have gained with the book. That's the real cost!\n\nLeaders always think: 'If I choose A, what do I lose by not choosing B?'",
+        "feedbackIncorrect": "Try again! Opportunity cost is WHAT YOU GIVE UP.\n\nThe question isn't: 'How much does it cost?' (10€)\nThe question is: 'What do I LOSE by not choosing the other option?'\n\nConcrete examples:\n• You choose to play video games for 2h → Opportunity cost = the homework you could have finished\n• You choose to watch TV → Opportunity cost = the football match with friends you miss\n• You choose to buy candy → Opportunity cost = the book you can no longer buy\n\nOpportunity cost is the MISSED GAIN.\n\nIn the exercise: if you buy the video game, what do you GIVE UP?",
+        "leconStrategique": "OPPORTUNITY COST is the gain you abandon by choosing one option over another. It's the key concept of resource optimization.\n\nThe formula:\nOpportunity cost = What you WOULD HAVE GAINED with the unchosen option\n\nThe leader's 3 questions before each decision:\n1. WHAT DO I GAIN with option A?\n2. WHAT DO I GAIN with option B?\n3. WHAT DO I LOSE by not choosing B?\n\nIn real life:\n• ❌ 'I buy this toy for 50€' → ✅ 'If I buy this toy, I give up 5 cinema trips. Is it worth it?'\n• ❌ 'I spend 3h on social media' → ✅ 'These 3h, I give up learning guitar, doing sports, or reading'\n• ❌ 'I choose this school' → ✅ 'By choosing this school, I give up the opportunities of the other school'\n\nIn business: Entrepreneurs ALWAYS calculate opportunity cost. Elon Musk invests in SpaceX → opportunity cost = he could have kept his money risk-free. But the POTENTIAL GAIN (revolutionizing space) is worth the cost!\n\nEvery decision is a TRADE-OFF. The leader chooses knowingly.\n\nA leader doesn't say 'I chose A'. They say 'I chose A knowing I give up B'.",
+      "referenceCroisee": "M9 (Strategic Negotiation), M8D1 (Resource Audit)",
+      "mentorGoal": "Test understanding of OPPORTUNITY COST. The child must demonstrate they understand that every decision involves GIVING UP the gain of the unchosen option.",
+      "evaluationCriteria": "1. Correct answer: B (The knowledge you could have gained from the book). 2. Understanding: The child identifies that opportunity cost is the MISSED GAIN, not the price paid. 3. Reasoning: The child understands that by choosing A, we GIVE UP B. BONUS: The child gives a personal example of opportunity cost in their life (e.g., 'When I choose to play, I give up finishing my homework quickly')."
     },
     "defi3": {
-      "titre": "Challenge: The Festival Budget",
+      "titre": "Mission: The Festival Budget",
       "scenario": "You are organizing a 3-day festival expecting 15,000 people. The total cost per person is estimated at 5€ per day. What is the minimum total budget to plan for the 3 days?",
-      "instruction": "Write the total amount in numbers.",
-      "leconStrategique": "Mastering large numbers allows for long-term vision. Estimating a total budget avoids surprises and ensures project success.",
-      "referenceCroisee": "M10",
+      "instruction": "Write the total amount in numbers AND show your calculation (how you arrive at this result).",
+      "leconStrategique": "MASTERING SCALES is essential for managing large projects. Knowing how to quickly calculate a total budget avoids surprises and ensures project viability.\n\nThe DECOMPOSITION calculation method:\n1. IDENTIFY VARIABLES: Who? How much? For how long?\n2. CALCULATE PER UNIT: How much does 1 person cost for 1 day?\n3. MULTIPLY AT SCALE: Apply to ALL × ALL DAYS\n\nIn real life:\n• ❌ 'I don't know how much it will cost, we'll see' → ✅ '5€ × 3 days × 15,000 people = 225,000€'\n• ❌ 'It's too complicated to calculate' → ✅ 'I break it down: first per person, then scale up'\n• ❌ 'I launch the project without a budget' → ✅ 'I calculate BEFORE to avoid bad surprises'\n\nIn business: Entrepreneurs must ALWAYS estimate at scale. A restaurant: '30 customers/day × 15€/customer × 365 days = 164,250€/year'. Tesla: to produce 500,000 cars, they calculate 'cost per car × 500,000' BEFORE launching production!\n\nThe principle of ECONOMY OF SCALE: the more you produce, the more you can reduce unit cost. But you must first CALCULATE the scale!\n\nA leader doesn't guess, they CALCULATE. Large-scale vision starts with mastering numbers.",
+      "referenceCroisee": "M10 (Decisions Under Pressure), M3 (Planning)",
       "briefing": {
         "etape1": {
-          "titre": "1. Deconstruct the Scale",
+          "titre": "1. Understanding Scale Calculation",
           "type_etape": "validation_case",
-          "instruction": "I have identified the cost per person (5€ x 3 days) and the total number of people (15,000). My action plan is: Cost x Number of Days x Number of People."
+          "instruction": "I understand: To calculate a large-scale budget, I must first identify the VARIABLES (unit cost, number, duration), then MULTIPLY them together. The key is to break down the problem."
+        },
+        "etape2": {
+          "titre": "2. Break Down the Problem (Variables)",
+          "type_etape": "texte_guide",
+          "instruction": "A budget is calculated by identifying VARIABLES:\n\n📊 VARIABLE 1: Cost per person per day = 5€\n📊 VARIABLE 2: Number of days = 3 days\n📊 VARIABLE 3: Number of people = 15,000\n\nNow, you must MULTIPLY these 3 variables together:\n\nTotal Budget = Unit cost × Number of days × Number of people\n\n💡 PRO tip: Calculate FIRST for 1 person, THEN multiply by the number of people.\n\nSimplified example:\n• 1 person for 3 days = 5€ × 3 = 15€\n• 15,000 people for 3 days = 15€ × 15,000 = ?\n\nIt's easier this way!"
+        },
+        "etape3": {
+          "titre": "3. My Scale Calculation",
+          "type_etape": "champ_texte",
+          "instruction": "Now, do your complete calculation:\n\n1. Calculate the cost for 1 person over 3 days\n2. Multiply by the total number of people\n3. Give the final result\n\nExample of good answer:\n'Step 1: 5€ × 3 days = 15€ per person\nStep 2: 15€ × 15,000 people = 225,000€\nResult: 225,000€'\n\nYour turn!",
+          "placeholder": "My calculation:\nStep 1: ...\nStep 2: ...\nFinal result: ..."
         }
       },
-      "mentorGoal": "Assess ability to identify waste and inefficiencies (Lean Thinking). The child must demonstrate critical eye for detecting losses.",
-      "evaluationCriteria": "The answer must identify at least 3 types of waste (overproduction, waiting, transport, overprocessing). Bonus: The child cites the 7 Lean wastes or proposes solutions."
+      "mentorGoal": "Assess SCALE CALCULATION ability and budget management. The child must demonstrate they can break down a complex problem into simple variables, calculate a unit cost, then apply it at large scale.",
+      "evaluationCriteria": "1. Correct result: 225,000€ (5 × 3 × 15,000). 2. Decomposed method: The child shows calculation steps (cost per person, then total). 3. Scale mastery: The child understands we multiply unit cost × volume. 4. Clarity: The calculation is presented in a structured way. BONUS: The child mentions the utility of this calculation (avoid surprises, plan) or talks about economy of scale."
     },
     "defi4": {
       "titre": "Quiz: The Versatility Principle",
@@ -1493,55 +1572,55 @@
       "evaluationCriteria": "Correct answer: Option 2 (candidate B, technical + human). Bonus: The child explains why human skills will make the difference in 2035."
     },
     "defi4": {
-      "titre": "Mission: My Anti-AI Manifesto",
-      "scenario": "Final mission: write YOUR 'Anti-AI Manifesto'. It's NOT against AI (you'll use it!), it's a manifesto to affirm what YOU bring that AI will NEVER be able to bring. It's your declaration of independence!",
-      "instruction": "**Write your Anti-AI Manifesto (10-15 lines)**\n\nMust include:\n\n1. **Your name**: 'I am [your name], and here's what AI will never be in my place...'\n\n2. **3 things YOU do better than AI**:\n   - Example: 'I can make my friend happy just by being there'\n   - Example: 'I can invent a joke that NOBODY has ever made'\n   - Example: 'I can choose to do what's RIGHT even if it's hard'\n\n3. **How you'll use AI WITHOUT losing your humanity**:\n   - Example: 'I'll use AI to go faster, but I'll always think ALONE first'\n   - Example: 'AI will be my assistant, never my replacement'\n\n4. **Your promise for 2035**:\n   - Example: 'In 2035, I'll be a leader who understands AI AND humans'\n   - Example: 'I'll be someone AI can't replace'\n\n**Your manifesto must sound like a (positive) DECLARATION OF WAR against obsolescence! Be PROUD of your humanity!**",
-      "leconStrategique": "Writing your manifesto anchors your vision of the future. It's a compass. Every time you feel AI is taking too much space, reread your manifesto. Every time you have a choice (copy-paste AI vs create yourself), think of your manifesto. This document is your identity for the next 10 years. Take it seriously.",
+      "titre": "Mission: My Superpower Letter",
+      "scenario": "Final mission: write YOUR 'Superpower Letter'. It's a letter where you explain to the future (in 2035) what YOU can do that AI will NEVER be able to do. It's your declaration of independence!",
+      "instruction": "**Write your Superpower Letter (10-15 lines)**\n\nMust include:\n\n1. **Your name**: 'I am [your name], and here's what AI will never be in my place...'\n\n2. **3 things YOU do better than AI**:\n   - Example: 'I can make my friend happy just by being there'\n   - Example: 'I can invent a joke that NOBODY has ever made'\n   - Example: 'I can choose to do what's RIGHT even if it's hard'\n\n3. **How you'll use AI WITHOUT losing your humanity**:\n   - Example: 'I'll use AI to go faster, but I'll always think ALONE first'\n   - Example: 'AI will be my assistant, never my replacement'\n\n4. **Your promise for 2035**:\n   - Example: 'In 2035, I'll be a leader who understands AI AND humans'\n   - Example: 'I'll be someone AI can't replace'\n\n**Your letter must sound like a strong DECLARATION! Be PROUD of your humanity!**",
+      "leconStrategique": "Writing your letter anchors your vision of the future. It's a compass. Every time you feel AI is taking too much space, reread your letter. Every time you have a choice (copy-paste AI vs create yourself), think of your letter. This document is your identity for the next 10 years. Take it seriously.\n\n💡 BONUS (for curious minds): This type of letter is also called a 'manifesto' in the professional world. It's what great leaders write to affirm their values!",
       "referenceCroisee": "M11",
       "briefing": {
         "etape1": {
-          "titre": "1. What's a Manifesto?",
+          "titre": "1. What's a Superpower Letter?",
           "type_etape": "texte_guide",
-          "instruction": "A manifesto is a public declaration of YOUR VALUES and YOUR INTENTIONS. Famous examples:\n- American Declaration of Independence: 'All men are created free and equal'\n- Martin Luther King's Manifesto: 'I have a dream'\n\nYour Anti-AI manifesto is YOUR 'I have a dream' for the future. Be courageous. Be proud. Be HUMAN."
+          "instruction": "It's a letter that YOU write for YOU in the future. You explain what makes you UNIQUE and that AI will never be able to copy. It's like writing your own 'secret recipe': what makes YOU, YOU!\n\n💡 In the adult world, this is called a 'manifesto'. Famous people like Martin Luther King ('I have a dream') or the Declaration of Independence ('All men are created free') wrote manifestos to change the world! You can write one too."
         },
         "etape2": {
-          "titre": "2. Your Manifesto",
+          "titre": "2. Your Superpower Letter",
           "type_etape": "champ_texte",
-          "instruction": "Write your Anti-AI Manifesto (10-15 lines). Include:\n- Your name\n- 3 things YOU do better than AI\n- How you'll use AI without losing your humanity\n- Your promise for 2035\n\nMake it sound POWERFUL!",
+          "instruction": "Write your Superpower Letter (10-15 lines). Include:\n- Your name\n- 3 things YOU do better than AI\n- How you'll use AI without losing your humanity\n- Your promise for 2035\n\nMake it sound POWERFUL!",
           "placeholder": "I am [your name], and here's what AI will never be in my place...\n\nWhat I do better than AI:\n1. ...\n2. ...\n3. ...\n\nHow I'll use AI:\n...\n\nMy promise for 2035:\n..."
         },
         "etape3": {
           "titre": "3. Share and Pride",
           "type_etape": "validation_case",
-          "instruction": "I understand: This manifesto isn't an exercise, it's MY declaration of independence. It's what will make me irreplaceable in an AI world. I'll keep it and reread it regularly.",
+          "instruction": "I understand: This letter isn't just an exercise, it's MY declaration of independence. It's what will make me irreplaceable in an AI world. I'll keep it and reread it regularly.",
           "placeholder": null
         }
       },
       "mentorGoal": "Create a powerful personal document that anchors the child's 'AI-proof' identity. The goal is for them to leave this module with a clear awareness of their human superpowers and a vision of how to navigate the future.",
-      "evaluationCriteria": "1. Manifesto written with the 4 mandatory elements (name, 3 human advantages, AI use, 2035 promise). 2. Affirming and proud tone (not hesitant). 3. Concrete and personal examples. Bonus: The manifesto is inspiring and could be shared with other children."
+      "evaluationCriteria": "1. Letter written with the 4 mandatory elements (name, 3 human advantages, AI use, 2035 promise). 2. Affirming and proud tone (not hesitant). 3. Concrete and personal examples. Bonus: The letter is inspiring and could be shared with other children."
     }
   },
   "m17": {
     "defi1": {
-      "titre": "Quiz: The 9 Dots Problem",
-      "question": "Here are 9 dots arranged in a square (3x3). Can you connect them ALL with only 4 straight lines, WITHOUT lifting the pencil? Most people say 'impossible'. Why?",
+      "titre": "Quiz: The Magic Knot",
+      "question": "**THE ROPE CHALLENGE**\n\nImagine: you're holding a rope by both ends (one end in each hand).\n\n〰️〰️〰️〰️〰️〰️〰️〰️\n\n**Your challenge:** Tie a knot in this rope WITHOUT EVER letting go of the two ends.\n\nYou CAN'T let go of the ends. Normally, to make a knot, you need to let go of one end to pass it through the loop...\n\n**Is there a solution?**",
       "options": [
-        "Because it's mathematically impossible",
-        "Because we imagine an invisible limit (the square) that doesn't exist",
-        "Because you need to be a math genius"
+        "It's impossible, you must let go of one end",
+        "You cross your ARMS first, grab the rope with crossed arms, then uncross them: a knot appears!",
+        "You ask someone to help you"
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "BRAVO! You understood the trap! The solution exists, but it requires getting OUT of the imaginary square. Most people self-limit by imagining a rule that doesn't exist. That's thinking 'outside the box': seeing that limits are in your HEAD, not in reality. Innovators like Elon Musk do this all the time: they see possibilities others don't because they refuse imaginary limits.",
-      "feedbackIncorrect": "No! The solution EXISTS, but 90% of people don't find it. Why? Because they imagine an invisible rule: 'I must stay inside the square of 9 dots'. But this rule DOESN'T EXIST in the instructions! The solution requires going outside the square. That's innovation: refusing the limits everyone imposes on themselves.",
-      "leconStrategique": "The greatest innovations come from people who refused invisible limits. Airbnb: 'You can't sleep at strangers' homes' → FALSE. Uber: 'You can't get in a stranger's car' → FALSE. SpaceX: 'Rockets can't be reusable' → FALSE. These limits were in HEADS, not in reality. Your job: identify imaginary limits and EXPLODE them.",
-      "referenceCroisee": "M7",
-      "mentorGoal": "Introduce the concept of 'self-imposed limits'. The child must understand that most 'impossibles' are beliefs, not facts. This is the basis of innovative thinking.",
-      "evaluationCriteria": "Correct answer: Option 2 (invisible imagined limit). Bonus: The child gives an example of an 'invisible rule' they impose on themselves in their life (sports, school, creativity)."
+      "feedbackCorrect": "BRAVO! You found the GENIUS trick! 🎩✨\n\nHere's how it works:\n1. BEFORE touching the rope: Cross your arms (like you're pouting)\n2. KEEP your arms crossed and grab both ends of the rope\n3. Uncross your arms normally\n4. MAGIC! A knot appears in the rope!\n\nWhy? When your arms were crossed, YOU were the knot! By uncrossing your arms, you 'transferred' the knot from YOU to the ROPE.\n\nThat's 'thinking differently': 90% of people think 'How to make the knot AFTER grabbing the rope?' The solution is to prepare BEFORE! You change WHEN you act, not just HOW.\n\n📹 Watch the video to see the solution in action: https://www.youtube.com/watch?v=ClxwTMwv6MY",
+      "feedbackIncorrect": "Almost! This challenge seems impossible, but there's a simple trick!\n\nThe trick: BEFORE taking the rope, cross your arms (like you're pouting). Keep your arms crossed and grab both ends. Then uncross your arms: MAGIC, a knot appears! 🎩\n\nWhy does it work? Your crossed arms ARE the knot. By uncrossing them, you transfer that knot to the rope.\n\nThe lesson: Most people look for the solution DURING the action ('How to make the knot now?'). The trick is to prepare BEFORE ('I cross my arms first!'). That's thinking differently: changing WHEN you act.\n\n📹 Watch the video to see the solution in action: https://www.youtube.com/watch?v=ClxwTMwv6MY",
+      "leconStrategique": "This magic knot teaches a HUGE lesson: Often, the solution isn't to change HOW you do something, but WHEN you do it.\n\nExamples:\n• Problem: 'I never have time for homework' → Wrong question: 'How to go faster?' → Right question: 'How to PLAN my time BEFORE?'\n• Problem: 'I fail my exams' → Wrong question: 'How to study the night before?' → Right question: 'How to LEARN from the start?'\n\nInnovators change the MOMENT they act, not just the method. Think BEFORE, act AFTER. That's the genius secret!\n\nhttps://youtu.be/ClxwTMwv6MY",
+      "referenceCroisee": "M2, M7",
+      "mentorGoal": "Teach that 'thinking outside the box' often means changing WHEN you act, not just HOW. The child must understand that preparation (BEFORE) is often more important than action (DURING).",
+      "evaluationCriteria": "Correct answer: Option 2 (cross arms first). Bonus: The child gives an example from their life where they should 'prepare BEFORE' instead of 'react DURING' (homework, sports, conflicts, etc.)."
     },
     "defi2": {
       "titre": "Mission: The 10 Impossible Solutions",
       "scenario": "Today, you'll train your brain to find solutions NOBODY would have imagined. The goal: solve a simple problem in 10 DIFFERENT ways, including at least 5 'absurd' ones. This is how we find real innovations!",
-      "instruction": "**Your problem: How to get to school?**\n\n**Step 1: The 3 NORMAL solutions (everyone knows them)**\nExample:\n1. Walking\n2. Car with parents\n3. School bus\n\n**Step 2: The 4 ORIGINAL solutions (but realistic)**\nExample:\n4. Electric bike\n5. Scooter with a friend\n6. Rollerblades\n7. Carpool with 3 neighborhood families\n\n**Step 3: The 3 ABSURD solutions (but creative!)**\nExample:\n8. With a jetpack (like Iron Man)\n9. Through a secret tunnel under the city\n10. Quantum teleportation\n\n**After finding your 10 solutions, answer:**\n- Which 'absurd' solution could become real in 20 years?\n- Which 'original' solution could you test next week?\n- Why do most people only think of the first 3 solutions?",
+      "instruction": "**Your problem: How to get to school?**\n\n**Step 1: The 3 NORMAL solutions (everyone knows them)**\nExample:\n1. Walking\n2. Car with parents\n3. School bus\n\n**Step 2: The 4 ORIGINAL solutions (but realistic)**\nExample:\n4. Electric bike\n5. Scooter with a friend\n6. Rollerblades\n7. Carpool with 3 neighborhood families\n\n**Step 3: The 3 ABSURD solutions (but creative!)**\nExample:\n8. With a jetpack (like Iron Man)\n9. Through a secret tunnel under the city\n10. Quantum teleportation\n\n💡 **These examples are here to inspire you, but come up with YOUR own ideas!**\n\n**After finding your 10 solutions, answer:**\n- Which 'absurd' solution could become real in 20 years?\n- Which 'original' solution could you test next week?\n- Why do most people only think of the first 3 solutions?",
       "leconStrategique": "Innovations DON'T come from people looking for the 'right' answer. They come from people looking for ALL possible answers, even the 'crazy' ones. Example: Wright brothers (airplane) → Everyone said 'impossible'. Jeff Bezos (Amazon) → Everyone said 'people will never buy online'. By listing 10 solutions, you force your brain to leave beaten paths. Solution #8 or #10 often contains the revolutionary idea.",
       "referenceCroisee": "M7",
       "briefing": {

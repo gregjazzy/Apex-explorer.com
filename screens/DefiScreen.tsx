@@ -1,11 +1,12 @@
 // /screens/DefiScreen.tsx
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, Alert, TextInput, TouchableOpacity, ActivityIndicator, Modal } from 'react-native';
+import { View, Text, Button, StyleSheet, SafeAreaView, Platform, Dimensions, ScrollView, Alert, TextInput, TouchableOpacity, ActivityIndicator, Modal, Linking } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { useFocusEffect } from '@react-navigation/native';
 import { BriefingModal } from '../components/BriefingModal'; 
+import VideoModal from '../components/VideoModal';
 import { saveDefiProgress, fetchExplorerProgressForDefi, ExplorerProgressItem, getExplorerProfile, willUnlockNewBadge } from '../services/dataService';
 import { useAuth } from '../hooks/useAuth'; 
 import { LinearGradient } from 'expo-linear-gradient'; 
@@ -81,6 +82,16 @@ const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({
         }
     };
     
+    // Reset validation quand l'utilisateur change de réponse
+    const handleOptionSelect = (index: number) => {
+        setSelectedOption(index);
+        // Si l'utilisateur était bloqué après une mauvaise réponse, reset
+        if (validated && !isCorrect) {
+            setValidated(false);
+            setIsCorrect(false);
+        }
+    };
+    
     if (isQuiz) {
         return (
             <View style={rendererStyles.quizContainer}>
@@ -95,9 +106,7 @@ const DefiContentRenderer: React.FC<DefiContentRendererProps> = ({
                             validated && isCorrect && index === content.bonneReponseIndex && rendererStyles.correctOption,
                             validated && isCorrect && index === selectedOption && !isCorrect && rendererStyles.incorrectOption,
                         ]}
-                        onPress={() => {
-                            if (!validated || !isCorrect) setSelectedOption(index);
-                        }}
+                        onPress={() => handleOptionSelect(index)}
                         disabled={validated && isCorrect}
                     >
                         <Text style={rendererStyles.optionText}>{option}</Text>
@@ -153,6 +162,23 @@ interface StrategicLessonModalProps {
 const StrategicLessonModal: React.FC<StrategicLessonModalProps> = ({ visible, onClose, lesson, isCorrect, isMentorSubmission = false }) => {
     const { t } = useTranslation();
     
+    // Extraire l'URL YouTube si elle existe
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const urls = lesson.match(urlRegex);
+    const youtubeUrl = urls ? urls.find(url => url.includes('youtube.com') || url.includes('youtu.be')) : null;
+    
+    // Texte sans l'URL
+    const textWithoutUrl = youtubeUrl 
+        ? lesson.split(urlRegex).filter(part => !part.match(urlRegex)).join('').trim()
+        : lesson;
+    
+    const handleOpenVideo = () => {
+        if (youtubeUrl) {
+            // Ouvrir directement dans le navigateur/app YouTube
+            Linking.openURL(youtubeUrl);
+        }
+    };
+    
     return (
         <Modal
             visible={visible}
@@ -190,8 +216,21 @@ const StrategicLessonModal: React.FC<StrategicLessonModalProps> = ({ visible, on
                         </View>
                         
                         <Text style={lessonModalStyles.lessonText}>
-                            {lesson}
+                            {textWithoutUrl}
                         </Text>
+                        
+                        {/* Bouton vidéo YouTube si présent */}
+                        {youtubeUrl && (
+                            <TouchableOpacity
+                                style={lessonModalStyles.videoButton}
+                                onPress={handleOpenVideo}
+                                activeOpacity={0.7}
+                            >
+                                <Text style={lessonModalStyles.videoButtonText}>
+                                    📹 Voir la vidéo
+                                </Text>
+                            </TouchableOpacity>
+                        )}
                     </View>
                     
                     {/* Bouton */}
@@ -282,15 +321,18 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
     const handleLessonModalClose = () => {
         setShowLessonModal(false);
         
-        // Si réponse correcte, naviguer
+        // Si réponse correcte, retourner à l'écran précédent
         if (lessonIsCorrect) {
-            navigation.pop(2);
+            navigation.goBack();
+            
             // Recharger UNIQUEMENT si nouveau badge
             if (hasNewBadgeToUnlock) {
                 navigation.navigate('Explorer', { shouldReload: true });
             }
+        } else {
+            // Si incorrecte, reset le feedback pour permettre un nouvel essai
+            setQuizFeedback(null);
         }
-        // Si incorrecte, juste fermer la modal pour réessayer
     };
     
     // Callback pour gérer les erreurs de quiz (afficher modal avec leçon)
@@ -892,6 +934,27 @@ const lessonModalStyles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 24,
         color: '#4B5563',
+    },
+    videoButton: {
+        backgroundColor: '#FFFFFF',
+        marginTop: 16,
+        paddingVertical: 10,
+        paddingHorizontal: 16,
+        borderRadius: 8,
+        alignItems: 'center',
+        alignSelf: 'center',
+        borderWidth: 1.5,
+        borderColor: '#E5E7EB',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 2,
+    },
+    videoButtonText: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: '#6B7280',
     },
     button: {
         backgroundColor: '#4F46E5',
