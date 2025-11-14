@@ -65,10 +65,24 @@ const DefiListScreen: React.FC<DefiListScreenProps> = ({ navigation, route }) =>
         }, [needsRefresh, loadDefis])
     );
 
+    // Écouter l'événement de complétion de défi
+    React.useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            // Vérifier dans les route params si un défi a été complété
+            const params = (navigation.getState().routes.find(r => r.name === 'DefiList')?.params as any);
+            if (params?.defiCompleted) {
+                setNeedsRefresh(true);
+                // Nettoyer le param
+                navigation.setParams({ defiCompleted: undefined } as any);
+            }
+        });
+
+        return unsubscribe;
+    }, [navigation]);
+
     const handleDefiPress = (defiId: string, defiTitle: string) => {
-        // Marquer qu'un refresh sera nécessaire au retour
-        // (au cas où le défi serait complété)
-        setNeedsRefresh(true);
+        // Ne PAS marquer refresh ici - on attendra le retour pour vérifier
+        // si le défi a réellement été complété
         
         // Navigue vers l'écran du défi
         navigation.navigate('Defi', { moduleId: moduleId, defiId: defiId, defiTitle: defiTitle });

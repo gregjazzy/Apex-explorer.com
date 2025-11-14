@@ -323,6 +323,12 @@ const DefiScreen: React.FC<DefiScreenProps> = ({ navigation, route }) => {
         
         // Si réponse correcte, retourner à l'écran précédent
         if (lessonIsCorrect) {
+            // Signaler au DefiListScreen qu'un défi a été complété
+            const parent = navigation.getParent();
+            if (parent) {
+                parent.setParams({ defiCompleted: true } as any);
+            }
+            
             navigation.goBack();
             
             // Recharger UNIQUEMENT si nouveau badge
