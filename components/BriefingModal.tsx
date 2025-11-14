@@ -102,7 +102,6 @@ export const BriefingModal: React.FC<BriefingProps> = ({ isVisible, onClose, def
             <Text style={styles.stepTitle}>{etape.titre}</Text>
             
             <View style={styles.contentArea}>
-                <Text style={styles.instructionText}>{etape.instruction}</Text>
               {renderStepContent(etape)}
             </View>
           </ScrollView>

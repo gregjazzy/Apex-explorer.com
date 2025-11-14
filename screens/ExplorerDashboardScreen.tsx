@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
-import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile, markBadgeAsDisplayed, MODULE_BLOCKS, ModuleBlock } from '../services/dataService'; 
+import { fetchModulesWithProgress, Module, calculateBadges, Badge, ExplorerProgressItem, fetchSpeedDrillStats, SpeedDrillStats, calculateAdvancedBadges, EarnedBadge, getUserStreak, UserStreak, updateUserStreak, getExplorerProfile, markBadgeAsDisplayed, MODULE_BLOCKS, ModuleBlock, getUnseenBadgesCount, getUnseenSpeedDrillCount, updateLastSeenTimestamp } from '../services/dataService'; 
 import ProgressBar from '../components/ProgressBar';
 import BadgeList from '../components/BadgeList';
 import XPCounter from '../components/XPCounter';
@@ -149,6 +149,10 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
     const [showMascot, setShowMascot] = useState(false);
     const [mascotAnimation, setMascotAnimation] = useState<'fadeInDown' | 'fadeOutUp'>('fadeInDown');
     
+    // NOUVEAU : Compteurs d'éléments non vus
+    const [unseenBadgesCount, setUnseenBadgesCount] = useState(0);
+    const [unseenSpeedDrillCount, setUnseenSpeedDrillCount] = useState(0);
+    
     // Calculer le meilleur temps Speed Drill
     const bestSpeedTime = speedDrillStats?.bestTime || null;
     
@@ -232,6 +236,14 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
             // NOUVEAU : Mettre à jour et récupérer le streak
             const updatedStreak = await updateUserStreak(userId);
             setStreak(updatedStreak);
+            
+            // NOUVEAU : Charger les compteurs d'éléments non vus
+            if (user?.id) {
+                const unseenBadges = await getUnseenBadgesCount(user.id);
+                const unseenSpeedDrill = await getUnseenSpeedDrillCount(user.id);
+                setUnseenBadgesCount(unseenBadges);
+                setUnseenSpeedDrillCount(unseenSpeedDrill);
+            }
             
         } catch (error) {
             console.error("Erreur de chargement des modules:", error);
@@ -323,13 +335,22 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                             <View style={styles.miniCircularButtons}>
                                 <TouchableOpacity 
                                     style={styles.miniCircularButton}
-                                    onPress={() => navigation.navigate('Badges' as never)}
+                                    onPress={async () => {
+                                        // Marquer comme vu et naviguer
+                                        if (user?.id) {
+                                            await updateLastSeenTimestamp(user.id, 'badges');
+                                            setUnseenBadgesCount(0);
+                                        }
+                                        navigation.navigate('Badges' as never);
+                                    }}
                                     activeOpacity={0.7}
                                 >
                                     <Text style={styles.miniCircularIcon}>🏆</Text>
-                                    <View style={styles.miniCircularBadge}>
-                                        <Text style={styles.miniCircularBadgeText}>{badges.filter(b => b.earned).length}</Text>
-                                    </View>
+                                    {unseenBadgesCount > 0 && (
+                                        <View style={styles.miniCircularBadge}>
+                                            <Text style={styles.miniCircularBadgeText}>{unseenBadgesCount}</Text>
+                                        </View>
+                                    )}
                                 </TouchableOpacity>
                                 
                                 <TouchableOpacity 
@@ -345,15 +366,22 @@ const ExplorerDashboardScreen: React.FC<NativeStackScreenProps<any, 'Explorer'>>
                                 
                                 <TouchableOpacity 
                                     style={styles.miniCircularButton}
-                                    onPress={() => navigation.navigate('SpeedDrillStats' as never)}
+                                    onPress={async () => {
+                                        // Marquer comme vu et naviguer
+                                        if (user?.id) {
+                                            await updateLastSeenTimestamp(user.id, 'speed_drill_stats');
+                                            setUnseenSpeedDrillCount(0);
+                                        }
+                                        navigation.navigate('SpeedDrillStats' as never);
+                                    }}
                                     activeOpacity={0.7}
                                 >
                                     <Text style={styles.miniCircularIcon}>⚡</Text>
-                                    {bestSpeedTime && (
+                                    {unseenSpeedDrillCount > 0 && (
                                         <View style={styles.miniCircularBadge}>
-                                            <Text style={styles.miniCircularBadgeText}>{bestSpeedTime}</Text>
-                                    </View>
-                                )}
+                                            <Text style={styles.miniCircularBadgeText}>{unseenSpeedDrillCount}</Text>
+                                        </View>
+                                    )}
                                 </TouchableOpacity>
                             </View>
                             

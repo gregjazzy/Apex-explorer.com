@@ -1809,3 +1809,114 @@ export const getCurrentUserHallOfFameStats = async (userId: string) => {
     }
 };
 
+// ===== TRACKING DES ÉLÉMENTS VUS (POUR BADGES NOTIFICATION) =====
+
+/**
+ * Récupérer le timestamp de la dernière visite d'une section
+ */
+export const getLastSeenTimestamp = async (userId: string, section: 'badges' | 'hall_of_fame' | 'speed_drill_stats'): Promise<string | null> => {
+    try {
+        const { data, error } = await supabase
+            .from('user_last_seen')
+            .select('last_seen_at')
+            .eq('user_id', userId)
+            .eq('section', section)
+            .maybeSingle();
+        
+        if (error) {
+            console.error('Erreur getLastSeenTimestamp:', error);
+            return null;
+        }
+        
+        return data?.last_seen_at || null;
+    } catch (error) {
+        console.error('Erreur getLastSeenTimestamp:', error);
+        return null;
+    }
+};
+
+/**
+ * Mettre à jour le timestamp de la dernière visite
+ */
+export const updateLastSeenTimestamp = async (userId: string, section: 'badges' | 'hall_of_fame' | 'speed_drill_stats'): Promise<void> => {
+    try {
+        const { error } = await supabase
+            .from('user_last_seen')
+            .upsert({
+                user_id: userId,
+                section,
+                last_seen_at: new Date().toISOString()
+            }, {
+                onConflict: 'user_id,section'
+            });
+        
+        if (error) {
+            console.error('Erreur updateLastSeenTimestamp:', error);
+        }
+    } catch (error) {
+        console.error('Erreur updateLastSeenTimestamp:', error);
+    }
+};
+
+/**
+ * Compter les nouveaux badges non vus
+ */
+export const getUnseenBadgesCount = async (userId: string): Promise<number> => {
+    try {
+        const lastSeen = await getLastSeenTimestamp(userId, 'badges');
+        
+        if (!lastSeen) {
+            // Si jamais visité, compter tous les badges gagnés
+            const { count, error } = await supabase
+                .from('earned_badges')
+                .select('*', { count: 'exact', head: true })
+                .eq('user_id', userId);
+            
+            return count || 0;
+        }
+        
+        // Compter les badges gagnés depuis la dernière visite
+        const { count, error } = await supabase
+            .from('earned_badges')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', userId)
+            .gt('earned_at', lastSeen);
+        
+        return count || 0;
+    } catch (error) {
+        console.error('Erreur getUnseenBadgesCount:', error);
+        return 0;
+    }
+};
+
+/**
+ * Compter les nouvelles sessions Speed Drill non vues
+ */
+export const getUnseenSpeedDrillCount = async (userId: string): Promise<number> => {
+    try {
+        const lastSeen = await getLastSeenTimestamp(userId, 'speed_drill_stats');
+        
+        if (!lastSeen) {
+            // Si jamais visité, compter toutes les sessions
+            const { count, error } = await supabase
+                .from('speed_drill_sessions')
+                .select('*', { count: 'exact', head: true })
+                .eq('user_id', userId);
+            
+            return count || 0;
+        }
+        
+        // Compter les sessions depuis la dernière visite
+        const { count, error } = await supabase
+            .from('speed_drill_sessions')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', userId)
+            .gt('created_at', lastSeen);
+        
+        return count || 0;
+    } catch (error) {
+        console.error('Erreur getUnseenSpeedDrillCount:', error);
+        return 0;
+    }
+};
+
