@@ -202,7 +202,7 @@
       "instruction": "1. If the recipe is for 4 people and you want it for 8, what should you multiply by?\n2. Calculate the new quantities for each ingredient.\n3. If you only have 5 eggs at home, for how many people maximum can you make the cake?\n\n💡 Important words: RATIO = The relationship between two quantities. PROPORTIONALITY = Keeping the same ratio when scaling.",
       "leconStrategique": "Proportions and ratios are everywhere: recipes, construction, business. Knowing how to adapt quantities is an essential skill. In companies, ratios are used to measure everything: cost per customer, time per project, revenue per employee. A good leader masters their ratios!",
       "referenceCroisee": "M8, M9",
-      "briefing": {
+        "briefing": {
         "etape1": {
           "titre": "1. Understanding The Ratio",
           "type_etape": "validation_case",
@@ -223,7 +223,7 @@
       },
       "mentorGoal": "Evaluate understanding of proportions, ratios and multiplication. The child must demonstrate they can adapt quantities according to a ratio and manage real constraints.",
       "evaluationCriteria": "1. Correct ratio: ×2. 2. Exact calculations: 400g flour, 6 eggs, 200g sugar, 100g butter. 3. Egg constraint: approximately 6-7 people (5÷3×4≈6.67). 4. BONUS: The child explains why all ingredients must follow the same ratio (proportionality) or mentions that changing just one compromises the result."
-    }
+      }
   },
   "m2": {
     "defi1": {
@@ -255,20 +255,32 @@
       "evaluationCriteria": "1. Correct order: A (Urgent+Important) → B (Not Urgent+Important) → C (Urgent+Not Important) → D (Neither Urgent Nor Important). 2. Coherent justification: The child explains that B (homework) builds their future. 3. BONUS: The child mentions that non-important urgencies (C) can be delegated or done quickly."
     },
     "defi2": {
-        "titre": "Quiz: Planning and Preparation",
-        "question": "Which tool is most effective for planning a 3-day project?",
-      "options": [
-        "A simple mental note",
-        "A visual calendar with tasks listed",
-        "Asking for help after forgetting"
-      ],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "A visual calendar transforms time into a manageable resource.",
-        "feedbackIncorrect": "Memory is not a reliable tool for long-project planning.",
-        "leconStrategique": "Preparation is the proof of discipline. A good plan gives you the freedom to focus on execution.",
-      "referenceCroisee": "M6",
-      "mentorGoal": "Test understanding of backward planning (retro-planning) to meet a deadline. The child must demonstrate their ability to break down a project into chronological steps.",
-      "evaluationCriteria": "The answer must contain a plan with ordered steps and realistic timelines. Bonus: The child anticipates contingencies or safety margins."
+        "titre": "Mission: Party Planning",
+        "scenario": "You're organizing a surprise birthday party for your best friend on Saturday at 2pm. Guests arrive at that time, you MUST be ready!\n\nYou have 3 days (Wednesday, Thursday, Friday) to prepare everything. Here are the 4 tasks to do:\n\n• Task A: Buy decorations → Takes 1 day (because you must go to the store with your parents)\n• Task B: Prepare cakes → Takes 3 hours (baking included)\n• Task C: Install decorations → Takes 2 hours\n• Task D: Wrap gifts → Takes 1 hour\n\nWARNING: You can only do one thing at a time!",
+        "instruction": "1. In what order should you do these 4 tasks to be ready Saturday 2pm? (Write the order: A, then..., then..., then...)\n2. What day and time should you start the first task to finish on time?\n3. Which task is the most critical (if you miss it, everything fails)? Why?\n\n💡 Important word: BACKWARD PLANNING = Start from the end (the deadline) and go back in time to know when to start.",
+        "leconStrategique": "Leaders never start by doing the first thing that comes to mind. They first look at the deadline, then they go back in time to plan each step. This is backward planning: starting from the goal to build the path.",
+      "referenceCroisee": "M6, M8",
+      "briefing": {
+        "etape1": {
+          "titre": "1. The Deadline",
+          "type_etape": "texte_guide",
+          "instruction": "The party starts Saturday 2pm. This is your DEADLINE. You must have EVERYTHING finished before this time. Start your planning from this time, then go backward."
+        },
+        "etape2": {
+          "titre": "2. The Logical Order",
+          "type_etape": "validation_case",
+          "instruction": "I understand: Some tasks DEPEND on others. I cannot install decorations (C) if I haven't bought them yet (A)! The order is not free.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. My Planning",
+          "type_etape": "champ_texte",
+          "instruction": "Write your plan: What day and time you do each task, starting from Saturday 2pm and going backward in time.",
+          "placeholder": "Saturday 2pm: Party starts | Saturday ...h: Finish ... | Friday ...h: Do ... | etc."
+        }
+      },
+      "mentorGoal": "Introduce BACKWARD PLANNING and the notion of DEPENDENCIES between tasks. The child must understand that planning starts from the deadline, and that some tasks must be done before others.",
+      "evaluationCriteria": "1. Correct order: A (buy) must be first, then B/C/D in any order. 2. Realistic start: Begins Wednesday or Thursday (leaves time). 3. Critical task identified: A (buy) because without decorations, impossible to do C. 4. BONUS: The child mentions a 'safety margin' or anticipates a contingency."
     },
     "defi3": {
       "titre": "Challenge: Focused Time",

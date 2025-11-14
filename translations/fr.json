@@ -255,20 +255,32 @@
       "evaluationCriteria": "1. Ordre correct : A (Urgent+Important) → B (Non Urgent+Important) → C (Urgent+Non Important) → D (Ni Urgent Ni Important). 2. Justification cohérente : L'enfant explique que B (devoir) construit son avenir. 3. BONUS : L'enfant mentionne que les urgences non importantes (C) peuvent être déléguées ou faites rapidement."
     },
     "defi2": {
-        "titre": "Quiz: Planification et Préparation",
-        "question": "Quel outil est le plus efficace pour planifier un projet de 3 jours ?",
-      "options": [
-        "Une simple note mentale",
-        "Un agenda visuel avec les tâches listées",
-        "Demander de l'aide après avoir oublié"
-      ],
-        "bonneReponseIndex": 1,
-        "feedbackCorrect": "Un agenda visuel transforme le temps en ressource gérable.",
-        "feedbackIncorrect": "La mémoire n'est pas un outil fiable pour la planification de projets longs.",
-        "leconStrategique": "La préparation est la preuve de la discipline. Un bon plan te donne la liberté de te concentrer sur l'exécution.",
-      "referenceCroisee": "M6",
-      "mentorGoal": "Tester la compréhension de la planification à rebours (rétro-planification) pour respecter une échéance. L'enfant doit démontrer sa capacité à décomposer un projet en étapes chronologiques.",
-      "evaluationCriteria": "La réponse doit contenir un plan avec des étapes ordonnées et des délais réalistes. Bonus: L'enfant anticipe des imprévus ou des marges de sécurité."
+        "titre": "Mission: La Planification de la Fête",
+        "scenario": "Tu organises une fête d'anniversaire surprise pour ton meilleur ami samedi à 14h. Les invités arrivent à ce moment-là, tu DOIS être prêt !\n\nTu as 3 jours (mercredi, jeudi, vendredi) pour tout préparer. Voici les 4 tâches à faire :\n\n• Tâche A : Acheter les décorations → Prend 1 jour (car tu dois aller en magasin avec tes parents)\n• Tâche B : Préparer les gâteaux → Prend 3 heures (cuisson incluse)\n• Tâche C : Installer les décorations → Prend 2 heures\n• Tâche D : Emballer les cadeaux → Prend 1 heure\n\nATTENTION : Tu ne peux faire qu'une seule chose à la fois !",
+        "instruction": "1. Dans quel ordre dois-tu faire ces 4 tâches pour être prêt samedi 14h ? (Écris l'ordre : A, puis..., puis..., puis...)\n2. Quel jour et à quelle heure dois-tu commencer la première tâche pour finir à temps ?\n3. Quelle tâche est la plus critique (si tu la rates, tout est raté) ? Pourquoi ?\n\n💡 Mot important : RÉTRO-PLANIFICATION = Commencer par la fin (le deadline) et remonter dans le temps pour savoir quand commencer.",
+        "leconStrategique": "Les leaders ne commencent jamais par faire la première chose qui leur passe par la tête. Ils regardent d'abord la date limite (deadline), puis ils remontent le temps pour planifier chaque étape. C'est la rétro-planification : partir de l'objectif pour construire le chemin.",
+      "referenceCroisee": "M6, M8",
+      "briefing": {
+        "etape1": {
+          "titre": "1. Le Deadline",
+          "type_etape": "texte_guide",
+          "instruction": "La fête commence samedi 14h. C'est ton DEADLINE (date limite). Tu dois avoir TOUT fini avant cette heure. Commence ta planification par cette heure, puis remonte dans le temps."
+        },
+        "etape2": {
+          "titre": "2. L'Ordre Logique",
+          "type_etape": "validation_case",
+          "instruction": "J'ai compris : Certaines tâches DÉPENDENT d'autres. Je ne peux pas installer les décorations (C) si je ne les ai pas encore achetées (A) ! L'ordre n'est pas libre.",
+          "placeholder": null
+        },
+        "etape3": {
+          "titre": "3. Ma Planification",
+          "type_etape": "champ_texte",
+          "instruction": "Écris ton plan : Quel jour et à quelle heure tu fais chaque tâche, en partant du samedi 14h et en remontant le temps.",
+          "placeholder": "Samedi 14h : Fête commence | Samedi ...h : Finir ... | Vendredi ...h : Faire ... | etc."
+        }
+      },
+      "mentorGoal": "Introduire la RÉTRO-PLANIFICATION et la notion de DÉPENDANCES entre tâches. L'enfant doit comprendre qu'on planifie en partant du deadline, et que certaines tâches doivent être faites avant d'autres.",
+      "evaluationCriteria": "1. Ordre correct : A (acheter) en premier obligatoire, puis B/C/D dans n'importe quel ordre. 2. Début réaliste : Commence mercredi ou jeudi (laisse du temps). 3. Tâche critique identifiée : A (acheter) car sans décorations, impossible de faire C. 4. BONUS : L'enfant mentionne une 'marge de sécurité' ou anticipe un imprévu."
     },
     "defi3": {
       "titre": "Défi: Le Temps Focalisé",
