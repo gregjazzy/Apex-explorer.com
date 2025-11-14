@@ -429,18 +429,19 @@
   "m4": {
     "defi1": {
         "titre": "Quiz: Le Mystère des Voisins",
-        "question": "Alice, Ben et Claire ont des chats rouges, bleus et verts. Ben n'a pas le bleu. Alice n'a ni le rouge ni le bleu. Quelle est la couleur du chat de Claire ?",
+        "question": "Alice, Ben et Claire ont des chats de couleurs différentes : rouge, bleu et vert.\n\nIndices :\n• Ben n'a pas le chat bleu\n• Alice n'a ni le chat rouge ni le chat bleu\n\nQuelle est la couleur du chat de Claire ?",
       "options": [
         "Bleu",
         "Rouge",
         "Vert"
       ],
         "bonneReponseIndex": 0,
-        "feedbackCorrect": "Par déduction : Alice (Vert), Ben (Rouge), donc Claire (Bleu).",
-        "leconStrategique": "Le leader élimine les possibilités avant de prendre une décision. La déduction est un chemin vers la vérité.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Évaluer la capacité de raisonnement logique par élimination et déduction. L'enfant doit démontrer qu'il sait utiliser les indices pour éliminer les possibilités.",
-      "evaluationCriteria": "La réponse doit identifier correctement la solution en utilisant un processus d'élimination structuré. Bonus: L'enfant documente son raisonnement étape par étape."
+        "feedbackCorrect": "Bravo ! Tu as utilisé la MÉTHODE D'ÉLIMINATION.\n\nVoici le raisonnement logique en 3 étapes :\n\nÉtape 1 : Alice n'a ni rouge ni bleu → Alice a forcément le chat VERT ✅\n\nÉtape 2 : Le vert est pris. Ben n'a pas le bleu → Ben a forcément le chat ROUGE ✅\n\nÉtape 3 : Il ne reste que le bleu pour Claire → Claire a le chat BLEU ✅\n\n💡 Tu as transformé des contraintes en certitudes. C'est la base de la déduction logique !",
+        "feedbackIncorrect": "Pas tout à fait. Utilise la MÉTHODE D'ÉLIMINATION en 3 étapes :\n\n1. Commence par la personne qui a le PLUS de contraintes (Alice : 2 contraintes)\n2. Identifie sa couleur certaine\n3. Déduis les autres par élimination\n\n💡 Astuce : Quand une personne a beaucoup de contraintes, commence par elle. C'est la clé pour débloquer le mystère !",
+        "leconStrategique": "La DÉDUCTION LOGIQUE fonctionne par élimination. Chaque contrainte (information) élimine des possibilités jusqu'à ce que la solution apparaisse.\n\nDans les affaires, c'est pareil : un leader analyse les contraintes du marché (budgets, délais, ressources) pour éliminer les mauvaises options et trouver la meilleure stratégie.\n\nPrincipe : Les contraintes ne sont pas des obstacles, ce sont des GUIDES vers la solution.",
+      "referenceCroisee": "M4 (Analyse et Logique)",
+      "mentorGoal": "Introduire la PENSÉE LOGIQUE par élimination et la capacité à utiliser les contraintes pour résoudre un problème. L'enfant doit comprendre qu'une contrainte est une information qui guide vers la solution en éliminant des possibilités.",
+      "evaluationCriteria": "1. Réponse correcte : A (Bleu). 2. BONUS : L'enfant explique les 3 étapes séquentielles (Alice → Ben → Claire) ou identifie qu'Alice est le point de départ car elle a le plus de contraintes (2 contraintes)."
     },
     "defi2": {
         "titre": "Défi: La Séquence des Tâches",

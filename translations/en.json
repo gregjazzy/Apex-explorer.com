@@ -429,18 +429,19 @@
   "m4": {
     "defi1": {
         "titre": "Quiz: The Neighbors' Mystery",
-        "question": "Alice, Ben, and Claire have red, blue, and green cats. Ben does not have the blue one. Alice has neither the red nor the blue one. What color is Claire's cat?",
+        "question": "Alice, Ben, and Claire have cats of different colors: red, blue, and green.\n\nClues:\n• Ben doesn't have the blue cat\n• Alice has neither the red nor the blue cat\n\nWhat color is Claire's cat?",
       "options": [
         "Blue",
         "Red",
         "Green"
       ],
         "bonneReponseIndex": 0,
-        "feedbackCorrect": "By deduction: Alice (Green), Ben (Red), therefore Claire (Blue).",
-        "leconStrategique": "The leader eliminates possibilities before making a decision. Deduction is a path to truth.",
-      "referenceCroisee": "M2",
-      "mentorGoal": "Assess logical reasoning ability through elimination and deduction. The child must demonstrate they can use clues to eliminate possibilities.",
-      "evaluationCriteria": "The answer must correctly identify the solution using a structured elimination process. Bonus: The child documents their reasoning step by step."
+        "feedbackCorrect": "Well done! You used the ELIMINATION METHOD.\n\nHere's the logical reasoning in 3 steps:\n\nStep 1: Alice has neither red nor blue → Alice must have the GREEN cat ✅\n\nStep 2: Green is taken. Ben doesn't have blue → Ben must have the RED cat ✅\n\nStep 3: Only blue remains for Claire → Claire has the BLUE cat ✅\n\n💡 You transformed constraints into certainties. That's the foundation of logical deduction!",
+        "feedbackIncorrect": "Not quite. Use the ELIMINATION METHOD in 3 steps:\n\n1. Start with the person who has the MOST constraints (Alice: 2 constraints)\n2. Identify their certain color\n3. Deduce the others by elimination\n\n💡 Tip: When someone has many constraints, start with them. That's the key to solving the mystery!",
+        "leconStrategique": "LOGICAL DEDUCTION works by elimination. Each constraint (piece of information) eliminates possibilities until the solution appears.\n\nIn business, it's the same: a leader analyzes market constraints (budgets, deadlines, resources) to eliminate bad options and find the best strategy.\n\nPrinciple: Constraints are not obstacles, they are GUIDES to the solution.",
+      "referenceCroisee": "M4 (Analysis and Logic)",
+      "mentorGoal": "Introduce LOGICAL THINKING through elimination and the ability to use constraints to solve a problem. The child must understand that a constraint is information that guides toward the solution by eliminating possibilities.",
+      "evaluationCriteria": "1. Correct answer: A (Blue). 2. BONUS: The child explains the 3 sequential steps (Alice → Ben → Claire) or identifies that Alice is the starting point because she has the most constraints (2 constraints)."
     },
     "defi2": {
         "titre": "Challenge: The Task Sequence",
