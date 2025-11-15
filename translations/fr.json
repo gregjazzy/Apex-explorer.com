@@ -22,8 +22,8 @@
     "m3_desc": "Comprendre les lois de la physique pour la construction et la logistique.",
     "m4": "La Carte au Trésor (Logique)",
     "m4_desc": "Développer le raisonnement logique et la résolution de problèmes complexes.",
-    "m5": "Le Moteur de l'Influence",
-    "m5_desc": "Comprendre les mécanismes de persuasion et d'influence pour mobiliser les équipes.",
+    "m5": "Convaincre et Rassembler",
+    "m5_desc": "Apprendre à bien parler pour convaincre tes amis et mener des projets ensemble.",
     "m6": "L'Art de l'Échec Constructif",
     "m6_desc": "Transformer les échecs en opportunités d'apprentissage et de croissance.",
     "m7": "La Créativité Stratégique",
@@ -32,8 +32,8 @@
     "m8_desc": "Évaluer et optimiser l'utilisation des ressources disponibles.",
     "m9": "Économie et Échange de Valeur",
     "m9_desc": "Comprendre les principes économiques et la création de valeur.",
-    "m10": "Le Code du Leader (Éthique)",
-    "m10_desc": "Développer l'intégrité et les valeurs éthiques du leadership.",
+    "m10": "Faire Ce Qui Est Bien",
+    "m10_desc": "Apprendre à faire ce qui est bien, même quand c'est difficile ou que personne ne te regarde.",
     "m11": "Le Projet Capital (Synthèse)",
     "m11_desc": "Synthèse finale : appliquer toutes les compétences acquises dans un projet complet.",
     "m12": "L'Art de Communiquer",
@@ -532,47 +532,47 @@
       "evaluationCriteria": "1. Structure respectée : Identifie un PROBLÈME, propose une SOLUTION, explique le BÉNÉFICE. 2. Clarté : Le message est compréhensible pour un enfant de 8-9 ans. 3. Concision : Les 3 phrases sont courtes et directes. 4. BONUS : L'enfant utilise des questions (ex: 'Tu veux...?') ou des mots qui donnent envie (ex: 'super amusant', 'facile', 'tout le monde peut jouer')."
     },
     "defi2": {
-        "titre": "Quiz: Négociation Gagnant-Gagnant",
-        "question": "Tu négocies l'achat de matériel. Ton fournisseur veut 100€, tu veux payer 80€. Quelle est la meilleure approche pour réussir la négociation et maintenir la relation ?",
+        "titre": "Quiz: Bien Négocier (Tout Le Monde Content)",
+        "question": "Tu veux acheter un jeu vidéo d'occasion à un copain. Il veut le vendre 20€, mais tu ne veux dépenser que 15€. Quelle est la meilleure façon de faire pour que vous soyez TOUS LES DEUX contents ?",
       "options": [
-        "Refuser poliment et trouver un autre fournisseur.",
-        "Proposer 90€ et demander un petit service en échange.",
-        "Dire '80€ ou rien' pour être ferme."
+        "Dire non et demander à un autre copain.",
+        "Proposer 15€ + lui prêter ton jeu préféré pendant une semaine.",
+        "Dire '15€ ou rien' pour être ferme."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Bravo ! 🎉 Tu as compris l'art de la NÉGOCIATION GAGNANT-GAGNANT.\n\nVoici pourquoi c'est la meilleure stratégie :\n\n• Option 1 (refuser) = Tu perds un bon fournisseur et tu recommences à zéro ❌\n• Option 3 (80€ ou rien) = Tu forces l'autre à perdre → Il accepte peut-être, mais il ne voudra plus travailler avec toi après ❌\n• Option 2 (90€ + service) = COMPROMIS : Toi tu paies 10€ de plus, lui il gagne 10€ de moins, MAIS vous échangez un service en plus ✅\n\nRésultat : Les DEUX parties gagnent quelque chose. Le fournisseur est content, toi aussi. Il voudra retravailler avec toi !\n\n💡 Une bonne négociation crée une RELATION DURABLE. Tu n'as pas 'gagné' aujourd'hui, tu as gagné un PARTENAIRE pour longtemps.",
-        "feedbackIncorrect": "Attention ! Une négociation n'est pas un combat où il faut 'gagner' contre l'autre.\n\nPense à long terme :\n• Si tu refuses (Option 1) → Tu dois chercher un autre fournisseur (temps perdu)\n• Si tu dis '80€ ou rien' (Option 3) → Le fournisseur se sent forcé, il accepte peut-être mais ne voudra plus te vendre après\n\nLa bonne question : 'Comment on peut TOUS LES DEUX gagner quelque chose ?'\n\nAstuce : Cherche un COMPROMIS où chacun donne un peu et reçoit un peu. C'est ça, le gagnant-gagnant !",
-        "leconStrategique": "La NÉGOCIATION GAGNANT-GAGNANT est un outil puissant d'INFLUENCE. Quand les deux parties gagnent, tu crées de la confiance et des relations durables.\n\nLes 3 règles d'une bonne négociation :\n1. Écoute ce que l'autre veut vraiment (pas seulement le prix)\n2. Cherche un COMPROMIS où chacun donne et reçoit\n3. Ajoute de la VALEUR (un service, du temps, une recommandation)\n\nDans la vie réelle :\n• Négocier avec tes parents : 'Je range ma chambre (tu donnes) si je peux jouer 30 min de plus (tu reçois)'\n• Négocier avec un ami : 'Je te prête mon jeu (tu donnes) si tu me montres ton nouveau tour de magie (tu reçois)'\n• Négocier à l'école : 'Je t'aide en maths (tu donnes) si tu m'aides en dessin (tu reçois)'\n\nDans les affaires : Les meilleurs leaders négocient toujours en gagnant-gagnant. Pourquoi ? Parce qu'ils construisent des PARTENARIATS solides. Un partenaire satisfait = des opportunités futures !",
+        "feedbackCorrect": "Bravo ! 🎉 Tu as compris comment BIEN NÉGOCIER : tout le monde doit être content !\n\nVoici pourquoi c'est la meilleure solution :\n\n• Option 1 (dire non) = Tu perds un bon jeu et ton copain ne peut pas le vendre ❌\n• Option 3 (15€ ou rien) = Tu forces ton copain → Il accepte peut-être, mais il sera fâché et ne voudra plus jouer avec toi ❌\n• Option 2 (15€ + prêter ton jeu) = COMPROMIS : Lui il gagne 5€ de moins, MAIS tu lui prêtes ton jeu en plus ✅\n\nRésultat : VOUS ÊTES TOUS LES DEUX CONTENTS ! Ton copain reçoit de l'argent ET peut jouer à ton jeu, toi tu as le jeu que tu voulais. Vous restez bons amis !\n\n💡 Quand tu négocies bien, tu gardes tes amis et tout le monde est heureux. Tu n'as pas 'gagné contre lui', vous avez gagné ENSEMBLE.",
+        "feedbackIncorrect": "Attention ! Négocier ne veut pas dire 'gagner contre l'autre'.\n\nRéfléchis :\n• Si tu dis non (Option 1) → Tu n'as pas le jeu et ton copain ne peut pas le vendre\n• Si tu dis '15€ ou rien' (Option 3) → Ton copain se sent forcé, il accepte peut-être mais il sera fâché contre toi après\n\nLa bonne question : 'Comment on peut TOUS LES DEUX être contents ?'\n\nAstuce : Cherche un COMPROMIS où chacun donne un peu et reçoit un peu. C'est ça, bien négocier !",
+        "leconStrategique": "Bien NÉGOCIER, c'est trouver une solution où TOUT LE MONDE EST CONTENT. Quand tout le monde est content, tu gardes tes amis et tu crées de la confiance.\n\nLes 3 règles pour bien négocier :\n1. Écoute ce que l'autre veut vraiment\n2. Cherche un COMPROMIS où chacun donne et reçoit\n3. Ajoute quelque chose en plus (prêter, aider)\n\nExemples dans ta vie :\n• Avec tes parents : 'Je range ma chambre si je peux jouer 30 min de plus'\n• Avec un ami : 'Je te prête mon jeu si tu me montres ton tour de magie'\n\nCeux qui réussissent gardent leurs amis contents. Un ami content = plein d'autres belles opportunités !",
       "referenceCroisee": "M5 (Communication et Influence), M9 (Économie et Échange de Valeur)",
-      "mentorGoal": "Introduire la NÉGOCIATION GAGNANT-GAGNANT et le concept de COMPROMIS CRÉATIF. L'enfant doit démontrer qu'il comprend qu'une bonne négociation cherche à créer de la valeur pour les deux parties, pas à 'battre' l'autre.",
-      "evaluationCriteria": "1. Réponse correcte : B (Proposer 90€ + service). 2. BONUS : L'enfant explique que le compromis préserve la relation, ou mentionne qu'ajouter de la valeur (le service) rend l'accord plus équitable, ou comprend que perdre une bataille pour gagner la guerre (relation long terme)."
+      "mentorGoal": "Introduire la négociation où tout le monde est content (compromis). L'enfant doit comprendre qu'une bonne négociation cherche à rendre les deux personnes heureuses, pas à 'battre' l'autre.",
+      "evaluationCriteria": "1. Réponse correcte : B (Proposer 15€ + prêter son jeu). 2. BONUS : L'enfant explique que le compromis garde l'amitié, ou mentionne qu'ajouter quelque chose en plus (prêter le jeu) rend l'échange plus juste."
     },
     "defi3": {
       "titre": "Mission: Le Miroir de l'Émotion",
       "scenario": "Ton ami est fâché parce que tu as cassé son jouet. Il crie 'Je te déteste !'. Au lieu de te défendre, que réponds-tu pour montrer que tu as compris son émotion ?",
       "instruction": "Écris une phrase qui VALIDE l'émotion de l'ami sans te justifier (Ex: 'Je comprends que tu sois en colère...').",
-      "leconStrategique": "L'ÉCOUTE ACTIVE désamorce les conflits. C'est une compétence de LEADERSHIP ÉMOTIONNEL : le leader écoute pour COMPRENDRE, pas pour répondre. En validant l'émotion de l'autre, tu montres du respect et tu désactives la confrontation.",
+      "leconStrategique": "Quand quelqu'un est fâché, la meilleure chose à faire est de MONTRER que tu comprends. Si tu te défends tout de suite ('Mais c'est pas ma faute !'), la dispute devient encore plus grosse.\n\nLa règle magique : ÉCOUTE d'abord, PARLE après.\n\nQuand tu dis 'Je vois que tu es en colère', tu montres du respect. L'autre personne se calme parce qu'elle sent que tu l'as vraiment écoutée. Ensuite, vous pouvez trouver une solution ensemble.\n\nC'est comme ça qu'on évite les grosses disputes !",
       "referenceCroisee": "M6",
       "briefing": {
         "etape1": {
-          "titre": "1. Le Miroir de l'Émotion",
+          "titre": "1. Reconnaître l'Émotion",
           "type_etape": "validation_case",
-          "instruction": "J'ai identifié l'émotion primaire (colère, tristesse, déception, peur, frustration). Je ne réponds pas aux mots, mais à l'émotion."
+          "instruction": "J'ai compris quelle émotion mon ami ressent (colère, tristesse, déception, peur). Je ne réponds pas aux mots qu'il dit, je réponds à ce qu'il ressent."
         },
         "etape2": {
-          "titre": "2. La Formule du Leader",
+          "titre": "2. La Phrase Magique",
           "type_etape": "texte_guide",
-          "instruction": "Utilise la formule : 'Je vois que tu es [Émotion] à cause de [Mon Action].' (Ex: 'Je vois que tu es très en colère à cause de ce que j'ai fait.')\n\nCette formule est la preuve que tu as écouté pour COMPRENDRE et non pour répondre. Cela montre que tu prends la responsabilité."
+          "instruction": "Utilise cette phrase : 'Je vois que tu es [Émotion] à cause de [Ce que j'ai fait].' (Ex: 'Je vois que tu es très en colère à cause de ce que j'ai fait.')\n\nCette phrase montre que tu as vraiment écouté et que tu comprends. Ça aide ton ami à se calmer."
         },
         "etape3": {
-          "titre": "3. Ma Phrase d'Écoute Active",
+          "titre": "3. Ma Phrase Pour Montrer Que Je Comprends",
           "type_etape": "champ_texte",
-          "instruction": "Maintenant, écris ta phrase d'ÉCOUTE ACTIVE en utilisant la formule.\n\nRappel de la situation : Ton ami est fâché parce que tu as cassé son jouet. Il crie 'Je te déteste !'.\n\n✅ Bonne phrase : 'Je vois que tu es très en colère à cause de ce que j'ai fait avec ton jouet.'\n\n❌ À éviter :\n• 'Oui mais c'était un accident' (justification)\n• 'Calme-toi' (minimisation)\n• 'Je vais te le racheter' (solution trop rapide)\n\nD'abord VALIDER l'émotion, ensuite tu pourras proposer une solution.",
+          "instruction": "Maintenant, écris ta phrase pour montrer à ton ami que tu comprends.\n\nRappel de la situation : Ton ami est fâché parce que tu as cassé son jouet. Il crie 'Je te déteste !'.\n\n✅ Bonne phrase : 'Je vois que tu es très en colère à cause de ce que j'ai fait avec ton jouet.'\n\n❌ À éviter :\n• 'Oui mais c'était un accident' (tu te défends au lieu d'écouter)\n• 'Calme-toi' (tu ne montres pas que tu comprends)\n• 'Je vais te le racheter' (tu proposes une solution trop vite)\n\nD'abord MONTRE que tu comprends son émotion, ensuite tu pourras proposer une solution.",
           "placeholder": "Je vois que tu es... à cause de..."
         }
       },
-      "mentorGoal": "Évaluer la capacité à faire preuve d'EMPATHIE et de LEADERSHIP ÉMOTIONNEL. L'enfant doit démontrer qu'il peut désactiver le conflit en validant l'émotion de son interlocuteur sans se défendre.",
-      "evaluationCriteria": "1. Clarté : La phrase doit clairement VALIDER l'émotion sans se justifier, minimiser ou contre-attaquer. 2. Structure : L'enfant utilise une formule du type 'Je vois/comprends que tu es [émotion]'. 3. Contrainte : Pas de justification ('Mais...') ni de solution immédiate ('Je vais te le racheter'). BONUS : L'enfant utilise un terme précis pour l'émotion (ex: 'déception' ou 'tristesse' au lieu de juste 'colère')."
+      "mentorGoal": "Apprendre à montrer qu'on comprend les émotions des autres pour éviter les disputes. L'enfant doit démontrer qu'il peut calmer un conflit en montrant qu'il comprend ce que l'autre ressent, sans se défendre tout de suite.",
+      "evaluationCriteria": "1. Clarté : La phrase doit montrer qu'il comprend l'émotion sans se défendre ou minimiser. 2. Structure : L'enfant utilise une phrase du type 'Je vois/comprends que tu es [émotion]'. 3. Pas de justification ('Mais...') ni de solution trop rapide. BONUS : L'enfant utilise un mot précis pour l'émotion (ex: 'déçu' ou 'triste' au lieu de juste 'en colère')."
     },
     "defi4": {
       "titre": "Quiz: Le Langage Positif",
@@ -684,7 +684,7 @@
         "titre": "Mission: L'Idée en Chaîne",
         "scenario": "Tu dois inventer une solution pour réduire les déchets plastiques. Au lieu de trouver UNE idée parfaite, tu vas générer le MAXIMUM d'idées en 5 minutes, même farfelues!",
         "instruction": "Écris AU MOINS 5 idées (1-2-3-4-5...) en les laissant simples et sans jugement.\n\n💡 Règle d'or : QUANTITÉ avant QUALITÉ. Ne critique AUCUNE idée pendant que tu génères!",
-        "leconStrategique": "La CRÉATIVITÉ commence par la QUANTITÉ, pas la qualité. C'est la méthode du BRAINSTORMING : générer un maximum d'idées sans jugement, puis choisir les meilleures après.\n\nLes 3 règles du brainstorming créatif :\n1. PAS DE CRITIQUE : Toutes les idées sont bonnes à cette étape\n2. QUANTITÉ > QUALITÉ : Plus tu génères, plus tu as de chances de trouver LA bonne\n3. IDÉES FOLLES BIENVENUES : Les meilleures innovations viennent d'idées 'impossibles'\n\nDans la vie réelle :\n• ❌ Chercher l'idée parfaite du premier coup (blocage) → ✅ Générer 10 idées rapidement, puis choisir (fluidité)\n• ❌ 'Cette idée est nulle' (auto-censure) → ✅ 'Je la note quand même' (ouverture)\n• ❌ Rester dans le conventionnel (boring) → ✅ 'Et si on faisait l'inverse?' (innovation)\n\nDans les affaires : Les entreprises les plus innovantes (Google, IDEO, Pixar) utilisent le brainstorming sauvage : 100 idées → 10 bonnes → 1 géniale. Thomas Edison a testé 1000 matériaux avant de trouver le filament parfait pour l'ampoule!\n\nUn leader créatif génère d'abord, juge ensuite.",
+        "leconStrategique": "La CRÉATIVITÉ commence par la QUANTITÉ, pas la qualité. C'est la méthode du BRAINSTORMING : générer un maximum d'idées sans jugement, puis choisir les meilleures après.\n\nLes 3 règles :\n1. PAS DE CRITIQUE : Toutes les idées sont bonnes à cette étape\n2. QUANTITÉ > QUALITÉ : Plus tu génères, plus tu as de chances de trouver LA bonne\n3. IDÉES FOLLES BIENVENUES : Les meilleures innovations viennent d'idées 'impossibles'\n\nDans la vraie vie :\n• ❌ Chercher l'idée parfaite du premier coup → ✅ Générer 10 idées, puis choisir\n• ❌ 'Cette idée est nulle' → ✅ 'Je la note quand même'\n\nCeux qui réussissent génèrent d'abord, jugent ensuite.",
         "referenceCroisee": "M1 (Analyse de Problèmes), M4 (Pensée Critique)",
         "briefing": {
             "etape1": {
@@ -709,25 +709,25 @@
     },
     "defi2": {
         "titre": "Quiz: Pensée Latérale",
-        "question": "Un homme trouve une pièce d'or dans un récipient de café plein. Comment la sort-il sans renverser le café ni briser le récipient ?",
+        "question": "Tu veux accrocher un tableau au mur, mais tu n'as pas de marteau. Comment fais-tu ?",
       "options": [
-        "Il vide d'abord le café.",
-        "Il utilise une pince à épiler.",
-        "Il fait fondre le récipient."
+        "J'attends d'acheter un marteau.",
+        "J'utilise une chaussure, une pierre, ou le dos d'une cuillère lourde.",
+        "J'essaie d'enfoncer le clou avec mes doigts."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Bravo ! 🎉 Tu as trouvé la PENSÉE LATÉRALE !\n\nPourquoi la réponse 2 est la meilleure :\n• Option 1 ('Vider le café') = Solution évidente mais tu perds le café ❌\n• Option 2 ('Pince à épiler') = Solution créative qui contourne le problème ✅\n• Option 3 ('Fondre le récipient') = Tu détruis tout ❌\n\nLa pensée latérale = trouver une solution EN DEHORS du cadre habituel. Au lieu de penser 'comment enlever le café?', tu penses 'comment attraper la pièce SANS toucher au café?'",
-        "feedbackIncorrect": "Réessaie ! La pensée latérale cherche une solution INDIRECTE.\n\nLa question semble dire : 'Il faut enlever le café pour avoir la pièce'\n\nMais la VRAIE solution contourne le problème : 'Et si j'attrapais la pièce SANS toucher au café?'\n\nC'est ça la pensée latérale : sortir du cadre habituel.\n\nAutres exemples :\n• Problème : 'Comment grimper ce mur?' → Pensée latérale : 'Et si je faisais le tour?'\n• Problème : 'Comment porter cette charge lourde?' → Pensée latérale : 'Et si je la faisais rouler?'\n\nQuelle option attrape la pièce SANS toucher au café ou au récipient?",
-        "leconStrategique": "La PENSÉE LATÉRALE résout les problèmes en sortant du cadre habituel. Au lieu de suivre le chemin évident (A → B), tu cherches un chemin indirect (A → Z → B).\n\nLes 3 techniques de pensée latérale :\n1. REFORMULER : Change la question ('Comment sortir la pièce?' → 'Comment l'attraper sans toucher au reste?')\n2. INVERSER : Fais l'opposé de ce qui semble logique\n3. CHERCHER L'ANGLE MORT : Quelle solution personne ne voit?\n\nDans la vie réelle :\n• ❌ 'Je ne peux pas faire mes devoirs, j'ai perdu mon stylo' → ✅ 'J'utilise un crayon, un marqueur, ou je tape sur ordi'\n• ❌ 'La porte est bloquée' → ✅ 'Je passe par la fenêtre'\n• ❌ 'Je suis trop petit pour atteindre' → ✅ 'J'utilise un tabouret'\n\nDans les affaires : Les plus grandes innovations viennent de la pensée latérale. Airbnb : au lieu de construire des hôtels (chemin direct), ils utilisent les maisons des gens (chemin latéral). Uber : au lieu d'acheter des taxis, ils utilisent les voitures existantes!\n\nLe leader créatif ne force pas le chemin direct, il trouve le chemin malin.",
+        "feedbackCorrect": "Bravo ! 🎉 Tu as trouvé la PENSÉE LATÉRALE !\n\nPourquoi la réponse 2 est la meilleure :\n• Option 1 ('Attendre un marteau') = Tu ne résous pas le problème ❌\n• Option 2 ('Utiliser autre chose') = Solution astucieuse : tu as besoin de 'taper', pas spécifiquement d'un 'marteau' ! ✅\n• Option 3 ('Avec les doigts') = Impossible et dangereux ❌\n\nLa pensée latérale = comprendre que le vrai besoin n'est pas l'outil, mais la FONCTION. Tu n'as pas besoin d'un marteau, tu as besoin de quelque chose qui TAPE !",
+        "feedbackIncorrect": "Réessaie ! La pensée latérale cherche une solution ASTUCIEUSE.\n\nLa question semble dire : 'Il te faut un marteau'\n\nMais la VRAIE solution comprend le besoin : 'Il te faut quelque chose qui TAPE fort'\n\nC'est ça la pensée latérale : remplacer l'outil par sa fonction.\n\nAutres exemples :\n• 'Je n'ai pas de tournevis' → Utilise une pièce de monnaie\n• 'Je n'ai pas de coupe-papier' → Utilise le bord d'une règle\n• 'Je n'ai pas de balance' → Compare avec des objets de poids connu\n\nQuelle option remplace le marteau par sa fonction (taper) ?",
+        "leconStrategique": "La PENSÉE LATÉRALE résout les problèmes en comprenant la FONCTION, pas l'outil. Au lieu de chercher 'le bon outil', tu cherches 'ce qui fait la même chose'.\n\nLes 3 techniques :\n1. FONCTION AU LIEU D'OUTIL : Demande-toi 'De quoi ai-je VRAIMENT besoin?' (taper, couper, mesurer...)\n2. REGARDER AUTOUR DE TOI : Qu'est-ce qui peut faire la même chose?\n3. PENSER AUTREMENT : L'outil parfait n'existe pas toujours, l'astuce oui!\n\nDans ta vie :\n• ❌ 'Je n'ai pas de règle' → ✅ 'J'utilise un bord de livre'\n• ❌ 'Je n'ai pas de panier' → ✅ 'Je transporte dans mon t-shirt'\n\nCeux qui réussissent trouvent des solutions avec ce qu'ils ont.",
       "referenceCroisee": "M4 (Analyse de Problèmes), M7D1 (Brainstorming)",
       "mentorGoal": "Tester la compréhension de la PENSÉE LATÉRALE et de la résolution de problème par contournement créatif. L'enfant doit démontrer qu'il peut sortir du cadre habituel pour trouver une solution non-évidente.",
-      "evaluationCriteria": "1. Réponse correcte : B (Utilise une pince à épiler). 2. Compréhension : L'enfant identifie que la pince contourne le problème au lieu de l'affronter directement. 3. Reformulation : L'enfant comprend que le vrai problème n'est pas 'enlever le café' mais 'attraper la pièce'. BONUS : L'enfant donne un exemple de pensée latérale dans sa vie quotidienne."
+      "evaluationCriteria": "1. Réponse correcte : B (Utiliser une chaussure ou autre chose). 2. Compréhension : L'enfant identifie que la fonction (taper) est plus importante que l'outil spécifique (marteau). 3. Pensée latérale : L'enfant comprend qu'on peut remplacer un outil par n'importe quoi qui fait la même fonction. BONUS : L'enfant donne d'autres exemples de remplacement d'outils par leur fonction."
     },
     "defi3": {
       "titre": "Mission: La Contrainte Créative",
       "scenario": "Tu dois construire une maison qui flotte, mais tu n'as le droit d'utiliser que des objets recyclés et du papier. Quels deux matériaux choisis-tu ?",
       "instruction": "Écris les deux matériaux choisis et EXPLIQUE pourquoi ils permettent de flotter ET respectent les contraintes (recyclé + papier).",
-      "leconStrategique": "Les CONTRAINTES stimulent la créativité. C'est le principe de 'CRÉATIVITÉ SOUS CONTRAINTE' : moins tu as de ressources, plus tu dois innover.\n\nLes 3 étapes pour transformer une contrainte en avantage :\n1. ACCEPTER : La contrainte n'est pas un problème, c'est un défi créatif\n2. ANALYSER : Quelles sont les propriétés que je dois respecter? (ici : flotter + recyclé + papier)\n3. COMBINER : Trouve des matériaux qui ont PLUSIEURS propriétés en même temps\n\nDans la vie réelle :\n• ❌ 'Je n'ai pas assez d'argent pour acheter un cadeau' → ✅ 'Je fabrique un cadeau fait-main, plus personnel!'\n• ❌ 'Je n'ai que 10 minutes pour me préparer' → ✅ 'Je choisis l'essentiel, pas de temps perdu!'\n• ❌ 'Il ne me reste que 3 ingrédients dans le frigo' → ✅ 'J'invente une nouvelle recette créative!'\n\nDans les affaires : Les plus grandes innovations viennent de contraintes. Twitter : limité à 140 caractères → les gens deviennent concis et créatifs. Instagram : seulement des photos carrées au début → un style visuel unique. SpaceX : budget limité → réutilise les fusées au lieu d'en construire des nouvelles!\n\nUn leader créatif dit : 'J'ai SEULEMENT X' → 'J'ai TOUT CE QU'IL ME FAUT avec X'.",
+      "leconStrategique": "Les CONTRAINTES stimulent la créativité. Moins tu as de ressources, plus tu dois innover.\n\nLes 3 étapes :\n1. ACCEPTER : La contrainte est un défi créatif, pas un problème\n2. ANALYSER : Quelles propriétés je dois respecter?\n3. COMBINER : Trouve des matériaux qui ont PLUSIEURS propriétés\n\nDans ta vie :\n• ❌ 'Je n'ai pas assez d'argent pour un cadeau' → ✅ 'Je fabrique un cadeau fait-main'\n• ❌ 'Il ne reste que 3 ingrédients' → ✅ 'J'invente une nouvelle recette'\n\nCeux qui réussissent disent : 'J'ai TOUT CE QU'IL ME FAUT avec ce que j'ai'.",
       "referenceCroisee": "M8 (Optimisation de Ressources), M7D1 (Brainstorming)",
       "briefing": {
         "etape1": {
@@ -761,7 +761,7 @@
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Excellent ! 🎉 Tu as compris le pouvoir de la DIVERSITÉ COGNITIVE !\n\nPourquoi la réponse 2 est la meilleure :\n• Option 1 ('Un seul expert') = Tu as UN seul point de vue, même s'il est bon ❌\n• Option 2 ('Plusieurs personnes différentes') = Tu multiplies les angles d'approche ✅\n• Option 3 ('Livre seul') = Pas d'interaction, pas de nouvelles idées ❌\n\nLe principe : 1 + 1 = 3 en créativité !\n\nQuand tu combines des personnes avec des expériences DIFFÉRENTES (un artiste + un scientifique + un sportif), chacun voit le problème différemment et apporte des solutions auxquelles les autres n'auraient JAMAIS pensé.\n\nC'est l'INTELLIGENCE COLLECTIVE : le groupe est plus intelligent que la somme des individus!",
       "feedbackIncorrect": "Réessaie ! Pense à la DIVERSITÉ des perspectives.\n\nImagine ce scénario :\nTu veux inventer un nouveau jeu. À qui demandes-tu des idées?\n• Option A : Un seul expert en jeux → Il connaît bien les jeux, mais il aura TOUJOURS le même type d'idées\n• Option B : Un expert en jeux + un artiste + un sportif + un musicien → Chacun apporte une vision DIFFÉRENTE et des idées surprenantes!\n\nLes meilleures innovations viennent du MÉLANGE de perspectives différentes.\n\nExemples :\n• Apple : Steve Jobs (design) + Steve Wozniak (ingénierie) = iPhone révolutionnaire\n• Pixar : artistes + ingénieurs informatiques = films d'animation innovants\n• LEGO : designers + éducateurs + enfants = jeux créatifs et pédagogiques\n\nUn seul expert = UNE vision. Plusieurs personnes différentes = MULTIPLES visions = INNOVATION!\n\nQuelle option maximise la diversité des idées?",
-      "leconStrategique": "La DIVERSITÉ COGNITIVE est le moteur de l'innovation. Plus les gens pensent différemment, plus les solutions sont créatives.\n\nLes 3 principes de l'intelligence collective :\n1. DIVERSITÉ > EXPERTISE : Un groupe diversifié bat un expert seul\n2. COMBINAISON : Les meilleures idées viennent de la FUSION de perspectives différentes\n3. ANGLES MORTS : Chaque personne voit ce que les autres ne voient pas\n\nDans la vie réelle :\n• ❌ 'Je demande à mon meilleur ami (qui pense comme moi)' → ✅ 'Je demande à des gens avec des expériences différentes'\n• ❌ 'Je fais tout seul, je suis le meilleur' → ✅ 'Je collabore, le groupe est plus fort'\n• ❌ 'Les gens différents de moi sont bizarres' → ✅ 'Les gens différents m'apportent des idées que je n'aurais jamais eues'\n\nDans les affaires : Les entreprises les plus innovantes (Google, Apple, Tesla) recrutent des gens avec des parcours ULTRA-DIFFÉRENTS. Ils appellent ça 'DIVERSITY OF THOUGHT' : avoir dans une équipe un artiste, un ingénieur, un philosophe, un marketeur... Chacun challenge les autres et crée des solutions révolutionnaires!\n\nLe leader créatif ne cherche pas des clones, il cherche des complémentaires.",
+      "leconStrategique": "La DIVERSITÉ COGNITIVE est le moteur de l'innovation. Plus les gens pensent différemment, plus les solutions sont créatives.\n\nLes 3 principes :\n1. DIVERSITÉ > EXPERTISE : Un groupe diversifié bat un expert seul\n2. COMBINAISON : Les meilleures idées viennent de la FUSION de perspectives différentes\n3. ANGLES MORTS : Chaque personne voit ce que les autres ne voient pas\n\nDans ta vie :\n• ❌ 'Je demande à mon meilleur ami (qui pense comme moi)' → ✅ 'Je demande à des gens différents'\n• ❌ 'Je fais tout seul' → ✅ 'Je collabore, le groupe est plus fort'\n\nCeux qui réussissent ne cherchent pas des clones, ils cherchent des complémentaires.",
       "referenceCroisee": "M5 (Communication et Influence), M7D1 (Brainstorming)",
       "mentorGoal": "Tester la compréhension de la DIVERSITÉ COGNITIVE et de l'intelligence collective. L'enfant doit démontrer qu'il comprend que la multiplicité des perspectives (diversité) génère plus d'innovation qu'un seul point de vue expert.",
       "evaluationCriteria": "1. Réponse correcte : B (Demander l'avis de plusieurs personnes avec des expériences différentes). 2. Compréhension : L'enfant identifie que la DIVERSITÉ des perspectives apporte plus de créativité qu'un seul expert. 3. Principe d'intelligence collective : L'enfant comprend que le groupe diversifié est plus fort que l'individu seul. BONUS : L'enfant donne un exemple concret où la diversité a créé une meilleure solution (ex: 'Dans mon équipe de sport, on a des joueurs différents et chacun apporte une stratégie')."
@@ -772,7 +772,7 @@
         "titre": "Mission: L'Audit du Sac à Dos",
         "scenario": "Tu dois partir en excursion d'une semaine et tu n'as le droit qu'à 5 objets essentiels dans ton sac. Fais l'audit des ressources : quels 5 objets maximisent tes chances de succès ?",
         "instruction": "Écris la liste de tes 5 objets ET justifie pourquoi tu as choisi ton objet n°1 (le plus important).",
-        "leconStrategique": "L'AUDIT DE RESSOURCES est la première étape de l'optimisation. Quand les ressources sont limitées, tu dois prioriser selon la VALEUR et l'UTILITÉ.\n\nLes 3 étapes de l'audit sous contrainte :\n1. IDENTIFIER LES BESOINS : Qu'est-ce qui est vraiment essentiel? (survie, confort, sécurité)\n2. ÉVALUER LA VALEUR : Quel objet apporte le MAXIMUM d'utilité?\n3. PRIORISER : Classe par IMPACT (si je n'ai qu'un objet, lequel?)\n\nDans la vie réelle :\n• ❌ 'Je prends tout ce qui me plaît' → ✅ 'Je prends ce dont j'ai VRAIMENT besoin'\n• ❌ '5 jeux vidéo pour m'amuser' → ✅ '1 couteau suisse qui fait 10 fonctions'\n• ❌ 'Je ne réfléchis pas à l'ordre' → ✅ 'Je classe : survie d'abord, confort ensuite'\n\nDans les affaires : Les startups avec peu de budget font un audit strict : 'Quel est le MINIMUM pour réussir?' (MVP = Minimum Viable Product). Tesla : Elon Musk a commencé avec peu de ressources → il a priorisé les ingénieurs et les prototypes, pas les bureaux de luxe!\n\nLa RARETÉ force l'EXCELLENCE : moins tu as, mieux tu choisis.\n\nUn leader optimise : il fait PLUS avec MOINS.",
+        "leconStrategique": "L'AUDIT DE RESSOURCES est la première étape de l'optimisation. Quand les ressources sont limitées, tu dois prioriser selon la VALEUR et l'UTILITÉ.\n\nLes 3 étapes :\n1. IDENTIFIER LES BESOINS : Qu'est-ce qui est vraiment essentiel?\n2. ÉVALUER LA VALEUR : Quel objet apporte le MAXIMUM d'utilité?\n3. PRIORISER : Classe par IMPACT (survie d'abord, confort ensuite)\n\nDans ta vie :\n• ❌ 'Je prends tout ce qui me plaît' → ✅ 'Je prends ce dont j'ai VRAIMENT besoin'\n• ❌ '5 jeux pour m'amuser' → ✅ '1 couteau suisse qui fait 10 fonctions'\n\nLa RARETÉ force l'EXCELLENCE : moins tu as, mieux tu choisis.\n\nCeux qui réussissent font PLUS avec MOINS.",
         "referenceCroisee": "M1 (Analyse de Problèmes), M3 (Planification)",
         "briefing": {
             "etape1": {
@@ -925,25 +925,30 @@
   },
   "m10": {
     "defi1": {
-      "titre": "Défi: La Boussole du Futur",
-      "scenario": "Définis un objectif que tu veux atteindre d'ici la fin de l'année scolaire (ex: lire 10 livres, apprendre 5 mots de chinois).",
-      "instruction": "Écris ton objectif et pourquoi il est important pour TA croissance personnelle.",
-      "leconStrategique": "Un objectif sans plan n'est qu'un souhait. Un leader a une vision claire du futur qu'il veut créer.",
-      "referenceCroisee": "M2",
+      "titre": "Défi: Ma Règle d'Or",
+      "scenario": "Choisis UNE chose que tu vas faire TOUS LES JOURS pendant 1 mois pour devenir quelqu'un de bien.\n\nExemples :\n• Dire merci à au moins une personne chaque jour\n• Aider quelqu'un sans qu'on te le demande\n• Dire la vérité même quand c'est difficile\n• Partager quelque chose avec quelqu'un\n• Défendre un copain qu'on embête\n• Ranger quelque chose sans qu'on te le demande",
+      "instruction": "Écris ta règle d'or (ce que tu vas faire chaque jour) et comment tu vas t'assurer de la respecter.",
+      "leconStrategique": "Ceux qui réussissent ne font pas de grandes choses de temps en temps. Ils font de PETITES CHOSES BIEN tous les jours. C'est comme ça qu'on devient quelqu'un de bien : une action à la fois, chaque jour.\n\nLa vraie force, ce n'est pas faire ce qui est bien quand c'est facile. C'est le faire MÊME QUAND :\n• Personne ne te regarde\n• C'est difficile\n• Tes copains ne le font pas\n\nTon caractère se construit jour après jour, comme un muscle.",
+      "referenceCroisee": "M2 (La Vision Stratégique), M13 (Money Smart - Discipline)",
       "briefing": {
         "etape1": {
-          "titre": "1. Objectif SMART (Spécifique, Mesurable...)",
-          "type_etape": "validation_case",
-          "instruction": "J'ai vérifié que mon objectif est spécifique et que je peux mesurer mes progrès (ex: 10/10 livres lus)."
+          "titre": "1. Ma Règle d'Or (Claire et Simple)",
+          "type_etape": "texte_guide",
+          "instruction": "Écris exactement ce que tu vas faire chaque jour. Fais une phrase courte et claire.\n\nExemple : 'Je vais dire merci à au moins une personne chaque jour' ou 'Je vais aider quelqu'un sans qu'on me le demande chaque jour'."
         },
         "etape2": {
-          "titre": "2. Visualisation du Succès",
+          "titre": "2. Mon Système de Suivi",
           "type_etape": "texte_guide",
-          "instruction": "Décris brièvement le sentiment que tu auras quand tu auras atteint cet objectif. La visualisation est un moteur puissant."
+          "instruction": "Comment tu vas te rappeler de faire ta règle d'or chaque jour ?\n\nIdées :\n• Cocher sur un calendrier chaque soir\n• Demander à papa/maman de te rappeler\n• Mettre une alarme sur ton téléphone\n• Faire une croix dans un carnet\n\nÉcris ton système."
+        },
+        "etape3": {
+          "titre": "3. Pourquoi C'est Important Pour Moi",
+          "type_etape": "validation_case",
+          "instruction": "J'ai réfléchi à pourquoi cette règle va me rendre meilleur. Je sais que faire ce qui est bien CHAQUE JOUR construit mon caractère."
         }
       },
-      "mentorGoal": "Évaluer la capacité de l'enfant à définir un objectif SMART (Spécifique, Mesurable, Atteignable, Réaliste, Temporel). L'enfant doit démontrer qu'il sait transformer un vœu en objectif actionnable.",
-      "evaluationCriteria": "La réponse doit contenir un objectif qui respecte les 5 critères SMART. Bonus: L'enfant explique pourquoi chaque critère est important."
+      "mentorGoal": "Aider l'enfant à choisir une action éthique concrète et à créer un système pour la répéter quotidiennement. L'objectif est d'introduire la notion que le caractère se construit par des petites actions répétées, pas par de grandes déclarations.",
+      "evaluationCriteria": "1. Règle claire et actionnable (on peut faire l'action en moins de 5 minutes par jour). 2. Système de suivi identifié (calendrier, rappel, carnet). 3. BONUS : L'enfant explique en quoi cette action le rendra meilleur ou aidera les autres."
     },
     "defi2": {
       "titre": "Quiz: Le Premier Petit Pas",
@@ -955,7 +960,7 @@
       ],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Le plus petit pas crée l'élan. Un petit succès lance le voyage.",
-      "leconStrategique": "Les leaders décomposent les problèmes complexes en actions simples. La plus grande vision commence par la plus petite exécution.",
+      "leconStrategique": "Ceux qui réussissent décomposent les gros problèmes en petites actions simples. Le plus grand projet commence toujours par le plus petit pas.",
       "referenceCroisee": "M6",
       "mentorGoal": "Tester la compréhension de la décomposition d'objectifs en sous-objectifs (Work Breakdown Structure). L'enfant doit démontrer qu'il sait diviser un grand projet en étapes gérables.",
       "evaluationCriteria": "La réponse doit contenir au moins 4 sous-objectifs logiques et séquentiels. Bonus: L'enfant crée un diagramme de Gantt ou une timeline."
@@ -963,8 +968,8 @@
     "defi3": {
       "titre": "Défi: La Règle des Conséquences",
       "scenario": "Tu dois choisir entre tricher pour gagner un jeu (victoire immédiate) ou perdre avec honnêteté (intégrité). Quel choix a les meilleures conséquences à long terme ?",
-      "instruction": "Écris ton choix et la conséquence principale sur ta réputation (ton leadership).",
-      "leconStrategique": "La réputation d'un leader est son plus grand atout. Une victoire rapide ne vaut jamais la perte de la confiance.",
+      "instruction": "Écris ton choix et la conséquence principale sur ta réputation (comment les autres te voient).",
+      "leconStrategique": "Ta réputation est ton plus grand trésor. Une victoire rapide ne vaut jamais la perte de la confiance des autres.",
       "referenceCroisee": "M9",
       "briefing": {
         "etape1": {
@@ -978,26 +983,26 @@
     },
     "defi4": {
       "titre": "Quiz: L'Exemple Personnel",
-      "question": "Le meilleur moyen d'enseigner une valeur à ton équipe (ex: la patience) est :",
+      "question": "Le meilleur moyen d'enseigner une valeur à tes copains (ex: la patience) est :",
       "options": [
         "De leur dire d'être patients.",
         "De leur lire une histoire sur la patience.",
         "D'être toi-même patient en faisant une tâche difficile."
       ],
       "bonneReponseIndex": 2,
-      "feedbackCorrect": "L'exemple est le langage universel du leadership. Les actions inspirent plus que les mots.",
-      "leconStrategique": "Le leader est un miroir. Les autres imitent ce qu'ils voient, pas ce qu'ils entendent.",
+      "feedbackCorrect": "L'exemple est le meilleur moyen d'inspirer les autres. Les actions parlent plus fort que les mots.",
+      "leconStrategique": "Ceux qui inspirent sont un miroir. Les autres imitent ce qu'ils voient, pas ce qu'ils entendent.",
       "referenceCroisee": "M5",
-      "mentorGoal": "Tester la compréhension du principe de responsabilité personnelle (Ownership). L'enfant doit démontrer qu'il comprend que le leader assume la responsabilité des résultats.",
+      "mentorGoal": "Tester la compréhension du principe de responsabilité personnelle (Ownership). L'enfant doit démontrer qu'il comprend qu'il faut assumer la responsabilité de ses résultats.",
       "evaluationCriteria": "La réponse doit montrer que l'enfant accepte la responsabilité sans chercher d'excuses externes. Bonus: L'enfant cite le principe 'Extreme Ownership' ou donne des exemples."
     }
   },
   "m11": {
     "defi1": {
       "titre": "Défi: Le Conseil du Maître",
-      "scenario": "Un nouvel Explorateur commence le programme. Il a peur d'échouer. Quel conseil de leadership le plus important lui donnes-tu en une phrase ?",
+      "scenario": "Un nouvel Explorateur commence le programme. Il a peur d'échouer. Quel conseil important lui donnes-tu en une phrase ?",
       "instruction": "Écris ton conseil. Il doit être inspirant et basé sur ton expérience.",
-      "leconStrategique": "Le vrai leadership est la transmission. Ton expérience a de la valeur seulement si elle sert à aider les autres sur leur propre chemin.",
+      "leconStrategique": "Aider les autres grandit avec ce que tu as appris, c'est ça devenir quelqu'un de bien. Ton expérience a de la valeur seulement si elle sert à aider les autres sur leur propre chemin.",
       "referenceCroisee": "M6",
       "briefing": {
         "etape1": {
@@ -1010,16 +1015,16 @@
       "evaluationCriteria": "La réponse doit contenir au moins 5 conseils concrets basés sur les modules précédents, structurés de manière logique. Bonus: L'enfant cite des exemples personnels ou des échecs constructifs."
     },
     "defi2": {
-      "titre": "Quiz: L'Exemple du Leader",
-      "question": "Ton équipe est démotivée par une tâche difficile. Quelle action a le plus grand pouvoir d'inspiration ?",
+      "titre": "Quiz: Montrer l'Exemple",
+      "question": "Tes copains sont découragés par une tâche difficile. Quelle action a le plus grand pouvoir d'inspiration ?",
       "options": [
         "Dire 'Vous devez le faire, c'est important'.",
         "Faire la tâche la plus difficile toi-même en premier pour montrer l'exemple.",
         "Offrir une récompense si la tâche est finie."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "Le leader montre l'exemple. L'action inspire plus que les mots ou les récompenses.",
-      "leconStrategique": "Le leadership est un miroir. Les autres te suivront quand ils verront ton engagement inébranlable dans la difficulté.",
+      "feedbackCorrect": "Celui qui inspire montre l'exemple. L'action inspire plus que les mots ou les récompenses.",
+      "leconStrategique": "Quand tu montres l'exemple dans les moments difficiles, les autres te suivent. Ils imitent ce qu'ils voient, pas ce qu'ils entendent.",
       "referenceCroisee": "M9",
       "mentorGoal": "Tester la compréhension de la vision à long terme et de l'héritage. L'enfant doit démontrer qu'il pense au-delà de lui-même et de l'instant présent.",
       "evaluationCriteria": "La réponse doit définir clairement l'impact souhaité sur les autres et la trace à laisser. Bonus: L'enfant mentionne des valeurs ou des principes qui guideront ses actions futures."
@@ -1422,43 +1427,43 @@
   "m13": {
     "defi1": {
       "titre": "Mission: Budget d'Argent de Poche",
-      "scenario": "Tu reçois 10€ d'argent de poche chaque semaine. La question : comment les utiliser INTELLIGEMMENT ? Les riches ont un secret : ils ne dépensent pas tout immédiatement. Ils utilisent la méthode des 3 Pots.",
-      "instruction": "La Méthode des 3 Pots :\n\n**POT 1 : DÉPENSER** (Plaisir immédiat) = 50%\nC'est ton argent pour t'amuser : bonbons, jeux, sorties avec les amis.\n\n**POT 2 : ÉCONOMISER** (Objectif futur) = 40%\nC'est ton argent pour un GRAND objectif : vélo, console, voyage.\n\n**POT 3 : DONNER** (Impact sur les autres) = 10%\nC'est ton argent pour aider : cadeau pour quelqu'un, association, bonne action.\n\nTA MISSION :\n1. Calcule combien d'euros vont dans chaque pot si tu reçois 10€.\n2. Choisis un OBJECTIF pour ton Pot 2 (quelque chose que tu veux vraiment acheter).\n3. Calcule : si tu économises 40% chaque semaine, combien de temps pour atteindre ton objectif ?\n4. Explique : pourquoi donner 10% est important même si c'est TON argent ?",
-      "leconStrategique": "Les milliardaires ne le sont pas devenus par hasard. Ils ont TOUS appris jeunes à gérer l'argent avec discipline. La méthode des 3 Pots = base de la gestion financière. Warren Buffett, Bill Gates, Elon Musk : tous utilisent ce principe (dépenser, investir, donner). Tu l'apprends à 8 ans, tu as 10 ans d'avance sur 99% des gens.",
+      "scenario": "Imaginons que tu reçoives 50€ d'argent de poche chaque mois (adapte à ton cas à toi !). La plupart des enfants dépensent tout immédiatement et n'ont JAMAIS assez pour leurs vrais rêves. Ceux qui réussissent ont un secret : ils sont le BOSS de leur argent. Ils gardent 80% pour le FUTUR. Résultat ? Ils peuvent FAIRE des choses INCROYABLES que les autres ne peuvent qu'imaginer.",
+      "instruction": "La Méthode des 3 Pots (Court, Moyen, Long Terme) :\n\n**Exemple avec 50€/mois** (adapte selon TON argent de poche) :\n\n**POT 1 : PLAISIR CE MOIS** = 20% (10€)\nC'est tout ce que tu peux dépenser ce mois-ci. C'est le prix de la discipline. Tu devras CHOISIR ce qui compte vraiment pour toi.\n\n**POT 2 : OBJECTIF DANS 6-12 MOIS** = 30% (15€)\nEn 12 mois = 180€ ! Tu peux réaliser un beau projet, t'inscrire à une activité, partir en week-end.\n\n**POT 3 : GRAND RÊVE (1-2 ans)** = 50% (25€)\nEn 12 mois = 300€. En 2 ans = 600€ ! Voyage extraordinaire, équipement de sport, nouvel instrument de musique, construire quelque chose... Des choses que tes amis ne peuvent pas faire parce qu'ils dépensent tout.\n\n💡 Ceux qui réussissent pensent toujours à DEMAIN et APRÈS-DEMAIN, pas juste AUJOURD'HUI.\n\n💡 Avec cette méthode et 50€/mois, au bout d'1 an tu auras :\n- Dépensé : 120€ en petits plaisirs\n- Économisé : 180€ (Pot 2) + 300€ (Pot 3) = 480€ pour réaliser tes rêves !\n\nTA MISSION :\n1. Calcule les 3 pots avec l'exemple de 50€/mois.\n2. Maintenant calcule avec TON argent de poche réel (20€, 100€, 200€... ?).\n3. Regarde ton Pot 1 : qu'est-ce que tu peux t'offrir chaque mois ?\n4. Choisis ton OBJECTIF MOYEN TERME (Pot 2, 6-12 mois) : que pourrais-tu faire ?\n5. Choisis ton GRAND RÊVE (Pot 3, 1-2 ans) : que pourrais-tu faire ?\n6. Explique : est-ce que ça vaut le coup de limiter tes dépenses mensuelles si ça te permet de réaliser ton grand rêve ?",
+      "leconStrategique": "Warren Buffett garde 90% de ses revenus pour investir. Elon Musk réinvestit presque tout dans ses projets. Ceux qui réussissent dépensent 10-30% et investissent 70-90%.\n\nRègle d'or : Plus tu gardes pour le futur, plus tu peux FAIRE ce que tu veux VRAIMENT.\n\nAvec 20% de dépenses immédiates, tu apprends la DISCIPLINE. Les champions olympiques s'entraînent pendant 10 ans. Les entrepreneurs construisent leur entreprise pendant 5 ans. La patience et la discipline sont la base de TOUTES les grandes réussites.\n\nTu l'apprends à 8-9 ans, tu seras le BOSS de ton argent toute ta vie.",
       "referenceCroisee": "M8",
       "briefing": {
         "etape1": {
           "titre": "1. Le Calcul des 3 Pots",
           "type_etape": "validation_case",
-          "instruction": "J'ai compris : 10€ × 50% = 5€ (Dépenser), 10€ × 40% = 4€ (Économiser), 10€ × 10% = 1€ (Donner).",
+          "instruction": "J'ai compris : 50€ × 20% = 10€ (Plaisir Ce Mois), 50€ × 30% = 15€ (Objectif 6-12 Mois), 50€ × 50% = 25€ (Grand Rêve 1-2 Ans).",
           "placeholder": null
         },
         "etape2": {
-          "titre": "2. Pourquoi 40% Pour Économiser ?",
+          "titre": "2. Pourquoi Garder 80% Pour Le Futur ?",
           "type_etape": "texte_guide",
-          "instruction": "La plupart des gens dépensent 100% de ce qu'ils gagnent. Résultat ? Ils restent pauvres toute leur vie. Les riches économisent AVANT de dépenser. C'est la différence entre être ESCLAVE de l'argent ou MAÎTRE de l'argent."
+          "instruction": "La plupart des gens dépensent 100% de ce qu'ils gagnent immédiatement. Résultat ? Ils ne peuvent JAMAIS réaliser leurs grands rêves.\n\nCeux qui réussissent font l'inverse : ils gardent 80% pour le futur (30% + 50%). C'est la différence entre être ESCLAVE de l'argent (jamais assez) ou être le BOSS de ton argent (tu choisis ce que tu fais).\n\nC'est une discipline de ne dépenser que 10€/mois (dans l'exemple 50€) ? OUI ! Mais en 1 an, tu auras 480€ d'économies pendant que tes amis auront dépensé les 600€ sans rien réaliser d'extraordinaire."
         },
         "etape3": {
-          "titre": "3. Ton Objectif & Calcul",
+          "titre": "3. Tes 2 Objectifs (Court + Long Terme)",
           "type_etape": "champ_texte",
-          "instruction": "Choisis quelque chose que tu veux VRAIMENT (exemple : vélo à 80€, console à 300€).\n\nCalcule : Si tu économises 4€/semaine, combien de semaines pour l'acheter ?\nFormule : Prix de l'objectif ÷ 4€ = nombre de semaines",
-          "placeholder": "Mon objectif : ... Prix : ...€. Temps nécessaire : ... semaines."
+          "instruction": "**OBJECTIF MOYEN TERME (Pot 2 - 6-12 mois) :**\nAvec l'exemple 50€/mois : en 12 mois = 180€\nExemple : cours de sport (tennis, équitation...), week-end avec ta famille, équipement cool (trottinette, skateboard...), instrument de musique.\n\n**GRAND RÊVE (Pot 3 - 1-2 ans) :**\nAvec l'exemple 50€/mois : en 12 mois = 300€, en 24 mois = 600€\nExemple : voyage dans un pays que tu rêves de voir, tablette/ordinateur, vélo électrique, stage super (foot, dessin, musique...), construire quelque chose d'incroyable.\n\n📝 Maintenant calcule avec TON argent de poche réel et adapte tes objectifs !",
+          "placeholder": "Objectif moyen terme (6-12 mois) : ...\nGrand rêve (1-2 ans) : ..."
         },
         "etape4": {
-          "titre": "4. Le Pouvoir de Donner",
+          "titre": "4. Le Pouvoir du Long Terme",
           "type_etape": "champ_texte",
-          "instruction": "Donner 10% crée une MENTALITÉ d'ABONDANCE : 'J'ai assez pour moi ET pour aider les autres.' Les plus grands leaders sont aussi les plus généreux. Explique à qui tu donnerais tes 1€ et pourquoi.",
-          "placeholder": "Je donnerais à... parce que..."
+          "instruction": "Les champions olympiques s'entraînent pendant 10 ans avant de gagner. Les entrepreneurs construisent leur entreprise pendant 5 ans avant de réussir. Le Pot 3 (50%) t'apprend la PATIENCE et la DISCIPLINE.\n\nC'est la différence entre :\n- Les enfants qui mangent le bonbon immédiatement\n- Les enfants qui attendent et reçoivent 10 bonbons (Expérience scientifique : Marshmallow Test)\n\nCeux qui savent ATTENDRE deviennent les LEADERS de demain.\n\nExplique : Est-ce que ça vaut le coup de patienter pour réaliser ton grand rêve ? Pourquoi ?",
+          "placeholder": "Pour moi, attendre 1 an vaut le coup parce que..."
         }
       },
-      "mentorGoal": "Introduire la gestion financière de base avec la méthode des 3 Pots. L'enfant doit comprendre que gérer l'argent = discipline + objectifs + générosité.",
-      "evaluationCriteria": "1. Calculs corrects : 5€, 4€, 1€. 2. Objectif clair avec calcul du temps nécessaire. 3. Explication de la raison de donner 10%. Bonus : L'enfant mentionne qu'il va appliquer cette méthode dans sa vraie vie."
+      "mentorGoal": "Introduire la gestion financière avec les 3 horizons de temps (court/moyen/long terme). L'enfant doit comprendre que réussir financièrement = discipline + patience + penser au futur. Objectif : garder 80% pour le futur au lieu de tout dépenser immédiatement.",
+      "evaluationCriteria": "1. Calculs corrects avec l'exemple (10€, 15€, 25€) ET adaptation à son propre argent de poche. 2. Deux objectifs clairs (moyen terme et long terme) adaptés à SA situation. 3. Compréhension de la valeur de la patience et du long terme. Bonus : L'enfant mentionne qu'il va appliquer cette méthode dans sa vraie vie."
     },
     "defi2": {
       "titre": "Mission: Économiser Pour Un Objectif",
-      "scenario": "Tu veux acheter un jeu vidéo à 60€. Problème : tu n'as que 10€ d'argent de poche par semaine et tu mets 40% dans ton Pot 2 (Économiser). Mais tu es IMPATIENT ! Tu veux le jeu MAINTENANT. Que fais-tu ?",
-      "instruction": "**Situation de départ :**\n- Objectif : Jeu vidéo à 60€\n- Argent de poche : 10€/semaine\n- Économies (Pot 2) : 4€/semaine\n- Temps nécessaire : 60€ ÷ 4€ = 15 semaines (presque 4 mois !)\n\n**Le problème : C'est TROP LONG !**\n\nTu as 3 options :\n\n**Option A : Emprunter l'argent à tes parents**\n\"Papa/Maman, prête-moi 60€, je te rembourserai plus tard.\"\n→ Tu as le jeu MAINTENANT, mais tu dois rembourser.\n\n**Option B : Utiliser TOUT ton argent de poche (100%)**\nAu lieu de 4€/semaine, tu mets les 10€ entiers dans Pot 2.\n→ Tu as le jeu en 6 semaines, mais tu ne peux rien dépenser pendant 6 semaines.\n\n**Option C : Trouver des REVENUS SUPPLÉMENTAIRES**\nProposer des tâches en plus : laver la voiture (5€), ranger le garage (10€), tondre la pelouse (8€).\n→ Tu gardes tes 4€/semaine ET tu gagnes plus !\n\nTA MISSION :\n1. Quelle option choisirais-tu ? Pourquoi ?\n2. Calcule : Si tu fais 2 tâches supplémentaires par mois (15€), combien de temps pour atteindre 60€ ?\n3. Explique : Quelle est la MEILLEURE option pour un futur entrepreneur ?",
-      "leconStrategique": "Les entrepreneurs ne DEMANDENT pas d'argent, ils le CRÉENT. L'Option C (revenus supplémentaires) est la mentalité des milliardaires : augmenter ses revenus au lieu de rogner sur ses dépenses ou s'endetter. Elon Musk, Jeff Bezos, Mark Zuckerberg : ils ont tous commencé par créer de la valeur pour gagner de l'argent.",
+      "scenario": "Imaginons que tu veuilles t'acheter quelque chose à 150€. Tu reçois 50€ d'argent de poche par mois (exemple) et tu mets 30% dans ton Pot 2 (Objectif Moyen Terme). Mais tu es IMPATIENT ! Tu le veux MAINTENANT. Que fais-tu ?",
+      "instruction": "**Situation de départ (exemple avec 50€/mois) :**\n- Objectif : Quelque chose à 150€\n- Argent de poche : 50€/mois\n- Économies (Pot 2) : 15€/mois (30%)\n- Temps nécessaire : 150€ ÷ 15€ = 10 mois !\n\n**Le problème : C'est TROP LONG !**\n\nTu as 3 options :\n\n**Option A : Emprunter l'argent à tes parents**\n\"Papa/Maman, prête-moi 150€, je te rembourserai plus tard.\"\n→ Tu l'as MAINTENANT, mais tu dois rembourser.\n\n**Option B : Utiliser TOUT ton argent de poche (100%)**\nAu lieu de 15€/mois, tu mets les 50€ entiers dans Pot 2.\n→ Tu l'as en 3 mois, mais tu ne peux rien dépenser pendant 3 mois.\n\n**Option C : Trouver des REVENUS SUPPLÉMENTAIRES**\nProposer des missions en plus à tes parents ou voisins :\n- Ranger ta chambre parfaitement (5€)\n- Laver la voiture avec papa/maman (8€)\n- Ranger le garage/cave (10€)\n- Arroser les plantes toute la semaine (3€)\n- Aider à préparer les repas (5€)\n→ Tu gardes tes 15€/mois ET tu gagnes plus !\n\nTA MISSION :\n1. Quelle option choisirais-tu ? Pourquoi ?\n2. Calcule : Si tu gagnes 25€/mois en plus avec des missions, combien de temps pour atteindre 150€ ?\n3. Explique : Quelle est la MEILLEURE option pour quelqu'un qui veut réussir ?",
+      "leconStrategique": "Les entrepreneurs ne DEMANDENT pas d'argent, ils le CRÉENT. L'Option C (revenus supplémentaires) est la mentalité de ceux qui réussissent : augmenter ses revenus au lieu de rogner sur ses dépenses ou s'endetter. Elon Musk, Jeff Bezos, Mark Zuckerberg : ils ont tous commencé par créer de la valeur pour gagner de l'argent.",
       "referenceCroisee": "M9",
       "briefing": {
         "etape1": {
@@ -1493,7 +1498,7 @@
       "bonneReponseIndex": 2,
       "feedbackCorrect": "PARFAIT ! Tu as compris le secret des entrepreneurs : l'argent GAGNÉ (par ton travail) vaut 10 fois plus que l'argent REÇU (cadeau). Pourquoi ? Parce que tu apprends 3 choses ESSENTIELLES : 1) La valeur du travail, 2) Comment créer de la valeur pour les autres, 3) Comment NÉGOCIER. Ces compétences valent des MILLIONS plus tard !",
       "feedbackIncorrect": "Non ! Demander de l'argent sans rien donner en retour = mentalité de DÉPENDANCE. Attendre un cadeau = mentalité de PASSIVITÉ. Les futurs leaders CRÉENT de la valeur et NÉGOCIENT. Propose des services, fixe un prix, travaille, gagne. C'est comme ça qu'on devient entrepreneur !",
-      "leconStrategique": "Warren Buffett vendait des chewing-gums à 6 ans. Elon Musk codait des jeux vidéo à 12 ans. Mark Zuckerberg créait des sites web à 10 ans. Tous les milliardaires ont un point commun : ils ont commencé JEUNES à créer de la valeur et gagner de l'argent. Pas en mendiant, mais en CRÉANT.",
+      "leconStrategique": "Warren Buffett vendait des chewing-gums à 6 ans. Elon Musk codait des jeux vidéo à 12 ans. Mark Zuckerberg créait des sites web à 10 ans. Tous ceux qui réussissent ont un point commun : ils ont commencé JEUNES à créer de la valeur et gagner de l'argent. Pas en mendiant, mais en CRÉANT.",
       "referenceCroisee": "M9",
       "mentorGoal": "Introduire la différence fondamentale entre argent GAGNÉ et argent REÇU. L'enfant doit comprendre que créer de la valeur pour les autres est la base de tout business.",
       "evaluationCriteria": "Réponse correcte : Option 3 (proposer des tâches). Bonus : L'enfant explique pourquoi l'argent gagné est plus valorisant que l'argent reçu."
@@ -1507,9 +1512,9 @@
         "Les deux sont des DÉPENSES car tu perds 100€"
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "EXCELLENT ! Tu as compris la différence entre ACTIF et PASSIF :\n\n**DÉPENSE (Vélo)** : Tu dépenses 100€ → Tu as du plaisir → C'est fini. Tu ne peux pas gagner d'argent avec.\n\n**INVESTISSEMENT (Livres de code)** : Tu dépenses 100€ → Tu apprends une COMPÉTENCE → Tu peux créer des sites web, des jeux, gagner de l'argent pendant 50 ans !\n\nLes riches achètent des ACTIFS (qui rapportent). Les pauvres achètent des PASSIFS (qui coûtent). Toi, tu penses comme un riche !",
-      "feedbackIncorrect": "Non ! Le vélo = DÉPENSE (plaisir immédiat, ne rapporte rien). Les livres de code = INVESTISSEMENT (compétence qui peut te rapporter de l'argent toute ta vie). Les riches investissent en eux-mêmes AVANT de dépenser pour le plaisir. C'est la règle n°1 de la richesse.",
-      "leconStrategique": "Les milliardaires investissent massivement dans leur ÉDUCATION et leurs COMPÉTENCES avant d'acheter des choses. Bill Gates lisait 50 livres/an dès l'enfance. Elon Musk apprenait seul la physique et la programmation. Warren Buffett investissait dans des livres et des cours. La règle : INVESTIR EN SOI = meilleur retour sur investissement possible.",
+      "feedbackCorrect": "EXCELLENT ! Tu as compris la différence entre ACTIF et PASSIF :\n\n**DÉPENSE (Vélo)** : Tu dépenses 100€ → Tu as du plaisir → C'est fini. Tu ne peux pas gagner d'argent avec.\n\n**INVESTISSEMENT (Livres de code)** : Tu dépenses 100€ → Tu apprends une COMPÉTENCE → Tu peux créer des sites web, des jeux, gagner de l'argent pendant 50 ans !\n\nCeux qui réussissent achètent des ACTIFS (qui rapportent). La plupart des gens achètent des PASSIFS (qui coûtent). Toi, tu penses comme quelqu'un qui réussit !",
+      "feedbackIncorrect": "Non ! Le vélo = DÉPENSE (plaisir immédiat, ne rapporte rien). Les livres de code = INVESTISSEMENT (compétence qui peut te rapporter de l'argent toute ta vie). Ceux qui réussissent investissent en eux-mêmes AVANT de dépenser pour le plaisir. C'est la règle n°1 de la réussite.",
+      "leconStrategique": "Ceux qui réussissent investissent massivement dans leur ÉDUCATION et leurs COMPÉTENCES avant d'acheter des choses. Bill Gates lisait 50 livres/an dès l'enfance. Elon Musk apprenait seul la physique et la programmation. Warren Buffett investissait dans des livres et des cours. La règle : INVESTIR EN SOI = meilleur retour sur investissement possible.",
       "referenceCroisee": "M6",
       "mentorGoal": "Introduire le concept d'ACTIF vs PASSIF. L'enfant doit comprendre qu'investir en soi (compétences, éducation) rapporte infiniment plus que dépenser pour le plaisir immédiat.",
       "evaluationCriteria": "Réponse correcte : Option B (vélo = dépense, livres = investissement). Bonus : L'enfant donne un exemple d'investissement en soi qu'il aimerait faire (cours, livres, formation, etc.)."

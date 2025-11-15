@@ -22,8 +22,8 @@
     "m3_desc": "Understand the laws of physics for construction and logistics.",
     "m4": "The Treasure Map (Logic)",
     "m4_desc": "Develop logical reasoning and complex problem-solving skills.",
-    "m5": "The Engine of Influence",
-    "m5_desc": "Understand persuasion and influence mechanisms to mobilize teams.",
+    "m5": "Convince and Unite",
+    "m5_desc": "Learn to speak well to convince your friends and lead projects together.",
     "m6": "The Art of Constructive Failure",
     "m6_desc": "Transform failures into learning and growth opportunities.",
     "m7": "Strategic Creativity",
@@ -32,8 +32,8 @@
     "m8_desc": "Evaluate and optimize the use of available resources.",
     "m9": "Economy and Value Exchange",
     "m9_desc": "Understand economic principles and value creation.",
-    "m10": "The Leader's Code (Ethics)",
-    "m10_desc": "Develop integrity and ethical leadership values.",
+    "m10": "Do What's Right",
+    "m10_desc": "Learn to do what's right, even when it's hard or when nobody is watching.",
     "m11": "The Capital Project (Synthesis)",
     "m11_desc": "Final synthesis: apply all acquired skills in a complete project.",
     "m12": "The Art of Communication",
@@ -533,19 +533,19 @@
     },
     "defi2": {
         "titre": "Quiz: Win-Win Negotiation",
-        "question": "You are negotiating equipment purchase. Your supplier wants 100€, you want to pay 80€. What is the best approach for a successful negotiation and maintaining the relationship?",
+        "question": "You want to buy a used video game from a friend. They want to sell it for 20€, but you only want to spend 15€. What is the best way to make BOTH of you happy?",
       "options": [
-        "Politely refuse and find another supplier.",
-        "Offer 90€ and ask for a small favour in return.",
-        "Say '80€ or nothing' to be firm."
+        "Say no and ask another friend.",
+        "Offer 15€ + lend them your favorite game for a week.",
+        "Say '15€ or nothing' to be firm."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Well done! 🎉 You understood the art of WIN-WIN NEGOTIATION.\n\nHere's why this is the best strategy:\n\n• Option 1 (refuse) = You lose a good supplier and start from scratch ❌\n• Option 3 (80€ or nothing) = You force the other to lose → They might accept, but won't want to work with you again ❌\n• Option 2 (90€ + favour) = COMPROMISE: You pay 10€ more, they earn 10€ less, BUT you exchange an additional service ✅\n\nResult: BOTH parties win something. The supplier is happy, you too. They'll want to work with you again!\n\n💡 A good negotiation creates a LASTING RELATIONSHIP. You didn't just 'win' today, you gained a PARTNER for the long term.",
-        "feedbackIncorrect": "Careful! A negotiation is not a battle where you must 'win' against the other.\n\nThink long-term:\n• If you refuse (Option 1) → You must find another supplier (wasted time)\n• If you say '80€ or nothing' (Option 3) → The supplier feels forced, might accept but won't want to sell to you again\n\nThe right question: 'How can we BOTH win something?'\n\nHint: Look for a COMPROMISE where each person gives a little and receives a little. That's win-win!",
-        "leconStrategique": "WIN-WIN NEGOTIATION is a powerful tool of INFLUENCE. When both parties win, you create trust and lasting relationships.\n\nThe 3 rules of good negotiation:\n1. Listen to what the other really wants (not just the price)\n2. Seek a COMPROMISE where each gives and receives\n3. Add VALUE (a service, time, a recommendation)\n\nIn real life:\n• Negotiating with your parents: 'I clean my room (you give) if I can play 30 min more (you receive)'\n• Negotiating with a friend: 'I lend you my game (you give) if you show me your new magic trick (you receive)'\n• Negotiating at school: 'I help you with math (you give) if you help me with art (you receive)'\n\nIn business: The best leaders always negotiate win-win. Why? Because they build solid PARTNERSHIPS. A satisfied partner = future opportunities!",
+        "feedbackCorrect": "Well done! 🎉 You understood how to NEGOTIATE WELL: everyone must be happy!\n\nHere's why this is the best solution:\n\n• Option 1 (say no) = You lose a good game and your friend can't sell it ❌\n• Option 3 (15€ or nothing) = You force your friend → They might accept, but will be upset and won't want to play with you ❌\n• Option 2 (15€ + lend your game) = COMPROMISE: They earn 5€ less, BUT they can play your game too ✅\n\nResult: YOU ARE BOTH HAPPY! Your friend gets money AND can play your game, you get the game you wanted. You stay good friends!\n\n💡 When you negotiate well, you keep your friends and everyone is happy. You didn't 'win against them', you won TOGETHER.",
+        "feedbackIncorrect": "Careful! Negotiating doesn't mean 'winning against the other'.\n\nThink about it:\n• If you say no (Option 1) → You don't get the game and your friend can't sell it\n• If you say '15€ or nothing' (Option 3) → Your friend feels forced, might accept but will be upset with you after\n\nThe right question: 'How can we BOTH be happy?'\n\nHint: Look for a COMPROMISE where each person gives a little and receives a little. That's good negotiation!",
+        "leconStrategique": "Negotiating WELL means finding a solution where EVERYONE IS HAPPY. When everyone is happy, you keep your friends and build trust.\n\nThe 3 rules for good negotiation:\n1. Listen to what the other person really wants\n2. Find a COMPROMISE where everyone gives and receives\n3. Add something extra (lend, help)\n\nExamples in your life:\n• With your parents: 'I'll clean my room if I can play 30 min more'\n• With a friend: 'I'll lend you my game if you show me your magic trick'\n\nThose who succeed keep their friends happy. A happy friend = many more great opportunities!",
       "referenceCroisee": "M5 (Communication and Influence), M9 (Economy and Value Exchange)",
       "mentorGoal": "Introduce WIN-WIN NEGOTIATION and the concept of CREATIVE COMPROMISE. The child must demonstrate they understand that good negotiation seeks to create value for both parties, not to 'beat' the other.",
-      "evaluationCriteria": "1. Correct answer: B (Offer 90€ + favour). 2. BONUS: The child explains that compromise preserves the relationship, or mentions that adding value (the favour) makes the deal more fair, or understands losing a battle to win the war (long-term relationship)."
+      "evaluationCriteria": "1. Correct answer: B (Offer 15€ + lend your game). 2. BONUS: The child explains that compromise preserves the friendship, or mentions that adding something extra (lending the game) makes the deal more fair."
     },
     "defi3": {
       "titre": "Mission: The Emotion Mirror",
@@ -684,7 +684,7 @@
         "titre": "Mission: The Idea Chain",
         "scenario": "You need to invent a solution to reduce plastic waste. Instead of finding ONE perfect idea, generate the MAXIMUM number of ideas in 5 minutes, even crazy ones!",
         "instruction": "Write AT LEAST 5 ideas (1-2-3-4-5...) keeping them simple and without judgment.\n\n💡 Golden rule: QUANTITY before QUALITY. Don't criticize ANY idea while generating!",
-        "leconStrategique": "CREATIVITY starts with QUANTITY, not quality. This is the BRAINSTORMING method: generate maximum ideas without judgment, then choose the best ones after.\n\nThe 3 rules of creative brainstorming:\n1. NO CRITICISM: All ideas are good at this stage\n2. QUANTITY > QUALITY: The more you generate, the better chance of finding THE right one\n3. CRAZY IDEAS WELCOME: The best innovations come from 'impossible' ideas\n\nIn real life:\n• ❌ Looking for the perfect idea first try (blockage) → ✅ Generate 10 ideas quickly, then choose (fluidity)\n• ❌ 'This idea is bad' (self-censorship) → ✅ 'I'll note it anyway' (openness)\n• ❌ Stay conventional (boring) → ✅ 'What if we did the opposite?' (innovation)\n\nIn business: The most innovative companies (Google, IDEO, Pixar) use wild brainstorming: 100 ideas → 10 good → 1 genius. Thomas Edison tested 1000 materials before finding the perfect filament for the lightbulb!\n\nA creative leader generates first, judges later.",
+        "leconStrategique": "CREATIVITY starts with QUANTITY, not quality. This is the BRAINSTORMING method: generate maximum ideas without judgment, then choose the best ones after.\n\nThe 3 rules:\n1. NO CRITICISM: All ideas are good at this stage\n2. QUANTITY > QUALITY: The more you generate, the better chance of finding THE right one\n3. CRAZY IDEAS WELCOME: The best innovations come from 'impossible' ideas\n\nIn real life:\n• ❌ Looking for the perfect idea first try → ✅ Generate 10 ideas, then choose\n• ❌ 'This idea is bad' → ✅ 'I'll note it anyway'\n\nThose who succeed generate first, judge later.",
         "referenceCroisee": "M1 (Problem Analysis), M4 (Critical Thinking)",
         "briefing": {
             "etape1": {
@@ -709,25 +709,25 @@
     },
     "defi2": {
         "titre": "Quiz: Lateral Thinking",
-        "question": "A man finds a gold coin in a full coffee container. How does he get it out without spilling the coffee or breaking the container?",
+        "question": "You want to hang a picture on the wall, but you don't have a hammer. What do you do?",
       "options": [
-        "He empties the coffee first.",
-        "He uses tweezers.",
-        "He melts the container."
+        "I wait to buy a hammer.",
+        "I use a shoe, a rock, or the back of a heavy spoon.",
+        "I try to push the nail in with my fingers."
       ],
         "bonneReponseIndex": 1,
-        "feedbackCorrect": "Well done! 🎉 You found LATERAL THINKING!\n\nWhy answer 2 is best:\n• Option 1 ('Empty coffee') = Obvious solution but you lose the coffee ❌\n• Option 2 ('Tweezers') = Creative solution that bypasses the problem ✅\n• Option 3 ('Melt container') = You destroy everything ❌\n\nLateral thinking = finding a solution OUTSIDE the usual frame. Instead of thinking 'how to remove the coffee?', you think 'how to grab the coin WITHOUT touching the coffee?'",
-        "feedbackIncorrect": "Try again! Lateral thinking seeks an INDIRECT solution.\n\nThe question seems to say: 'You must remove the coffee to get the coin'\n\nBut the REAL solution bypasses the problem: 'What if I grabbed the coin WITHOUT touching the coffee?'\n\nThat's lateral thinking: breaking out of the usual frame.\n\nOther examples:\n• Problem: 'How to climb this wall?' → Lateral thinking: 'What if I went around?'\n• Problem: 'How to carry this heavy load?' → Lateral thinking: 'What if I rolled it?'\n\nWhich option grabs the coin WITHOUT touching the coffee or container?",
-        "leconStrategique": "LATERAL THINKING solves problems by stepping outside the usual frame. Instead of following the obvious path (A → B), you seek an indirect path (A → Z → B).\n\nThe 3 techniques of lateral thinking:\n1. REFRAME: Change the question ('How to get the coin out?' → 'How to grab it without touching anything else?')\n2. REVERSE: Do the opposite of what seems logical\n3. FIND THE BLIND SPOT: What solution is nobody seeing?\n\nIn real life:\n• ❌ 'I can't do homework, I lost my pen' → ✅ 'I use a pencil, marker, or type on computer'\n• ❌ 'The door is blocked' → ✅ 'I go through the window'\n• ❌ 'I'm too short to reach' → ✅ 'I use a stool'\n\nIn business: The greatest innovations come from lateral thinking. Airbnb: instead of building hotels (direct path), they use people's homes (lateral path). Uber: instead of buying taxis, they use existing cars!\n\nThe creative leader doesn't force the direct path, they find the smart path.",
+        "feedbackCorrect": "Well done! 🎉 You found LATERAL THINKING!\n\nWhy answer 2 is best:\n• Option 1 ('Wait for hammer') = You don't solve the problem ❌\n• Option 2 ('Use something else') = Smart solution: you need to 'hit', not specifically a 'hammer'! ✅\n• Option 3 ('With fingers') = Impossible and dangerous ❌\n\nLateral thinking = understanding that the real need isn't the tool, but the FUNCTION. You don't need a hammer, you need something that HITS!",
+        "feedbackIncorrect": "Try again! Lateral thinking seeks a SMART solution.\n\nThe question seems to say: 'You need a hammer'\n\nBut the REAL solution understands the need: 'You need something that HITS hard'\n\nThat's lateral thinking: replace the tool with its function.\n\nOther examples:\n• 'I don't have a screwdriver' → Use a coin\n• 'I don't have paper scissors' → Use the edge of a ruler\n• 'I don't have a scale' → Compare with objects of known weight\n\nWhich option replaces the hammer with its function (hitting)?",
+        "leconStrategique": "LATERAL THINKING solves problems by understanding the FUNCTION, not the tool. Instead of looking for 'the right tool', you look for 'what does the same thing'.\n\nThe 3 techniques:\n1. FUNCTION INSTEAD OF TOOL: Ask yourself 'What do I REALLY need?' (hit, cut, measure...)\n2. LOOK AROUND YOU: What can do the same thing?\n3. THINK DIFFERENTLY: The perfect tool doesn't always exist, but smart solutions do!\n\nIn your life:\n• ❌ 'I don't have a ruler' → ✅ 'I use the edge of a book'\n• ❌ 'I don't have a basket' → ✅ 'I carry it in my t-shirt'\n\nThose who succeed find solutions with what they have.",
       "referenceCroisee": "M4 (Problem Analysis), M7D1 (Brainstorming)",
       "mentorGoal": "Test understanding of LATERAL THINKING and creative problem-solving through bypassing. The child must demonstrate they can step outside the usual frame to find a non-obvious solution.",
-      "evaluationCriteria": "1. Correct answer: B (Uses tweezers). 2. Understanding: The child identifies that tweezers bypass the problem instead of confronting it directly. 3. Reframing: The child understands the real problem isn't 'remove coffee' but 'grab the coin'. BONUS: The child gives an example of lateral thinking in their daily life."
+      "evaluationCriteria": "1. Correct answer: B (Use a shoe or something else). 2. Understanding: The child identifies that the function (hitting) is more important than the specific tool (hammer). 3. Lateral thinking: The child understands you can replace a tool with anything that does the same function. BONUS: The child gives other examples of replacing tools with their function."
     },
     "defi3": {
       "titre": "Mission: Creative Constraint",
       "scenario": "You must build a house that floats, but you are only allowed to use recycled objects and paper. Which two materials do you choose?",
       "instruction": "Write the two materials chosen and EXPLAIN why they allow floating AND respect the constraints (recycled + paper).",
-      "leconStrategique": "CONSTRAINTS stimulate creativity. This is the principle of 'CREATIVITY UNDER CONSTRAINT': the fewer resources you have, the more you must innovate.\n\nThe 3 steps to transform a constraint into an advantage:\n1. ACCEPT: The constraint isn't a problem, it's a creative challenge\n2. ANALYZE: What properties must I respect? (here: float + recycled + paper)\n3. COMBINE: Find materials that have MULTIPLE properties simultaneously\n\nIn real life:\n• ❌ 'I don't have enough money to buy a gift' → ✅ 'I make a handmade gift, more personal!'\n• ❌ 'I only have 10 minutes to get ready' → ✅ 'I choose the essentials, no time wasted!'\n• ❌ 'I only have 3 ingredients left in the fridge' → ✅ 'I invent a new creative recipe!'\n\nIn business: The greatest innovations come from constraints. Twitter: limited to 140 characters → people become concise and creative. Instagram: only square photos at first → a unique visual style. SpaceX: limited budget → reuses rockets instead of building new ones!\n\nA creative leader says: 'I have ONLY X' → 'I have EVERYTHING I NEED with X'.",
+      "leconStrategique": "CONSTRAINTS stimulate creativity. The fewer resources you have, the more you must innovate.\n\nThe 3 steps:\n1. ACCEPT: The constraint is a creative challenge, not a problem\n2. ANALYZE: What properties must I respect?\n3. COMBINE: Find materials that have MULTIPLE properties\n\nIn your life:\n• ❌ 'I don't have enough money for a gift' → ✅ 'I make a handmade gift'\n• ❌ 'I only have 3 ingredients left' → ✅ 'I invent a new recipe'\n\nThose who succeed say: 'I have EVERYTHING I NEED with what I have'.",
       "referenceCroisee": "M8 (Resource Optimization), M7D1 (Brainstorming)",
       "briefing": {
         "etape1": {
@@ -761,7 +761,7 @@
       "bonneReponseIndex": 1,
       "feedbackCorrect": "Excellent! 🎉 You understood the power of COGNITIVE DIVERSITY!\n\nWhy answer 2 is best:\n• Option 1 ('Single expert') = You have ONE viewpoint, even if it's good ❌\n• Option 2 ('Several different people') = You multiply the approaches ✅\n• Option 3 ('Book alone') = No interaction, no new ideas ❌\n\nThe principle: 1 + 1 = 3 in creativity!\n\nWhen you combine people with DIFFERENT experiences (an artist + a scientist + an athlete), each sees the problem differently and brings solutions the others would NEVER have thought of.\n\nThis is COLLECTIVE INTELLIGENCE: the group is smarter than the sum of individuals!",
       "feedbackIncorrect": "Try again! Think about DIVERSITY of perspectives.\n\nImagine this scenario:\nYou want to invent a new game. Who do you ask for ideas?\n• Option A: A single game expert → They know games well, but will ALWAYS have the same type of ideas\n• Option B: A game expert + an artist + an athlete + a musician → Each brings a DIFFERENT vision and surprising ideas!\n\nThe best innovations come from the MIX of different perspectives.\n\nExamples:\n• Apple: Steve Jobs (design) + Steve Wozniak (engineering) = revolutionary iPhone\n• Pixar: artists + computer engineers = innovative animated films\n• LEGO: designers + educators + children = creative and educational games\n\nOne expert = ONE vision. Several different people = MULTIPLE visions = INNOVATION!\n\nWhich option maximizes diversity of ideas?",
-      "leconStrategique": "COGNITIVE DIVERSITY is the engine of innovation. The more differently people think, the more creative the solutions.\n\nThe 3 principles of collective intelligence:\n1. DIVERSITY > EXPERTISE: A diverse group beats a single expert\n2. COMBINATION: The best ideas come from the FUSION of different perspectives\n3. BLIND SPOTS: Each person sees what others don't see\n\nIn real life:\n• ❌ 'I ask my best friend (who thinks like me)' → ✅ 'I ask people with different experiences'\n• ❌ 'I do everything alone, I'm the best' → ✅ 'I collaborate, the group is stronger'\n• ❌ 'People different from me are weird' → ✅ 'People different from me bring ideas I never would have had'\n\nIn business: The most innovative companies (Google, Apple, Tesla) recruit people with ULTRA-DIFFERENT backgrounds. They call it 'DIVERSITY OF THOUGHT': having an artist, an engineer, a philosopher, a marketer in a team... Each challenges the others and creates revolutionary solutions!\n\nThe creative leader doesn't seek clones, they seek complementary people.",
+      "leconStrategique": "COGNITIVE DIVERSITY is the engine of innovation. The more differently people think, the more creative the solutions.\n\nThe 3 principles:\n1. DIVERSITY > EXPERTISE: A diverse group beats a single expert\n2. COMBINATION: The best ideas come from the FUSION of different perspectives\n3. BLIND SPOTS: Each person sees what others don't see\n\nIn your life:\n• ❌ 'I ask my best friend (who thinks like me)' → ✅ 'I ask different people'\n• ❌ 'I do everything alone' → ✅ 'I collaborate, the group is stronger'\n\nThose who succeed don't seek clones, they seek complementary people.",
       "referenceCroisee": "M5 (Communication and Influence), M7D1 (Brainstorming)",
       "mentorGoal": "Test understanding of COGNITIVE DIVERSITY and collective intelligence. The child must demonstrate they understand that multiplicity of perspectives (diversity) generates more innovation than a single expert viewpoint.",
       "evaluationCriteria": "1. Correct answer: B (Ask the opinion of several people with different experiences). 2. Understanding: The child identifies that DIVERSITY of perspectives brings more creativity than a single expert. 3. Collective intelligence principle: The child understands the diverse group is stronger than the individual alone. BONUS: The child gives a concrete example where diversity created a better solution (e.g., 'In my sports team, we have different players and each brings a strategy')."
@@ -772,7 +772,7 @@
         "titre": "Mission: The Backpack Audit",
         "scenario": "You have to go on a week-long excursion and are only allowed 5 essential items in your bag. Perform a resource audit: which 5 items maximize your chances of success?",
         "instruction": "Write the list of your 5 items AND justify why you chose your item #1 (the most important).",
-        "leconStrategique": "RESOURCE AUDIT is the first step of optimization. When resources are limited, you must prioritize according to VALUE and UTILITY.\n\nThe 3 steps of audit under constraint:\n1. IDENTIFY NEEDS: What is truly essential? (survival, comfort, security)\n2. EVALUATE VALUE: Which item brings MAXIMUM utility?\n3. PRIORITIZE: Rank by IMPACT (if I only have one item, which one?)\n\nIn real life:\n• ❌ 'I take everything I like' → ✅ 'I take what I REALLY need'\n• ❌ '5 video games for fun' → ✅ '1 Swiss Army knife with 10 functions'\n• ❌ 'I don't think about order' → ✅ 'I rank: survival first, comfort second'\n\nIn business: Startups with small budgets do strict audits: 'What's the MINIMUM to succeed?' (MVP = Minimum Viable Product). Tesla: Elon Musk started with few resources → he prioritized engineers and prototypes, not luxury offices!\n\nSCARCITY forces EXCELLENCE: the less you have, the better you choose.\n\nA leader optimizes: they do MORE with LESS.",
+        "leconStrategique": "RESOURCE AUDIT is the first step of optimization. When resources are limited, you must prioritize according to VALUE and UTILITY.\n\nThe 3 steps:\n1. IDENTIFY NEEDS: What is truly essential?\n2. EVALUATE VALUE: Which item brings MAXIMUM utility?\n3. PRIORITIZE: Rank by IMPACT (survival first, comfort second)\n\nIn your life:\n• ❌ 'I take everything I like' → ✅ 'I take what I REALLY need'\n• ❌ '5 games for fun' → ✅ '1 Swiss Army knife with 10 functions'\n\nSCARCITY forces EXCELLENCE: the less you have, the better you choose.\n\nThose who succeed do MORE with LESS.",
         "referenceCroisee": "M1 (Problem Analysis), M3 (Planning)",
         "briefing": {
             "etape1": {
@@ -925,20 +925,30 @@
   },
   "m10": {
     "defi1": {
-      "titre": "Challenge: The Future Compass",
-      "scenario": "Define a goal you want to achieve by the end of the school year (e.g., read 10 books, learn 5 Chinese words).",
-      "instruction": "Write your goal and why it is important for YOUR personal growth.",
-      "leconStrategique": "A goal without a plan is just a wish. A leader has a clear vision of the future they want to create.",
-      "referenceCroisee": "M2",
+      "titre": "Challenge: My Golden Rule",
+      "scenario": "Choose ONE thing you will do EVERY DAY for 1 month to become a good person.\n\nExamples:\n• Say thank you to at least one person each day\n• Help someone without being asked\n• Tell the truth even when it's hard\n• Share something with someone\n• Defend a friend who's being picked on\n• Clean something up without being asked",
+      "instruction": "Write your golden rule (what you will do each day) and how you will make sure you follow it.",
+      "leconStrategique": "Those who succeed don't do big things from time to time. They do SMALL GOOD THINGS every day. That's how you become a good person: one action at a time, every day.\n\nReal strength isn't doing what's right when it's easy. It's doing it EVEN WHEN:\n• Nobody is watching\n• It's difficult\n• Your friends aren't doing it\n\nYour character builds day by day, like a muscle.",
+      "referenceCroisee": "M2 (Strategic Vision), M13 (Money Smart - Discipline)",
       "briefing": {
         "etape1": {
-          "titre": "1. SMART Goal (Specific, Measurable...)",
+          "titre": "1. My Golden Rule (Clear and Simple)",
+          "type_etape": "texte_guide",
+          "instruction": "Write exactly what you will do each day. Make a short, clear sentence.\n\nExample: 'I will say thank you to at least one person each day' or 'I will help someone without being asked each day'."
+        },
+        "etape2": {
+          "titre": "2. My Tracking System",
+          "type_etape": "texte_guide",
+          "instruction": "How will you remember to do your golden rule each day?\n\nIdeas:\n• Check off on a calendar each evening\n• Ask mom/dad to remind you\n• Set an alarm on your phone\n• Make a mark in a notebook\n\nWrite your system."
+        },
+        "etape3": {
+          "titre": "3. Why It's Important To Me",
           "type_etape": "validation_case",
-          "instruction": "I have verified that my goal is specific and that I can measure my progress (e.g., 10/10 books read)."
+          "instruction": "I've thought about why this rule will make me better. I know that doing what's right EVERY DAY builds my character."
         }
       },
-      "mentorGoal": "Assess the child's ability to define a SMART goal (Specific, Measurable, Achievable, Realistic, Time-bound). The child must demonstrate they can transform a wish into an actionable goal.",
-      "evaluationCriteria": "The answer must contain a goal that meets all 5 SMART criteria. Bonus: The child explains why each criterion is important."
+      "mentorGoal": "Help the child choose a concrete ethical action and create a system to repeat it daily. The goal is to introduce the notion that character is built through small repeated actions, not grand declarations.",
+      "evaluationCriteria": "1. Clear and actionable rule (the action can be done in less than 5 minutes per day). 2. Tracking system identified (calendar, reminder, notebook). 3. BONUS: The child explains how this action will make them better or help others."
     },
     "defi2": {
       "titre": "Quiz: The First Small Step",
@@ -950,7 +960,7 @@
       ],
       "bonneReponseIndex": 1,
       "feedbackCorrect": "The smallest step creates momentum. A small success launches the journey.",
-      "leconStrategique": "Leaders break down complex problems into simple actions. The biggest vision starts with the smallest execution.",
+      "leconStrategique": "Those who succeed break down big problems into small simple actions. The biggest project always starts with the smallest step.",
       "referenceCroisee": "M6",
       "mentorGoal": "Test understanding of breaking down goals into sub-goals (Work Breakdown Structure). The child must demonstrate they can divide a large project into manageable steps.",
       "evaluationCriteria": "The answer must contain at least 4 logical and sequential sub-goals. Bonus: The child creates a Gantt chart or timeline."
@@ -958,8 +968,8 @@
     "defi3": {
       "titre": "Challenge: The Consequences Rule",
       "scenario": "You must choose between cheating to win a game (immediate victory) or losing honestly (integrity). Which choice has the best long-term consequences?",
-      "instruction": "Write your choice and the main consequence on your reputation (your leadership).",
-      "leconStrategique": "A leader's reputation is their greatest asset. A quick win is never worth the loss of trust.",
+      "instruction": "Write your choice and the main consequence on your reputation (how others see you).",
+      "leconStrategique": "Your reputation is your greatest treasure. A quick win is never worth losing others' trust.",
       "referenceCroisee": "M9",
       "briefing": {
         "etape1": {
@@ -973,26 +983,26 @@
     },
     "defi4": {
       "titre": "Quiz: Personal Example",
-      "question": "The best way to teach a value to your team (e.g., patience) is:",
+      "question": "The best way to teach a value to your friends (e.g., patience) is:",
       "options": [
         "To tell them to be patient.",
         "To read them a story about patience.",
         "To be patient yourself while doing a difficult task."
       ],
       "bonneReponseIndex": 2,
-      "feedbackCorrect": "Example is the universal language of leadership. Actions inspire more than words.",
-      "leconStrategique": "The leader is a mirror. Others imitate what they see, not what they hear.",
+      "feedbackCorrect": "Example is the best way to inspire others. Actions speak louder than words.",
+      "leconStrategique": "Those who inspire are a mirror. Others imitate what they see, not what they hear.",
       "referenceCroisee": "M5",
-      "mentorGoal": "Test understanding of personal accountability principle (Ownership). The child must demonstrate they understand the leader assumes responsibility for results.",
+      "mentorGoal": "Test understanding of personal accountability principle (Ownership). The child must demonstrate they understand they need to take responsibility for their results.",
       "evaluationCriteria": "The answer must show the child accepts responsibility without seeking external excuses. Bonus: The child cites the 'Extreme Ownership' principle or gives examples."
     }
   },
   "m11": {
     "defi1": {
       "titre": "Challenge: The Master's Advice",
-      "scenario": "A new Explorer is starting the program. They are afraid of failing. What is the most important leadership advice you would give them in one sentence?",
+      "scenario": "A new Explorer is starting the program. They are afraid of failing. What important advice would you give them in one sentence?",
       "instruction": "Write your advice. It must be inspiring and based on your experience.",
-      "leconStrategique": "True leadership is transmission. Your experience is valuable only if it helps others on their own path.",
+      "leconStrategique": "Helping others grow with what you've learned is what makes you a good person. Your experience is valuable only if it helps others on their own path.",
       "referenceCroisee": "M6",
       "briefing": {
         "etape1": {
@@ -1005,16 +1015,16 @@
       "evaluationCriteria": "The answer must contain at least 5 concrete pieces of advice based on previous modules, structured logically. Bonus: The child cites personal examples or constructive failures."
     },
     "defi2": {
-      "titre": "Quiz: The Leader's Example",
-      "question": "Your team is demotivated by a difficult task. Which action has the greatest power of inspiration?",
+      "titre": "Quiz: Leading by Example",
+      "question": "Your friends are discouraged by a difficult task. Which action has the greatest power of inspiration?",
       "options": [
         "Saying 'You have to do it, it's important'.",
         "Doing the hardest part of the task yourself first to lead by example.",
         "Offering a reward if the task is finished."
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "The leader leads by example. Action inspires more than words or rewards.",
-      "leconStrategique": "Leadership is a mirror. Others will follow you when they see your unwavering commitment in the face of difficulty.",
+      "feedbackCorrect": "Those who inspire lead by example. Action inspires more than words or rewards.",
+      "leconStrategique": "When you lead by example in difficult moments, others follow you. They imitate what they see, not what they hear.",
       "referenceCroisee": "M9",
       "mentorGoal": "Test understanding of long-term vision and legacy. The child must demonstrate they think beyond themselves and the present moment.",
       "evaluationCriteria": "The answer must clearly define the desired impact on others and the trace to leave. Bonus: The child mentions values or principles that will guide their future actions."
@@ -1237,43 +1247,43 @@
   "m13": {
     "defi1": {
       "titre": "Mission: Pocket Money Budget",
-      "scenario": "You receive €10 of pocket money every week. The question: how to use it INTELLIGENTLY? The rich have a secret: they don't spend everything immediately. They use the 3 Jars method.",
-      "instruction": "The 3 Jars Method:\n\n**JAR 1: SPEND** (Immediate pleasure) = 50%\nThis is your money to have fun: candy, games, outings with friends.\n\n**JAR 2: SAVE** (Future goal) = 40%\nThis is your money for a BIG goal: bike, console, trip.\n\n**JAR 3: GIVE** (Impact on others) = 10%\nThis is your money to help: gift for someone, charity, good deed.\n\nYOUR MISSION:\n1. Calculate how many euros go in each jar if you receive €10.\n2. Choose a GOAL for your Jar 2 (something you really want to buy).\n3. Calculate: if you save 40% each week, how long to reach your goal?\n4. Explain: why is giving 10% important even if it's YOUR money?",
-      "leconStrategique": "Billionaires didn't become wealthy by chance. They ALL learned young to manage money with discipline. The 3 Jars method = basis of financial management. Warren Buffett, Bill Gates, Elon Musk: all use this principle (spend, invest, give). You learn it at 8, you're 10 years ahead of 99% of people.",
+      "scenario": "Imagine you receive €50 of pocket money each month (adapt to your case!). Most kids spend everything immediately and NEVER have enough for their real dreams. Those who succeed have a secret: they are the BOSS of their money. They keep 80% for the FUTURE. Result? They can DO INCREDIBLE things that others can only imagine.",
+      "instruction": "The 3 Jars Method (Short, Medium, Long Term):\n\n**Example with €50/month** (adapt to YOUR pocket money):\n\n**JAR 1: PLEASURE THIS MONTH** = 20% (€10)\nThis is all you can spend this month. It's the price of discipline. You'll have to CHOOSE what really matters to you.\n\n**JAR 2: GOAL IN 6-12 MONTHS** = 30% (€15)\nIn 12 months = €180! You can achieve a nice project, sign up for an activity, go on a weekend trip.\n\n**JAR 3: BIG DREAM (1-2 years)** = 50% (€25)\nIn 12 months = €300. In 2 years = €600! Extraordinary trip, sports equipment, new musical instrument, build something amazing... Things your friends can't do because they spend everything.\n\n💡 Those who succeed always think about TOMORROW and THE DAY AFTER, not just TODAY.\n\n💡 With this method and €50/month, after 1 year you'll have:\n- Spent: €120 on small pleasures\n- Saved: €180 (Jar 2) + €300 (Jar 3) = €480 to achieve your dreams!\n\nYOUR MISSION:\n1. Calculate the 3 jars with the €50/month example.\n2. Now calculate with YOUR real pocket money (€20, €100, €200...?).\n3. Look at your Jar 1: what can you afford each month?\n4. Choose your MEDIUM TERM GOAL (Jar 2, 6-12 months): what could you do?\n5. Choose your BIG DREAM (Jar 3, 1-2 years): what could you do?\n6. Explain: is it worth limiting your monthly spending if it allows you to achieve your big dream?",
+      "leconStrategique": "Warren Buffett keeps 90% of his income to invest. Elon Musk reinvests almost everything in his projects. Those who succeed spend 10-30% and invest 70-90%.\n\nGolden rule: The more you keep for the future, the more you can DO what you REALLY want.\n\nWith 20% immediate spending, you learn DISCIPLINE. Olympic champions train for 10 years. Entrepreneurs build their business for 5 years. Patience and discipline are the foundation of ALL great achievements.\n\nYou learn this at 8-9 years old, you'll be the BOSS of your money all your life.",
       "referenceCroisee": "M8",
       "briefing": {
         "etape1": {
           "titre": "1. The 3 Jars Calculation",
           "type_etape": "validation_case",
-          "instruction": "I understood: €10 × 50% = €5 (Spend), €10 × 40% = €4 (Save), €10 × 10% = €1 (Give).",
+          "instruction": "I understood: €50 × 20% = €10 (Pleasure This Month), €50 × 30% = €15 (Goal 6-12 Months), €50 × 50% = €25 (Big Dream 1-2 Years).",
           "placeholder": null
         },
         "etape2": {
-          "titre": "2. Why 40% For Saving?",
+          "titre": "2. Why Keep 80% For The Future?",
           "type_etape": "texte_guide",
-          "instruction": "Most people spend 100% of what they earn. Result? They stay poor their whole life. The rich save BEFORE spending. It's the difference between being SLAVE to money or MASTER of money."
+          "instruction": "Most people spend 100% of what they earn immediately. Result? They can NEVER achieve their big dreams.\n\nThose who succeed do the opposite: they keep 80% for the future (30% + 50%). It's the difference between being a SLAVE to money (never enough) or being the BOSS of your money (you choose what you do).\n\nIs it discipline to only spend €10/month (in the €50 example)? YES! But in 1 year, you'll have €480 in savings while your friends will have spent the €600 without achieving anything extraordinary."
         },
         "etape3": {
-          "titre": "3. Your Goal & Calculation",
+          "titre": "3. Your 2 Goals (Short + Long Term)",
           "type_etape": "champ_texte",
-          "instruction": "Choose something you REALLY want (example: bike at €80, console at €300).\n\nCalculate: If you save €4/week, how many weeks to buy it?\nFormula: Price of goal ÷ €4 = number of weeks",
-          "placeholder": "My goal: ... Price: ...€. Time needed: ... weeks."
+          "instruction": "**MEDIUM TERM GOAL (Jar 2 - 6-12 months):**\nWith the €50/month example: in 12 months = €180\nExample: sports lessons (tennis, horseback riding...), weekend with your family, cool equipment (scooter, skateboard...), musical instrument.\n\n**BIG DREAM (Jar 3 - 1-2 years):**\nWith the €50/month example: in 12 months = €300, in 24 months = €600\nExample: trip to a country you dream of seeing, tablet/computer, electric bike, awesome camp (soccer, art, music...), build something incredible.\n\n📝 Now calculate with YOUR real pocket money and adapt your goals!",
+          "placeholder": "Medium term goal (6-12 months): ...\nBig dream (1-2 years): ..."
         },
         "etape4": {
-          "titre": "4. The Power of Giving",
+          "titre": "4. The Power of Long Term",
           "type_etape": "champ_texte",
-          "instruction": "Giving 10% creates an ABUNDANCE MENTALITY: 'I have enough for me AND to help others.' The greatest leaders are also the most generous. Explain to whom you would give your €1 and why.",
-          "placeholder": "I would give to... because..."
+          "instruction": "Olympic champions train for 10 years before winning. Entrepreneurs build their business for 5 years before succeeding. Jar 3 (50%) teaches you PATIENCE and DISCIPLINE.\n\nIt's the difference between:\n- Kids who eat the candy immediately\n- Kids who wait and receive 10 candies (Scientific experiment: Marshmallow Test)\n\nThose who know how to WAIT become tomorrow's LEADERS.\n\nExplain: Is it worth waiting to achieve your big dream? Why?",
+          "placeholder": "For me, waiting 1 year is worth it because..."
         }
       },
-      "mentorGoal": "Introduce basic financial management with the 3 Jars method. The child must understand that managing money = discipline + goals + generosity.",
-      "evaluationCriteria": "1. Correct calculations: €5, €4, €1. 2. Clear goal with calculation of time needed. 3. Explanation of why give 10%. Bonus: The child mentions they will apply this method in real life."
+      "mentorGoal": "Introduce financial management with 3 time horizons (short/medium/long term). The child must understand that succeeding financially = discipline + patience + thinking about the future. Goal: keep 80% for the future instead of spending everything immediately.",
+      "evaluationCriteria": "1. Correct calculations with the example (€10, €15, €25) AND adaptation to their own pocket money. 2. Two clear goals (medium term and long term) adapted to THEIR situation. 3. Understanding the value of patience and long term. Bonus: The child mentions they will apply this method in real life."
     },
     "defi2": {
       "titre": "Mission: Save For A Goal",
-      "scenario": "You want to buy a video game for €60. Problem: you only have €10 pocket money per week and you put 40% in your Jar 2 (Save). But you're IMPATIENT! You want the game NOW. What do you do?",
-      "instruction": "**Starting situation:**\n- Goal: Video game at €60\n- Pocket money: €10/week\n- Savings (Jar 2): €4/week\n- Time needed: €60 ÷ €4 = 15 weeks (almost 4 months!)\n\n**The problem: It's TOO LONG!**\n\nYou have 3 options:\n\n**Option A: Borrow money from your parents**\n\"Mom/Dad, lend me €60, I'll pay you back later.\"\n→ You have the game NOW, but you must repay.\n\n**Option B: Use ALL your pocket money (100%)**\nInstead of €4/week, you put the entire €10 in Jar 2.\n→ You have the game in 6 weeks, but you can't spend anything for 6 weeks.\n\n**Option C: Find ADDITIONAL INCOME**\nPropose extra tasks: wash the car (€5), clean the garage (€10), mow the lawn (€8).\n→ You keep your €4/week AND you earn more!\n\nYOUR MISSION:\n1. Which option would you choose? Why?\n2. Calculate: If you do 2 extra tasks per month (€15), how long to reach €60?\n3. Explain: Which is the BEST option for a future entrepreneur?",
-      "leconStrategique": "Entrepreneurs don't ASK for money, they CREATE it. Option C (additional income) is the billionaire mentality: increase your income instead of cutting spending or going into debt. Elon Musk, Jeff Bezos, Mark Zuckerberg: they all started by creating value to earn money.",
+      "scenario": "Imagine you want to buy something for €150. You receive €50 pocket money per month (example) and you put 30% in your Jar 2 (Medium Term Goal). But you're IMPATIENT! You want it NOW. What do you do?",
+      "instruction": "**Starting situation (example with €50/month):**\n- Goal: Something at €150\n- Pocket money: €50/month\n- Savings (Jar 2): €15/month (30%)\n- Time needed: €150 ÷ €15 = 10 months!\n\n**The problem: It's TOO LONG!**\n\nYou have 3 options:\n\n**Option A: Borrow money from your parents**\n\"Mom/Dad, lend me €150, I'll pay you back later.\"\n→ You have it NOW, but you must repay.\n\n**Option B: Use ALL your pocket money (100%)**\nInstead of €15/month, you put the entire €50 in Jar 2.\n→ You have it in 3 months, but you can't spend anything for 3 months.\n\n**Option C: Find ADDITIONAL INCOME**\nPropose extra missions to your parents or neighbors:\n- Clean your room perfectly (€5)\n- Wash the car with mom/dad (€8)\n- Organize the garage/basement (€10)\n- Water the plants all week (€3)\n- Help prepare meals (€5)\n→ You keep your €15/month AND you earn more!\n\nYOUR MISSION:\n1. Which option would you choose? Why?\n2. Calculate: If you earn an extra €25/month through missions, how long to reach €150?\n3. Explain: Which is the BEST option for someone who wants to succeed?",
+      "leconStrategique": "Entrepreneurs don't ASK for money, they CREATE it. Option C (additional income) is the mentality of those who succeed: increase your income instead of cutting spending or going into debt. Elon Musk, Jeff Bezos, Mark Zuckerberg: they all started by creating value to earn money.",
       "referenceCroisee": "M9",
       "briefing": {
         "etape1": {
@@ -1308,7 +1318,7 @@
       "bonneReponseIndex": 2,
       "feedbackCorrect": "PERFECT! You understood the entrepreneur's secret: money EARNED (by your work) is worth 10 times more than money RECEIVED (gift). Why? Because you learn 3 ESSENTIAL things: 1) The value of work, 2) How to create value for others, 3) How to NEGOTIATE. These skills are worth MILLIONS later!",
       "feedbackIncorrect": "No! Asking for money without giving anything in return = DEPENDENCE mentality. Waiting for a gift = PASSIVITY mentality. Future leaders CREATE value and NEGOTIATE. Propose services, set a price, work, earn. That's how you become an entrepreneur!",
-      "leconStrategique": "Warren Buffett sold chewing gum at 6. Elon Musk coded video games at 12. Mark Zuckerberg created websites at 10. All billionaires have one thing in common: they started YOUNG creating value and earning money. Not by begging, but by CREATING.",
+      "leconStrategique": "Warren Buffett sold chewing gum at 6. Elon Musk coded video games at 12. Mark Zuckerberg created websites at 10. All those who succeed have one thing in common: they started YOUNG creating value and earning money. Not by begging, but by CREATING.",
       "referenceCroisee": "M9",
       "mentorGoal": "Introduce the fundamental difference between EARNED money and RECEIVED money. The child must understand that creating value for others is the basis of all business.",
       "evaluationCriteria": "Correct answer: Option 3 (propose tasks). Bonus: The child explains why earned money is more valuable than received money."
@@ -1322,9 +1332,9 @@
         "Both are EXPENSES because you lose €100"
       ],
       "bonneReponseIndex": 1,
-      "feedbackCorrect": "EXCELLENT! You understood the difference between ASSET and LIABILITY:\n\n**EXPENSE (Bike)**: You spend €100 → You have pleasure → It's over. You can't earn money with it.\n\n**INVESTMENT (Coding books)**: You spend €100 → You learn a SKILL → You can create websites, games, earn money for 50 years!\n\nThe rich buy ASSETS (that bring returns). The poor buy LIABILITIES (that cost). You think like a rich person!",
-      "feedbackIncorrect": "No! The bike = EXPENSE (immediate pleasure, brings nothing). The coding books = INVESTMENT (skill that can bring you money all your life). The rich invest in themselves BEFORE spending for pleasure. It's rule #1 of wealth.",
-      "leconStrategique": "Billionaires invest massively in their EDUCATION and their SKILLS before buying things. Bill Gates read 50 books/year since childhood. Elon Musk taught himself physics and programming. Warren Buffett invested in books and courses. The rule: INVEST IN YOURSELF = best possible return on investment.",
+      "feedbackCorrect": "EXCELLENT! You understood the difference between ASSET and LIABILITY:\n\n**EXPENSE (Bike)**: You spend €100 → You have pleasure → It's over. You can't earn money with it.\n\n**INVESTMENT (Coding books)**: You spend €100 → You learn a SKILL → You can create websites, games, earn money for 50 years!\n\nThose who succeed buy ASSETS (that bring returns). Most people buy LIABILITIES (that cost). You think like someone who succeeds!",
+      "feedbackIncorrect": "No! The bike = EXPENSE (immediate pleasure, brings nothing). The coding books = INVESTMENT (skill that can bring you money all your life). Those who succeed invest in themselves BEFORE spending for pleasure. It's rule #1 of success.",
+      "leconStrategique": "Those who succeed invest massively in their EDUCATION and their SKILLS before buying things. Bill Gates read 50 books/year since childhood. Elon Musk taught himself physics and programming. Warren Buffett invested in books and courses. The rule: INVEST IN YOURSELF = best possible return on investment.",
       "referenceCroisee": "M6",
       "mentorGoal": "Introduce the concept of ASSET vs LIABILITY. The child must understand that investing in themselves (skills, education) brings infinitely more than spending for immediate pleasure.",
       "evaluationCriteria": "Correct answer: Option B (bike = expense, books = investment). Bonus: The child gives an example of self-investment they would like to make (course, books, training, etc.)."

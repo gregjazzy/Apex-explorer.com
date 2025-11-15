@@ -23,11 +23,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.apexjuniorexplorer.app"
+      "package": "com.apexjuniorexplorer.app",
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c3126ce9-82cc-48bd-b0a9-99714648d1de"
+      }
     }
   }
 }
-
